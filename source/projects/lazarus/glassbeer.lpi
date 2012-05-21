@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <PathDelim Value="\"/>
+    <Version Value="7"/>
+    <General>
+      <Flags>
+        <UseDefaultCompilerOptions Value="True"/>
+      </Flags>
+      <MainUnit Value="0"/>
+      <TargetFileExt Value=".exe"/>
+      <Title Value="Glassbeer sofware"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <VersionInfo>
+      <Language Value=""/>
+      <CharSet Value=""/>
+      <StringTable Comments="" CompanyName="" FileDescription="" FileVersion="" InternalName="" LegalCopyright="" LegalTrademarks="" OriginalFilename="" ProductName="" ProductVersion=""/>
+    </VersionInfo>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="6">
+      <Item1>
+        <PackageName Value="lazreport"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="PressLazReportRT"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="PressLazSQLdbRT"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="PressLazBrokersRT"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="PressLazCoreRT"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="LCL"/>
+      </Item6>
+    </RequiredPackages>
+    <Units Count="6">
+      <Unit0>
+        <Filename Value="glassbeer.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="glassbeer"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="14" Y="8"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="..\..\core\include\glassbeer_defines.inc"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="D:\lib\pressobjects\trunk\Source\Brokers\PressWebFCLFCGIBroker.pas"/>
+        <UnitName Value="PressWebFCLFCGIBroker"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="45"/>
+        <CursorPos X="33" Y="51"/>
+        <UsageCount Value="10"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CustomBO"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="5" Y="13"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\core\basicuserrecorddata\BasicUserRecordDataBO.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="BasicUserRecordDataBO"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="16" Y="19"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="D:\lib\pressobjects\trunk\Source\Core\PressAttributes.pas"/>
+        <UnitName Value="PressAttributes"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="126"/>
+        <CursorPos X="9" Y="130"/>
+        <SyntaxHighlighter Value="FreePascal"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Text"/>
+      </Unit5>
+    </Units>
+    <JumpHistory Count="8" HistoryIndex="7">
+      <Position1>
+        <Filename Value="glassbeer.lpr"/>
+        <Caret Line="10" Column="19" TopLine="1"/>
+      </Position1>
+      <Position2>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="3" Column="1" TopLine="1"/>
+      </Position2>
+      <Position3>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="17" Column="3" TopLine="1"/>
+      </Position3>
+      <Position4>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="5" Column="2" TopLine="1"/>
+      </Position4>
+      <Position5>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="3" Column="31" TopLine="1"/>
+      </Position5>
+      <Position6>
+        <Filename Value="..\..\core\basicuserrecorddata\BasicUserRecordDataBO.pas"/>
+        <Caret Line="16" Column="23" TopLine="1"/>
+      </Position6>
+      <Position7>
+        <Filename Value="D:\lib\pressobjects\trunk\Source\Core\PressAttributes.pas"/>
+        <Caret Line="172" Column="38" TopLine="161"/>
+      </Position7>
+      <Position8>
+        <Filename Value="..\..\core\basicuserrecorddata\BasicUserRecordDataBO.pas"/>
+        <Caret Line="22" Column="58" TopLine="1"/>
+      </Position8>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="8"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="..\..\out\bin\glassbeer__$(TargetOS)$(ExeExt)"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="..\..\core\include\"/>
+      <OtherUnitFiles Value="..\..\core\custom\;..\..\core\basicuserrecorddata\"/>
+      <UnitOutputDirectory Value="..\..\out\lib\$(TargetCPU)-$(TargetOS)"/>
+      <LCLWidgetType Value="win32"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <UseAnsiStrings Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="True"/>
+        <GenerateDwarf Value="True"/>
+        <UseExternalDbgSyms Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CompilerMessages>
+        <UseMsgFile Value="True"/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>
