@@ -52,7 +52,7 @@
         <PackageName Value="LCL"/>
       </Item6>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="9">
       <Unit0>
         <Filename Value="glassbeer.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -60,18 +60,18 @@
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="14" Y="8"/>
-        <UsageCount Value="22"/>
+        <CursorPos X="19" Y="19"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="..\..\core\include\glassbeer_defines.inc"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
@@ -80,7 +80,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="45"/>
         <CursorPos X="33" Y="51"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit2>
       <Unit3>
         <Filename Value="..\..\core\custom\CustomBO.pas"/>
@@ -88,37 +88,70 @@
         <UnitName Value="CustomBO"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="5" Y="13"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="5"/>
+        <CursorPos X="15" Y="19"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="..\..\core\basicuserrecorddata\BasicUserRecordDataBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="BasicUserRecordDataBO"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="16" Y="19"/>
-        <UsageCount Value="21"/>
+        <CursorPos X="17" Y="10"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Core\PressAttributes.pas"/>
         <UnitName Value="PressAttributes"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="126"/>
         <CursorPos X="9" Y="130"/>
         <SyntaxHighlighter Value="FreePascal"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="13"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Text"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="..\..\core\mash\MashBO.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MashBO"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="40" Y="3"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\..\core\recipe\RecipeBO.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RecipeBO"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="8"/>
+        <CursorPos X="20" Y="32"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RawMaterialBO"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="24" Y="18"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit8>
     </Units>
-    <JumpHistory Count="8" HistoryIndex="7">
+    <JumpHistory Count="21" HistoryIndex="20">
       <Position1>
         <Filename Value="glassbeer.lpr"/>
         <Caret Line="10" Column="19" TopLine="1"/>
@@ -151,6 +184,58 @@
         <Filename Value="..\..\core\basicuserrecorddata\BasicUserRecordDataBO.pas"/>
         <Caret Line="22" Column="58" TopLine="1"/>
       </Position8>
+      <Position9>
+        <Filename Value="..\..\core\mash\MashBO.pas"/>
+        <Caret Line="15" Column="24" TopLine="1"/>
+      </Position9>
+      <Position10>
+        <Filename Value="..\..\core\mash\MashBO.pas"/>
+        <Caret Line="38" Column="6" TopLine="10"/>
+      </Position10>
+      <Position11>
+        <Filename Value="..\..\core\basicuserrecorddata\BasicUserRecordDataBO.pas"/>
+        <Caret Line="3" Column="1" TopLine="1"/>
+      </Position11>
+      <Position12>
+        <Filename Value="..\..\core\basicuserrecorddata\BasicUserRecordDataBO.pas"/>
+        <Caret Line="29" Column="55" TopLine="4"/>
+      </Position12>
+      <Position13>
+        <Filename Value="..\..\core\mash\MashBO.pas"/>
+        <Caret Line="42" Column="1" TopLine="13"/>
+      </Position13>
+      <Position14>
+        <Filename Value="..\..\core\mash\MashBO.pas"/>
+        <Caret Line="34" Column="11" TopLine="14"/>
+      </Position14>
+      <Position15>
+        <Filename Value="..\..\core\mash\MashBO.pas"/>
+        <Caret Line="48" Column="18" TopLine="22"/>
+      </Position15>
+      <Position16>
+        <Filename Value="..\..\core\mash\MashBO.pas"/>
+        <Caret Line="71" Column="22" TopLine="49"/>
+      </Position16>
+      <Position17>
+        <Filename Value="..\..\core\mash\MashBO.pas"/>
+        <Caret Line="27" Column="36" TopLine="11"/>
+      </Position17>
+      <Position18>
+        <Filename Value="..\..\core\mash\MashBO.pas"/>
+        <Caret Line="79" Column="21" TopLine="52"/>
+      </Position18>
+      <Position19>
+        <Filename Value="..\..\core\mash\MashBO.pas"/>
+        <Caret Line="58" Column="13" TopLine="56"/>
+      </Position19>
+      <Position20>
+        <Filename Value="..\..\core\recipe\RecipeBO.pas"/>
+        <Caret Line="3" Column="40" TopLine="1"/>
+      </Position20>
+      <Position21>
+        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
+        <Caret Line="29" Column="45" TopLine="1"/>
+      </Position21>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
@@ -161,7 +246,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="..\..\core\include\"/>
-      <OtherUnitFiles Value="..\..\core\custom\;..\..\core\basicuserrecorddata\"/>
+      <OtherUnitFiles Value="..\..\core\custom\;..\..\core\basicuserrecorddata\;..\..\core\mash\;..\..\core\recipe\;..\..\core\rawmaterial\"/>
       <UnitOutputDirectory Value="..\..\out\lib\$(TargetCPU)-$(TargetOS)"/>
       <LCLWidgetType Value="win32"/>
     </SearchPaths>

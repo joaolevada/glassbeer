@@ -8,7 +8,8 @@ uses
   Classes,
   SysUtils,
   CustomBO,
-  PressAttributes;
+  PressAttributes,
+  PressSubject;
 
 type
 

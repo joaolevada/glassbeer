@@ -7,7 +7,11 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, CustomBO, BasicUserRecordDataBO;
+  Forms,
+  CustomBO,
+  BasicUserRecordDataBO,
+  MashBO,
+  RecipeBO, RawMaterialBO;
 
 {$R *.res}
 

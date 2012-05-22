@@ -17,7 +17,7 @@ type
   TCustomQuery = class(TPressQuery)
   end;
 
-  TCustomReferece = class(TPressReference)
+  TCustomReference = class(TPressReference)
   end;
 
   TCustomReferences = class(TPressReferences)
