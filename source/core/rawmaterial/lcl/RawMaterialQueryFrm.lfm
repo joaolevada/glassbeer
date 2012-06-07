@@ -1,0 +1,44 @@
+inherited RawMaterialQueryForm: TRawMaterialQueryForm
+  Caption = 'Matéria prima'
+  inherited SearchPageControl: TPageControl
+    inherited DefaultTab: TTabSheet
+      Caption = 'Busca por descrição'
+      inherited SearchButton: TBitBtn
+        AnchorSideLeft.Control = NameEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Side = asrCenter
+        AnchorSideBottom.Control = NameEdit
+        AnchorSideBottom.Side = asrBottom
+        Left = 364
+        Top = 5
+        Anchors = [akLeft, akBottom]
+        BorderSpacing.Left = 4
+      end
+      object NameEdit: TEdit[1]
+        AnchorSideLeft.Control = DefaultTab
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 24
+        Top = 23
+        Width = 356
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'NameEdit'
+      end
+      object NameLabel: TLabel[2]
+        AnchorSideLeft.Control = DefaultTab
+        AnchorSideTop.Control = DefaultTab
+        Left = 4
+        Height = 17
+        Top = 4
+        Width = 150
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Procurar por descrição'
+        ParentColor = False
+      end
+    end
+  end
+end

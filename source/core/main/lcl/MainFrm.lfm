@@ -1,0 +1,32 @@
+object MainForm: TMainForm
+  Left = 354
+  Height = 240
+  Top = 180
+  Width = 320
+  Caption = 'glass beer. já degustou sua cerveja hoje?'
+  Menu = GlassBeerMainMenu
+  Position = poDesktopCenter
+  LCLVersion = '0.9.29'
+  object GlassBeerMainMenu: TMainMenu
+    left = 128
+    top = 100
+    object FileMenu: TMenuItem
+      Caption = 'Arquivo'
+      object RawMaterialMenu: TMenuItem
+        Caption = 'Matéria prima...'
+      end
+      object MenuItem1: TMenuItem
+        Caption = '-'
+      end
+      object ExitMenu: TMenuItem
+        Caption = 'Sair'
+      end
+    end
+    object ToolsMenu: TMenuItem
+      Caption = 'Ferramentas'
+      object MetadataMenu: TMenuItem
+        Caption = 'Criar metadados do banco de dados'
+      end
+    end
+  end
+end

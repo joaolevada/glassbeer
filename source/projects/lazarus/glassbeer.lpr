@@ -11,13 +11,24 @@ uses
   CustomBO,
   BasicUserRecordDataBO,
   MashBO,
-  RecipeBO, RawMaterialBO;
+  RecipeBO,
+  RawMaterialBO,
+  CustomMVP,
+  MainMVP,
+  Brokers,
+  RawMaterialMVP,
+  CustomEditFrm,
+  CustomQueryFrm,
+  MainFrm,
+  RawMaterialQueryFrm,
+  RawMaterialEditFrm;
 
 {$R *.res}
 
 begin
-  Application.Title:='Glassbeer sofware';
+  Application.Title:='Glassbeer software';
   Application.Initialize;
-  Application.Run;
+  Application.CreateForm(TMainForm, MainForm);
+  TMainFormPresenter.Run;
 end.
 

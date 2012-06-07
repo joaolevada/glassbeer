@@ -32,5 +32,24 @@ type
 
 implementation
 
+
+initialization
+  TCustomObject.RegisterClass;
+  TCustomQuery.RegisterClass;
+  TCustomReference.RegisterAttribute;
+  TCustomReferences.RegisterAttribute;
+  TCustomPart.RegisterAttribute;
+  TCustomParts.RegisterAttribute;
+
+
+finalization
+  TCustomObject.UnregisterClass;
+  TCustomQuery.UnregisterClass;
+  TCustomReference.UnregisterAttribute;
+  TCustomReferences.UnregisterAttribute;
+  TCustomPart.UnregisterAttribute;
+  TCustomParts.UnregisterAttribute;
+
+
 end.
 
