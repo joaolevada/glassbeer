@@ -15,6 +15,10 @@ type
   TRawMaterialEditForm = class(TCustomEditForm)
     CodeEdit: TEdit;
     CodeLabel: TLabel;
+    MinimumStockEdit: TEdit;
+    MaximumStockEdit: TEdit;
+    MinimumStockLabel: TLabel;
+    MaximumStockLabel: TLabel;
     RemarksLabel: TLabel;
     UnityLabel: TLabel;
     NameLabel: TLabel;

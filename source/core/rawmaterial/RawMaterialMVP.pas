@@ -39,6 +39,8 @@ begin
   CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
   CreateSubPresenter('Unity', 'UnityCombo');
+  CreateSubPresenter('MinimumStock', 'MinimumStockEdit');
+  CreateSubPresenter('MaximumStock', 'MaximumStockEdit');
 end;
 
 { TRawMaterialQueryPresenter }

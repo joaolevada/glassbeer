@@ -20,13 +20,13 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 72
-        Top = 115
+        Top = 162
         Width = 356
         BorderSpacing.Top = 2
         Lines.Strings = (
           'RemarksMemo'
         )
-        TabOrder = 3
+        TabOrder = 5
       end
       object UnityCombo: TComboBox
         AnchorSideLeft.Control = CodeEdit
@@ -106,15 +106,63 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
       end
       object RemarksLabel: TLabel
         AnchorSideLeft.Control = CodeEdit
+        AnchorSideTop.Control = MinimumStockEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 145
+        Width = 83
+        BorderSpacing.Top = 8
+        Caption = 'Observações'
+        ParentColor = False
+      end
+      object MinimumStockLabel: TLabel
+        AnchorSideLeft.Control = CodeLabel
         AnchorSideTop.Control = UnityCombo
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
         Top = 98
-        Width = 83
+        Width = 101
         BorderSpacing.Top = 8
-        Caption = 'Observações'
+        Caption = 'Estoque mínimo'
         ParentColor = False
+      end
+      object MinimumStockEdit: TEdit
+        AnchorSideLeft.Control = MinimumStockLabel
+        AnchorSideTop.Control = MaximumStockLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 115
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'MinimumStockEdit'
+      end
+      object MaximumStockLabel: TLabel
+        AnchorSideLeft.Control = MinimumStockEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MinimumStockLabel
+        Left = 218
+        Height = 15
+        Top = 98
+        Width = 105
+        BorderSpacing.Left = 16
+        Caption = 'Estoque máximo'
+        ParentColor = False
+      end
+      object MaximumStockEdit: TEdit
+        AnchorSideLeft.Control = MaximumStockLabel
+        AnchorSideTop.Control = MaximumStockLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 115
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 4
+        Text = 'MaximumStockEdit'
       end
     end
   end
