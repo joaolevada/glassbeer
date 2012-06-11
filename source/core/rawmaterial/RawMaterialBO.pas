@@ -148,7 +148,7 @@ end;
 class function TRawMaterialQuery.InternalMetadataStr: string;
 begin
   Result := 'TRawMaterialQuery(TRawMaterial) (' +
-    'Name: AnsiString(40) MatchType=mtContains;' +
+    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
     ')';
 end;
 
