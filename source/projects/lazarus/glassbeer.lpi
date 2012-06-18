@@ -52,7 +52,7 @@
         <PackageName Value="LCL"/>
       </Item6>
     </RequiredPackages>
-    <Units Count="21">
+    <Units Count="22">
       <Unit0>
         <Filename Value="glassbeer.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -60,8 +60,8 @@
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="3"/>
-        <CursorPos X="24" Y="11"/>
-        <UsageCount Value="58"/>
+        <CursorPos X="1" Y="33"/>
+        <UsageCount Value="70"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -70,7 +70,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="58"/>
+        <UsageCount Value="70"/>
       </Unit1>
       <Unit2>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Brokers\PressWebFCLFCGIBroker.pas"/>
@@ -78,17 +78,18 @@
         <WindowIndex Value="0"/>
         <TopLine Value="45"/>
         <CursorPos X="33" Y="51"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit2>
       <Unit3>
         <Filename Value="..\..\core\custom\CustomBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="CustomBO"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="22"/>
-        <CursorPos X="18" Y="39"/>
-        <UsageCount Value="58"/>
+        <TopLine Value="41"/>
+        <CursorPos X="49" Y="62"/>
+        <UsageCount Value="70"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -97,9 +98,9 @@
         <UnitName Value="BasicUserRecordDataBO"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="17"/>
-        <CursorPos X="5" Y="33"/>
-        <UsageCount Value="57"/>
+        <TopLine Value="69"/>
+        <CursorPos X="34" Y="82"/>
+        <UsageCount Value="69"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -108,7 +109,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="608"/>
         <CursorPos X="32" Y="621"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="13"/>
       </Unit5>
       <Unit6>
         <Filename Value="..\..\core\mash\MashBO.pas"/>
@@ -118,7 +119,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="40" Y="3"/>
-        <UsageCount Value="56"/>
+        <UsageCount Value="68"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -129,19 +130,18 @@
         <WindowIndex Value="0"/>
         <TopLine Value="8"/>
         <CursorPos X="20" Y="32"/>
-        <UsageCount Value="51"/>
+        <UsageCount Value="63"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="RawMaterialBO"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="31"/>
-        <CursorPos X="25" Y="46"/>
-        <UsageCount Value="51"/>
+        <TopLine Value="129"/>
+        <CursorPos X="46" Y="141"/>
+        <UsageCount Value="63"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -150,9 +150,9 @@
         <UnitName Value="CustomMVP"/>
         <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="96"/>
-        <CursorPos X="3" Y="109"/>
-        <UsageCount Value="47"/>
+        <TopLine Value="107"/>
+        <CursorPos X="33" Y="116"/>
+        <UsageCount Value="59"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
@@ -163,7 +163,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="45"/>
         <CursorPos X="40" Y="25"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="58"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
@@ -174,7 +174,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="20" Y="15"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="58"/>
         <Loaded Value="True"/>
       </Unit11>
       <Unit12>
@@ -183,18 +183,18 @@
         <UnitName Value="RawMaterialMVP"/>
         <EditorIndex Value="10"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="25" Y="18"/>
-        <UsageCount Value="46"/>
+        <TopLine Value="33"/>
+        <CursorPos X="45" Y="43"/>
+        <UsageCount Value="58"/>
         <Loaded Value="True"/>
       </Unit12>
       <Unit13>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Core\PressSubject.pas"/>
         <UnitName Value="PressSubject"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="572"/>
-        <CursorPos X="42" Y="585"/>
-        <UsageCount Value="8"/>
+        <TopLine Value="86"/>
+        <CursorPos X="43" Y="102"/>
+        <UsageCount Value="9"/>
       </Unit13>
       <Unit14>
         <Filename Value="..\..\core\custom\lcl\CustomEditFrm.pas"/>
@@ -206,7 +206,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="58"/>
         <Loaded Value="True"/>
       </Unit14>
       <Unit15>
@@ -219,7 +219,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="18"/>
         <CursorPos X="35" Y="46"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="58"/>
         <Loaded Value="True"/>
       </Unit15>
       <Unit16>
@@ -232,7 +232,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="23" Y="16"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="52"/>
         <Loaded Value="True"/>
       </Unit16>
       <Unit17>
@@ -245,7 +245,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="21" Y="17"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="51"/>
         <Loaded Value="True"/>
       </Unit17>
       <Unit18>
@@ -256,9 +256,9 @@
         <UnitName Value="RawMaterialEditFrm"/>
         <EditorIndex Value="11"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="21"/>
-        <CursorPos X="29" Y="47"/>
-        <UsageCount Value="39"/>
+        <TopLine Value="25"/>
+        <CursorPos X="29" Y="51"/>
+        <UsageCount Value="51"/>
         <Loaded Value="True"/>
       </Unit18>
       <Unit19>
@@ -267,7 +267,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit19>
       <Unit20>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Brokers\PressSQLdbBroker.pas"/>
@@ -275,129 +275,139 @@
         <WindowIndex Value="0"/>
         <TopLine Value="205"/>
         <CursorPos X="26" Y="229"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit20>
+      <Unit21>
+        <Filename Value="D:\lib\pressobjects\trunk\Source\Core\PressClasses.pas"/>
+        <UnitName Value="PressClasses"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="60"/>
+        <CursorPos X="3" Y="76"/>
+        <SyntaxHighlighter Value="FreePascal"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Text"/>
+      </Unit21>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="..\..\core\main\MainMVP.pas"/>
-        <Caret Line="47" Column="30" TopLine="41"/>
+        <Filename Value="..\..\core\custom\CustomMVP.pas"/>
+        <Caret Line="112" Column="1" TopLine="97"/>
       </Position1>
       <Position2>
-        <Filename Value="..\..\core\main\MainMVP.pas"/>
-        <Caret Line="60" Column="50" TopLine="43"/>
+        <Filename Value="..\..\core\custom\CustomMVP.pas"/>
+        <Caret Line="102" Column="21" TopLine="95"/>
       </Position2>
       <Position3>
-        <Filename Value="..\..\core\main\MainMVP.pas"/>
-        <Caret Line="39" Column="14" TopLine="19"/>
+        <Filename Value="..\..\core\custom\CustomMVP.pas"/>
+        <Caret Line="99" Column="29" TopLine="93"/>
       </Position3>
       <Position4>
-        <Filename Value="glassbeer.lpr"/>
-        <Caret Line="12" Column="14" TopLine="1"/>
+        <Filename Value="..\..\core\custom\CustomMVP.pas"/>
+        <Caret Line="116" Column="33" TopLine="107"/>
       </Position4>
       <Position5>
-        <Filename Value="glassbeer.lpr"/>
-        <Caret Line="20" Column="9" TopLine="5"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="129" Column="16" TopLine="119"/>
       </Position5>
       <Position6>
-        <Filename Value="glassbeer.lpr"/>
-        <Caret Line="32" Column="26" TopLine="3"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="112" Column="12" TopLine="107"/>
       </Position6>
       <Position7>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
-        <Caret Line="119" Column="3" TopLine="107"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="111" Column="1" TopLine="105"/>
       </Position7>
       <Position8>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
-        <Caret Line="21" Column="3" TopLine="5"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="112" Column="17" TopLine="105"/>
       </Position8>
       <Position9>
-        <Filename Value="..\..\core\main\MainMVP.pas"/>
-        <Caret Line="66" Column="18" TopLine="41"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="56" Column="5" TopLine="40"/>
       </Position9>
       <Position10>
-        <Filename Value="..\..\core\main\MainMVP.pas"/>
-        <Caret Line="24" Column="21" TopLine="11"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="95" Column="3" TopLine="93"/>
       </Position10>
       <Position11>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialMVP.pas"/>
-        <Caret Line="52" Column="29" TopLine="24"/>
+        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
+        <Caret Line="151" Column="33" TopLine="140"/>
       </Position11>
       <Position12>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
-        <Caret Line="116" Column="34" TopLine="109"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="20" Column="31" TopLine="3"/>
       </Position12>
       <Position13>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialMVP.pas"/>
-        <Caret Line="39" Column="37" TopLine="25"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="114" Column="5" TopLine="108"/>
       </Position13>
       <Position14>
-        <Filename Value="..\..\core\custom\lcl\CustomQueryFrm.pas"/>
-        <Caret Line="35" Column="26" TopLine="7"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="20" Column="14" TopLine="15"/>
       </Position14>
       <Position15>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialMVP.pas"/>
-        <Caret Line="25" Column="63" TopLine="1"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="120" Column="25" TopLine="108"/>
       </Position15>
       <Position16>
-        <Filename Value="..\..\core\custom\lcl\CustomQueryFrm.pas"/>
-        <Caret Line="25" Column="42" TopLine="7"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="77" Column="37" TopLine="61"/>
       </Position16>
       <Position17>
-        <Filename Value="..\..\core\custom\lcl\CustomQueryFrm.pas"/>
-        <Caret Line="46" Column="34" TopLine="1"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="52" Column="5" TopLine="36"/>
       </Position17>
       <Position18>
-        <Filename Value="..\..\core\rawmaterial\lcl\RawMaterialQueryFrm.pas"/>
-        <Caret Line="16" Column="20" TopLine="1"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="19" Column="15" TopLine="18"/>
       </Position18>
       <Position19>
-        <Filename Value="..\..\core\rawmaterial\lcl\RawMaterialQueryFrm.pas"/>
-        <Caret Line="15" Column="50" TopLine="1"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="52" Column="7" TopLine="34"/>
       </Position19>
       <Position20>
-        <Filename Value="..\..\core\rawmaterial\lcl\RawMaterialQueryFrm.pas"/>
-        <Caret Line="16" Column="21" TopLine="1"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="53" Column="9" TopLine="36"/>
       </Position20>
       <Position21>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
-        <Caret Line="126" Column="35" TopLine="109"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="54" Column="9" TopLine="37"/>
       </Position21>
       <Position22>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialMVP.pas"/>
-        <Caret Line="55" Column="26" TopLine="31"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="55" Column="9" TopLine="38"/>
       </Position22>
       <Position23>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
-        <Caret Line="120" Column="42" TopLine="111"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="56" Column="18" TopLine="39"/>
       </Position23>
       <Position24>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
-        <Caret Line="119" Column="49" TopLine="111"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="57" Column="19" TopLine="40"/>
       </Position24>
       <Position25>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
-        <Caret Line="45" Column="27" TopLine="30"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="59" Column="17" TopLine="41"/>
       </Position25>
       <Position26>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
-        <Caret Line="37" Column="5" TopLine="21"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="60" Column="17" TopLine="43"/>
       </Position26>
       <Position27>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
-        <Caret Line="22" Column="45" TopLine="6"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="62" Column="15" TopLine="44"/>
       </Position27>
       <Position28>
-        <Filename Value="..\..\core\basicuserrecorddata\BasicUserRecordDataBO.pas"/>
-        <Caret Line="39" Column="3" TopLine="23"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="63" Column="17" TopLine="46"/>
       </Position28>
       <Position29>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
-        <Caret Line="22" Column="45" TopLine="6"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="56" Column="39" TopLine="47"/>
       </Position29>
       <Position30>
-        <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
-        <Caret Line="121" Column="29" TopLine="112"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="57" Column="39" TopLine="40"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

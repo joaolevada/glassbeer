@@ -131,8 +131,8 @@ begin
   Result := 'TRawMaterial IsPersistent (' +
     'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
     'Unity: Enum(TUnity);' +
-    'MinimumStock: Double;' +
-    'MaximumStock: Double;' +
+    'MinimumStock: Double Min=0;' +
+    'MaximumStock: Double Min=0;' +
     ')';
 end;
 

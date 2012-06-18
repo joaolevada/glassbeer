@@ -20,6 +20,8 @@ type
   protected
     procedure InitPresenter; override;
     class function InternalModelClass: TPressMVPObjectModelClass; override;
+  private
+    procedure SaveEvent(AEvent: TPressEvent);
   end;
 
   { TCustomQueryPresenter }
@@ -93,11 +95,25 @@ begin
   inherited InitPresenter;
   BindCommand(TPressMVPSaveObjectCommand, 'SaveButton');
   BindCommand(TPressMVPCancelConfirmObjectCommand, 'CancelButton');
+  Model.AddNotification([TPressMVPObjectModelCanSaveEvent],
+    {$IFDEF FPC}@{$ENDIF}SaveEvent);
 end;
 
 class function TCustomEditPresenter.InternalModelClass: TPressMVPObjectModelClass;
 begin
   Result := TCustomEditModel;
+end;
+
+procedure TCustomEditPresenter.SaveEvent(AEvent: TPressEvent);
+var
+  VSubject: TCustomObject;
+  VEvent: TPressMVPObjectModelCanSaveEvent;
+begin
+  if (Model.Subject is TCustomObject) = False then
+    Exit;
+  VSubject := Model.Subject as TCustomObject;
+  VEvent := AEvent as TPressMVPObjectModelCanSaveEvent;
+  VEvent.CanSave := VSubject.Validate;
 end;
 
 { TCustomQueryPresenter }
