@@ -1,0 +1,4 @@
+inherited RecipeEditForm: TRecipeEditForm
+  Left = 439
+  Top = 214
+end

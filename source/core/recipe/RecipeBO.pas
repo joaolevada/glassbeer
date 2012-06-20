@@ -15,7 +15,6 @@ uses
 type
 
   {$M+}
-  TBeerStyleReferences = class;
   TRecipeIngredientItemParts = class;
   {$M-}
 
@@ -27,39 +26,37 @@ type
   	_BasicUserRecordData: TBasicUserRecordDataPart;
   	_Family: TPressEnum;
   	_Ingredients: TRecipeIngredientItemParts;
-  	_Water: TPressDouble;
-  	_Styles: TBeerStyleReferences;
+  	_WaterAmount: TPressDouble;
   	_OriginalGravity: TPressDouble;
   	_FinalGravity: TPressDouble;
+    _AgeFor: TPressInteger;
   private
+    function GetAgeFor: integer;
     function GetCode: string;
     function GetFamily: TBeerFamily;
     function GetFinalGravity: Double;
-    function GetIngredients: TRecipeIngredientItemParts;
     function GetName: string;
     function GetOriginalGravity: Double;
     function GetRemarks: string;
-    function GetStyles: TBeerStyleReferences;
-    function GetWater: Double;
+    function GetWaterAmount: Double;
+    procedure SetAgeFor(const AValue: integer);
     procedure SetCode(const AValue: string);
     procedure SetFamily(const AValue: TBeerFamily);
     procedure SetFinalGravity(const AValue: Double);
-    procedure SetIngredients(const AValue: TRecipeIngredientItemParts);
     procedure SetName(const AValue: string);
     procedure SetOriginalGravity(const AValue: Double);
     procedure SetRemarks(const AValue: string);
-    procedure SetStyles(const AValue: TBeerStyleReferences);
-    procedure SetWater(const AValue: Double);
+    procedure SetWaterAmount(const AValue: Double);
   protected
     class function InternalMetadataStr: string; override;
   published
+    property AgeFor: integer read GetAgeFor write SetAgeFor;
     property Code: string read GetCode write SetCode;
     property Name: string read GetName write SetName;
     property Remarks: string read GetRemarks write SetRemarks;
     property Family: TBeerFamily read GetFamily write SetFamily;
-    property Ingredients: TRecipeIngredientItemParts read GetIngredients write SetIngredients;
-    property Water: Double read GetWater write SetWater;
-    property Styles: TBeerStyleReferences read GetStyles write SetStyles;
+    property Ingredients: TRecipeIngredientItemParts read _Ingredients write _Ingredients;
+    property WaterAmount: Double read GetWaterAmount write SetWaterAmount;
     property OriginalGravity: Double read GetOriginalGravity write SetOriginalGravity;
     property FinalGravity: Double read GetFinalGravity write SetFinalGravity;
   end;
@@ -70,119 +67,143 @@ type
   TRecipeIngredientItemParts = class(TCustomParts)
   end;
 
+  { TRecipeQuery }
+
+  TRecipeQuery = class(TCustomQuery)
+    _Name: TPressAnsiString;
+  protected
+    class function InternalMetadataStr: string; override;
+  end;
+
   TBeerStyleReferences = class(TCustomReferences)
   end;
 
 
 implementation
 
+{ TRecipeQuery }
+
+class function TRecipeQuery.InternalMetadataStr: string;
+begin
+  Result := 'TRecipeQuery(TRecipe) (' +
+    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    ')';
+end;
+
 
 { TRecipe }
 
+function TRecipe.GetAgeFor: integer;
+begin
+  Result := _AgeFor.Value;
+end;
+
 function TRecipe.GetCode: string;
 begin
-
+  Result := TBasicUserRecordData(_BasicUserRecordData.Value).Code;
 end;
 
 function TRecipe.GetFamily: TBeerFamily;
 begin
-
+  Result := TBeerFamily(_Family.Value);
 end;
 
 function TRecipe.GetFinalGravity: Double;
 begin
-
-end;
-
-function TRecipe.GetIngredients: TRecipeIngredientItemParts;
-begin
-
+  Result := _FinalGravity.Value;
 end;
 
 function TRecipe.GetName: string;
 begin
-
+  Result := TBasicUserRecordData(_BasicUserRecordData.Value).Name;
 end;
 
 function TRecipe.GetOriginalGravity: Double;
 begin
-
+  Result := _OriginalGravity.Value;
 end;
 
 function TRecipe.GetRemarks: string;
 begin
-
+  Result := TBasicUserRecordData(_BasicUserRecordData.Value).Remarks;
 end;
 
-function TRecipe.GetStyles: TBeerStyleReferences;
+function TRecipe.GetWaterAmount: Double;
 begin
-
+  Result := _WaterAmount.Value;
 end;
 
-function TRecipe.GetWater: Double;
+procedure TRecipe.SetAgeFor(const AValue: integer);
 begin
-
+  _AgeFor.Value := AValue;
 end;
 
 procedure TRecipe.SetCode(const AValue: string);
 begin
-
+  TBasicUserRecordData(_BasicUserRecordData.Value).Code := AValue;
 end;
 
 procedure TRecipe.SetFamily(const AValue: TBeerFamily);
 begin
-
+  _Family.Value := LongInt(AValue);
 end;
 
 procedure TRecipe.SetFinalGravity(const AValue: Double);
 begin
-
-end;
-
-procedure TRecipe.SetIngredients(const AValue: TRecipeIngredientItemParts);
-begin
-
+  _FinalGravity.Value := AValue;
 end;
 
 procedure TRecipe.SetName(const AValue: string);
 begin
-
+  TBasicUserRecordData(_BasicUserRecordData.Value).Name := AValue;
 end;
 
 procedure TRecipe.SetOriginalGravity(const AValue: Double);
 begin
-
+  _OriginalGravity.Value := AValue;
 end;
 
 procedure TRecipe.SetRemarks(const AValue: string);
 begin
-
+  TBasicUserRecordData(_BasicUserRecordData.Value).Remarks := AValue;
 end;
 
-procedure TRecipe.SetStyles(const AValue: TBeerStyleReferences);
+procedure TRecipe.SetWaterAmount(const AValue: Double);
 begin
-
-end;
-
-procedure TRecipe.SetWater(const AValue: Double);
-begin
-
+  _WaterAmount.Value := AValue;
 end;
 
 class function TRecipe.InternalMetadataStr: string;
 begin
-  Result:=inherited InternalMetadataStr;
+  Result := 'TRecipe IsPersistent (' +
+    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Family: Enum(TBeerFamily) DisplayName="Família";' +
+    'Ingredients: TRecipeIngredientItemParts;' +
+    'WaterAmount: Double DisplayName="Volume de água (litros)";' +
+    'OriginalGravity: Double DisplayName="Densidade original" Min=0 Max=2;' +
+    'FinalGravity: Double DisplayName="Densidade final" Min=0 Max=2;' +
+    'AgeFor: Integer DisplayName="Maturação";' +
+    ')';
 end;
 
 initialization
+  PressModel.RegisterEnumMetadata(TypeInfo(TBeerFamily), 'TBeerFamily',
+    [
+    'Ale',
+    'Lager',
+    'Lambic'
+    ]);
   TRecipe.RegisterClass;
   TRecipeIngredientItem.RegisterClass;
   TRecipeIngredientItemParts.RegisterAttribute;
+  TRecipeQuery.RegisterClass;
+
 
 finalization
   TRecipe.UnregisterClass;
   TRecipeIngredientItem.UnregisterClass;
   TRecipeIngredientItemParts.UnregisterAttribute;
+  TRecipeQuery.UnregisterClass;
 
 end.
 

@@ -103,12 +103,10 @@ function TCustomObject.ValidateAttribute(AAttribute: TPressAttribute;
     out AMessage: string): Boolean;
 var
   VAttribute: TCustomAttributeMetadata;
-  VAttributeName: string;
 begin
   AMessage := EmptyStr;
   VAttribute := (AAttribute.Metadata as TCustomAttributeMetadata);
   { TODO 1 -ojoaolevada -cstructure : Return multiple validation messages? }
-  { TODO 1 -ojoaolevada -crefactoring : Remove variable VAttributeName }
   if  (VAttribute.IsMandatory) and (AAttribute.IsEmpty) then
     AMessage := 'não pode ficar em branco.'
   else if (VAttribute.MinFlag) and (AAttribute.AsDouble < VAttribute.Min) then

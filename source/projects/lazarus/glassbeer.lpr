@@ -21,7 +21,7 @@ uses
   CustomQueryFrm,
   MainFrm,
   RawMaterialQueryFrm,
-  RawMaterialEditFrm;
+  RawMaterialEditFrm, RecipeMVP, RecipeQueryFrm, RecipeEditFrm;
 
 {$R *.res}
 
