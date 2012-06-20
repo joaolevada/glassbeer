@@ -16,11 +16,11 @@ type
 
   TCustomObject = class(TPressObject)
   private
-    procedure ValidateAttribute(AAttribute: TPressAttribute;
-        out AMessage: string);
+    function ValidateAttribute(AAttribute: TPressAttribute;
+        out AMessage: string): Boolean;
   public
     class function ObjectMetadataClass: TPressObjectMetadataClass; override;
-    function Validate: Boolean;
+    function Validate(out AErrors: TStringList): Boolean;
   end;
 
   TCustomQuery = class(TPressQuery)
@@ -49,21 +49,23 @@ type
 
   TCustomAttributeMetadata = class(TPressAttributeMetadata)
   private
-    FMandatory: Boolean;
-    FMinInt: Integer;
-    FMinIntFlag: Boolean;
-    FMaxInt: Integer;
-    FMaxIntFlag: Boolean;
-    procedure SetMinInt(AValue: Integer);
-    procedure SetMaxInt(AValue: Integer);
+    FDisplayName: string;
+    FIsMandatory: Boolean;
+    FMin: Double;
+    FMinFlag: Boolean;
+    FMax: Double;
+    FMaxFlag: Boolean;
+    procedure SetMin(AValue: Double);
+    procedure SetMax(AValue: Double);
     procedure SetMandatory(AValue: Boolean);
   public
-    property MinIntFlag: Boolean read FMinIntFlag;
-    property MaxIntFlag: Boolean read FMaxIntFlag;
+    property MinFlag: Boolean read FMinFlag;
+    property MaxFlag: Boolean read FMaxFlag;
   published
-    property Mandatory: Boolean read FMandatory write SetMandatory;
-    property MinInt: Integer read FMinInt write SetMinInt;
-    property MaxInt: Integer read FMaxInt write SetMaxInt;
+    property IsMandatory: Boolean read FIsMandatory write SetMandatory;
+    property DisplayName: string read FDisplayName write FDisplayName;
+    property Min: Double read FMin write SetMin;
+    property Max: Double read FMax write SetMax;
   end;
 
 implementation
@@ -78,39 +80,43 @@ end;
 
 { TCustomAttributeMetadata }
 
-procedure TCustomAttributeMetadata.SetMinInt(AValue: Integer);
+procedure TCustomAttributeMetadata.SetMin(AValue: Double);
 begin
-  FMinInt := AValue;
-  FMinIntFlag := True;
+  FMin := AValue;
+  FMinFlag := True;
 end;
 
-procedure TCustomAttributeMetadata.SetMaxInt(AValue: Integer);
+procedure TCustomAttributeMetadata.SetMax(AValue: Double);
 begin
-  FMaxInt := AValue;
-  FMaxIntFlag := True;
+  FMax := AValue;
+  FMaxFlag := True;
 end;
 
 procedure TCustomAttributeMetadata.SetMandatory(AValue: Boolean);
 begin
-  FMandatory := AValue;
+  FIsMandatory := AValue;
 end;
 
 { TCustomObject }
 
-procedure TCustomObject.ValidateAttribute(AAttribute: TPressAttribute;
-    out AMessage: string);
+function TCustomObject.ValidateAttribute(AAttribute: TPressAttribute;
+    out AMessage: string): Boolean;
 var
   VAttribute: TCustomAttributeMetadata;
+  VAttributeName: string;
 begin
-  AMessage := '';
+  AMessage := EmptyStr;
   VAttribute := (AAttribute.Metadata as TCustomAttributeMetadata);
   { TODO 1 -ojoaolevada -cstructure : Return multiple validation messages? }
-  if (VAttribute.Mandatory) and (AAttribute.IsEmpty) then
-    AMessage := 'deve ser preenchido.'
-  else if (VAttribute.MinIntFlag) and (AAttribute.AsInteger < VAttribute.MinInt) then
-    AMessage := Format('tem de ser maior que %d.', [VAttribute.MinInt])
-  else if (VAttribute.MaxIntFlag) and (AAttribute.AsInteger > VAttribute.MaxInt) then
-    AMessage := Format('tem de ser menor que %d.', [VAttribute.MaxInt]);
+  { TODO 1 -ojoaolevada -crefactoring : Remove variable VAttributeName }
+  if  (VAttribute.IsMandatory) and (AAttribute.IsEmpty) then
+    AMessage := 'não pode ficar em branco.'
+  else if (VAttribute.MinFlag) and (AAttribute.AsDouble < VAttribute.Min) then
+    AMessage := Format('tem de ser maior que %f.', [VAttribute.Min])
+  else if (VAttribute.MaxFlag) and (AAttribute.AsDouble > VAttribute.Max) then
+    AMessage := Format('tem de ser menor que %f.', [VAttribute.Max]);
+
+  Result := AMessage = EmptyStr;
 end;
 
 class function TCustomObject.ObjectMetadataClass: TPressObjectMetadataClass;
@@ -118,18 +124,24 @@ begin
   Result := TCustomObjectMetadata;
 end;
 
-function TCustomObject.Validate: Boolean;
+function TCustomObject.Validate(out AErrors: TStringList): Boolean;
 var
   I: Integer;
+  VAttribute: TPressAttribute;
+  VAttributeMetadata: TCustomAttributeMetadata;
+  VError: string;
 begin
-  { TODO 1 -ojoaolevada -cimplementation : Return a list of attribute - message to be processed on model view presenter }
+  { TODO 1 -ojoaolevada -cimplementation : Return a list of attributes that don't conform with validation rule. And for each attribute a message. }
   for I := 0 to Pred(AttributeCount) do
-  try
-    ValidateAttribute(Attributes[I]);
-    Result := True;
-  except
-    Result := False;
+  begin
+    VAttribute := Attributes[I];
+    VAttributeMetadata := VAttribute.Metadata as TCustomAttributeMetadata;
+    if VAttribute is TPressItem then
+      (TPressItem(VAttribute).Value as TCustomObject).Validate(AErrors)
+    else if not ValidateAttribute(VAttribute, VError) then
+      AErrors.Append(Format('%s %s', [VAttributeMetadata.DisplayName, VError]));
   end;
+  Result := AErrors.Count = 0;
 end;
 
 initialization

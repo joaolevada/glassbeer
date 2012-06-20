@@ -78,9 +78,9 @@ end;
 class function TBasicUserRecordData.InternalMetadataStr: string;
 begin
   Result := 'TBasicUserRecordData IsPersistent(' +
-    'Code: AnsiString(20);'+
-    'Name: AnsiString(40) NotNull;'+
-    'Remarks: Memo;' +
+    'Code: AnsiString(20) DisplayName="Código";'+
+    'Name: AnsiString(40) NotNull DisplayName="Nome/descrição" IsMandatory=True;'+
+    'Remarks: Memo DisplayName="Observações";' +
     ');';
 end;
 

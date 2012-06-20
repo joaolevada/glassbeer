@@ -130,9 +130,9 @@ class function TRawMaterial.InternalMetadataStr: string;
 begin
   Result := 'TRawMaterial IsPersistent (' +
     'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
-    'Unity: Enum(TUnity);' +
-    'MinimumStock: Double Min=0;' +
-    'MaximumStock: Double Min=0;' +
+    'Unity: Enum(TUnity) DisplayName="Unidade";' +
+    'MinimumStock: Double DisplayName="Estoque mínimo" Min=0;' +
+    'MaximumStock: Double DisplayName="Estoque máximo" Min=0;' +
     ')';
 end;
 

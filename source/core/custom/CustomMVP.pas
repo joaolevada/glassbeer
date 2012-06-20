@@ -12,6 +12,7 @@ uses
   ,PressNotifier
   ,PressMVPModel;
 
+
 type
 
   { TCustomEditPresenter }
@@ -55,8 +56,11 @@ type
 implementation
 
 uses
-  PressMVPCommand,
-  CustomBO;
+  PressMVPCommand
+  ,CustomBO
+  ,Classes
+  ,Forms
+  ,Windows;
 
 { TCustomEditModel }
 
@@ -108,12 +112,23 @@ procedure TCustomEditPresenter.SaveEvent(AEvent: TPressEvent);
 var
   VSubject: TCustomObject;
   VEvent: TPressMVPObjectModelCanSaveEvent;
+  VValidationErrors: TStringList;
 begin
   if (Model.Subject is TCustomObject) = False then
     Exit;
   VSubject := Model.Subject as TCustomObject;
   VEvent := AEvent as TPressMVPObjectModelCanSaveEvent;
-  VEvent.CanSave := VSubject.Validate;
+  VValidationErrors := TStringList.Create();
+  try
+    if not VSubject.Validate(VValidationErrors) then
+      Application.MessageBox(PChar('Há dados inválidos, corrija antes ' +
+        'de salvar:'#13#10 + VValidationErrors.Text),
+        'Validação dos dados', MB_ICONERROR);
+  finally
+    VEvent.CanSave := VValidationErrors.Count = 0;
+    VValidationErrors.Free;
+  end;
+
 end;
 
 { TCustomQueryPresenter }
