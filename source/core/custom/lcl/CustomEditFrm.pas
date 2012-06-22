@@ -14,6 +14,7 @@ type
 
   TCustomEditForm = class(TForm)
     EditPageControl: TPageControl;
+    MainTab: TTabSheet;
     SaveButton: TBitBtn;
     CancelButton: TBitBtn;
     BottomPanel: TPanel;

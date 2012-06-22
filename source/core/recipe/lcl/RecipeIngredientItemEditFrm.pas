@@ -5,23 +5,34 @@ unit RecipeIngredientItemEditFrm;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, 
-    CustomEditFrm; 
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  Buttons, ComCtrls, StdCtrls, CustomEditFrm;
 
 type
-  TRecipeIngredientItemEditForm = class(TCustomEditForm)
-  private
-    { private declarations }
-  public
-    { public declarations }
-  end; 
 
-var
-  RecipeIngredientItemEditForm: TRecipeIngredientItemEditForm;
+  { TRecipeIngredientItemEditForm }
+
+  TRecipeIngredientItemEditForm = class(TCustomEditForm)
+    PercentageEdit: TEdit;
+    PercentageLabel: TLabel;
+    RawMaterialCombo: TComboBox;
+    RawMaterialLabel: TLabel;
+  end;
+
 
 implementation
 
+uses
+  PressXCLBroker
+  ,RecipeMVP;
+
 {$R *.lfm}
+
+
+initialization
+  PressXCLForm(TRecipeIngredientItemEditPresenter,
+    TRecipeIngredientItemEditForm);
+
 
 end.
 

@@ -16,6 +16,7 @@ type
     FileMenu: TMenuItem;
     ExitMenu: TMenuItem;
     MenuItem1: TMenuItem;
+    RecipeMenu: TMenuItem;
     MetadataMenu: TMenuItem;
     ToolsMenu: TMenuItem;
     RawMaterialMenu: TMenuItem;

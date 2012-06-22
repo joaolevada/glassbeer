@@ -25,7 +25,6 @@ type
     NameEdit: TEdit;
     UnityCombo: TComboBox;
     RemarksMemo: TMemo;
-    MainTab: TTabSheet;
   public
     constructor Create(AOwner: TComponent); override;
   end;
