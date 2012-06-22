@@ -1,5 +1,7 @@
 inherited RecipeQueryForm: TRecipeQueryForm
   inherited SearchPageControl: TPageControl
+    ActivePage = nil
+    TabIndex = -1
     inherited DefaultTab: TTabSheet
       inherited SearchButton: TBitBtn
         AnchorSideLeft.Control = NameEdit

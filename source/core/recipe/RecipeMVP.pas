@@ -24,6 +24,13 @@ type
     procedure InitPresenter; override;
   end;
 
+  { TRecipeIngredientItemPresenter }
+
+  TRecipeIngredientItemEditPresenter = class(TCustomEditPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
 implementation
 
 uses
@@ -34,7 +41,7 @@ uses
 procedure TRecipeQueryPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter(Name, 'NameEdit');
+  CreateSubPresenter('Name', 'NameEdit');
 end;
 
 { TRecipeEditPresenter }
@@ -42,20 +49,30 @@ end;
 procedure TRecipeEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter(AgeFor, 'AgeForEdit');
-  CreateSubPresenter(Code, 'CodeEdit');
-  CreateSubPresenter(Name, 'NameEdit');
-  CreateSubPresenter(Remarks, 'RemarksMemo');
-  CreateSubPresenter(Family, 'FamilyCombo');
-  CreateSubPresenter(Ingredients, 'IngredientsGrid');
-  CreateSubPresenter(WaterAmount, 'WaterAmountEdit');
-  CreateSubPresenter(OriginalGravity, 'OriginalGravityEdit');
-  CreateSubPresenter(FinalGravity, 'FinalGravityEdit');
+  CreateSubPresenter('AgeFor', 'AgeForEdit');
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
+  CreateSubPresenter('Family', 'FamilyCombo');
+  CreateSubPresenter('Ingredients', 'IngredientsGrid');
+  CreateSubPresenter('WaterAmount', 'WaterAmountEdit');
+  CreateSubPresenter('OriginalGravity', 'OriginalGravityEdit');
+  CreateSubPresenter('FinalGravity', 'FinalGravityEdit');
 end;
 
 
+{ TRecipeIngredientItemEditPresenter }
+
+procedure TRecipeIngredientItemEditPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('RawMaterial', 'RawMaterialCombo', 'RawMaterial.Name');
+  CreateSubPresenter('Percentage', 'PercentageEdit');
+end;
+
 initialization
-  TRecipeEditPresenter.RegisterBO(TRecipeBO);
+  TRecipeEditPresenter.RegisterBO(TRecipe);
+  TRecipeIngredientItemEditPresenter.RegisterBO(TRecipeIngredientItem);
   TRecipeQueryPresenter.RegisterBO(TRecipeQuery);
 
 

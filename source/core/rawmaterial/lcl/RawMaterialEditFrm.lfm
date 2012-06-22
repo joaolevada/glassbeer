@@ -1,20 +1,8 @@
 inherited RawMaterialEditForm: TRawMaterialEditForm
   Caption = 'Cadastro de materia prima'
-  inherited BottomPanel: TPanel
-    TabOrder = 1
-  end
   inherited EditPageControl: TPageControl
-    ActivePage = MainTab
-    Font.Height = -12
-    Font.Name = 'Verdana'
-    ParentFont = False
-    TabIndex = 0
-    TabOrder = 0
-    object MainTab: TTabSheet[0]
-      Caption = 'Dados principais'
-      ClientHeight = 519
-      ClientWidth = 792
-      object RemarksMemo: TMemo
+    inherited MainTab: TTabSheet
+      object RemarksMemo: TMemo[0]
         AnchorSideLeft.Control = RemarksLabel
         AnchorSideTop.Control = RemarksLabel
         AnchorSideTop.Side = asrBottom
@@ -28,7 +16,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         )
         TabOrder = 5
       end
-      object UnityCombo: TComboBox
+      object UnityCombo: TComboBox[1]
         AnchorSideLeft.Control = CodeEdit
         AnchorSideTop.Control = UnityLabel
         AnchorSideTop.Side = asrBottom
@@ -41,7 +29,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         TabOrder = 2
         Text = 'UnityCombo'
       end
-      object CodeEdit: TEdit
+      object CodeEdit: TEdit[2]
         AnchorSideLeft.Control = CodeLabel
         AnchorSideTop.Control = CodeLabel
         AnchorSideTop.Side = asrBottom
@@ -53,7 +41,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         TabOrder = 0
         Text = 'CodeEdit'
       end
-      object NameEdit: TEdit
+      object NameEdit: TEdit[3]
         AnchorSideLeft.Control = CodeEdit
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = NameLabel
@@ -67,7 +55,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         TabOrder = 1
         Text = 'NameEdit'
       end
-      object NameLabel: TLabel
+      object NameLabel: TLabel[4]
         AnchorSideLeft.Control = CodeEdit
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = MainTab
@@ -80,7 +68,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         Caption = 'Descrição'
         ParentColor = False
       end
-      object CodeLabel: TLabel
+      object CodeLabel: TLabel[5]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
         Left = 4
@@ -92,7 +80,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         Caption = 'Código'
         ParentColor = False
       end
-      object UnityLabel: TLabel
+      object UnityLabel: TLabel[6]
         AnchorSideLeft.Control = CodeEdit
         AnchorSideTop.Control = CodeEdit
         AnchorSideTop.Side = asrBottom
@@ -104,7 +92,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         Caption = 'Unidade'
         ParentColor = False
       end
-      object RemarksLabel: TLabel
+      object RemarksLabel: TLabel[7]
         AnchorSideLeft.Control = CodeEdit
         AnchorSideTop.Control = MinimumStockEdit
         AnchorSideTop.Side = asrBottom
@@ -116,7 +104,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         Caption = 'Observações'
         ParentColor = False
       end
-      object MinimumStockLabel: TLabel
+      object MinimumStockLabel: TLabel[8]
         AnchorSideLeft.Control = CodeLabel
         AnchorSideTop.Control = UnityCombo
         AnchorSideTop.Side = asrBottom
@@ -128,7 +116,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         Caption = 'Estoque mínimo'
         ParentColor = False
       end
-      object MinimumStockEdit: TEdit
+      object MinimumStockEdit: TEdit[9]
         AnchorSideLeft.Control = MinimumStockLabel
         AnchorSideTop.Control = MaximumStockLabel
         AnchorSideTop.Side = asrBottom
@@ -140,7 +128,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         TabOrder = 3
         Text = 'MinimumStockEdit'
       end
-      object MaximumStockLabel: TLabel
+      object MaximumStockLabel: TLabel[10]
         AnchorSideLeft.Control = MinimumStockEdit
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = MinimumStockLabel
@@ -152,7 +140,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         Caption = 'Estoque máximo'
         ParentColor = False
       end
-      object MaximumStockEdit: TEdit
+      object MaximumStockEdit: TEdit[11]
         AnchorSideLeft.Control = MaximumStockLabel
         AnchorSideTop.Control = MaximumStockLabel
         AnchorSideTop.Side = asrBottom

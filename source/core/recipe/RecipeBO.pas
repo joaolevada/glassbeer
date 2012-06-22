@@ -10,7 +10,8 @@ uses
   ,PressAttributes
   ,PressSubject
   ,CustomBO
-  ,BasicUserRecordDataBO;
+  ,BasicUserRecordDataBO
+  ,RawMaterialBO;
 
 type
 
@@ -55,16 +56,30 @@ type
     property Name: string read GetName write SetName;
     property Remarks: string read GetRemarks write SetRemarks;
     property Family: TBeerFamily read GetFamily write SetFamily;
-    property Ingredients: TRecipeIngredientItemParts read _Ingredients write _Ingredients;
     property WaterAmount: Double read GetWaterAmount write SetWaterAmount;
     property OriginalGravity: Double read GetOriginalGravity write SetOriginalGravity;
     property FinalGravity: Double read GetFinalGravity write SetFinalGravity;
   end;
 
+  { TRecipeIngredientItem }
+
   TRecipeIngredientItem = class(TCustomObject)
+    _RawMaterial: TRawMaterialReference;
+    _Percentage: TPressDouble;
+  private
+    function GetPercentage: Double;
+    procedure SetPercentage(const AValue: Double);
+  protected
+    class function InternalMetadataStr: string; override;
+  published
+    property Percentage: Double read GetPercentage write SetPercentage;
   end;
 
+  { TRecipeIngredientItemParts }
+
   TRecipeIngredientItemParts = class(TCustomParts)
+  public
+    class function ValidObjectClass: TPressObjectClass; override;
   end;
 
   { TRecipeQuery }
@@ -184,6 +199,33 @@ begin
     'FinalGravity: Double DisplayName="Densidade final" Min=0 Max=2;' +
     'AgeFor: Integer DisplayName="Maturação";' +
     ')';
+end;
+
+{ TRecipeIngredientItem }
+
+function TRecipeIngredientItem.GetPercentage: Double;
+begin
+  Result := _Percentage.Value;
+end;
+
+procedure TRecipeIngredientItem.SetPercentage(const AValue: Double);
+begin
+  _Percentage.Value := AValue;
+end;
+
+class function TRecipeIngredientItem.InternalMetadataStr: string;
+begin
+  Result := 'TRecipeIngredientItem IsPersistent (' +
+    'RawMaterial: Reference(TRawMaterial) DisplayName="Matéria prima";' +
+    'Percentage: Double DisplayName="Porcentagem";' +
+    ')';
+end;
+
+{ TRecipeIngredientItemParts }
+
+class function TRecipeIngredientItemParts.ValidObjectClass: TPressObjectClass;
+begin
+  Result := TRecipeIngredientItem;
 end;
 
 initialization

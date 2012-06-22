@@ -1,4 +1,241 @@
 inherited RecipeEditForm: TRecipeEditForm
   Left = 439
-  Top = 214
+  Top = 177
+  Caption = 'Cadastro de receita'
+  inherited EditPageControl: TPageControl
+    ActivePage = IngredientsTab
+    TabIndex = 1
+    inherited MainTab: TTabSheet
+      object CodeLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 45
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Código'
+        ParentColor = False
+      end
+      object NameLabel: TLabel[1]
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MainTab
+        Left = 218
+        Height = 15
+        Top = 4
+        Width = 61
+        BorderSpacing.Left = 16
+        BorderSpacing.Top = 4
+        Caption = 'Descrição'
+        ParentColor = False
+      end
+      object CodeEdit: TEdit[2]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'CodeEdit'
+      end
+      object NameEdit: TEdit[3]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 21
+        Width = 356
+        BorderSpacing.Left = 16
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'NameEdit'
+      end
+      object RemarksLabel: TLabel[4]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideTop.Control = CodeEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 83
+        BorderSpacing.Top = 8
+        Caption = 'Observações'
+        ParentColor = False
+      end
+      object RemarksMemo: TMemo[5]
+        AnchorSideLeft.Control = RemarksLabel
+        AnchorSideTop.Control = RemarksLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 72
+        Top = 68
+        Width = 356
+        BorderSpacing.Top = 2
+        Lines.Strings = (
+          'RemarksMemo'
+        )
+        TabOrder = 2
+      end
+    end
+    object IngredientsTab: TTabSheet[1]
+      Caption = 'Ingredientes'
+      ClientHeight = 519
+      ClientWidth = 792
+      object FamilyLabel: TLabel
+        AnchorSideLeft.Control = IngredientsTab
+        AnchorSideTop.Control = IngredientsTab
+        Left = 4
+        Height = 15
+        Top = 2
+        Width = 44
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Caption = 'Família'
+        ParentColor = False
+      end
+      object FamilyCombo: TComboBox
+        AnchorSideLeft.Control = FamilyLabel
+        AnchorSideTop.Control = FamilyLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 19
+        Width = 198
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 0
+        Text = 'FamilyCombo'
+      end
+      object WaterAmountLabel: TLabel
+        AnchorSideLeft.Control = FamilyCombo
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FamilyLabel
+        Left = 218
+        Height = 15
+        Top = 2
+        Width = 176
+        BorderSpacing.Left = 16
+        Caption = 'Quantidade de água (litros)'
+        ParentColor = False
+      end
+      object WaterAmountEdit: TEdit
+        AnchorSideLeft.Control = WaterAmountLabel
+        AnchorSideTop.Control = WaterAmountLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 19
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'WaterAmountEdit'
+      end
+      object AgeForEdit: TEdit
+        AnchorSideLeft.Control = AgeForLabel
+        AnchorSideTop.Control = AgeForLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 432
+        Height = 22
+        Top = 19
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'AgeForEdit'
+      end
+      object AgeForLabel: TLabel
+        AnchorSideLeft.Control = WaterAmountEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = WaterAmountLabel
+        Left = 432
+        Height = 15
+        Top = 2
+        Width = 174
+        BorderSpacing.Left = 16
+        Caption = 'Tempo de maturação (dias)'
+        ParentColor = False
+      end
+      object OriginalGravityLabel: TLabel
+        AnchorSideLeft.Control = FamilyLabel
+        AnchorSideTop.Control = FamilyCombo
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 49
+        Width = 118
+        BorderSpacing.Top = 8
+        Caption = 'Densidade original'
+        ParentColor = False
+      end
+      object OriginalGravityEdit: TEdit
+        AnchorSideLeft.Control = OriginalGravityLabel
+        AnchorSideTop.Control = OriginalGravityLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 66
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'OriginalGravityEdit'
+      end
+      object FinalGravityLabel: TLabel
+        AnchorSideLeft.Control = WaterAmountLabel
+        AnchorSideTop.Control = OriginalGravityLabel
+        Left = 218
+        Height = 15
+        Top = 49
+        Width = 98
+        Caption = 'Densidade final'
+        ParentColor = False
+      end
+      object FinalGravityEdit: TEdit
+        AnchorSideLeft.Control = WaterAmountEdit
+        AnchorSideTop.Control = FinalGravityLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 66
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 4
+        Text = 'FinalGravityEdit'
+      end
+      object IngredientsLabel: TLabel
+        AnchorSideLeft.Control = OriginalGravityEdit
+        AnchorSideTop.Control = OriginalGravityEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 96
+        Width = 82
+        BorderSpacing.Top = 8
+        Caption = 'Ingredientes'
+        ParentColor = False
+      end
+      object StringGrid1: TStringGrid
+        AnchorSideLeft.Control = IngredientsTab
+        AnchorSideTop.Control = IngredientsLabel
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = IngredientsTab
+        AnchorSideRight.Side = asrBottom
+        Left = 4
+        Height = 164
+        Top = 113
+        Width = 784
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 4
+        TabOrder = 5
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+    end
+  end
 end

@@ -25,7 +25,7 @@ object CustomEditForm: TCustomEditForm
     Font.Quality = fqDraft
     ParentColor = False
     ParentFont = False
-    TabOrder = 0
+    TabOrder = 1
     object SaveButton: TBitBtn
       AnchorSideTop.Control = BottomPanel
       AnchorSideRight.Control = CancelButton
@@ -318,12 +318,20 @@ object CustomEditForm: TCustomEditForm
       TabOrder = 1
     end
   end
-  object EditPageControl: TPageControl
+  object EditPageControl: TPageControl  	
+    Font.Height = -12
+    Font.Name = 'Verdana'
+    ParentFont = False
     Left = 0
     Height = 546
     Top = 0
     Width = 800
+    ActivePage = MainTab
     Align = alClient
-    TabOrder = 1
+    TabIndex = 0
+    TabOrder = 0
+    object MainTab: TTabSheet
+      Caption = 'Dados principais'
+    end
   end
 end

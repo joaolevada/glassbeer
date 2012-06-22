@@ -26,7 +26,7 @@ uses
 {$R *.lfm}
 
 initialization
-  PressCXLForm(TRecipeQueryForm, TRecipeQueryPresenter);
+  PressXCLForm(TRecipeQueryPresenter, TRecipeQueryForm);
 
 end.
 
