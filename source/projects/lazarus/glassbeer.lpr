@@ -25,7 +25,7 @@ uses
   RecipeMVP, 
   RecipeQueryFrm, 
   RecipeEditFrm,
-	RecipeIngredientItemEditFrm;
+	RecipeIngredientItemEditFrm, FermenterBO;
 
 {$R *.res}
 
