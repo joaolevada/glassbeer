@@ -55,7 +55,7 @@ begin
   CreateSubPresenter('Remarks', 'RemarksMemo');
   CreateSubPresenter('Family', 'FamilyCombo');
   CreateSubPresenter('Ingredients', 'IngredientsGrid');
-  CreateSubPresenter('WaterAmount', 'WaterAmountEdit');
+  //CreateSubPresenter('WaterAmount', 'WaterAmountEdit');
   CreateSubPresenter('OriginalGravity', 'OriginalGravityEdit');
   CreateSubPresenter('FinalGravity', 'FinalGravityEdit');
 end;

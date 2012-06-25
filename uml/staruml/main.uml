@@ -4564,8 +4564,8 @@
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">464</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">312</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">143</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">69</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">494</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">82</XPD:ATTR>
 <XPD:REF name="Model">wmfSqDuQbUKcPQtB05CaEwAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="XPBqmc5SDEmnHtdQlfzjtgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="Qd1bvVm0tkWUf3zEXB50LAAA">
@@ -4823,7 +4823,7 @@
 <XPD:OBJ name="OwnedViews[8]" type="UMLAssociationView" guid="eDKxKmmXBk6o7c+eeZTUlQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">547,312;583,210</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">681,312;606,210</XPD:ATTR>
 <XPD:REF name="Model">jCeBXRunV0CUWr+jK0e5cAAA</XPD:REF>
 <XPD:REF name="Head">NZYp81XBUE+fQaf46VLU3AAA</XPD:REF>
 <XPD:REF name="Tail">9V/QeraUak275Lsc2pb/4wAA</XPD:REF>
@@ -4907,7 +4907,7 @@
 <XPD:OBJ name="OwnedViews[9]" type="UMLAssociationView" guid="1sI4Fe3ZM06O+JBIJjrXuAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">606,325;722,290</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">750,312;771,290</XPD:ATTR>
 <XPD:REF name="Model">/1ifoXbxeUiNvXKk8QafnwAA</XPD:REF>
 <XPD:REF name="Head">og3XgSu4C0arsKvF8XQT4QAA</XPD:REF>
 <XPD:REF name="Tail">9V/QeraUak275Lsc2pb/4wAA</XPD:REF>
@@ -7519,13 +7519,17 @@
 <XPD:REF name="Associations[5]">fbjtWCFGqECe7+sOjg0apQAA</XPD:REF>
 <XPD:REF name="Associations[6]">UVqVF7nvMEKJn2Z5eRsHzwAA</XPD:REF>
 <XPD:REF name="Associations[7]">xp1H9/oscky2DTmfzpbo1AAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">2</XPD:ATTR>
+<XPD:ATTR name="#Attributes" type="integer">3</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="Aj3nzopfMkGBc0PpQWCJKQAA">
 <XPD:ATTR name="Name" type="string">RawMaterial</XPD:ATTR>
 <XPD:REF name="Owner">wmfSqDuQbUKcPQtB05CaEwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="wV9e6uAZYk+SSl8+Ry+PpwAA">
 <XPD:ATTR name="Name" type="string">Percentage</XPD:ATTR>
+<XPD:REF name="Owner">wmfSqDuQbUKcPQtB05CaEwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="kj+z6B8ySEKLulsU/YhYOgAA">
+<XPD:ATTR name="Name" type="string">Kind (evaluate this attribute. will be necessary to determine bitterness and abv)</XPD:ATTR>
 <XPD:REF name="Owner">wmfSqDuQbUKcPQtB05CaEwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
