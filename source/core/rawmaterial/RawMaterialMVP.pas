@@ -13,14 +13,14 @@ type
   { TRawMaterialEditPresenter }
 
   TRawMaterialEditPresenter = class(TCustomEditPresenter)
-  public
+  protected
     procedure InitPresenter; override;
   end;
 
   { TRawMaterialQueryPresenter }
 
   TRawMaterialQueryPresenter = class(TCustomQueryPresenter)
-  public
+  protected
     procedure InitPresenter; override;
     function InternalQueryItemsDisplayNames: string; override;
   end;

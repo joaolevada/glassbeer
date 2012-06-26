@@ -18,6 +18,12 @@ object MainForm: TMainForm
       object RecipeMenu: TMenuItem
         Caption = 'Receitas...'
       end
+      object FermenterMenu: TMenuItem
+        Caption = 'Fermentadores...'
+      end
+      object LocationMenu: TMenuItem
+        Caption = 'Localizações...'
+      end
       object MenuItem1: TMenuItem
         Caption = '-'
       end

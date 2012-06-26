@@ -3,6 +3,8 @@ inherited RawMaterialQueryForm: TRawMaterialQueryForm
   inherited SearchPageControl: TPageControl
     inherited DefaultTab: TTabSheet
       Caption = 'Busca por descrição'
+      ClientHeight = 50
+      ClientWidth = 792
       inherited SearchButton: TBitBtn
         AnchorSideLeft.Control = NameEdit
         AnchorSideLeft.Side = asrBottom
