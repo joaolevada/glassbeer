@@ -1,8 +1,12 @@
 inherited RecipeQueryForm: TRecipeQueryForm
+  Left = 399
+  Top = 177
+  Caption = 'Arquivo de receitas'
   inherited SearchPageControl: TPageControl
-    ActivePage = nil
-    TabIndex = -1
     inherited DefaultTab: TTabSheet
+      Caption = 'Busca por descrição'
+      ClientHeight = 50
+      ClientWidth = 792
       inherited SearchButton: TBitBtn
         AnchorSideLeft.Control = NameEdit
         AnchorSideLeft.Side = asrBottom

@@ -14,12 +14,16 @@ type
 
   TRecipeEditForm = class(TCustomEditForm)
     CodeEdit: TEdit;
+    PercentageEdit: TEdit;
+    PercentageLabel: TLabel;
+    RawMaterialCombo: TComboBox;
     FinalGravityEdit: TEdit;
     FinalGravityLabel: TLabel;
     IngredientsLabel: TLabel;
+    RawMaterialLabel: TLabel;
     OriginalGravityEdit: TEdit;
     OriginalGravityLabel: TLabel;
-    StringGrid1: TStringGrid;
+    IngredientsGrid: TStringGrid;
     WaterAmountEdit: TEdit;
     CodeLabel: TLabel;
     AgeForEdit: TEdit;

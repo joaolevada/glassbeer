@@ -1,2 +1,60 @@
 inherited RecipeIngredientItemEditForm: TRecipeIngredientItemEditForm
+  Caption = 'Item da receita'
+  inherited EditPageControl: TPageControl
+    inherited MainTab: TTabSheet
+      object RawMaterialLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 2
+        Width = 87
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Caption = 'Matéria prima'
+        ParentColor = False
+      end
+      object RawMaterialCombo: TComboBox[1]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = RawMaterialLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 19
+        Width = 198
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 0
+        Text = 'RawMaterialCombo'
+      end
+      object PercentageLabel: TLabel[2]
+        AnchorSideLeft.Control = RawMaterialCombo
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MainTab
+        Left = 218
+        Height = 15
+        Top = 2
+        Width = 84
+        BorderSpacing.Left = 16
+        BorderSpacing.Top = 2
+        Caption = 'Porcentagem'
+        ParentColor = False
+      end
+      object PercentageEdit: TEdit[3]
+        AnchorSideLeft.Control = RawMaterialCombo
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = PercentageLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 19
+        Width = 198
+        BorderSpacing.Left = 16
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'PercentageEdit'
+      end
+    end
+  end
 end

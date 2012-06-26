@@ -6,6 +6,8 @@ inherited RecipeEditForm: TRecipeEditForm
     ActivePage = IngredientsTab
     TabIndex = 1
     inherited MainTab: TTabSheet
+      ClientHeight = 0
+      ClientWidth = 0
       object CodeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
@@ -218,7 +220,7 @@ inherited RecipeEditForm: TRecipeEditForm
         Caption = 'Ingredientes'
         ParentColor = False
       end
-      object StringGrid1: TStringGrid
+      object IngredientsGrid: TStringGrid
         AnchorSideLeft.Control = IngredientsTab
         AnchorSideTop.Control = IngredientsLabel
         AnchorSideTop.Side = asrBottom
@@ -235,6 +237,59 @@ inherited RecipeEditForm: TRecipeEditForm
         TabOrder = 5
         TitleFont.Height = -12
         TitleFont.Name = 'Verdana'
+      end
+      object RawMaterialLabel: TLabel
+        AnchorSideLeft.Control = IngredientsTab
+        AnchorSideTop.Control = IngredientsGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 285
+        Width = 127
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Ingr.: matéria prima'
+        ParentColor = False
+      end
+      object RawMaterialCombo: TComboBox
+        AnchorSideLeft.Control = IngredientsTab
+        AnchorSideTop.Control = RawMaterialLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 302
+        Width = 198
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 6
+      end
+      object PercentageLabel: TLabel
+        AnchorSideLeft.Control = RawMaterialCombo
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = IngredientsGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 15
+        Top = 285
+        Width = 123
+        BorderSpacing.Left = 16
+        BorderSpacing.Top = 8
+        Caption = 'Ingr.: porcentagem'
+        ParentColor = False
+      end
+      object PercentageEdit: TEdit
+        AnchorSideLeft.Control = RawMaterialCombo
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = PercentageLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 302
+        Width = 198
+        BorderSpacing.Left = 16
+        BorderSpacing.Top = 2
+        TabOrder = 7
       end
     end
   end

@@ -22,6 +22,8 @@ type
   TRecipeQueryPresenter = class(TCustomQueryPresenter)
   protected
     procedure InitPresenter; override;
+  public
+    function InternalQueryItemsDisplayNames: string; override;
   end;
 
   { TRecipeIngredientItemPresenter }
@@ -34,7 +36,8 @@ type
 implementation
 
 uses
-  RecipeBO;
+  RecipeBO
+  ,PressMVPPresenter;
 
 { TRecipeQueryPresenter }
 
@@ -44,18 +47,36 @@ begin
   CreateSubPresenter('Name', 'NameEdit');
 end;
 
+function TRecipeQueryPresenter.InternalQueryItemsDisplayNames: string;
+begin
+  Result := 'BasicUserRecordData.Code(198, "Código");' +
+    'BasicUserRecordData.Name(356, "Descrição");' +
+    'Family(198, "Família");' +
+    'AgeFor(198, "Maturação (dias)")';
+end;
+
 { TRecipeEditPresenter }
 
 procedure TRecipeEditPresenter.InitPresenter;
+var
+  VIngredientsPresenter: TPressMVPItemsPresenter;
+  VIngredientPresenter: TPressMVPFormPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('AgeFor', 'AgeForEdit');
-  CreateSubPresenter('Code', 'CodeEdit');
-  CreateSubPresenter('Name', 'NameEdit');
-  CreateSubPresenter('Remarks', 'RemarksMemo');
+  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
+  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
+  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
   CreateSubPresenter('Family', 'FamilyCombo');
-  CreateSubPresenter('Ingredients', 'IngredientsGrid');
-  //CreateSubPresenter('WaterAmount', 'WaterAmountEdit');
+  VIngredientsPresenter := CreateSubPresenter('Ingredients',
+    'IngredientsGrid',
+    'RawMaterial.BasicUserRecordData.Name(356, "Matéria prima");' +
+    'Percentage(198,"Porcentagem")') as TPressMVPItemsPresenter;
+  VIngredientPresenter := CreateDetailPresenter(VIngredientsPresenter);
+  VIngredientPresenter.CreateSubPresenter('RawMaterial', 'RawMaterialCombo',
+    'BasicUserRecordData.Name');
+  VIngredientPresenter.CreateSubPresenter('Percentage', 'PercentageEdit');
+  CreateSubPresenter('WaterAmount', 'WaterAmountEdit');
   CreateSubPresenter('OriginalGravity', 'OriginalGravityEdit');
   CreateSubPresenter('FinalGravity', 'FinalGravityEdit');
 end;
@@ -66,7 +87,8 @@ end;
 procedure TRecipeIngredientItemEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('RawMaterial', 'RawMaterialCombo', 'RawMaterial.Name');
+  CreateSubPresenter('RawMaterial', 'RawMaterialCombo',
+    'BasicUserRecordData.Name');
   CreateSubPresenter('Percentage', 'PercentageEdit');
 end;
 

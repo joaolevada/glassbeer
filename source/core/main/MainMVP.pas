@@ -37,7 +37,8 @@ uses
   ,Forms
   ,PressOPF
   ,windows
-  ,PressUser;
+  ,PressUser
+  ,RecipeMVP;
 
 { TMainFormPresenter }
 
@@ -47,6 +48,7 @@ begin
   BindCommand(TPressMVPCloseApplicationCommand, 'ExitMenu');
   BindCommand(TMainConnectorCommand, 'MetadataMenu');
   BindPresenter(TRawMaterialQueryPresenter, 'RawMaterialMenu');
+  BindPresenter(TRecipeQueryPresenter, 'RecipeMenu');
   { sample commands, to be implemented very soon... }
   //BindPresenter(TCargoQueryPresenter, 'Cargos1');
   //BindCommand(TProprietarioSetupCommand2, 'Proprietario1');
