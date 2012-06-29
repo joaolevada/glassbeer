@@ -1,0 +1,239 @@
+inherited FermenterEditForm: TFermenterEditForm
+  Left = 313
+  Top = 195
+  Caption = 'Cadastro de fermentador'
+  inherited EditPageControl: TPageControl
+    inherited MainTab: TTabSheet
+      ClientHeight = 519
+      ClientWidth = 792
+      object CodeLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 45
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Código'
+        ParentColor = False
+      end
+      object CodeEdit: TEdit[1]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'CodeEdit'
+      end
+      object NameLabel: TLabel[2]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = CodeLabel
+        Left = 218
+        Height = 15
+        Top = 4
+        Width = 37
+        BorderSpacing.Left = 16
+        Caption = 'Nome'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[3]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 21
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'NameEdit'
+      end
+      object FullCapacityLabel: TLabel[4]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 8
+        Height = 15
+        Top = 51
+        Width = 108
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Capacidade total'
+        ParentColor = False
+      end
+      object FullCapacityEdit: TEdit[5]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = FullCapacityLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'FullCapacityEdit'
+      end
+      object HeadSpaceLabel: TLabel[6]
+        AnchorSideLeft.Control = FullCapacityEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FullCapacityLabel
+        Left = 218
+        Height = 15
+        Top = 51
+        Width = 102
+        BorderSpacing.Left = 16
+        Caption = 'Head space (%)'
+        ParentColor = False
+      end
+      object HeadSpaceEdit: TEdit[7]
+        AnchorSideLeft.Control = HeadSpaceLabel
+        AnchorSideTop.Control = HeadSpaceLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'HeadSpaceEdit'
+      end
+      object UtilCapacityLabel: TLabel[8]
+        AnchorSideLeft.Control = HeadSpaceEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = HeadSpaceLabel
+        Left = 432
+        Height = 15
+        Top = 51
+        Width = 98
+        BorderSpacing.Left = 16
+        Caption = 'Capacidade útil'
+        ParentColor = False
+      end
+      object UtilCapacityEdit: TEdit[9]
+        AnchorSideLeft.Control = UtilCapacityLabel
+        AnchorSideTop.Control = UtilCapacityLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 432
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 4
+        Text = 'UtilCapacityEdit'
+      end
+      object LocationLabel: TLabel[10]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CurrentVolumeEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 8
+        Height = 15
+        Top = 145
+        Width = 73
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Localização'
+        ParentColor = False
+      end
+      object LocationCombo: TComboBox[11]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = LocationLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 162
+        Width = 356
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 7
+        Text = 'LocationCombo'
+      end
+      object CurrentVolumeLabel: TLabel[12]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = FullCapacityEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 8
+        Height = 15
+        Top = 98
+        Width = 83
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Volume atual'
+        ParentColor = False
+      end
+      object CurrentVolumeEdit: TEdit[13]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CurrentVolumeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 115
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 5
+        Text = 'CurrentVolumeEdit'
+      end
+      object StatusLabel: TLabel[14]
+        AnchorSideLeft.Control = HeadSpaceEdit
+        AnchorSideTop.Control = HeadSpaceEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 15
+        Top = 98
+        Width = 42
+        BorderSpacing.Top = 8
+        Caption = 'Status'
+        ParentColor = False
+      end
+      object StatusCombo: TComboBox[15]
+        AnchorSideLeft.Control = StatusLabel
+        AnchorSideTop.Control = StatusLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 115
+        Width = 198
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 6
+        Text = 'StatusCombo'
+      end
+      object RemarksLabel: TLabel[16]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = LocationCombo
+        AnchorSideTop.Side = asrBottom
+        Left = 8
+        Height = 15
+        Top = 192
+        Width = 83
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Observações'
+        ParentColor = False
+      end
+      object RemarksMemo: TMemo[17]
+        AnchorSideLeft.Control = RemarksLabel
+        AnchorSideTop.Control = RemarksLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 8
+        Height = 72
+        Top = 209
+        Width = 356
+        BorderSpacing.Top = 2
+        Lines.Strings = (
+          'RemarksMemo'
+        )
+        TabOrder = 8
+      end
+    end
+  end
+end

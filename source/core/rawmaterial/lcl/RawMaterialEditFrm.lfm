@@ -2,6 +2,8 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
   Caption = 'Cadastro de materia prima'
   inherited EditPageControl: TPageControl
     inherited MainTab: TTabSheet
+      ClientHeight = 519
+      ClientWidth = 792
       object RemarksMemo: TMemo[0]
         AnchorSideLeft.Control = RemarksLabel
         AnchorSideTop.Control = RemarksLabel

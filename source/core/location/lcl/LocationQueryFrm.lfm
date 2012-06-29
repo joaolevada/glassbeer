@@ -1,0 +1,34 @@
+inherited LocationQueryForm: TLocationQueryForm
+  Caption = 'Localização'
+  inherited SearchPageControl: TPageControl
+    inherited DefaultTab: TTabSheet
+      Caption = 'Busca por nome'
+      ClientHeight = 50
+      ClientWidth = 792
+      object NameLabel: TLabel[1]
+        AnchorSideLeft.Control = DefaultTab
+        AnchorSideTop.Control = DefaultTab
+        Left = 4
+        Height = 17
+        Top = 2
+        Width = 122
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Caption = 'Procurar por nome'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[2]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 24
+        Top = 21
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'NameEdit'
+      end
+    end
+  end
+end

@@ -7,25 +7,12 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms,
-  CustomBO,
-  BasicUserRecordDataBO,
-  MashBO,
-  RecipeBO,
-  RawMaterialBO,
-  CustomMVP,
-  MainMVP,
-  Brokers,
-  RawMaterialMVP,
-  CustomEditFrm,
-  CustomQueryFrm,
-  MainFrm,
-  RawMaterialQueryFrm,
-  RawMaterialEditFrm, 
-  RecipeMVP, 
-  RecipeQueryFrm, 
-  RecipeEditFrm,
-	RecipeIngredientItemEditFrm, FermenterBO;
+  Forms, CustomBO, BasicUserRecordDataBO, MashBO, RecipeBO, RawMaterialBO,
+  CustomMVP, MainMVP, Brokers, RawMaterialMVP, CustomEditFrm, CustomQueryFrm,
+  MainFrm, RawMaterialQueryFrm, RawMaterialEditFrm, RecipeMVP, RecipeQueryFrm,
+  RecipeEditFrm, RecipeIngredientItemEditFrm, FermenterBO, FermenterMVP,
+  FementerQueryFrm, FermenterEditFrm, LocationBO, LocationMVP, LocationQueryFrm,
+  LocationEditFrm;
 
 {$R *.res}
 

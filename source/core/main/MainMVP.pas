@@ -38,7 +38,9 @@ uses
   ,PressOPF
   ,windows
   ,PressUser
-  ,RecipeMVP;
+  ,RecipeMVP
+  ,FermenterMVP
+  ,LocationMVP;
 
 { TMainFormPresenter }
 
@@ -49,8 +51,9 @@ begin
   BindCommand(TMainConnectorCommand, 'MetadataMenu');
   BindPresenter(TRawMaterialQueryPresenter, 'RawMaterialMenu');
   BindPresenter(TRecipeQueryPresenter, 'RecipeMenu');
+  BindPresenter(TFermenterQueryPresenter, 'FermenterMenu');
+  BindPresenter(TLocationQueryPresenter, 'LocationMenu');
   { sample commands, to be implemented very soon... }
-  //BindPresenter(TCargoQueryPresenter, 'Cargos1');
   //BindCommand(TProprietarioSetupCommand2, 'Proprietario1');
   PressUserData.Logon('', '');
 end;
