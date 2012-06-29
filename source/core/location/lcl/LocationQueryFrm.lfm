@@ -5,6 +5,16 @@ inherited LocationQueryForm: TLocationQueryForm
       Caption = 'Busca por nome'
       ClientHeight = 50
       ClientWidth = 792
+      inherited SearchButton: TBitBtn
+        AnchorSideLeft.Control = NameEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideBottom.Control = NameEdit
+        AnchorSideBottom.Side = asrBottom
+        Left = 364
+        Top = 3
+        Anchors = [akLeft, akBottom]
+        BorderSpacing.Left = 4
+      end
       object NameLabel: TLabel[1]
         AnchorSideLeft.Control = DefaultTab
         AnchorSideTop.Control = DefaultTab

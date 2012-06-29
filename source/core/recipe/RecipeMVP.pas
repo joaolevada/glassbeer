@@ -22,7 +22,6 @@ type
   TRecipeQueryPresenter = class(TCustomQueryPresenter)
   protected
     procedure InitPresenter; override;
-  public
     function InternalQueryItemsDisplayNames: string; override;
   end;
 

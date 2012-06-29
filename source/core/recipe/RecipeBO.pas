@@ -190,10 +190,10 @@ end;
 
 class function TRecipe.InternalMetadataStr: string;
 begin
-  Result := 'TRecipe IsPersistent (' +
+  Result := 'TRecipe IsPersistent PersistentName="Recipe" (' +
     'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
     'Family: Enum(TBeerFamily) DisplayName="Família";' +
-    'Ingredients: TRecipeIngredientItemParts;' +
+    'Ingredients: TRecipeIngredientItemParts ShortName="Ingrds";' +
     'WaterAmount: Double DisplayName="Volume de água (litros)";' +
     'OriginalGravity: Double DisplayName="Densidade original" Min=0 Max=2;' +
     'FinalGravity: Double DisplayName="Densidade final" Min=0 Max=2;' +
@@ -215,7 +215,7 @@ end;
 
 class function TRecipeIngredientItem.InternalMetadataStr: string;
 begin
-  Result := 'TRecipeIngredientItem IsPersistent (' +
+  Result := 'TRecipeIngredientItem IsPersistent PersistentName="RecIngItem" (' +
     'RawMaterial: Reference(TRawMaterial) DisplayName="Matéria prima";' +
     'Percentage: Double DisplayName="Porcentagem";' +
     ')';

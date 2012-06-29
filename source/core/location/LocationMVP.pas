@@ -22,6 +22,7 @@ type
   TLocationQueryPresenter = class(TCustomQueryPresenter)
   protected
     procedure InitPresenter; override;
+    function InternalQueryItemsDisplayNames: string; override;
   end;
 
 
@@ -33,6 +34,12 @@ procedure TLocationQueryPresenter.InitPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('Name', 'NameEdit');
+end;
+
+function TLocationQueryPresenter.InternalQueryItemsDisplayNames: string;
+begin
+  Result := 'BasicUserRecordData.Code(198, "Código");' +
+    'BasicUserRecordData.Name(356, "Nome")';
 end;
 
 { TLocationEditPresenter }

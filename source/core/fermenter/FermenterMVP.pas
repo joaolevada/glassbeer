@@ -22,6 +22,7 @@ type
   TFermenterQueryPresenter = class(TCustomQueryPresenter)
   protected
     procedure InitPresenter; override;
+    function InternalQueryItemsDisplayNames: string; override;
   end;
 
 
@@ -33,6 +34,14 @@ procedure TFermenterQueryPresenter.InitPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('Name', 'NameEdit');
+end;
+
+function TFermenterQueryPresenter.InternalQueryItemsDisplayNames: string;
+begin
+  Result := 'BasicUserRecordData.Code(198, "Código");' +
+    'BasicUserRecordData.Name(356, "Nome");' +
+    'UtilCapacity(99, "Capacidade útil");' +
+    'Status(99, "Status")';
 end;
 
 { TFermenterEditPresenter }
