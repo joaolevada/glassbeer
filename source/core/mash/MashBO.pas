@@ -33,14 +33,17 @@ type
     _Amount: TPressDouble;
     _Fermenters: TMashFermenterItemParts;
   private
+    function GetAmount: Double;
     function GetAverageFinalGravity: Double;
     function GetAverageOriginalGravity: Double;
+    procedure SetAmount(const AValue: Double);
     procedure SetAverageFinalGravity(const AValue: Double);
     procedure SetAverageOriginalGravity(const AValue: Double);
   protected
     class function InternalMetadataStr: string; override;
     procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
   published
+    property Amount: Double read GetAmount write SetAmount;
     property AverageFinalGravity: Double read GetAverageFinalGravity
       write SetAverageFinalGravity;
     property AverageOriginalGravity: Double read GetAverageOriginalGravity
@@ -77,12 +80,15 @@ type
     _MashIngredients: TMashIngredientItemParts;
   private
     function GetOriginalGravity: Double;
+    function GetVolume: Double;
     procedure SetOriginalGravity(const AValue: Double);
+    procedure SetVolume(const AValue: Double);
   protected
     class function InternalMetadataStr: string; override;
   published
     property OriginalGravity: Double read GetOriginalGravity
       write SetOriginalGravity;
+    property Volume: Double read GetVolume write SetVolume;
   end;
 
   { TMashFermenterItem }
@@ -121,8 +127,25 @@ type
     class function ValidObjectClass: TPressObjectClass; override;
   end;
 
+  { TMashQuery }
+
+  TMashQuery = class(TCustomQuery)
+    _Name: TPressAnsiString;
+  protected
+    class function InternalMetadataStr: string; override;
+  end;
+
 
 implementation
+
+{ TMashQuery }
+
+class function TMashQuery.InternalMetadataStr: string;
+begin
+  Result := 'TMashQuery(TMash) (' +
+    'Name: String MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    ')';
+end;
 
 { TMashFermenterItemReferences }
 
@@ -190,9 +213,19 @@ begin
   Result := _OriginalGravity.Value;
 end;
 
+function TMashItem.GetVolume: Double;
+begin
+  Result := _Volume.Value;
+end;
+
 procedure TMashItem.SetOriginalGravity(const AValue: Double);
 begin
   _OriginalGravity.Value := AValue;
+end;
+
+procedure TMashItem.SetVolume(const AValue: Double);
+begin
+  _Volume.Value := AValue;;
 end;
 
 class function TMashItem.InternalMetadataStr: string;
@@ -207,6 +240,11 @@ end;
 
 { TMash }
 
+function TMash.GetAmount: Double;
+begin
+  Result := _Amount.Value;
+end;
+
 function TMash.GetAverageFinalGravity: Double;
 begin
   Result := _FinalGravity.Value;
@@ -215,6 +253,11 @@ end;
 function TMash.GetAverageOriginalGravity: Double;
 begin
   Result := _AverageOriginalGravity.Value;
+end;
+
+procedure TMash.SetAmount(const AValue: Double);
+begin
+  _Amount.Value := AValue;
 end;
 
 procedure TMash.SetAverageFinalGravity(const AValue: Double);
@@ -245,7 +288,14 @@ var
   VSum: Double;
   I: Integer;
 begin
-  if AAttribute = _AverageOriginalGravity then
+  if AAttribute = _Amount then
+  begin
+    VSum := 0;
+    for I := 0 to Pred(_MashItems.Count) do
+      VSum += (_MashItems[I] as TMashItem).Volume;
+    Amount := VSum;
+  end
+  else if AAttribute = _AverageOriginalGravity then
   begin
     VSum := 0;
     for I := 0 to Pred(_MashItems.Count) do
@@ -264,6 +314,7 @@ initialization
   TMashItem.RegisterClass;
   TMashItemParts.RegisterAttribute;
   TMashFermenterItemParts.RegisterAttribute;
+  TMashQuery.RegisterClass;
   TMashReference.RegisterAttribute;
 
 finalization
@@ -275,6 +326,7 @@ finalization
   TMashItem.UnregisterClass;
   TMashItemParts.UnregisterAttribute;
   TMashFermenterItemParts.UnregisterAttribute;
+  TMashQuery.UnregisterClass;
   TMashReference.UnregisterAttribute;
 
 end.

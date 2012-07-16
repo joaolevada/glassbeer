@@ -1,12 +1,8 @@
-inherited FermenterQueryForm: TFermenterQueryForm
-  Left = 355
-  Top = 189
-  Caption = 'Fermentador'
-  inherited BottomPanel: TPanel
-    TabOrder = 2
-  end
+inherited MashQueryForm: TMashQueryForm
+  Left = 361
+  Top = 254
+  Caption = 'Mingau :-)'
   inherited SearchPageControl: TPageControl
-    TabOrder = 0
     inherited DefaultTab: TTabSheet
       Caption = 'Busca por nome'
       ClientHeight = 50
@@ -14,14 +10,12 @@ inherited FermenterQueryForm: TFermenterQueryForm
       inherited SearchButton: TBitBtn
         AnchorSideLeft.Control = NameEdit
         AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = nil
         AnchorSideBottom.Control = NameEdit
         AnchorSideBottom.Side = asrBottom
         Left = 364
         Top = 3
         Anchors = [akLeft, akBottom]
         BorderSpacing.Left = 4
-        TabOrder = 1
       end
       object NameLabel: TLabel[1]
         AnchorSideLeft.Control = DefaultTab
@@ -44,12 +38,9 @@ inherited FermenterQueryForm: TFermenterQueryForm
         Top = 21
         Width = 356
         BorderSpacing.Top = 2
-        TabOrder = 0
+        TabOrder = 1
         Text = 'NameEdit'
       end
     end
-  end
-  inherited QueryStringGrid: TStringGrid
-    TabOrder = 1
   end
 end

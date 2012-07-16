@@ -4,6 +4,8 @@ inherited FermenterEditForm: TFermenterEditForm
   Caption = 'Cadastro de fermentador'
   inherited EditPageControl: TPageControl
     inherited MainTab: TTabSheet
+      ClientHeight = 519
+      ClientWidth = 792
       object CodeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab

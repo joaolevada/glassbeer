@@ -1,0 +1,234 @@
+inherited MashEditForm: TMashEditForm
+  Caption = 'Cadastro de mingau'
+  inherited EditPageControl: TPageControl
+    inherited MainTab: TTabSheet
+      ClientHeight = 519
+      ClientWidth = 792
+      object CodeLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 45
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Código'
+        ParentColor = False
+      end
+      object CodeEdit: TEdit[1]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'CodeEdit'
+      end
+      object NameLabel: TLabel[2]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = CodeLabel
+        Left = 218
+        Height = 15
+        Top = 4
+        Width = 37
+        BorderSpacing.Left = 16
+        Caption = 'Nome'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[3]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 21
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'NameEdit'
+      end
+      object RemaksLabel: TLabel[4]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = CodeEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 83
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Observações'
+        ParentColor = False
+      end
+      object RemarksMemo: TMemo[5]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = RemaksLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 72
+        Top = 68
+        Width = 356
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Lines.Strings = (
+          'RemarksMemo'
+        )
+        TabOrder = 2
+      end
+    end
+    object MashItemsTab: TTabSheet[1]
+      Caption = 'Composição do mosto'
+      ClientHeight = 519
+      ClientWidth = 792
+      object MashItemsLabel: TLabel
+        AnchorSideLeft.Control = MashItemsTab
+        AnchorSideTop.Control = MashItemsTab
+        Left = 4
+        Height = 15
+        Top = 2
+        Width = 97
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Caption = 'Itens do mosto'
+        ParentColor = False
+      end
+      object MashItemsGrid: TStringGrid
+        AnchorSideLeft.Control = MashItemsLabel
+        AnchorSideTop.Control = MashItemsLabel
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = MashItemsTab
+        AnchorSideRight.Side = asrBottom
+        Left = 4
+        Height = 150
+        Top = 19
+        Width = 784
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 4
+        TabOrder = 0
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+      object AverageOriginalGravityLabel: TLabel
+        AnchorSideLeft.Control = MashItemsTab
+        AnchorSideTop.Control = MashItemsGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 177
+        Width = 178
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Média de densidade original'
+        ParentColor = False
+      end
+      object AverageOriginalGravityEdit: TEdit
+        AnchorSideLeft.Control = AverageOriginalGravityLabel
+        AnchorSideTop.Control = AverageOriginalGravityLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 194
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 1
+        Text = 'AverageOriginalGravityEdit'
+      end
+      object FinalGravityLabel: TLabel
+        AnchorSideLeft.Control = AverageOriginalGravityEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MashItemsGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 15
+        Top = 177
+        Width = 98
+        BorderSpacing.Left = 16
+        BorderSpacing.Top = 8
+        Caption = 'Densidade final'
+        ParentColor = False
+      end
+      object FinalGravityEdit: TEdit
+        AnchorSideLeft.Control = FinalGravityLabel
+        AnchorSideTop.Control = FinalGravityLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 194
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'FinalGravityEdit'
+      end
+      object AmountLabel: TLabel
+        AnchorSideLeft.Control = FinalGravityEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MashItemsGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 432
+        Height = 15
+        Top = 177
+        Width = 80
+        BorderSpacing.Left = 16
+        BorderSpacing.Top = 8
+        Caption = 'Volume total'
+        ParentColor = False
+      end
+      object AmountEdit: TEdit
+        AnchorSideLeft.Control = AmountLabel
+        AnchorSideTop.Control = AmountLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 432
+        Height = 22
+        Top = 194
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 3
+        Text = 'AmountEdit'
+      end
+    end
+    object FermentersTab: TTabSheet[2]
+      Caption = 'Fermentadores'
+      ClientHeight = 519
+      ClientWidth = 792
+      object FermentersLabel: TLabel
+        AnchorSideLeft.Control = FermentersTab
+        AnchorSideTop.Control = FermentersTab
+        Left = 4
+        Height = 15
+        Top = 2
+        Width = 97
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Caption = 'Fermentadores'
+        ParentColor = False
+      end
+      object FermentersGrid: TStringGrid
+        AnchorSideLeft.Control = FermentersLabel
+        AnchorSideTop.Control = FermentersLabel
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = FermentersTab
+        AnchorSideRight.Side = asrBottom
+        Left = 4
+        Height = 150
+        Top = 19
+        Width = 784
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 4
+        TabOrder = 0
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+    end
+  end
+end
