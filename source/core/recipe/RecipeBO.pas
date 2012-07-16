@@ -93,8 +93,22 @@ type
   TBeerStyleReferences = class(TCustomReferences)
   end;
 
+  { TRecipeReference }
+
+  TRecipeReference = class(TCustomReference)
+  public
+    class function ValidObjectClass: TPressObjectClass; override;
+  end;
+
 
 implementation
+
+{ TRecipeReference }
+
+class function TRecipeReference.ValidObjectClass: TPressObjectClass;
+begin
+  Result := TRecipe;
+end;
 
 { TRecipeQuery }
 
@@ -239,6 +253,7 @@ initialization
   TRecipeIngredientItem.RegisterClass;
   TRecipeIngredientItemParts.RegisterAttribute;
   TRecipeQuery.RegisterClass;
+  TRecipeReference.RegisterAttribute;
 
 
 finalization
@@ -246,6 +261,7 @@ finalization
   TRecipeIngredientItem.UnregisterClass;
   TRecipeIngredientItemParts.UnregisterAttribute;
   TRecipeQuery.UnregisterClass;
+  TRecipeReference.UnregisterAttribute;
 
 end.
 
