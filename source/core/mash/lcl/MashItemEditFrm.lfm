@@ -1,0 +1,114 @@
+inherited MashItemEditForm: TMashItemEditForm
+  Caption = 'Item do mosto'
+  inherited EditPageControl: TPageControl
+    inherited MainTab: TTabSheet
+      ClientHeight = 519
+      ClientWidth = 792
+      object RecipeLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 2
+        Width = 47
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Caption = 'Receita'
+        ParentColor = False
+      end
+      object RecipeCombo: TComboBox[1]
+        AnchorSideLeft.Control = RecipeLabel
+        AnchorSideTop.Control = RecipeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 19
+        Width = 356
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 0
+        Text = 'RecipeCombo'
+      end
+      object VolumeLabel: TLabel[2]
+        AnchorSideLeft.Control = RecipeCombo
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = RecipeLabel
+        Left = 376
+        Height = 15
+        Top = 2
+        Width = 92
+        BorderSpacing.Left = 16
+        Caption = 'Volume (litros)'
+        ParentColor = False
+      end
+      object VolumeEdit: TEdit[3]
+        AnchorSideLeft.Control = VolumeLabel
+        AnchorSideTop.Control = VolumeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 376
+        Height = 22
+        Top = 19
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'VolumeEdit'
+      end
+      object OriginalGravityLabel: TLabel[4]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = RecipeCombo
+        AnchorSideTop.Side = asrBottom
+        Left = 2
+        Height = 15
+        Top = 49
+        Width = 103
+        BorderSpacing.Left = 2
+        BorderSpacing.Top = 8
+        Caption = 'Gravidade inicial'
+        ParentColor = False
+      end
+      object OriginalGravityEdit: TEdit[5]
+        AnchorSideLeft.Control = OriginalGravityLabel
+        AnchorSideTop.Control = OriginalGravityLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 2
+        Height = 22
+        Top = 66
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'OriginalGravityEdit'
+      end
+      object MashIngredientsLabel: TLabel[6]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = OriginalGravityEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 96
+        Width = 82
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Ingredientes'
+        ParentColor = False
+      end
+      object StringGrid1: TStringGrid[7]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MashIngredientsLabel
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = MainTab
+        AnchorSideRight.Side = asrBottom
+        Left = 4
+        Height = 150
+        Top = 113
+        Width = 784
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 4
+        TabOrder = 3
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+    end
+  end
+end

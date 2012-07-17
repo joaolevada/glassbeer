@@ -31,18 +31,19 @@ type
     MashItemsGrid: TStringGrid;
     FermentersTab: TTabSheet;
     FermentersGrid: TStringGrid;
-  private
-    { private declarations }
-  public
-    { public declarations }
-  end; 
+  end;
 
-var
-  MashEditForm: TMashEditForm;
 
 implementation
 
 {$R *.lfm}
+
+uses
+  PressXCLBroker,
+  MashMVP;
+
+initialization
+  PressXCLForm(TMashEditPresenter, TMashEditForm);
 
 end.
 

@@ -12,7 +12,9 @@ uses
   MainFrm, RawMaterialQueryFrm, RawMaterialEditFrm, RecipeMVP, RecipeQueryFrm,
   RecipeEditFrm, RecipeIngredientItemEditFrm, FermenterBO, FermenterMVP,
   FementerQueryFrm, FermenterEditFrm, LocationBO, LocationMVP, LocationQueryFrm,
-  LocationEditFrm, FillingBO, MashMVP, MashQueryFrm, MashEditFrm;
+  LocationEditFrm, FillingBO, MashMVP, MashQueryFrm, MashEditFrm,
+MashItemEditFrm, MashIngredientItemEditFrm, MashFermenterItemEditFrm,
+FermenterEventItemEditFrm;
 
 {$R *.res}
 

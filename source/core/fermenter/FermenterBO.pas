@@ -101,11 +101,20 @@ type
   TFermenterEventItem = class(TCustomObject)
     _FermenterEvent: TFermenterEventReference;
     _ExpirationDate: TPressDate;
+    _Expired: TPressBoolean;
     _Volume: TPressDouble;
     _Temperature: TPressDouble;
     _CurrentGravity: TPressDouble;
+  private
+    function GetExpirationDate: Date;
+    procedure SetExpirationDate(const AValue: Date);
   protected
     class function InternalMetadataStr: string; override;
+    procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
+  published
+    property ExpirationDate: Date read GetExpirationDate write
+      SetExpirationDate;
+    property Expired: Boolean read GetExpired write SetExpired;
   end;
 
   TFermenterEvent = class(TCustomObject)
@@ -273,15 +282,33 @@ end;
 
 { TFermenterEventItem }
 
+function TFermenterEventItem.GetExpirationDate: Date;
+begin
+  Result := _ExpirationDate.Value;
+end;
+
+procedure TFermenterEventItem.SetExpirationDate(const AValue: Date);
+begin
+  _ExpirationDate.Value := AValue;
+end;
+
 class function TFermenterEventItem.InternalMetadataStr: string;
 begin
   Result := 'TFermenterEventItem IsPersistent (' +
     'FermenterEvent: TFermenterEventReference ShortName="BasicURD";' +
     'ExpirationDate: Date DisplayName="Vencimento";' +
+    'Expired: Boolean Calc(ExpirationDate);' +
     'Volume: Double DisplayName="Volume (litros)";' +
     'Temperature: Double DisplayName="Temperatura";' +
     'CurrentGravity: Double DisplayName="Densidade atual";' +
     ')';
+end;
+
+procedure TFermenterEventItem.InternalCalcAttribute(AAttribute: TPressAttribute
+  );
+begin
+  if AAttribute = _Expired then
+    Expired := Date > ExpirationDate;
 end;
 
 { TFermenterEvent }

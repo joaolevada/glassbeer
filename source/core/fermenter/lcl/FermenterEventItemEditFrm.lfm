@@ -1,0 +1,176 @@
+inherited FermenterEventItemEditForm: TFermenterEventItemEditForm
+  Height = 227
+  Width = 650
+  Caption = 'Registro de evento do fermentador'
+  ClientHeight = 227
+  ClientWidth = 650
+  inherited BottomPanel: TPanel
+    Top = 173
+    Width = 650
+    ClientWidth = 650
+    inherited SaveButton: TBitBtn
+      Left = 409
+    end
+    inherited CancelButton: TBitBtn
+      Left = 529
+    end
+  end
+  inherited EditPageControl: TPageControl
+    Height = 173
+    Width = 650
+    inherited MainTab: TTabSheet
+      ClientHeight = 146
+      ClientWidth = 642
+      object FermenterEventLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 2
+        Width = 45
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Caption = 'Evento'
+        ParentColor = False
+      end
+      object FermenterEventCombo: TComboBox[1]
+        AnchorSideLeft.Control = FermenterEventLabel
+        AnchorSideTop.Control = FermenterEventLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 19
+        Width = 356
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 0
+        Text = 'FermenterEventCombo'
+      end
+      object ExpirationDateLabel: TLabel[2]
+        AnchorSideLeft.Control = FermenterEventCombo
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MainTab
+        Left = 376
+        Height = 15
+        Top = 2
+        Width = 108
+        BorderSpacing.Left = 16
+        BorderSpacing.Top = 2
+        Caption = 'Data de validade'
+        ParentColor = False
+      end
+      object ExpirationDateEdit: TEdit[3]
+        AnchorSideLeft.Control = ExpirationDateLabel
+        AnchorSideTop.Control = ExpirationDateLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 376
+        Height = 22
+        Top = 19
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'ExpirationDateEdit'
+      end
+      object ExpiredLabel: TLabel[4]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = FermenterEventCombo
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 49
+        Width = 57
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Vencido?'
+        ParentColor = False
+      end
+      object ExpiredEdit: TEdit[5]
+        AnchorSideLeft.Control = ExpiredLabel
+        AnchorSideTop.Control = ExpiredLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 66
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 2
+        Text = 'ExpiredEdit'
+      end
+      object VolumeLabel: TLabel[6]
+        AnchorSideLeft.Control = ExpiredEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = ExpiredLabel
+        Left = 218
+        Height = 15
+        Top = 49
+        Width = 92
+        BorderSpacing.Left = 16
+        Caption = 'Volume (litros)'
+        ParentColor = False
+      end
+      object VolumeEdit: TEdit[7]
+        AnchorSideLeft.Control = VolumeLabel
+        AnchorSideTop.Control = VolumeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 66
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'VolumeEdit'
+      end
+      object TemperatureLabel: TLabel[8]
+        AnchorSideLeft.Control = VolumeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = VolumeLabel
+        Left = 432
+        Height = 15
+        Top = 49
+        Width = 112
+        BorderSpacing.Left = 16
+        Caption = 'Temperatura (ºC)'
+        ParentColor = False
+      end
+      object TemperatureEdit: TEdit[9]
+        AnchorSideLeft.Control = TemperatureLabel
+        AnchorSideTop.Control = TemperatureLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 432
+        Height = 22
+        Top = 66
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 4
+        Text = 'TemperatureEdit'
+      end
+      object CurrentGravityLabel: TLabel[10]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = ExpiredEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 96
+        Width = 104
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Densidade atual'
+        ParentColor = False
+      end
+      object CurrentGravityEdit: TEdit[11]
+        AnchorSideLeft.Control = CurrentGravityLabel
+        AnchorSideTop.Control = CurrentGravityLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 113
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 5
+        Text = 'CurrentGravityEdit'
+      end
+    end
+  end
+end

@@ -1,6 +1,8 @@
 inherited MashEditForm: TMashEditForm
   Caption = 'Cadastro de mingau'
   inherited EditPageControl: TPageControl
+    ActivePage = MashItemsTab
+    TabIndex = 1
     inherited MainTab: TTabSheet
       ClientHeight = 519
       ClientWidth = 792
@@ -121,10 +123,10 @@ inherited MashEditForm: TMashEditForm
         Left = 4
         Height = 15
         Top = 177
-        Width = 178
+        Width = 166
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
-        Caption = 'Média de densidade original'
+        Caption = 'Média de densidade inicial'
         ParentColor = False
       end
       object AverageOriginalGravityEdit: TEdit

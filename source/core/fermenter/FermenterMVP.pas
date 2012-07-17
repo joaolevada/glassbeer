@@ -25,8 +25,47 @@ type
     function InternalQueryItemsDisplayNames: string; override;
   end;
 
+  { TFermenterEventItemEditPresenter }
+
+  TFermenterEventItemEditPresenter = class(TCustomEditPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
+  { TFermenterEventEditPresenter }
+
+  TFermenterEventEditPresenter = class(TCustomEditPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
 
 implementation
+
+{ TFermenterEventEditPresenter }
+
+procedure TFermenterEventEditPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  {TFermenterEvent = class(TCustomObject)
+    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Duration: TPressInteger;
+    _Temperature: TPressDouble;}
+  { TODO 1 -ojoaolevada -cimplementation : Continue implementation from here }
+end;
+
+{ TFermenterEventItemEditPresenter }
+
+procedure TFermenterEventItemEditPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('FermenterEvent', 'FermenterEventCombo');
+  CreateSubPresenter('ExpirationDate', 'ExpirationDateEdit');
+  CreateSubPresenter('Expired', 'ExpiredEdit');
+  CreateSubPresenter('Volume', 'VolumeEdit');
+  CreateSubPresenter('Temperature', 'TemperatureEdit');
+  CreateSubPresenter('CurrentGravity', 'CurrentGravityEdit');
+end;
 
 { TFermenterQueryPresenter }
 
@@ -62,6 +101,7 @@ end;
 
 initialization
   TFermenterEditPresenter.RegisterBO(TFermenter);
+  TFermenterEventItemEditPresenter.RegisterBO(TFermenterEventItem);
   TFermenterQueryPresenter.RegisterBO(TFermenterQuery);
 
 end.

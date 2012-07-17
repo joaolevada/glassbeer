@@ -1,0 +1,164 @@
+inherited MashFermenterItemEditForm: TMashFermenterItemEditForm
+  Left = 362
+  Top = 160
+  Caption = 'Mosto em fermentador'
+  inherited EditPageControl: TPageControl
+    inherited MainTab: TTabSheet
+      ClientHeight = 519
+      ClientWidth = 792
+      object FermenterLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 2
+        Width = 82
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Caption = 'Fermentador'
+        ParentColor = False
+      end
+      object FermenterCombo: TComboBox[1]
+        AnchorSideLeft.Control = FermenterLabel
+        AnchorSideTop.Control = FermenterLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 19
+        Width = 356
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 0
+        Text = 'FermenterCombo'
+      end
+      object VolumeLabel: TLabel[2]
+        AnchorSideLeft.Control = FermenterCombo
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MainTab
+        Left = 376
+        Height = 15
+        Top = 2
+        Width = 92
+        BorderSpacing.Left = 16
+        BorderSpacing.Top = 2
+        Caption = 'Volume (litros)'
+        ParentColor = False
+      end
+      object VolumeEdit: TEdit[3]
+        AnchorSideLeft.Control = VolumeLabel
+        AnchorSideTop.Control = VolumeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 376
+        Height = 22
+        Top = 19
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'VolumeEdit'
+      end
+      object StartDateLabel: TLabel[4]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = FermenterCombo
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 49
+        Width = 86
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Data de início'
+        ParentColor = False
+      end
+      object StartDateEdit: TEdit[5]
+        AnchorSideLeft.Control = StartDateLabel
+        AnchorSideTop.Control = StartDateLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 66
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'StartDateEdit'
+      end
+      object DaysSinceStartLabel: TLabel[6]
+        AnchorSideLeft.Control = StartDateEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = StartDateLabel
+        Left = 218
+        Height = 15
+        Top = 49
+        Width = 118
+        BorderSpacing.Left = 16
+        Caption = 'Dias desde o início'
+        ParentColor = False
+      end
+      object DaysSinceStartEdit: TEdit[7]
+        AnchorSideLeft.Control = DaysSinceStartLabel
+        AnchorSideTop.Control = DaysSinceStartLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 66
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'DaysSinceStartEdit'
+      end
+      object DaysSinceLastEventLabel: TLabel[8]
+        AnchorSideLeft.Control = DaysSinceStartEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = DaysSinceStartLabel
+        Left = 432
+        Height = 15
+        Top = 49
+        Width = 173
+        BorderSpacing.Left = 16
+        Caption = 'Dias desde o último evento'
+        ParentColor = False
+      end
+      object DaysSinceLastEventEdit: TEdit[9]
+        AnchorSideLeft.Control = DaysSinceLastEventLabel
+        AnchorSideTop.Control = DaysSinceLastEventLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 432
+        Height = 22
+        Top = 66
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 4
+        Text = 'DaysSinceLastEventEdit'
+      end
+      object FermenterEventsLabel: TLabel[10]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = StartDateEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 96
+        Width = 52
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Eventos'
+        ParentColor = False
+      end
+      object FermenterEventsGrid: TStringGrid[11]
+        AnchorSideLeft.Control = FermenterEventsLabel
+        AnchorSideTop.Control = FermenterEventsLabel
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = MainTab
+        AnchorSideRight.Side = asrBottom
+        Left = 4
+        Height = 150
+        Top = 113
+        Width = 784
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 4
+        TabOrder = 5
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+    end
+  end
+end
