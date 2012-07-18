@@ -78,19 +78,6 @@ type
     class function ValidObjectClass: TPressObjectClass; override;
   end;
 
-  { TMashFermenterItem }
-
-  TMashFermenterItem = class(TCustomObject)
-    _Fermenter: TFermenterReference;
-    _Volume: TPressDouble;
-    _FermenterEvents: TFermenterEventItemParts;
-    _StartDate: TPressDate;
-    _DaysSinceStart: TPressInteger;
-    _DaysSinceLastEvent: TPressInteger;
-  protected
-    class function InternalMetadataStr: string; override;
-  end;
-
   { TFermenterEventItemParts }
 
   TFermenterEventItemParts = class(TCustomParts)
@@ -130,13 +117,6 @@ type
   { TFermenterEventReference }
 
   TFermenterEventReference = class(TCustomReference)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
-  end;
-
-  { TMashFermenterItemParts }
-
-  TMashFermenterItemParts = class(TCustomParts)
   public
     class function ValidObjectClass: TPressObjectClass; override;
   end;
@@ -269,20 +249,6 @@ begin
   Result := TFermenter;
 end;
 
-{ TMashFermenterItem }
-
-class function TMashFermenterItem.InternalMetadataStr: string;
-begin
-  Result := 'TMashFermenterItem IsPersistent (' +
-    'Fermenter: TFermenterReference;' +
-    'Volume: Double;' +
-    'FermenterEvents: TFermenterEventItemParts;' +
-    'StartDate: Date;' +
-    'DaysSinceStart: Integer Calc(StartDate);' +
-    'DaysSinceLastEvent: Integer Calc(FermenterEvents);' +
-    ')';
-end;
-
 { TFermenterEventItemParts }
 
 class function TFermenterEventItemParts.ValidObjectClass: TPressObjectClass;
@@ -335,8 +301,8 @@ end;
 
 class function TFermenterEvent.InternalMetadataStr: string;
 begin
-  Result := 'TFermenterEvent IsPersistent(' +
-    'BasicUserRecordData: TBasicUserRecordDataPart;' +
+  Result := 'TFermenterEvent IsPersistent PersistentName="FmtrEvnt" (' +
+    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
     'Duration: Integer DisplayName="Duração";' +
     'Temperature: Double DisplayName="Temperatura";' +
     ')';
@@ -347,13 +313,6 @@ end;
 class function TFermenterEventReference.ValidObjectClass: TPressObjectClass;
 begin
   Result := TFermenterEvent;
-end;
-
-{ TMashFermenterItemParts }
-
-class function TMashFermenterItemParts.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TMashFermenterItem;
 end;
 
 { TFermenterEventQuery }
@@ -377,8 +336,6 @@ initialization
   PressModel.RegisterEnumMetadata(TypeInfo(TFermenterStatus),
     'TFermenterStatus',
     ['Disponível', 'Em uso']);
-  TMashFermenterItem.RegisterClass;
-  TMashFermenterItemParts.RegisterAttribute;
 
 finalization
   TFermenter.UnregisterClass;
@@ -389,9 +346,6 @@ finalization
   TFermenterQuery.UnregisterClass;
   TFermenterReference.UnregisterAttribute;
   TFermenterEventReference.UnregisterAttribute;
-  TMashFermenterItem.UnregisterClass;
-  TMashFermenterItemParts.UnregisterAttribute;
-
 
 end.
 

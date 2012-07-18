@@ -96,7 +96,7 @@ inherited FermenterEventEditForm: TFermenterEventEditForm
         Lines.Strings = (
           'RemarksMemo'
         )
-        TabOrder = 2
+        TabOrder = 4
       end
       object DurationLabel: TLabel[6]
         AnchorSideLeft.Control = MainTab
@@ -105,10 +105,10 @@ inherited FermenterEventEditForm: TFermenterEventEditForm
         Left = 4
         Height = 15
         Top = 51
-        Width = 89
+        Width = 93
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
-        Caption = 'DurationLabel'
+        Caption = 'Duração (dias)'
         ParentColor = False
       end
       object DurationEdit: TEdit[7]
@@ -120,7 +120,7 @@ inherited FermenterEventEditForm: TFermenterEventEditForm
         Top = 68
         Width = 198
         BorderSpacing.Top = 2
-        TabOrder = 3
+        TabOrder = 2
         Text = 'DurationEdit'
       end
       object TemperatureLabel: TLabel[8]
@@ -130,9 +130,9 @@ inherited FermenterEventEditForm: TFermenterEventEditForm
         Left = 218
         Height = 15
         Top = 51
-        Width = 116
+        Width = 112
         BorderSpacing.Left = 16
-        Caption = 'TemperatureLabel'
+        Caption = 'Temperatura (ºC)'
         ParentColor = False
       end
       object TemperatureEdit: TEdit[9]
@@ -144,7 +144,7 @@ inherited FermenterEventEditForm: TFermenterEventEditForm
         Top = 68
         Width = 198
         BorderSpacing.Top = 2
-        TabOrder = 4
+        TabOrder = 3
         Text = 'TemperatureEdit'
       end
     end

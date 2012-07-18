@@ -44,13 +44,7 @@ type
   TFermenterEventQueryPresenter = class(TCustomQueryPresenter)
   protected
     procedure InitPresenter; override;
-  end;
-
-  { TMashFermenterItemEditPresenter }
-
-  TMashFermenterItemEditPresenter = class(TCustomEditPresenter)
-  protected
-    procedure InitPresenter; override;
+    function InternalQueryItemsDisplayNames: string; override;
   end;
 
 
@@ -121,18 +115,14 @@ begin
   CreateSubPresenter('Name', 'NameEdit');
 end;
 
-{ TMashFermenterItemEditPresenter }
-
-procedure TMashFermenterItemEditPresenter.InitPresenter;
+function TFermenterEventQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
-  inherited InitPresenter;
-  CreateSubPresenter('Fermenter', 'FermenterCombo');
-  CreateSubPresenter('Volume', 'VolumeEdit');
-  CreateSubPresenter('StartDate', 'StartDateEdit');
-  CreateSubPresenter('DaysSinceStart', 'DaysSinceStartEdit');
-  CreateSubPresenter('DaysSinceLastEvent', 'DaysSinceLastEventEdit');
-  CreateSubPresenter('FermenterEvents', 'FermenterEventsGrid');
+  Result := 'BasicUserRecordData.Code(198, "Código");' +
+    'BasicUserRecordData.Name(356, "Nome");' +
+    'Duration(198, "Duração[dias]");' +
+    'Temperature(198, "Temperatura[ºC]")';
 end;
+
 
 initialization
   TFermenterEditPresenter.RegisterBO(TFermenter);
@@ -140,7 +130,6 @@ initialization
   TFermenterEventItemEditPresenter.RegisterBO(TFermenterEventItem);
   TFermenterEventQueryPresenter.RegisterBO(TFermenterEventQuery);
   TFermenterQueryPresenter.RegisterBO(TFermenterQuery);
-  TMashFermenterItemEditPresenter.RegisterBO(TMashFermenterItem);
 
 end.
 
