@@ -106,13 +106,15 @@ type
     _Temperature: TPressDouble;
     _CurrentGravity: TPressDouble;
   private
-    function GetExpirationDate: Date;
-    procedure SetExpirationDate(const AValue: Date);
+    function GetExpirationDate: TDate;
+    function GetExpired: Boolean;
+    procedure SetExpirationDate(const AValue: TDate);
+    procedure SetExpired(const AValue: Boolean);
   protected
     class function InternalMetadataStr: string; override;
     procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
   published
-    property ExpirationDate: Date read GetExpirationDate write
+    property ExpirationDate: TDate read GetExpirationDate write
       SetExpirationDate;
     property Expired: Boolean read GetExpired write SetExpired;
   end;
@@ -137,6 +139,14 @@ type
   TMashFermenterItemParts = class(TCustomParts)
   public
     class function ValidObjectClass: TPressObjectClass; override;
+  end;
+
+  { TFermenterEventQuery }
+
+  TFermenterEventQuery = class(TCustomQuery)
+    _Name: TPressAnsiString;
+  protected
+    class function InternalMetadataStr: string; override;
   end;
 
 implementation
@@ -267,7 +277,7 @@ begin
     'Fermenter: TFermenterReference;' +
     'Volume: Double;' +
     'FermenterEvents: TFermenterEventItemParts;' +
-    'StartDate: TDate;' +
+    'StartDate: Date;' +
     'DaysSinceStart: Integer Calc(StartDate);' +
     'DaysSinceLastEvent: Integer Calc(FermenterEvents);' +
     ')';
@@ -282,14 +292,24 @@ end;
 
 { TFermenterEventItem }
 
-function TFermenterEventItem.GetExpirationDate: Date;
+function TFermenterEventItem.GetExpirationDate: TDate;
 begin
   Result := _ExpirationDate.Value;
 end;
 
-procedure TFermenterEventItem.SetExpirationDate(const AValue: Date);
+function TFermenterEventItem.GetExpired: Boolean;
+begin
+  Result := _Expired.Value;
+end;
+
+procedure TFermenterEventItem.SetExpirationDate(const AValue: TDate);
 begin
   _ExpirationDate.Value := AValue;
+end;
+
+procedure TFermenterEventItem.SetExpired(const AValue: Boolean);
+begin
+  _Expired.Value := AValue;
 end;
 
 class function TFermenterEventItem.InternalMetadataStr: string;
@@ -336,11 +356,21 @@ begin
   Result := TMashFermenterItem;
 end;
 
+{ TFermenterEventQuery }
+
+class function TFermenterEventQuery.InternalMetadataStr: string;
+begin
+  Result := 'TFermenterEventQuery(TFermenterEvent) (' +
+    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    ')';
+end;
+
 initialization
   TFermenter.RegisterClass;
   TFermenterEvent.RegisterClass;
   TFermenterEventItem.RegisterClass;
   TFermenterEventItemParts.RegisterAttribute;
+  TFermenterEventQuery.RegisterClass;
   TFermenterQuery.RegisterClass;
   TFermenterReference.RegisterAttribute;
   TFermenterEventReference.RegisterAttribute;
@@ -355,6 +385,7 @@ finalization
   TFermenterEvent.UnregisterClass;
   TFermenterEventItem.UnregisterClass;
   TFermenterEventItemParts.UnregisterAttribute;
+  TFermenterEventQuery.UnregisterClass;
   TFermenterQuery.UnregisterClass;
   TFermenterReference.UnregisterAttribute;
   TFermenterEventReference.UnregisterAttribute;

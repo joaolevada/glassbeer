@@ -40,7 +40,8 @@ uses
   ,PressUser
   ,RecipeMVP
   ,FermenterMVP
-  ,LocationMVP;
+  ,LocationMVP
+  ,MashMVP;
 
 { TMainFormPresenter }
 
@@ -53,6 +54,8 @@ begin
   BindPresenter(TRecipeQueryPresenter, 'RecipeMenu');
   BindPresenter(TFermenterQueryPresenter, 'FermenterMenu');
   BindPresenter(TLocationQueryPresenter, 'LocationMenu');
+  BindPresenter(TFermenterEventQueryPresenter, 'FermenterEventMenu');
+  BindPresenter(TMashQueryPresenter, 'MashMenu');
   { sample commands, to be implemented very soon... }
   //BindCommand(TProprietarioSetupCommand2, 'Proprietario1');
   PressUserData.Logon('', '');

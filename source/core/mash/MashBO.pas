@@ -91,19 +91,6 @@ type
     property Volume: Double read GetVolume write SetVolume;
   end;
 
-  { TMashFermenterItem }
-
-  TMashFermenterItem = class(TCustomObject)
-    _Fermenter: TFermenterReference;
-    _Volume: TPressDouble;
-    _StartDate: TPressDate;
-    _DaysSinceStart: TPressInteger;
-    _DaysSinceLastEvent: TPressInteger;
-    _FermenterEvents: TFermenterEventItemParts;
-  protected
-    class function InternalMetadataStr: string; override;
-  end;
-
   { TMashIngredientItem }
 
   TMashIngredientItem = class(TCustomObject)
@@ -143,7 +130,7 @@ implementation
 class function TMashQuery.InternalMetadataStr: string;
 begin
   Result := 'TMashQuery(TMash) (' +
-    'Name: String MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
     ')';
 end;
 
@@ -190,20 +177,6 @@ end;
 class function TMashItemParts.ValidObjectClass: TPressObjectClass;
 begin
   Result := TMashItem;
-end;
-
-{ TMashFermenterItem }
-
-class function TMashFermenterItem.InternalMetadataStr: string;
-begin
-  Result := 'TMashFermenterItem IsPersistent(' +
-    'Fermenter: TFermenterReference;' +
-    'Volume: Double;' +
-    'StartDate: Date;' +
-    'DaysSinceStart: Integer Calc(FermenterEvents);' +
-    'DaysSinceLastEvent: Integer Calc(FermenterEvents);' +
-    'FermenterEvents: TFermenterEventItemParts;' +
-    ')';
 end;
 
 { TMashItem }
@@ -307,8 +280,6 @@ end;
 
 initialization
   TMash.RegisterClass;
-  TMashFermenterItem.RegisterClass;
-  TMashFermenterItemReferences.RegisterAttribute;
   TMashIngredientItem.RegisterClass;
   TMashIngredientItemParts.RegisterAttribute;
   TMashItem.RegisterClass;
@@ -319,8 +290,6 @@ initialization
 
 finalization
   TMash.UnregisterClass;
-  TMashFermenterItem.UnregisterClass;
-  TMashFermenterItemReferences.UnregisterAttribute;
   TMashIngredientItem.UnregisterClass;
   TMashIngredientItemParts.UnregisterAttribute;
   TMashItem.UnregisterClass;

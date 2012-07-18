@@ -39,6 +39,20 @@ type
     procedure InitPresenter; override;
   end;
 
+  { TFermenterEventQueryPresenter }
+
+  TFermenterEventQueryPresenter = class(TCustomQueryPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
+  { TMashFermenterItemEditPresenter }
+
+  TMashFermenterItemEditPresenter = class(TCustomEditPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
 
 implementation
 
@@ -47,11 +61,11 @@ implementation
 procedure TFermenterEventEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  {TFermenterEvent = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
-    _Duration: TPressInteger;
-    _Temperature: TPressDouble;}
-  { TODO 1 -ojoaolevada -cimplementation : Continue implementation from here }
+  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
+  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
+  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Duration', 'DurationEdit');
+  CreateSubPresenter('Temperature', 'TemperatureEdit');
 end;
 
 { TFermenterEventItemEditPresenter }
@@ -99,10 +113,34 @@ begin
   CreateSubPresenter('Status', 'StatusCombo');
 end;
 
+{ TFermenterEventQueryPresenter }
+
+procedure TFermenterEventQueryPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('Name', 'NameEdit');
+end;
+
+{ TMashFermenterItemEditPresenter }
+
+procedure TMashFermenterItemEditPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('Fermenter', 'FermenterCombo');
+  CreateSubPresenter('Volume', 'VolumeEdit');
+  CreateSubPresenter('StartDate', 'StartDateEdit');
+  CreateSubPresenter('DaysSinceStart', 'DaysSinceStartEdit');
+  CreateSubPresenter('DaysSinceLastEvent', 'DaysSinceLastEventEdit');
+  CreateSubPresenter('FermenterEvents', 'FermenterEventsGrid');
+end;
+
 initialization
   TFermenterEditPresenter.RegisterBO(TFermenter);
+  TFermenterEventEditPresenter.RegisterBO(TFermenterEvent);
   TFermenterEventItemEditPresenter.RegisterBO(TFermenterEventItem);
+  TFermenterEventQueryPresenter.RegisterBO(TFermenterEventQuery);
   TFermenterQueryPresenter.RegisterBO(TFermenterQuery);
+  TMashFermenterItemEditPresenter.RegisterBO(TMashFermenterItem);
 
 end.
 

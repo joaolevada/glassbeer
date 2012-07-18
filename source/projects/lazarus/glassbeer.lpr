@@ -14,7 +14,7 @@ uses
   FementerQueryFrm, FermenterEditFrm, LocationBO, LocationMVP, LocationQueryFrm,
   LocationEditFrm, FillingBO, MashMVP, MashQueryFrm, MashEditFrm,
 MashItemEditFrm, MashIngredientItemEditFrm, MashFermenterItemEditFrm,
-FermenterEventItemEditFrm;
+FermenterEventItemEditFrm, FermenterEventEditFrm, FermenterEventQueryFrm;
 
 {$R *.res}
 

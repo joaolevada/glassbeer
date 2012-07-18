@@ -31,7 +31,7 @@ uses
   MashMVP;
 
 initialization
-  TPressXCLForm(TMashIngredientItemEditPresenter, TMashIngredientItemEditForm);
+  PressXCLForm(TMashIngredientItemEditPresenter, TMashIngredientItemEditForm);
 
 end.
 

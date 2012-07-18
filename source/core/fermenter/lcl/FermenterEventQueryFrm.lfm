@@ -1,0 +1,44 @@
+inherited FermenterEventQueryForm: TFermenterEventQueryForm
+  Caption = 'Tipos de eventos do fermentador'
+  inherited SearchPageControl: TPageControl
+    inherited DefaultTab: TTabSheet
+      Caption = 'Busca por nome'
+      ClientHeight = 50
+      ClientWidth = 792
+      inherited SearchButton: TBitBtn
+        AnchorSideLeft.Control = NameEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideBottom.Control = NameEdit
+        AnchorSideBottom.Side = asrBottom
+        Left = 364
+        Top = 3
+        Anchors = [akLeft, akBottom]
+        BorderSpacing.Left = 4
+      end
+      object NameLabel: TLabel[1]
+        AnchorSideLeft.Control = DefaultTab
+        AnchorSideTop.Control = DefaultTab
+        Left = 4
+        Height = 17
+        Top = 2
+        Width = 194
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Caption = 'Procurar por nome do evento'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[2]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 24
+        Top = 21
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'NameEdit'
+      end
+    end
+  end
+end

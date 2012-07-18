@@ -6,7 +6,7 @@ object MainForm: TMainForm
   Caption = 'glass beer. já degustou sua cerveja hoje?'
   Menu = GlassBeerMainMenu
   Position = poDesktopCenter
-  LCLVersion = '0.9.30.2RC1'
+  LCLVersion = '0.9.29'
   object GlassBeerMainMenu: TMainMenu
     left = 128
     top = 100
@@ -18,8 +18,17 @@ object MainForm: TMainForm
       object RecipeMenu: TMenuItem
         Caption = 'Receitas...'
       end
-      object FermenterMenu: TMenuItem
-        Caption = 'Fermentadores...'
+      object FermentacaoMenu: TMenuItem
+        Caption = 'Fermentação'
+        object FermenterMenu: TMenuItem
+          Caption = 'Fermentadores...'
+        end
+        object FermenterEventMenu: TMenuItem
+          Caption = 'Eventos do fermentador...'
+        end
+      end
+      object MashMenu: TMenuItem
+        Caption = 'Mostos...'
       end
       object LocationMenu: TMenuItem
         Caption = 'Localizações...'

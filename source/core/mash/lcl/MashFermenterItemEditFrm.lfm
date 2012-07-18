@@ -3,6 +3,8 @@ inherited MashFermenterItemEditForm: TMashFermenterItemEditForm
   Top = 160
   Caption = 'Mosto em fermentador'
   inherited EditPageControl: TPageControl
+    ActivePage = nil
+    TabIndex = -1
     inherited MainTab: TTabSheet
       ClientHeight = 519
       ClientWidth = 792

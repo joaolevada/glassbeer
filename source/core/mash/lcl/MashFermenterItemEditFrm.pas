@@ -34,7 +34,7 @@ implementation
 
 uses
   PressXCLBroker,
-  MashMVP;
+  FermenterMVP;
 
 initialization
   PressXCLForm(TMashFermenterItemEditPresenter, TMashFermenterItemEditForm);

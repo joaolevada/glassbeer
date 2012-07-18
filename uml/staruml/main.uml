@@ -2243,7 +2243,7 @@
 <XPD:REF name="DiagramOwner">wn7Zh6KOLkWU36YmyAV/hwAA</XPD:REF>
 <XPD:OBJ name="DiagramView" type="UMLClassDiagramView" guid="Xcb1ZZ9bukSJAfoWV1fxVwAA">
 <XPD:REF name="Diagram">e3ldzhUlX0KuxRmRn0nt/AAA</XPD:REF>
-<XPD:ATTR name="#OwnedViews" type="integer">22</XPD:ATTR>
+<XPD:ATTR name="#OwnedViews" type="integer">23</XPD:ATTR>
 <XPD:OBJ name="OwnedViews[0]" type="UMLClassView" guid="ZIHZz2MxREeLPkjyFTL6XgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
@@ -3397,6 +3397,37 @@
 <XPD:OBJ name="TemplateParameterCompartment" type="UMLTemplateParameterCompartmentView" guid="yBBuQIk0gkml0lJA626HTwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:REF name="Model">Hks32Oz3BUWQNd7OairBwQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[22]" type="UMLClassView" guid="lGURD8v6UkWpL+ekPxUVzwAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">1008</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">344</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">143</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">56</XPD:ATTR>
+<XPD:REF name="Model">R07XO2XbX0K8Tutp7/S5mgAA</XPD:REF>
+<XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="1JGefVUvVECjTr3WZ416XAAA">
+<XPD:OBJ name="NameLabel" type="LabelView" guid="KrubEnAa5U65KCOrq7ICvwAA">
+<XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">TFermenterEventQuery</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="LabelView" guid="jJT4jcN6q0SY8bJWBDbf9gAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="LabelView" guid="dvThl70ThUWowG30fBDQwgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="AttributeCompartment" type="UMLAttributeCompartmentView" guid="7lWUkQszvEezsiLxT+cacAAA">
+<XPD:REF name="Model">R07XO2XbX0K8Tutp7/S5mgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OperationCompartment" type="UMLOperationCompartmentView" guid="USg/JNsAyUGEiu6TKE53zwAA">
+<XPD:REF name="Model">R07XO2XbX0K8Tutp7/S5mgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="TemplateParameterCompartment" type="UMLTemplateParameterCompartmentView" guid="4qkTsx7JLkOdz3gh+LOx7gAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:REF name="Model">R07XO2XbX0K8Tutp7/S5mgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -7396,7 +7427,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:ATTR name="#OwnedElements" type="integer">201</XPD:ATTR>
+<XPD:ATTR name="#OwnedElements" type="integer">202</XPD:ATTR>
 <XPD:OBJ name="OwnedElements[0]" type="UMLClass" guid="llcPdxfpOkOy1rTHCXFQnQAA">
 <XPD:ATTR name="Name" type="string">TCustomObject</XPD:ATTR>
 <XPD:REF name="Namespace">wn7Zh6KOLkWU36YmyAV/hwAA</XPD:REF>
@@ -11461,6 +11492,21 @@
 <XPD:REF name="Views[1]">wgz3Bop2PECVJAGA2xx6IAAA</XPD:REF>
 <XPD:REF name="Views[2]">+OjRcogzP0+3d32WkQFUZAAA</XPD:REF>
 <XPD:REF name="Views[3]">ykTikfEtdUOqW/GGkSszpgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[201]" type="UMLClass" guid="R07XO2XbX0K8Tutp7/S5mgAA">
+<XPD:ATTR name="Name" type="string">TFermenterEventQuery</XPD:ATTR>
+<XPD:REF name="Namespace">wn7Zh6KOLkWU36YmyAV/hwAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">lGURD8v6UkWpL+ekPxUVzwAA</XPD:REF>
+<XPD:REF name="Views[1]">7lWUkQszvEezsiLxT+cacAAA</XPD:REF>
+<XPD:REF name="Views[2]">USg/JNsAyUGEiu6TKE53zwAA</XPD:REF>
+<XPD:REF name="Views[3]">4qkTsx7JLkOdz3gh+LOx7gAA</XPD:REF>
+<XPD:ATTR name="#Attributes" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="vNTyjuz4oUWzOe3h2xKONAAA">
+<XPD:ATTR name="Name" type="string">Name</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">AnsiString</XPD:ATTR>
+<XPD:REF name="Owner">R07XO2XbX0K8Tutp7/S5mgAA</XPD:REF>
+</XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[1]" type="UMLModel" guid="NJ1J4wxiikqQDfuVkXIcWgAA">

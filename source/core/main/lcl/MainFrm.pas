@@ -16,8 +16,11 @@ type
     FileMenu: TMenuItem;
     ExitMenu: TMenuItem;
     MenuItem1: TMenuItem;
-    FermenterMenu: TMenuItem;
     LocationMenu: TMenuItem;
+    FermentacaoMenu: TMenuItem;
+    FermenterMenu: TMenuItem;
+    FermenterEventMenu: TMenuItem;
+    MashMenu: TMenuItem;
     RecipeMenu: TMenuItem;
     MetadataMenu: TMenuItem;
     ToolsMenu: TMenuItem;

@@ -41,27 +41,7 @@ type
     procedure InitPresenter; override;
   end;
 
-  { TMashFermenterItemEditPresenter }
-
-  TMashFermenterItemEditPresenter = class(TCustomEditPresenter)
-  protected
-    procedure InitPresenter; override;
-  end;
-
 implementation
-
-{ TMashFermenterItemEditPresenter }
-
-procedure TMashFermenterItemEditPresenter.InitPresenter;
-begin
-  inherited InitPresenter;
-  CreateSubPresenter('Fermenter', 'FermenterCombo');
-  CreateSubPresenter('Volume', 'VolumeEdit');
-  CreateSubPresenter('StartDate', 'StartDateEdit');
-  CreateSubPresenter('DaysSinceStart', 'DaysSinceStartEdit');
-  CreateSubPresenter('DaysSinceLastEvent', 'DaysSinceLastEventEdit');
-  CreateSubPresenter('FermenterEvents', 'FermenterEventsGrid');
-end;
 
 { TMashIngredientItemEditPresenter }
 
@@ -116,7 +96,6 @@ end;
 
 initialization
   TMashEditPresenter.RegisterBO(TMash);
-  TMashFermenterItemEditPresenter.RegisterBO(TMashFermenterItem);
   TMashIngredientItemEditPresenter.RegisterBO(TMashIngredientItem);
   TMashItemEditPresenter.RegisterBO(TMashItem);
   TMashQueryPresenter.RegisterBO(TMashQuery);
