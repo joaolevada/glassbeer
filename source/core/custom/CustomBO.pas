@@ -134,7 +134,9 @@ begin
   begin
     VAttribute := Attributes[I];
     VAttributeMetadata := VAttribute.Metadata as TCustomAttributeMetadata;
-    if VAttribute is TPressItem then
+    if (VAttribute is TPressItem) and
+      Assigned(TPressItem(VAttribute).Value)
+    then
       (TPressItem(VAttribute).Value as TCustomObject).Validate(AErrors)
     else if not ValidateAttribute(VAttribute, VError) then
       AErrors.Append(Format('%s %s', [VAttributeMetadata.DisplayName, VError]));
