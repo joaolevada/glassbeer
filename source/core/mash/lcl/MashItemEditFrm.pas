@@ -16,7 +16,7 @@ type
     MashIngredientsLabel: TLabel;
     OriginalGravityEdit: TEdit;
     OriginalGravityLabel: TLabel;
-    StringGrid1: TStringGrid;
+    MashIngredientsGrid: TStringGrid;
     VolumeEdit: TEdit;
     VolumeLabel: TLabel;
     RecipeCombo: TComboBox;

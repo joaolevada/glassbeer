@@ -55,7 +55,8 @@ implementation
 procedure TMashIngredientItemEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('RawMaterial', 'RawMaterialCombo');
+  CreateSubPresenter('RawMaterial', 'RawMaterialCombo',
+    'BasicUserRecordData.Name');
   CreateSubPresenter('Quantity', 'QuantityEdit');
   CreateSubPresenter('RawMaterial.Unity', 'UnityEdit');
 end;
@@ -65,10 +66,13 @@ end;
 procedure TMashItemEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('Recipe', 'RecipeCombo');
+  CreateSubPresenter('Recipe', 'RecipeCombo',
+    'BasicUserRecordData.Name');
   CreateSubPresenter('Volume', 'VolumeEdit');
   CreateSubPresenter('OriginalGravity', 'OriginalGravityEdit');
-  CreateSubPresenter('MashIngredients', 'MashIngredientsGrid');
+  CreateSubPresenter('MashIngredients', 'MashIngredientsGrid',
+    'RawMaterial.BasicUserRecordData.Name(198, "Matéria prima");' +
+    'Quantity(49, "Qtde.")');
 end;
 
 { TMashQueryPresenter }
@@ -94,11 +98,19 @@ begin
   CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
   CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
-  CreateSubPresenter('MashItems', 'MashItemsGrid');
+  CreateSubPresenter('MashItems', 'MashItemsGrid',
+    'Recipe.BasicUserRecordData.Name(356, "Receita");' +
+    'Volume(198, "Volume");' +
+    'OriginalGravity(198, "Densidade inicial")');
   CreateSubPresenter('AverageOriginalGravity', 'AverageOriginalGravityEdit');
   CreateSubPresenter('FinalGravity', 'FinalGravityEdit');
   CreateSubPresenter('Amount', 'AmountEdit');
-  CreateSubPresenter('Fermenters', 'FermentersGrid');
+  CreateSubPresenter('Fermenters', 'FermentersGrid',
+    'Fermenter.BasicUserRecordData.Name(198, "Fermentador");' +
+    'Volume(99, "Volume");' +
+    'StartDate(99, "D.iníc.");' +
+    'DaysSinceStart(49, "D.d.i.");' +
+    'DaysSinceLastEvent(69, "D.d.ú.e.")');
 end;
 
 { TMashFermenterItemEditPresenter }
@@ -106,12 +118,18 @@ end;
 procedure TMashFermenterItemEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('Fermenter', 'FermenterCombo');
+  CreateSubPresenter('Fermenter', 'FermenterCombo', 'BasicUserRecordData.Name');
   CreateSubPresenter('Volume', 'VolumeEdit');
   CreateSubPresenter('StartDate', 'StartDateEdit');
   CreateSubPresenter('DaysSinceStart', 'DaysSinceStartEdit');
   CreateSubPresenter('DaysSinceLastEvent', 'DaysSinceLastEventEdit');
-  CreateSubPresenter('FermenterEvents', 'FermenterEventsGrid');
+  CreateSubPresenter('FermenterEvents', 'FermenterEventsGrid',
+    'FermenterEvent.BasicUserRecordData.Name(198, "Evento");' +
+    'ExpirationDate(99, "D.validade");' +
+    'Expired(59, "Vencido");' +
+    'Volume(59, "Volume");' +
+    'Temperature(69, "Temp.[ºC]");' +
+    'Gravity(69, "Densid.")');
 end;
 
 initialization

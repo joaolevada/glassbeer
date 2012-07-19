@@ -60,7 +60,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="37" Y="14"/>
-        <UsageCount Value="150"/>
+        <UsageCount Value="155"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit0>
@@ -70,7 +70,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="150"/>
+        <UsageCount Value="155"/>
       </Unit1>
       <Unit2>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Brokers\PressWebFCLFCGIBroker.pas"/>
@@ -78,7 +78,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="45"/>
         <CursorPos X="33" Y="51"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit2>
       <Unit3>
         <Filename Value="..\..\core\custom\CustomBO.pas"/>
@@ -88,7 +88,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="116"/>
         <CursorPos X="1" Y="132"/>
-        <UsageCount Value="150"/>
+        <UsageCount Value="155"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -99,7 +99,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="8"/>
         <CursorPos X="23" Y="18"/>
-        <UsageCount Value="149"/>
+        <UsageCount Value="154"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -108,7 +108,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="507"/>
         <CursorPos X="20" Y="529"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit5>
       <Unit6>
         <Filename Value="..\..\core\mash\MashBO.pas"/>
@@ -116,9 +116,9 @@
         <UnitName Value="MashBO"/>
         <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="217"/>
-        <CursorPos X="19" Y="220"/>
-        <UsageCount Value="148"/>
+        <TopLine Value="144"/>
+        <CursorPos X="3" Y="146"/>
+        <UsageCount Value="153"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -127,9 +127,9 @@
         <UnitName Value="RecipeBO"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="236"/>
-        <CursorPos X="40" Y="264"/>
-        <UsageCount Value="143"/>
+        <TopLine Value="115"/>
+        <CursorPos X="6" Y="118"/>
+        <UsageCount Value="148"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -140,7 +140,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="37" Y="22"/>
-        <UsageCount Value="143"/>
+        <UsageCount Value="148"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -150,7 +150,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="126"/>
         <CursorPos X="38" Y="142"/>
-        <UsageCount Value="139"/>
+        <UsageCount Value="144"/>
       </Unit9>
       <Unit10>
         <Filename Value="..\..\core\main\MainMVP.pas"/>
@@ -160,7 +160,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="38"/>
         <CursorPos X="32" Y="55"/>
-        <UsageCount Value="138"/>
+        <UsageCount Value="143"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
@@ -170,7 +170,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="20" Y="15"/>
-        <UsageCount Value="138"/>
+        <UsageCount Value="143"/>
       </Unit11>
       <Unit12>
         <Filename Value="..\..\core\rawmaterial\RawMaterialMVP.pas"/>
@@ -180,7 +180,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="35"/>
         <CursorPos X="3" Y="56"/>
-        <UsageCount Value="138"/>
+        <UsageCount Value="143"/>
         <Loaded Value="True"/>
       </Unit12>
       <Unit13>
@@ -189,7 +189,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1177"/>
         <CursorPos X="20" Y="1193"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit13>
       <Unit14>
         <Filename Value="..\..\core\custom\lcl\CustomEditFrm.pas"/>
@@ -200,7 +200,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="19" Y="3"/>
-        <UsageCount Value="138"/>
+        <UsageCount Value="143"/>
       </Unit14>
       <Unit15>
         <Filename Value="..\..\core\custom\lcl\CustomQueryFrm.pas"/>
@@ -211,7 +211,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="16"/>
         <CursorPos X="35" Y="46"/>
-        <UsageCount Value="138"/>
+        <UsageCount Value="143"/>
       </Unit15>
       <Unit16>
         <Filename Value="..\..\core\main\lcl\MainFrm.pas"/>
@@ -223,7 +223,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="8" Y="18"/>
-        <UsageCount Value="132"/>
+        <UsageCount Value="137"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit16>
@@ -236,7 +236,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="17" Y="9"/>
-        <UsageCount Value="131"/>
+        <UsageCount Value="136"/>
       </Unit17>
       <Unit18>
         <Filename Value="..\..\core\rawmaterial\lcl\RawMaterialEditFrm.pas"/>
@@ -247,7 +247,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="9"/>
         <CursorPos X="24" Y="27"/>
-        <UsageCount Value="131"/>
+        <UsageCount Value="136"/>
       </Unit18>
       <Unit19>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Brokers\PressPgSQLBroker.pas"/>
@@ -255,7 +255,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
       </Unit19>
       <Unit20>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Brokers\PressSQLdbBroker.pas"/>
@@ -263,7 +263,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="205"/>
         <CursorPos X="26" Y="229"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
       </Unit20>
       <Unit21>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Core\PressClasses.pas"/>
@@ -271,7 +271,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="60"/>
         <CursorPos X="3" Y="76"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="4"/>
       </Unit21>
       <Unit22>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Core\PressMVPWidget.pas"/>
@@ -279,14 +279,14 @@
         <WindowIndex Value="0"/>
         <TopLine Value="20"/>
         <CursorPos X="17" Y="36"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit22>
       <Unit23>
         <Filename Value="C:\lazarus\fpc\2.4.1\source\rtl\objpas\classes\classesh.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="643"/>
         <CursorPos X="3" Y="659"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit23>
       <Unit24>
         <Filename Value="..\..\..\..\..\sure\windows\trunk\source\core\configuracao\ProprietarioBO.pas"/>
@@ -294,7 +294,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="74"/>
         <CursorPos X="28" Y="90"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit24>
       <Unit25>
         <Filename Value="..\..\..\..\..\sure\windows\trunk\source\core\produto\ProdutoBO.pas"/>
@@ -302,7 +302,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="343"/>
         <CursorPos X="31" Y="359"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit25>
       <Unit26>
         <Filename Value="..\..\..\..\..\sure\windows\trunk\source\core\objetocatalogo\ObjetoCatalogoBO.pas"/>
@@ -310,7 +310,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="252"/>
         <CursorPos X="36" Y="268"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit26>
       <Unit27>
         <Filename Value="..\..\..\..\..\sure\windows\trunk\source\core\movimento\MovimentoBO.pas"/>
@@ -318,7 +318,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="695"/>
         <CursorPos X="13" Y="703"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit27>
       <Unit28>
         <Filename Value="C:\lazarus\ideintf\objectinspector.pp"/>
@@ -329,7 +329,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="29"/>
         <CursorPos X="11" Y="48"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit28>
       <Unit29>
         <Filename Value="..\..\core\recipe\RecipeMVP.pas"/>
@@ -337,9 +337,9 @@
         <UnitName Value="RecipeMVP"/>
         <EditorIndex Value="25"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="49"/>
-        <CursorPos X="3" Y="51"/>
-        <UsageCount Value="83"/>
+        <TopLine Value="65"/>
+        <CursorPos X="28" Y="79"/>
+        <UsageCount Value="88"/>
         <Loaded Value="True"/>
       </Unit29>
       <Unit30>
@@ -351,7 +351,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="13" Y="29"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="88"/>
       </Unit30>
       <Unit31>
         <Filename Value="..\..\core\recipe\lcl\RecipeEditFrm.pas"/>
@@ -362,7 +362,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="7"/>
         <CursorPos X="47" Y="8"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="86"/>
       </Unit31>
       <Unit32>
         <Filename Value="..\..\core\recipe\lcl\RecipeIngredientItemEditFrm.pas"/>
@@ -373,14 +373,14 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="47" Y="15"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="83"/>
       </Unit32>
       <Unit33>
         <Filename Value="..\..\core\recipe\lcl\RecipeIngredientItemEditFrm.lfm"/>
         <WindowIndex Value="0"/>
         <TopLine Value="7"/>
         <CursorPos X="18" Y="4"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit33>
       <Unit34>
@@ -389,9 +389,9 @@
         <UnitName Value="FermenterBO"/>
         <EditorIndex Value="24"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="57"/>
-        <CursorPos X="20" Y="71"/>
-        <UsageCount Value="75"/>
+        <TopLine Value="136"/>
+        <CursorPos X="3" Y="138"/>
+        <UsageCount Value="80"/>
         <Loaded Value="True"/>
       </Unit34>
       <Unit35>
@@ -400,9 +400,9 @@
         <UnitName Value="FermenterMVP"/>
         <EditorIndex Value="20"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="104"/>
-        <CursorPos X="32" Y="117"/>
-        <UsageCount Value="74"/>
+        <TopLine Value="90"/>
+        <CursorPos X="39" Y="107"/>
+        <UsageCount Value="79"/>
         <Loaded Value="True"/>
       </Unit35>
       <Unit36>
@@ -415,7 +415,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="24"/>
-        <UsageCount Value="74"/>
+        <UsageCount Value="79"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit36>
@@ -424,7 +424,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="18" Y="39"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit37>
       <Unit38>
@@ -437,7 +437,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="13" Y="9"/>
-        <UsageCount Value="74"/>
+        <UsageCount Value="79"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit38>
@@ -449,7 +449,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="28"/>
         <CursorPos X="3" Y="44"/>
-        <UsageCount Value="67"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
       </Unit39>
       <Unit40>
@@ -460,7 +460,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="28"/>
         <CursorPos X="27" Y="34"/>
-        <UsageCount Value="67"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
       </Unit40>
       <Unit41>
@@ -473,7 +473,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="13" Y="10"/>
-        <UsageCount Value="67"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit41>
@@ -487,7 +487,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="9"/>
         <CursorPos X="26" Y="34"/>
-        <UsageCount Value="67"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit42>
@@ -496,7 +496,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="14" Y="6"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit43>
       <Unit44>
@@ -507,18 +507,19 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="40" Y="3"/>
-        <UsageCount Value="51"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
       </Unit44>
       <Unit45>
         <Filename Value="..\..\core\mash\MashMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="MashMVP"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="82"/>
-        <CursorPos X="3" Y="85"/>
-        <UsageCount Value="44"/>
+        <TopLine Value="115"/>
+        <CursorPos X="61" Y="138"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
       </Unit45>
       <Unit46>
@@ -529,9 +530,9 @@
         <UnitName Value="MashQueryFrm"/>
         <EditorIndex Value="11"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="2"/>
-        <CursorPos X="41" Y="30"/>
-        <UsageCount Value="44"/>
+        <TopLine Value="5"/>
+        <CursorPos X="46" Y="30"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit46>
@@ -540,7 +541,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="3"/>
         <CursorPos X="14" Y="14"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit47>
       <Unit48>
@@ -553,7 +554,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="16" Y="29"/>
-        <UsageCount Value="44"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit48>
@@ -566,8 +567,8 @@
         <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="8"/>
-        <CursorPos X="42" Y="36"/>
-        <UsageCount Value="41"/>
+        <CursorPos X="11" Y="22"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit49>
@@ -581,7 +582,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="3" Y="34"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit50>
@@ -594,8 +595,8 @@
         <EditorIndex Value="9"/>
         <WindowIndex Value="0"/>
         <TopLine Value="15"/>
-        <CursorPos X="7" Y="37"/>
-        <UsageCount Value="41"/>
+        <CursorPos X="14" Y="25"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit51>
@@ -604,7 +605,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="13" Y="2"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit52>
       <Unit53>
@@ -617,7 +618,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="47" Y="15"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="32"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit53>
@@ -627,12 +628,11 @@
         <ComponentName Value="FermenterEventEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FermenterEventEditFrm"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="21"/>
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
-        <CursorPos X="11" Y="35"/>
-        <UsageCount Value="25"/>
+        <CursorPos X="18" Y="20"/>
+        <UsageCount Value="30"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit54>
@@ -646,131 +646,131 @@
         <WindowIndex Value="0"/>
         <TopLine Value="5"/>
         <CursorPos X="34" Y="30"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="30"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit55>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="..\..\core\fermenter\FermenterBO.pas"/>
-        <Caret Line="7" Column="15" TopLine="1"/>
+        <Filename Value="..\..\core\mash\lcl\MashFermenterItemEditFrm.pas"/>
+        <Caret Line="37" Column="7" TopLine="15"/>
       </Position1>
       <Position2>
-        <Filename Value="..\..\core\fermenter\FermenterBO.pas"/>
-        <Caret Line="9" Column="22" TopLine="1"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="36" Column="42" TopLine="8"/>
       </Position2>
       <Position3>
-        <Filename Value="..\..\core\mash\MashBO.pas"/>
-        <Caret Line="126" Column="30" TopLine="114"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="22" Column="11" TopLine="8"/>
       </Position3>
       <Position4>
-        <Filename Value="..\..\core\fermenter\FermenterBO.pas"/>
-        <Caret Line="316" Column="5" TopLine="300"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="58" Column="49" TopLine="44"/>
       </Position4>
       <Position5>
-        <Filename Value="..\..\core\mash\MashBO.pas"/>
-        <Caret Line="316" Column="23" TopLine="293"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="68" Column="39" TopLine="44"/>
       </Position5>
       <Position6>
-        <Filename Value="..\..\core\mash\MashBO.pas"/>
-        <Caret Line="301" Column="15" TopLine="296"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="121" Column="79" TopLine="106"/>
       </Position6>
       <Position7>
-        <Filename Value="..\..\core\mash\MashBO.pas"/>
-        <Caret Line="69" Column="3" TopLine="55"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="58" Column="49" TopLine="44"/>
       </Position7>
       <Position8>
-        <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
-        <Caret Line="130" Column="30" TopLine="104"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="68" Column="39" TopLine="44"/>
       </Position8>
       <Position9>
         <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
-        <Caret Line="133" Column="14" TopLine="1"/>
+        <Caret Line="120" Column="14" TopLine="107"/>
       </Position9>
       <Position10>
-        <Filename Value="..\..\core\mash\lcl\MashFermenterItemEditFrm.pas"/>
-        <Caret Line="26" Column="23" TopLine="12"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="120" Column="45" TopLine="106"/>
       </Position10>
       <Position11>
-        <Filename Value="glassbeer.lpr"/>
-        <Caret Line="14" Column="36" TopLine="1"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="58" Column="49" TopLine="44"/>
       </Position11>
       <Position12>
-        <Filename Value="..\..\core\mash\MashBO.pas"/>
-        <Caret Line="222" Column="31" TopLine="217"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="70" Column="6" TopLine="44"/>
       </Position12>
       <Position13>
-        <Filename Value="..\..\core\mash\MashBO.pas"/>
-        <Caret Line="265" Column="35" TopLine="259"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="58" Column="49" TopLine="44"/>
       </Position13>
       <Position14>
-        <Filename Value="..\..\core\mash\MashBO.pas"/>
-        <Caret Line="69" Column="3" TopLine="55"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="68" Column="39" TopLine="44"/>
       </Position14>
       <Position15>
-        <Filename Value="..\..\core\mash\MashBO.pas"/>
-        <Caret Line="222" Column="16" TopLine="217"/>
+        <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
+        <Caret Line="70" Column="55" TopLine="56"/>
       </Position15>
       <Position16>
-        <Filename Value="..\..\core\mash\MashBO.pas"/>
-        <Caret Line="299" Column="18" TopLine="296"/>
+        <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
+        <Caret Line="104" Column="43" TopLine="90"/>
       </Position16>
       <Position17>
-        <Filename Value="..\..\core\mash\MashBO.pas"/>
-        <Caret Line="265" Column="19" TopLine="259"/>
+        <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
+        <Caret Line="71" Column="30" TopLine="56"/>
       </Position17>
       <Position18>
-        <Filename Value="..\..\core\mash\MashBO.pas"/>
-        <Caret Line="185" Column="34" TopLine="166"/>
+        <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
+        <Caret Line="104" Column="43" TopLine="90"/>
       </Position18>
       <Position19>
-        <Filename Value="glassbeer.lpr"/>
-        <Caret Line="26" Column="24" TopLine="1"/>
+        <Filename Value="..\..\core\recipe\RecipeMVP.pas"/>
+        <Caret Line="52" Column="54" TopLine="43"/>
       </Position19>
       <Position20>
-        <Filename Value="..\..\core\fermenter\lcl\FermenterEventQueryFrm.pas"/>
-        <Caret Line="30" Column="34" TopLine="5"/>
+        <Filename Value="..\..\core\recipe\RecipeMVP.pas"/>
+        <Caret Line="69" Column="39" TopLine="45"/>
       </Position20>
       <Position21>
-        <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
-        <Caret Line="122" Column="54" TopLine="98"/>
+        <Filename Value="..\..\core\recipe\RecipeMVP.pas"/>
+        <Caret Line="75" Column="70" TopLine="61"/>
       </Position21>
       <Position22>
-        <Filename Value="..\..\core\fermenter\FermenterBO.pas"/>
-        <Caret Line="329" Column="10" TopLine="323"/>
+        <Filename Value="..\..\core\recipe\RecipeMVP.pas"/>
+        <Caret Line="69" Column="39" TopLine="61"/>
       </Position22>
       <Position23>
-        <Filename Value="..\..\core\fermenter\FermenterBO.pas"/>
-        <Caret Line="331" Column="19" TopLine="323"/>
+        <Filename Value="..\..\core\recipe\RecipeMVP.pas"/>
+        <Caret Line="75" Column="70" TopLine="61"/>
       </Position23>
       <Position24>
-        <Filename Value="..\..\core\fermenter\FermenterBO.pas"/>
-        <Caret Line="68" Column="3" TopLine="54"/>
+        <Filename Value="..\..\core\mash\MashBO.pas"/>
+        <Caret Line="146" Column="3" TopLine="144"/>
       </Position24>
       <Position25>
-        <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
-        <Caret Line="122" Column="54" TopLine="98"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="111" Column="6" TopLine="106"/>
       </Position25>
       <Position26>
-        <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
-        <Caret Line="22" Column="3" TopLine="8"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="75" Column="9" TopLine="55"/>
       </Position26>
       <Position27>
-        <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
-        <Caret Line="100" Column="38" TopLine="85"/>
+        <Filename Value="..\..\core\mash\MashBO.pas"/>
+        <Caret Line="169" Column="3" TopLine="167"/>
       </Position27>
       <Position28>
-        <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
-        <Caret Line="25" Column="14" TopLine="11"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="26" Column="15" TopLine="12"/>
       </Position28>
       <Position29>
-        <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
-        <Caret Line="47" Column="63" TopLine="32"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="82" Column="3" TopLine="80"/>
       </Position29>
       <Position30>
         <Filename Value="..\..\core\mash\MashMVP.pas"/>
-        <Caret Line="116" Column="38" TopLine="96"/>
+        <Caret Line="83" Column="3" TopLine="80"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

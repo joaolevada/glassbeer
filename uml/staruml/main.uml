@@ -8427,7 +8427,7 @@
 <XPD:REF name="Owner">yauIgZLKBEOqH/T8j6VQyQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[5]" type="UMLAttribute" guid="xm+pOhC3qkilM9WauIQg6AAA">
-<XPD:ATTR name="Name" type="string">CurrentGravity</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Gravity</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Double</XPD:ATTR>
 <XPD:REF name="Owner">yauIgZLKBEOqH/T8j6VQyQAA</XPD:REF>
 </XPD:OBJ>

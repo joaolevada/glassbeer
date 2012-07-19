@@ -91,7 +91,7 @@ type
     _Expired: TPressBoolean;
     _Volume: TPressDouble;
     _Temperature: TPressDouble;
-    _CurrentGravity: TPressDouble;
+    _Gravity: TPressDouble;
   private
     function GetExpirationDate: TDate;
     function GetExpired: Boolean;
@@ -286,7 +286,7 @@ begin
     'Expired: Boolean Calc(ExpirationDate);' +
     'Volume: Double DisplayName="Volume (litros)";' +
     'Temperature: Double DisplayName="Temperatura";' +
-    'CurrentGravity: Double DisplayName="Densidade atual";' +
+    'Gravity: Double DisplayName="Densidade atual";' +
     ')';
 end;
 

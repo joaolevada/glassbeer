@@ -48,6 +48,7 @@ type
       write SetAverageFinalGravity;
     property AverageOriginalGravity: Double read GetAverageOriginalGravity
       write SetAverageOriginalGravity;
+    property MashItems: TMashItemParts read _MashItems write _MashItems;
   end;
 
   { TMashItemParts }
@@ -270,7 +271,7 @@ end;
 
 procedure TMash.InternalCalcAttribute(AAttribute: TPressAttribute);
 var
-  VAvg: Double;
+  VAverage: Double;
   VSum: Double;
   I: Integer;
 begin
@@ -284,10 +285,13 @@ begin
   else if AAttribute = _AverageOriginalGravity then
   begin
     VSum := 0;
-    for I := 0 to Pred(_MashItems.Count) do
-      VSum += (_MashItems[I] as TMashItem).OriginalGravity;
-    VAvg := VSum / _MashItems.Count;
-    AverageOriginalGravity := VAvg;
+    for I := 0 to Pred(MashItems.Count) do
+      VSum += (MashItems[I] as TMashItem).OriginalGravity;
+    if MashItems.Count > 0 then
+      VAverage := VSum / MashItems.Count
+    else
+      VAverage := 0;
+    AverageOriginalGravity := VAverage;
   end;
 end;
 

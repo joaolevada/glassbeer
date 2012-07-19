@@ -67,12 +67,13 @@ end;
 procedure TFermenterEventItemEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('FermenterEvent', 'FermenterEventCombo');
+  CreateSubPresenter('FermenterEvent', 'FermenterEventCombo',
+    'BasicUserRecordData.Name');
   CreateSubPresenter('ExpirationDate', 'ExpirationDateEdit');
   CreateSubPresenter('Expired', 'ExpiredEdit');
   CreateSubPresenter('Volume', 'VolumeEdit');
   CreateSubPresenter('Temperature', 'TemperatureEdit');
-  CreateSubPresenter('CurrentGravity', 'CurrentGravityEdit');
+  CreateSubPresenter('Gravity', 'GravityEdit');
 end;
 
 { TFermenterQueryPresenter }
@@ -119,8 +120,8 @@ function TFermenterEventQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
   Result := 'BasicUserRecordData.Code(198, "Código");' +
     'BasicUserRecordData.Name(356, "Nome");' +
-    'Duration(198, "Duração[dias]");' +
-    'Temperature(198, "Temperatura[ºC]")';
+    'Duration(109, "Duração[dias]");' +
+    'Temperature(79, "Temp.[ºC]")';
 end;
 
 

@@ -13,7 +13,7 @@ type
   { TFermenterEventItemEditForm }
 
   TFermenterEventItemEditForm = class(TCustomEditForm)
-    CurrentGravityEdit: TEdit;
+    GravityEdit: TEdit;
     TemperatureEdit: TEdit;
     CurrentGravityLabel: TLabel;
     TemperatureLabel: TLabel;

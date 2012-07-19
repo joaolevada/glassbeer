@@ -91,7 +91,7 @@ inherited MashItemEditForm: TMashItemEditForm
         Caption = 'Ingredientes'
         ParentColor = False
       end
-      object StringGrid1: TStringGrid[7]
+      object MashIngredientsGrid: TStringGrid[7]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MashIngredientsLabel
         AnchorSideTop.Side = asrBottom

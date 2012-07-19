@@ -153,13 +153,13 @@ inherited FermenterEventItemEditForm: TFermenterEventItemEditForm
         Left = 4
         Height = 15
         Top = 96
-        Width = 104
+        Width = 68
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
-        Caption = 'Densidade atual'
+        Caption = 'Densidade'
         ParentColor = False
       end
-      object CurrentGravityEdit: TEdit[11]
+      object GravityEdit: TEdit[11]
         AnchorSideLeft.Control = CurrentGravityLabel
         AnchorSideTop.Control = CurrentGravityLabel
         AnchorSideTop.Side = asrBottom
@@ -169,7 +169,7 @@ inherited FermenterEventItemEditForm: TFermenterEventItemEditForm
         Width = 198
         BorderSpacing.Top = 2
         TabOrder = 5
-        Text = 'CurrentGravityEdit'
+        Text = 'GravityEdit'
       end
     end
   end
