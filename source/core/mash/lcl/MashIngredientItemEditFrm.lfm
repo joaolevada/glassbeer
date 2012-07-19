@@ -20,8 +20,6 @@ inherited MashIngredientItemEditForm: TMashIngredientItemEditForm
   inherited EditPageControl: TPageControl
     Height = 122
     Width = 438
-    ActivePage = nil
-    TabIndex = -1
     inherited MainTab: TTabSheet
       ClientHeight = 95
       ClientWidth = 430

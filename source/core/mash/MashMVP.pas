@@ -72,6 +72,7 @@ begin
   CreateSubPresenter('OriginalGravity', 'OriginalGravityEdit');
   CreateSubPresenter('MashIngredients', 'MashIngredientsGrid',
     'RawMaterial.BasicUserRecordData.Name(198, "Matéria prima");' +
+    'RawMaterial.Unity(119, "Unidade");' +
     'Quantity(49, "Qtde.")');
 end;
 

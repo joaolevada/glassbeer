@@ -1,13 +1,19 @@
 inherited RecipeEditForm: TRecipeEditForm
   Left = 439
+  Height = 410
   Top = 177
   Caption = 'Cadastro de receita'
+  ClientHeight = 410
+  inherited BottomPanel: TPanel
+    Top = 356
+  end
   inherited EditPageControl: TPageControl
+    Height = 356
     ActivePage = IngredientsTab
     TabIndex = 1
     inherited MainTab: TTabSheet
-      ClientHeight = 0
-      ClientWidth = 0
+      ClientHeight = 519
+      ClientWidth = 792
       object CodeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
@@ -87,7 +93,7 @@ inherited RecipeEditForm: TRecipeEditForm
     end
     object IngredientsTab: TTabSheet[1]
       Caption = 'Ingredientes'
-      ClientHeight = 519
+      ClientHeight = 329
       ClientWidth = 792
       object FamilyLabel: TLabel
         AnchorSideLeft.Control = IngredientsTab

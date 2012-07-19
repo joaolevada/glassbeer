@@ -1,8 +1,14 @@
 inherited MashItemEditForm: TMashItemEditForm
+  Height = 352
   Caption = 'Item do mosto'
+  ClientHeight = 352
+  inherited BottomPanel: TPanel
+    Top = 298
+  end
   inherited EditPageControl: TPageControl
+    Height = 298
     inherited MainTab: TTabSheet
-      ClientHeight = 519
+      ClientHeight = 271
       ClientWidth = 792
       object RecipeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab

@@ -1,9 +1,26 @@
 inherited RawMaterialEditForm: TRawMaterialEditForm
+  Height = 324
+  Width = 590
   Caption = 'Cadastro de materia prima'
+  ClientHeight = 324
+  ClientWidth = 590
+  inherited BottomPanel: TPanel
+    Top = 270
+    Width = 590
+    ClientWidth = 590
+    inherited SaveButton: TBitBtn
+      Left = 349
+    end
+    inherited CancelButton: TBitBtn
+      Left = 469
+    end
+  end
   inherited EditPageControl: TPageControl
+    Height = 270
+    Width = 590
     inherited MainTab: TTabSheet
-      ClientHeight = 519
-      ClientWidth = 792
+      ClientHeight = 243
+      ClientWidth = 582
       object RemarksMemo: TMemo[0]
         AnchorSideLeft.Control = RemarksLabel
         AnchorSideTop.Control = RemarksLabel

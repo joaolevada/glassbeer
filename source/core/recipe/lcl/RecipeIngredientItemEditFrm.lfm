@@ -1,7 +1,26 @@
 inherited RecipeIngredientItemEditForm: TRecipeIngredientItemEditForm
+  Height = 132
+  Width = 430
   Caption = 'Item da receita'
+  ClientHeight = 132
+  ClientWidth = 430
+  inherited BottomPanel: TPanel
+    Top = 78
+    Width = 430
+    ClientWidth = 430
+    inherited SaveButton: TBitBtn
+      Left = 189
+    end
+    inherited CancelButton: TBitBtn
+      Left = 309
+    end
+  end
   inherited EditPageControl: TPageControl
+    Height = 78
+    Width = 430
     inherited MainTab: TTabSheet
+      ClientHeight = 51
+      ClientWidth = 422
       object RawMaterialLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab

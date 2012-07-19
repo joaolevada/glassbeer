@@ -1,8 +1,6 @@
 inherited MashEditForm: TMashEditForm
   Caption = 'Cadastro de mingau'
   inherited EditPageControl: TPageControl
-    ActivePage = MashItemsTab
-    TabIndex = 1
     inherited MainTab: TTabSheet
       ClientHeight = 519
       ClientWidth = 792

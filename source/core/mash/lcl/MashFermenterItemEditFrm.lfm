@@ -1,12 +1,16 @@
 inherited MashFermenterItemEditForm: TMashFermenterItemEditForm
   Left = 362
+  Height = 352
   Top = 160
   Caption = 'Mosto em fermentador'
+  ClientHeight = 352
+  inherited BottomPanel: TPanel
+    Top = 298
+  end
   inherited EditPageControl: TPageControl
-    ActivePage = nil
-    TabIndex = -1
+    Height = 298
     inherited MainTab: TTabSheet
-      ClientHeight = 519
+      ClientHeight = 271
       ClientWidth = 792
       object FermenterLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
