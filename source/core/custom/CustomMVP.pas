@@ -60,7 +60,7 @@ uses
   ,CustomBO
   ,Classes
   ,Forms
-  ,Windows;
+  ,LCLType;
 
 { TCustomEditModel }
 
