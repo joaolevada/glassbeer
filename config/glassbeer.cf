@@ -2,17 +2,19 @@
 DefaultServiceName := 'SQLdb';
 
 #[OPFBroker.SQLdb]
-#Connector.Database.ConnectorType := 'PostGreSQL';
-#Connector.Database.DatabaseName := '';
+#Connector.Database.ConnectorType := 'firebird';
+#Connector.Database.DatabaseName := 'glassbeer';
 #Connector.Database.Hostname := 'localhost';
-#Connector.Database.UserName := 'postgres';
-#Connector.Database.Password := '******';
+#Connector.Database.UserName := 'glassbeerdba';
+#Connector.Database.Password := 'beerglass';
 #Connector.Database.CharSet := 'UTF8';
 
 [OPFBroker.SQLdb]
-Connector.Database.ConnectorType := 'firebird';
-Connector.Database.DatabaseName := 'glassbeer';
+Connector.Database.ConnectorType := 'PostGreSQL';
+Connector.Database.DatabaseName := 'glassbeer_db';
 Connector.Database.Hostname := 'localhost';
-Connector.Database.UserName := 'glassbeerdba';
-Connector.Database.Password := 'beerglass';
+Connector.Database.UserName := 'glassbeer_dba';
+Connector.Database.Password := 'brauart';
 Connector.Database.CharSet := 'UTF8';
+
+
