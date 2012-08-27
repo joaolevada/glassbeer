@@ -46,6 +46,13 @@ type
     procedure InitPresenter; override;
   end;
 
+  { TContactQueryPresenter }
+
+  TContactQueryPresenter = class(TCustomQueryPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
 implementation
 
 { TPersonContactEditPresenter }
@@ -148,11 +155,22 @@ begin
   CreateSubPresenter('NickName', 'NickNameEdit');
 end;
 
+{ TContactQueryPresenter }
+
+procedure TContactQueryPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  BindCommand(TPressMVPExecuteQueryCommand, 'SearchCodeButton');
+end;
+
 initialization
   TPersonEditPresenter.RegisterBO(TPerson);
   TCompanyEditPresenter.RegisterBO(TCompany);
   TPersonContactEditPresenter.RegisterBO(TPersonContact);
   TPersonContactLabelEditPresenter.RegisterBO(TPersonContactLabel);
+  TContactQueryPresenter.RegisterBO(TContactQuery);
 
 end.
 

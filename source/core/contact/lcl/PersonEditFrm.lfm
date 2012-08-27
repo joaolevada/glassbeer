@@ -1,6 +1,6 @@
 inherited PersonEditForm: TPersonEditForm
   Height = 317
-  Caption = 'Contato <pessoa>'
+  Caption = 'Contato (pessoa)'
   ClientHeight = 317
   inherited BottomPanel: TPanel
     Top = 263

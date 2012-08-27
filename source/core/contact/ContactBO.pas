@@ -63,6 +63,15 @@ type
     class function InternalMetadataStr: string; override;
   end;
 
+  { TContactQuery }
+
+  TContactQuery = class(TCustomQuery)
+    _Code: TPressPlainString;
+    _Name: TPressAnsiString;
+  protected
+    class function InternalMetadataStr: string; override;
+  end;
+
 implementation
 
 { TPersonContactLabel }
@@ -119,12 +128,24 @@ begin
     ')';
 end;
 
+
+{ TContactQuery }
+
+class function TContactQuery.InternalMetadataStr: string;
+begin
+  Result := 'TContactQuery(TContact) (' +
+    'Code: PlainString(20) MatchType=mtContains DataName="BasicUserRecordData.Code";' +
+    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    ')';
+end;
+
 initialization
   TContact.RegisterClass;
   TPerson.RegisterClass;
   TCompany.RegisterClass;
   TPersonContact.RegisterClass;
   TPersonContactLabel.RegisterClass;
+  TContactQuery.RegisterClass;
 
 finalization
   TContact.UnregisterClass;
@@ -132,6 +153,7 @@ finalization
   TCompany.UnregisterClass;
   TPersonContact.UnregisterClass;
   TPersonContactLabel.UnregisterClass;
+  TContactQuery.UnregisterClass;
 
 end.
 

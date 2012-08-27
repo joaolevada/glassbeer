@@ -16,7 +16,7 @@ type
   { TBasicUserRecordData }
 
   TBasicUserRecordData = class(TCustomObject)
-    _Code: TPressAnsiString;
+    _Code: TPressPlainString;
     _Name: TPressAnsiString;
     _Remarks: TPressMemo;
   private
@@ -78,7 +78,7 @@ end;
 class function TBasicUserRecordData.InternalMetadataStr: string;
 begin
   Result := 'TBasicUserRecordData IsPersistent(' +
-    'Code: AnsiString(20) DisplayName="Código";'+
+    'Code: PlainString(20) DisplayName="Código";'+
     'Name: AnsiString(40) NotNull DisplayName="Nome/descrição" IsMandatory=True;'+
     'Remarks: Memo DisplayName="Observações";' +
     ');';

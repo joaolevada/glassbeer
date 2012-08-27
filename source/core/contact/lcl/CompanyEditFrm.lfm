@@ -1,6 +1,6 @@
 inherited CompanyEditForm: TCompanyEditForm
   Height = 481
-  Caption = 'Contato <empresa>'
+  Caption = 'Contato (empresa)'
   ClientHeight = 481
   inherited BottomPanel: TPanel
     Top = 427
