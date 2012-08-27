@@ -1,7 +1,7 @@
 inherited AddressLabelEditForm: TAddressLabelEditForm
   Height = 224
   Width = 587
-  Caption = 'Rótulo de endereço'
+  Caption = 'Tipo de endereço físico'
   ClientHeight = 224
   ClientWidth = 587
   inherited BottomPanel: TPanel
@@ -18,6 +18,8 @@ inherited AddressLabelEditForm: TAddressLabelEditForm
   inherited EditPageControl: TPageControl
     Height = 170
     Width = 587
+    ActivePage = nil
+    TabIndex = -1
     inherited MainTab: TTabSheet
       ClientHeight = 143
       ClientWidth = 579

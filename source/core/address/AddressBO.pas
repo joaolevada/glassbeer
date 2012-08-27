@@ -212,7 +212,7 @@ class function TState.InternalMetadataStr: string;
 begin
   Result := 'TState IsPersistent (' +
     'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
-    'Abbreviation: PlainString(2);'
+    'Abbreviation: PlainString(2);' +
     'Country: Reference(TCountry);' +
     ')';
 end;

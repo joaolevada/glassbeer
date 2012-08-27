@@ -1,4 +1,4 @@
-unit AddressLabelEditFrm;
+unit InternetAddressLabelEditFrm;
 
 {$mode objfpc}
 
@@ -10,9 +10,9 @@ uses
 
 type
 
-  { TAddressLabelEditForm }
+  { TInternetAddressLabelEditForm }
 
-  TAddressLabelEditForm = class(TCustomEditForm)
+  TInternetAddressLabelEditForm = class(TCustomEditForm)
     CodeEdit: TEdit;
     CodeLabel: TLabel;
     NameEdit: TEdit;
@@ -25,14 +25,14 @@ type
 implementation
 
 uses
-  AddressMVP,
-  PressXCLBroker;
+  PressXCLBroker,
+  AddressMVP;
 
 {$R *.lfm}
 
 initialization
-  PressXCLForm(TAddressLabelEditPresenter, TAddressLabelEditForm);
-
+  PressXCLForm(TInternetAddressLabelEditPresenter,
+    TInternetAddressLabelEditForm);
 
 end.
 

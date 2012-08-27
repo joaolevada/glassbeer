@@ -16,7 +16,9 @@ uses
 MashItemEditFrm, MashIngredientItemEditFrm, MashFermenterItemEditFrm,
 FermenterEventItemEditFrm, FermenterEventEditFrm, FermenterEventQueryFrm,
 AddressBO, AddressMVP, AddressEditFrm, AddressLabelEditFrm, CityEditFrm,
-StateEditFrm, CountryEditFrm, InternetAddressEditFrm;
+StateEditFrm, CountryEditFrm, InternetAddressEditFrm,
+InternetAddressLabelEditFrm, NeighborhoodEditFrm, PhoneEditFrm,
+PhoneLabelEditFrm;
 
 {$R *.res}
 

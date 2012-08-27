@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
 <CONFIG>
   <ProjectOptions>
+    <Version Value="9"/>
     <PathDelim Value="\"/>
-    <Version Value="7"/>
     <General>
       <MainUnit Value="0"/>
-      <TargetFileExt Value=".exe"/>
       <Title Value="Glassbeer software"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
@@ -15,8 +14,11 @@
     <VersionInfo>
       <Language Value=""/>
       <CharSet Value=""/>
-      <StringTable ProductVersion="" CompanyName="" FileDescription="" FileVersion="" InternalName="" OriginalFilename="" ProductName=""/>
+      <StringTable ProductVersion=""/>
     </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="default" Default="True"/>
+    </BuildModes>
     <PublishOptions>
       <Version Value="2"/>
       <IgnoreBinaries Value="False"/>
@@ -49,7 +51,7 @@
         <PackageName Value="LCL"/>
       </Item6>
     </RequiredPackages>
-    <Units Count="64">
+    <Units Count="68">
       <Unit0>
         <Filename Value="glassbeer.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -58,8 +60,9 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="48" Y="3"/>
-        <UsageCount Value="164"/>
+        <UsageCount Value="166"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="..\..\core\include\glassbeer_defines.inc"/>
@@ -67,7 +70,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="164"/>
+        <UsageCount Value="166"/>
       </Unit1>
       <Unit2>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Brokers\PressWebFCLFCGIBroker.pas"/>
@@ -81,43 +84,41 @@
         <Filename Value="..\..\core\custom\CustomBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="CustomBO"/>
-        <EditorIndex Value="27"/>
+        <EditorIndex Value="30"/>
         <WindowIndex Value="0"/>
         <TopLine Value="125"/>
         <CursorPos X="21" Y="135"/>
-        <UsageCount Value="164"/>
+        <UsageCount Value="166"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="..\..\core\basicuserrecorddata\BasicUserRecordDataBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="BasicUserRecordDataBO"/>
-        <EditorIndex Value="31"/>
+        <EditorIndex Value="34"/>
         <WindowIndex Value="0"/>
         <TopLine Value="71"/>
         <CursorPos X="3" Y="80"/>
-        <UsageCount Value="163"/>
+        <UsageCount Value="165"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Core\PressAttributes.pas"/>
         <UnitName Value="PressAttributes"/>
-        <EditorIndex Value="14"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1390"/>
         <CursorPos X="3" Y="1392"/>
         <UsageCount Value="13"/>
-        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="..\..\core\mash\MashBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="MashBO"/>
-        <EditorIndex Value="19"/>
+        <EditorIndex Value="22"/>
         <WindowIndex Value="0"/>
         <TopLine Value="144"/>
         <CursorPos X="3" Y="146"/>
-        <UsageCount Value="162"/>
+        <UsageCount Value="164"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -128,29 +129,29 @@
         <WindowIndex Value="0"/>
         <TopLine Value="115"/>
         <CursorPos X="6" Y="118"/>
-        <UsageCount Value="157"/>
+        <UsageCount Value="159"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="RawMaterialBO"/>
-        <EditorIndex Value="32"/>
+        <EditorIndex Value="35"/>
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="37" Y="22"/>
-        <UsageCount Value="157"/>
+        <UsageCount Value="159"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="..\..\core\custom\CustomMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="CustomMVP"/>
-        <EditorIndex Value="28"/>
+        <EditorIndex Value="31"/>
         <WindowIndex Value="0"/>
         <TopLine Value="47"/>
         <CursorPos X="7" Y="63"/>
-        <UsageCount Value="153"/>
+        <UsageCount Value="155"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
@@ -161,7 +162,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="4"/>
         <CursorPos X="15" Y="20"/>
-        <UsageCount Value="152"/>
+        <UsageCount Value="154"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
@@ -171,17 +172,17 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="20" Y="15"/>
-        <UsageCount Value="152"/>
+        <UsageCount Value="154"/>
       </Unit11>
       <Unit12>
         <Filename Value="..\..\core\rawmaterial\RawMaterialMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="RawMaterialMVP"/>
-        <EditorIndex Value="39"/>
+        <EditorIndex Value="42"/>
         <WindowIndex Value="0"/>
         <TopLine Value="35"/>
         <CursorPos X="3" Y="56"/>
-        <UsageCount Value="152"/>
+        <UsageCount Value="154"/>
         <Loaded Value="True"/>
       </Unit12>
       <Unit13>
@@ -201,7 +202,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="19" Y="3"/>
-        <UsageCount Value="152"/>
+        <UsageCount Value="154"/>
       </Unit14>
       <Unit15>
         <Filename Value="..\..\core\custom\lcl\CustomQueryFrm.pas"/>
@@ -212,7 +213,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="16"/>
         <CursorPos X="35" Y="46"/>
-        <UsageCount Value="152"/>
+        <UsageCount Value="154"/>
       </Unit15>
       <Unit16>
         <Filename Value="..\..\core\main\lcl\MainFrm.pas"/>
@@ -224,8 +225,9 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="8" Y="18"/>
-        <UsageCount Value="146"/>
+        <UsageCount Value="148"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit16>
       <Unit17>
         <Filename Value="..\..\core\rawmaterial\lcl\RawMaterialQueryFrm.pas"/>
@@ -236,7 +238,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="17" Y="9"/>
-        <UsageCount Value="145"/>
+        <UsageCount Value="147"/>
       </Unit17>
       <Unit18>
         <Filename Value="..\..\core\rawmaterial\lcl\RawMaterialEditFrm.pas"/>
@@ -244,12 +246,13 @@
         <ComponentName Value="RawMaterialEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RawMaterialEditFrm"/>
-        <EditorIndex Value="16"/>
+        <EditorIndex Value="19"/>
         <WindowIndex Value="0"/>
         <TopLine Value="9"/>
         <CursorPos X="24" Y="27"/>
-        <UsageCount Value="145"/>
+        <UsageCount Value="147"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit18>
       <Unit19>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Brokers\PressPgSQLBroker.pas"/>
@@ -337,11 +340,11 @@
         <Filename Value="..\..\core\recipe\RecipeMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="RecipeMVP"/>
-        <EditorIndex Value="38"/>
+        <EditorIndex Value="41"/>
         <WindowIndex Value="0"/>
         <TopLine Value="65"/>
         <CursorPos X="28" Y="79"/>
-        <UsageCount Value="97"/>
+        <UsageCount Value="99"/>
         <Loaded Value="True"/>
       </Unit29>
       <Unit30>
@@ -353,7 +356,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="13" Y="29"/>
-        <UsageCount Value="97"/>
+        <UsageCount Value="99"/>
       </Unit30>
       <Unit31>
         <Filename Value="..\..\core\recipe\lcl\RecipeEditFrm.pas"/>
@@ -361,12 +364,13 @@
         <ComponentName Value="RecipeEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RecipeEditFrm"/>
-        <EditorIndex Value="17"/>
+        <EditorIndex Value="20"/>
         <WindowIndex Value="0"/>
         <TopLine Value="7"/>
         <CursorPos X="47" Y="8"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="97"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit31>
       <Unit32>
         <Filename Value="..\..\core\recipe\lcl\RecipeIngredientItemEditFrm.pas"/>
@@ -374,12 +378,13 @@
         <ComponentName Value="RecipeIngredientItemEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RecipeIngredientItemEditFrm"/>
-        <EditorIndex Value="18"/>
+        <EditorIndex Value="21"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="27" Y="12"/>
-        <UsageCount Value="92"/>
+        <UsageCount Value="94"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit32>
       <Unit33>
         <Filename Value="..\..\core\recipe\lcl\RecipeIngredientItemEditFrm.lfm"/>
@@ -393,22 +398,22 @@
         <Filename Value="..\..\core\fermenter\FermenterBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FermenterBO"/>
-        <EditorIndex Value="37"/>
+        <EditorIndex Value="40"/>
         <WindowIndex Value="0"/>
         <TopLine Value="225"/>
         <CursorPos X="3" Y="227"/>
-        <UsageCount Value="89"/>
+        <UsageCount Value="91"/>
         <Loaded Value="True"/>
       </Unit34>
       <Unit35>
         <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FermenterMVP"/>
-        <EditorIndex Value="33"/>
+        <EditorIndex Value="36"/>
         <WindowIndex Value="0"/>
         <TopLine Value="90"/>
         <CursorPos X="28" Y="105"/>
-        <UsageCount Value="88"/>
+        <UsageCount Value="90"/>
         <Loaded Value="True"/>
       </Unit35>
       <Unit36>
@@ -417,12 +422,13 @@
         <ComponentName Value="FermenterQueryForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FementerQueryFrm"/>
-        <EditorIndex Value="25"/>
+        <EditorIndex Value="28"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="24"/>
-        <UsageCount Value="88"/>
+        <UsageCount Value="90"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit36>
       <Unit37>
         <Filename Value="..\..\core\fermenter\lcl\FementerQueryFrm.lfm"/>
@@ -438,22 +444,23 @@
         <ComponentName Value="FermenterEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FermenterEditFrm"/>
-        <EditorIndex Value="30"/>
+        <EditorIndex Value="33"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="13" Y="9"/>
-        <UsageCount Value="88"/>
+        <UsageCount Value="90"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit38>
       <Unit39>
         <Filename Value="..\..\core\location\LocationBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="LocationBO"/>
-        <EditorIndex Value="40"/>
+        <EditorIndex Value="43"/>
         <WindowIndex Value="0"/>
         <TopLine Value="28"/>
         <CursorPos X="3" Y="44"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="83"/>
         <Loaded Value="True"/>
       </Unit39>
       <Unit40>
@@ -464,7 +471,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="2"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="83"/>
         <Loaded Value="True"/>
       </Unit40>
       <Unit41>
@@ -477,8 +484,9 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="13" Y="10"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="83"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit41>
       <Unit42>
         <Filename Value="..\..\core\location\lcl\LocationEditFrm.pas"/>
@@ -486,12 +494,13 @@
         <ComponentName Value="LocationEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="LocationEditFrm"/>
-        <EditorIndex Value="29"/>
+        <EditorIndex Value="32"/>
         <WindowIndex Value="0"/>
         <TopLine Value="4"/>
         <CursorPos X="26" Y="34"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="83"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit42>
       <Unit43>
         <Filename Value="..\..\core\location\lcl\LocationQueryFrm.lfm"/>
@@ -505,22 +514,22 @@
         <Filename Value="..\..\core\filling\FillingBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FillingBO"/>
-        <EditorIndex Value="26"/>
+        <EditorIndex Value="29"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="40" Y="3"/>
-        <UsageCount Value="65"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit44>
       <Unit45>
         <Filename Value="..\..\core\mash\MashMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="MashMVP"/>
-        <EditorIndex Value="20"/>
+        <EditorIndex Value="23"/>
         <WindowIndex Value="0"/>
         <TopLine Value="66"/>
         <CursorPos X="31" Y="79"/>
-        <UsageCount Value="58"/>
+        <UsageCount Value="60"/>
         <Loaded Value="True"/>
       </Unit45>
       <Unit46>
@@ -529,12 +538,13 @@
         <ComponentName Value="MashQueryForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MashQueryFrm"/>
-        <EditorIndex Value="23"/>
+        <EditorIndex Value="26"/>
         <WindowIndex Value="0"/>
         <TopLine Value="5"/>
         <CursorPos X="46" Y="30"/>
-        <UsageCount Value="58"/>
+        <UsageCount Value="60"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit46>
       <Unit47>
         <Filename Value="..\..\core\mash\lcl\MashQueryFrm.lfm"/>
@@ -550,12 +560,13 @@
         <ComponentName Value="MashEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MashEditFrm"/>
-        <EditorIndex Value="24"/>
+        <EditorIndex Value="27"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="16" Y="29"/>
-        <UsageCount Value="58"/>
+        <UsageCount Value="60"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit48>
       <Unit49>
         <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
@@ -563,12 +574,13 @@
         <ComponentName Value="MashItemEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MashItemEditFrm"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="18"/>
         <WindowIndex Value="0"/>
         <TopLine Value="8"/>
         <CursorPos X="11" Y="22"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="57"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit49>
       <Unit50>
         <Filename Value="..\..\core\mash\lcl\MashIngredientItemEditFrm.pas"/>
@@ -576,12 +588,13 @@
         <ComponentName Value="MashIngredientItemEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MashIngredientItemEditFrm"/>
-        <EditorIndex Value="22"/>
+        <EditorIndex Value="25"/>
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="3" Y="34"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="57"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit50>
       <Unit51>
         <Filename Value="..\..\core\mash\lcl\MashFermenterItemEditFrm.pas"/>
@@ -589,12 +602,13 @@
         <ComponentName Value="MashFermenterItemEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MashFermenterItemEditFrm"/>
-        <EditorIndex Value="21"/>
+        <EditorIndex Value="24"/>
         <WindowIndex Value="0"/>
         <TopLine Value="15"/>
         <CursorPos X="14" Y="25"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="57"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit51>
       <Unit52>
         <Filename Value="..\..\core\mash\lcl\MashFermenterItemEditFrm.lfm"/>
@@ -610,12 +624,13 @@
         <ComponentName Value="FermenterEventItemEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FermenterEventItemEditFrm"/>
-        <EditorIndex Value="36"/>
+        <EditorIndex Value="39"/>
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="47" Y="15"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit53>
       <Unit54>
         <Filename Value="..\..\core\fermenter\lcl\FermenterEventEditFrm.pas"/>
@@ -623,12 +638,13 @@
         <ComponentName Value="FermenterEventEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FermenterEventEditFrm"/>
-        <EditorIndex Value="34"/>
+        <EditorIndex Value="37"/>
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="18" Y="20"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="41"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit54>
       <Unit55>
         <Filename Value="..\..\core\fermenter\lcl\FermenterEventQueryFrm.pas"/>
@@ -636,12 +652,13 @@
         <ComponentName Value="FermenterEventQueryForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FermenterEventQueryFrm"/>
-        <EditorIndex Value="35"/>
+        <EditorIndex Value="38"/>
         <WindowIndex Value="0"/>
         <TopLine Value="5"/>
         <CursorPos X="34" Y="30"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="41"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit55>
       <Unit56>
         <Filename Value="..\..\core\address\AddressBO.pas"/>
@@ -649,20 +666,20 @@
         <UnitName Value="AddressBO"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="199"/>
-        <CursorPos X="34" Y="158"/>
-        <UsageCount Value="27"/>
+        <TopLine Value="202"/>
+        <CursorPos X="38" Y="215"/>
+        <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit56>
       <Unit57>
         <Filename Value="..\..\core\address\AddressMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AddressMVP"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="121"/>
-        <CursorPos X="3" Y="123"/>
-        <UsageCount Value="25"/>
+        <TopLine Value="17"/>
+        <CursorPos X="15" Y="31"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit57>
       <Unit58>
@@ -671,12 +688,13 @@
         <ComponentName Value="AddressEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AddressEditFrm"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="17"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="15" Y="28"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit58>
       <Unit59>
         <Filename Value="..\..\core\address\lcl\AddressLabelEditFrm.pas"/>
@@ -684,12 +702,13 @@
         <ComponentName Value="AddressLabelEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AddressLabelEditFrm"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="16"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="4"/>
-        <CursorPos X="5" Y="27"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="10"/>
+        <CursorPos X="15" Y="34"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit59>
       <Unit60>
         <Filename Value="..\..\core\address\lcl\CityEditFrm.pas"/>
@@ -697,12 +716,13 @@
         <ComponentName Value="CityEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="CityEditFrm"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="14"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="6"/>
-        <CursorPos X="3" Y="31"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="11"/>
+        <CursorPos X="15" Y="36"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit60>
       <Unit61>
         <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
@@ -710,12 +730,14 @@
         <ComponentName Value="StateEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="StateEditFrm"/>
-        <EditorIndex Value="11"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="15"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="24" Y="24"/>
-        <UsageCount Value="21"/>
+        <TopLine Value="13"/>
+        <CursorPos X="38" Y="38"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit61>
       <Unit62>
         <Filename Value="..\..\core\address\lcl\CountryEditFrm.pas"/>
@@ -723,12 +745,13 @@
         <ComponentName Value="CountryEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="CountryEditFrm"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="13"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="31" Y="15"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit62>
       <Unit63>
         <Filename Value="..\..\core\address\lcl\InternetAddressEditFrm.pas"/>
@@ -736,150 +759,211 @@
         <ComponentName Value="InternetAddressEditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="InternetAddressEditFrm"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="12"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="32" Y="31"/>
-        <UsageCount Value="20"/>
+        <CursorPos X="12" Y="15"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit63>
+      <Unit64>
+        <Filename Value="..\..\core\address\lcl\InternetAddressLabelEditFrm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="InternetAddressLabelEditForm"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="InternetAddressLabelEditFrm"/>
+        <EditorIndex Value="7"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="21" Y="19"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit64>
+      <Unit65>
+        <Filename Value="..\..\core\address\lcl\NeighborhoodEditFrm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="NeighborhoodEditForm"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="NeighborhoodEditFrm"/>
+        <EditorIndex Value="11"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="6"/>
+        <CursorPos X="67" Y="34"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit65>
+      <Unit66>
+        <Filename Value="..\..\core\address\lcl\PhoneEditFrm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PhoneEditForm"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="PhoneEditFrm"/>
+        <EditorIndex Value="10"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="4"/>
+        <CursorPos X="17" Y="32"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="..\..\core\address\lcl\PhoneLabelEditFrm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PhoneLabelEditForm"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="PhoneLabelEditFrm"/>
+        <EditorIndex Value="9"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="6"/>
+        <CursorPos X="63" Y="34"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit67>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="..\..\core\address\lcl\AddressLabelEditFrm.pas"/>
-        <Caret Line="34" Column="15" TopLine="3"/>
+        <Filename Value="..\..\core\address\lcl\InternetAddressLabelEditFrm.pas"/>
+        <Caret Line="24" Column="43" TopLine="1"/>
       </Position1>
       <Position2>
-        <Filename Value="..\..\core\address\lcl\CityEditFrm.pas"/>
-        <Caret Line="26" Column="16" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\InternetAddressLabelEditFrm.pas"/>
+        <Caret Line="25" Column="43" TopLine="1"/>
       </Position2>
       <Position3>
-        <Filename Value="..\..\core\address\lcl\CityEditFrm.pas"/>
-        <Caret Line="30" Column="16" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\InternetAddressLabelEditFrm.pas"/>
+        <Caret Line="26" Column="43" TopLine="1"/>
       </Position3>
       <Position4>
-        <Filename Value="..\..\core\address\lcl\CityEditFrm.pas"/>
-        <Caret Line="31" Column="16" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\InternetAddressLabelEditFrm.pas"/>
+        <Caret Line="27" Column="43" TopLine="1"/>
       </Position4>
       <Position5>
-        <Filename Value="..\..\core\address\lcl\CityEditFrm.pas"/>
-        <Caret Line="32" Column="16" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\NeighborhoodEditFrm.pas"/>
+        <Caret Line="25" Column="67" TopLine="1"/>
       </Position5>
       <Position6>
-        <Filename Value="..\..\core\address\lcl\CityEditFrm.pas"/>
-        <Caret Line="33" Column="16" TopLine="2"/>
+        <Filename Value="..\..\core\address\lcl\NeighborhoodEditFrm.pas"/>
+        <Caret Line="29" Column="67" TopLine="1"/>
       </Position6>
       <Position7>
-        <Filename Value="..\..\core\address\lcl\CityEditFrm.pas"/>
-        <Caret Line="34" Column="16" TopLine="3"/>
+        <Filename Value="..\..\core\address\lcl\NeighborhoodEditFrm.pas"/>
+        <Caret Line="30" Column="67" TopLine="2"/>
       </Position7>
       <Position8>
-        <Filename Value="..\..\core\address\lcl\CityEditFrm.pas"/>
-        <Caret Line="35" Column="16" TopLine="4"/>
+        <Filename Value="..\..\core\address\lcl\NeighborhoodEditFrm.pas"/>
+        <Caret Line="31" Column="67" TopLine="3"/>
       </Position8>
       <Position9>
-        <Filename Value="..\..\core\address\lcl\CityEditFrm.pas"/>
-        <Caret Line="36" Column="16" TopLine="5"/>
+        <Filename Value="..\..\core\address\lcl\NeighborhoodEditFrm.pas"/>
+        <Caret Line="32" Column="67" TopLine="4"/>
       </Position9>
       <Position10>
-        <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
-        <Caret Line="25" Column="20" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\NeighborhoodEditFrm.pas"/>
+        <Caret Line="33" Column="67" TopLine="5"/>
       </Position10>
       <Position11>
-        <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
-        <Caret Line="29" Column="20" TopLine="1"/>
+        <Filename Value="..\..\core\address\AddressMVP.pas"/>
+        <Caret Line="123" Column="3" TopLine="121"/>
       </Position11>
       <Position12>
-        <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
-        <Caret Line="30" Column="20" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\PhoneEditFrm.pas"/>
+        <Caret Line="25" Column="17" TopLine="1"/>
       </Position12>
       <Position13>
-        <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
-        <Caret Line="31" Column="20" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\PhoneEditFrm.pas"/>
+        <Caret Line="29" Column="17" TopLine="1"/>
       </Position13>
       <Position14>
-        <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
-        <Caret Line="32" Column="20" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\PhoneEditFrm.pas"/>
+        <Caret Line="30" Column="17" TopLine="2"/>
       </Position14>
       <Position15>
-        <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
-        <Caret Line="33" Column="20" TopLine="2"/>
+        <Filename Value="..\..\core\address\lcl\PhoneEditFrm.pas"/>
+        <Caret Line="31" Column="17" TopLine="3"/>
       </Position15>
       <Position16>
-        <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
-        <Caret Line="34" Column="20" TopLine="3"/>
+        <Filename Value="..\..\core\address\lcl\PhoneLabelEditFrm.pas"/>
+        <Caret Line="25" Column="63" TopLine="1"/>
       </Position16>
       <Position17>
-        <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
-        <Caret Line="35" Column="20" TopLine="4"/>
+        <Filename Value="..\..\core\address\lcl\PhoneLabelEditFrm.pas"/>
+        <Caret Line="29" Column="63" TopLine="1"/>
       </Position17>
       <Position18>
-        <Filename Value="..\..\core\address\lcl\CountryEditFrm.pas"/>
-        <Caret Line="25" Column="27" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\PhoneLabelEditFrm.pas"/>
+        <Caret Line="30" Column="63" TopLine="2"/>
       </Position18>
       <Position19>
-        <Filename Value="..\..\core\address\lcl\CountryEditFrm.pas"/>
-        <Caret Line="29" Column="27" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\PhoneLabelEditFrm.pas"/>
+        <Caret Line="31" Column="63" TopLine="3"/>
       </Position19>
       <Position20>
-        <Filename Value="..\..\core\address\lcl\CountryEditFrm.pas"/>
-        <Caret Line="30" Column="27" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\PhoneLabelEditFrm.pas"/>
+        <Caret Line="32" Column="63" TopLine="4"/>
       </Position20>
       <Position21>
-        <Filename Value="..\..\core\address\lcl\CountryEditFrm.pas"/>
-        <Caret Line="31" Column="27" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\PhoneLabelEditFrm.pas"/>
+        <Caret Line="33" Column="63" TopLine="5"/>
       </Position21>
       <Position22>
-        <Filename Value="..\..\core\address\lcl\CountryEditFrm.pas"/>
-        <Caret Line="32" Column="27" TopLine="1"/>
+        <Filename Value="..\..\core\address\AddressMVP.pas"/>
+        <Caret Line="162" Column="3" TopLine="160"/>
       </Position22>
       <Position23>
-        <Filename Value="..\..\core\address\lcl\CountryEditFrm.pas"/>
-        <Caret Line="33" Column="27" TopLine="2"/>
+        <Filename Value="..\..\core\address\AddressMVP.pas"/>
+        <Caret Line="78" Column="3" TopLine="64"/>
       </Position23>
       <Position24>
-        <Filename Value="..\..\core\address\AddressMVP.pas"/>
-        <Caret Line="95" Column="54" TopLine="86"/>
+        <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
+        <Caret Line="24" Column="24" TopLine="1"/>
       </Position24>
       <Position25>
-        <Filename Value="..\..\core\address\lcl\InternetAddressEditFrm.pas"/>
-        <Caret Line="24" Column="32" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
+        <Caret Line="25" Column="24" TopLine="1"/>
       </Position25>
       <Position26>
-        <Filename Value="..\..\core\address\lcl\InternetAddressEditFrm.pas"/>
-        <Caret Line="28" Column="32" TopLine="1"/>
+        <Filename Value="..\..\core\address\AddressMVP.pas"/>
+        <Caret Line="181" Column="23" TopLine="169"/>
       </Position26>
       <Position27>
-        <Filename Value="..\..\core\address\lcl\InternetAddressEditFrm.pas"/>
-        <Caret Line="29" Column="32" TopLine="1"/>
+        <Filename Value="..\..\core\address\AddressBO.pas"/>
+        <Caret Line="215" Column="36" TopLine="202"/>
       </Position27>
       <Position28>
-        <Filename Value="..\..\core\address\lcl\InternetAddressEditFrm.pas"/>
-        <Caret Line="28" Column="32" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\AddressLabelEditFrm.pas"/>
+        <Caret Line="27" Column="5" TopLine="4"/>
       </Position28>
       <Position29>
-        <Filename Value="..\..\core\address\lcl\InternetAddressEditFrm.pas"/>
-        <Caret Line="29" Column="32" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\CityEditFrm.pas"/>
+        <Caret Line="31" Column="3" TopLine="6"/>
       </Position29>
       <Position30>
-        <Filename Value="..\..\core\address\lcl\InternetAddressEditFrm.pas"/>
-        <Caret Line="30" Column="32" TopLine="1"/>
+        <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
+        <Caret Line="26" Column="24" TopLine="1"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
-    <Version Value="8"/>
+    <Version Value="9"/>
     <PathDelim Value="\"/>
     <Target>
       <Filename Value="..\..\..\out\bin\glassbeer__$(TargetOS)$(ExeExt)"/>
     </Target>
     <SearchPaths>
-      <IncludeFiles Value="..\..\core\include\"/>
-      <OtherUnitFiles Value="..\..\core\custom\;..\..\core\basicuserrecorddata\;..\..\core\mash\;..\..\core\recipe\;..\..\core\rawmaterial\;..\..\core\main\;..\..\core\custom\lcl\;..\..\core\main\lcl\;..\..\core\rawmaterial\lcl\;..\..\core\recipe\lcl\;..\..\core\fermenter\;..\..\core\fermenter\lcl\;..\..\core\location\;..\..\core\location\lcl\;..\..\core\filling\;..\..\core\mash\lcl\;..\..\core\address\;..\..\core\address\lcl\"/>
+      <IncludeFiles Value="..\..\core\include"/>
+      <OtherUnitFiles Value="..\..\core\custom;..\..\core\basicuserrecorddata;..\..\core\mash;..\..\core\recipe;..\..\core\rawmaterial;..\..\core\main;..\..\core\custom\lcl;..\..\core\main\lcl;..\..\core\rawmaterial\lcl;..\..\core\recipe\lcl;..\..\core\fermenter;..\..\core\fermenter\lcl;..\..\core\location;..\..\core\location\lcl;..\..\core\filling;..\..\core\mash\lcl;..\..\core\address;..\..\core\address\lcl"/>
       <UnitOutputDirectory Value="..\..\..\out\lib\$(TargetCPU)-$(TargetOS)"/>
       <LCLWidgetType Value="win32"/>
     </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <UseAnsiStrings Value="False"/>
+      </SyntaxOptions>
+    </Parsing>
     <Linking>
       <Debugging>
         <GenerateDebugInfo Value="True"/>

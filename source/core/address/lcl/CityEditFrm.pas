@@ -33,7 +33,7 @@ uses
 {$R *.lfm}
 
 initialization
-  PressXCLBroker(TCityEditPresenter, TCityEditForm);
+  PressXCLForm(TCityEditPresenter, TCityEditForm);
 
 end.
 

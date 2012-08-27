@@ -18,6 +18,8 @@ inherited CityEditForm: TCityEditForm
   inherited EditPageControl: TPageControl
     Height = 219
     Width = 587
+    ActivePage = nil
+    TabIndex = -1
     inherited MainTab: TTabSheet
       ClientHeight = 192
       ClientWidth = 579

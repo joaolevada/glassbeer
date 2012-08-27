@@ -1,30 +1,26 @@
-inherited StateEditForm: TStateEditForm
-  Left = 345
-  Height = 271
-  Top = 161
-  Width = 588
-  Caption = 'Estado'
-  ClientHeight = 271
-  ClientWidth = 588
+inherited InternetAddressLabelEditForm: TInternetAddressLabelEditForm
+  Height = 224
+  Width = 587
+  Caption = 'Tipo de endereço da internet'
+  ClientHeight = 224
+  ClientWidth = 587
   inherited BottomPanel: TPanel
-    Top = 217
-    Width = 588
-    ClientWidth = 588
+    Top = 170
+    Width = 587
+    ClientWidth = 587
     inherited SaveButton: TBitBtn
-      Left = 347
+      Left = 346
     end
     inherited CancelButton: TBitBtn
-      Left = 467
+      Left = 466
     end
   end
   inherited EditPageControl: TPageControl
-    Height = 217
-    Width = 588
-    ActivePage = nil
-    TabIndex = -1
+    Height = 170
+    Width = 587
     inherited MainTab: TTabSheet
-      ClientHeight = 190
-      ClientWidth = 580
+      ClientHeight = 143
+      ClientWidth = 579
       object CodeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
@@ -75,10 +71,11 @@ inherited StateEditForm: TStateEditForm
       end
       object RemarksLabel: TLabel[4]
         AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeEdit
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
-        Top = 96
+        Top = 49
         Width = 83
         BorderSpacing.Top = 8
         Caption = 'Observações'
@@ -90,63 +87,13 @@ inherited StateEditForm: TStateEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 72
-        Top = 113
+        Top = 66
         Width = 356
         BorderSpacing.Top = 2
         Lines.Strings = (
           'RemarksMemo'
         )
-        TabOrder = 4
-      end
-      object CountryLabel: TLabel[6]
-        AnchorSideLeft.Control = NameEdit
-        AnchorSideTop.Control = NameEdit
-        AnchorSideTop.Side = asrBottom
-        Left = 218
-        Height = 15
-        Top = 49
-        Width = 27
-        BorderSpacing.Top = 8
-        Caption = 'País'
-        ParentColor = False
-      end
-      object CountryComboBox: TComboBox[7]
-        AnchorSideLeft.Control = CountryLabel
-        AnchorSideTop.Control = CountryLabel
-        AnchorSideTop.Side = asrBottom
-        Left = 218
-        Height = 22
-        Top = 66
-        Width = 356
-        BorderSpacing.Top = 2
-        ItemHeight = 14
-        TabOrder = 3
-        Text = 'CountryComboBox'
-      end
-      object AbbreviationLabel: TLabel[8]
-        AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = CodeEdit
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 15
-        Top = 49
-        Width = 114
-        BorderSpacing.Left = 4
-        BorderSpacing.Top = 8
-        Caption = 'Sigla (abreviação)'
-        ParentColor = False
-      end
-      object AbbreviationEdit: TEdit[9]
-        AnchorSideLeft.Control = AbbreviationLabel
-        AnchorSideTop.Control = AbbreviationLabel
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 22
-        Top = 66
-        Width = 198
-        BorderSpacing.Top = 2
         TabOrder = 2
-        Text = 'AbbreviationEdit'
       end
     end
   end

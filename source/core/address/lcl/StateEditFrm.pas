@@ -15,6 +15,8 @@ type
   TStateEditForm = class(TCustomEditForm)
     CodeEdit: TEdit;
     CodeLabel: TLabel;
+    AbbreviationLabel: TLabel;
+    AbbreviationEdit: TEdit;
     NameEdit: TEdit;
     NameLabel: TLabel;
     RemarksLabel: TLabel;
@@ -33,7 +35,7 @@ uses
 {$R *.lfm}
 
 initialization
-  PressXCLForm(TStateEditPresenter, StateEditForm);
+  PressXCLForm(TStateEditPresenter, TStateEditForm);
 
 end.
 
