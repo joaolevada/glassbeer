@@ -1,0 +1,76 @@
+inherited InternetAddressEditForm: TInternetAddressEditForm
+  Height = 129
+  Width = 578
+  Caption = 'Endereço na internet'
+  ClientHeight = 129
+  ClientWidth = 578
+  inherited BottomPanel: TPanel
+    Top = 75
+    Width = 578
+    ClientWidth = 578
+    inherited SaveButton: TBitBtn
+      Left = 337
+    end
+    inherited CancelButton: TBitBtn
+      Left = 457
+    end
+  end
+  inherited EditPageControl: TPageControl
+    Height = 75
+    Width = 578
+    inherited MainTab: TTabSheet
+      ClientHeight = 48
+      ClientWidth = 570
+      object LabelLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 27
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Tipo'
+        ParentColor = False
+      end
+      object LabelComboBox: TComboBox[1]
+        AnchorSideLeft.Control = LabelLabel
+        AnchorSideTop.Control = LabelLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 0
+        Text = 'LabelComboBox'
+      end
+      object AddressLabel: TLabel[2]
+        AnchorSideLeft.Control = LabelComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MainTab
+        Left = 210
+        Height = 15
+        Top = 4
+        Width = 60
+        BorderSpacing.Left = 8
+        BorderSpacing.Top = 4
+        Caption = 'Endereço'
+        ParentColor = False
+      end
+      object AddressEdit: TEdit[3]
+        AnchorSideLeft.Control = AddressLabel
+        AnchorSideTop.Control = AddressLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 210
+        Height = 22
+        Top = 21
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'AddressEdit'
+      end
+    end
+  end
+end

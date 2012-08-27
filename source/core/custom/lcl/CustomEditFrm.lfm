@@ -1,7 +1,7 @@
 object CustomEditForm: TCustomEditForm
-  Left = 345
+  Left = 355
   Height = 600
-  Top = 161
+  Top = 202
   Width = 800
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
@@ -9,7 +9,7 @@ object CustomEditForm: TCustomEditForm
   ClientHeight = 600
   ClientWidth = 800
   Position = poMainFormCenter
-  LCLVersion = '0.9.30.2RC1'
+  LCLVersion = '0.9.29'
   object BottomPanel: TPanel
     Left = 0
     Height = 54
