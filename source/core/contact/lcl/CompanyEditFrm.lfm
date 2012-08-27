@@ -1,0 +1,198 @@
+inherited CompanyEditForm: TCompanyEditForm
+  Height = 481
+  Caption = 'Contato <empresa>'
+  ClientHeight = 481
+  inherited BottomPanel: TPanel
+    Top = 427
+  end
+  inherited EditPageControl: TPageControl
+    Height = 427
+    ActivePage = PhonesTabSheet
+    TabIndex = 2
+    inherited MainTab: TTabSheet
+      ClientHeight = 400
+    end
+    inherited AddressesTabSheet: TTabSheet
+      ClientHeight = 400
+      ClientWidth = 792
+    end
+    inherited PhonesTabSheet: TTabSheet
+      ClientHeight = 400
+      ClientWidth = 792
+      object ContactsLabel: TLabel[3]
+        AnchorSideLeft.Control = PhonesTabSheet
+        AnchorSideTop.Control = PhoneGroupBox
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 206
+        Width = 59
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Contatos'
+        ParentColor = False
+      end
+      object ContactsStringGrid: TStringGrid[4]
+        AnchorSideLeft.Control = ContactsLabel
+        AnchorSideTop.Control = ContactsLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 100
+        Top = 223
+        Width = 780
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+      object ContactGroupBox: TGroupBox[5]
+        AnchorSideLeft.Control = PhonesTabSheet
+        AnchorSideTop.Control = ContactsStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 68
+        Top = 331
+        Width = 780
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Contato'
+        ClientHeight = 50
+        ClientWidth = 776
+        TabOrder = 3
+        object ContactLabelLabel: TLabel
+          AnchorSideLeft.Control = ContactGroupBox
+          AnchorSideTop.Control = ContactGroupBox
+          Left = 4
+          Height = 15
+          Top = 4
+          Width = 39
+          BorderSpacing.Left = 4
+          BorderSpacing.Top = 4
+          Caption = 'Cargo'
+          ParentColor = False
+        end
+        object ContactPersonLabel: TLabel
+          AnchorSideLeft.Control = ContactLabelComboBox
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = ContactGroupBox
+          Left = 210
+          Height = 15
+          Top = 4
+          Width = 47
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 4
+          Caption = 'Pessoa'
+          ParentColor = False
+        end
+        object ContactExtensionLineLabel: TLabel
+          AnchorSideLeft.Control = ContactPersonComboBox
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = ContactGroupBox
+          Left = 574
+          Height = 15
+          Top = 4
+          Width = 39
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 4
+          Caption = 'Ramal'
+          ParentColor = False
+        end
+        object ContactLabelComboBox: TComboBox
+          AnchorSideLeft.Control = ContactLabelLabel
+          AnchorSideTop.Control = ContactLabelLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 4
+          Height = 22
+          Top = 21
+          Width = 198
+          BorderSpacing.Top = 2
+          ItemHeight = 14
+          TabOrder = 0
+          Text = 'ContactLabelComboBox'
+        end
+        object ContactPersonComboBox: TComboBox
+          AnchorSideLeft.Control = ContactPersonLabel
+          AnchorSideTop.Control = ContactPersonLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 210
+          Height = 22
+          Top = 21
+          Width = 356
+          BorderSpacing.Top = 2
+          ItemHeight = 14
+          TabOrder = 1
+          Text = 'ContactPersonComboBox'
+        end
+        object ContactExtensionLineEdit: TEdit
+          AnchorSideLeft.Control = ContactExtensionLineLabel
+          AnchorSideTop.Control = ContactExtensionLineLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 574
+          Height = 22
+          Top = 21
+          Width = 198
+          BorderSpacing.Top = 2
+          TabOrder = 2
+          Text = 'ContactExtensionLineEdit'
+        end
+      end
+    end
+    inherited InternetTabSheet: TTabSheet
+      ClientHeight = 400
+      ClientWidth = 792
+    end
+    inherited DocumentsTabSheet: TTabSheet
+      ClientHeight = 400
+      ClientWidth = 792
+      object IELabel: TLabel[0]
+        AnchorSideLeft.Control = DocumentsTabSheet
+        AnchorSideTop.Control = DocumentsTabSheet
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 116
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Inscrição estadual'
+        ParentColor = False
+      end
+      object IEEdit: TEdit[1]
+        AnchorSideLeft.Control = IELabel
+        AnchorSideTop.Control = IELabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'IEEdit'
+      end
+      object CNPJLabel: TLabel[2]
+        AnchorSideLeft.Control = DocumentsTabSheet
+        AnchorSideTop.Control = IEEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 48
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'C.N.P.J.'
+        ParentColor = False
+      end
+      object CNPJEdit: TEdit[3]
+        AnchorSideLeft.Control = CNPJLabel
+        AnchorSideTop.Control = CNPJLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'CNPJEdit'
+      end
+    end
+  end
+end

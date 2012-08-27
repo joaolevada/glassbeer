@@ -13,12 +13,13 @@ uses
   RecipeEditFrm, RecipeIngredientItemEditFrm, FermenterBO, FermenterMVP,
   FementerQueryFrm, FermenterEditFrm, LocationBO, LocationMVP, LocationQueryFrm,
   LocationEditFrm, FillingBO, MashMVP, MashQueryFrm, MashEditFrm,
-MashItemEditFrm, MashIngredientItemEditFrm, MashFermenterItemEditFrm,
-FermenterEventItemEditFrm, FermenterEventEditFrm, FermenterEventQueryFrm,
-AddressBO, AddressMVP, AddressEditFrm, AddressLabelEditFrm, CityEditFrm,
-StateEditFrm, CountryEditFrm, InternetAddressEditFrm,
-InternetAddressLabelEditFrm, NeighborhoodEditFrm, PhoneEditFrm,
-PhoneLabelEditFrm;
+  MashItemEditFrm, MashIngredientItemEditFrm, MashFermenterItemEditFrm,
+  FermenterEventItemEditFrm, FermenterEventEditFrm, FermenterEventQueryFrm,
+  AddressBO, AddressMVP, AddressEditFrm, AddressLabelEditFrm, CityEditFrm,
+  StateEditFrm, CountryEditFrm, InternetAddressEditFrm,
+  InternetAddressLabelEditFrm, NeighborhoodEditFrm, PhoneEditFrm,
+  PhoneLabelEditFrm, ContactBO, ContactEditFrm, PersonEditFrm, CompanyEditFrm,
+  PersonContactLabelEditFrm;
 
 {$R *.res}
 

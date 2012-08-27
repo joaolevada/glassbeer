@@ -1,0 +1,107 @@
+inherited PersonEditForm: TPersonEditForm
+  Height = 317
+  Caption = 'Contato <pessoa>'
+  ClientHeight = 317
+  inherited BottomPanel: TPanel
+    Top = 263
+  end
+  inherited EditPageControl: TPageControl
+    Height = 263
+    ActivePage = InternetTabSheet
+    TabIndex = 3
+    inherited MainTab: TTabSheet
+      ClientHeight = 236
+      object SpouseLabel: TLabel[8]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = RemarksMemo
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 193
+        Width = 54
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Cônjuge'
+        ParentColor = False
+      end
+      object SpouseComboBox: TComboBox[9]
+        AnchorSideLeft.Control = SpouseLabel
+        AnchorSideTop.Control = SpouseLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 210
+        Width = 356
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 4
+        Text = 'SpouseComboBox'
+      end
+    end
+    inherited AddressesTabSheet: TTabSheet
+      ClientHeight = 236
+      ClientWidth = 792
+    end
+    inherited PhonesTabSheet: TTabSheet
+      ClientHeight = 236
+      ClientWidth = 792
+    end
+    inherited InternetTabSheet: TTabSheet
+      ClientHeight = 236
+      ClientWidth = 792
+    end
+    inherited DocumentsTabSheet: TTabSheet
+      ClientHeight = 519
+      ClientWidth = 792
+      object RGLabel: TLabel[0]
+        AnchorSideLeft.Control = DocumentsTabSheet
+        AnchorSideTop.Control = DocumentsTabSheet
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 26
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'R.G.'
+        ParentColor = False
+      end
+      object RGEdit: TEdit[1]
+        AnchorSideLeft.Control = RGLabel
+        AnchorSideTop.Control = RGLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'RGEdit'
+      end
+      object CPFLabel: TLabel[2]
+        AnchorSideLeft.Control = DocumentsTabSheet
+        AnchorSideTop.Control = RGEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 37
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'C.P.F.'
+        ParentColor = False
+      end
+      object CPFEdit: TEdit[3]
+        AnchorSideLeft.Control = CPFLabel
+        AnchorSideTop.Control = CPFLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'CPFEdit'
+      end
+    end
+  end
+end

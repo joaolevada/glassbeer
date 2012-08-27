@@ -1,0 +1,334 @@
+inherited ContactEditForm: TContactEditForm
+  Caption = 'ContactEditForm'
+  inherited EditPageControl: TPageControl
+    ActivePage = DocumentsTabSheet
+    TabIndex = 4
+    inherited MainTab: TTabSheet
+      ClientHeight = 519
+      ClientWidth = 792
+      object CodeLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 2
+        Width = 45
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Caption = 'Código'
+        ParentColor = False
+      end
+      object CodeEdit: TEdit[1]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 19
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'CodeEdit'
+      end
+      object NameLabel: TLabel[2]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = CodeLabel
+        Left = 218
+        Height = 15
+        Top = 2
+        Width = 37
+        BorderSpacing.Left = 16
+        Caption = 'Nome'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[3]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 19
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'NameEdit'
+      end
+      object RemarksLabel: TLabel[4]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = NickNameEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 96
+        Width = 83
+        BorderSpacing.Top = 8
+        Caption = 'Observações'
+        ParentColor = False
+      end
+      object RemarksMemo: TMemo[5]
+        AnchorSideLeft.Control = RemarksLabel
+        AnchorSideTop.Control = RemarksLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 72
+        Top = 113
+        Width = 356
+        BorderSpacing.Top = 2
+        Lines.Strings = (
+          'RemarksMemo'
+        )
+        TabOrder = 2
+      end
+      object NickNameLabel: TLabel[6]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = CodeEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 49
+        Width = 171
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Apelido (ou nome fantasia)'
+        ParentColor = False
+      end
+      object NickNameEdit: TEdit[7]
+        AnchorSideLeft.Control = NickNameLabel
+        AnchorSideTop.Control = NickNameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 66
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'NickNameEdit'
+      end
+    end
+    object AddressesTabSheet: TTabSheet[1]
+      Caption = 'Endereços'
+      ClientHeight = 519
+      ClientWidth = 792
+      object AddressesLabel: TLabel
+        AnchorSideLeft.Control = AddressesTabSheet
+        AnchorSideTop.Control = AddressesTabSheet
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 67
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Endereços'
+        ParentColor = False
+      end
+      object AddressesStringGrid: TStringGrid
+        AnchorSideLeft.Control = AddressesLabel
+        AnchorSideTop.Control = AddressesLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 100
+        Top = 21
+        Width = 784
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+    end
+    object PhonesTabSheet: TTabSheet[2]
+      Caption = 'Telefones'
+      ClientHeight = 519
+      ClientWidth = 792
+      object PhonesLabel: TLabel
+        AnchorSideLeft.Control = PhonesTabSheet
+        AnchorSideTop.Control = PhonesTabSheet
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 62
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Telefones'
+        ParentColor = False
+      end
+      object PhonesStringGrid: TStringGrid
+        AnchorSideLeft.Control = PhonesLabel
+        AnchorSideTop.Control = PhonesLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 100
+        Top = 21
+        Width = 784
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+      object PhoneGroupBox: TGroupBox
+        AnchorSideLeft.Control = PhonesTabSheet
+        AnchorSideTop.Control = PhonesStringGrid
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = PhonesStringGrid
+        AnchorSideRight.Side = asrBottom
+        Left = 4
+        Height = 69
+        Top = 129
+        Width = 576
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Telefone'
+        ClientHeight = 51
+        ClientWidth = 572
+        TabOrder = 1
+        object PhoneLabelLabel: TLabel
+          AnchorSideLeft.Control = PhoneGroupBox
+          AnchorSideTop.Control = PhoneGroupBox
+          Left = 4
+          Height = 15
+          Top = 4
+          Width = 27
+          BorderSpacing.Left = 4
+          BorderSpacing.Top = 4
+          Caption = 'Tipo'
+          ParentColor = False
+        end
+        object PhoneLabelComboBox: TComboBox
+          AnchorSideLeft.Control = PhoneLabelLabel
+          AnchorSideTop.Control = PhoneLabelLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 4
+          Height = 22
+          Top = 21
+          Width = 198
+          BorderSpacing.Top = 2
+          ItemHeight = 14
+          TabOrder = 0
+          Text = 'PhoneLabelComboBox'
+        end
+        object PhoneNumberLabel: TLabel
+          AnchorSideLeft.Control = PhoneLabelComboBox
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = PhoneLabelLabel
+          Left = 210
+          Height = 15
+          Top = 4
+          Width = 50
+          BorderSpacing.Left = 8
+          Caption = 'Número'
+          ParentColor = False
+        end
+        object PhoneNumberEdit: TEdit
+          AnchorSideLeft.Control = PhoneNumberLabel
+          AnchorSideTop.Control = PhoneNumberLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 210
+          Height = 22
+          Top = 21
+          Width = 356
+          BorderSpacing.Top = 2
+          TabOrder = 1
+          Text = 'PhoneNumberEdit'
+        end
+      end
+    end
+    object InternetTabSheet: TTabSheet[3]
+      Caption = 'Internet'
+      ClientHeight = 519
+      ClientWidth = 792
+      object InternetAddressesLabel: TLabel
+        AnchorSideLeft.Control = InternetTabSheet
+        AnchorSideTop.Control = InternetTabSheet
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 141
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Endereços de internet'
+        ParentColor = False
+      end
+      object InternetAddressStringGrid: TStringGrid
+        AnchorSideLeft.Control = InternetAddressesLabel
+        AnchorSideTop.Control = InternetAddressesLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 100
+        Top = 21
+        Width = 784
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+      object InternetAddressGroubBox: TGroupBox
+        AnchorSideLeft.Control = InternetTabSheet
+        AnchorSideTop.Control = InternetAddressStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 68
+        Top = 129
+        Width = 576
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Endereço de internet'
+        ClientHeight = 50
+        ClientWidth = 572
+        TabOrder = 1
+        object InternetAddressLabelLabel: TLabel
+          AnchorSideLeft.Control = InternetAddressGroubBox
+          AnchorSideTop.Control = InternetAddressGroubBox
+          Left = 4
+          Height = 15
+          Top = 4
+          Width = 27
+          BorderSpacing.Left = 4
+          BorderSpacing.Top = 4
+          Caption = 'Tipo'
+          ParentColor = False
+        end
+        object InternetAddressLabelComboBox: TComboBox
+          AnchorSideLeft.Control = InternetAddressLabelLabel
+          AnchorSideTop.Control = InternetAddressLabelLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 4
+          Height = 22
+          Top = 21
+          Width = 198
+          BorderSpacing.Top = 2
+          ItemHeight = 14
+          TabOrder = 0
+          Text = 'InternetAddressLabelComboBox'
+        end
+        object InternetAddressLabel: TLabel
+          AnchorSideLeft.Control = InternetAddressLabelComboBox
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = InternetAddressGroubBox
+          Left = 210
+          Height = 15
+          Top = 4
+          Width = 90
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 4
+          Caption = 'Endereço (url)'
+          ParentColor = False
+        end
+        object InternetAddressEdit: TEdit
+          AnchorSideLeft.Control = InternetAddressLabel
+          AnchorSideTop.Control = InternetAddressLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 210
+          Height = 22
+          Top = 21
+          Width = 356
+          BorderSpacing.Top = 2
+          TabOrder = 1
+          Text = 'InternetAddressEdit'
+        end
+      end
+    end
+    object DocumentsTabSheet: TTabSheet[4]
+      Caption = 'Documentos'
+    end
+  end
+end

@@ -1,0 +1,102 @@
+inherited PersonContactEditForm: TPersonContactEditForm
+  Height = 128
+  Width = 785
+  Caption = 'Contato na empresa'
+  ClientHeight = 128
+  ClientWidth = 785
+  inherited BottomPanel: TPanel
+    Top = 74
+    Width = 785
+    ClientWidth = 785
+    inherited SaveButton: TBitBtn
+      Left = 544
+    end
+    inherited CancelButton: TBitBtn
+      Left = 664
+    end
+  end
+  inherited EditPageControl: TPageControl
+    Height = 74
+    Width = 785
+    inherited MainTab: TTabSheet
+      ClientHeight = 47
+      ClientWidth = 777
+      object LabelLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 39
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Cargo'
+        ParentColor = False
+      end
+      object LabelComboBox: TComboBox[1]
+        AnchorSideLeft.Control = LabelLabel
+        AnchorSideTop.Control = LabelLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 0
+        Text = 'LabelComboBox'
+      end
+      object PersonLabel: TLabel[2]
+        AnchorSideLeft.Control = LabelComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MainTab
+        Left = 210
+        Height = 15
+        Top = 4
+        Width = 47
+        BorderSpacing.Left = 8
+        BorderSpacing.Top = 4
+        Caption = 'Pessoa'
+        ParentColor = False
+      end
+      object PersonComboBox: TComboBox[3]
+        AnchorSideLeft.Control = PersonLabel
+        AnchorSideTop.Control = PersonLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 210
+        Height = 22
+        Top = 21
+        Width = 356
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 1
+        Text = 'PersonComboBox'
+      end
+      object ExtensionLineLabel: TLabel[4]
+        AnchorSideLeft.Control = PersonComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MainTab
+        Left = 574
+        Height = 15
+        Top = 4
+        Width = 123
+        BorderSpacing.Left = 8
+        BorderSpacing.Top = 4
+        Caption = 'ExtensionLineLabel'
+        ParentColor = False
+      end
+      object ExtensionLineEdit: TEdit[5]
+        AnchorSideLeft.Control = ExtensionLineLabel
+        AnchorSideTop.Control = ExtensionLineLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 574
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'ExtensionLineEdit'
+      end
+    end
+  end
+end
