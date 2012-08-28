@@ -78,7 +78,7 @@ implementation
 
 class function TPersonContactLabel.InternalMetadataStr: string;
 begin
-  Result := 'TPersonContact IsPersistent(' +
+  Result := 'TPersonContactLabel IsPersistent(' +
     'BasicUserRecordData: TBasicUserRecordDataPart;' +
     ')';
 end;
@@ -120,7 +120,7 @@ end;
 class function TContact.InternalMetadataStr: string;
 begin
   Result := 'TContact IsPersistent( ' +
-    'BasicUserRecordData: TBasiUserRecordDataPart;' +
+    'BasicUserRecordData: TBasicUserRecordDataPart;' +
     'Addresses: Parts(TAddress);' +
     'Phones: Parts(TPhone);' +
     'InternetAddresses: Parts(TInternetAddress);' +

@@ -6,19 +6,28 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Buttons, ComCtrls, Grids, StdCtrls, CustomQueryFrm;
+  Buttons, ComCtrls, Grids, StdCtrls;
 
 type
 
   { TContactQueryForm }
 
-  TContactQueryForm = class(TCustomQueryForm)
-    CodeLabel: TLabel;
-    CodeEdit: TEdit;
+  TContactQueryForm = class(TForm)
+    AddPersonButton: TBitBtn;
+    AddButton1: TBitBtn;
+    BottomPanel: TPanel;
+    NameTabSheet: TTabSheet;
     NameEdit: TEdit;
+    EditButton: TBitBtn;
+    CodeEdit: TEdit;
     NameLabel: TLabel;
+    CodeLabel: TLabel;
+    QueryStringGrid: TStringGrid;
+    RemoveButton: TBitBtn;
+    SearchNameButton: TBitBtn;
+    SearchNameButton1: TBitBtn;
+    SearchPageControl: TPageControl;
     CodeTabSheet: TTabSheet;
-    SearchCodeButton: TBitBtn;
   end;
 
 

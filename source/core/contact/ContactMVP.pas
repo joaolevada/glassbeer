@@ -7,7 +7,10 @@ interface
 uses
   ContactBO,
   CustomMVP,
-  PressMVPPresenter;
+  PressMVPPresenter,
+  PressMVPCommand,
+  Classes,
+  PressSubject;
 
 type
 
@@ -53,7 +56,29 @@ type
     procedure InitPresenter; override;
   end;
 
+  { TAddPersonCommand }
+
+  TAddPersonCommand = class(TPressMVPCustomAddItemsCommand)
+  protected
+    function GetCaption: string; override;
+    function GetShortCut: TShortCut; override;
+    function InternalObjectClass: TPressObjectClass; override;
+  end;
+
+  { TAddCompanyCommand }
+
+  TAddCompanyCommand = class(TPressMVPCustomAddItemsCommand)
+  protected
+    function GetCaption: string; override;
+    function GetShortCut: TShortCut; override;
+    function InternalObjectClass: TPressObjectClass; override;
+  end;
+
 implementation
+
+uses
+  Menus,
+  LCLType;
 
 { TPersonContactEditPresenter }
 
@@ -158,11 +183,54 @@ end;
 { TContactQueryPresenter }
 
 procedure TContactQueryPresenter.InitPresenter;
+var
+  VItemsPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('Code', 'CodeEdit');
   CreateSubPresenter('Name', 'NameEdit');
+  VItemsPresenter := CreateQueryItemsPresenter('QueryStringGrid');
+  VItemsPresenter.Model.InsertCommands(0, [TAddPersonCommand, TAddCompanyCommand]);
+  VItemsPresenter.BindCommand(TAddPersonCommand, 'AddPersonButton');
+  VItemsPresenter.BindCommand(TAddCompanyCommand, 'AddCompanyButton');
+  VItemsPresenter.BindCommand(TPressMVPEditItemCommand, 'EditButton');
+  VItemsPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveButton');
+  BindCommand(TPressMVPExecuteQueryCommand, 'SearchNameButton');
   BindCommand(TPressMVPExecuteQueryCommand, 'SearchCodeButton');
+end;
+
+{ TAddPersonCommand }
+
+function TAddPersonCommand.GetCaption: string;
+begin
+  Result := 'Adicionar pessoa';
+end;
+
+function TAddPersonCommand.GetShortCut: TShortCut;
+begin
+  Result := VK_F2;
+end;
+
+function TAddPersonCommand.InternalObjectClass: TPressObjectClass;
+begin
+  Result := TPerson;
+end;
+
+{ TAddCompanyCommand }
+
+function TAddCompanyCommand.GetCaption: string;
+begin
+  Result := 'Adicionar empresa';
+end;
+
+function TAddCompanyCommand.GetShortCut: TShortCut;
+begin
+  Result := Menus.ShortCut(VK_F2, [ssCtrl]);
+end;
+
+function TAddCompanyCommand.InternalObjectClass: TPressObjectClass;
+begin
+  Result := TCompany;
 end;
 
 initialization
