@@ -10,7 +10,8 @@ uses
   PressMVPPresenter,
   PressMVPCommand,
   Classes,
-  PressSubject;
+  PressSubject,
+  PressMVPModel;
 
 type
 
@@ -51,9 +52,11 @@ type
 
   { TContactQueryPresenter }
 
-  TContactQueryPresenter = class(TCustomQueryPresenter)
+  TContactQueryPresenter = class(TPressMVPQueryPresenter)
   protected
     procedure InitPresenter; override;
+    class function InternalModelClass: TPressMVPObjectModelClass; override;
+    function InternalQueryItemsDisplayNames: string; override;
   end;
 
   { TAddPersonCommand }
@@ -85,8 +88,8 @@ uses
 procedure TPersonContactEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecorData.Name');
-  CreateSubPresenter('Person', 'PersonComboBox', 'BasicUserRecorData.Name');
+  CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
+  CreateSubPresenter('Person', 'PersonComboBox', 'BasicUserRecordData.Name');
   CreateSubPresenter('ExtensionLine', 'ExtensionLineEdit');
 end;
 
@@ -111,16 +114,17 @@ begin
   CreateSubPresenter('IE', 'IEEdit');
   CreateSubPresenter('CNPJ', 'CNPJEdit');
   VContactsPresenter := CreateSubPresenter('Contacts', 'ContactsStringGrid',
-    'Label.BasicUserRecordData.Name(10,"Cargo");' +
-    'Person.BasicUserRecordData.Name(40,"Nome");' +
-    'ExtensionLine(10,"Ramal")') as TPressMVPItemsPresenter;
+    'Label.BasicUserRecordData.Name(150,"Cargo");' +
+    'Person.BasicUserRecordData.Name(350,"Nome");' +
+    'ExtensionLine(60,"Ramal")') as TPressMVPItemsPresenter;
   { TODO 3 -ojoaolevada -cimprovement : Commands to add and remove company's contacts }
   VContactPresenter := CreateDetailPresenter(VContactsPresenter);
   VContactPresenter.CreateSubPresenter('Label', 'ContactLabelComboBox',
     'BasicUserRecordData.Name');
   VContactPresenter.CreateSubPresenter('Person', 'ContactPersonComboBox',
     'BasicUserRecordData.Name');
-  VContactPresenter.CreateSubPresenter('ExtensionLine', 'ExtensionLineEdit');
+  VContactPresenter.CreateSubPresenter('ExtensionLine',
+    'ContactExtensionLineEdit');
 end;
 
 { TPersonEditPresenter }
@@ -130,7 +134,7 @@ begin
   inherited InitPresenter;
   CreateSubPresenter('RG', 'RGEdit');
   CreateSubPresenter('CPF', 'CPFEdit');
-  CreateSubPresenter('Spouse', 'SpouseComboBox', 'BasicUserRecorData.Name');
+  CreateSubPresenter('Spouse', 'SpouseComboBox', 'BasicUserRecordData.Name');
 end;
 
 { TContactEditPresenter }
@@ -149,17 +153,17 @@ begin
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
 
   VAddressesPresenter := CreateSubPresenter('Addresses', 'AddressesStringGrid',
-    'Label.BasicUserRecordData.Name(10,"Tipo");' +
-    'Street(40,"Rua");'+
-    'Number(5,"Número")'+
-    'Neighborhood(20,"Bairro");' +
-    'City(20,"Cidade");' +
-    'PostalCode(12,"C.E.P")') as TPressMVPItemsPresenter;
+    'Label.BasicUserRecordData.Name(100,"Tipo");' +
+    'Street(300,"Rua");'+
+    'Number(80,"Número")'+
+    'Neighborhood(100,"Bairro");' +
+    'City.BasicUserRecordData.Name(100,"Cidade");' +
+    'PostalCode(100,"C.E.P")') as TPressMVPItemsPresenter;
   { TODO 3 -ojoaolevada -cimprovement : Commands to add, edit and delete contact's addresses }
 
   VPhonesPresenter := CreateSubPresenter('Phones', 'PhonesStringGrid',
-    'Label.BasicUserRecordData.Name(10,"Tipo");' +
-    'Number(10,"Número")') as TPressMVPItemsPresenter;
+    'Label.BasicUserRecordData.Name(150,"Tipo");' +
+    'Number(250,"Número")') as TPressMVPItemsPresenter;
   { TODO 3 -ojoaolevada -cimprovement : Commands to add and delete contact's phones }
   VPhonePresenter := CreateDetailPresenter(VPhonesPresenter);
   VPhonePresenter.CreateSubPresenter('Label', 'PhoneLabelComboBox',
@@ -167,9 +171,9 @@ begin
   VPhonePresenter.CreateSubPresenter('Number', 'PhoneNumberEdit');
 
   VInternetAddresses := CreateSubPresenter('InternetAddresses',
-    'InternetAddresesStringGrid',
-    'Label.BasicUserRecordData.Name(10,"Tipo");' +
-    'Address(60,"Endereço")') as TPressMVPItemsPresenter;
+    'InternetAddressesStringGrid',
+    'Label.BasicUserRecordData.Name(200,"Tipo");' +
+    'Address(400,"Endereço")') as TPressMVPItemsPresenter;
   VInternetAddressPresenter := CreateDetailPresenter(VInternetAddresses);
   VInternetAddressPresenter.CreateSubPresenter('Label',
     'InternetAddressLabelComboBox', 'BasicUserRecordData.Name');
@@ -197,6 +201,18 @@ begin
   VItemsPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveButton');
   BindCommand(TPressMVPExecuteQueryCommand, 'SearchNameButton');
   BindCommand(TPressMVPExecuteQueryCommand, 'SearchCodeButton');
+end;
+
+class function TContactQueryPresenter.InternalModelClass: TPressMVPObjectModelClass;
+begin
+  Result := TCustomQueryModel;
+end;
+
+function TContactQueryPresenter.InternalQueryItemsDisplayNames: string;
+begin
+  Result := 'BasicUserRecordData.Code(178,"Código");' +
+    'BasicUserRecordData.Name(350,"Nome");' +
+    'NickName(250,"Apelido")';
 end;
 
 { TAddPersonCommand }

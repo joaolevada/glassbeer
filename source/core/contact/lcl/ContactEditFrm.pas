@@ -39,7 +39,7 @@ type
     PhonesTabSheet: TTabSheet;
     PhonesStringGrid: TStringGrid;
     InternetTabSheet: TTabSheet;
-    InternetAddressStringGrid: TStringGrid;
+    InternetAddressesStringGrid: TStringGrid;
     DocumentsTabSheet: TTabSheet;
   end;
 

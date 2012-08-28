@@ -14,11 +14,9 @@ inherited CompanyEditForm: TCompanyEditForm
     end
     inherited AddressesTabSheet: TTabSheet
       ClientHeight = 400
-      ClientWidth = 792
     end
     inherited PhonesTabSheet: TTabSheet
       ClientHeight = 400
-      ClientWidth = 792
       object ContactsLabel: TLabel[3]
         AnchorSideLeft.Control = PhonesTabSheet
         AnchorSideTop.Control = PhoneGroupBox
@@ -108,7 +106,6 @@ inherited CompanyEditForm: TCompanyEditForm
           BorderSpacing.Top = 2
           ItemHeight = 14
           TabOrder = 0
-          Text = 'ContactLabelComboBox'
         end
         object ContactPersonComboBox: TComboBox
           AnchorSideLeft.Control = ContactPersonLabel
@@ -121,7 +118,6 @@ inherited CompanyEditForm: TCompanyEditForm
           BorderSpacing.Top = 2
           ItemHeight = 14
           TabOrder = 1
-          Text = 'ContactPersonComboBox'
         end
         object ContactExtensionLineEdit: TEdit
           AnchorSideLeft.Control = ContactExtensionLineLabel
@@ -133,17 +129,14 @@ inherited CompanyEditForm: TCompanyEditForm
           Width = 198
           BorderSpacing.Top = 2
           TabOrder = 2
-          Text = 'ContactExtensionLineEdit'
         end
       end
     end
     inherited InternetTabSheet: TTabSheet
       ClientHeight = 400
-      ClientWidth = 792
     end
     inherited DocumentsTabSheet: TTabSheet
       ClientHeight = 400
-      ClientWidth = 792
       object IELabel: TLabel[0]
         AnchorSideLeft.Control = DocumentsTabSheet
         AnchorSideTop.Control = DocumentsTabSheet

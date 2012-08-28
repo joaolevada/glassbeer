@@ -41,21 +41,23 @@ uses
   ,RecipeMVP
   ,FermenterMVP
   ,LocationMVP
-  ,MashMVP;
+  ,MashMVP
+  ,ContactMVP;
 
 { TMainFormPresenter }
 
 procedure TMainFormPresenter.InitPresenter;
 begin
   inherited;
-  BindCommand(TPressMVPCloseApplicationCommand, 'ExitMenu');
-  BindCommand(TMainConnectorCommand, 'MetadataMenu');
-  BindPresenter(TRawMaterialQueryPresenter, 'RawMaterialMenu');
-  BindPresenter(TRecipeQueryPresenter, 'RecipeMenu');
-  BindPresenter(TFermenterQueryPresenter, 'FermenterMenu');
-  BindPresenter(TLocationQueryPresenter, 'LocationMenu');
-  BindPresenter(TFermenterEventQueryPresenter, 'FermenterEventMenu');
-  BindPresenter(TMashQueryPresenter, 'MashMenu');
+  BindCommand(TPressMVPCloseApplicationCommand, 'ExitMenuItem');
+  BindCommand(TMainConnectorCommand, 'MetadataMenuItem');
+  BindPresenter(TRawMaterialQueryPresenter, 'RawMaterialMenuItem');
+  BindPresenter(TRecipeQueryPresenter, 'RecipeMenuItem');
+  BindPresenter(TFermenterQueryPresenter, 'FermenterMenuItem');
+  BindPresenter(TLocationQueryPresenter, 'LocationMenuItem');
+  BindPresenter(TFermenterEventQueryPresenter, 'FermenterEventMenuItem');
+  BindPresenter(TMashQueryPresenter, 'MashMenuItem');
+  BindPresenter(TContactQueryPresenter, 'ContactMenuItem');
   { sample commands, to be implemented very soon... }
   //BindCommand(TProprietarioSetupCommand2, 'Proprietario1');
   PressUserData.Logon('', '');

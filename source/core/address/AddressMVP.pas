@@ -183,7 +183,7 @@ begin
   CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
   CreateSubPresenter('Abbreviation', 'AbbreviationEdit');
-  CreateSubPresenter('State', 'StateComboBox', 'BasicUserRecordData.Name');
+  CreateSubPresenter('Country', 'CountryComboBox', 'BasicUserRecordData.Name');
 end;
 
 initialization
@@ -192,7 +192,7 @@ initialization
   TCountryEditPresenter.RegisterBO(TCountry);
   TAddressLabelEditPresenter.RegisterBO(TAddressLabel);
   TInternetAddressEditPresenter.RegisterBO(TInternetAddress);
-  TInternetAddressEditPresenter.RegisterBO(TInternetAddressLabel);
+  TInternetAddressLabelEditPresenter.RegisterBO(TInternetAddressLabel);
   TNeighborhoodEditPresenter.RegisterBO(TNeighborhood);
   TPhoneEditPresenter.RegisterBO(TPhone);
   TPhoneLabelEditPresenter.RegisterBO(TPhoneLabel);

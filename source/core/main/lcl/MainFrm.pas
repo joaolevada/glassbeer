@@ -14,17 +14,18 @@ type
   TMainForm = class(TForm)
     GlassBeerMainMenu: TMainMenu;
     FileMenu: TMenuItem;
-    ExitMenu: TMenuItem;
+    ExitMenuItem: TMenuItem;
     MenuItem1: TMenuItem;
-    LocationMenu: TMenuItem;
+    LocationMenuItem: TMenuItem;
     FermentacaoMenu: TMenuItem;
-    FermenterMenu: TMenuItem;
-    FermenterEventMenu: TMenuItem;
-    MashMenu: TMenuItem;
-    RecipeMenu: TMenuItem;
-    MetadataMenu: TMenuItem;
+    FermenterMenuItem: TMenuItem;
+    FermenterEventMenuItem: TMenuItem;
+    MashMenuItem: TMenuItem;
+    ContactMenuItem: TMenuItem;
+    RecipeMenuItem: TMenuItem;
+    MetadataMenuItem: TMenuItem;
     ToolsMenu: TMenuItem;
-    RawMaterialMenu: TMenuItem;
+    RawMaterialMenuItem: TMenuItem;
   end; 
 
 var

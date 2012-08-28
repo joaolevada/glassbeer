@@ -19,7 +19,7 @@ uses
   StateEditFrm, CountryEditFrm, InternetAddressEditFrm,
   InternetAddressLabelEditFrm, NeighborhoodEditFrm, PhoneEditFrm,
   PhoneLabelEditFrm, ContactBO, ContactEditFrm, PersonEditFrm, CompanyEditFrm,
-  PersonContactLabelEditFrm, ContactQueryFrm;
+  PersonContactLabelEditFrm, ContactQueryFrm, PersonContactEditFrm;
 
 {$R *.res}
 

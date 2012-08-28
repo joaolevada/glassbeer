@@ -78,8 +78,8 @@ implementation
 
 class function TPersonContactLabel.InternalMetadataStr: string;
 begin
-  Result := 'TPersonContactLabel IsPersistent(' +
-    'BasicUserRecordData: TBasicUserRecordDataPart;' +
+  Result := 'TPersonContactLabel IsPersistent PersistentName="PerContLab" (' +
+    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
     ')';
 end;
 
@@ -101,6 +101,7 @@ begin
   Result := 'TCompany IsPersistent (' +
     'IE: PlainString(20);' +
     'CNPJ: PlainString(20);' +
+    'Contacts: Parts(TPersonContact);' +
     ')';
 end;
 
@@ -119,11 +120,11 @@ end;
 
 class function TContact.InternalMetadataStr: string;
 begin
-  Result := 'TContact IsPersistent( ' +
-    'BasicUserRecordData: TBasicUserRecordDataPart;' +
-    'Addresses: Parts(TAddress);' +
+  Result := 'TContact IsPersistent PersistentName="Cont" ( ' +
+    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Addresses: Parts(TAddress) ShortName="Addr";' +
     'Phones: Parts(TPhone);' +
-    'InternetAddresses: Parts(TInternetAddress);' +
+    'InternetAddresses: Parts(TInternetAddress) ShortName="IntAddr";' +
     'NickName: AnsiString(40);' +
     ')';
 end;

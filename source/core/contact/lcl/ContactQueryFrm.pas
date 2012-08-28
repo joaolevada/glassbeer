@@ -14,7 +14,7 @@ type
 
   TContactQueryForm = class(TForm)
     AddPersonButton: TBitBtn;
-    AddButton1: TBitBtn;
+    AddCompanyButton: TBitBtn;
     BottomPanel: TPanel;
     NameTabSheet: TTabSheet;
     NameEdit: TEdit;
@@ -25,7 +25,7 @@ type
     QueryStringGrid: TStringGrid;
     RemoveButton: TBitBtn;
     SearchNameButton: TBitBtn;
-    SearchNameButton1: TBitBtn;
+    SearchCodeButton: TBitBtn;
     SearchPageControl: TPageControl;
     CodeTabSheet: TTabSheet;
   end;

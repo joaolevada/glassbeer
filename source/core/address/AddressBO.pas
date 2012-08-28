@@ -191,8 +191,8 @@ end;
 
 class function TInternetAddress.InternalMetadataStr: string;
 begin
-  Result := 'TInternetAddress IsPersistent (' +
-    'Label: Reference(TInternetAddressLabel);' +
+  Result := 'TInternetAddress IsPersistent PersistentName="IntAddr" (' +
+    'Label: Reference(TInternetAddressLabel) ShortName="IntAddrLab";' +
     'Address: PlainString(80);' +
     ')';
 end;
@@ -201,7 +201,7 @@ end;
 
 class function TInternetAddressLabel.InternalMetadataStr: string;
 begin
-  Result := 'TInternetAddressLabel IsPersistent(' +
+  Result := 'TInternetAddressLabel IsPersistent PersistentName="IntAddrLab" (' +
     'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
     ')';
 end;

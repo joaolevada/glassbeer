@@ -30,7 +30,7 @@ uses
 {$R *.lfm}
 
 initialization
-  PressXCLForm(TPersonContactEditPresenter, TPersonContactForm);
+  PressXCLForm(TPersonContactEditPresenter, TPersonContactEditForm);
 
 end.
 

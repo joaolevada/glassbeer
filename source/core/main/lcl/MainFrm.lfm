@@ -6,43 +6,46 @@ object MainForm: TMainForm
   Caption = 'glass beer. já degustou sua cerveja hoje?'
   Menu = GlassBeerMainMenu
   Position = poDesktopCenter
-  LCLVersion = '0.9.29'
+  LCLVersion = '0.9.30.2RC1'
   object GlassBeerMainMenu: TMainMenu
     left = 128
     top = 100
     object FileMenu: TMenuItem
       Caption = 'Arquivo'
-      object RawMaterialMenu: TMenuItem
+      object ContactMenuItem: TMenuItem
+        Caption = 'Contatos...'
+      end
+      object RawMaterialMenuItem: TMenuItem
         Caption = 'Matérias-primas...'
       end
-      object RecipeMenu: TMenuItem
+      object RecipeMenuItem: TMenuItem
         Caption = 'Receitas...'
       end
       object FermentacaoMenu: TMenuItem
         Caption = 'Fermentação'
-        object FermenterMenu: TMenuItem
+        object FermenterMenuItem: TMenuItem
           Caption = 'Fermentadores...'
         end
-        object FermenterEventMenu: TMenuItem
+        object FermenterEventMenuItem: TMenuItem
           Caption = 'Eventos do fermentador...'
         end
       end
-      object MashMenu: TMenuItem
+      object MashMenuItem: TMenuItem
         Caption = 'Mostos...'
       end
-      object LocationMenu: TMenuItem
+      object LocationMenuItem: TMenuItem
         Caption = 'Localizações...'
       end
       object MenuItem1: TMenuItem
         Caption = '-'
       end
-      object ExitMenu: TMenuItem
+      object ExitMenuItem: TMenuItem
         Caption = 'Sair'
       end
     end
     object ToolsMenu: TMenuItem
       Caption = 'Ferramentas'
-      object MetadataMenu: TMenuItem
+      object MetadataMenuItem: TMenuItem
         Caption = 'Criar metadados do banco de dados'
       end
     end

@@ -6,7 +6,7 @@ object ContactQueryForm: TContactQueryForm
   Caption = 'Contatos (pessoas e empresas)'
   ClientHeight = 479
   ClientWidth = 626
-  LCLVersion = '0.9.29'
+  LCLVersion = '0.9.30.2RC1'
   object BottomPanel: TPanel
     Left = 0
     Height = 54
@@ -164,7 +164,7 @@ object ContactQueryForm: TContactQueryForm
       TabOrder = 0
     end
     object EditButton: TBitBtn
-      AnchorSideLeft.Control = AddButton1
+      AnchorSideLeft.Control = AddCompanyButton
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = BottomPanel
       Left = 349
@@ -453,7 +453,7 @@ object ContactQueryForm: TContactQueryForm
       }
       TabOrder = 2
     end
-    object AddButton1: TBitBtn
+    object AddCompanyButton: TBitBtn
       AnchorSideLeft.Control = AddPersonButton
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = BottomPanel
@@ -604,10 +604,10 @@ object ContactQueryForm: TContactQueryForm
     Height = 78
     Top = 0
     Width = 626
-    ActivePage = NameTabSheet
+    ActivePage = CodeTabSheet
     Align = alTop
     Anchors = [akLeft, akRight]
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 1
     object NameTabSheet: TTabSheet
       Caption = 'Procurar contato por nome'
@@ -823,7 +823,7 @@ object ContactQueryForm: TContactQueryForm
         TabOrder = 0
         Text = 'CodeEdit'
       end
-      object SearchNameButton1: TBitBtn
+      object SearchCodeButton: TBitBtn
         AnchorSideLeft.Control = CodeEdit
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = CodeTabSheet

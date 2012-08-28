@@ -1,8 +1,8 @@
 inherited ContactEditForm: TContactEditForm
   Caption = 'ContactEditForm'
   inherited EditPageControl: TPageControl
-    ActivePage = DocumentsTabSheet
-    TabIndex = 4
+    ActivePage = InternetTabSheet
+    TabIndex = 3
     inherited MainTab: TTabSheet
       ClientHeight = 519
       ClientWidth = 792
@@ -78,7 +78,7 @@ inherited ContactEditForm: TContactEditForm
         Lines.Strings = (
           'RemarksMemo'
         )
-        TabOrder = 2
+        TabOrder = 3
       end
       object NickNameLabel: TLabel[6]
         AnchorSideLeft.Control = MainTab
@@ -102,7 +102,7 @@ inherited ContactEditForm: TContactEditForm
         Top = 66
         Width = 356
         BorderSpacing.Top = 2
-        TabOrder = 3
+        TabOrder = 2
         Text = 'NickNameEdit'
       end
     end
@@ -204,7 +204,6 @@ inherited ContactEditForm: TContactEditForm
           BorderSpacing.Top = 2
           ItemHeight = 14
           TabOrder = 0
-          Text = 'PhoneLabelComboBox'
         end
         object PhoneNumberLabel: TLabel
           AnchorSideLeft.Control = PhoneLabelComboBox
@@ -228,7 +227,6 @@ inherited ContactEditForm: TContactEditForm
           Width = 356
           BorderSpacing.Top = 2
           TabOrder = 1
-          Text = 'PhoneNumberEdit'
         end
       end
     end
@@ -248,7 +246,7 @@ inherited ContactEditForm: TContactEditForm
         Caption = 'Endereços de internet'
         ParentColor = False
       end
-      object InternetAddressStringGrid: TStringGrid
+      object InternetAddressesStringGrid: TStringGrid
         AnchorSideLeft.Control = InternetAddressesLabel
         AnchorSideTop.Control = InternetAddressesLabel
         AnchorSideTop.Side = asrBottom
@@ -263,7 +261,7 @@ inherited ContactEditForm: TContactEditForm
       end
       object InternetAddressGroubBox: TGroupBox
         AnchorSideLeft.Control = InternetTabSheet
-        AnchorSideTop.Control = InternetAddressStringGrid
+        AnchorSideTop.Control = InternetAddressesStringGrid
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 68
@@ -298,7 +296,6 @@ inherited ContactEditForm: TContactEditForm
           BorderSpacing.Top = 2
           ItemHeight = 14
           TabOrder = 0
-          Text = 'InternetAddressLabelComboBox'
         end
         object InternetAddressLabel: TLabel
           AnchorSideLeft.Control = InternetAddressLabelComboBox
@@ -323,7 +320,6 @@ inherited ContactEditForm: TContactEditForm
           Width = 356
           BorderSpacing.Top = 2
           TabOrder = 1
-          Text = 'InternetAddressEdit'
         end
       end
     end

@@ -1,26 +1,26 @@
 inherited PersonContactEditForm: TPersonContactEditForm
-  Height = 128
-  Width = 785
+  Height = 176
+  Width = 587
   Caption = 'Contato na empresa'
-  ClientHeight = 128
-  ClientWidth = 785
+  ClientHeight = 176
+  ClientWidth = 587
   inherited BottomPanel: TPanel
-    Top = 74
-    Width = 785
-    ClientWidth = 785
+    Top = 122
+    Width = 587
+    ClientWidth = 587
     inherited SaveButton: TBitBtn
-      Left = 544
+      Left = 346
     end
     inherited CancelButton: TBitBtn
-      Left = 664
+      Left = 466
     end
   end
   inherited EditPageControl: TPageControl
-    Height = 74
-    Width = 785
+    Height = 122
+    Width = 587
     inherited MainTab: TTabSheet
-      ClientHeight = 47
-      ClientWidth = 777
+      ClientHeight = 95
+      ClientWidth = 579
       object LabelLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
@@ -47,15 +47,15 @@ inherited PersonContactEditForm: TPersonContactEditForm
         Text = 'LabelComboBox'
       end
       object PersonLabel: TLabel[2]
-        AnchorSideLeft.Control = LabelComboBox
-        AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = MainTab
-        Left = 210
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = LabelComboBox
+        AnchorSideTop.Side = asrBottom
+        Left = 4
         Height = 15
-        Top = 4
+        Top = 51
         Width = 47
-        BorderSpacing.Left = 8
-        BorderSpacing.Top = 4
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
         Caption = 'Pessoa'
         ParentColor = False
       end
@@ -63,9 +63,9 @@ inherited PersonContactEditForm: TPersonContactEditForm
         AnchorSideLeft.Control = PersonLabel
         AnchorSideTop.Control = PersonLabel
         AnchorSideTop.Side = asrBottom
-        Left = 210
+        Left = 4
         Height = 22
-        Top = 21
+        Top = 68
         Width = 356
         BorderSpacing.Top = 2
         ItemHeight = 14
@@ -75,23 +75,22 @@ inherited PersonContactEditForm: TPersonContactEditForm
       object ExtensionLineLabel: TLabel[4]
         AnchorSideLeft.Control = PersonComboBox
         AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = MainTab
-        Left = 574
+        AnchorSideTop.Control = PersonLabel
+        Left = 376
         Height = 15
-        Top = 4
-        Width = 123
-        BorderSpacing.Left = 8
-        BorderSpacing.Top = 4
-        Caption = 'ExtensionLineLabel'
+        Top = 51
+        Width = 39
+        BorderSpacing.Left = 16
+        Caption = 'Ramal'
         ParentColor = False
       end
       object ExtensionLineEdit: TEdit[5]
         AnchorSideLeft.Control = ExtensionLineLabel
         AnchorSideTop.Control = ExtensionLineLabel
         AnchorSideTop.Side = asrBottom
-        Left = 574
+        Left = 376
         Height = 22
-        Top = 21
+        Top = 68
         Width = 198
         BorderSpacing.Top = 2
         TabOrder = 2
