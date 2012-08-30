@@ -13,6 +13,8 @@ type
   { TContactEditForm }
 
   TContactEditForm = class(TCustomEditForm)
+    AddAddressSpeedButton: TSpeedButton;
+    EditAddressSpeedButton: TSpeedButton;
     CodeEdit: TEdit;
     CodeLabel: TLabel;
     AddressesLabel: TLabel;
@@ -41,6 +43,7 @@ type
     InternetTabSheet: TTabSheet;
     InternetAddressesStringGrid: TStringGrid;
     DocumentsTabSheet: TTabSheet;
+    RemoveAddressSpeedButton: TSpeedButton;
   end;
 
 

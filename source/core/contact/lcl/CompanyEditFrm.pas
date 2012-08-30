@@ -26,6 +26,7 @@ type
     IEEdit: TEdit;
     IELabel: TLabel;
     CNPJLabel: TLabel;
+    PersonContactTab: TTabSheet;
   end;
 
 implementation

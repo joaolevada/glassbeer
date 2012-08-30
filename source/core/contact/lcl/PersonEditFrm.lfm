@@ -7,8 +7,6 @@ inherited PersonEditForm: TPersonEditForm
   end
   inherited EditPageControl: TPageControl
     Height = 263
-    ActivePage = InternetTabSheet
-    TabIndex = 3
     inherited MainTab: TTabSheet
       ClientHeight = 236
       object SpouseLabel: TLabel[8]

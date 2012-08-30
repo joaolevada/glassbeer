@@ -77,11 +77,13 @@ type
     function InternalObjectClass: TPressObjectClass; override;
   end;
 
+
 implementation
 
 uses
   Menus,
-  LCLType;
+  LCLType,
+  AddressMVP;
 
 { TPersonContactEditPresenter }
 
@@ -160,6 +162,9 @@ begin
     'City.BasicUserRecordData.Name(100,"Cidade");' +
     'PostalCode(100,"C.E.P")') as TPressMVPItemsPresenter;
   { TODO 3 -ojoaolevada -cimprovement : Commands to add, edit and delete contact's addresses }
+  VAddressesPresenter.BindCommand(TAddAddressCommand, 'AddAddressSpeedButton');
+  VAddressesPresenter.BindCommand(TEditAddressCommand, 'EditAddressSpeedButton');
+  VAddressesPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveAddressSpeedButton');
 
   VPhonesPresenter := CreateSubPresenter('Phones', 'PhonesStringGrid',
     'Label.BasicUserRecordData.Name(150,"Tipo");' +

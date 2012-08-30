@@ -9,7 +9,7 @@ object CustomEditForm: TCustomEditForm
   ClientHeight = 600
   ClientWidth = 800
   Position = poMainFormCenter
-  LCLVersion = '0.9.29'
+  LCLVersion = '1.0.1.2'
   object BottomPanel: TPanel
     Left = 0
     Height = 54
@@ -182,7 +182,7 @@ object CustomEditForm: TCustomEditForm
       Anchors = [akTop, akRight]
       BorderSpacing.Top = 4
       BorderSpacing.Right = 4
-      Caption = '&Cancelar'
+      Caption = '&Fechar'
       Glyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         2000000000000010000064000000640000000000000000000000000000000000

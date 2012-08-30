@@ -6,7 +6,9 @@ interface
 
 uses
   CustomMVP,
-  AddressBO;
+  AddressBO,
+  PressMVPCommand,
+  PressSubject;
 
 type
 
@@ -76,7 +78,21 @@ type
   { TStateEditPresenter }
 
   TStateEditPresenter = class(TCustomEditPresenter)
+  protected
     procedure InitPresenter; override;
+  end;
+
+  { TAddAddressCommand }
+
+  TAddAddressCommand = class(TPressMVPAddItemsCommand)
+  protected
+    function InternalObjectClass: TPressObjectClass; override;
+  end;
+
+  TEditAddressCommand = class(TPressMVPItemsCommand)
+  protected
+    function InternalIsEnabled: Boolean; override;
+    procedure InternalExecute; override;
   end;
 
 implementation
@@ -184,6 +200,28 @@ begin
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
   CreateSubPresenter('Abbreviation', 'AbbreviationEdit');
   CreateSubPresenter('Country', 'CountryComboBox', 'BasicUserRecordData.Name');
+end;
+
+{ TEditAddressCommand }
+
+function TEditAddressCommand.InternalIsEnabled: Boolean;
+begin
+  Result := (Model.Selection.Count = 1);
+end;
+
+procedure TEditAddressCommand.InternalExecute;
+var
+  VAddress: TAddress;
+begin
+  VAddress := Model.Selection[0] as TAddress;
+  TAddressEditPresenter.Run(VAddress);
+end;
+
+{ TAddAddressCommand }
+
+function TAddAddressCommand.InternalObjectClass: TPressObjectClass;
+begin
+  Result := TAddress;
 end;
 
 initialization

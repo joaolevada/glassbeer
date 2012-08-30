@@ -12,7 +12,7 @@ inherited RecipeEditForm: TRecipeEditForm
     ActivePage = IngredientsTab
     TabIndex = 1
     inherited MainTab: TTabSheet
-      ClientHeight = 519
+      ClientHeight = 329
       ClientWidth = 792
       object CodeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
