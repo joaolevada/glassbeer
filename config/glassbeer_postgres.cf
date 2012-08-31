@@ -1,0 +1,12 @@
+[OPFBroker]
+DefaultServiceName := 'SQLdb';
+
+[OPFBroker.SQLdb]
+Connector.Database.ConnectorType := 'PostGreSQL';
+Connector.Database.DatabaseName := 'glassbeer_db';
+Connector.Database.Hostname := 'localhost';
+Connector.Database.UserName := 'glassbeer_dba';
+Connector.Database.Password := 'brauart';
+Connector.Database.CharSet := 'UTF8';
+
+
