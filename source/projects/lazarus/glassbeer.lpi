@@ -185,7 +185,7 @@
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="19" Y="3"/>
+        <CursorPos X="21" Y="18"/>
         <UsageCount Value="187"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -272,7 +272,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="643"/>
         <CursorPos X="3" Y="659"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit23>
       <Unit24>
         <Filename Value="..\..\..\..\..\sure\windows\trunk\source\core\configuracao\ProprietarioBO.pas"/>
@@ -288,7 +288,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="343"/>
         <CursorPos X="31" Y="359"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit25>
       <Unit26>
         <Filename Value="..\..\..\..\..\sure\windows\trunk\source\core\objetocatalogo\ObjetoCatalogoBO.pas"/>
@@ -296,7 +296,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="252"/>
         <CursorPos X="36" Y="268"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit26>
       <Unit27>
         <Filename Value="..\..\..\..\..\sure\windows\trunk\source\core\movimento\MovimentoBO.pas"/>
@@ -304,7 +304,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="695"/>
         <CursorPos X="13" Y="703"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit27>
       <Unit28>
         <Filename Value="C:\lazarus\ideintf\objectinspector.pp"/>
@@ -758,8 +758,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="PersonEditFrm"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="3"/>
-        <CursorPos X="1" Y="33"/>
+        <TopLine Value="1"/>
+        <CursorPos X="22" Y="15"/>
         <UsageCount Value="45"/>
       </Unit71>
       <Unit72>
