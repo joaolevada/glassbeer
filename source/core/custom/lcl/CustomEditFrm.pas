@@ -18,6 +18,8 @@ type
     SaveButton: TBitBtn;
     CancelButton: TBitBtn;
     BottomPanel: TPanel;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 implementation
@@ -26,10 +28,21 @@ implementation
 
 uses
   PressXCLBroker
-  ,CustomMVP;
+  ,CustomMVP
+  ,MainFrm;
+
+constructor TCustomEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons32ImageList.GetBitmap(IMG_ACCEPT, SaveButton.Glyph);
+  MainForm.Icons32ImageList.GetBitmap(IMG_CANCEL, CancelButton.Glyph);
+end;
+
+{ TCustomEditForm }
 
 initialization
   PressXCLForm(TCustomEditPresenter, TCustomEditForm);
+
 
 end.
 

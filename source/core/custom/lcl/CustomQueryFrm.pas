@@ -31,7 +31,8 @@ implementation
 
 uses
   PressXCLBroker
-  ,CustomMVP;
+  ,CustomMVP
+  ,MainFrm;
 
 const
   QUERYFORM_WIDTH = 800;
@@ -44,6 +45,10 @@ begin
   inherited Create(AOwner);
   Self.Width := QUERYFORM_WIDTH;
   Self.Height := QUERYFORM_HEIGHT;
+  MainForm.Icons32ImageList.GetBitmap(IMG_ADD, AddButton.Glyph);
+  MainForm.Icons32ImageList.GetBitmap(IMG_PENCIL, EditButton.Glyph);
+  MainForm.Icons32ImageList.GetBitmap(IMG_DELETE, RemoveButton.Glyph);
+  MainForm.Icons32ImageList.GetBitmap(IMG_ZOOM, SearchButton.Glyph);
 end;
 
 initialization

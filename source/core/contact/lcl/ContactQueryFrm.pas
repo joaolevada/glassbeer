@@ -28,6 +28,8 @@ type
     SearchCodeButton: TBitBtn;
     SearchPageControl: TPageControl;
     CodeTabSheet: TTabSheet;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 
@@ -35,7 +37,21 @@ implementation
 
 uses
   PressXCLBroker,
-  ContactMVP;
+  ContactMVP,
+  MainFrm;
+
+{ TContactQueryForm }
+
+constructor TContactQueryForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons32ImageList.GetBitmap(IMG_USER, AddPersonButton.Glyph);
+  MainForm.Icons32ImageList.GetBitmap(IMG_FACTORY, AddCompanyButton.Glyph);
+  MainForm.Icons32ImageList.GetBitmap(IMG_PENCIL, EditButton.Glyph);
+  MainForm.Icons32ImageList.GetBitmap(IMG_DELETE, RemoveButton.Glyph);
+  MainForm.Icons32ImageList.GetBitmap(IMG_ZOOM, SearchNameButton.Glyph);
+  MainForm.Icons32ImageList.GetBitmap(IMG_ZOOM, SearchCodeButton.Glyph);
+end;
 
 {$R *.lfm}
 

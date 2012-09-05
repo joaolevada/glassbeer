@@ -44,12 +44,27 @@ type
     InternetAddressesStringGrid: TStringGrid;
     DocumentsTabSheet: TTabSheet;
     RemoveAddressSpeedButton: TSpeedButton;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 
 implementation
 
+uses
+  MainFrm;
+
 {$R *.lfm}
+
+{ TContactEditForm }
+
+constructor TContactEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddAddressSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditAddressSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_DELETE, RemoveAddressSpeedButton.Glyph);
+end;
 
 end.
 
