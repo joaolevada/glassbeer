@@ -95,7 +95,103 @@ type
     procedure InternalExecute; override;
   end;
 
+  { TAddInternetAddressCommand }
+
+  TAddInternetAddressCommand = class(TPressMVPAddItemsCommand)
+  protected
+    function InternalObjectClass: TPressObjectClass; override;
+  end;
+
+  { TEditInternetAddressCommand }
+
+  TEditInternetAddressCommand = class(TPressMVPItemsCommand)
+  protected
+    function InternalIsEnabled: Boolean; override;
+    procedure InternalExecute; override;
+  end;
+
+  { TAddPhoneCommand }
+
+  TAddPhoneCommand = class(TPressMVPAddItemsCommand)
+  protected
+    function InternalObjectClass: TPressObjectClass; override;
+  end;
+
+  { TPhoneEditCommand }
+
+  TPhoneEditCommand = class(TPressMVPItemsCommand)
+  protected
+    function InternalIsEnabled: Boolean; override;
+    procedure InternalExecute; override;
+  end;
+
+  { TIncludePhoneCommand }
+
+  TIncludePhoneCommand = class(TPressMVPIncludeObjectCommand)
+  protected
+    procedure InternalExecute; override;
+  end;
+
+
 implementation
+
+uses
+  PressMVPModel;
+
+{ TIncludePhoneCommand }
+
+procedure TIncludePhoneCommand.InternalExecute;
+var
+  VPhoneLabel: TPhoneLabel;
+begin
+  VPhoneLabel := TPhoneLabel.Create;
+  TPressMVPModelCreateIncludeFormEvent.Create(Model, VPhoneLabel).Notify;
+  VPhoneLabel.Free;
+end;
+
+{ TPhoneEditCommand }
+
+function TPhoneEditCommand.InternalIsEnabled: Boolean;
+begin
+  Result := Model.Selection.Count = 1;
+end;
+
+procedure TPhoneEditCommand.InternalExecute;
+var
+  VPhone: TPhone;
+begin
+  VPhone := Model.Selection[0] as TPhone;
+  TPhoneEditPresenter.Run(VPhone);
+end;
+
+{ TAddPhoneCommand }
+
+function TAddPhoneCommand.InternalObjectClass: TPressObjectClass;
+begin
+  Result := TPhone;
+end;
+
+{ TEditInternetAddressCommand }
+
+function TEditInternetAddressCommand.InternalIsEnabled: Boolean;
+begin
+  Result := (Model.Selection.Count = 1);
+end;
+
+procedure TEditInternetAddressCommand.InternalExecute;
+var
+  VInternetAddress: TInternetAddress;
+begin
+  VInternetAddress := Model.Selection[0] as TInternetAddress;
+  TInternetAddressEditPresenter.Run(VInternetAddress);
+end;
+
+{ TAddInternetAddressCommand }
+
+function TAddInternetAddressCommand.InternalObjectClass: TPressObjectClass;
+begin
+  Result := TInternetAddress;
+end;
 
 { TAddressEditPresenter }
 

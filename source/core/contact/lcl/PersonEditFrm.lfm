@@ -7,6 +7,8 @@ inherited PersonEditForm: TPersonEditForm
   end
   inherited EditPageControl: TPageControl
     Height = 263
+    ActivePage = MainTab
+    TabIndex = 0
     inherited MainTab: TTabSheet
       ClientHeight = 236
       object SpouseLabel: TLabel[8]
@@ -34,6 +36,38 @@ inherited PersonEditForm: TPersonEditForm
         ItemHeight = 14
         TabOrder = 4
         Text = 'SpouseComboBox'
+      end
+      object AddSpouseSpeedButton: TSpeedButton[10]
+        AnchorSideLeft.Control = SpouseComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = SpouseComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 364
+        Height = 22
+        Hint = 'Adicionar cônjuge'
+        Top = 210
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditSpouseSpeedButton: TSpeedButton[11]
+        AnchorSideLeft.Control = AddSpouseSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = SpouseComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 391
+        Height = 22
+        Hint = 'Alterar cônjuge'
+        Top = 210
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
     inherited AddressesTabSheet: TTabSheet

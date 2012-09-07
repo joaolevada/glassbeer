@@ -44,6 +44,16 @@ type
     InternetAddressesStringGrid: TStringGrid;
     DocumentsTabSheet: TTabSheet;
     RemoveAddressSpeedButton: TSpeedButton;
+    AddPhoneSpeedButton: TSpeedButton;
+    EditPhoneSpeedButton: TSpeedButton;
+    RemovePhoneSpeedButton: TSpeedButton;
+    AddInternetAddressSpeedButton: TSpeedButton;
+    EditInternetAddressSpeedButton: TSpeedButton;
+    RemoveInternetAddressSpeedButton: TSpeedButton;
+    AddPhoneLabelSpeedButton: TSpeedButton;
+    EditPhoneLabelSpeedButton: TSpeedButton;
+    AddInternetAddressLabelSpeedButton: TSpeedButton;
+    EditInternetAddressLabelSpeedButton: TSpeedButton;
   public
     constructor Create(AOwner: TComponent); override;
   end;
@@ -64,6 +74,18 @@ begin
   MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddAddressSpeedButton.Glyph);
   MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditAddressSpeedButton.Glyph);
   MainForm.Icons16ImageList.GetBitmap(IMG_DELETE, RemoveAddressSpeedButton.Glyph);
+
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddPhoneSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditPhoneSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_DELETE, RemovePhoneSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddPhoneLabelSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditPhoneLabelSpeedButton.Glyph);
+
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddInternetAddressSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditInternetAddressSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_DELETE, RemoveInternetAddressSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddInternetAddressLabelSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditInternetAddressLabelSpeedButton.Glyph);
 end;
 
 end.

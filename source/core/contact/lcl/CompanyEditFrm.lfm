@@ -1,43 +1,44 @@
 inherited CompanyEditForm: TCompanyEditForm
-  Height = 283
-  Width = 797
+  Height = 306
+  Width = 852
   Caption = 'Contato (empresa)'
-  ClientHeight = 283
-  ClientWidth = 797
+  ClientHeight = 306
+  ClientWidth = 852
   inherited BottomPanel: TPanel
-    Top = 229
-    Width = 797
-    ClientWidth = 797
+    Top = 252
+    Width = 852
+    ClientWidth = 852
     inherited SaveButton: TBitBtn
-      Left = 556
+      Left = 611
     end
     inherited CancelButton: TBitBtn
-      Left = 676
+      Left = 731
     end
   end
   inherited EditPageControl: TPageControl
-    Height = 229
-    Width = 797
+    Height = 252
+    Width = 852
     ActivePage = PersonContactTab
     TabIndex = 5
     inherited MainTab: TTabSheet
-      ClientHeight = 400
+      ClientHeight = 202
+      ClientWidth = 789
     end
     inherited AddressesTabSheet: TTabSheet
-      ClientHeight = 400
-      ClientWidth = 792
+      ClientHeight = 202
+      ClientWidth = 789
     end
     inherited PhonesTabSheet: TTabSheet
-      ClientHeight = 400
-      ClientWidth = 792
+      ClientHeight = 202
+      ClientWidth = 789
     end
     inherited InternetTabSheet: TTabSheet
-      ClientHeight = 400
-      ClientWidth = 792
+      ClientHeight = 202
+      ClientWidth = 789
     end
     inherited DocumentsTabSheet: TTabSheet
-      ClientHeight = 400
-      ClientWidth = 792
+      ClientHeight = 202
+      ClientWidth = 789
       object IELabel: TLabel[0]
         AnchorSideLeft.Control = DocumentsTabSheet
         AnchorSideTop.Control = DocumentsTabSheet
@@ -90,8 +91,8 @@ inherited CompanyEditForm: TCompanyEditForm
     end
     object PersonContactTab: TTabSheet[5]
       Caption = 'Contatos'
-      ClientHeight = 202
-      ClientWidth = 789
+      ClientHeight = 225
+      ClientWidth = 844
       object ContactsLabel: TLabel
         AnchorSideLeft.Control = PersonContactTab
         AnchorSideTop.Control = PersonContactTab
@@ -108,28 +109,32 @@ inherited CompanyEditForm: TCompanyEditForm
         AnchorSideLeft.Control = ContactsLabel
         AnchorSideTop.Control = ContactsLabel
         AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = PersonContactTab
+        AnchorSideRight.Side = asrBottom
         Left = 4
         Height = 100
         Top = 21
-        Width = 780
+        Width = 836
+        Anchors = [akTop, akLeft, akRight]
         BorderSpacing.Top = 2
+        BorderSpacing.Right = 4
         TabOrder = 0
         TitleFont.Height = -12
         TitleFont.Name = 'Verdana'
       end
       object ContactGroupBox: TGroupBox
         AnchorSideLeft.Control = PhonesTabSheet
-        AnchorSideTop.Control = ContactsStringGrid
+        AnchorSideTop.Control = AddContactSpeedButton
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 68
-        Top = 129
-        Width = 780
+        Top = 155
+        Width = 836
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
         Caption = 'Contato'
         ClientHeight = 50
-        ClientWidth = 776
+        ClientWidth = 832
         TabOrder = 1
         object ContactLabelLabel: TLabel
           AnchorSideLeft.Control = ContactGroupBox
@@ -144,10 +149,10 @@ inherited CompanyEditForm: TCompanyEditForm
           ParentColor = False
         end
         object ContactPersonLabel: TLabel
-          AnchorSideLeft.Control = ContactLabelComboBox
+          AnchorSideLeft.Control = EditContactLabelSpeedButton
           AnchorSideLeft.Side = asrBottom
           AnchorSideTop.Control = ContactGroupBox
-          Left = 210
+          Left = 264
           Height = 15
           Top = 4
           Width = 47
@@ -160,7 +165,7 @@ inherited CompanyEditForm: TCompanyEditForm
           AnchorSideLeft.Control = ContactPersonComboBox
           AnchorSideLeft.Side = asrBottom
           AnchorSideTop.Control = ContactGroupBox
-          Left = 574
+          Left = 628
           Height = 15
           Top = 4
           Width = 39
@@ -185,7 +190,7 @@ inherited CompanyEditForm: TCompanyEditForm
           AnchorSideLeft.Control = ContactPersonLabel
           AnchorSideTop.Control = ContactPersonLabel
           AnchorSideTop.Side = asrBottom
-          Left = 210
+          Left = 264
           Height = 22
           Top = 21
           Width = 356
@@ -197,13 +202,92 @@ inherited CompanyEditForm: TCompanyEditForm
           AnchorSideLeft.Control = ContactExtensionLineLabel
           AnchorSideTop.Control = ContactExtensionLineLabel
           AnchorSideTop.Side = asrBottom
-          Left = 574
+          Left = 628
           Height = 22
           Top = 21
           Width = 198
           BorderSpacing.Top = 2
           TabOrder = 2
         end
+        object AddContactLabelSpeedButton: TSpeedButton
+          AnchorSideLeft.Control = ContactLabelComboBox
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = ContactLabelComboBox
+          AnchorSideTop.Side = asrCenter
+          Left = 206
+          Height = 22
+          Hint = 'Adicionar cargo'
+          Top = 21
+          Width = 23
+          BorderSpacing.Left = 4
+          Flat = True
+          NumGlyphs = 0
+          ShowHint = True
+          ParentShowHint = False
+        end
+        object EditContactLabelSpeedButton: TSpeedButton
+          AnchorSideLeft.Control = AddContactLabelSpeedButton
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = ContactLabelComboBox
+          AnchorSideTop.Side = asrCenter
+          Left = 233
+          Height = 22
+          Hint = 'Alterar cargo'
+          Top = 21
+          Width = 23
+          BorderSpacing.Left = 4
+          Flat = True
+          NumGlyphs = 0
+          ShowHint = True
+          ParentShowHint = False
+        end
+      end
+      object AddContactSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = ContactsStringGrid
+        AnchorSideTop.Control = ContactsStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Adicionar contato'
+        Top = 125
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditContactSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = AddContactSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = ContactsStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 31
+        Height = 22
+        Hint = 'Alterar contato'
+        Top = 125
+        Width = 23
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object RemoveContactSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = EditContactSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddContactSpeedButton
+        Left = 58
+        Height = 22
+        Hint = 'Remover contato'
+        Top = 125
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
   end

@@ -1,8 +1,8 @@
 inherited ContactEditForm: TContactEditForm
   Caption = 'ContactEditForm'
   inherited EditPageControl: TPageControl
-    ActivePage = PhonesTabSheet
-    TabIndex = 2
+    ActivePage = InternetTabSheet
+    TabIndex = 3
     inherited MainTab: TTabSheet
       ClientHeight = 519
       ClientWidth = 792
@@ -139,10 +139,10 @@ inherited ContactEditForm: TContactEditForm
         AnchorSideTop.Control = AddressesStringGrid
         AnchorSideTop.Side = asrBottom
         Left = 4
-        Height = 24
+        Height = 22
         Hint = 'Adicionar endereço'
         Top = 123
-        Width = 24
+        Width = 23
         BorderSpacing.Top = 4
         Flat = True
         Glyph.Data = {
@@ -285,11 +285,11 @@ inherited ContactEditForm: TContactEditForm
         AnchorSideLeft.Control = AddAddressSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = AddAddressSpeedButton
-        Left = 32
-        Height = 24
+        Left = 31
+        Height = 22
         Hint = 'Alterar endereço'
         Top = 123
-        Width = 24
+        Width = 23
         BorderSpacing.Left = 4
         Flat = True
         Glyph.Data = {
@@ -432,11 +432,11 @@ inherited ContactEditForm: TContactEditForm
         AnchorSideLeft.Control = EditAddressSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = EditAddressSpeedButton
-        Left = 60
-        Height = 24
+        Left = 58
+        Height = 22
         Hint = 'Remover endereço'
         Top = 123
-        Width = 24
+        Width = 23
         BorderSpacing.Left = 4
         Flat = True
         Glyph.Data = {
@@ -606,20 +606,19 @@ inherited ContactEditForm: TContactEditForm
         TitleFont.Name = 'Verdana'
       end
       object PhoneGroupBox: TGroupBox
-        AnchorSideLeft.Control = PhonesTabSheet
-        AnchorSideTop.Control = PhonesStringGrid
+        AnchorSideLeft.Control = PhonesStringGrid
+        AnchorSideTop.Control = AddPhoneSpeedButton
         AnchorSideTop.Side = asrBottom
         AnchorSideRight.Control = PhonesStringGrid
         AnchorSideRight.Side = asrBottom
         Left = 4
         Height = 69
-        Top = 129
-        Width = 576
-        BorderSpacing.Left = 4
-        BorderSpacing.Top = 8
+        Top = 151
+        Width = 628
+        BorderSpacing.Top = 4
         Caption = 'Telefone'
         ClientHeight = 51
-        ClientWidth = 572
+        ClientWidth = 624
         TabOrder = 1
         object PhoneLabelLabel: TLabel
           AnchorSideLeft.Control = PhoneGroupBox
@@ -646,10 +645,10 @@ inherited ContactEditForm: TContactEditForm
           TabOrder = 0
         end
         object PhoneNumberLabel: TLabel
-          AnchorSideLeft.Control = PhoneLabelComboBox
+          AnchorSideLeft.Control = EditPhoneLabelSpeedButton
           AnchorSideLeft.Side = asrBottom
           AnchorSideTop.Control = PhoneLabelLabel
-          Left = 210
+          Left = 264
           Height = 15
           Top = 4
           Width = 50
@@ -661,13 +660,90 @@ inherited ContactEditForm: TContactEditForm
           AnchorSideLeft.Control = PhoneNumberLabel
           AnchorSideTop.Control = PhoneNumberLabel
           AnchorSideTop.Side = asrBottom
-          Left = 210
+          Left = 264
           Height = 22
           Top = 21
           Width = 356
           BorderSpacing.Top = 2
           TabOrder = 1
         end
+        object AddPhoneLabelSpeedButton: TSpeedButton
+          AnchorSideLeft.Control = PhoneLabelComboBox
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = PhoneLabelComboBox
+          AnchorSideTop.Side = asrCenter
+          Left = 206
+          Height = 22
+          Hint = 'Adicionar tipo de telefone'
+          Top = 21
+          Width = 23
+          BorderSpacing.Left = 4
+          Flat = True
+          NumGlyphs = 0
+          ShowHint = True
+          ParentShowHint = False
+        end
+        object EditPhoneLabelSpeedButton: TSpeedButton
+          AnchorSideLeft.Control = AddPhoneLabelSpeedButton
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = PhoneLabelComboBox
+          AnchorSideTop.Side = asrCenter
+          Left = 233
+          Height = 22
+          Hint = 'Alterar tipo de telefone'
+          Top = 21
+          Width = 23
+          BorderSpacing.Left = 4
+          Flat = True
+          NumGlyphs = 0
+          ShowHint = True
+          ParentShowHint = False
+        end
+      end
+      object AddPhoneSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = PhonesStringGrid
+        AnchorSideTop.Control = PhonesStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Adicionar telefone'
+        Top = 125
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditPhoneSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = AddPhoneSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddPhoneSpeedButton
+        Left = 31
+        Height = 22
+        Hint = 'Alterar telefone'
+        Top = 125
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object RemovePhoneSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = EditPhoneSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddPhoneSpeedButton
+        Left = 58
+        Height = 22
+        Hint = 'Remover telefone'
+        Top = 125
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
     object InternetTabSheet: TTabSheet[3]
@@ -700,18 +776,17 @@ inherited ContactEditForm: TContactEditForm
         TitleFont.Name = 'Verdana'
       end
       object InternetAddressGroubBox: TGroupBox
-        AnchorSideLeft.Control = InternetTabSheet
-        AnchorSideTop.Control = InternetAddressesStringGrid
+        AnchorSideLeft.Control = InternetAddressesStringGrid
+        AnchorSideTop.Control = AddInternetAddressSpeedButton
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 68
-        Top = 129
-        Width = 576
-        BorderSpacing.Left = 4
-        BorderSpacing.Top = 8
+        Top = 151
+        Width = 628
+        BorderSpacing.Top = 4
         Caption = 'Endereço de internet'
         ClientHeight = 50
-        ClientWidth = 572
+        ClientWidth = 624
         TabOrder = 1
         object InternetAddressLabelLabel: TLabel
           AnchorSideLeft.Control = InternetAddressGroubBox
@@ -738,10 +813,10 @@ inherited ContactEditForm: TContactEditForm
           TabOrder = 0
         end
         object InternetAddressLabel: TLabel
-          AnchorSideLeft.Control = InternetAddressLabelComboBox
+          AnchorSideLeft.Control = EditInternetAddressLabelSpeedButton
           AnchorSideLeft.Side = asrBottom
           AnchorSideTop.Control = InternetAddressGroubBox
-          Left = 210
+          Left = 264
           Height = 15
           Top = 4
           Width = 90
@@ -754,13 +829,90 @@ inherited ContactEditForm: TContactEditForm
           AnchorSideLeft.Control = InternetAddressLabel
           AnchorSideTop.Control = InternetAddressLabel
           AnchorSideTop.Side = asrBottom
-          Left = 210
+          Left = 264
           Height = 22
           Top = 21
           Width = 356
           BorderSpacing.Top = 2
           TabOrder = 1
         end
+        object AddInternetAddressLabelSpeedButton: TSpeedButton
+          AnchorSideLeft.Control = InternetAddressLabelComboBox
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = InternetAddressLabelComboBox
+          AnchorSideTop.Side = asrCenter
+          Left = 206
+          Height = 22
+          Hint = 'Adicionar tipo de endereço de internet'
+          Top = 21
+          Width = 23
+          BorderSpacing.Left = 4
+          Flat = True
+          NumGlyphs = 0
+          ShowHint = True
+          ParentShowHint = False
+        end
+        object EditInternetAddressLabelSpeedButton: TSpeedButton
+          AnchorSideLeft.Control = AddInternetAddressLabelSpeedButton
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = InternetAddressLabelComboBox
+          AnchorSideTop.Side = asrCenter
+          Left = 233
+          Height = 22
+          Hint = 'Alterar tipo de endereço de internet'
+          Top = 21
+          Width = 23
+          BorderSpacing.Left = 4
+          Flat = True
+          NumGlyphs = 0
+          ShowHint = True
+          ParentShowHint = False
+        end
+      end
+      object AddInternetAddressSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = InternetAddressesStringGrid
+        AnchorSideTop.Control = InternetAddressesStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Adicionar endereço de internet'
+        Top = 125
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditInternetAddressSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = AddInternetAddressSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddInternetAddressSpeedButton
+        Left = 31
+        Height = 22
+        Hint = 'Alterar endereço de internet'
+        Top = 125
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object RemoveInternetAddressSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = EditInternetAddressSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddInternetAddressSpeedButton
+        Left = 58
+        Height = 22
+        Hint = 'Remover endereço de internet'
+        Top = 125
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
     object DocumentsTabSheet: TTabSheet[4]

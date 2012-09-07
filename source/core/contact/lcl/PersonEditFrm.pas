@@ -17,15 +17,29 @@ type
     CPFEdit: TEdit;
     RGEdit: TEdit;
     RGLabel: TLabel;
+    AddSpouseSpeedButton: TSpeedButton;
+    EditSpouseSpeedButton: TSpeedButton;
     SpouseComboBox: TComboBox;
     SpouseLabel: TLabel;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 implementation
 
 uses
   PressXCLBroker,
-  ContactMVP;
+  ContactMVP,
+  MainFrm;
+
+{ TPersonEditForm }
+
+constructor TPersonEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddSpouseSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditSpouseSpeedButton.Glyph);
+end;
 
 {$R *.lfm}
 
