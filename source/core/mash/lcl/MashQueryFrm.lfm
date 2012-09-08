@@ -1,8 +1,10 @@
 inherited MashQueryForm: TMashQueryForm
   Left = 361
   Top = 254
-  Caption = 'Mingau :-)'
+  Caption = 'Mostos'
   inherited SearchPageControl: TPageControl
+    ActivePage = nil
+    TabIndex = -1
     inherited DefaultTab: TTabSheet
       Caption = 'Busca por nome'
       ClientHeight = 50

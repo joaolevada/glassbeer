@@ -35,8 +35,9 @@ type
 implementation
 
 uses
-  RecipeBO
-  ,PressMVPPresenter;
+  RecipeBO,
+  PressMVPPresenter,
+  PressMVPCommand;
 
 { TRecipeQueryPresenter }
 
@@ -68,9 +69,12 @@ begin
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
   CreateSubPresenter('Family', 'FamilyCombo');
   VIngredientsPresenter := CreateSubPresenter('Ingredients',
-    'IngredientsGrid',
+    'IngredientsStringGrid',
     'RawMaterial.BasicUserRecordData.Name(356, "Matéria prima");' +
     'Percentage(198,"Porcentagem")') as TPressMVPItemsPresenter;
+  VIngredientsPresenter.BindCommand(TPressMVPAddItemsCommand, 'AddIngredientSpeedButton');
+  VIngredientsPresenter.BindCommand(TPressMVPEditItemCommand, 'EditIngredientSpeedButton');
+  VIngredientsPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveIngredientSpeedButton');
   VIngredientPresenter := CreateDetailPresenter(VIngredientsPresenter);
   VIngredientPresenter.CreateSubPresenter('RawMaterial', 'RawMaterialCombo',
     'BasicUserRecordData.Name');

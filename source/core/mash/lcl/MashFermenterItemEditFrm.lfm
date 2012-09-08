@@ -1,16 +1,16 @@
 inherited MashFermenterItemEditForm: TMashFermenterItemEditForm
   Left = 362
-  Height = 352
+  Height = 376
   Top = 160
   Caption = 'Mosto em fermentador'
-  ClientHeight = 352
+  ClientHeight = 376
   inherited BottomPanel: TPanel
-    Top = 298
+    Top = 322
   end
   inherited EditPageControl: TPageControl
-    Height = 298
+    Height = 322
     inherited MainTab: TTabSheet
-      ClientHeight = 271
+      ClientHeight = 295
       ClientWidth = 792
       object FermenterLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
@@ -24,7 +24,7 @@ inherited MashFermenterItemEditForm: TMashFermenterItemEditForm
         Caption = 'Fermentador'
         ParentColor = False
       end
-      object FermenterCombo: TComboBox[1]
+      object FermenterComboBox: TComboBox[1]
         AnchorSideLeft.Control = FermenterLabel
         AnchorSideTop.Control = FermenterLabel
         AnchorSideTop.Side = asrBottom
@@ -35,10 +35,10 @@ inherited MashFermenterItemEditForm: TMashFermenterItemEditForm
         BorderSpacing.Top = 2
         ItemHeight = 14
         TabOrder = 0
-        Text = 'FermenterCombo'
+        Text = 'FermenterComboBox'
       end
       object VolumeLabel: TLabel[2]
-        AnchorSideLeft.Control = FermenterCombo
+        AnchorSideLeft.Control = FermenterComboBox
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = MainTab
         Left = 376
@@ -64,7 +64,7 @@ inherited MashFermenterItemEditForm: TMashFermenterItemEditForm
       end
       object StartDateLabel: TLabel[4]
         AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = FermenterCombo
+        AnchorSideTop.Control = FermenterComboBox
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
@@ -148,7 +148,7 @@ inherited MashFermenterItemEditForm: TMashFermenterItemEditForm
         Caption = 'Eventos'
         ParentColor = False
       end
-      object FermenterEventsGrid: TStringGrid[11]
+      object FermenterEventsStringGrid: TStringGrid[11]
         AnchorSideLeft.Control = FermenterEventsLabel
         AnchorSideTop.Control = FermenterEventsLabel
         AnchorSideTop.Side = asrBottom
@@ -164,6 +164,51 @@ inherited MashFermenterItemEditForm: TMashFermenterItemEditForm
         TabOrder = 5
         TitleFont.Height = -12
         TitleFont.Name = 'Verdana'
+      end
+      object AddFermenterEventSpeedButton: TSpeedButton[12]
+        AnchorSideLeft.Control = FermenterEventsStringGrid
+        AnchorSideTop.Control = FermenterEventsStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Adicionar evento'
+        Top = 267
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditFermenterEventSpeedButton: TSpeedButton[13]
+        AnchorSideLeft.Control = AddFermenterEventSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddFermenterEventSpeedButton
+        Left = 31
+        Height = 22
+        Hint = 'Alterar evento'
+        Top = 267
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object RemoveFermenterEventSpeedButton: TSpeedButton[14]
+        AnchorSideLeft.Control = EditFermenterEventSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddFermenterEventSpeedButton
+        Left = 58
+        Height = 22
+        Hint = 'Remover evento'
+        Top = 267
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
   end

@@ -18,13 +18,18 @@ type
     DaysSinceLastEventLabel: TLabel;
     DaysSinceLastEventEdit: TEdit;
     FermenterEventsLabel: TLabel;
+    AddFermenterEventSpeedButton: TSpeedButton;
+    EditFermenterEventSpeedButton: TSpeedButton;
+    RemoveFermenterEventSpeedButton: TSpeedButton;
     StartDateEdit: TEdit;
     StartDateLabel: TLabel;
-    FermenterEventsGrid: TStringGrid;
+    FermenterEventsStringGrid: TStringGrid;
     VolumeEdit: TEdit;
-    FermenterCombo: TComboBox;
+    FermenterComboBox: TComboBox;
     FermenterLabel: TLabel;
     VolumeLabel: TLabel;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 
@@ -34,7 +39,18 @@ implementation
 
 uses
   PressXCLBroker,
-  MashMVP;
+  MashMVP,
+  MainFrm;
+
+{ TMashFermenterItemEditForm }
+
+constructor TMashFermenterItemEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddFermenterEventSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditFermenterEventSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_DELETE, RemoveFermenterEventSpeedButton.Glyph);
+end;
 
 initialization
   PressXCLForm(TMashFermenterItemEditPresenter, TMashFermenterItemEditForm);

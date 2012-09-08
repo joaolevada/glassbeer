@@ -1,14 +1,14 @@
 inherited RecipeEditForm: TRecipeEditForm
   Left = 439
-  Height = 410
-  Top = 177
+  Height = 436
+  Top = 301
   Caption = 'Cadastro de receita'
-  ClientHeight = 410
+  ClientHeight = 436
   inherited BottomPanel: TPanel
-    Top = 356
+    Top = 382
   end
   inherited EditPageControl: TPageControl
-    Height = 356
+    Height = 382
     ActivePage = IngredientsTab
     TabIndex = 1
     inherited MainTab: TTabSheet
@@ -93,7 +93,7 @@ inherited RecipeEditForm: TRecipeEditForm
     end
     object IngredientsTab: TTabSheet[1]
       Caption = 'Ingredientes'
-      ClientHeight = 329
+      ClientHeight = 355
       ClientWidth = 792
       object FamilyLabel: TLabel
         AnchorSideLeft.Control = IngredientsTab
@@ -226,7 +226,7 @@ inherited RecipeEditForm: TRecipeEditForm
         Caption = 'Ingredientes'
         ParentColor = False
       end
-      object IngredientsGrid: TStringGrid
+      object IngredientsStringGrid: TStringGrid
         AnchorSideLeft.Control = IngredientsTab
         AnchorSideTop.Control = IngredientsLabel
         AnchorSideTop.Side = asrBottom
@@ -246,11 +246,11 @@ inherited RecipeEditForm: TRecipeEditForm
       end
       object RawMaterialLabel: TLabel
         AnchorSideLeft.Control = IngredientsTab
-        AnchorSideTop.Control = IngredientsGrid
+        AnchorSideTop.Control = AddIngredientSpeedButton
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
-        Top = 285
+        Top = 311
         Width = 127
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
@@ -263,7 +263,7 @@ inherited RecipeEditForm: TRecipeEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 22
-        Top = 302
+        Top = 328
         Width = 198
         BorderSpacing.Left = 4
         BorderSpacing.Top = 2
@@ -273,14 +273,12 @@ inherited RecipeEditForm: TRecipeEditForm
       object PercentageLabel: TLabel
         AnchorSideLeft.Control = RawMaterialCombo
         AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = IngredientsGrid
-        AnchorSideTop.Side = asrBottom
+        AnchorSideTop.Control = RawMaterialLabel
         Left = 218
         Height = 15
-        Top = 285
+        Top = 311
         Width = 123
         BorderSpacing.Left = 16
-        BorderSpacing.Top = 8
         Caption = 'Ingr.: porcentagem'
         ParentColor = False
       end
@@ -291,11 +289,55 @@ inherited RecipeEditForm: TRecipeEditForm
         AnchorSideTop.Side = asrBottom
         Left = 218
         Height = 22
-        Top = 302
+        Top = 328
         Width = 198
         BorderSpacing.Left = 16
         BorderSpacing.Top = 2
         TabOrder = 7
+      end
+      object AddIngredientSpeedButton: TSpeedButton
+        AnchorSideTop.Control = IngredientsStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Adicionar ingrediente'
+        Top = 281
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditIngredientSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = AddIngredientSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddIngredientSpeedButton
+        Left = 31
+        Height = 22
+        Hint = 'Alterar ingrediente'
+        Top = 281
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object RemoveIngredientSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = EditIngredientSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddIngredientSpeedButton
+        Left = 58
+        Height = 22
+        Hint = 'Remover ingrediente'
+        Top = 281
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
   end

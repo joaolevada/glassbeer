@@ -1,14 +1,15 @@
 inherited MashItemEditForm: TMashItemEditForm
-  Height = 352
+  Height = 375
+  Top = 219
   Caption = 'Item do mosto'
-  ClientHeight = 352
+  ClientHeight = 375
   inherited BottomPanel: TPanel
-    Top = 298
+    Top = 321
   end
   inherited EditPageControl: TPageControl
-    Height = 298
+    Height = 321
     inherited MainTab: TTabSheet
-      ClientHeight = 271
+      ClientHeight = 294
       ClientWidth = 792
       object RecipeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
@@ -22,7 +23,7 @@ inherited MashItemEditForm: TMashItemEditForm
         Caption = 'Receita'
         ParentColor = False
       end
-      object RecipeCombo: TComboBox[1]
+      object RecipeComboBox: TComboBox[1]
         AnchorSideLeft.Control = RecipeLabel
         AnchorSideTop.Control = RecipeLabel
         AnchorSideTop.Side = asrBottom
@@ -33,10 +34,10 @@ inherited MashItemEditForm: TMashItemEditForm
         BorderSpacing.Top = 2
         ItemHeight = 14
         TabOrder = 0
-        Text = 'RecipeCombo'
+        Text = 'RecipeComboBox'
       end
       object VolumeLabel: TLabel[2]
-        AnchorSideLeft.Control = RecipeCombo
+        AnchorSideLeft.Control = RecipeComboBox
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = RecipeLabel
         Left = 376
@@ -61,7 +62,7 @@ inherited MashItemEditForm: TMashItemEditForm
       end
       object OriginalGravityLabel: TLabel[4]
         AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = RecipeCombo
+        AnchorSideTop.Control = RecipeComboBox
         AnchorSideTop.Side = asrBottom
         Left = 2
         Height = 15
@@ -97,7 +98,7 @@ inherited MashItemEditForm: TMashItemEditForm
         Caption = 'Ingredientes'
         ParentColor = False
       end
-      object MashIngredientsGrid: TStringGrid[7]
+      object MashIngredientsStringGrid: TStringGrid[7]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MashIngredientsLabel
         AnchorSideTop.Side = asrBottom
@@ -114,6 +115,51 @@ inherited MashItemEditForm: TMashItemEditForm
         TabOrder = 3
         TitleFont.Height = -12
         TitleFont.Name = 'Verdana'
+      end
+      object AddMashIngredientSpeedButton: TSpeedButton[8]
+        AnchorSideLeft.Control = MashIngredientsStringGrid
+        AnchorSideTop.Control = MashIngredientsStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Adicionar ingrediente'
+        Top = 267
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditMashIngredientSpeedButton: TSpeedButton[9]
+        AnchorSideLeft.Control = AddMashIngredientSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddMashIngredientSpeedButton
+        Left = 31
+        Height = 22
+        Hint = 'Alterar ingrediente'
+        Top = 267
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object RemoveMashIngredientSpeedButton: TSpeedButton[10]
+        AnchorSideLeft.Control = EditMashIngredientSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddMashIngredientSpeedButton
+        Left = 58
+        Height = 22
+        Hint = 'Remover ingrediente'
+        Top = 267
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
   end

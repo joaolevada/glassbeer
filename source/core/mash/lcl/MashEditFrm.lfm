@@ -1,8 +1,16 @@
 inherited MashEditForm: TMashEditForm
-  Caption = 'Cadastro de mingau'
+  Height = 328
+  Caption = 'Cadastro de mosto'
+  ClientHeight = 328
+  inherited BottomPanel: TPanel
+    Top = 274
+  end
   inherited EditPageControl: TPageControl
+    Height = 274
+    ActivePage = FermentersTab
+    TabIndex = 2
     inherited MainTab: TTabSheet
-      ClientHeight = 519
+      ClientHeight = 247
       ClientWidth = 792
       object CodeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
@@ -83,7 +91,7 @@ inherited MashEditForm: TMashEditForm
     end
     object MashItemsTab: TTabSheet[1]
       Caption = 'Composição do mosto'
-      ClientHeight = 519
+      ClientHeight = 247
       ClientWidth = 792
       object MashItemsLabel: TLabel
         AnchorSideLeft.Control = MashItemsTab
@@ -97,7 +105,7 @@ inherited MashEditForm: TMashEditForm
         Caption = 'Itens do mosto'
         ParentColor = False
       end
-      object MashItemsGrid: TStringGrid
+      object MashItemsStringGrid: TStringGrid
         AnchorSideLeft.Control = MashItemsLabel
         AnchorSideTop.Control = MashItemsLabel
         AnchorSideTop.Side = asrBottom
@@ -116,11 +124,11 @@ inherited MashEditForm: TMashEditForm
       end
       object AverageOriginalGravityLabel: TLabel
         AnchorSideLeft.Control = MashItemsTab
-        AnchorSideTop.Control = MashItemsGrid
+        AnchorSideTop.Control = AddMashItemSpeedButton
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
-        Top = 177
+        Top = 203
         Width = 166
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
@@ -133,7 +141,7 @@ inherited MashEditForm: TMashEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 22
-        Top = 194
+        Top = 220
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
@@ -144,14 +152,12 @@ inherited MashEditForm: TMashEditForm
       object FinalGravityLabel: TLabel
         AnchorSideLeft.Control = AverageOriginalGravityEdit
         AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = MashItemsGrid
-        AnchorSideTop.Side = asrBottom
+        AnchorSideTop.Control = AverageOriginalGravityLabel
         Left = 218
         Height = 15
-        Top = 177
+        Top = 203
         Width = 98
         BorderSpacing.Left = 16
-        BorderSpacing.Top = 8
         Caption = 'Densidade final'
         ParentColor = False
       end
@@ -161,7 +167,7 @@ inherited MashEditForm: TMashEditForm
         AnchorSideTop.Side = asrBottom
         Left = 218
         Height = 22
-        Top = 194
+        Top = 220
         Width = 198
         BorderSpacing.Top = 2
         TabOrder = 2
@@ -170,14 +176,12 @@ inherited MashEditForm: TMashEditForm
       object AmountLabel: TLabel
         AnchorSideLeft.Control = FinalGravityEdit
         AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = MashItemsGrid
-        AnchorSideTop.Side = asrBottom
+        AnchorSideTop.Control = AverageOriginalGravityLabel
         Left = 432
         Height = 15
-        Top = 177
+        Top = 203
         Width = 80
         BorderSpacing.Left = 16
-        BorderSpacing.Top = 8
         Caption = 'Volume total'
         ParentColor = False
       end
@@ -187,7 +191,7 @@ inherited MashEditForm: TMashEditForm
         AnchorSideTop.Side = asrBottom
         Left = 432
         Height = 22
-        Top = 194
+        Top = 220
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
@@ -195,10 +199,55 @@ inherited MashEditForm: TMashEditForm
         TabOrder = 3
         Text = 'AmountEdit'
       end
+      object AddMashItemSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = MashItemsStringGrid
+        AnchorSideTop.Control = MashItemsStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Adicionar item do mosto'
+        Top = 173
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditMashItemSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = AddMashItemSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddMashItemSpeedButton
+        Left = 31
+        Height = 22
+        Hint = 'Alterar item do mosto'
+        Top = 173
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object RemoveMashItemSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = EditMashItemSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddMashItemSpeedButton
+        Left = 58
+        Height = 22
+        Hint = 'Remover item do mosto'
+        Top = 173
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
     end
     object FermentersTab: TTabSheet[2]
       Caption = 'Fermentadores'
-      ClientHeight = 519
+      ClientHeight = 247
       ClientWidth = 792
       object FermentersLabel: TLabel
         AnchorSideLeft.Control = FermentersTab
@@ -212,7 +261,7 @@ inherited MashEditForm: TMashEditForm
         Caption = 'Fermentadores'
         ParentColor = False
       end
-      object FermentersGrid: TStringGrid
+      object FermentersStringGrid: TStringGrid
         AnchorSideLeft.Control = FermentersLabel
         AnchorSideTop.Control = FermentersLabel
         AnchorSideTop.Side = asrBottom
@@ -228,6 +277,51 @@ inherited MashEditForm: TMashEditForm
         TabOrder = 0
         TitleFont.Height = -12
         TitleFont.Name = 'Verdana'
+      end
+      object AddFermenterSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = FermentersStringGrid
+        AnchorSideTop.Control = FermentersStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Adicionar referência mosto <-> fermentador'
+        Top = 173
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditFermenterSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = AddFermenterSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddFermenterSpeedButton
+        Left = 31
+        Height = 22
+        Hint = 'Alterar referência mosto <-> fermentador'
+        Top = 173
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object RemoveFermenterSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = EditFermenterSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddFermenterSpeedButton
+        Left = 58
+        Height = 22
+        Hint = 'Remover referência mosto <-> fermentador'
+        Top = 173
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
   end

@@ -16,11 +16,16 @@ type
     MashIngredientsLabel: TLabel;
     OriginalGravityEdit: TEdit;
     OriginalGravityLabel: TLabel;
-    MashIngredientsGrid: TStringGrid;
+    MashIngredientsStringGrid: TStringGrid;
+    AddMashIngredientSpeedButton: TSpeedButton;
+    EditMashIngredientSpeedButton: TSpeedButton;
+    RemoveMashIngredientSpeedButton: TSpeedButton;
     VolumeEdit: TEdit;
     VolumeLabel: TLabel;
-    RecipeCombo: TComboBox;
+    RecipeComboBox: TComboBox;
     RecipeLabel: TLabel;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 
@@ -30,7 +35,18 @@ implementation
 
 uses
   PressXCLBroker,
-  MashMVP;
+  MashMVP,
+  MainFrm;
+
+{ TMashItemEditForm }
+
+constructor TMashItemEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddMashIngredientSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditMashIngredientSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_DELETE, RemoveMashIngredientSpeedButton.Glyph);
+end;
 
 initialization
   PressXCLForm(TMashItemEditPresenter, TMashItemEditForm);

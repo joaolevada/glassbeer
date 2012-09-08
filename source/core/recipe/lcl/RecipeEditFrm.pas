@@ -13,7 +13,9 @@ type
   { TRecipeEditForm }
 
   TRecipeEditForm = class(TCustomEditForm)
+    AddIngredientSpeedButton: TSpeedButton;
     CodeEdit: TEdit;
+    EditIngredientSpeedButton: TSpeedButton;
     PercentageEdit: TEdit;
     PercentageLabel: TLabel;
     RawMaterialCombo: TComboBox;
@@ -23,7 +25,8 @@ type
     RawMaterialLabel: TLabel;
     OriginalGravityEdit: TEdit;
     OriginalGravityLabel: TLabel;
-    IngredientsGrid: TStringGrid;
+    IngredientsStringGrid: TStringGrid;
+    RemoveIngredientSpeedButton: TSpeedButton;
     WaterAmountEdit: TEdit;
     CodeLabel: TLabel;
     AgeForEdit: TEdit;
@@ -36,14 +39,27 @@ type
     RemarksMemo: TMemo;
     IngredientsTab: TTabSheet;
     AgeForLabel: TLabel;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 
 implementation
 
 uses
-  PressXCLBroker
-  ,RecipeMVP;
+  PressXCLBroker,
+  RecipeMVP,
+  MainFrm;
+
+{ TRecipeEditForm }
+
+constructor TRecipeEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddIngredientSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditIngredientSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_DELETE, RemoveIngredientSpeedButton.Glyph);
+end;
 
 initialization
   PressXCLForm(TRecipeEditPresenter,TRecipeEditForm);
