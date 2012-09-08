@@ -2,27 +2,27 @@ inherited StateEditForm: TStateEditForm
   Left = 345
   Height = 271
   Top = 161
-  Width = 588
+  Width = 639
   Caption = 'Estado'
   ClientHeight = 271
-  ClientWidth = 588
+  ClientWidth = 639
   inherited BottomPanel: TPanel
     Top = 217
-    Width = 588
-    ClientWidth = 588
+    Width = 639
+    ClientWidth = 639
     inherited SaveButton: TBitBtn
-      Left = 347
+      Left = 398
     end
     inherited CancelButton: TBitBtn
-      Left = 467
+      Left = 518
     end
   end
   inherited EditPageControl: TPageControl
     Height = 217
-    Width = 588
+    Width = 639
     inherited MainTab: TTabSheet
       ClientHeight = 190
-      ClientWidth = 580
+      ClientWidth = 631
       object CodeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
@@ -145,6 +145,38 @@ inherited StateEditForm: TStateEditForm
         BorderSpacing.Top = 2
         TabOrder = 2
         Text = 'AbbreviationEdit'
+      end
+      object AddCountrySpeedButton: TSpeedButton[10]
+        AnchorSideLeft.Control = CountryComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = CountryComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 578
+        Height = 22
+        Hint = 'Adicionar país'
+        Top = 66
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditCountrySpeedButton: TSpeedButton[11]
+        AnchorSideLeft.Control = AddCountrySpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddCountrySpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 605
+        Height = 22
+        Hint = 'Alterar país'
+        Top = 66
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
   end

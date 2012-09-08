@@ -1,8 +1,8 @@
 inherited ContactEditForm: TContactEditForm
   Caption = 'ContactEditForm'
   inherited EditPageControl: TPageControl
-    ActivePage = InternetTabSheet
-    TabIndex = 3
+    ActivePage = PhonesTabSheet
+    TabIndex = 2
     inherited MainTab: TTabSheet
       ClientHeight = 519
       ClientWidth = 792

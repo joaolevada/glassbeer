@@ -14,6 +14,8 @@ type
 
   TFermenterEventItemEditForm = class(TCustomEditForm)
     GravityEdit: TEdit;
+    AddFermenterEventSpeedButton: TSpeedButton;
+    EditFermenterEventSpeedButton: TSpeedButton;
     TemperatureEdit: TEdit;
     CurrentGravityLabel: TLabel;
     TemperatureLabel: TLabel;
@@ -25,6 +27,8 @@ type
     ExpirationDateLabel: TLabel;
     ExpiredLabel: TLabel;
     VolumeLabel: TLabel;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 
@@ -34,7 +38,17 @@ implementation
 
 uses
   PressXCLBroker,
-  FermenterMVP;
+  FermenterMVP,
+  MainFrm;
+
+{ TFermenterEventItemEditForm }
+
+constructor TFermenterEventItemEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddFermenterEventSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditFermenterEventSpeedButton.Glyph);
+end;
 
 initialization
   PressXCLForm(TFermenterEventItemEditPresenter, TFermenterEventItemEditForm);

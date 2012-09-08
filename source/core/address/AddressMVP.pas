@@ -136,7 +136,8 @@ type
 implementation
 
 uses
-  PressMVPModel;
+  PressMVPModel,
+  PressMVPPresenter;
 
 { TIncludePhoneCommand }
 
@@ -196,14 +197,22 @@ end;
 { TAddressEditPresenter }
 
 procedure TAddressEditPresenter.InitPresenter;
+var
+  VLabelPresenter, VNeighborhoodPresenter, VCityPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
+  VLabelPresenter := CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
+  VLabelPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddLabelSpeedButton');
+  VLabelPresenter.BindCommand(TPressMVPEditItemCommand, 'EditLabelSpeedButton');
   CreateSubPresenter('Street', 'StreetEdit');
   CreateSubPresenter('Number', 'NumberEdit');
   CreateSubPresenter('POBox', 'POBoxEdit');
-  CreateSubPresenter('Neighborhood', 'NeighborhoodComboBox', 'BasicUserRecordData.Name');
-  CreateSubPresenter('City', 'CityComboBox', 'BasicUserRecordData.Name');
+  VNeighborhoodPresenter := CreateSubPresenter('Neighborhood', 'NeighborhoodComboBox', 'BasicUserRecordData.Name');
+  VNeighborhoodPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddNeighborhoodSpeedButton');
+  VNeighborhoodPresenter.BindCommand(TPressMVPEditItemCommand, 'EditNeighborhoodSpeedButton');
+  VCityPresenter := CreateSubPresenter('City', 'CityComboBox', 'BasicUserRecordData.Name');
+  VCityPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddCitySpeedButton');
+  VCityPresenter.BindCommand(TPressMVPEditItemCommand, 'EditCitySpeedButton');
   CreateSubPresenter('PostalCode', 'PostalCodeEdit');
 end;
 
@@ -220,20 +229,28 @@ end;
 { TCityEditPresenter }
 
 procedure TCityEditPresenter.InitPresenter;
+var
+  VStatePresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
   CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
-  CreateSubPresenter('State', 'StateComboBox', 'BasicUserRecordData.Name');
+  VStatePresenter := CreateSubPresenter('State', 'StateComboBox', 'BasicUserRecordData.Name');
+  VStatePresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddStateSpeedButton');
+  VStatePresenter.BindCommand(TPressMVPEditItemCommand, 'EditStateSpeedButton');
 end;
 
 { TInternetAddressEditPresenter }
 
 procedure TInternetAddressEditPresenter.InitPresenter;
+var
+  VLabelPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
+  VLabelPresenter := CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
+  VLabelPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddLabelSpeedButton');
+  VLabelPresenter.BindCommand(TPressMVPEditItemCommand, 'EditLabelSpeedButton');
   CreateSubPresenter('Address', 'AddressEdit');
 end;
 
@@ -270,9 +287,13 @@ end;
 { TPhoneEditPresenter }
 
 procedure TPhoneEditPresenter.InitPresenter;
+var
+  VLabelPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
+  VLabelPresenter := CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
+  VLabelPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddLabelSpeedButton');
+  VLabelPresenter.BindCommand(TPressMVPEditItemCommand, 'EditLabelSpeedButton');
   CreateSubPresenter('Number', 'NumberEdit');
 end;
 
@@ -289,13 +310,17 @@ end;
 { TStateEditPresenter }
 
 procedure TStateEditPresenter.InitPresenter;
+var
+  VCountryPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
   CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
   CreateSubPresenter('Abbreviation', 'AbbreviationEdit');
-  CreateSubPresenter('Country', 'CountryComboBox', 'BasicUserRecordData.Name');
+  VCountryPresenter := CreateSubPresenter('Country', 'CountryComboBox', 'BasicUserRecordData.Name');
+  VCountryPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddCountrySpeedButton');
+  VCountryPresenter.BindCommand(TPressMVPEditItemCommand, 'EditCountrySpeedButton');
 end;
 
 { TEditAddressCommand }

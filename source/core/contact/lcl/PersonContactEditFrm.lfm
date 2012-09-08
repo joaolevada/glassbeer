@@ -1,26 +1,26 @@
 inherited PersonContactEditForm: TPersonContactEditForm
   Height = 176
-  Width = 587
+  Width = 639
   Caption = 'Contato na empresa'
   ClientHeight = 176
-  ClientWidth = 587
+  ClientWidth = 639
   inherited BottomPanel: TPanel
     Top = 122
-    Width = 587
-    ClientWidth = 587
+    Width = 639
+    ClientWidth = 639
     inherited SaveButton: TBitBtn
-      Left = 346
+      Left = 398
     end
     inherited CancelButton: TBitBtn
-      Left = 466
+      Left = 518
     end
   end
   inherited EditPageControl: TPageControl
     Height = 122
-    Width = 587
+    Width = 639
     inherited MainTab: TTabSheet
       ClientHeight = 95
-      ClientWidth = 579
+      ClientWidth = 631
       object LabelLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
@@ -34,13 +34,13 @@ inherited PersonContactEditForm: TPersonContactEditForm
         ParentColor = False
       end
       object LabelComboBox: TComboBox[1]
-        AnchorSideLeft.Control = LabelLabel
-        AnchorSideTop.Control = LabelLabel
-        AnchorSideTop.Side = asrBottom
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Side = asrCenter
         Left = 4
         Height = 22
         Top = 21
         Width = 198
+        BorderSpacing.Left = 4
         BorderSpacing.Top = 2
         ItemHeight = 14
         TabOrder = 0
@@ -73,10 +73,10 @@ inherited PersonContactEditForm: TPersonContactEditForm
         Text = 'PersonComboBox'
       end
       object ExtensionLineLabel: TLabel[4]
-        AnchorSideLeft.Control = PersonComboBox
+        AnchorSideLeft.Control = EditPersonSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = PersonLabel
-        Left = 376
+        Left = 430
         Height = 15
         Top = 51
         Width = 39
@@ -88,13 +88,77 @@ inherited PersonContactEditForm: TPersonContactEditForm
         AnchorSideLeft.Control = ExtensionLineLabel
         AnchorSideTop.Control = ExtensionLineLabel
         AnchorSideTop.Side = asrBottom
-        Left = 376
+        Left = 430
         Height = 22
         Top = 68
         Width = 198
         BorderSpacing.Top = 2
         TabOrder = 2
         Text = 'ExtensionLineEdit'
+      end
+      object AddLabelSpeedButton: TSpeedButton[6]
+        AnchorSideLeft.Control = LabelComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = LabelComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 206
+        Height = 22
+        Hint = 'Adicionar'
+        Top = 21
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditLabelSpeedButton: TSpeedButton[7]
+        AnchorSideLeft.Control = AddLabelSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddLabelSpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 233
+        Height = 22
+        Hint = 'Alterar'
+        Top = 21
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object AddPersonSpeedButton: TSpeedButton[8]
+        AnchorSideLeft.Control = PersonComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = PersonComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 364
+        Height = 22
+        Hint = 'Adicionar'
+        Top = 68
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditPersonSpeedButton: TSpeedButton[9]
+        AnchorSideLeft.Control = AddPersonSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddPersonSpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 391
+        Height = 22
+        Hint = 'Alterar'
+        Top = 68
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
   end

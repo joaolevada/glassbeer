@@ -1,26 +1,26 @@
 inherited InternetAddressEditForm: TInternetAddressEditForm
   Height = 129
-  Width = 578
+  Width = 632
   Caption = 'Endereço na internet'
   ClientHeight = 129
-  ClientWidth = 578
+  ClientWidth = 632
   inherited BottomPanel: TPanel
     Top = 75
-    Width = 578
-    ClientWidth = 578
+    Width = 632
+    ClientWidth = 632
     inherited SaveButton: TBitBtn
-      Left = 337
+      Left = 391
     end
     inherited CancelButton: TBitBtn
-      Left = 457
+      Left = 511
     end
   end
   inherited EditPageControl: TPageControl
     Height = 75
-    Width = 578
+    Width = 632
     inherited MainTab: TTabSheet
       ClientHeight = 48
-      ClientWidth = 570
+      ClientWidth = 624
       object LabelLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
@@ -47,10 +47,10 @@ inherited InternetAddressEditForm: TInternetAddressEditForm
         Text = 'LabelComboBox'
       end
       object AddressLabel: TLabel[2]
-        AnchorSideLeft.Control = LabelComboBox
+        AnchorSideLeft.Control = EditLabelSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = MainTab
-        Left = 210
+        Left = 264
         Height = 15
         Top = 4
         Width = 60
@@ -63,13 +63,45 @@ inherited InternetAddressEditForm: TInternetAddressEditForm
         AnchorSideLeft.Control = AddressLabel
         AnchorSideTop.Control = AddressLabel
         AnchorSideTop.Side = asrBottom
-        Left = 210
+        Left = 264
         Height = 22
         Top = 21
         Width = 356
         BorderSpacing.Top = 2
         TabOrder = 1
         Text = 'AddressEdit'
+      end
+      object AddLabelSpeedButton: TSpeedButton[4]
+        AnchorSideLeft.Control = LabelComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = LabelComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 206
+        Height = 22
+        Hint = 'Adicionar tipo'
+        Top = 21
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditLabelSpeedButton: TSpeedButton[5]
+        AnchorSideLeft.Control = AddLabelSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddLabelSpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 233
+        Height = 22
+        Hint = 'Alterar tipo'
+        Top = 21
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
   end

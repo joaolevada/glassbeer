@@ -14,6 +14,7 @@ type
 
   TCompanyEditForm = class(TContactEditForm)
     AddContactLabelSpeedButton: TSpeedButton;
+    AddContactPersonSpeedButton: TSpeedButton;
     CNPJEdit: TEdit;
     ContactExtensionLineEdit: TEdit;
     ContactExtensionLineLabel: TLabel;
@@ -25,6 +26,7 @@ type
     ContactsLabel: TLabel;
     ContactsStringGrid: TStringGrid;
     EditContactLabelSpeedButton: TSpeedButton;
+    EditContactPersonSpeedButton: TSpeedButton;
     IEEdit: TEdit;
     IELabel: TLabel;
     CNPJLabel: TLabel;
@@ -54,6 +56,9 @@ begin
 
   MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddContactLabelSpeedButton.Glyph);
   MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditContactLabelSpeedButton.Glyph);
+
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddContactPersonSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditContactPersonSpeedButton.Glyph);
 end;
 
 {$R *.lfm}

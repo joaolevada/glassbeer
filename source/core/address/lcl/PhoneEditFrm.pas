@@ -17,6 +17,10 @@ type
     NumberEdit: TEdit;
     LabelLabel: TLabel;
     NumberLabel: TLabel;
+    AddLabelSpeedButton: TSpeedButton;
+    EditLabelSpeedButton: TSpeedButton;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 
@@ -24,7 +28,17 @@ implementation
 
 uses
   PressXCLBroker,
-  AddressMVP;
+  AddressMVP,
+  MainFrm;
+
+{ TPhoneEditForm }
+
+constructor TPhoneEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddLabelSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditLabelSpeedButton.Glyph);
+end;
 
 {$R *.lfm}
 

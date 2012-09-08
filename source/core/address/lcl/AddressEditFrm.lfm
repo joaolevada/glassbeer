@@ -2,27 +2,27 @@ inherited AddressEditForm: TAddressEditForm
   Left = 371
   Height = 267
   Top = 214
-  Width = 784
+  Width = 844
   Caption = 'Endereço'
   ClientHeight = 267
-  ClientWidth = 784
+  ClientWidth = 844
   inherited BottomPanel: TPanel
     Top = 213
-    Width = 784
-    ClientWidth = 784
+    Width = 844
+    ClientWidth = 844
     inherited SaveButton: TBitBtn
-      Left = 543
+      Left = 603
     end
     inherited CancelButton: TBitBtn
-      Left = 663
+      Left = 723
     end
   end
   inherited EditPageControl: TPageControl
     Height = 213
-    Width = 784
+    Width = 844
     inherited MainTab: TTabSheet
       ClientHeight = 186
-      ClientWidth = 776
+      ClientWidth = 836
       object LabelComboBox: TComboBox[0]
         AnchorSideLeft.Control = LabelLabel
         AnchorSideTop.Control = LabelLabel
@@ -42,21 +42,19 @@ inherited AddressEditForm: TAddressEditForm
         Left = 4
         Height = 15
         Top = 4
-        Width = 60
+        Width = 27
         BorderSpacing.Left = 4
         BorderSpacing.Top = 4
-        Caption = 'Endereço'
+        Caption = 'Tipo'
         ParentColor = False
       end
       object StreetEdit: TEdit[2]
-        AnchorSideLeft.Control = LabelComboBox
-        AnchorSideLeft.Side = asrBottom
+        AnchorSideLeft.Control = StreetLabel
         AnchorSideTop.Control = LabelComboBox
-        Left = 210
+        Left = 264
         Height = 22
         Top = 21
         Width = 356
-        BorderSpacing.Left = 8
         TabOrder = 1
         Text = 'StreetEdit'
       end
@@ -64,7 +62,7 @@ inherited AddressEditForm: TAddressEditForm
         AnchorSideLeft.Control = StreetEdit
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = StreetEdit
-        Left = 574
+        Left = 628
         Height = 22
         Top = 21
         Width = 198
@@ -73,10 +71,10 @@ inherited AddressEditForm: TAddressEditForm
         Text = 'NumberEdit'
       end
       object StreetLabel: TLabel[4]
-        AnchorSideLeft.Control = LabelComboBox
+        AnchorSideLeft.Control = EditLabelSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = LabelLabel
-        Left = 210
+        Left = 264
         Height = 15
         Top = 4
         Width = 25
@@ -88,7 +86,7 @@ inherited AddressEditForm: TAddressEditForm
         AnchorSideLeft.Control = StreetEdit
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = StreetLabel
-        Left = 574
+        Left = 628
         Height = 15
         Top = 4
         Width = 50
@@ -148,14 +146,14 @@ inherited AddressEditForm: TAddressEditForm
         Text = 'NeighborhoodComboBox'
       end
       object CityLabel: TLabel[10]
-        AnchorSideLeft.Control = NeighborhoodComboBox
+        AnchorSideLeft.Control = EditNeighborhoodSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = NeighborhoodLabel
-        Left = 376
+        Left = 422
         Height = 15
         Top = 98
         Width = 45
-        BorderSpacing.Left = 16
+        BorderSpacing.Left = 8
         Caption = 'Cidade'
         ParentColor = False
       end
@@ -163,7 +161,7 @@ inherited AddressEditForm: TAddressEditForm
         AnchorSideLeft.Control = CityLabel
         AnchorSideTop.Control = CityLabel
         AnchorSideTop.Side = asrBottom
-        Left = 376
+        Left = 422
         Height = 22
         Top = 115
         Width = 356
@@ -196,6 +194,102 @@ inherited AddressEditForm: TAddressEditForm
         BorderSpacing.Top = 2
         TabOrder = 6
         Text = 'PostalCodeEdit'
+      end
+      object AddLabelSpeedButton: TSpeedButton[14]
+        AnchorSideLeft.Control = LabelComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = LabelComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 206
+        Height = 22
+        Hint = 'Adicionar tipo'
+        Top = 21
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditLabelSpeedButton: TSpeedButton[15]
+        AnchorSideLeft.Control = AddLabelSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddLabelSpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 233
+        Height = 22
+        Hint = 'Alterar tipo'
+        Top = 21
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object AddNeighborhoodSpeedButton: TSpeedButton[16]
+        AnchorSideLeft.Control = NeighborhoodComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = NeighborhoodComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 364
+        Height = 22
+        Hint = 'Adicionar bairro'
+        Top = 115
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditNeighborhoodSpeedButton: TSpeedButton[17]
+        AnchorSideLeft.Control = AddNeighborhoodSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddNeighborhoodSpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 391
+        Height = 22
+        Hint = 'Alterar bairro'
+        Top = 115
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object AddCitySpeedButton: TSpeedButton[18]
+        AnchorSideLeft.Control = CityComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = CityComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 782
+        Height = 22
+        Hint = 'Adicionar cidade'
+        Top = 115
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditCitySpeedButton: TSpeedButton[19]
+        AnchorSideLeft.Control = AddCitySpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddCitySpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 809
+        Height = 22
+        Hint = 'Alterar cidade'
+        Top = 115
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
   end

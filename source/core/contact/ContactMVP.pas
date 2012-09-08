@@ -88,10 +88,16 @@ uses
 { TPersonContactEditPresenter }
 
 procedure TPersonContactEditPresenter.InitPresenter;
+var
+  VLabelPresenter, VPersonPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
-  CreateSubPresenter('Person', 'PersonComboBox', 'BasicUserRecordData.Name');
+  VLabelPresenter := CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
+  VLabelPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddLabelSpeedButton');
+  VLabelPresenter.BindCommand(TPressMVPEditItemCommand, 'EditLabelSpeedButton');
+  VPersonPresenter := CreateSubPresenter('Person', 'PersonComboBox', 'BasicUserRecordData.Name');
+  VPersonPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddPersonSpeedButton');
+  VPersonPresenter.BindCommand(TPressMVPEditItemCommand, 'EditPersonSpeedButton');
   CreateSubPresenter('ExtensionLine', 'ExtensionLineEdit');
 end;
 
@@ -112,6 +118,7 @@ var
   VContactsPresenter: TPressMVPItemsPresenter;
   VContactPresenter: TPressMVPFormPresenter;
   VContactLabelPresenter: TPressMVPPresenter;
+  VContactPersonPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('IE', 'IEEdit');
@@ -128,8 +135,10 @@ begin
     'BasicUserRecordData.Name');
   VContactLabelPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddContactLabelSpeedButton');
   VContactLabelPresenter.BindCommand(TPressMVPEditItemCommand, 'EditContactLabelSpeedButton');
-  VContactPresenter.CreateSubPresenter('Person', 'ContactPersonComboBox',
+  VContactPersonPresenter := VContactPresenter.CreateSubPresenter('Person', 'ContactPersonComboBox',
     'BasicUserRecordData.Name');
+  VContactPersonPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddContactPersonSpeedButton');
+  VContactPersonPresenter.BindCommand(TPressMVPEditItemCommand, 'EditContactPersonSpeedButton');
   VContactPresenter.CreateSubPresenter('ExtensionLine',
     'ContactExtensionLineEdit');
 end;

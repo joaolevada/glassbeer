@@ -23,6 +23,10 @@ type
     RemarksMemo: TMemo;
     CountryComboBox: TComboBox;
     CountryLabel: TLabel;
+    AddCountrySpeedButton: TSpeedButton;
+    EditCountrySpeedButton: TSpeedButton;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 
@@ -30,7 +34,17 @@ implementation
 
 uses
   AddressMVP,
-  PressXCLBroker;
+  PressXCLBroker,
+  MainFrm;
+
+{ TStateEditForm }
+
+constructor TStateEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddCountrySpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditCountrySpeedButton.Glyph);
+end;
 
 {$R *.lfm}
 

@@ -47,14 +47,14 @@ inherited FermenterEventItemEditForm: TFermenterEventItemEditForm
         Text = 'FermenterEventCombo'
       end
       object ExpirationDateLabel: TLabel[2]
-        AnchorSideLeft.Control = FermenterEventCombo
+        AnchorSideLeft.Control = EditFermenterEventSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = MainTab
-        Left = 376
+        Left = 432
         Height = 15
         Top = 2
         Width = 108
-        BorderSpacing.Left = 16
+        BorderSpacing.Left = 18
         BorderSpacing.Top = 2
         Caption = 'Data de validade'
         ParentColor = False
@@ -63,7 +63,7 @@ inherited FermenterEventItemEditForm: TFermenterEventItemEditForm
         AnchorSideLeft.Control = ExpirationDateLabel
         AnchorSideTop.Control = ExpirationDateLabel
         AnchorSideTop.Side = asrBottom
-        Left = 376
+        Left = 432
         Height = 22
         Top = 19
         Width = 198
@@ -170,6 +170,38 @@ inherited FermenterEventItemEditForm: TFermenterEventItemEditForm
         BorderSpacing.Top = 2
         TabOrder = 5
         Text = 'GravityEdit'
+      end
+      object AddFermenterEventSpeedButton: TSpeedButton[12]
+        AnchorSideLeft.Control = FermenterEventCombo
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FermenterEventCombo
+        AnchorSideTop.Side = asrCenter
+        Left = 364
+        Height = 22
+        Hint = 'Adicionar evento'
+        Top = 19
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditFermenterEventSpeedButton: TSpeedButton[13]
+        AnchorSideLeft.Control = AddFermenterEventSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddFermenterEventSpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 391
+        Height = 22
+        Hint = 'Alterar evento'
+        Top = 19
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
   end

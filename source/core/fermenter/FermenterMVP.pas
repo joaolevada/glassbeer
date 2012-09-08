@@ -50,6 +50,10 @@ type
 
 implementation
 
+uses
+  PressMVPCommand,
+  PressMVPPresenter;
+
 { TFermenterEventEditPresenter }
 
 procedure TFermenterEventEditPresenter.InitPresenter;
@@ -65,10 +69,14 @@ end;
 { TFermenterEventItemEditPresenter }
 
 procedure TFermenterEventItemEditPresenter.InitPresenter;
+var
+  VFermenterEventPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('FermenterEvent', 'FermenterEventCombo',
+  VFermenterEventPresenter :=  CreateSubPresenter('FermenterEvent', 'FermenterEventCombo',
     'BasicUserRecordData.Name');
+  VFermenterEventPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddFermenterEventSpeedButton');
+  VFermenterEventPresenter.BindCommand(TPressMVPEditItemCommand, 'EditFermenterEventSpeedButton');
   CreateSubPresenter('ExpirationDate', 'ExpirationDateEdit');
   CreateSubPresenter('Expired', 'ExpiredEdit');
   CreateSubPresenter('Volume', 'VolumeEdit');
