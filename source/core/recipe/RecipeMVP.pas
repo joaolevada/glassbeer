@@ -52,7 +52,7 @@ begin
   Result := 'BasicUserRecordData.Code(198, "Código");' +
     'BasicUserRecordData.Name(356, "Descrição");' +
     'Family(198, "Família");' +
-    'AgeFor(198, "Maturação (dias)")';
+    'AgeFor(198, "Maturação [dias]")';
 end;
 
 { TRecipeEditPresenter }
@@ -61,13 +61,14 @@ procedure TRecipeEditPresenter.InitPresenter;
 var
   VIngredientsPresenter: TPressMVPItemsPresenter;
   VIngredientPresenter: TPressMVPFormPresenter;
+  VIngredientRawMaterialPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('AgeFor', 'AgeForEdit');
   CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
   CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
-  CreateSubPresenter('Family', 'FamilyCombo');
+  CreateSubPresenter('Family', 'FamilyComboBox');
   VIngredientsPresenter := CreateSubPresenter('Ingredients',
     'IngredientsStringGrid',
     'RawMaterial.BasicUserRecordData.Name(356, "Matéria prima");' +
@@ -76,9 +77,11 @@ begin
   VIngredientsPresenter.BindCommand(TPressMVPEditItemCommand, 'EditIngredientSpeedButton');
   VIngredientsPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveIngredientSpeedButton');
   VIngredientPresenter := CreateDetailPresenter(VIngredientsPresenter);
-  VIngredientPresenter.CreateSubPresenter('RawMaterial', 'RawMaterialCombo',
+  VIngredientRawMaterialPresenter := VIngredientPresenter.CreateSubPresenter('RawMaterial', 'IngredientRawMaterialComboBox',
     'BasicUserRecordData.Name');
-  VIngredientPresenter.CreateSubPresenter('Percentage', 'PercentageEdit');
+  VIngredientRawMaterialPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddIngredientRawMaterialSpeedButton');
+  VIngredientRawMaterialPresenter.BindCommand(TPressMVPEditItemCommand, 'EditIngredientRawMaterialSpeedButton');
+  VIngredientPresenter.CreateSubPresenter('Percentage', 'IngredientPercentageEdit');
   CreateSubPresenter('WaterAmount', 'WaterAmountEdit');
   CreateSubPresenter('OriginalGravity', 'OriginalGravityEdit');
   CreateSubPresenter('FinalGravity', 'FinalGravityEdit');
@@ -88,10 +91,14 @@ end;
 { TRecipeIngredientItemEditPresenter }
 
 procedure TRecipeIngredientItemEditPresenter.InitPresenter;
+var
+  VRawMaterialPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('RawMaterial', 'RawMaterialCombo',
+  VRawMaterialPresenter := CreateSubPresenter('RawMaterial', 'RawMaterialCombo',
     'BasicUserRecordData.Name');
+  VRawMaterialPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddRawMaterialSpeedButton');
+  VRawMaterialPresenter.BindCommand(TPressMVPEditItemCommand, 'EditRawMaterialSpeedButton');
   CreateSubPresenter('Percentage', 'PercentageEdit');
 end;
 

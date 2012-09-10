@@ -66,8 +66,7 @@ begin
   VRawMaterialPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddRawMaterialSpeedButton');
   VRawMaterialPresenter.BindCommand(TPressMVPEditItemCommand, 'EditRawMaterialSpeedButton');
   CreateSubPresenter('Quantity', 'QuantityEdit');
-  { TODO 1 -ojoaolevada -cimplementation/bug : Create a non persistent attribute to MashIngredientItem referring to RawMaterial.Unity }
-  CreateSubPresenter('RawMaterial.Unity', 'UnityEdit');
+  CreateSubPresenter('Unity', 'UnityEdit');
 end;
 
 { TMashItemEditPresenter }

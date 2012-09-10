@@ -17,11 +17,13 @@ type
     CodeLabel: TLabel;
     RemarksLabel: TLabel;
     RemarksMemo: TMemo;
-    StatusCombo: TComboBox;
+    AddLocationSpeedButton: TSpeedButton;
+    EditLocationSpeedButton: TSpeedButton;
+    StatusComboBox: TComboBox;
     CurrentVolumeLabel: TLabel;
     CurrentVolumeEdit: TEdit;
     StatusLabel: TLabel;
-    LocationCombo: TComboBox;
+    LocationComboBox: TComboBox;
     LocationLabel: TLabel;
     UtilCapacityEdit: TEdit;
     HeadSpaceEdit: TEdit;
@@ -31,13 +33,25 @@ type
     UtilCapacityLabel: TLabel;
     NameEdit: TEdit;
     NameLabel: TLabel;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 implementation
 
 uses
-  PressXCLBroker
-  ,FermenterMVP;
+  PressXCLBroker,
+  FermenterMVP,
+  MainFrm;
+
+{ TFermenterEditForm }
+
+constructor TFermenterEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddLocationSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditLocationSpeedButton.Glyph);
+end;
 
 {$R *.lfm}
 

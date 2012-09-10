@@ -90,8 +90,15 @@ type
   TMashIngredientItem = class(TCustomObject)
     _RawMaterial: TRawMaterialReference;
     _Quantity: TPressDouble;
+    _Unity: TPressEnum;
+  private
+    function GetUnity: TUnity;
+    procedure SetUnity(AValue: TUnity);
   protected
     class function InternalMetadataStr: string; override;
+    procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
+  published
+    property Unity: TUnity read GetUnity write SetUnity;
   end;
 
   { TMashIngredientItemParts }
@@ -164,12 +171,38 @@ end;
 
 { TMashIngredientItem }
 
+function TMashIngredientItem.GetUnity: TUnity;
+begin
+  Result := TUnity(_Unity.Value);
+end;
+
+procedure TMashIngredientItem.SetUnity(AValue: TUnity);
+begin
+  _Unity.Value := Integer(AValue);
+end;
+
 class function TMashIngredientItem.InternalMetadataStr: string;
 begin
   Result := 'TMashIngredientItem IsPersistent PersistentName="MshIgrdIt" (' +
     'RawMaterial: TRawMaterialReference ShortName="RawMtrl";' +
     'Quantity: Double;' +
+    'Unity: Enum(TUnity) Calc(RawMaterial) IsPersistent=False;' +
     ')';
+end;
+
+procedure TMashIngredientItem.InternalCalcAttribute(AAttribute: TPressAttribute
+  );
+var
+  VRawMaterial: TRawMaterial;
+begin
+  if AAttribute = _Unity then
+  begin
+    VRawMaterial := _RawMaterial.Value as TRawMaterial;
+    if Assigned(VRawMaterial) then
+      Unity := VRawMaterial.Unity
+    else
+      _Unity.Clear;
+  end;
 end;
 
 { TMashReference }

@@ -22,6 +22,7 @@ type
     constructor Create(AOwner: TComponent); override;
   end;
 
+
 implementation
 
 {$R *.lfm}

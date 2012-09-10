@@ -103,6 +103,8 @@ end;
 { TFermenterEditPresenter }
 
 procedure TFermenterEditPresenter.InitPresenter;
+var
+  VLocationPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
@@ -110,10 +112,12 @@ begin
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
   CreateSubPresenter('FullCapacity', 'FullCapacityEdit');
   CreateSubPresenter('HeadSpace', 'HeadSpaceEdit');
-  CreateSubPresenter('Location', 'LocationCombo', 'BasicUserRecordData.Name');
+  VLocationPresenter := CreateSubPresenter('Location', 'LocationComboBox', 'BasicUserRecordData.Name');
+  VLocationPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddLocationSpeedButton');
+  VLocationPresenter.BindCommand(TPressMVPEditItemCommand, 'EditLocationSpeedButton');
   CreateSubPresenter('UtilCapacity', 'UtilCapacityEdit');
   CreateSubPresenter('CurrentVolume', 'CurrentVolumeEdit');
-  CreateSubPresenter('Status', 'StatusCombo');
+  CreateSubPresenter('Status', 'StatusComboBox');
 end;
 
 { TFermenterEventQueryPresenter }

@@ -38,7 +38,7 @@ begin
   CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
   CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
-  CreateSubPresenter('Unity', 'UnityCombo');
+  CreateSubPresenter('Unity', 'UnityComboBox');
   CreateSubPresenter('MinimumStock', 'MinimumStockEdit');
   CreateSubPresenter('MaximumStock', 'MaximumStockEdit');
 end;

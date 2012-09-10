@@ -1,26 +1,26 @@
 inherited RecipeIngredientItemEditForm: TRecipeIngredientItemEditForm
   Height = 132
-  Width = 430
+  Width = 475
   Caption = 'Item da receita'
   ClientHeight = 132
-  ClientWidth = 430
+  ClientWidth = 475
   inherited BottomPanel: TPanel
     Top = 78
-    Width = 430
-    ClientWidth = 430
+    Width = 475
+    ClientWidth = 475
     inherited SaveButton: TBitBtn
-      Left = 189
+      Left = 234
     end
     inherited CancelButton: TBitBtn
-      Left = 309
+      Left = 354
     end
   end
   inherited EditPageControl: TPageControl
     Height = 78
-    Width = 430
+    Width = 475
     inherited MainTab: TTabSheet
       ClientHeight = 51
-      ClientWidth = 422
+      ClientWidth = 467
       object RawMaterialLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
@@ -48,31 +48,61 @@ inherited RecipeIngredientItemEditForm: TRecipeIngredientItemEditForm
         Text = 'RawMaterialCombo'
       end
       object PercentageLabel: TLabel[2]
-        AnchorSideLeft.Control = RawMaterialCombo
+        AnchorSideLeft.Control = EditRawMaterialSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = MainTab
-        Left = 218
+        Left = 264
         Height = 15
         Top = 2
         Width = 84
-        BorderSpacing.Left = 16
+        BorderSpacing.Left = 8
         BorderSpacing.Top = 2
         Caption = 'Porcentagem'
         ParentColor = False
       end
       object PercentageEdit: TEdit[3]
-        AnchorSideLeft.Control = RawMaterialCombo
-        AnchorSideLeft.Side = asrBottom
+        AnchorSideLeft.Control = PercentageLabel
         AnchorSideTop.Control = PercentageLabel
         AnchorSideTop.Side = asrBottom
-        Left = 218
+        Left = 264
         Height = 22
         Top = 19
         Width = 198
-        BorderSpacing.Left = 16
         BorderSpacing.Top = 2
         TabOrder = 1
         Text = 'PercentageEdit'
+      end
+      object AddRawMaterialSpeedButton: TSpeedButton[4]
+        AnchorSideLeft.Control = RawMaterialCombo
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = RawMaterialCombo
+        AnchorSideTop.Side = asrCenter
+        Left = 206
+        Height = 22
+        Hint = 'Adicionar matéria prima'
+        Top = 19
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditRawMaterialSpeedButton: TSpeedButton[5]
+        AnchorSideLeft.Control = AddRawMaterialSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddRawMaterialSpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 233
+        Height = 22
+        Hint = 'Alterar matéria prima'
+        Top = 19
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
     end
   end

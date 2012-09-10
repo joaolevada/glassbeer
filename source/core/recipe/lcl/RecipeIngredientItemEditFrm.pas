@@ -17,14 +17,28 @@ type
     PercentageLabel: TLabel;
     RawMaterialCombo: TComboBox;
     RawMaterialLabel: TLabel;
+    AddRawMaterialSpeedButton: TSpeedButton;
+    EditRawMaterialSpeedButton: TSpeedButton;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 
 implementation
 
 uses
-  PressXCLBroker
-  ,RecipeMVP;
+  PressXCLBroker,
+  RecipeMVP,
+  MainFrm;
+
+{ TRecipeIngredientItemEditForm }
+
+constructor TRecipeIngredientItemEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddRawMaterialSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditRawMaterialSpeedButton.Glyph);
+end;
 
 {$R *.lfm}
 

@@ -35,7 +35,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         )
         TabOrder = 5
       end
-      object UnityCombo: TComboBox[1]
+      object UnityComboBox: TComboBox[1]
         AnchorSideLeft.Control = CodeEdit
         AnchorSideTop.Control = UnityLabel
         AnchorSideTop.Side = asrBottom
@@ -46,7 +46,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
         BorderSpacing.Top = 2
         ItemHeight = 14
         TabOrder = 2
-        Text = 'UnityCombo'
+        Text = 'UnityComboBox'
       end
       object CodeEdit: TEdit[2]
         AnchorSideLeft.Control = CodeLabel
@@ -125,7 +125,7 @@ inherited RawMaterialEditForm: TRawMaterialEditForm
       end
       object MinimumStockLabel: TLabel[8]
         AnchorSideLeft.Control = CodeLabel
-        AnchorSideTop.Control = UnityCombo
+        AnchorSideTop.Control = UnityComboBox
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15

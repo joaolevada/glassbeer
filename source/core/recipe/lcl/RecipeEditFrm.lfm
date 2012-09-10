@@ -1,18 +1,18 @@
 inherited RecipeEditForm: TRecipeEditForm
   Left = 439
-  Height = 436
+  Height = 460
   Top = 301
   Caption = 'Cadastro de receita'
-  ClientHeight = 436
+  ClientHeight = 460
   inherited BottomPanel: TPanel
-    Top = 382
+    Top = 406
   end
   inherited EditPageControl: TPageControl
-    Height = 382
+    Height = 406
     ActivePage = IngredientsTab
     TabIndex = 1
     inherited MainTab: TTabSheet
-      ClientHeight = 329
+      ClientHeight = 379
       ClientWidth = 792
       object CodeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
@@ -93,7 +93,7 @@ inherited RecipeEditForm: TRecipeEditForm
     end
     object IngredientsTab: TTabSheet[1]
       Caption = 'Ingredientes'
-      ClientHeight = 355
+      ClientHeight = 379
       ClientWidth = 792
       object FamilyLabel: TLabel
         AnchorSideLeft.Control = IngredientsTab
@@ -107,7 +107,7 @@ inherited RecipeEditForm: TRecipeEditForm
         Caption = 'Família'
         ParentColor = False
       end
-      object FamilyCombo: TComboBox
+      object FamilyComboBox: TComboBox
         AnchorSideLeft.Control = FamilyLabel
         AnchorSideTop.Control = FamilyLabel
         AnchorSideTop.Side = asrBottom
@@ -118,10 +118,10 @@ inherited RecipeEditForm: TRecipeEditForm
         BorderSpacing.Top = 2
         ItemHeight = 14
         TabOrder = 0
-        Text = 'FamilyCombo'
+        Text = 'FamilyComboBox'
       end
       object WaterAmountLabel: TLabel
-        AnchorSideLeft.Control = FamilyCombo
+        AnchorSideLeft.Control = FamilyComboBox
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = FamilyLabel
         Left = 218
@@ -170,7 +170,7 @@ inherited RecipeEditForm: TRecipeEditForm
       end
       object OriginalGravityLabel: TLabel
         AnchorSideLeft.Control = FamilyLabel
-        AnchorSideTop.Control = FamilyCombo
+        AnchorSideTop.Control = FamilyComboBox
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
@@ -244,57 +244,6 @@ inherited RecipeEditForm: TRecipeEditForm
         TitleFont.Height = -12
         TitleFont.Name = 'Verdana'
       end
-      object RawMaterialLabel: TLabel
-        AnchorSideLeft.Control = IngredientsTab
-        AnchorSideTop.Control = AddIngredientSpeedButton
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 15
-        Top = 311
-        Width = 127
-        BorderSpacing.Left = 4
-        BorderSpacing.Top = 8
-        Caption = 'Ingr.: matéria prima'
-        ParentColor = False
-      end
-      object RawMaterialCombo: TComboBox
-        AnchorSideLeft.Control = IngredientsTab
-        AnchorSideTop.Control = RawMaterialLabel
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 22
-        Top = 328
-        Width = 198
-        BorderSpacing.Left = 4
-        BorderSpacing.Top = 2
-        ItemHeight = 14
-        TabOrder = 6
-      end
-      object PercentageLabel: TLabel
-        AnchorSideLeft.Control = RawMaterialCombo
-        AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = RawMaterialLabel
-        Left = 218
-        Height = 15
-        Top = 311
-        Width = 123
-        BorderSpacing.Left = 16
-        Caption = 'Ingr.: porcentagem'
-        ParentColor = False
-      end
-      object PercentageEdit: TEdit
-        AnchorSideLeft.Control = RawMaterialCombo
-        AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = PercentageLabel
-        AnchorSideTop.Side = asrBottom
-        Left = 218
-        Height = 22
-        Top = 328
-        Width = 198
-        BorderSpacing.Left = 16
-        BorderSpacing.Top = 2
-        TabOrder = 7
-      end
       object AddIngredientSpeedButton: TSpeedButton
         AnchorSideTop.Control = IngredientsStringGrid
         AnchorSideTop.Side = asrBottom
@@ -338,6 +287,101 @@ inherited RecipeEditForm: TRecipeEditForm
         NumGlyphs = 0
         ShowHint = True
         ParentShowHint = False
+      end
+      object IngredientItemGroupBox: TGroupBox
+        AnchorSideLeft.Control = AddIngredientSpeedButton
+        AnchorSideTop.Control = AddIngredientSpeedButton
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 65
+        Top = 311
+        Width = 472
+        BorderSpacing.Top = 8
+        Caption = 'Ingrediente'
+        ClientHeight = 47
+        ClientWidth = 468
+        TabOrder = 6
+        object IngredientRawMaterialLabel: TLabel
+          AnchorSideLeft.Control = IngredientItemGroupBox
+          AnchorSideTop.Control = IngredientItemGroupBox
+          Left = 4
+          Height = 15
+          Top = 4
+          Width = 87
+          BorderSpacing.Left = 4
+          BorderSpacing.Top = 4
+          Caption = 'Matéria prima'
+          ParentColor = False
+        end
+        object IngredientPercentageLabel: TLabel
+          AnchorSideLeft.Control = EditIngredientRawMaterialSpeedButton
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = IngredientRawMaterialLabel
+          Left = 264
+          Height = 15
+          Top = 4
+          Width = 84
+          BorderSpacing.Left = 8
+          Caption = 'Porcentagem'
+          ParentColor = False
+        end
+        object IngredientRawMaterialComboBox: TComboBox
+          AnchorSideLeft.Control = IngredientRawMaterialLabel
+          AnchorSideTop.Control = IngredientRawMaterialLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 4
+          Height = 22
+          Top = 21
+          Width = 198
+          BorderSpacing.Top = 2
+          ItemHeight = 14
+          TabOrder = 0
+          Text = 'IngredientRawMaterialComboBox'
+        end
+        object AddIngredientRawMaterialSpeedButton: TSpeedButton
+          AnchorSideLeft.Control = IngredientRawMaterialComboBox
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = IngredientRawMaterialComboBox
+          AnchorSideTop.Side = asrCenter
+          Left = 206
+          Height = 22
+          Hint = 'Adicionar matéria prima'
+          Top = 21
+          Width = 23
+          BorderSpacing.Left = 4
+          Flat = True
+          NumGlyphs = 0
+          ShowHint = True
+          ParentShowHint = False
+        end
+        object EditIngredientRawMaterialSpeedButton: TSpeedButton
+          AnchorSideLeft.Control = AddIngredientRawMaterialSpeedButton
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = AddIngredientRawMaterialSpeedButton
+          AnchorSideTop.Side = asrCenter
+          Left = 233
+          Height = 22
+          Hint = 'Alterar matéria prima'
+          Top = 21
+          Width = 23
+          BorderSpacing.Left = 4
+          Flat = True
+          NumGlyphs = 0
+          ShowHint = True
+          ParentShowHint = False
+        end
+        object IngredientPercentageEdit: TEdit
+          AnchorSideLeft.Control = IngredientPercentageLabel
+          AnchorSideTop.Control = IngredientPercentageLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 264
+          Height = 22
+          Top = 21
+          Width = 198
+          BorderSpacing.Top = 2
+          TabOrder = 1
+          Text = 'IngredientPercentageEdit'
+        end
       end
     end
   end
