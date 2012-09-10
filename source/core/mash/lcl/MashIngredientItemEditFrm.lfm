@@ -99,6 +99,38 @@ inherited MashIngredientItemEditForm: TMashIngredientItemEditForm
         TabOrder = 1
         Text = 'UnityEdit'
       end
+      object AddRawMaterialSpeedButton: TSpeedButton[6]
+        AnchorSideLeft.Control = RawMaterialCombo
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = RawMaterialCombo
+        AnchorSideTop.Side = asrCenter
+        Left = 364
+        Height = 22
+        Hint = 'Adicionar matéria prima'
+        Top = 19
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditRawMaterialSpeedButton: TSpeedButton[7]
+        AnchorSideLeft.Control = AddRawMaterialSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddRawMaterialSpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 391
+        Height = 22
+        Hint = 'Alterar matéria prima'
+        Top = 19
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
     end
   end
 end

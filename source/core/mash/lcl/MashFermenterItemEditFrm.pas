@@ -21,6 +21,8 @@ type
     AddFermenterEventSpeedButton: TSpeedButton;
     EditFermenterEventSpeedButton: TSpeedButton;
     RemoveFermenterEventSpeedButton: TSpeedButton;
+    AddFermenterSpeedButton: TSpeedButton;
+    EditFermenterSpeedButton: TSpeedButton;
     StartDateEdit: TEdit;
     StartDateLabel: TLabel;
     FermenterEventsStringGrid: TStringGrid;
@@ -50,6 +52,9 @@ begin
   MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddFermenterEventSpeedButton.Glyph);
   MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditFermenterEventSpeedButton.Glyph);
   MainForm.Icons16ImageList.GetBitmap(IMG_DELETE, RemoveFermenterEventSpeedButton.Glyph);
+
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddFermenterSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditFermenterSpeedButton.Glyph);
 end;
 
 initialization

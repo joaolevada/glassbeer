@@ -37,10 +37,10 @@ inherited MashItemEditForm: TMashItemEditForm
         Text = 'RecipeComboBox'
       end
       object VolumeLabel: TLabel[2]
-        AnchorSideLeft.Control = RecipeComboBox
+        AnchorSideLeft.Control = EditRecipeSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = RecipeLabel
-        Left = 376
+        Left = 430
         Height = 15
         Top = 2
         Width = 92
@@ -52,7 +52,7 @@ inherited MashItemEditForm: TMashItemEditForm
         AnchorSideLeft.Control = VolumeLabel
         AnchorSideTop.Control = VolumeLabel
         AnchorSideTop.Side = asrBottom
-        Left = 376
+        Left = 430
         Height = 22
         Top = 19
         Width = 198
@@ -154,6 +154,38 @@ inherited MashItemEditForm: TMashItemEditForm
         Height = 22
         Hint = 'Remover ingrediente'
         Top = 267
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object AddRecipeSpeedButton: TSpeedButton[11]
+        AnchorSideLeft.Control = RecipeComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = RecipeComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 364
+        Height = 22
+        Hint = 'Adicionar receita'
+        Top = 19
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditRecipeSpeedButton: TSpeedButton[12]
+        AnchorSideLeft.Control = AddRecipeSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddRecipeSpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 391
+        Height = 22
+        Hint = 'Alterar receita'
+        Top = 19
         Width = 23
         BorderSpacing.Left = 4
         Flat = True

@@ -38,14 +38,14 @@ inherited MashFermenterItemEditForm: TMashFermenterItemEditForm
         Text = 'FermenterComboBox'
       end
       object VolumeLabel: TLabel[2]
-        AnchorSideLeft.Control = FermenterComboBox
+        AnchorSideLeft.Control = EditFermenterSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = MainTab
-        Left = 376
+        Left = 432
         Height = 15
         Top = 2
         Width = 92
-        BorderSpacing.Left = 16
+        BorderSpacing.Left = 18
         BorderSpacing.Top = 2
         Caption = 'Volume (litros)'
         ParentColor = False
@@ -54,7 +54,7 @@ inherited MashFermenterItemEditForm: TMashFermenterItemEditForm
         AnchorSideLeft.Control = VolumeLabel
         AnchorSideTop.Control = VolumeLabel
         AnchorSideTop.Side = asrBottom
-        Left = 376
+        Left = 432
         Height = 22
         Top = 19
         Width = 198
@@ -203,6 +203,38 @@ inherited MashFermenterItemEditForm: TMashFermenterItemEditForm
         Height = 22
         Hint = 'Remover evento'
         Top = 267
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object AddFermenterSpeedButton: TSpeedButton[15]
+        AnchorSideLeft.Control = FermenterComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FermenterComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 364
+        Height = 22
+        Hint = 'Adicionar fermentador'
+        Top = 19
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditFermenterSpeedButton: TSpeedButton[16]
+        AnchorSideLeft.Control = AddFermenterSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddFermenterSpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 391
+        Height = 22
+        Hint = 'Alterar fermentador'
+        Top = 19
         Width = 23
         BorderSpacing.Left = 4
         Flat = True

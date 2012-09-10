@@ -57,11 +57,16 @@ uses
 { TMashIngredientItemEditPresenter }
 
 procedure TMashIngredientItemEditPresenter.InitPresenter;
+var
+  VRawMaterialPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('RawMaterial', 'RawMaterialCombo',
+  VRawMaterialPresenter := CreateSubPresenter('RawMaterial', 'RawMaterialCombo',
     'BasicUserRecordData.Name');
+  VRawMaterialPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddRawMaterialSpeedButton');
+  VRawMaterialPresenter.BindCommand(TPressMVPEditItemCommand, 'EditRawMaterialSpeedButton');
   CreateSubPresenter('Quantity', 'QuantityEdit');
+  { TODO 1 -ojoaolevada -cimplementation/bug : Create a non persistent attribute to MashIngredientItem referring to RawMaterial.Unity }
   CreateSubPresenter('RawMaterial.Unity', 'UnityEdit');
 end;
 
@@ -70,10 +75,13 @@ end;
 procedure TMashItemEditPresenter.InitPresenter;
 var
   VIngredientsPresenter: TPressMVPItemsPresenter;
+  VRecipePresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('Recipe', 'RecipeComboBox',
+  VRecipePresenter := CreateSubPresenter('Recipe', 'RecipeComboBox',
     'BasicUserRecordData.Name');
+  VRecipePresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddRecipeSpeedButton');
+  VRecipePresenter.BindCommand(TPressMVPEditItemCommand, 'EditRecipeSpeedButton');
   CreateSubPresenter('Volume', 'VolumeEdit');
   CreateSubPresenter('OriginalGravity', 'OriginalGravityEdit');
   VIngredientsPresenter := CreateSubPresenter('MashIngredients', 'MashIngredientsStringGrid',
@@ -136,9 +144,12 @@ end;
 procedure TMashFermenterItemEditPresenter.InitPresenter;
 var
   VFermenterEventsPresenter: TPressMVPItemsPresenter;
+  VFermenterPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('Fermenter', 'FermenterComboBox', 'BasicUserRecordData.Name');
+  VFermenterPresenter := CreateSubPresenter('Fermenter', 'FermenterComboBox', 'BasicUserRecordData.Name');
+  VFermenterPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddFermenterSpeedButton');
+  VFermenterPresenter.BindCommand(TPressMVPEditItemCommand, 'EditFermenterSpeedButton');
   CreateSubPresenter('Volume', 'VolumeEdit');
   CreateSubPresenter('StartDate', 'StartDateEdit');
   CreateSubPresenter('DaysSinceStart', 'DaysSinceStartEdit');
