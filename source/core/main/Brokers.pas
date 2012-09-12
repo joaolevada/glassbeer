@@ -4,6 +4,18 @@ unit Brokers;
 
 interface
 
+uses
+  PressSQLdbBroker;
+
+type
+
+  { TGlassBeerConnectionBroker }
+
+  TGlassBeerConnectionBroker = class(TPressSQLdbBroker)
+  protected
+    procedure InitService; override;
+  end;
+
 implementation
 
 uses
@@ -11,14 +23,23 @@ uses
   ,PressAttributes
   ,PressApplication
   {$IFDEF FPC}
-  ,PressSQLdbBroker, IBConnection, pqconnection
+  ,IBConnection, pqconnection
   {$ELSE}
   ,PressIBXBroker
   {$ENDIF}
   ,PressFastReportBroker
   ,PressMessages_ptbr;
 
+{ TGlassBeerConnectionBroker }
+
+procedure TGlassBeerConnectionBroker.InitService;
+begin
+  inherited InitService;
+  Connector.Database.Params.Values['port'] := '9999';
+end;
+
 initialization
+  TGlassBeerConnectionBroker.RegisterService(True);
   PressApp.ConfigFileName := 'glassbeer.cf';
   PressModel.ClassIdStorageName := 'ModelClasses';
   PressModel.DefaultGeneratorName := 'gen_glassbeer';
