@@ -25,6 +25,10 @@ type
     constructor Create(AOwner: TComponent); override;
   end;
 
+const
+  QUERYFORM_WIDTH = 850;
+  QUERYFORM_HEIGHT = 478;
+
 implementation
 
 {$R *.lfm}
@@ -33,10 +37,6 @@ uses
   PressXCLBroker
   ,CustomMVP
   ,MainFrm;
-
-const
-  QUERYFORM_WIDTH = 800;
-  QUERYFORM_HEIGHT = 600;
 
 { TCustomQueryForm }
 

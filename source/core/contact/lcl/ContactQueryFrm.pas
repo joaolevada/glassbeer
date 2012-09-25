@@ -38,13 +38,16 @@ implementation
 uses
   PressXCLBroker,
   ContactMVP,
-  MainFrm;
+  MainFrm,
+  CustomQueryFrm;
 
 { TContactQueryForm }
 
 constructor TContactQueryForm.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
+  Self.Width := QUERYFORM_WIDTH;
+  Self.Height := QUERYFORM_HEIGHT;
   MainForm.Icons32ImageList.GetBitmap(IMG_USER, AddPersonButton.Glyph);
   MainForm.Icons32ImageList.GetBitmap(IMG_FACTORY, AddCompanyButton.Glyph);
   MainForm.Icons32ImageList.GetBitmap(IMG_PENCIL, EditButton.Glyph);

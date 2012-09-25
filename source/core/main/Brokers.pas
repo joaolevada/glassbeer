@@ -35,7 +35,7 @@ uses
 procedure TGlassBeerConnectionBroker.InitService;
 begin
   inherited InitService;
-  Connector.Database.Params.Values['port'] := '9999';
+  Connector.Database.Params.Values['port'] := '5432';
 end;
 
 initialization

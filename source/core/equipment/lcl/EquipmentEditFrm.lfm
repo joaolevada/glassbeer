@@ -1,0 +1,124 @@
+inherited EquipmentEditForm: TEquipmentEditForm
+  Height = 272
+  Width = 588
+  Caption = 'Equipamento'
+  ClientHeight = 272
+  ClientWidth = 588
+  inherited BottomPanel: TPanel
+    Top = 218
+    Width = 588
+    ClientWidth = 588
+    inherited SaveButton: TBitBtn
+      Left = 347
+    end
+    inherited CancelButton: TBitBtn
+      Left = 467
+    end
+  end
+  inherited EditPageControl: TPageControl
+    Height = 218
+    Width = 588
+    inherited MainTab: TTabSheet
+      ClientHeight = 191
+      ClientWidth = 580
+      object CodeLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 2
+        Width = 45
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Caption = 'Código'
+        ParentColor = False
+      end
+      object CodeEdit: TEdit[1]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 19
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'CodeEdit'
+      end
+      object NameLabel: TLabel[2]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = CodeLabel
+        Left = 218
+        Height = 15
+        Top = 2
+        Width = 37
+        BorderSpacing.Left = 16
+        Caption = 'Nome'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[3]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 19
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'NameEdit'
+      end
+      object RemarksLabel: TLabel[4]
+        AnchorSideLeft.Control = CostLabel
+        AnchorSideTop.Control = CostEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 96
+        Width = 83
+        BorderSpacing.Top = 8
+        Caption = 'Observações'
+        ParentColor = False
+      end
+      object RemarksMemo: TMemo[5]
+        AnchorSideLeft.Control = RemarksLabel
+        AnchorSideTop.Control = RemarksLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 72
+        Top = 113
+        Width = 356
+        BorderSpacing.Top = 2
+        Lines.Strings = (
+          'RemarksMemo'
+        )
+        TabOrder = 3
+      end
+      object CostLabel: TLabel[6]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideTop.Control = CodeEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 49
+        Width = 38
+        BorderSpacing.Top = 8
+        Caption = 'Custo'
+        ParentColor = False
+      end
+      object CostEdit: TEdit[7]
+        AnchorSideLeft.Control = CostLabel
+        AnchorSideTop.Control = CostLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 66
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'CostEdit'
+      end
+    end
+  end
+end

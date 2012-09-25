@@ -19,7 +19,8 @@ uses
   StateEditFrm, CountryEditFrm, InternetAddressEditFrm,
   InternetAddressLabelEditFrm, NeighborhoodEditFrm, PhoneEditFrm,
   PhoneLabelEditFrm, ContactBO, ContactEditFrm, PersonEditFrm, CompanyEditFrm,
-  PersonContactLabelEditFrm, ContactQueryFrm, PersonContactEditFrm;
+  PersonContactLabelEditFrm, ContactQueryFrm, PersonContactEditFrm, EquipmentBO,
+  EquipmentMVP, EquipmentEditFrm, EquipmentQueryFrm;
 
 {$R *.res}
 

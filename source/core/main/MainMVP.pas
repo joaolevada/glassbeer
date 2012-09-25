@@ -42,7 +42,8 @@ uses
   ,FermenterMVP
   ,LocationMVP
   ,MashMVP
-  ,ContactMVP;
+  ,ContactMVP
+  ,EquipmentMVP;
 
 { TMainFormPresenter }
 
@@ -58,6 +59,7 @@ begin
   BindPresenter(TFermenterEventQueryPresenter, 'FermenterEventMenuItem');
   BindPresenter(TMashQueryPresenter, 'MashMenuItem');
   BindPresenter(TContactQueryPresenter, 'ContactMenuItem');
+  BindPresenter(TEquipmentQueryPresenter, 'EquipmentMenuItem');
   { sample commands, to be implemented very soon... }
   //BindCommand(TProprietarioSetupCommand2, 'Proprietario1');
   PressUserData.Logon('', '');

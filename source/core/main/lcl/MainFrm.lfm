@@ -6,7 +6,7 @@ object MainForm: TMainForm
   Caption = 'glass beer. já degustou sua cerveja hoje?'
   Menu = GlassBeerMainMenu
   Position = poDesktopCenter
-  LCLVersion = '1.0.1.2'
+  LCLVersion = '1.0.1.3'
   object GlassBeerMainMenu: TMainMenu
     left = 76
     top = 48
@@ -35,6 +35,9 @@ object MainForm: TMainForm
       end
       object LocationMenuItem: TMenuItem
         Caption = 'Localizações...'
+      end
+      object EquipmentMenuItem: TMenuItem
+        Caption = 'Equipamentos...'
       end
       object MenuItem1: TMenuItem
         Caption = '-'

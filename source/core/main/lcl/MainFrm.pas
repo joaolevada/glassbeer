@@ -24,6 +24,7 @@ type
     FermenterEventMenuItem: TMenuItem;
     MashMenuItem: TMenuItem;
     ContactMenuItem: TMenuItem;
+    EquipmentMenuItem: TMenuItem;
     RecipeMenuItem: TMenuItem;
     MetadataMenuItem: TMenuItem;
     ToolsMenu: TMenuItem;
