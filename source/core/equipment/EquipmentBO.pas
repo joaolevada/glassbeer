@@ -18,6 +18,7 @@ type
   TEquipment = class(TCustomObject)
     _BasicUserRecordData: TBasicUserRecordDataPart;
     _Cost: TPressCurrency;
+    _PurchaseDate: TPressDate;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -49,6 +50,7 @@ begin
   Result := 'TEquipment IsPersistent(' +
     'BasicUserRecordData: TBasicUserRecordDataPart;' +
     'Cost: Currency;' +
+    'PurchaseDate: Date;' +
     ')';
 end;
 

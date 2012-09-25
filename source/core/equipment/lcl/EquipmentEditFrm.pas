@@ -19,6 +19,8 @@ type
     CostLabel: TLabel;
     NameEdit: TEdit;
     NameLabel: TLabel;
+    PurchaseDateLabel: TLabel;
+    PurchaseDateEdit: TEdit;
     RemarksLabel: TLabel;
     RemarksMemo: TMemo;
   end;

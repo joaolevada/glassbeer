@@ -43,7 +43,8 @@ function TEquipmentQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
   Result := 'BasicUserRecordData.Code(198, "Código");' +
     'BasicUserRecordData.Name(356, "Nome");' +
-    'Cost(99, "Custo")';
+    'Cost(99, "Custo");' +
+    'PurchaseDate(99, "Dt. compra")';
 end;
 
 { TEquipmentEditPresenter }
@@ -55,6 +56,7 @@ begin
   CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
   CreateSubPresenter('Cost', 'CostEdit');
+  CreateSubPresenter('PurchaseDate', 'PurchaseDateEdit');
 end;
 
 initialization

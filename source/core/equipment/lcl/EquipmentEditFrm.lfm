@@ -93,7 +93,7 @@ inherited EquipmentEditForm: TEquipmentEditForm
         Lines.Strings = (
           'RemarksMemo'
         )
-        TabOrder = 3
+        TabOrder = 4
       end
       object CostLabel: TLabel[6]
         AnchorSideLeft.Control = CodeEdit
@@ -118,6 +118,30 @@ inherited EquipmentEditForm: TEquipmentEditForm
         BorderSpacing.Top = 2
         TabOrder = 2
         Text = 'CostEdit'
+      end
+      object PurchaseDateLabel: TLabel[8]
+        AnchorSideLeft.Control = NameEdit
+        AnchorSideTop.Control = NameEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 15
+        Top = 49
+        Width = 101
+        BorderSpacing.Top = 8
+        Caption = 'Data da compra'
+        ParentColor = False
+      end
+      object PurchaseDateEdit: TEdit[9]
+        AnchorSideLeft.Control = PurchaseDateLabel
+        AnchorSideTop.Control = PurchaseDateLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 66
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'PurchaseDateEdit'
       end
     end
   end
