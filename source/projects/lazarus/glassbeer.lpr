@@ -20,7 +20,8 @@ uses
   InternetAddressLabelEditFrm, NeighborhoodEditFrm, PhoneEditFrm,
   PhoneLabelEditFrm, ContactBO, ContactEditFrm, PersonEditFrm, CompanyEditFrm,
   PersonContactLabelEditFrm, ContactQueryFrm, PersonContactEditFrm, EquipmentBO,
-  EquipmentMVP, EquipmentEditFrm, EquipmentQueryFrm;
+  EquipmentMVP, EquipmentEditFrm, EquipmentQueryFrm, MashItemTemperatureEditFrm,
+  MashItemGravityEditFrm;
 
 {$R *.res}
 

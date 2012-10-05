@@ -1,0 +1,123 @@
+inherited MashItemGravityEditForm: TMashItemGravityEditForm
+  Height = 176
+  Width = 428
+  Caption = 'Controle da densidade da brassagem'
+  ClientHeight = 176
+  ClientWidth = 428
+  inherited BottomPanel: TPanel
+    Top = 122
+    Width = 428
+    ClientWidth = 428
+    inherited SaveButton: TBitBtn
+      Left = 187
+    end
+    inherited CancelButton: TBitBtn
+      Left = 307
+    end
+  end
+  inherited EditPageControl: TPageControl
+    Height = 122
+    Width = 428
+    inherited MainTab: TTabSheet
+      ClientHeight = 95
+      ClientWidth = 420
+      object MeasuredAtLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 133
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Momento da aferição'
+        ParentColor = False
+      end
+      object MeasuredAtEdit: TEdit[1]
+        AnchorSideLeft.Control = MeasuredAtLabel
+        AnchorSideTop.Control = MeasuredAtLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'MeasuredAtEdit'
+      end
+      object InputTypeLabel: TLabel[2]
+        AnchorSideLeft.Control = MeasuredAtEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MeasuredAtLabel
+        Left = 218
+        Height = 15
+        Top = 4
+        Width = 101
+        BorderSpacing.Left = 16
+        Caption = 'Tipo de aferição'
+        ParentColor = False
+      end
+      object InputTypeComboBox: TComboBox[3]
+        AnchorSideLeft.Control = InputTypeLabel
+        AnchorSideTop.Control = InputTypeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 1
+        Text = 'InputTypeComboBox'
+      end
+      object SpecificGravityLabel: TLabel[4]
+        AnchorSideLeft.Control = MeasuredAtLabel
+        AnchorSideTop.Control = MeasuredAtEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 130
+        BorderSpacing.Top = 8
+        Caption = 'Gravidade específica'
+        ParentColor = False
+      end
+      object SpecificGravityEdit: TEdit[5]
+        AnchorSideLeft.Control = SpecificGravityLabel
+        AnchorSideTop.Control = SpecificGravityLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'SpecificGravityEdit'
+      end
+      object BrixLabel: TLabel[6]
+        AnchorSideLeft.Control = SpecificGravityEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = SpecificGravityLabel
+        Left = 218
+        Height = 15
+        Top = 51
+        Width = 24
+        BorderSpacing.Left = 16
+        Caption = 'Brix'
+        ParentColor = False
+      end
+      object BrixEdit: TEdit[7]
+        AnchorSideLeft.Control = BrixLabel
+        AnchorSideTop.Control = BrixLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'BrixEdit'
+      end
+    end
+  end
+end

@@ -1,0 +1,76 @@
+inherited MashItemTemperatureEditForm: TMashItemTemperatureEditForm
+  Left = 429
+  Height = 131
+  Top = 361
+  Width = 428
+  Caption = 'Controle de temperatura da brassagem'
+  ClientHeight = 131
+  ClientWidth = 428
+  inherited BottomPanel: TPanel
+    Top = 77
+    Width = 428
+    ClientWidth = 428
+    inherited SaveButton: TBitBtn
+      Left = 187
+    end
+    inherited CancelButton: TBitBtn
+      Left = 307
+    end
+  end
+  inherited EditPageControl: TPageControl
+    Height = 77
+    Width = 428
+    inherited MainTab: TTabSheet
+      ClientHeight = 50
+      ClientWidth = 420
+      object MeasuredAtLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 133
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Momento da aferição'
+        ParentColor = False
+      end
+      object MeasuredAtEdit: TEdit[1]
+        AnchorSideLeft.Control = MeasuredAtLabel
+        AnchorSideTop.Control = MeasuredAtLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'MeasuredAtEdit'
+      end
+      object TemperatureLabel: TLabel[2]
+        AnchorSideLeft.Control = MeasuredAtEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MeasuredAtLabel
+        Left = 218
+        Height = 15
+        Top = 4
+        Width = 130
+        BorderSpacing.Left = 16
+        Caption = 'Temperatura aferida'
+        ParentColor = False
+      end
+      object TemperatureEdit: TEdit[3]
+        AnchorSideLeft.Control = TemperatureLabel
+        AnchorSideTop.Control = TemperatureLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'TemperatureEdit'
+      end
+    end
+  end
+end
