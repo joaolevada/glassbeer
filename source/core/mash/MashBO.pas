@@ -72,6 +72,8 @@ type
     _Volume: TPressDouble;
     _OriginalGravity: TPressDouble;
     _MashIngredients: TMashIngredientItemParts;
+    _TemperatureLog: TPressParts;
+    _GravityLog: TPressParts;
   private
     function GetOriginalGravity: Double;
     function GetVolume: Double;
@@ -255,6 +257,8 @@ begin
     'Volume: Double;' +
     'OriginalGravity: Double;' +
     'MashIngredients: TMashIngredientItemParts ShortName="MshIngds";' +
+    'TemperatureLog: Parts(TMashItemTemperature) ShortName="TempLog";' +
+    'GravityLog: Parts(TMashItemGravity) ShortName="GravLog";' +
     ')';
 end;
 

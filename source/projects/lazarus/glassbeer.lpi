@@ -56,7 +56,7 @@
         <Filename Value="glassbeer.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="glassbeer"/>
-        <EditorIndex Value="25"/>
+        <EditorIndex Value="28"/>
         <WindowIndex Value="0"/>
         <TopLine Value="2"/>
         <CursorPos X="25" Y="24"/>
@@ -83,7 +83,7 @@
         <Filename Value="..\..\core\custom\CustomBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="CustomBO"/>
-        <EditorIndex Value="22"/>
+        <EditorIndex Value="25"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="3"/>
@@ -102,11 +102,11 @@
       <Unit5>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Core\PressAttributes.pas"/>
         <UnitName Value="PressAttributes"/>
-        <EditorIndex Value="30"/>
+        <EditorIndex Value="32"/>
         <WindowIndex Value="0"/>
         <TopLine Value="513"/>
         <CursorPos X="20" Y="529"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -115,9 +115,12 @@
         <UnitName Value="MashBO"/>
         <EditorIndex Value="13"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="17"/>
+        <TopLine Value="250"/>
+        <CursorPos X="10" Y="260"/>
         <UsageCount Value="200"/>
+        <Bookmarks Count="1">
+          <Item0 X="10" Y="260" ID="2"/>
+        </Bookmarks>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -133,7 +136,7 @@
         <Filename Value="..\..\core\rawmaterial\RawMaterialBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="RawMaterialBO"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="17"/>
         <WindowIndex Value="0"/>
         <TopLine Value="124"/>
         <CursorPos X="3" Y="126"/>
@@ -175,7 +178,7 @@
         <Filename Value="..\..\core\rawmaterial\RawMaterialMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="RawMaterialMVP"/>
-        <EditorIndex Value="21"/>
+        <EditorIndex Value="24"/>
         <WindowIndex Value="0"/>
         <TopLine Value="35"/>
         <CursorPos X="35" Y="42"/>
@@ -197,7 +200,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="CustomEditFrm"/>
-        <EditorIndex Value="23"/>
+        <EditorIndex Value="26"/>
         <WindowIndex Value="0"/>
         <TopLine Value="7"/>
         <CursorPos X="1" Y="22"/>
@@ -252,7 +255,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RawMaterialEditFrm"/>
-        <EditorIndex Value="20"/>
+        <EditorIndex Value="23"/>
         <WindowIndex Value="0"/>
         <TopLine Value="14"/>
         <CursorPos X="32" Y="40"/>
@@ -346,11 +349,11 @@
         <Filename Value="..\..\core\recipe\RecipeMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="RecipeMVP"/>
-        <EditorIndex Value="19"/>
+        <EditorIndex Value="22"/>
         <WindowIndex Value="0"/>
         <TopLine Value="60"/>
         <CursorPos X="40" Y="84"/>
-        <UsageCount Value="158"/>
+        <UsageCount Value="160"/>
         <Loaded Value="True"/>
       </Unit29>
       <Unit30>
@@ -362,7 +365,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="13" Y="29"/>
-        <UsageCount Value="158"/>
+        <UsageCount Value="160"/>
       </Unit30>
       <Unit31>
         <Filename Value="..\..\core\recipe\lcl\RecipeEditFrm.pas"/>
@@ -371,11 +374,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RecipeEditFrm"/>
-        <EditorIndex Value="24"/>
+        <EditorIndex Value="27"/>
         <WindowIndex Value="0"/>
         <TopLine Value="47"/>
         <CursorPos X="19" Y="64"/>
-        <UsageCount Value="156"/>
+        <UsageCount Value="158"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit31>
@@ -386,11 +389,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RecipeIngredientItemEditFrm"/>
-        <EditorIndex Value="18"/>
+        <EditorIndex Value="21"/>
         <WindowIndex Value="0"/>
         <TopLine Value="23"/>
         <CursorPos X="21" Y="47"/>
-        <UsageCount Value="153"/>
+        <UsageCount Value="155"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit32>
@@ -410,18 +413,18 @@
         <WindowIndex Value="0"/>
         <TopLine Value="225"/>
         <CursorPos X="3" Y="227"/>
-        <UsageCount Value="150"/>
+        <UsageCount Value="152"/>
         <Loaded Value="True"/>
       </Unit34>
       <Unit35>
         <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FermenterMVP"/>
-        <EditorIndex Value="17"/>
+        <EditorIndex Value="20"/>
         <WindowIndex Value="0"/>
         <TopLine Value="95"/>
         <CursorPos X="3" Y="98"/>
-        <UsageCount Value="149"/>
+        <UsageCount Value="151"/>
         <Loaded Value="True"/>
       </Unit35>
       <Unit36>
@@ -434,7 +437,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="24"/>
-        <UsageCount Value="149"/>
+        <UsageCount Value="151"/>
       </Unit36>
       <Unit37>
         <Filename Value="..\..\core\fermenter\lcl\FementerQueryFrm.lfm"/>
@@ -451,11 +454,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FermenterEditFrm"/>
-        <EditorIndex Value="16"/>
+        <EditorIndex Value="19"/>
         <WindowIndex Value="0"/>
         <TopLine Value="33"/>
         <CursorPos X="29" Y="59"/>
-        <UsageCount Value="149"/>
+        <UsageCount Value="151"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit38>
@@ -466,7 +469,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="28"/>
         <CursorPos X="3" Y="44"/>
-        <UsageCount Value="142"/>
+        <UsageCount Value="144"/>
       </Unit39>
       <Unit40>
         <Filename Value="..\..\core\location\LocationMVP.pas"/>
@@ -475,7 +478,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="2"/>
-        <UsageCount Value="142"/>
+        <UsageCount Value="144"/>
       </Unit40>
       <Unit41>
         <Filename Value="..\..\core\location\lcl\LocationQueryFrm.pas"/>
@@ -486,7 +489,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="13" Y="10"/>
-        <UsageCount Value="142"/>
+        <UsageCount Value="144"/>
       </Unit41>
       <Unit42>
         <Filename Value="..\..\core\location\lcl\LocationEditFrm.pas"/>
@@ -497,7 +500,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="4"/>
         <CursorPos X="26" Y="34"/>
-        <UsageCount Value="142"/>
+        <UsageCount Value="144"/>
       </Unit42>
       <Unit43>
         <Filename Value="..\..\core\location\lcl\LocationQueryFrm.lfm"/>
@@ -514,17 +517,21 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="40" Y="3"/>
-        <UsageCount Value="126"/>
+        <UsageCount Value="128"/>
       </Unit44>
       <Unit45>
         <Filename Value="..\..\core\mash\MashMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="MashMVP"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="53"/>
-        <CursorPos X="26" Y="69"/>
-        <UsageCount Value="119"/>
+        <TopLine Value="90"/>
+        <CursorPos X="29" Y="112"/>
+        <UsageCount Value="121"/>
+        <Bookmarks Count="1">
+          <Item0 X="51" Y="109" ID="1"/>
+        </Bookmarks>
         <Loaded Value="True"/>
       </Unit45>
       <Unit46>
@@ -537,7 +544,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="2"/>
         <CursorPos X="46" Y="30"/>
-        <UsageCount Value="119"/>
+        <UsageCount Value="121"/>
       </Unit46>
       <Unit47>
         <Filename Value="..\..\core\mash\lcl\MashQueryFrm.lfm"/>
@@ -557,7 +564,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="17"/>
         <CursorPos X="21" Y="33"/>
-        <UsageCount Value="119"/>
+        <UsageCount Value="121"/>
       </Unit48>
       <Unit49>
         <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
@@ -566,10 +573,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MashItemEditFrm"/>
+        <EditorIndex Value="14"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="12"/>
-        <CursorPos X="21" Y="27"/>
-        <UsageCount Value="116"/>
+        <TopLine Value="16"/>
+        <CursorPos X="21" Y="45"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit49>
       <Unit50>
         <Filename Value="..\..\core\mash\lcl\MashIngredientItemEditFrm.pas"/>
@@ -582,7 +592,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="20"/>
         <CursorPos X="29" Y="48"/>
-        <UsageCount Value="116"/>
+        <UsageCount Value="118"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit50>
@@ -597,7 +607,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="116"/>
+        <UsageCount Value="118"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit51>
@@ -616,11 +626,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FermenterEventItemEditFrm"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="18"/>
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="26" Y="25"/>
-        <UsageCount Value="102"/>
+        <UsageCount Value="104"/>
         <Loaded Value="True"/>
       </Unit53>
       <Unit54>
@@ -632,7 +642,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="18" Y="20"/>
-        <UsageCount Value="100"/>
+        <UsageCount Value="102"/>
       </Unit54>
       <Unit55>
         <Filename Value="..\..\core\fermenter\lcl\FermenterEventQueryFrm.pas"/>
@@ -643,7 +653,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="5"/>
         <CursorPos X="34" Y="30"/>
-        <UsageCount Value="100"/>
+        <UsageCount Value="102"/>
       </Unit55>
       <Unit56>
         <Filename Value="..\..\core\address\AddressBO.pas"/>
@@ -652,7 +662,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="199"/>
         <CursorPos X="22" Y="216"/>
-        <UsageCount Value="88"/>
+        <UsageCount Value="90"/>
         <Bookmarks Count="1">
           <Item0 X="5" Y="116" ID="1"/>
         </Bookmarks>
@@ -664,7 +674,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="199"/>
         <CursorPos X="47" Y="216"/>
-        <UsageCount Value="86"/>
+        <UsageCount Value="88"/>
       </Unit57>
       <Unit58>
         <Filename Value="..\..\core\address\lcl\AddressEditFrm.pas"/>
@@ -676,7 +686,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="37"/>
         <CursorPos X="25" Y="65"/>
-        <UsageCount Value="86"/>
+        <UsageCount Value="88"/>
       </Unit58>
       <Unit59>
         <Filename Value="..\..\core\address\lcl\AddressLabelEditFrm.pas"/>
@@ -687,7 +697,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="15" Y="34"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="85"/>
       </Unit59>
       <Unit60>
         <Filename Value="..\..\core\address\lcl\CityEditFrm.pas"/>
@@ -699,7 +709,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="22"/>
         <CursorPos X="26" Y="50"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="85"/>
       </Unit60>
       <Unit61>
         <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
@@ -711,7 +721,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="24"/>
         <CursorPos X="53" Y="39"/>
-        <UsageCount Value="82"/>
+        <UsageCount Value="84"/>
       </Unit61>
       <Unit62>
         <Filename Value="..\..\core\address\lcl\CountryEditFrm.pas"/>
@@ -723,7 +733,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="31" Y="15"/>
-        <UsageCount Value="82"/>
+        <UsageCount Value="84"/>
       </Unit62>
       <Unit63>
         <Filename Value="..\..\core\address\lcl\InternetAddressEditFrm.pas"/>
@@ -735,7 +745,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="17"/>
         <CursorPos X="21" Y="45"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="83"/>
       </Unit63>
       <Unit64>
         <Filename Value="..\..\core\address\lcl\InternetAddressLabelEditFrm.pas"/>
@@ -746,7 +756,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="21" Y="19"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="83"/>
       </Unit64>
       <Unit65>
         <Filename Value="..\..\core\address\lcl\NeighborhoodEditFrm.pas"/>
@@ -757,7 +767,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="67" Y="34"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="83"/>
       </Unit65>
       <Unit66>
         <Filename Value="..\..\core\address\lcl\PhoneEditFrm.pas"/>
@@ -769,7 +779,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="9"/>
         <CursorPos X="20" Y="16"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="83"/>
       </Unit66>
       <Unit67>
         <Filename Value="..\..\core\address\lcl\PhoneLabelEditFrm.pas"/>
@@ -780,7 +790,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="63" Y="34"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="83"/>
       </Unit67>
       <Unit68>
         <Filename Value="..\..\core\contact\ContactBO.pas"/>
@@ -789,7 +799,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="99"/>
         <CursorPos X="41" Y="104"/>
-        <UsageCount Value="79"/>
+        <UsageCount Value="81"/>
         <Bookmarks Count="1">
           <Item0 X="28" Y="81" ID="1"/>
         </Bookmarks>
@@ -798,13 +808,15 @@
         <Filename Value="..\..\core\contact\ContactMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ContactMVP"/>
+        <EditorIndex Value="33"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="116"/>
-        <CursorPos X="43" Y="139"/>
-        <UsageCount Value="79"/>
+        <TopLine Value="168"/>
+        <CursorPos X="4" Y="166"/>
+        <UsageCount Value="81"/>
         <Bookmarks Count="1">
-          <Item0 X="115" Y="213" ID="2"/>
+          <Item0 X="4" Y="166" ID="4"/>
         </Bookmarks>
+        <Loaded Value="True"/>
       </Unit69>
       <Unit70>
         <Filename Value="..\..\core\contact\lcl\ContactEditFrm.pas"/>
@@ -813,12 +825,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ContactEditFrm"/>
-        <EditorIndex Value="31"/>
+        <EditorIndex Value="15"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="6"/>
+        <TopLine Value="39"/>
         <CursorPos X="26" Y="20"/>
-        <UsageCount Value="73"/>
+        <UsageCount Value="75"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit70>
       <Unit71>
         <Filename Value="..\..\core\contact\lcl\PersonEditFrm.pas"/>
@@ -830,7 +843,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="16"/>
         <CursorPos X="21" Y="22"/>
-        <UsageCount Value="71"/>
+        <UsageCount Value="73"/>
       </Unit71>
       <Unit72>
         <Filename Value="..\..\core\contact\lcl\CompanyEditFrm.pas"/>
@@ -842,7 +855,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="12"/>
         <CursorPos X="51" Y="55"/>
-        <UsageCount Value="71"/>
+        <UsageCount Value="73"/>
       </Unit72>
       <Unit73>
         <Filename Value="..\..\core\contact\lcl\PersonContactEditFrm.pas"/>
@@ -854,7 +867,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="24"/>
         <CursorPos X="38" Y="52"/>
-        <UsageCount Value="70"/>
+        <UsageCount Value="72"/>
       </Unit73>
       <Unit74>
         <Filename Value="..\..\core\contact\lcl\PersonContactLabelEditFrm.pas"/>
@@ -865,7 +878,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="79" Y="34"/>
-        <UsageCount Value="70"/>
+        <UsageCount Value="72"/>
       </Unit74>
       <Unit75>
         <Filename Value="..\..\core\contact\lcl\ContactQueryFrm.pas"/>
@@ -878,7 +891,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="8" Y="52"/>
-        <UsageCount Value="68"/>
+        <UsageCount Value="70"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit75>
@@ -899,7 +912,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="34"/>
         <CursorPos X="17" Y="52"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit77>
       <Unit78>
@@ -910,10 +923,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="35"/>
         <CursorPos X="58" Y="59"/>
-        <UsageCount Value="25"/>
-        <Bookmarks Count="1">
-          <Item0 X="3" Y="44" ID="1"/>
-        </Bookmarks>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit78>
       <Unit79>
@@ -927,7 +937,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="16" Y="29"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit79>
@@ -942,7 +952,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="19" Y="16"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit80>
@@ -950,22 +960,25 @@
         <Filename Value="..\..\core\mash\MashItemLogBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="MashItemLogBO"/>
-        <EditorIndex Value="26"/>
+        <EditorIndex Value="29"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="43"/>
-        <CursorPos X="39" Y="68"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="13"/>
+        <CursorPos X="25" Y="32"/>
+        <UsageCount Value="24"/>
+        <Bookmarks Count="1">
+          <Item0 X="3" Y="19" ID="3"/>
+        </Bookmarks>
         <Loaded Value="True"/>
       </Unit81>
       <Unit82>
         <Filename Value="..\..\core\mash\MashItemLogMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="MashItemLogMVP"/>
-        <EditorIndex Value="27"/>
+        <EditorIndex Value="30"/>
         <WindowIndex Value="0"/>
         <TopLine Value="26"/>
         <CursorPos X="27" Y="54"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
       </Unit82>
       <Unit83>
@@ -975,12 +988,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MashItemTemperatureEditFrm"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="29"/>
+        <EditorIndex Value="31"/>
         <WindowIndex Value="0"/>
         <TopLine Value="3"/>
-        <CursorPos X="51" Y="31"/>
-        <UsageCount Value="22"/>
+        <CursorPos X="34" Y="18"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit83>
@@ -991,135 +1003,135 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MashItemGravityEditFrm"/>
-        <EditorIndex Value="28"/>
+        <EditorIndex Value="16"/>
         <WindowIndex Value="0"/>
         <TopLine Value="7"/>
         <CursorPos X="38" Y="22"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit84>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="..\..\core\equipment\EquipmentMVP.pas"/>
-        <Caret Line="26" Column="63" TopLine="9"/>
+        <Filename Value="..\..\core\mash\MashItemLogBO.pas"/>
+        <Caret Line="32" Column="25" TopLine="13"/>
       </Position1>
       <Position2>
-        <Filename Value="..\..\core\equipment\lcl\EquipmentEditFrm.pas"/>
-        <Caret Line="16" Column="16" TopLine="1"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="103" Column="5" TopLine="75"/>
       </Position2>
       <Position3>
-        <Filename Value="..\..\core\equipment\lcl\EquipmentEditFrm.pas"/>
-        <Caret Line="25" Column="16" TopLine="1"/>
+        <Filename Value="..\..\core\mash\MashItemLogBO.pas"/>
+        <Caret Line="32" Column="25" TopLine="13"/>
       </Position3>
       <Position4>
-        <Filename Value="..\..\core\equipment\lcl\EquipmentEditFrm.pas"/>
-        <Caret Line="26" Column="16" TopLine="1"/>
+        <Filename Value="..\..\core\contact\ContactMVP.pas"/>
+        <Caret Line="139" Column="43" TopLine="116"/>
       </Position4>
       <Position5>
-        <Filename Value="..\..\core\equipment\lcl\EquipmentEditFrm.pas"/>
-        <Caret Line="27" Column="16" TopLine="1"/>
+        <Filename Value="..\..\core\contact\ContactMVP.pas"/>
+        <Caret Line="207" Column="29" TopLine="186"/>
       </Position5>
       <Position6>
-        <Filename Value="..\..\core\equipment\lcl\EquipmentQueryFrm.pas"/>
-        <Caret Line="28" Column="55" TopLine="1"/>
+        <Filename Value="..\..\core\contact\ContactMVP.pas"/>
+        <Caret Line="166" Column="4" TopLine="159"/>
       </Position6>
       <Position7>
-        <Filename Value="..\..\core\equipment\lcl\EquipmentQueryFrm.pas"/>
-        <Caret Line="29" Column="55" TopLine="1"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="104" Column="32" TopLine="77"/>
       </Position7>
       <Position8>
-        <Filename Value="..\..\core\main\lcl\MainFrm.pas"/>
-        <Caret Line="40" Column="21" TopLine="21"/>
+        <Filename Value="..\..\core\contact\ContactMVP.pas"/>
+        <Caret Line="166" Column="4" TopLine="168"/>
       </Position8>
       <Position9>
-        <Filename Value="..\..\core\equipment\EquipmentMVP.pas"/>
-        <Caret Line="58" Column="42" TopLine="35"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="27" Column="21" TopLine="12"/>
       </Position9>
       <Position10>
-        <Filename Value="..\..\core\fermenter\FermenterMVP.pas"/>
-        <Caret Line="100" Column="1" TopLine="95"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="28" Column="21" TopLine="12"/>
       </Position10>
       <Position11>
-        <Filename Value="..\..\core\equipment\EquipmentMVP.pas"/>
-        <Caret Line="46" Column="25" TopLine="32"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="27" Column="21" TopLine="12"/>
       </Position11>
       <Position12>
-        <Filename Value="..\..\core\equipment\lcl\EquipmentQueryFrm.pas"/>
-        <Caret Line="29" Column="55" TopLine="1"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="26" Column="21" TopLine="12"/>
       </Position12>
       <Position13>
-        <Filename Value="..\..\core\equipment\lcl\EquipmentQueryFrm.pas"/>
-        <Caret Line="1" Column="1" TopLine="1"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="25" Column="21" TopLine="12"/>
       </Position13>
       <Position14>
-        <Filename Value="..\..\core\contact\lcl\ContactQueryFrm.pas"/>
-        <Caret Line="50" Column="35" TopLine="32"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="24" Column="21" TopLine="12"/>
       </Position14>
       <Position15>
-        <Filename Value="..\..\core\contact\lcl\ContactQueryFrm.pas"/>
-        <Caret Line="42" Column="16" TopLine="33"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="23" Column="21" TopLine="12"/>
       </Position15>
       <Position16>
-        <Filename Value="..\..\core\equipment\EquipmentMVP.pas"/>
-        <Caret Line="47" Column="32" TopLine="34"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="28" Column="21" TopLine="12"/>
       </Position16>
       <Position17>
-        <Filename Value="..\..\core\equipment\lcl\EquipmentEditFrm.pas"/>
-        <Caret Line="28" Column="16" TopLine="1"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="29" Column="21" TopLine="12"/>
       </Position17>
       <Position18>
-        <Filename Value="..\..\core\equipment\lcl\EquipmentEditFrm.pas"/>
-        <Caret Line="29" Column="16" TopLine="1"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="30" Column="21" TopLine="12"/>
       </Position18>
       <Position19>
-        <Filename Value="glassbeer.lpr"/>
-        <Caret Line="23" Column="52" TopLine="1"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="29" Column="21" TopLine="12"/>
       </Position19>
       <Position20>
-        <Filename Value="..\..\core\custom\CustomBO.pas"/>
-        <Caret Line="132" Column="1" TopLine="117"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="30" Column="21" TopLine="12"/>
       </Position20>
       <Position21>
-        <Filename Value="..\..\core\custom\CustomBO.pas"/>
-        <Caret Line="1" Column="1" TopLine="1"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="34" Column="21" TopLine="12"/>
       </Position21>
       <Position22>
-        <Filename Value="..\..\core\mash\MashItemLogBO.pas"/>
-        <Caret Line="21" Column="58" TopLine="1"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="35" Column="21" TopLine="12"/>
       </Position22>
       <Position23>
-        <Filename Value="..\..\core\mash\MashItemLogBO.pas"/>
-        <Caret Line="18" Column="30" TopLine="3"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="40" Column="21" TopLine="12"/>
       </Position23>
       <Position24>
-        <Filename Value="..\..\core\mash\lcl\MashItemTemperatureEditFrm.pas"/>
-        <Caret Line="1" Column="1" TopLine="1"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="47" Column="21" TopLine="16"/>
       </Position24>
       <Position25>
-        <Filename Value="..\..\core\mash\MashItemLogBO.pas"/>
-        <Caret Line="34" Column="58" TopLine="3"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="46" Column="21" TopLine="16"/>
       </Position25>
       <Position26>
-        <Filename Value="..\..\core\mash\MashItemLogBO.pas"/>
-        <Caret Line="67" Column="15" TopLine="43"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="45" Column="21" TopLine="16"/>
       </Position26>
       <Position27>
-        <Filename Value="..\..\core\mash\MashItemLogMVP.pas"/>
-        <Caret Line="25" Column="39" TopLine="8"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="44" Column="21" TopLine="16"/>
       </Position27>
       <Position28>
-        <Filename Value="..\..\core\mash\lcl\MashItemGravityEditFrm.pas"/>
-        <Caret Line="23" Column="7" TopLine="1"/>
+        <Filename Value="..\..\core\mash\lcl\MashItemEditFrm.pas"/>
+        <Caret Line="45" Column="21" TopLine="16"/>
       </Position28>
       <Position29>
-        <Filename Value="..\..\core\mash\lcl\MashItemGravityEditFrm.pas"/>
-        <Caret Line="15" Column="9" TopLine="1"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="106" Column="62" TopLine="92"/>
       </Position29>
       <Position30>
-        <Filename Value="..\..\core\mash\lcl\MashItemTemperatureEditFrm.pas"/>
-        <Caret Line="31" Column="82" TopLine="3"/>
+        <Filename Value="..\..\core\mash\MashMVP.pas"/>
+        <Caret Line="119" Column="64" TopLine="96"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

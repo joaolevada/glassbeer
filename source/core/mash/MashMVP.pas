@@ -75,6 +75,10 @@ procedure TMashItemEditPresenter.InitPresenter;
 var
   VIngredientsPresenter: TPressMVPItemsPresenter;
   VRecipePresenter: TPressMVPPresenter;
+  VTemperatureLogPresenter: TPressMVPItemsPresenter;
+  VGravityLogPresenter: TPressMVPItemsPresenter;
+  VTemperaturePresenter: TPressMVPFormPresenter;
+  VGravityPresenter: TPressMVPFormPresenter;
 begin
   inherited InitPresenter;
   VRecipePresenter := CreateSubPresenter('Recipe', 'RecipeComboBox',
@@ -90,6 +94,31 @@ begin
   VIngredientsPresenter.BindCommand(TPressMVPAddItemsCommand, 'AddMashIngredientSpeedButton');
   VIngredientsPresenter.BindCommand(TPressMVPEditItemCommand, 'EditMashIngredientSpeedButton');
   VIngredientsPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveMashIngredientSpeedButton');
+
+  VTemperatureLogPresenter := CreateSubPresenter('TemperatureLog', 'TemperatureLogStringGrid',
+    'MeasuredAt(198, "Momento da aferição");' +
+    'Temperature(198, "Temperatura")') as TPressMVPItemsPresenter;
+  VTemperatureLogPresenter.BindCommand(TPressMVPAddItemsCommand, 'AddTemperatureLogSpeedButton');
+  VTemperatureLogPresenter.BindCommand(TPressMVPEditItemCommand, 'EditTemperatureLogSpeedButton');
+  VTemperatureLogPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveTemperatureLogSpeedButton');
+
+  VTemperaturePresenter := CreateDetailPresenter(VTemperatureLogPresenter);
+  VTemperaturePresenter.CreateSubPresenter('MeasuredAt', 'TemperatureMeasuredAtEdit');
+  VTemperaturePresenter.CreateSubPresenter('Temperature', 'TemperatureEdit');
+
+  VGravityLogPresenter := CreateSubPresenter('GravityLog', 'GravityLogStringGrid',
+    'MeasuredAt(198, "Momento da aferição");' +
+    'SpecificGravity(198, "Densidade específica");' +
+    'Brix(99, "Brix")') as TPressMVPItemsPresenter;
+  VGravityLogPresenter.BindCommand(TPressMVPAddItemsCommand, 'AddGravityLogSpeedButton');
+  VGravityLogPresenter.BindCommand(TPressMVPEditItemCommand, 'EditGravityLogSpeedButton');
+  VGravityLogPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveGravityLogSpeedButton');
+
+  //VGravityPresenter := CreateDetailPresenter(VGravityLogPresenter);
+  //VGravityPresenter.CreateSubPresenter('MeasuredAt', 'GravityMeasuredAtEdit');
+  //VGravityPresenter.CreateSubPresenter('InputType', 'GravityInputTypeComboBox');
+  //VGravityPresenter.CreateSubPresenter('SpecificGravity', 'GravitySpecificGravityEdit');
+  //VGravityPresenter.CreateSubPresenter('Brix', 'GravityBrixEdit');
 end;
 
 { TMashQueryPresenter }

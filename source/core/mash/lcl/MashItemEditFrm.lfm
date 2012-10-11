@@ -1,16 +1,17 @@
 inherited MashItemEditForm: TMashItemEditForm
-  Height = 375
+  Height = 359
   Top = 219
   Caption = 'Item do mosto'
-  ClientHeight = 375
+  ClientHeight = 359
   inherited BottomPanel: TPanel
-    Top = 321
+    Top = 305
   end
   inherited EditPageControl: TPageControl
-    Height = 321
+    Height = 305
+    ActivePage = TemperatureLogTabSheet
+    TabIndex = 2
     inherited MainTab: TTabSheet
-      ClientHeight = 294
-      ClientWidth = 792
+      ClientHeight = 278
       object RecipeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
@@ -85,83 +86,7 @@ inherited MashItemEditForm: TMashItemEditForm
         TabOrder = 2
         Text = 'OriginalGravityEdit'
       end
-      object MashIngredientsLabel: TLabel[6]
-        AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = OriginalGravityEdit
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 15
-        Top = 96
-        Width = 82
-        BorderSpacing.Left = 4
-        BorderSpacing.Top = 8
-        Caption = 'Ingredientes'
-        ParentColor = False
-      end
-      object MashIngredientsStringGrid: TStringGrid[7]
-        AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = MashIngredientsLabel
-        AnchorSideTop.Side = asrBottom
-        AnchorSideRight.Control = MainTab
-        AnchorSideRight.Side = asrBottom
-        Left = 4
-        Height = 150
-        Top = 113
-        Width = 784
-        Anchors = [akTop, akLeft, akRight]
-        BorderSpacing.Left = 4
-        BorderSpacing.Top = 2
-        BorderSpacing.Right = 4
-        TabOrder = 3
-        TitleFont.Height = -12
-        TitleFont.Name = 'Verdana'
-      end
-      object AddMashIngredientSpeedButton: TSpeedButton[8]
-        AnchorSideLeft.Control = MashIngredientsStringGrid
-        AnchorSideTop.Control = MashIngredientsStringGrid
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 22
-        Hint = 'Adicionar ingrediente'
-        Top = 267
-        Width = 23
-        BorderSpacing.Top = 4
-        Flat = True
-        NumGlyphs = 0
-        ShowHint = True
-        ParentShowHint = False
-      end
-      object EditMashIngredientSpeedButton: TSpeedButton[9]
-        AnchorSideLeft.Control = AddMashIngredientSpeedButton
-        AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = AddMashIngredientSpeedButton
-        Left = 31
-        Height = 22
-        Hint = 'Alterar ingrediente'
-        Top = 267
-        Width = 23
-        BorderSpacing.Left = 4
-        Flat = True
-        NumGlyphs = 0
-        ShowHint = True
-        ParentShowHint = False
-      end
-      object RemoveMashIngredientSpeedButton: TSpeedButton[10]
-        AnchorSideLeft.Control = EditMashIngredientSpeedButton
-        AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = AddMashIngredientSpeedButton
-        Left = 58
-        Height = 22
-        Hint = 'Remover ingrediente'
-        Top = 267
-        Width = 23
-        BorderSpacing.Left = 4
-        Flat = True
-        NumGlyphs = 0
-        ShowHint = True
-        ParentShowHint = False
-      end
-      object AddRecipeSpeedButton: TSpeedButton[11]
+      object AddRecipeSpeedButton: TSpeedButton[6]
         AnchorSideLeft.Control = RecipeComboBox
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = RecipeComboBox
@@ -177,7 +102,7 @@ inherited MashItemEditForm: TMashItemEditForm
         ShowHint = True
         ParentShowHint = False
       end
-      object EditRecipeSpeedButton: TSpeedButton[12]
+      object EditRecipeSpeedButton: TSpeedButton[7]
         AnchorSideLeft.Control = AddRecipeSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = AddRecipeSpeedButton
@@ -186,6 +111,305 @@ inherited MashItemEditForm: TMashItemEditForm
         Height = 22
         Hint = 'Alterar receita'
         Top = 19
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+    end
+    object IngredientsTabSheet: TTabSheet[1]
+      Caption = 'Ingredientes'
+      ClientHeight = 278
+      ClientWidth = 792
+      object MashIngredientsLabel: TLabel
+        AnchorSideLeft.Control = IngredientsTabSheet
+        AnchorSideTop.Control = IngredientsTabSheet
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 82
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Ingredientes'
+        ParentColor = False
+      end
+      object MashIngredientsStringGrid: TStringGrid
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MashIngredientsLabel
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = MainTab
+        AnchorSideRight.Side = asrBottom
+        Left = 4
+        Height = 150
+        Top = 21
+        Width = 784
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 4
+        TabOrder = 0
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+      object AddMashIngredientSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = MashIngredientsStringGrid
+        AnchorSideTop.Control = MashIngredientsStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Adicionar ingrediente'
+        Top = 175
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditMashIngredientSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = AddMashIngredientSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddMashIngredientSpeedButton
+        Left = 31
+        Height = 22
+        Hint = 'Alterar ingrediente'
+        Top = 175
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object RemoveMashIngredientSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = EditMashIngredientSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddMashIngredientSpeedButton
+        Left = 58
+        Height = 22
+        Hint = 'Remover ingrediente'
+        Top = 175
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+    end
+    object TemperatureLogTabSheet: TTabSheet[2]
+      Caption = 'Controle de temperatura'
+      ClientHeight = 278
+      ClientWidth = 792
+      object TemperatureLogLabel: TLabel
+        AnchorSideLeft.Control = TemperatureLogTabSheet
+        AnchorSideTop.Control = TemperatureLogTabSheet
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 257
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Registros de temperatura da brassagem'
+        ParentColor = False
+      end
+      object TemperatureLogStringGrid: TStringGrid
+        AnchorSideLeft.Control = TemperatureLogLabel
+        AnchorSideTop.Control = TemperatureLogLabel
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = MainTab
+        AnchorSideRight.Side = asrBottom
+        Left = 4
+        Height = 150
+        Top = 21
+        Width = 784
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 4
+        TabOrder = 0
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+      object AddTemperatureLogSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = TemperatureLogStringGrid
+        AnchorSideTop.Control = TemperatureLogStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Adicionar registro de temperatura'
+        Top = 175
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditTemperatureLogSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = AddTemperatureLogSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddTemperatureLogSpeedButton
+        Left = 31
+        Height = 22
+        Hint = 'Alterar registro de temperatura'
+        Top = 175
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object RemoveTemperatureLogSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = EditTemperatureLogSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddTemperatureLogSpeedButton
+        Left = 58
+        Height = 22
+        Hint = 'Remover registro de temperatura'
+        Top = 175
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object TemperatureGroupBox: TGroupBox
+        AnchorSideTop.Control = AddTemperatureLogSpeedButton
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Side = asrBottom
+        Left = 4
+        Height = 69
+        Top = 205
+        Width = 424
+        BorderSpacing.Top = 8
+        Caption = 'Temperatura'
+        ClientHeight = 51
+        ClientWidth = 420
+        TabOrder = 1
+        object TemperatureMeasuredAtLabel: TLabel
+          AnchorSideLeft.Control = TemperatureGroupBox
+          AnchorSideTop.Control = TemperatureGroupBox
+          Left = 4
+          Height = 15
+          Top = 4
+          Width = 133
+          BorderSpacing.Left = 4
+          BorderSpacing.Top = 4
+          Caption = 'Momento da aferição'
+          ParentColor = False
+        end
+        object TemperatureLabel: TLabel
+          AnchorSideLeft.Control = TemperatureMeasuredAtEdit
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = TemperatureMeasuredAtLabel
+          Left = 218
+          Height = 15
+          Top = 4
+          Width = 50
+          BorderSpacing.Left = 16
+          Caption = 'Número'
+          ParentColor = False
+        end
+        object TemperatureEdit: TEdit
+          AnchorSideLeft.Control = TemperatureLabel
+          AnchorSideTop.Control = TemperatureLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 218
+          Height = 22
+          Top = 21
+          Width = 198
+          BorderSpacing.Top = 2
+          TabOrder = 0
+        end
+        object TemperatureMeasuredAtEdit: TEdit
+          AnchorSideLeft.Control = TemperatureMeasuredAtLabel
+          AnchorSideTop.Control = TemperatureMeasuredAtLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 4
+          Height = 22
+          Top = 21
+          Width = 198
+          BorderSpacing.Top = 2
+          TabOrder = 1
+          Text = 'TemperatureMeasuredAtEdit'
+        end
+      end
+    end
+    object GravityLogTabSheet: TTabSheet[3]
+      Caption = 'Controle da densidade'
+      ClientHeight = 278
+      ClientWidth = 792
+      object GravityLogLabel: TLabel
+        AnchorSideLeft.Control = GravityLogTabSheet
+        AnchorSideTop.Control = GravityLogTabSheet
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 213
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Registros da densidade do mosto'
+        ParentColor = False
+      end
+      object GravityLogStringGrid: TStringGrid
+        AnchorSideLeft.Control = GravityLogLabel
+        AnchorSideTop.Control = GravityLogLabel
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = MainTab
+        AnchorSideRight.Side = asrBottom
+        Left = 4
+        Height = 150
+        Top = 21
+        Width = 784
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 4
+        TabOrder = 0
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+      object AddGravityLogSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = GravityLogStringGrid
+        AnchorSideTop.Control = GravityLogStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Adicionar registro de densidade'
+        Top = 175
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditGravityLogSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = AddGravityLogSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddGravityLogSpeedButton
+        Left = 31
+        Height = 22
+        Hint = 'Alterar registro de densidade'
+        Top = 175
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object RemoveGravityLogSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = EditGravityLogSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddGravityLogSpeedButton
+        Left = 58
+        Height = 22
+        Hint = 'Remover registro de densidade'
+        Top = 175
         Width = 23
         BorderSpacing.Left = 4
         Flat = True

@@ -28,7 +28,7 @@ type
   TMashItemGravity = class(TCustomObject)
     _MeasuredAt: TPressDateTime;
     _InputType: TPressEnum;
-    _SpecificGravty: TPressDouble;
+    _SpecificGravity: TPressDouble;
     _Brix: TPressDouble;
   protected
     class function InternalMetadataStr: string; override;

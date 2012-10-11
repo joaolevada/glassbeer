@@ -13,15 +13,33 @@ type
   { TMashItemEditForm }
 
   TMashItemEditForm = class(TCustomEditForm)
+    AddMashIngredientSpeedButton: TSpeedButton;
+    AddTemperatureLogSpeedButton: TSpeedButton;
+    AddGravityLogSpeedButton: TSpeedButton;
+    EditMashIngredientSpeedButton: TSpeedButton;
+    EditTemperatureLogSpeedButton: TSpeedButton;
+    EditGravityLogSpeedButton: TSpeedButton;
     MashIngredientsLabel: TLabel;
+    MashIngredientsStringGrid: TStringGrid;
+    GravityLogTabSheet: TTabSheet;
+    TemperatureGroupBox: TGroupBox;
+    TemperatureMeasuredAtEdit: TEdit;
+    TemperatureMeasuredAtLabel: TLabel;
+    TemperatureEdit: TEdit;
+    TemperatureLabel: TLabel;
+    RemoveGravityLogSpeedButton: TSpeedButton;
+    GravityLogLabel: TLabel;
+    TemperatureLogStringGrid: TStringGrid;
     OriginalGravityEdit: TEdit;
     OriginalGravityLabel: TLabel;
-    MashIngredientsStringGrid: TStringGrid;
-    AddMashIngredientSpeedButton: TSpeedButton;
-    EditMashIngredientSpeedButton: TSpeedButton;
-    RemoveMashIngredientSpeedButton: TSpeedButton;
     AddRecipeSpeedButton: TSpeedButton;
     EditRecipeSpeedButton: TSpeedButton;
+    IngredientsTabSheet: TTabSheet;
+    RemoveMashIngredientSpeedButton: TSpeedButton;
+    RemoveTemperatureLogSpeedButton: TSpeedButton;
+    TemperatureLogLabel: TLabel;
+    GravityLogStringGrid: TStringGrid;
+    TemperatureLogTabSheet: TTabSheet;
     VolumeEdit: TEdit;
     VolumeLabel: TLabel;
     RecipeComboBox: TComboBox;
