@@ -119,6 +119,11 @@ begin
   //VGravityPresenter.CreateSubPresenter('InputType', 'GravityInputTypeComboBox');
   //VGravityPresenter.CreateSubPresenter('SpecificGravity', 'GravitySpecificGravityEdit');
   //VGravityPresenter.CreateSubPresenter('Brix', 'GravityBrixEdit');
+
+  CreateSubPresenter('StartWater', 'StartWaterEdit');
+  CreateSubPresenter('SpargeWater', 'SpargeWaterEdit');
+  CreateSubPresenter('TotalWater', 'TotalWaterEdit');
+  CreateSubPresenter('BoilTime', 'BoilTimeEdit');
 end;
 
 { TMashQueryPresenter }

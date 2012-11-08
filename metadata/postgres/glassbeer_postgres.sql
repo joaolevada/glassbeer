@@ -112,7 +112,11 @@ create table MshIt (
   UpdateCount integer not null,
   Recipe bigint,
   Volume double precision,
-  OriginalGravity double precision);
+  OriginalGravity double precision,
+  StartWater double precision,
+  SpargeWater double precision,
+  TotalWater double precision,
+  BoilTime double precision);
 
 alter table MshIt add constraint PK_MshIt
   primary key (Id);

@@ -74,17 +74,31 @@ type
     _MashIngredients: TMashIngredientItemParts;
     _TemperatureLog: TPressParts;
     _GravityLog: TPressParts;
+    _StartWater: TPressDouble;
+    _SpargeWater: TPressDouble;
+    _TotalWater: TPressDouble;
+    _BoilTime: TPressDouble;
   private
     function GetOriginalGravity: Double;
+    function GetSpargeWater: Double;
+    function GetStartWater: Double;
+    function GetTotalWater: Double;
     function GetVolume: Double;
     procedure SetOriginalGravity(const AValue: Double);
+    procedure SetSpargeWater(AValue: Double);
+    procedure SetStartWater(AValue: Double);
+    procedure SetTotalWater(AValue: Double);
     procedure SetVolume(const AValue: Double);
   protected
     class function InternalMetadataStr: string; override;
+    procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
   published
     property OriginalGravity: Double read GetOriginalGravity
       write SetOriginalGravity;
     property Volume: Double read GetVolume write SetVolume;
+    property StartWater: Double read GetStartWater write SetStartWater;
+    property SpargeWater: Double read GetSpargeWater write SetSpargeWater;
+    property TotalWater: Double read GetTotalWater write SetTotalWater;
   end;
 
   { TMashIngredientItem }
@@ -235,6 +249,21 @@ begin
   Result := _OriginalGravity.Value;
 end;
 
+function TMashItem.GetSpargeWater: Double;
+begin
+  Result := _SpargeWater.Value;
+end;
+
+function TMashItem.GetStartWater: Double;
+begin
+  Result := _StartWater.Value;
+end;
+
+function TMashItem.GetTotalWater: Double;
+begin
+  Result := _TotalWater.Value;
+end;
+
 function TMashItem.GetVolume: Double;
 begin
   Result := _Volume.Value;
@@ -243,6 +272,21 @@ end;
 procedure TMashItem.SetOriginalGravity(const AValue: Double);
 begin
   _OriginalGravity.Value := AValue;
+end;
+
+procedure TMashItem.SetSpargeWater(AValue: Double);
+begin
+  _SpargeWater.Value := AValue;
+end;
+
+procedure TMashItem.SetStartWater(AValue: Double);
+begin
+  _StartWater.Value := AValue;
+end;
+
+procedure TMashItem.SetTotalWater(AValue: Double);
+begin
+  _TotalWater.Value := AValue;
 end;
 
 procedure TMashItem.SetVolume(const AValue: Double);
@@ -259,7 +303,17 @@ begin
     'MashIngredients: TMashIngredientItemParts ShortName="MshIngds";' +
     'TemperatureLog: Parts(TMashItemTemperature) ShortName="TempLog";' +
     'GravityLog: Parts(TMashItemGravity) ShortName="GravLog";' +
+    'StartWater: Double;' +
+    'SpargeWater: Double;' +
+    'TotalWater: Double Calc(StartWater,SpargeWater);' +
+    'BoilTime: Double;' +
     ')';
+end;
+
+procedure TMashItem.InternalCalcAttribute(AAttribute: TPressAttribute);
+begin
+  if AAttribute = _TotalWater then
+    TotalWater := StartWater + SpargeWater;
 end;
 
 { TMash }

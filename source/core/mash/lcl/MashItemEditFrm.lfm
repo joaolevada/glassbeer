@@ -8,8 +8,8 @@ inherited MashItemEditForm: TMashItemEditForm
   end
   inherited EditPageControl: TPageControl
     Height = 305
-    ActivePage = TemperatureLogTabSheet
-    TabIndex = 2
+    ActivePage = WaterTabSheet
+    TabIndex = 1
     inherited MainTab: TTabSheet
       ClientHeight = 278
       object RecipeLabel: TLabel[0]
@@ -119,7 +119,111 @@ inherited MashItemEditForm: TMashItemEditForm
         ParentShowHint = False
       end
     end
-    object IngredientsTabSheet: TTabSheet[1]
+    object WaterTabSheet: TTabSheet[1]
+      Caption = 'Volume de água'
+      ClientHeight = 278
+      ClientWidth = 792
+      object StartWaterLabel: TLabel
+        AnchorSideLeft.Control = WaterTabSheet
+        AnchorSideTop.Control = WaterTabSheet
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 88
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Água primária'
+        ParentColor = False
+      end
+      object SpargeWaterLabel: TLabel
+        AnchorSideLeft.Control = StartWaterEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = StartWaterLabel
+        Left = 218
+        Height = 15
+        Top = 4
+        Width = 168
+        BorderSpacing.Left = 16
+        Caption = 'Água secundária (lavação)'
+        ParentColor = False
+      end
+      object TotalWaterLabel: TLabel
+        AnchorSideLeft.Control = SpargeWaterEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = SpargeWaterLabel
+        Left = 432
+        Height = 15
+        Top = 4
+        Width = 66
+        BorderSpacing.Left = 16
+        Caption = 'Água total'
+        ParentColor = False
+      end
+      object StartWaterEdit: TEdit
+        AnchorSideLeft.Control = StartWaterLabel
+        AnchorSideTop.Control = StartWaterLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'StartWaterEdit'
+      end
+      object SpargeWaterEdit: TEdit
+        AnchorSideLeft.Control = SpargeWaterLabel
+        AnchorSideTop.Control = SpargeWaterLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'SpargeWaterEdit'
+      end
+      object TotalWaterEdit: TEdit
+        AnchorSideLeft.Control = TotalWaterLabel
+        AnchorSideTop.Control = TotalWaterLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 432
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 2
+        Text = 'TotalWaterEdit'
+      end
+      object BoilTimeLabel: TLabel
+        AnchorSideLeft.Control = WaterTabSheet
+        AnchorSideTop.Control = StartWaterEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 176
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Tempo de fervura (minutos)'
+        ParentColor = False
+      end
+      object BoilTimeEdit: TEdit
+        AnchorSideLeft.Control = BoilTimeLabel
+        AnchorSideTop.Control = BoilTimeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'BoilTimeEdit'
+      end
+    end
+    object IngredientsTabSheet: TTabSheet[2]
       Caption = 'Ingredientes'
       ClientHeight = 278
       ClientWidth = 792
@@ -199,7 +303,7 @@ inherited MashItemEditForm: TMashItemEditForm
         ParentShowHint = False
       end
     end
-    object TemperatureLogTabSheet: TTabSheet[2]
+    object TemperatureLogTabSheet: TTabSheet[3]
       Caption = 'Controle de temperatura'
       ClientHeight = 278
       ClientWidth = 792
@@ -339,7 +443,7 @@ inherited MashItemEditForm: TMashItemEditForm
         end
       end
     end
-    object GravityLogTabSheet: TTabSheet[3]
+    object GravityLogTabSheet: TTabSheet[4]
       Caption = 'Controle da densidade'
       ClientHeight = 278
       ClientWidth = 792
