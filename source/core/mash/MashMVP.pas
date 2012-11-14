@@ -79,6 +79,8 @@ var
   VGravityLogPresenter: TPressMVPItemsPresenter;
   VTemperaturePresenter: TPressMVPFormPresenter;
   VGravityPresenter: TPressMVPFormPresenter;
+  VGeneralLogPresenter: TPressMVPItemsPresenter;
+  VGeneralPresenter: TPressMVPFormPresenter;
 begin
   inherited InitPresenter;
   VRecipePresenter := CreateSubPresenter('Recipe', 'RecipeComboBox',
@@ -124,6 +126,17 @@ begin
   CreateSubPresenter('SpargeWater', 'SpargeWaterEdit');
   CreateSubPresenter('TotalWater', 'TotalWaterEdit');
   CreateSubPresenter('BoilTime', 'BoilTimeEdit');
+
+  VGeneralLogPresenter :=  CreateSubPresenter('GeneralLog',
+    'GeneralLogStringGrid',
+    'RemarkedAt(198, "Momento da obs.");' +
+    'Remarks(356, "Observações")') as TPressMVPItemsPresenter;
+  VGeneralLogPresenter.BindCommand(TPressMVPAddItemsCommand, 'AddGeneralLogSpeedButton');
+  VGeneralLogPresenter.BindCommand(TPressMVPEditItemCommand, 'EditGeneralLogSpeedButton');
+  VGeneralLogPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveGeneralLogSpeedButton');
+  VGeneralPresenter := CreateDetailPresenter(VGeneralLogPresenter);
+  VGeneralPresenter.CreateSubPresenter('RemarkedAt', 'GeneralLogRemarkedAtEdit');
+  VGeneralPresenter.CreateSubPresenter('Remarks', 'GeneralLogRemarksMemo');
 end;
 
 { TMashQueryPresenter }

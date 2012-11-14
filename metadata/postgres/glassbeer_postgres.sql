@@ -1,4 +1,6 @@
-﻿create sequence gen_glassbeer;
+﻿/* PressObjects generated SQL */
+
+create sequence gen_glassbeer;
 
 create table Cont (
   Id bigint not null,
@@ -119,6 +121,15 @@ create table MshIt (
   BoilTime double precision);
 
 alter table MshIt add constraint PK_MshIt
+  primary key (Id);
+
+create table MshIt_GeneralLog (
+  Id bigint not null,
+  MshItId bigint not null,
+  GeneralLogId bigint not null,
+  ItemPos integer not null);
+
+alter table MshIt_GeneralLog add constraint PK_MshIt_GeneralLog
   primary key (Id);
 
 create table MshIt_GravLog (
@@ -301,6 +312,16 @@ create table TFermenterEventItem (
   Gravity double precision);
 
 alter table TFermenterEventItem add constraint PK_TFermenterEventItem
+  primary key (Id);
+
+create table TGeneralLog (
+  Id bigint not null,
+  ClassId bigint not null,
+  UpdateCount integer not null,
+  RemarkedAt timestamp,
+  Remarks text);
+
+alter table TGeneralLog add constraint PK_TGeneralLog
   primary key (Id);
 
 create table TLocation (
@@ -569,6 +590,18 @@ alter table MshIt add constraint FK_MshIt_Recipe
   on delete no action
   on update cascade;
 
+alter table MshIt_GeneralLog add constraint FK_MshIt_GeneralLog_MshItId
+  foreign key (MshItId)
+  references MshIt (Id)
+  on delete no action
+  on update cascade;
+
+alter table MshIt_GeneralLog add constraint FK_MshIt_GeneralLog_GeneralLogId
+  foreign key (GeneralLogId)
+  references TGeneralLog (Id)
+  on delete no action
+  on update cascade;
+
 alter table MshIt_GravLog add constraint FK_MshIt_GravLog_MshItId
   foreign key (MshItId)
   references MshIt (Id)
@@ -785,6 +818,12 @@ alter table TFermenterEventItem add constraint FK_TFermenterEventItem_BasicURD
   on delete no action
   on update cascade;
 
+alter table TGeneralLog add constraint FK_TGeneralLog_ClassId
+  foreign key (ClassId)
+  references ModelClasses (Id)
+  on delete no action
+  on update cascade;
+
 alter table TLocation add constraint FK_TLocation_ClassId
   foreign key (ClassId)
   references ModelClasses (Id)
@@ -941,3 +980,15 @@ alter table TState add constraint FK_TState_Country
   on delete no action
   on update cascade;
 
+/* User generated SQL */
+
+alter sequence gen_glassbeer start with 50000;
+
+create table glassconfig (
+  id bigint not null,
+  dbversion integer not null);
+  
+alter table glassconfig add constraint pk_glassconfig
+  primary key (id);
+  
+insert into glassconfig (id, dbversion) values (1, 4);

@@ -1,0 +1,80 @@
+inherited GeneralLogEditForm: TGeneralLogEditForm
+  Left = 439
+  Height = 245
+  Top = 110
+  Width = 372
+  Caption = 'Registro de observações (log)'
+  ClientHeight = 245
+  ClientWidth = 372
+  inherited BottomPanel: TPanel
+    Top = 191
+    Width = 372
+    ClientWidth = 372
+    inherited SaveButton: TBitBtn
+      Left = 131
+    end
+    inherited CancelButton: TBitBtn
+      Left = 251
+    end
+  end
+  inherited EditPageControl: TPageControl
+    Height = 191
+    Width = 372
+    inherited MainTab: TTabSheet
+      ClientHeight = 164
+      ClientWidth = 364
+      object RemarkedAtLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 156
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Momento da observação'
+        ParentColor = False
+      end
+      object RemarkedAtEdit: TEdit[1]
+        AnchorSideLeft.Control = RemarkedAtLabel
+        AnchorSideTop.Control = RemarkedAtLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'RemarkedAtEdit'
+      end
+      object RemarksLabel: TLabel[2]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = RemarkedAtEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 83
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Observações'
+        ParentColor = False
+      end
+      object RemarksMemo: TMemo[3]
+        AnchorSideLeft.Control = RemarksLabel
+        AnchorSideTop.Control = RemarksLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 90
+        Top = 68
+        Width = 356
+        BorderSpacing.Top = 2
+        Lines.Strings = (
+          'RemarksMemo'
+        )
+        ScrollBars = ssAutoBoth
+        TabOrder = 1
+      end
+    end
+  end
+end

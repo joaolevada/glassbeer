@@ -21,7 +21,7 @@ uses
   PhoneLabelEditFrm, ContactBO, ContactEditFrm, PersonEditFrm, CompanyEditFrm,
   PersonContactLabelEditFrm, ContactQueryFrm, PersonContactEditFrm, EquipmentBO,
   EquipmentMVP, EquipmentEditFrm, EquipmentQueryFrm, MashItemTemperatureEditFrm,
-  MashItemGravityEditFrm;
+  MashItemGravityEditFrm, GeneralLogEditFrm, LogBO, LogMVP;
 
 {$R *.res}
 

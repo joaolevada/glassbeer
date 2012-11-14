@@ -1,6 +1,6 @@
 unit MashItemLogMVP;
 
-{$mode objfpc}
+{$I '..\include\glassbeer_defines.inc'}
 
 interface
 

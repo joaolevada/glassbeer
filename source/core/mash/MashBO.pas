@@ -78,6 +78,7 @@ type
     _SpargeWater: TPressDouble;
     _TotalWater: TPressDouble;
     _BoilTime: TPressDouble;
+    _GeneralLog: TPressParts;
   private
     function GetOriginalGravity: Double;
     function GetSpargeWater: Double;
@@ -307,6 +308,7 @@ begin
     'SpargeWater: Double;' +
     'TotalWater: Double Calc(StartWater,SpargeWater);' +
     'BoilTime: Double;' +
+    'GeneralLog: Parts(TGeneralLog);' +
     ')';
 end;
 

@@ -1,6 +1,7 @@
 inherited MashItemEditForm: TMashItemEditForm
+  Left = 320
   Height = 359
-  Top = 219
+  Top = 194
   Caption = 'Item do mosto'
   ClientHeight = 359
   inherited BottomPanel: TPanel
@@ -8,8 +9,8 @@ inherited MashItemEditForm: TMashItemEditForm
   end
   inherited EditPageControl: TPageControl
     Height = 305
-    ActivePage = WaterTabSheet
-    TabIndex = 1
+    ActivePage = GeneralLogTabSheet
+    TabIndex = 5
     inherited MainTab: TTabSheet
       ClientHeight = 278
       object RecipeLabel: TLabel[0]
@@ -439,7 +440,6 @@ inherited MashItemEditForm: TMashItemEditForm
           Width = 198
           BorderSpacing.Top = 2
           TabOrder = 1
-          Text = 'TemperatureMeasuredAtEdit'
         end
       end
     end
@@ -520,6 +520,150 @@ inherited MashItemEditForm: TMashItemEditForm
         NumGlyphs = 0
         ShowHint = True
         ParentShowHint = False
+      end
+    end
+    object GeneralLogTabSheet: TTabSheet[5]
+      Caption = 'Controle genérico'
+      ClientHeight = 278
+      ClientWidth = 792
+      object GeneralLogLabel: TLabel
+        AnchorSideLeft.Control = GeneralLogTabSheet
+        AnchorSideTop.Control = GeneralLogTabSheet
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 222
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Registro de observações genéricas'
+        ParentColor = False
+      end
+      object GeneralLogStringGrid: TStringGrid
+        AnchorSideLeft.Control = GeneralLogLabel
+        AnchorSideTop.Control = GeneralLogLabel
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = MainTab
+        AnchorSideRight.Side = asrBottom
+        Left = 4
+        Height = 118
+        Top = 21
+        Width = 784
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 4
+        TabOrder = 0
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+      object AddGeneralLogSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = GeneralLogStringGrid
+        AnchorSideTop.Control = GeneralLogStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Adicionar observação genérica'
+        Top = 143
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object EditGeneralLogSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = AddGeneralLogSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddGeneralLogSpeedButton
+        Left = 31
+        Height = 22
+        Hint = 'Alterar registro de observação genérica'
+        Top = 143
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object RemoveGeneralLogSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = EditGeneralLogSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddGeneralLogSpeedButton
+        Left = 58
+        Height = 22
+        Hint = 'Remover registro de observação genérica'
+        Top = 143
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object GeneralLogGroupBox: TGroupBox
+        AnchorSideLeft.Control = AddGeneralLogSpeedButton
+        AnchorSideTop.Control = AddGeneralLogSpeedButton
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 104
+        Top = 173
+        Width = 584
+        BorderSpacing.Top = 8
+        Caption = 'Registro genérico'
+        ClientHeight = 86
+        ClientWidth = 580
+        TabOrder = 1
+        object GeneralLogRemarkedAtLabel: TLabel
+          AnchorSideLeft.Control = GeneralLogGroupBox
+          AnchorSideTop.Control = GeneralLogGroupBox
+          Left = 4
+          Height = 15
+          Top = 4
+          Width = 156
+          BorderSpacing.Left = 4
+          BorderSpacing.Top = 4
+          Caption = 'Momento da observação'
+          ParentColor = False
+        end
+        object GeneralLogRemarkedAtEdit: TEdit
+          AnchorSideLeft.Control = GeneralLogRemarkedAtLabel
+          AnchorSideTop.Control = GeneralLogRemarkedAtLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 4
+          Height = 22
+          Top = 21
+          Width = 198
+          BorderSpacing.Top = 2
+          TabOrder = 0
+        end
+        object GeneralLogRemarksLabel: TLabel
+          AnchorSideLeft.Control = GeneralLogRemarkedAtEdit
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = GeneralLogGroupBox
+          Left = 218
+          Height = 15
+          Top = 4
+          Width = 83
+          BorderSpacing.Left = 16
+          BorderSpacing.Top = 4
+          Caption = 'Observações'
+          ParentColor = False
+        end
+        object GeneralLogRemarksMemo: TMemo
+          AnchorSideLeft.Control = GeneralLogRemarksLabel
+          AnchorSideTop.Control = GeneralLogRemarksLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 218
+          Height = 63
+          Top = 21
+          Width = 356
+          BorderSpacing.Top = 2
+          Lines.Strings = (
+            ''
+          )
+          ScrollBars = ssAutoBoth
+          TabOrder = 1
+        end
       end
     end
   end

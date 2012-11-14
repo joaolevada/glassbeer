@@ -44,7 +44,7 @@ uses
 class function TMashItemGravity.InternalMetadataStr: string;
 begin
   Result := 'TMashItemGravity IsPersistent (' +
-    'MeasuredAt: DateTime DefaultValue="now" EditMask="dd/MM/yyyy";' +
+    'MeasuredAt: DateTime DefaultValue="now" EditMask="dd/MM/yyyy hh:nn";' +
     'InputType: Enum(TGravityInput);' +
     'SpecificGravity: Double;' +
     'Brix: Double;' +
@@ -56,7 +56,7 @@ end;
 class function TMashItemTemperature.InternalMetadataStr: string;
 begin
   Result := 'TMashItemTemperature IsPersistent(' +
-    'MeasuredAt: DateTime DefaultValue="now" EditMask="dd/MM/yyyy";' +
+    'MeasuredAt: DateTime DefaultValue="now" EditMask="dd/MM/yyyy hh:nn";' +
     'Temperature: Double DefaultValue="20.0";' +
     ')';
 end;
