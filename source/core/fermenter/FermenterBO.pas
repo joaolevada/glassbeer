@@ -214,7 +214,7 @@ end;
 
 procedure TFermenter.SetStatus(const AValue: TFermenterStatus);
 begin
-  _Status.Value := LongInt(AValue);
+  _Status.Value := Integer(AValue);
 end;
 
 procedure TFermenter.SetUtilCapacity(const AValue: Double);

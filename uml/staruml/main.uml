@@ -17,7 +17,7 @@
 <XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">designModel</XPD:ATTR>
 <XPD:REF name="Namespace">F7tUpXgud0+qDALK+J+aagAA</XPD:REF>
-<XPD:ATTR name="#OwnedDiagrams" type="integer">14</XPD:ATTR>
+<XPD:ATTR name="#OwnedDiagrams" type="integer">15</XPD:ATTR>
 <XPD:OBJ name="OwnedDiagrams[0]" type="UMLClassDiagram" guid="V+7nLq1R/EOrtO2/M8PeFQAA">
 <XPD:ATTR name="Name" type="string">CustomBO</XPD:ATTR>
 <XPD:ATTR name="DefaultDiagram" type="boolean">True</XPD:ATTR>
@@ -9281,7 +9281,46 @@
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:ATTR name="#OwnedElements" type="integer">244</XPD:ATTR>
+<XPD:OBJ name="OwnedDiagrams[14]" type="UMLClassDiagram" guid="NjDCLim/hE2b+lW8cL54ywAA">
+<XPD:ATTR name="Name" type="string">EquipmentProfileBO</XPD:ATTR>
+<XPD:REF name="DiagramOwner">wn7Zh6KOLkWU36YmyAV/hwAA</XPD:REF>
+<XPD:OBJ name="DiagramView" type="UMLClassDiagramView" guid="k33996SEwEeEe0Xuv0CQDwAA">
+<XPD:REF name="Diagram">NjDCLim/hE2b+lW8cL54ywAA</XPD:REF>
+<XPD:ATTR name="#OwnedViews" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedViews[0]" type="UMLClassView" guid="HnCFoua4tEeHSIJVJTzjBwAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">284</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">80</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">268</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">95</XPD:ATTR>
+<XPD:REF name="Model">cQ4icxz2Uk2OXpAXbtVTYgAA</XPD:REF>
+<XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="DJHuZkwU/kabZVCN0z1auAAA">
+<XPD:OBJ name="NameLabel" type="LabelView" guid="ho+Y0lfhrEu04RzJyG76UAAA">
+<XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">TEquipmentProfile</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="LabelView" guid="wy9YhlyWy0eyc/ZYJgg9JQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="LabelView" guid="s/5fPPv8zkeoa2kHfx623gAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="AttributeCompartment" type="UMLAttributeCompartmentView" guid="by6SOGDS60Ss07eo6viLDQAA">
+<XPD:REF name="Model">cQ4icxz2Uk2OXpAXbtVTYgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OperationCompartment" type="UMLOperationCompartmentView" guid="mudE/aJhs0+AuctRlNaHNgAA">
+<XPD:REF name="Model">cQ4icxz2Uk2OXpAXbtVTYgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="TemplateParameterCompartment" type="UMLTemplateParameterCompartmentView" guid="N/3APDbs0kOf+qSpx0rQRgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:REF name="Model">cQ4icxz2Uk2OXpAXbtVTYgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:ATTR name="#OwnedElements" type="integer">245</XPD:ATTR>
 <XPD:OBJ name="OwnedElements[0]" type="UMLClass" guid="llcPdxfpOkOy1rTHCXFQnQAA">
 <XPD:ATTR name="Name" type="string">TCustomObject</XPD:ATTR>
 <XPD:REF name="Namespace">wn7Zh6KOLkWU36YmyAV/hwAA</XPD:REF>
@@ -14387,6 +14426,33 @@
 <XPD:ATTR name="Name" type="string">Remarks</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Memo</XPD:ATTR>
 <XPD:REF name="Owner">++ERsup5GkKo6qsO+nCeYAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[244]" type="UMLClass" guid="cQ4icxz2Uk2OXpAXbtVTYgAA">
+<XPD:ATTR name="Name" type="string">TEquipmentProfile</XPD:ATTR>
+<XPD:REF name="Namespace">wn7Zh6KOLkWU36YmyAV/hwAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">HnCFoua4tEeHSIJVJTzjBwAA</XPD:REF>
+<XPD:REF name="Views[1]">by6SOGDS60Ss07eo6viLDQAA</XPD:REF>
+<XPD:REF name="Views[2]">mudE/aJhs0+AuctRlNaHNgAA</XPD:REF>
+<XPD:REF name="Views[3]">N/3APDbs0kOf+qSpx0rQRgAA</XPD:REF>
+<XPD:ATTR name="#Attributes" type="integer">4</XPD:ATTR>
+<XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="DilNoai9FUu5lE0QGUmImwAA">
+<XPD:ATTR name="Name" type="string">BasicUserRecordData</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">TBasicUserRecordData #Part</XPD:ATTR>
+<XPD:REF name="Owner">cQ4icxz2Uk2OXpAXbtVTYgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="0dmRHv2b3EG+ki59M7FPVQAA">
+<XPD:ATTR name="Name" type="string">GrainAbsorption Double</XPD:ATTR>
+<XPD:REF name="Owner">cQ4icxz2Uk2OXpAXbtVTYgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="phMhqD6XWkKd3hbS/IMrGwAA">
+<XPD:ATTR name="Name" type="string">EvaporationRate Double</XPD:ATTR>
+<XPD:REF name="Owner">cQ4icxz2Uk2OXpAXbtVTYgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="HRU+9ymxqkSDttutU12togAA">
+<XPD:ATTR name="Name" type="string">KettleToFermenterLoss Double</XPD:ATTR>
+<XPD:REF name="Owner">cQ4icxz2Uk2OXpAXbtVTYgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>

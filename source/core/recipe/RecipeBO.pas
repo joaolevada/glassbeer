@@ -174,7 +174,7 @@ end;
 
 procedure TRecipe.SetFamily(const AValue: TBeerFamily);
 begin
-  _Family.Value := LongInt(AValue);
+  _Family.Value := Integer(AValue);
 end;
 
 procedure TRecipe.SetFinalGravity(const AValue: Double);

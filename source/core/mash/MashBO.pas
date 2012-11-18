@@ -215,8 +215,8 @@ begin
   if AAttribute = _Unity then
   begin
     VRawMaterial := _RawMaterial.Value as TRawMaterial;
-    if Assigned(VRawMaterial) then
-      Unity := VRawMaterial.Unity
+    if Assigned(VRawMaterial) and not VRawMaterial._Unity.IsEmpty then
+      _Unity.Value := VRawMaterial._Unity.Value
     else
       _Unity.Clear;
   end;

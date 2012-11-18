@@ -123,7 +123,7 @@ end;
 
 procedure TRawMaterial.SetUnity(const AValue: TUnity);
 begin
-  _Unity.Value := LongInt(AValue);
+  _Unity.Value := Integer(AValue);
 end;
 
 class function TRawMaterial.InternalMetadataStr: string;
