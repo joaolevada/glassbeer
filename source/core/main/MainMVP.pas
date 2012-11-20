@@ -43,7 +43,8 @@ uses
   ,LocationMVP
   ,MashMVP
   ,ContactMVP
-  ,EquipmentMVP;
+  ,EquipmentMVP
+  ,EquipmentProfileMVP;
 
 { TMainFormPresenter }
 
@@ -60,6 +61,7 @@ begin
   BindPresenter(TMashQueryPresenter, 'MashMenuItem');
   BindPresenter(TContactQueryPresenter, 'ContactMenuItem');
   BindPresenter(TEquipmentQueryPresenter, 'EquipmentMenuItem');
+  BindPresenter(TEquipmentProfileQueryPresenter, 'EquipmentProfileMenu');
   { sample commands, to be implemented very soon... }
   //BindCommand(TProprietarioSetupCommand2, 'Proprietario1');
   PressUserData.Logon('', '');

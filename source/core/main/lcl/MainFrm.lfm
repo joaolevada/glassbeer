@@ -39,6 +39,9 @@ object MainForm: TMainForm
       object EquipmentMenuItem: TMenuItem
         Caption = 'Equipamentos...'
       end
+      object EquipmentProfileMenu: TMenuItem
+        Caption = 'New Item15'
+      end
       object MenuItem1: TMenuItem
         Caption = '-'
       end

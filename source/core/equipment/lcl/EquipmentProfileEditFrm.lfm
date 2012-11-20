@@ -1,0 +1,177 @@
+inherited EquipmentProfileEditForm: TEquipmentProfileEditForm
+  Height = 292
+  Width = 643
+  Caption = 'Perfil de equipamento'
+  ClientHeight = 292
+  ClientWidth = 643
+  inherited BottomPanel: TPanel
+    Top = 238
+    Width = 643
+    ClientWidth = 643
+    inherited SaveButton: TBitBtn
+      Left = 402
+    end
+    inherited CancelButton: TBitBtn
+      Left = 522
+    end
+  end
+  inherited EditPageControl: TPageControl
+    Height = 238
+    Width = 643
+    inherited MainTab: TTabSheet
+      ClientHeight = 211
+      ClientWidth = 635
+      object CodeLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 45
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Código'
+        ParentColor = False
+      end
+      object CodeEdit: TEdit[1]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'CodeEdit'
+      end
+      object NameLabel: TLabel[2]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = CodeLabel
+        Left = 218
+        Height = 15
+        Top = 4
+        Width = 37
+        BorderSpacing.Left = 16
+        Caption = 'Nome'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[3]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 21
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'NameEdit'
+      end
+      object GrainAbsorptionLabel: TLabel[4]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideTop.Control = CodeEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 177
+        BorderSpacing.Top = 8
+        Caption = 'Absorção l. água / kg. malte'
+        ParentColor = False
+      end
+      object GrainAbsorptionEdit: TEdit[5]
+        AnchorSideLeft.Control = GrainAbsorptionLabel
+        AnchorSideTop.Control = GrainAbsorptionLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'GrainAbsorptionEdit'
+      end
+      object EvaporationRateLabel: TLabel[6]
+        AnchorSideLeft.Control = GrainAbsorptionEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = NameEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 15
+        Top = 51
+        Width = 129
+        BorderSpacing.Left = 16
+        BorderSpacing.Top = 8
+        Caption = 'Taxa de evaporação'
+        ParentColor = False
+      end
+      object EvaporationRateEdit: TEdit[7]
+        AnchorSideLeft.Control = EvaporationRateLabel
+        AnchorSideTop.Control = EvaporationRateLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 218
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'EvaporationRateEdit'
+      end
+      object KettleToFermenterLossLabel: TLabel[8]
+        AnchorSideLeft.Control = EvaporationRateEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = NameEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 432
+        Height = 15
+        Top = 51
+        Width = 197
+        BorderSpacing.Left = 16
+        BorderSpacing.Top = 8
+        Caption = 'Perda da ferv. pro fermentador'
+        ParentColor = False
+      end
+      object KettleToFermenterLossEdit: TEdit[9]
+        AnchorSideLeft.Control = KettleToFermenterLossLabel
+        AnchorSideTop.Control = KettleToFermenterLossLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 432
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 4
+        Text = 'KettleToFermenterLossEdit'
+      end
+      object RemarksLabel: TLabel[10]
+        AnchorSideLeft.Control = GrainAbsorptionLabel
+        AnchorSideTop.Control = GrainAbsorptionEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 98
+        Width = 83
+        BorderSpacing.Top = 8
+        Caption = 'Observações'
+        ParentColor = False
+      end
+      object RemarksMemo: TMemo[11]
+        AnchorSideLeft.Control = RemarksLabel
+        AnchorSideTop.Control = RemarksLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 90
+        Top = 115
+        Width = 356
+        BorderSpacing.Top = 2
+        Lines.Strings = (
+          'RemarksMemo'
+        )
+        ScrollBars = ssAutoBoth
+        TabOrder = 5
+      end
+    end
+  end
+end
