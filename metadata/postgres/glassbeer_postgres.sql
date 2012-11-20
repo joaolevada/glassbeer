@@ -285,6 +285,18 @@ create table TEquipment (
 alter table TEquipment add constraint PK_TEquipment
   primary key (Id);
 
+create table TEquipmentProfile (
+  Id bigint not null,
+  ClassId bigint not null,
+  UpdateCount integer not null,
+  BasicUserRecordData bigint,
+  GrainAbsorption double precision,
+  EvaporationRate double precision,
+  KettleToFermenterLoss double precision);
+
+alter table TEquipmentProfile add constraint PK_TEquipmentProfile
+  primary key (Id);
+
 create table TFermenter (
   Id bigint not null,
   ClassId bigint not null,
@@ -788,6 +800,18 @@ alter table TEquipment add constraint FK_TEquipment_BasicUserRecordData
   on delete no action
   on update cascade;
 
+alter table TEquipmentProfile add constraint FK_TEquipmentProfile_ClassId
+  foreign key (ClassId)
+  references ModelClasses (Id)
+  on delete no action
+  on update cascade;
+
+alter table TEquipmentProfile add constraint FK_TEquipmentProfile_BasicUserRecordData
+  foreign key (BasicUserRecordData)
+  references TBasicUserRecordData (Id)
+  on delete no action
+  on update cascade;
+
 alter table TFermenter add constraint FK_TFermenter_ClassId
   foreign key (ClassId)
   references ModelClasses (Id)
@@ -979,6 +1003,7 @@ alter table TState add constraint FK_TState_Country
   references TCountry (Id)
   on delete no action
   on update cascade;
+
 
 /* User generated SQL */
 

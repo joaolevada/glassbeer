@@ -1,7 +1,3 @@
-create table Internals (
-  DBVersion integer
-);
-
 create table MshIt_GeneralLog (
   Id bigint not null,
   MshItId bigint not null,

@@ -34,7 +34,7 @@ uses
   EquipmentProfileMVP;
 
 initialization
-  PressXCLForm(TEquipmentProfileEditPresenter, TEquipmentProfileForm);
+  PressXCLForm(TEquipmentProfileEditPresenter, TEquipmentProfileEditForm);
 
 {$R *.lfm}
 

@@ -40,7 +40,7 @@ object MainForm: TMainForm
         Caption = 'Equipamentos...'
       end
       object EquipmentProfileMenu: TMenuItem
-        Caption = 'New Item15'
+        Caption = 'Perfil de equipamento...'
       end
       object MenuItem1: TMenuItem
         Caption = '-'

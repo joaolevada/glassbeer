@@ -45,7 +45,7 @@ begin
   Result := 'BasicUserRecordData.Code(198, "Código");' +
     'BasicUserRecordData.Name(356, "Nome");' +
     'GrainAbsorption(99, "Absor. água");' +
-    'EvaporationRate(99, "Tx. evap. (minuto)")' +
+    'EvaporationRate(99, "Tx. evap. [minuto]")' +
     'KettleToFermenterLoss(99, "Perda ferv. p/ ferm.")';
 end;
 
@@ -64,6 +64,7 @@ end;
 
 initialization
   TEquipmentProfileEditPresenter.RegisterBO(TEquipmentProfile);
+  TEquipmentProfileQueryPresenter.RegisterBO(TEquipmentProfileQuery);
 
 end.
 

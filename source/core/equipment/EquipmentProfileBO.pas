@@ -39,7 +39,7 @@ implementation
 
 class function TEquipmentProfileQuery.InternalMetadataStr: string;
 begin
-  Result := 'TEquipmentProfileQuery(TEquipmentProfile) (' +;
+  Result := 'TEquipmentProfileQuery(TEquipmentProfile) (' +
     'Code: PlainString(20) MatchType=mtContains DataName="BasicUserRecordData.Code";' +
     'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
     ')';

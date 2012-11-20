@@ -22,7 +22,7 @@ uses
   PersonContactLabelEditFrm, ContactQueryFrm, PersonContactEditFrm, EquipmentBO,
   EquipmentMVP, EquipmentEditFrm, EquipmentQueryFrm, MashItemTemperatureEditFrm,
   MashItemGravityEditFrm, GeneralLogEditFrm, LogBO, LogMVP, EquipmentProfileBO,
-  EquipmentProfileEditFrm;
+  EquipmentProfileEditFrm, EquipmentProfileQueryFrm;
 
 {$R *.res}
 
