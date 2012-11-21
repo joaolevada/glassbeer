@@ -9324,7 +9324,7 @@
 <XPD:ATTR name="Left" type="integer">680</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">76</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">202</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">95</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">160</XPD:ATTR>
 <XPD:REF name="Model">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="OZ9roVmwy0q0JAU+fiRUkAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="beMKsicl7k6o/exf9Lp7kwAA">
@@ -14494,7 +14494,7 @@
 <XPD:REF name="Views[1]">TzKLOWR5E0OpQlJgyI/n1wAA</XPD:REF>
 <XPD:REF name="Views[2]">ZMLNjzBvykmQHGRoWwNjnwAA</XPD:REF>
 <XPD:REF name="Views[3]">Hqdu6FWv8EmRTXEdqppy8AAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">4</XPD:ATTR>
+<XPD:ATTR name="#Attributes" type="integer">9</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="eJaMla9JWkCS3sxwIJxZMwAA">
 <XPD:ATTR name="Name" type="string">GrainWeight</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Double</XPD:ATTR>
@@ -14513,6 +14513,31 @@
 <XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="66MoW6+xAk21auTKX6by9wAA">
 <XPD:ATTR name="Name" type="string">MashItem</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">TMashItem #Reference</XPD:ATTR>
+<XPD:REF name="Owner">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="ozfvMYa7O06xdB1+IWRiHgAA">
+<XPD:ATTR name="Name" type="string">StartWater</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">Double</XPD:ATTR>
+<XPD:REF name="Owner">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[5]" type="UMLAttribute" guid="5Xqo1ibY90C0e/WvMO+bOQAA">
+<XPD:ATTR name="Name" type="string">SpargeWater</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">Double</XPD:ATTR>
+<XPD:REF name="Owner">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[6]" type="UMLAttribute" guid="JI1HCDtj9EOxdTdzBb3tXgAA">
+<XPD:ATTR name="Name" type="string">TotalWater</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">Double</XPD:ATTR>
+<XPD:REF name="Owner">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[7]" type="UMLAttribute" guid="QEnmpmZFlkuQH8/Oyuwe3gAA">
+<XPD:ATTR name="Name" type="string">EvaporationLoss</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">Double</XPD:ATTR>
+<XPD:REF name="Owner">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[8]" type="UMLAttribute" guid="4SJRDQLgPEKuEPO2dtNEjQAA">
+<XPD:ATTR name="Name" type="string">GrainLoss</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">Double</XPD:ATTR>
 <XPD:REF name="Owner">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>

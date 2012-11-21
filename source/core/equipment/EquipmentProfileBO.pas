@@ -33,12 +33,46 @@ type
     class function InternalMetadataStr: string; override;
   end;
 
+  { TWaterCalculator }
+
   TWaterCalculator = class(TCustomObject)
-    _GrainWeight: TPressDouble;
+    _GrainAmount: TPressDouble;
     _MashWaterRate: TPressDouble;
+    _Profile: TPressReference;
+    _MashItem: TPressReference;
+    _StartWater: TPressDouble;
+    _SpargeWater: TPressDouble;
+    _TotalWater: TPressDouble;
+    _EvaporationLoss: TPressDouble;
+    _GrainLoss: TPressDouble;
+  protected
+    class function InternalMetadataStr: string; override;
+    procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
   end;
 
 implementation
+
+{ TWaterCalculator }
+
+class function TWaterCalculator.InternalMetadataStr: string;
+begin
+  Result := 'TWaterCalculator (' +
+    'GrainAmount: Double;' +
+    'MashWaterRate: Double;' +
+    'Profile: Reference(TEquipmentProfile);' +
+    'MashItem: Reference(TMashItem);' +
+    'StartWater: Double Calc(GrainAmount, MashWaterRate, MashItem);' +
+    'SpargeWater: Double Calc(StartWater);' +
+    'TotalWater: Double Calc(StartWater, SpargeWater);' +
+    'EvaporationLoss: Double Calc(Profile);' +
+    'GrainLoss: Double Calc(GrainAmount);' +
+    ')';
+end;
+
+procedure TWaterCalculator.InternalCalcAttribute(AAttribute: TPressAttribute);
+begin
+  { TODO -ojoaolevada : Implement TWaterCalculator.InternalCalcAttribute }
+end;
 
 { TEquipmentProfileQuery }
 
@@ -65,10 +99,13 @@ end;
 initialization
   TEquipmentProfile.RegisterClass;
   TEquipmentProfileQuery.RegisterClass;
+  TWaterCalculator.RegisterClass;
 
 finalization
   TEquipmentProfile.UnregisterClass;
   TEquipmentProfileQuery.UnregisterClass;
+  TWaterCalculator.UnregisterClass;
+
 
 end.
 

@@ -26,10 +26,33 @@ type
     function InternalQueryItemsDisplayNames: string; override;
   end;
 
+  { TWaterCalculatorEditPresenter }
+
+  TWaterCalculatorEditPresenter = class(TCustomEditPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
 implementation
 
 uses
   EquipmentProfileBO;
+
+{ TWaterCalculatorEditPresenter }
+
+procedure TWaterCalculatorEditPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('GrainAmount', 'GrainAmountEdit');
+  CreateSubPresenter('MashWaterRate', 'MashWaterRateEdit');
+  CreateSubPresenter('Profile', 'ProfileComboBox', 'BasicUserRecordData.Name');
+  CreateSubPresenter('MashItem', 'MashItemComboBox', 'Recipe.BasicUserRecordData.Name');
+  CreateSubPresenter('StartWater', 'StartWaterEdit');
+  CreateSubPresenter('SpargeWater', 'SpargeWaterEdit');
+  CreateSubPresenter('TotalWater', 'TotalWaterEdit');
+  CreateSubPresenter('EvaporatioLoss', 'EvaporatioLossEdit');
+  CreateSubPresenter('GrainLoss', 'GrainLossEdit');
+end;
 
 { TEquipmentProfileQueryPresenter }
 
@@ -65,6 +88,7 @@ end;
 initialization
   TEquipmentProfileEditPresenter.RegisterBO(TEquipmentProfile);
   TEquipmentProfileQueryPresenter.RegisterBO(TEquipmentProfileQuery);
+  TWaterCalculatorEditPresenter.RegisterBO(TWaterCalculator);
 
 end.
 
