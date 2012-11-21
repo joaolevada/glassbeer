@@ -33,6 +33,11 @@ type
     class function InternalMetadataStr: string; override;
   end;
 
+  TWaterCalculator = class(TCustomObject)
+    _GrainWeight: TPressDouble;
+    _MashWaterRate: TPressDouble;
+  end;
+
 implementation
 
 { TEquipmentProfileQuery }

@@ -9286,7 +9286,7 @@
 <XPD:REF name="DiagramOwner">wn7Zh6KOLkWU36YmyAV/hwAA</XPD:REF>
 <XPD:OBJ name="DiagramView" type="UMLClassDiagramView" guid="k33996SEwEeEe0Xuv0CQDwAA">
 <XPD:REF name="Diagram">NjDCLim/hE2b+lW8cL54ywAA</XPD:REF>
-<XPD:ATTR name="#OwnedViews" type="integer">1</XPD:ATTR>
+<XPD:ATTR name="#OwnedViews" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="OwnedViews[0]" type="UMLClassView" guid="HnCFoua4tEeHSIJVJTzjBwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
@@ -9318,9 +9318,40 @@
 <XPD:REF name="Model">cQ4icxz2Uk2OXpAXbtVTYgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
+<XPD:OBJ name="OwnedViews[1]" type="UMLClassView" guid="GhDNe0EAHEyBLCJRqj/P9AAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">680</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">76</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">202</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">95</XPD:ATTR>
+<XPD:REF name="Model">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
+<XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="OZ9roVmwy0q0JAU+fiRUkAAA">
+<XPD:OBJ name="NameLabel" type="LabelView" guid="beMKsicl7k6o/exf9Lp7kwAA">
+<XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">TWaterCalculator</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="LabelView" guid="HkTUMaG4HkmBp9d7ruHzpQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="LabelView" guid="SFMTi1iQNEW0PD5yAA0w2gAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:ATTR name="#OwnedElements" type="integer">245</XPD:ATTR>
+<XPD:OBJ name="AttributeCompartment" type="UMLAttributeCompartmentView" guid="TzKLOWR5E0OpQlJgyI/n1wAA">
+<XPD:REF name="Model">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OperationCompartment" type="UMLOperationCompartmentView" guid="ZMLNjzBvykmQHGRoWwNjnwAA">
+<XPD:REF name="Model">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="TemplateParameterCompartment" type="UMLTemplateParameterCompartmentView" guid="Hqdu6FWv8EmRTXEdqppy8AAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:REF name="Model">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:ATTR name="#OwnedElements" type="integer">246</XPD:ATTR>
 <XPD:OBJ name="OwnedElements[0]" type="UMLClass" guid="llcPdxfpOkOy1rTHCXFQnQAA">
 <XPD:ATTR name="Name" type="string">TCustomObject</XPD:ATTR>
 <XPD:REF name="Namespace">wn7Zh6KOLkWU36YmyAV/hwAA</XPD:REF>
@@ -14453,6 +14484,36 @@
 <XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="HRU+9ymxqkSDttutU12togAA">
 <XPD:ATTR name="Name" type="string">KettleToFermenterLoss Double</XPD:ATTR>
 <XPD:REF name="Owner">cQ4icxz2Uk2OXpAXbtVTYgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[245]" type="UMLClass" guid="UR+yy2jO5kWjFurFEtNC6AAA">
+<XPD:ATTR name="Name" type="string">TWaterCalculator</XPD:ATTR>
+<XPD:REF name="Namespace">wn7Zh6KOLkWU36YmyAV/hwAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">GhDNe0EAHEyBLCJRqj/P9AAA</XPD:REF>
+<XPD:REF name="Views[1]">TzKLOWR5E0OpQlJgyI/n1wAA</XPD:REF>
+<XPD:REF name="Views[2]">ZMLNjzBvykmQHGRoWwNjnwAA</XPD:REF>
+<XPD:REF name="Views[3]">Hqdu6FWv8EmRTXEdqppy8AAA</XPD:REF>
+<XPD:ATTR name="#Attributes" type="integer">4</XPD:ATTR>
+<XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="eJaMla9JWkCS3sxwIJxZMwAA">
+<XPD:ATTR name="Name" type="string">GrainWeight</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">Double</XPD:ATTR>
+<XPD:REF name="Owner">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="8y/Dien1n0usUOJsmY3wFAAA">
+<XPD:ATTR name="Name" type="string">MashWaterRate</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">Double</XPD:ATTR>
+<XPD:REF name="Owner">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="8WxmAVRwXkm+4MJMxerPdgAA">
+<XPD:ATTR name="Name" type="string">Profile</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">TEquipmentProfile #Reference</XPD:ATTR>
+<XPD:REF name="Owner">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="66MoW6+xAk21auTKX6by9wAA">
+<XPD:ATTR name="Name" type="string">MashItem</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">TMashItem #Reference</XPD:ATTR>
+<XPD:REF name="Owner">UR+yy2jO5kWjFurFEtNC6AAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
