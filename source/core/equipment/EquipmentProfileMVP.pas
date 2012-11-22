@@ -52,6 +52,7 @@ begin
   CreateSubPresenter('TotalWater', 'TotalWaterEdit');
   CreateSubPresenter('EvaporatioLoss', 'EvaporatioLossEdit');
   CreateSubPresenter('GrainLoss', 'GrainLossEdit');
+  CreateSubPresenter('TotalLoss', 'TotalLossEdit');
 end;
 
 { TEquipmentProfileQueryPresenter }
