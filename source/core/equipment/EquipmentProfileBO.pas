@@ -9,7 +9,8 @@ uses
   SysUtils,
   CustomBO,
   PressAttributes,
-  BasicUserRecordDataBO;
+  BasicUserRecordDataBO,
+  MashBO;
 
 type
 
@@ -45,6 +46,7 @@ type
     _TotalWater: TPressDouble;
     _EvaporationLoss: TPressDouble;
     _GrainLoss: TPressDouble;
+    _TotalLoss: TPressDouble;
   protected
     class function InternalMetadataStr: string; override;
     procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
@@ -66,12 +68,55 @@ begin
     'TotalWater: Double Calc(StartWater, SpargeWater);' +
     'EvaporationLoss: Double Calc(Profile);' +
     'GrainLoss: Double Calc(GrainAmount);' +
+    'TotalLoss: Double Calc(TotalWater);'
     ')';
 end;
 
 procedure TWaterCalculator.InternalCalcAttribute(AAttribute: TPressAttribute);
+var
+  VMashItem: TMashItem;
+  VProfile: TEquipmentProfile;
+  VDifVolumeStartWater: Double;
 begin
-  { TODO -ojoaolevada : Implement TWaterCalculator.InternalCalcAttribute }
+  VMashItem := _MashItem.Value as TMashItem;
+  VProfile := _Profile.Value as TEquipmentProfile;
+  if AAttribute = _StartWater then
+  begin
+    //if Assigned(VMashItem) then
+      _StartWater.Value := GrainAmount * MashWaterRate;
+  end
+  else if AAttribute = _SpargeWater then
+  begin
+    if Assigned(VMashItem) then
+    begin
+      VDifVolumeStartWater := VMashItem.Volume - GrainLoss;
+      _SpargeWater.Value := VDifVolumeStartWater +
+        VProfile.KettleToFermenterLoss + GrainLoss + EvaporationLoss;
+      VMashItem.Volume := ;
+    end;
+  end
+  else if AAttribute = _EvaporationLoss then
+  begin
+    if Assigned(VProfile) and Assigned(VMashItem) then
+      _EvaporationLoss.Value := VMashItem.BoilTime * VProfile.EvaporationRate
+    else
+      _EvaporationLoss.Value := 0;
+  end
+  else if AAttribute = _GrainLoss then
+  begin
+    if Assigned(VProfile) then
+      _GrainLoss.Value := _GrainAmount.Value * VProfile.GrainAbsorption
+    else
+      _GrainLoss.Value := 0;
+  end
+  else if AAtribute := _TotalLoss then
+  begin
+    if Assigned(VProfile) then
+      _TotalLoss.Value := _GrainLoss.Value + _EvaporationLoss.Value +
+        VProfile._KettleToFermenterLoss.Value
+    else
+      _TotalLoss := 0;
+  end;
 end;
 
 { TEquipmentProfileQuery }
