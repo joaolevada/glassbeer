@@ -1,38 +1,38 @@
 inherited WaterCalculatorEditForm: TWaterCalculatorEditForm
   Left = 349
-  Height = 523
+  Height = 268
   Top = 166
-  Width = 582
+  Width = 627
   Caption = 'Calculadora de água para brassagem'
-  ClientHeight = 523
-  ClientWidth = 582
+  ClientHeight = 268
+  ClientWidth = 627
   inherited BottomPanel: TPanel
-    Top = 469
-    Width = 582
-    ClientWidth = 582
+    Top = 214
+    Width = 627
+    ClientWidth = 627
     inherited SaveButton: TBitBtn
-      Left = 341
+      Left = 386
       Visible = False
     end
     inherited CancelButton: TBitBtn
-      Left = 461
+      Left = 506
     end
   end
   inherited EditPageControl: TPageControl
-    Height = 469
-    Width = 582
+    Height = 214
+    Width = 627
     inherited MainTab: TTabSheet
-      ClientHeight = 442
-      ClientWidth = 574
+      ClientHeight = 187
+      ClientWidth = 619
       object GrainAmountLabel: TLabel[0]
         AnchorSideTop.Control = MashItemRecipeLabel
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
         Top = 48
-        Width = 116
+        Width = 99
         BorderSpacing.Top = 8
-        Caption = 'GrainAmountLabel'
+        Caption = 'Peso dos grãos'
         ParentColor = False
       end
       object GrainAmountEdit: TEdit[1]
@@ -48,42 +48,51 @@ inherited WaterCalculatorEditForm: TWaterCalculatorEditForm
         Text = 'GrainAmountEdit'
       end
       object MashWaterRateLabel: TLabel[2]
-        Left = 16
+        AnchorSideLeft.Control = GrainAmountEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = GrainAmountLabel
+        Left = 210
         Height = 15
-        Top = 197
-        Width = 136
-        Caption = 'MashWaterRateLabel'
+        Top = 48
+        Width = 142
+        BorderSpacing.Left = 8
+        Caption = 'Proporção água/grãos'
         ParentColor = False
       end
       object MashWaterRateEdit: TEdit[3]
         AnchorSideLeft.Control = MashWaterRateLabel
         AnchorSideTop.Control = MashWaterRateLabel
         AnchorSideTop.Side = asrBottom
-        Left = 16
+        Left = 210
         Height = 22
-        Top = 214
+        Top = 65
         Width = 198
         BorderSpacing.Top = 2
         TabOrder = 1
         Text = 'MashWaterRateEdit'
       end
       object ProfileLabel: TLabel[4]
-        Left = 20
+        AnchorSideLeft.Control = MashWaterRateEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = GrainAmountLabel
+        Left = 416
         Height = 15
-        Top = 245
-        Width = 74
-        Caption = 'ProfileLabel'
+        Top = 48
+        Width = 32
+        BorderSpacing.Left = 8
+        Caption = 'Perfil'
         ParentColor = False
       end
       object ProfileComboBox: TComboBox[5]
         AnchorSideLeft.Control = ProfileLabel
         AnchorSideTop.Control = ProfileLabel
         AnchorSideTop.Side = asrBottom
-        Left = 20
+        Left = 416
         Height = 22
-        Top = 262
+        Top = 65
         Width = 198
         BorderSpacing.Top = 2
+        Color = 6408191
         ItemHeight = 14
         TabOrder = 2
         Text = 'ProfileComboBox'
@@ -120,10 +129,15 @@ inherited WaterCalculatorEditForm: TWaterCalculatorEditForm
         ParentFont = False
       end
       object StartWaterLabel: TLabel[8]
-        Left = 24
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = GrainLossEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
         Height = 15
-        Top = 297
+        Top = 142
         Width = 105
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
         Caption = 'StartWaterLabel'
         ParentColor = False
       end
@@ -131,22 +145,34 @@ inherited WaterCalculatorEditForm: TWaterCalculatorEditForm
         AnchorSideLeft.Control = StartWaterLabel
         AnchorSideTop.Control = StartWaterLabel
         AnchorSideTop.Side = asrBottom
-        Left = 24
+        Left = 4
         Height = 22
-        Top = 314
+        Top = 159
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlue
+        Font.Height = -12
+        Font.Name = 'Verdana'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
         ParentShowHint = False
         ShowHint = True
         TabOrder = 3
         Text = 'StartWaterEdit'
       end
       object SpargeWaterLabel: TLabel[10]
-        Left = 24
+        AnchorSideLeft.Control = StartWaterEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = StartWaterLabel
+        Left = 210
         Height = 15
-        Top = 345
+        Top = 142
         Width = 119
+        BorderSpacing.Left = 8
         Caption = 'SpargeWaterLabel'
         ParentColor = False
       end
@@ -154,22 +180,34 @@ inherited WaterCalculatorEditForm: TWaterCalculatorEditForm
         AnchorSideLeft.Control = SpargeWaterLabel
         AnchorSideTop.Control = SpargeWaterLabel
         AnchorSideTop.Side = asrBottom
-        Left = 24
+        Left = 210
         Height = 22
-        Top = 362
+        Top = 159
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlue
+        Font.Height = -12
+        Font.Name = 'Verdana'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
         ParentShowHint = False
         ShowHint = True
         TabOrder = 4
         Text = 'SpargeWaterEdit'
       end
       object TotalWaterLabel: TLabel[12]
-        Left = 24
+        AnchorSideLeft.Control = SpargeWaterEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = SpargeWaterLabel
+        Left = 416
         Height = 15
-        Top = 397
+        Top = 142
         Width = 105
+        BorderSpacing.Left = 8
         Caption = 'TotalWaterLabel'
         ParentColor = False
       end
@@ -177,81 +215,123 @@ inherited WaterCalculatorEditForm: TWaterCalculatorEditForm
         AnchorSideLeft.Control = TotalWaterLabel
         AnchorSideTop.Control = TotalWaterLabel
         AnchorSideTop.Side = asrBottom
-        Left = 24
+        Left = 416
         Height = 22
-        Top = 414
+        Top = 159
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlue
+        Font.Height = -12
+        Font.Name = 'Verdana'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
         ParentShowHint = False
         ShowHint = True
         TabOrder = 5
         Text = 'TotalWaterEdit'
       end
       object EvaporationLossLabel: TLabel[14]
-        Left = 256
+        AnchorSideLeft.Control = GrainLossEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = GrainLossLabel
+        Left = 210
         Height = 15
-        Top = 141
-        Width = 140
-        Caption = 'EvaporationLossLabel'
+        Top = 95
+        Width = 136
+        BorderSpacing.Left = 8
+        Caption = 'Perda na evaporação'
         ParentColor = False
       end
       object EvaporationLossEdit: TEdit[15]
         AnchorSideLeft.Control = EvaporationLossLabel
         AnchorSideTop.Control = EvaporationLossLabel
         AnchorSideTop.Side = asrBottom
-        Left = 256
+        Left = 210
         Height = 22
-        Top = 158
+        Top = 112
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -12
+        Font.Name = 'Verdana'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
         ParentShowHint = False
         ShowHint = True
         TabOrder = 6
         Text = 'EvaporationLossEdit'
       end
       object GrainLossLabel: TLabel[16]
-        Left = 256
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = GrainAmountEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
         Height = 15
-        Top = 193
-        Width = 97
-        Caption = 'GrainLossLabel'
+        Top = 95
+        Width = 130
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Perda de litro p/ kg. '
         ParentColor = False
       end
       object GrainLossEdit: TEdit[17]
         AnchorSideLeft.Control = GrainLossLabel
         AnchorSideTop.Control = GrainLossLabel
         AnchorSideTop.Side = asrBottom
-        Left = 256
+        Left = 4
         Height = 22
-        Top = 210
+        Top = 112
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -12
+        Font.Name = 'Verdana'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
         ParentShowHint = False
         ShowHint = True
         TabOrder = 7
         Text = 'GrainLossEdit'
       end
       object TotalLossLabel: TLabel[18]
-        Left = 252
+        AnchorSideLeft.Control = EvaporationLossEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = EvaporationLossLabel
+        Left = 416
         Height = 15
-        Top = 245
-        Width = 95
-        Caption = 'TotalLossLabel'
+        Top = 95
+        Width = 127
+        BorderSpacing.Left = 8
+        Caption = 'Perda de água total'
         ParentColor = False
       end
       object TotalLossEdit: TEdit[19]
         AnchorSideLeft.Control = TotalLossLabel
         AnchorSideTop.Control = TotalLossLabel
         AnchorSideTop.Side = asrBottom
-        Left = 252
+        Left = 416
         Height = 22
-        Top = 262
+        Top = 112
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -12
+        Font.Name = 'Verdana'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
         ParentShowHint = False
         ShowHint = True
         TabOrder = 8

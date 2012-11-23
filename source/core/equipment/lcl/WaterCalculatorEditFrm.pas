@@ -38,7 +38,7 @@ type
 implementation
 
 uses
-  TEquipmentProfileMVP,
+  EquipmentProfileMVP,
   PressXCLBroker;
 
 {$R *.lfm}

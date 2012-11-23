@@ -46,7 +46,7 @@ begin
   CreateSubPresenter('GrainAmount', 'GrainAmountEdit');
   CreateSubPresenter('MashWaterRate', 'MashWaterRateEdit');
   CreateSubPresenter('Profile', 'ProfileComboBox', 'BasicUserRecordData.Name');
-  CreateSubPresenter('MashItem', 'MashItemComboBox', 'Recipe.BasicUserRecordData.Name');
+  CreateSubPresenter('MashItem.Recipe.BasicUserRecordData.Name', 'MashItemRecipeLabel');
   CreateSubPresenter('StartWater', 'StartWaterEdit');
   CreateSubPresenter('SpargeWater', 'SpargeWaterEdit');
   CreateSubPresenter('TotalWater', 'TotalWaterEdit');

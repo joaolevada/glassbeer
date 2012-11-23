@@ -48,6 +48,8 @@ type
     procedure InitPresenter; override;
   end;
 
+  TWaterCalcCommand:
+
 implementation
 
 uses
