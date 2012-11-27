@@ -41,6 +41,7 @@ type
     GeneralLogTabSheet: TTabSheet;
     TotalWaterEdit: TEdit;
     TotalWaterLabel: TLabel;
+    WaterCalculatorButton: TBitBtn;
     WaterTabSheet: TTabSheet;
     TemperatureGroupBox: TGroupBox;
     TemperatureMeasuredAtEdit: TEdit;
@@ -106,6 +107,8 @@ begin
   MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddGeneralLogSpeedButton.Glyph);
   MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditGeneralLogSpeedButton.Glyph);
   MainForm.Icons16ImageList.GetBitmap(IMG_DELETE, RemoveGeneralLogSpeedButton.Glyph);
+
+  MainForm.Icons32ImageList.GetBitmap(IMG_CALCULATOR, WaterCalculatorButton.Glyph);
 end;
 
 initialization

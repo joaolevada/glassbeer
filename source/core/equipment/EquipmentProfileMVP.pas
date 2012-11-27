@@ -7,7 +7,9 @@ interface
 uses
   Classes,
   SysUtils,
-  CustomMVP;
+  CustomMVP,
+  PressMVPCommand,
+  PressMVPPresenter;
 
 type
 
@@ -28,21 +30,64 @@ type
 
   { TWaterCalculatorEditPresenter }
 
-  TWaterCalculatorEditPresenter = class(TCustomEditPresenter)
+  TWaterCalculatorEditPresenter = class(TPressMVPFormPresenter)
   protected
     procedure InitPresenter; override;
   end;
 
+  { TWaterCalculatorApplyCommand }
+
+  TWaterCalculatorApplyCommand = class(TPressMVPObjectCommand)
+  protected
+    procedure InternalExecute; override;
+  end;
+
+  { TWaterCalculatorCancelCommand }
+
+  TWaterCalculatorCancelCommand = class(TPressMVPObjectCommand)
+  protected
+    procedure InternalExecute; override;
+  end;
+
+
 implementation
 
 uses
-  EquipmentProfileBO;
+  EquipmentProfileBO,
+  MashBO;
+
+{ TWaterCalculatorCancelCommand }
+
+procedure TWaterCalculatorCancelCommand.InternalExecute;
+begin
+  Model.Close;
+end;
+
+{ TWaterCalculatorApplyCommand }
+
+procedure TWaterCalculatorApplyCommand.InternalExecute;
+var
+  VMashItem: TMashItem;
+  VWaterCalculator: TWaterCalculator;
+begin
+  VWaterCalculator := Model.Subject as TWaterCalculator;
+  if not Assigned(VWaterCalculator) then
+    Exit;
+  VMashItem := VWaterCalculator._MashItem.Value as TMashItem;
+  if not Assigned(VMashItem) then
+    Exit;
+  VMashItem.StartWater := VWaterCalculator.StartWater;
+  VMashItem.SpargeWater := VWaterCalculator.SpargeWater;
+  Model.Close;
+end;
 
 { TWaterCalculatorEditPresenter }
 
 procedure TWaterCalculatorEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
+  BindCommand(TWaterCalculatorApplyCommand, 'ApplyButton');
+  BindCommand(TWaterCalculatorCancelCommand, 'CancelButton');
   CreateSubPresenter('GrainAmount', 'GrainAmountEdit');
   CreateSubPresenter('MashWaterRate', 'MashWaterRateEdit');
   CreateSubPresenter('Profile', 'ProfileComboBox', 'BasicUserRecordData.Name');
@@ -50,9 +95,10 @@ begin
   CreateSubPresenter('StartWater', 'StartWaterEdit');
   CreateSubPresenter('SpargeWater', 'SpargeWaterEdit');
   CreateSubPresenter('TotalWater', 'TotalWaterEdit');
-  CreateSubPresenter('EvaporatioLoss', 'EvaporatioLossEdit');
+  CreateSubPresenter('EvaporationLoss', 'EvaporationLossEdit');
   CreateSubPresenter('GrainLoss', 'GrainLossEdit');
   CreateSubPresenter('TotalLoss', 'TotalLossEdit');
+  CreateSubPresenter('MashItem.VolumePretty', 'MashItemVolumeLabel');
 end;
 
 { TEquipmentProfileQueryPresenter }

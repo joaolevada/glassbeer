@@ -8,7 +8,8 @@ uses
   Classes,
   SysUtils,
   CustomMVP,
-  MashBO;
+  MashBO,
+  PressMVPCommand;
 
 type
 
@@ -48,13 +49,32 @@ type
     procedure InitPresenter; override;
   end;
 
-  TWaterCalcCommand:
+  { TWaterCalculatorCommand }
+
+  TWaterCalculatorCommand = class(TPressMVPObjectCommand)
+  protected
+    procedure InternalExecute; override;
+  end;
 
 implementation
 
 uses
   PressMVPPresenter,
-  PressMVPCommand;
+  EquipmentProfileBO,
+  EquipmentProfileMVP;
+
+{ TWaterCalculatorCommand }
+
+procedure TWaterCalculatorCommand.InternalExecute;
+var
+  VWaterCalc: TWaterCalculator;
+  VMashItem: TMashItem;
+begin
+  VWaterCalc := TWaterCalculator.Create;
+  VMashItem := Model.Subject as TMashItem;;
+  VWaterCalc._MashItem.Value := VMashItem;
+  TWaterCalculatorEditPresenter.Run(VWaterCalc);
+end;
 
 { TMashIngredientItemEditPresenter }
 
@@ -139,6 +159,8 @@ begin
   VGeneralPresenter := CreateDetailPresenter(VGeneralLogPresenter);
   VGeneralPresenter.CreateSubPresenter('RemarkedAt', 'GeneralLogRemarkedAtEdit');
   VGeneralPresenter.CreateSubPresenter('Remarks', 'GeneralLogRemarksMemo');
+
+  BindCommand(TWaterCalculatorCommand, 'WaterCalculatorButton');
 end;
 
 { TMashQueryPresenter }

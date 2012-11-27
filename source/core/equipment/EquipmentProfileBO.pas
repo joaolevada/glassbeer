@@ -200,7 +200,7 @@ begin
     'SpargeWater: Double Calc(StartWater, Profile, MashItem);' +
     'TotalWater: Double Calc(StartWater, SpargeWater);' +
     'EvaporationLoss: Double Calc(Profile, MashItem);' +
-    'GrainLoss: Double Calc(GrainAmount);' +
+    'GrainLoss: Double Calc(GrainAmount, Profile);' +
     'TotalLoss: Double Calc(GrainLoss, EvaporationLoss, Profile);' +
     ')';
 end;
@@ -210,9 +210,10 @@ var
   VMashItem: TMashItem;
   VProfile: TEquipmentProfile;
   VDifVolumeStartWater: Double;
+  f, f2, f3: Double;
 begin
-  VMashItem := _MashItem.Value as TMashItem;
-  VProfile := _Profile.Value as TEquipmentProfile;
+  VMashItem := Self._MashItem.Value as TMashItem;
+  VProfile := Self._Profile.Value as TEquipmentProfile;
   if AAttribute = _StartWater then
   begin
     //if Assigned(VMashItem) then
@@ -220,6 +221,7 @@ begin
   end
   else if AAttribute = _SpargeWater then
   begin
+    { TODO 1 -ojoaolevada -cbug : Verify and fix the SpargeWater attribute calculation }
     if Assigned(VMashItem) and Assigned(VProfile) then
     begin
       VDifVolumeStartWater := VMashItem.Volume - StartWater;
@@ -227,29 +229,48 @@ begin
         VProfile.KettleToFermenterLoss + GrainLoss + EvaporationLoss;
     end
     else
+    begin
       SpargeWater := 0;
+    end;
   end
   else if AAttribute = _EvaporationLoss then
   begin
     if Assigned(VProfile) and Assigned(VMashItem) then
-      EvaporationLoss := VMashItem.BoilTime * VProfile.EvaporationRate
+    begin
+      EvaporationLoss := VMashItem.BoilTime * VProfile.EvaporationRate;
+    end
     else
+    begin
       EvaporationLoss := 0;
+    end;
   end
   else if AAttribute = _GrainLoss then
   begin
     if Assigned(VProfile) then
-      GrainLoss := GrainAmount * VProfile.GrainAbsorption
+    begin
+      GrainLoss := GrainAmount * VProfile.GrainAbsorption;
+      f := GrainAmount;
+      f2 := VProfile.GrainAbsorption;
+      f3 := GrainLoss;
+    end
     else
+    begin
       GrainLoss := 0;
+    end;
   end
   else if AAttribute = _TotalLoss then
   begin
     if Assigned(VProfile) then
+    begin
       TotalLoss := GrainLoss + EvaporationLoss + VProfile.KettleToFermenterLoss
+    end
     else
+    begin
       TotalLoss := 0;
-  end;
+    end;
+  end
+  else if AAttribute = _TotalWater then
+    TotalWater := StartWater + SpargeWater;
 end;
 
 { TEquipmentProfileQuery }

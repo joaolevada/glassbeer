@@ -9,10 +9,11 @@ inherited MashItemEditForm: TMashItemEditForm
   end
   inherited EditPageControl: TPageControl
     Height = 305
-    ActivePage = GeneralLogTabSheet
-    TabIndex = 5
+    ActivePage = WaterTabSheet
+    TabIndex = 1
     inherited MainTab: TTabSheet
       ClientHeight = 278
+      ClientWidth = 0
       object RecipeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
@@ -222,6 +223,14 @@ inherited MashItemEditForm: TMashItemEditForm
         BorderSpacing.Top = 2
         TabOrder = 3
         Text = 'BoilTimeEdit'
+      end
+      object WaterCalculatorButton: TBitBtn
+        Left = 4
+        Height = 42
+        Top = 101
+        Width = 198
+        Caption = 'Calculadora de água...'
+        TabOrder = 4
       end
     end
     object IngredientsTabSheet: TTabSheet[2]

@@ -45,6 +45,7 @@ const
   IMG_USER = 5;
   IMG_FACTORY = 6;
   IMG_ZOOM = 7;
+  IMG_CALCULATOR = 8;
 
 implementation
 

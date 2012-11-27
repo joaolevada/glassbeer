@@ -79,6 +79,7 @@ type
     _TotalWater: TPressDouble;
     _BoilTime: TPressDouble;
     _GeneralLog: TPressParts;
+    _VolumePretty: TPressPlainString;
   private
     function GetBoilTime: Double;
     function GetOriginalGravity: Double;
@@ -86,6 +87,7 @@ type
     function GetStartWater: Double;
     function GetTotalWater: Double;
     function GetVolume: Double;
+    function GetVolumePretty: string;
     procedure SetBoilTime(AValue: Double);
     procedure SetOriginalGravity(const AValue: Double);
     procedure SetSpargeWater(AValue: Double);
@@ -103,6 +105,7 @@ type
     property SpargeWater: Double read GetSpargeWater write SetSpargeWater;
     property TotalWater: Double read GetTotalWater write SetTotalWater;
     property BoilTime: Double read GetBoilTime write SetBoilTime;
+    property VolumePretty: string read GetVolumePretty;
   end;
 
   { TMashIngredientItem }
@@ -250,7 +253,7 @@ end;
 
 function TMashItem.GetBoilTime: Double;
 begin
-  _BoilTime.Value;
+  Result := _BoilTime.Value;
 end;
 
 function TMashItem.GetOriginalGravity: Double;
@@ -276,6 +279,13 @@ end;
 function TMashItem.GetVolume: Double;
 begin
   Result := _Volume.Value;
+end;
+
+function TMashItem.GetVolumePretty: string;
+const
+  CLiters = '%.2f litro(s)';
+begin
+  Result := Format(CLiters, [Volume]);
 end;
 
 procedure TMashItem.SetBoilTime(AValue: Double);
@@ -322,6 +332,7 @@ begin
     'TotalWater: Double Calc(StartWater,SpargeWater);' +
     'BoilTime: Double;' +
     'GeneralLog: Parts(TGeneralLog);' +
+    'VolumePretty: PlainString(20) IsPersistent=False;' +
     ')';
 end;
 

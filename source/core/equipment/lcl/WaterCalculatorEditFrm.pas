@@ -6,45 +6,69 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Buttons, ComCtrls, StdCtrls, CustomEditFrm;
+  Buttons, StdCtrls, ComCtrls;
 
 type
 
+  { TWaterCalcEditForm }
+
   { TWaterCalculatorEditForm }
 
-  TWaterCalculatorEditForm = class(TCustomEditForm)
+  TWaterCalculatorEditForm = class(TForm)
+    ApplyButton: TBitBtn;
+    BottomPanel: TPanel;
+    CancelButton: TBitBtn;
+    EditPageControl: TPageControl;
+    EvaporationLossEdit: TEdit;
+    EvaporationLossLabel: TLabel;
     GrainAmountEdit: TEdit;
+    GrainAmountLabel: TLabel;
+    GrainLossEdit: TEdit;
+    GrainLossLabel: TLabel;
+    MainTab: TTabSheet;
     MashItemLabel: TLabel;
     MashItemRecipeLabel: TLabel;
+    MashItemVolumeLabel: TLabel;
     MashWaterRateEdit: TEdit;
-    GrainAmountLabel: TLabel;
     MashWaterRateLabel: TLabel;
-    ProfileLabel: TLabel;
     ProfileComboBox: TComboBox;
+    ProfileLabel: TLabel;
     SpargeWaterEdit: TEdit;
     SpargeWaterLabel: TLabel;
     StartWaterEdit: TEdit;
     StartWaterLabel: TLabel;
-    TotalWaterEdit: TEdit;
-    EvaporationLossEdit: TEdit;
-    GrainLossEdit: TEdit;
     TotalLossEdit: TEdit;
-    TotalWaterLabel: TLabel;
-    EvaporationLossLabel: TLabel;
-    GrainLossLabel: TLabel;
     TotalLossLabel: TLabel;
+    TotalWaterEdit: TEdit;
+    TotalWaterLabel: TLabel;
+  private
+    { private declarations }
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
+
 
 implementation
 
-uses
-  EquipmentProfileMVP,
-  PressXCLBroker;
-
 {$R *.lfm}
 
+uses
+  PressXCLBroker,
+  EquipmentProfileMVP,
+  MainFrm;
+
+{ TWaterCalculatorEditForm }
+
+constructor TWaterCalculatorEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons32ImageList.GetBitmap(IMG_ACCEPT, ApplyButton.Glyph);
+  MainForm.Icons32ImageList.GetBitmap(IMG_CANCEL, CancelButton.Glyph);
+end;
+  
 initialization
   PressXCLForm(TWaterCalculatorEditPresenter, TWaterCalculatorEditForm);
+  
 
 end.
 
