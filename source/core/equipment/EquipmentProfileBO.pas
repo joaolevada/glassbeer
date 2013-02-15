@@ -197,7 +197,8 @@ begin
     'Profile: Reference(TEquipmentProfile);' +
     'MashItem: Reference(TMashItem);' +
     'StartWater: Double Calc(GrainAmount, MashWaterRate, MashItem);' +
-    'SpargeWater: Double Calc(StartWater, Profile, MashItem);' +
+    'SpargeWater: Double Calc(StartWater, Profile, MashItem, GrainLoss, ' +
+    'EvaporationLoss);' +
     'TotalWater: Double Calc(StartWater, SpargeWater);' +
     'EvaporationLoss: Double Calc(Profile, MashItem);' +
     'GrainLoss: Double Calc(GrainAmount, Profile);' +

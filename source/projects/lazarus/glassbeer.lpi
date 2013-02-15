@@ -556,7 +556,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="26" Y="25"/>
-        <UsageCount Value="187"/>
+        <UsageCount Value="188"/>
       </Unit49>
       <Unit50>
         <Filename Value="..\..\core\fermenter\lcl\FermenterEventEditFrm.pas"/>
@@ -567,7 +567,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="18" Y="20"/>
-        <UsageCount Value="185"/>
+        <UsageCount Value="186"/>
       </Unit50>
       <Unit51>
         <Filename Value="..\..\core\fermenter\lcl\FermenterEventQueryFrm.pas"/>
@@ -578,7 +578,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="5"/>
         <CursorPos X="34" Y="30"/>
-        <UsageCount Value="185"/>
+        <UsageCount Value="186"/>
       </Unit51>
       <Unit52>
         <Filename Value="..\..\core\address\AddressBO.pas"/>
@@ -587,7 +587,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="199"/>
         <CursorPos X="22" Y="216"/>
-        <UsageCount Value="173"/>
+        <UsageCount Value="174"/>
         <Bookmarks Count="1">
           <Item0 X="5" Y="116" ID="1"/>
         </Bookmarks>
@@ -599,7 +599,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="199"/>
         <CursorPos X="47" Y="216"/>
-        <UsageCount Value="171"/>
+        <UsageCount Value="172"/>
       </Unit53>
       <Unit54>
         <Filename Value="..\..\core\address\lcl\AddressEditFrm.pas"/>
@@ -611,7 +611,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="37"/>
         <CursorPos X="25" Y="65"/>
-        <UsageCount Value="171"/>
+        <UsageCount Value="172"/>
       </Unit54>
       <Unit55>
         <Filename Value="..\..\core\address\lcl\AddressLabelEditFrm.pas"/>
@@ -622,7 +622,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="15" Y="34"/>
-        <UsageCount Value="168"/>
+        <UsageCount Value="169"/>
       </Unit55>
       <Unit56>
         <Filename Value="..\..\core\address\lcl\CityEditFrm.pas"/>
@@ -634,7 +634,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="22"/>
         <CursorPos X="26" Y="50"/>
-        <UsageCount Value="168"/>
+        <UsageCount Value="169"/>
       </Unit56>
       <Unit57>
         <Filename Value="..\..\core\address\lcl\StateEditFrm.pas"/>
@@ -646,7 +646,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="24"/>
         <CursorPos X="53" Y="39"/>
-        <UsageCount Value="167"/>
+        <UsageCount Value="168"/>
       </Unit57>
       <Unit58>
         <Filename Value="..\..\core\address\lcl\CountryEditFrm.pas"/>
@@ -658,7 +658,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="31" Y="15"/>
-        <UsageCount Value="167"/>
+        <UsageCount Value="168"/>
       </Unit58>
       <Unit59>
         <Filename Value="..\..\core\address\lcl\InternetAddressEditFrm.pas"/>
@@ -670,7 +670,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="17"/>
         <CursorPos X="21" Y="45"/>
-        <UsageCount Value="166"/>
+        <UsageCount Value="167"/>
       </Unit59>
       <Unit60>
         <Filename Value="..\..\core\address\lcl\InternetAddressLabelEditFrm.pas"/>
@@ -681,7 +681,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="21" Y="19"/>
-        <UsageCount Value="166"/>
+        <UsageCount Value="167"/>
       </Unit60>
       <Unit61>
         <Filename Value="..\..\core\address\lcl\NeighborhoodEditFrm.pas"/>
@@ -692,7 +692,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="67" Y="34"/>
-        <UsageCount Value="166"/>
+        <UsageCount Value="167"/>
       </Unit61>
       <Unit62>
         <Filename Value="..\..\core\address\lcl\PhoneEditFrm.pas"/>
@@ -704,7 +704,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="9"/>
         <CursorPos X="20" Y="16"/>
-        <UsageCount Value="166"/>
+        <UsageCount Value="167"/>
       </Unit62>
       <Unit63>
         <Filename Value="..\..\core\address\lcl\PhoneLabelEditFrm.pas"/>
@@ -715,7 +715,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="63" Y="34"/>
-        <UsageCount Value="166"/>
+        <UsageCount Value="167"/>
       </Unit63>
       <Unit64>
         <Filename Value="..\..\core\contact\ContactBO.pas"/>
@@ -724,7 +724,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="99"/>
         <CursorPos X="41" Y="104"/>
-        <UsageCount Value="164"/>
+        <UsageCount Value="165"/>
         <Bookmarks Count="1">
           <Item0 X="28" Y="81" ID="1"/>
         </Bookmarks>
@@ -736,7 +736,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="166"/>
         <CursorPos X="1" Y="166"/>
-        <UsageCount Value="164"/>
+        <UsageCount Value="165"/>
         <Bookmarks Count="1">
           <Item0 X="4" Y="166" ID="4"/>
         </Bookmarks>
@@ -751,7 +751,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="39"/>
         <CursorPos X="26" Y="20"/>
-        <UsageCount Value="158"/>
+        <UsageCount Value="159"/>
       </Unit66>
       <Unit67>
         <Filename Value="..\..\core\contact\lcl\PersonEditFrm.pas"/>
@@ -763,7 +763,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="16"/>
         <CursorPos X="21" Y="22"/>
-        <UsageCount Value="156"/>
+        <UsageCount Value="157"/>
       </Unit67>
       <Unit68>
         <Filename Value="..\..\core\contact\lcl\CompanyEditFrm.pas"/>
@@ -775,7 +775,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="12"/>
         <CursorPos X="51" Y="55"/>
-        <UsageCount Value="156"/>
+        <UsageCount Value="157"/>
       </Unit68>
       <Unit69>
         <Filename Value="..\..\core\contact\lcl\PersonContactEditFrm.pas"/>
@@ -787,7 +787,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="24"/>
         <CursorPos X="38" Y="52"/>
-        <UsageCount Value="155"/>
+        <UsageCount Value="156"/>
       </Unit69>
       <Unit70>
         <Filename Value="..\..\core\contact\lcl\PersonContactLabelEditFrm.pas"/>
@@ -798,7 +798,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="79" Y="34"/>
-        <UsageCount Value="155"/>
+        <UsageCount Value="156"/>
       </Unit70>
       <Unit71>
         <Filename Value="..\..\core\contact\lcl\ContactQueryFrm.pas"/>
@@ -810,7 +810,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="8" Y="52"/>
-        <UsageCount Value="153"/>
+        <UsageCount Value="154"/>
       </Unit71>
       <Unit72>
         <Filename Value="..\..\core\contact\lcl\ContactQueryFrm.lfm"/>
@@ -828,7 +828,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="24" Y="57"/>
-        <UsageCount Value="110"/>
+        <UsageCount Value="111"/>
         <Loaded Value="True"/>
       </Unit73>
       <Unit74>
@@ -838,7 +838,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="14" Y="26"/>
-        <UsageCount Value="110"/>
+        <UsageCount Value="111"/>
       </Unit74>
       <Unit75>
         <Filename Value="..\..\core\equipment\lcl\EquipmentEditFrm.pas"/>
@@ -850,7 +850,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="16" Y="29"/>
-        <UsageCount Value="110"/>
+        <UsageCount Value="111"/>
       </Unit75>
       <Unit76>
         <Filename Value="..\..\core\equipment\lcl\EquipmentQueryFrm.pas"/>
@@ -862,7 +862,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="19" Y="16"/>
-        <UsageCount Value="110"/>
+        <UsageCount Value="111"/>
       </Unit76>
       <Unit77>
         <Filename Value="..\..\core\mash\MashItemLogBO.pas"/>
@@ -871,7 +871,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="73"/>
-        <UsageCount Value="107"/>
+        <UsageCount Value="108"/>
         <Bookmarks Count="1">
           <Item0 X="3" Y="19" ID="3"/>
         </Bookmarks>
@@ -883,7 +883,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="29"/>
         <CursorPos X="1" Y="33"/>
-        <UsageCount Value="107"/>
+        <UsageCount Value="108"/>
       </Unit78>
       <Unit79>
         <Filename Value="..\..\core\mash\lcl\MashItemTemperatureEditFrm.pas"/>
@@ -895,7 +895,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="3"/>
         <CursorPos X="34" Y="18"/>
-        <UsageCount Value="107"/>
+        <UsageCount Value="108"/>
       </Unit79>
       <Unit80>
         <Filename Value="..\..\core\mash\lcl\MashItemGravityEditFrm.pas"/>
@@ -907,7 +907,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="7"/>
         <CursorPos X="38" Y="22"/>
-        <UsageCount Value="106"/>
+        <UsageCount Value="107"/>
       </Unit80>
       <Unit81>
         <Filename Value="C:\lib\pressobjects\trunk\Source\Core\PressAttributes.pas"/>
@@ -927,7 +927,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="24" Y="17"/>
-        <UsageCount Value="99"/>
+        <UsageCount Value="100"/>
       </Unit82>
       <Unit83>
         <Filename Value="..\..\core\log\LogBO.pas"/>
@@ -936,7 +936,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="5"/>
         <CursorPos X="25" Y="22"/>
-        <UsageCount Value="99"/>
+        <UsageCount Value="100"/>
       </Unit83>
       <Unit84>
         <Filename Value="..\..\core\log\LogMVP.pas"/>
@@ -945,20 +945,19 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="42" Y="16"/>
-        <UsageCount Value="99"/>
+        <UsageCount Value="100"/>
       </Unit84>
       <Unit85>
         <Filename Value="..\..\core\equipment\EquipmentProfileBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="EquipmentProfileBO"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="210"/>
-        <CursorPos X="89" Y="224"/>
-        <UsageCount Value="91"/>
+        <TopLine Value="192"/>
+        <CursorPos X="59" Y="204"/>
+        <UsageCount Value="92"/>
         <Bookmarks Count="1">
-          <Item0 X="5" Y="265" ID="1"/>
+          <Item0 X="5" Y="266" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
       </Unit85>
@@ -970,7 +969,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="76"/>
         <CursorPos X="38" Y="96"/>
-        <UsageCount Value="91"/>
+        <UsageCount Value="92"/>
         <Loaded Value="True"/>
       </Unit86>
       <Unit87>
@@ -983,7 +982,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="11"/>
         <CursorPos X="34" Y="32"/>
-        <UsageCount Value="87"/>
+        <UsageCount Value="88"/>
       </Unit87>
       <Unit88>
         <Filename Value="..\..\core\equipment\lcl\EquipmentProfileQueryFrm.pas"/>
@@ -995,7 +994,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="27" Y="29"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="82"/>
       </Unit88>
       <Unit89>
         <Filename Value="C:\lib\pressobjects\trunk\Source\Core\PressSubject.pas"/>
@@ -1012,11 +1011,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="WaterCalculatorEditFrm"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="43"/>
         <CursorPos X="38" Y="65"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="33"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit90>
@@ -1027,7 +1027,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="903"/>
         <CursorPos X="3" Y="905"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit91>
       <Unit92>
@@ -1049,7 +1049,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="932"/>
         <CursorPos X="33" Y="941"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit94>
     </Units>

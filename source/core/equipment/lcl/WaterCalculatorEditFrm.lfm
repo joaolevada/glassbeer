@@ -3,7 +3,7 @@ object WaterCalculatorEditForm: TWaterCalculatorEditForm
   Height = 268
   Top = 201
   Width = 627
-  Caption = 'WaterCalcEditForm'
+  Caption = 'Calculadora do volume de água'
   ClientHeight = 268
   ClientWidth = 627
   Position = poMainFormCenter
