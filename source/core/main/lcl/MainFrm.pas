@@ -25,7 +25,9 @@ type
     MashMenuItem: TMenuItem;
     ContactMenuItem: TMenuItem;
     EquipmentMenuItem: TMenuItem;
-    EquipmentProfileMenu: TMenuItem;
+    EquipmentProfileMenuItem: TMenuItem;
+    FinanceiroMenuItem: TMenuItem;
+    AccountChartMenuItem: TMenuItem;
     RecipeMenuItem: TMenuItem;
     MetadataMenuItem: TMenuItem;
     ToolsMenu: TMenuItem;

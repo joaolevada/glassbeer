@@ -1,0 +1,136 @@
+inherited AccountChartQueryForm: TAccountChartQueryForm
+  Caption = 'Plano de contas'
+  inherited SearchPageControl: TPageControl
+    inherited DefaultTab: TTabSheet
+      Caption = 'Procurar por nome'
+      ClientHeight = 50
+      ClientWidth = 792
+      inherited SearchButton: TBitBtn
+        AnchorSideLeft.Control = NameEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideBottom.Control = NameEdit
+        AnchorSideBottom.Side = asrBottom
+        Left = 364
+        Top = 5
+        Anchors = [akLeft, akBottom]
+        BorderSpacing.Left = 4
+      end
+      object NameLabel: TLabel[1]
+        AnchorSideLeft.Control = DefaultTab
+        AnchorSideTop.Control = DefaultTab
+        Left = 4
+        Height = 17
+        Top = 4
+        Width = 196
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Digite um nome para procurar'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[2]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 24
+        Top = 23
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'NameEdit'
+      end
+    end
+    object CodeTabSheet: TTabSheet[1]
+      Caption = 'Procurar por código'
+      ClientHeight = 50
+      ClientWidth = 792
+      object CodeLabel: TLabel
+        AnchorSideLeft.Control = CodeTabSheet
+        AnchorSideTop.Control = CodeTabSheet
+        Left = 4
+        Height = 16
+        Top = 4
+        Width = 57
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'CodeLabel'
+        ParentColor = False
+      end
+      object CodeEdit: TEdit
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 23
+        Top = 22
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'CodeEdit'
+      end
+      object CodeBitBtn: TBitBtn
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideBottom.Control = CodeEdit
+        AnchorSideBottom.Side = asrBottom
+        Left = 206
+        Height = 42
+        Top = 3
+        Width = 116
+        Anchors = [akLeft, akBottom]
+        BorderSpacing.Left = 4
+        Caption = '&Procurar'
+        Font.Height = -13
+        Font.Name = 'Verdana'
+        ParentFont = False
+        TabOrder = 1
+      end
+    end
+    object ShortCodeTabSheet: TTabSheet[2]
+      Caption = 'Procurar por código curto'
+      ClientHeight = 50
+      ClientWidth = 792
+      object ShortCodeLabel: TLabel
+        AnchorSideLeft.Control = ShortCodeTabSheet
+        AnchorSideTop.Control = ShortCodeTabSheet
+        Left = 4
+        Height = 16
+        Top = 4
+        Width = 187
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Digite o código curto para procurar'
+        ParentColor = False
+      end
+      object ShortCodeEdit: TEdit
+        AnchorSideLeft.Control = ShortCodeLabel
+        AnchorSideTop.Control = ShortCodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 23
+        Top = 22
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'ShortCodeEdit'
+      end
+      object ShortCodeBitBtn: TBitBtn
+        AnchorSideLeft.Control = ShortCodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideBottom.Control = ShortCodeEdit
+        AnchorSideBottom.Side = asrBottom
+        Left = 206
+        Height = 42
+        Top = 3
+        Width = 116
+        Anchors = [akLeft, akBottom]
+        BorderSpacing.Left = 4
+        Caption = '&Procurar'
+        Font.Height = -13
+        Font.Name = 'Verdana'
+        ParentFont = False
+        TabOrder = 1
+      end
+    end
+  end
+end

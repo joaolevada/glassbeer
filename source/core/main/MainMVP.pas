@@ -44,7 +44,8 @@ uses
   ,MashMVP
   ,ContactMVP
   ,EquipmentMVP
-  ,EquipmentProfileMVP;
+  ,EquipmentProfileMVP
+  ,AccountChartMVP;
 
 { TMainFormPresenter }
 
@@ -61,7 +62,8 @@ begin
   BindPresenter(TMashQueryPresenter, 'MashMenuItem');
   BindPresenter(TContactQueryPresenter, 'ContactMenuItem');
   BindPresenter(TEquipmentQueryPresenter, 'EquipmentMenuItem');
-  BindPresenter(TEquipmentProfileQueryPresenter, 'EquipmentProfileMenu');
+  BindPresenter(TEquipmentProfileQueryPresenter, 'EquipmentProfileMenuItem');
+  BindPresenter(TAccountChartQueryPresenter, 'AccountChartMenuItem');
   { sample commands, to be implemented very soon... }
   //BindCommand(TProprietarioSetupCommand2, 'Proprietario1');
   PressUserData.Logon('', '');

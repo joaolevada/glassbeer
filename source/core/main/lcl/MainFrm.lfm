@@ -39,7 +39,7 @@ object MainForm: TMainForm
       object EquipmentMenuItem: TMenuItem
         Caption = 'Equipamentos...'
       end
-      object EquipmentProfileMenu: TMenuItem
+      object EquipmentProfileMenuItem: TMenuItem
         Caption = 'Perfil de equipamento...'
       end
       object MenuItem1: TMenuItem
@@ -47,6 +47,12 @@ object MainForm: TMainForm
       end
       object ExitMenuItem: TMenuItem
         Caption = 'Sair'
+      end
+    end
+    object FinanceiroMenuItem: TMenuItem
+      Caption = 'Financeiro'
+      object AccountChartMenuItem: TMenuItem
+        Caption = 'Plano de contas...'
       end
     end
     object ToolsMenu: TMenuItem
