@@ -1,6 +1,8 @@
 inherited AccountChartQueryForm: TAccountChartQueryForm
   Caption = 'Plano de contas'
   inherited SearchPageControl: TPageControl
+    ActivePage = ShortCodeTabSheet
+    TabIndex = 2
     inherited DefaultTab: TTabSheet
       Caption = 'Procurar por nome'
       ClientHeight = 50
@@ -44,16 +46,19 @@ inherited AccountChartQueryForm: TAccountChartQueryForm
       Caption = 'Procurar por código'
       ClientHeight = 50
       ClientWidth = 792
+      Font.Height = -13
+      Font.Name = 'Verdana'
+      ParentFont = False
       object CodeLabel: TLabel
         AnchorSideLeft.Control = CodeTabSheet
         AnchorSideTop.Control = CodeTabSheet
         Left = 4
-        Height = 16
+        Height = 17
         Top = 4
-        Width = 57
+        Width = 193
         BorderSpacing.Left = 4
         BorderSpacing.Top = 4
-        Caption = 'CodeLabel'
+        Caption = 'Digite o código para procurar'
         ParentColor = False
       end
       object CodeEdit: TEdit
@@ -61,8 +66,8 @@ inherited AccountChartQueryForm: TAccountChartQueryForm
         AnchorSideTop.Control = CodeLabel
         AnchorSideTop.Side = asrBottom
         Left = 4
-        Height = 23
-        Top = 22
+        Height = 24
+        Top = 23
         Width = 198
         BorderSpacing.Top = 2
         TabOrder = 0
@@ -75,14 +80,11 @@ inherited AccountChartQueryForm: TAccountChartQueryForm
         AnchorSideBottom.Side = asrBottom
         Left = 206
         Height = 42
-        Top = 3
+        Top = 5
         Width = 116
         Anchors = [akLeft, akBottom]
         BorderSpacing.Left = 4
         Caption = '&Procurar'
-        Font.Height = -13
-        Font.Name = 'Verdana'
-        ParentFont = False
         TabOrder = 1
       end
     end
@@ -90,16 +92,19 @@ inherited AccountChartQueryForm: TAccountChartQueryForm
       Caption = 'Procurar por código curto'
       ClientHeight = 50
       ClientWidth = 792
+      Font.Height = -13
+      Font.Name = 'Verdana'
+      ParentFont = False
       object ShortCodeLabel: TLabel
         AnchorSideLeft.Control = ShortCodeTabSheet
         AnchorSideTop.Control = ShortCodeTabSheet
         Left = 4
-        Height = 16
+        Height = 17
         Top = 4
-        Width = 187
+        Width = 219
         BorderSpacing.Left = 4
         BorderSpacing.Top = 4
-        Caption = 'Digite o código curto para procurar'
+        Caption = 'Digite o cód. curto para procurar'
         ParentColor = False
       end
       object ShortCodeEdit: TEdit
@@ -107,9 +112,9 @@ inherited AccountChartQueryForm: TAccountChartQueryForm
         AnchorSideTop.Control = ShortCodeLabel
         AnchorSideTop.Side = asrBottom
         Left = 4
-        Height = 23
-        Top = 22
-        Width = 198
+        Height = 24
+        Top = 23
+        Width = 226
         BorderSpacing.Top = 2
         TabOrder = 0
         Text = 'ShortCodeEdit'
@@ -119,16 +124,13 @@ inherited AccountChartQueryForm: TAccountChartQueryForm
         AnchorSideLeft.Side = asrBottom
         AnchorSideBottom.Control = ShortCodeEdit
         AnchorSideBottom.Side = asrBottom
-        Left = 206
+        Left = 234
         Height = 42
-        Top = 3
+        Top = 5
         Width = 116
         Anchors = [akLeft, akBottom]
         BorderSpacing.Left = 4
         Caption = '&Procurar'
-        Font.Height = -13
-        Font.Name = 'Verdana'
-        ParentFont = False
         TabOrder = 1
       end
     end

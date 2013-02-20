@@ -201,6 +201,19 @@ create table Recipe_Ingrds (
 alter table Recipe_Ingrds add constraint PK_Recipe_Ingrds
   primary key (Id);
 
+create table TAccountChart (
+  Id bigint not null,
+  ClassId bigint not null,
+  UpdateCount integer not null,
+  BasicUserRecordData bigint,
+  ChildOf bigint,
+  Level integer,
+  Balance decimal(14,4),
+  ShortCode integer);
+
+alter table TAccountChart add constraint PK_TAccountChart
+  primary key (Id);
+
 create table TAddress (
   Id bigint not null,
   ClassId bigint not null,
@@ -698,6 +711,24 @@ alter table Recipe_Ingrds add constraint FK_Recipe_Ingrds_IngrdsId
   on delete no action
   on update cascade;
 
+alter table TAccountChart add constraint FK_TAccountChart_ClassId
+  foreign key (ClassId)
+  references ModelClasses (Id)
+  on delete no action
+  on update cascade;
+
+alter table TAccountChart add constraint FK_TAccountChart_BasicUserRecordData
+  foreign key (BasicUserRecordData)
+  references TBasicUserRecordData (Id)
+  on delete no action
+  on update cascade;
+
+alter table TAccountChart add constraint FK_TAccountChart_ChildOf
+  foreign key (ChildOf)
+  references TAccountChart (Id)
+  on delete no action
+  on update cascade;
+
 alter table TAddress add constraint FK_TAddress_ClassId
   foreign key (ClassId)
   references ModelClasses (Id)
@@ -1004,7 +1035,6 @@ alter table TState add constraint FK_TState_Country
   on delete no action
   on update cascade;
 
-
 /* User generated SQL */
 
 alter sequence gen_glassbeer start with 50000;
@@ -1016,4 +1046,4 @@ create table glassconfig (
 alter table glassconfig add constraint pk_glassconfig
   primary key (id);
   
-insert into glassconfig (id, dbversion) values (1, 4);
+insert into glassconfig (id, dbversion) values (1, 5);

@@ -44,7 +44,7 @@ begin
   Result := 'TAccountChartQuery(TAccountChart) (' +
     'Code: PlainString(20) MatchType=mtStarting;' +
     'Name: AnsiString(40) MatchType=mtContains;' +
-    'ShortCode: Integer MatchType=mtEquals;' +
+    'ShortCode: Integer MatchType=mtEqual;' +
     ')';
 end;
 
@@ -57,6 +57,7 @@ begin
     'ChildOf: Reference(TAccountChart);' +
     'Level: Integer;' +
     'Balance: Currency DefaultValue="0";' +
+    'ShortCode: Integer;' +
     ')';
 end;
 
