@@ -1,4 +1,4 @@
-create table TAccountChart (
+﻿create table TAccountChart (
   Id bigint not null,
   ClassId bigint not null,
   UpdateCount integer not null,
@@ -6,7 +6,7 @@ create table TAccountChart (
   ChildOf bigint,
   Level integer,
   Balance decimal(14,4),
-  ShortCode: integer);
+  ShortCode integer);
 
 alter table TAccountChart add constraint PK_TAccountChart
   primary key (Id);
