@@ -9,15 +9,20 @@ uses
   SysUtils,}
   CustomBO,
   BasicUserRecordDataBO,
-  PressAttributes;
+  PressAttributes,
+  PressSubject;
 
 type
+
+  {$M+}
+  TAccountChartReference = class;
+  {$M-}
 
   { TAccountChart }
 
   TAccountChart = class(TCustomObject)
     _BasicUserRecordData: TBasicUserRecordDataPart;
-    _ChildOf: TPressReference; //TAccountChart
+    _ChildOf: TAccountChartReference; //TAccountChart
     _Level: TPressInteger;
     _Balance: TPressCurrency;
     _ShortCode: TPressInteger;
@@ -35,7 +40,21 @@ type
     class function InternalMetadataStr: string; override;
   end;
 
+  { TAccountChartReference }
+
+  TAccountChartReference = class(TCustomReference)
+  public
+    class function ValidObjectClass: TPressObjectClass; override;
+  end;
+
 implementation
+
+{ TAccountChartReference }
+
+class function TAccountChartReference.ValidObjectClass: TPressObjectClass;
+begin
+  Result := TAccountChart;
+end;
 
 { TAccountChartQuery }
 
@@ -54,7 +73,7 @@ class function TAccountChart.InternalMetadataStr: string;
 begin
   Result := 'TAccountChart IsPersistent(' +
     'BasicUserRecordData: TBasicUserRecordDataPart;' +
-    'ChildOf: Reference(TAccountChart);' +
+    'ChildOf: TAccountChartReference;' +
     'Level: Integer;' +
     'Balance: Currency;' +
     'ShortCode: Integer;' +
@@ -64,10 +83,12 @@ end;
 initialization
   TAccountChart.RegisterClass;
   TAccountChartQuery.RegisterClass;
+  TAccountChartReference.RegisterAttribute;
 
 finalization
   TAccountChart.UnregisterClass;
   TAccountChartQuery.UnregisterClass;
+  TAccountChartReference.UnregisterAttribute;
 
 end.
 

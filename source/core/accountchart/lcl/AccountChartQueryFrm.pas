@@ -47,8 +47,9 @@ begin
   MainForm.Icons32ImageList.GetBitmap(IMG_ZOOM, ShortCodeBitBtn.Glyph);
 end;
 
-initialization
-  PressXCLForm(TAccountChartQueryPresenter, TAccountChartQueryForm);
+{ TODO 1 -ojoaolevada -cimplementation : Redeclare classes and solve }
+//initialization
+//  PressXCLForm(TAccountChartQueryPresenter, TAccountChartQueryForm);
 
 {$R *.lfm}
 
