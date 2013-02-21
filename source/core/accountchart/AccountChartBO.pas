@@ -42,8 +42,8 @@ implementation
 class function TAccountChartQuery.InternalMetadataStr: string;
 begin
   Result := 'TAccountChartQuery(TAccountChart) (' +
-    'Code: PlainString(20) MatchType=mtStarting;' +
-    'Name: AnsiString(40) MatchType=mtContains;' +
+    'Code: PlainString(20) MatchType=mtStarting DataName="BasicUserRecordData.Code";' +
+    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
     'ShortCode: Integer MatchType=mtEqual;' +
     ')';
 end;
@@ -56,7 +56,7 @@ begin
     'BasicUserRecordData: TBasicUserRecordDataPart;' +
     'ChildOf: Reference(TAccountChart);' +
     'Level: Integer;' +
-    'Balance: Currency DefaultValue="0";' +
+    'Balance: Currency;' +
     'ShortCode: Integer;' +
     ')';
 end;

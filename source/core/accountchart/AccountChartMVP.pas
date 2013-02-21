@@ -7,7 +7,8 @@ interface
 uses
   {Classes,
   SysUtils}
-  CustomMVP;
+  CustomMVP,
+  PressMVPModel;
 
 type
 
@@ -24,6 +25,7 @@ type
   protected
     procedure InitPresenter; override;
     function InternalQueryItemsDisplayNames: string;
+    class function InternalModelClass: TPressMVPObjectModelClass; override;
   end;
 
 implementation
@@ -55,11 +57,16 @@ end;
 
 function TAccountChartQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
-  Result := {'BasicUserRecordData.Code(198, "Código");' +
-    'BasicUserRecordData.Name(280, "Nome");' +
-    'ChildOf(150, "Membro de", BasicUserRecordData.Name);' +}
-    'Balance(105, "Saldo");' +
-    'ShortCode(40, "C.")';
+  Result := 'BasicUserRecordData.Code(198,"Código");' +
+    'BasicUserRecordData.Name(280,"Nome");' +
+    'ChildOf.BasicUserRecordData.Name(150, "Membro de");' +
+    'Balance(105,"Saldo");' +
+    'ShortCode(40,"C.")';
+end;
+
+class function TAccountChartQueryPresenter.InternalModelClass: TPressMVPObjectModelClass;
+begin
+  Result := TCustomQueryModel;
 end;
 
 initialization
