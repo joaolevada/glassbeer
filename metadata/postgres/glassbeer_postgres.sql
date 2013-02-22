@@ -208,7 +208,7 @@ create table TAccountChart (
   BasicUserRecordData bigint,
   ChildOf bigint,
   Level integer,
-  Balance decimal(14,4),
+  Balance money,
   ShortCode integer);
 
 alter table TAccountChart add constraint PK_TAccountChart
@@ -292,7 +292,7 @@ create table TEquipment (
   ClassId bigint not null,
   UpdateCount integer not null,
   BasicUserRecordData bigint,
-  Cost decimal(14,4),
+  Cost money,
   PurchaseDate date);
 
 alter table TEquipment add constraint PK_TEquipment
@@ -1046,4 +1046,4 @@ create table glassconfig (
 alter table glassconfig add constraint pk_glassconfig
   primary key (id);
   
-insert into glassconfig (id, dbversion) values (1, 5);
+insert into glassconfig (id, dbversion) values (1, 7);
