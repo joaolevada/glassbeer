@@ -1,6 +1,6 @@
 unit AccountChartMVP;
 
-{$mode objfpc}
+{$I '..\include\glassbeer_defines.inc'}
 
 interface
 
@@ -19,10 +19,41 @@ type
     procedure InitPresenter; override;
   end;
 
+  { TAccountChartQueryPresenter }
+
+  TAccountChartQueryPresenter = class(TCustomQueryPresenter)
+  protected
+    function InternalQueryItemsDisplayNames: string; override;
+    class function InternalModelClass: TPressMVPObjectModelClass; override;
+    procedure InitPresenter; override;
+  end;
+
 implementation
 
 uses
   AccountChartBO;
+
+{ TAccountChartQueryPresenter }
+
+function TAccountChartQueryPresenter.InternalQueryItemsDisplayNames: string;
+begin
+  Result := 'BasicUserRecordData.Code(120,"Código");' +
+    'BasicUserRecordData.Name(235,"Nome");' +
+    'ChildOf.BasicUserRecordData.Name(205,"Membro de");' +
+    'Balance(90,"Saldo");' +
+    'ShortCode(35,"Curto")';
+end;
+
+class function TAccountChartQueryPresenter.InternalModelClass: TPressMVPObjectModelClass;
+begin
+  Result := TCustomQueryModel;
+end;
+
+procedure TAccountChartQueryPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('Name', 'NameEdit');
+end;
 
 { TAccountChartEditPresenter }
 
@@ -38,6 +69,7 @@ end;
 
 initialization
   TAccountChartEditPresenter.RegisterBO(TAccountChart);
+  TAccountChartQueryPresenter.RegisterBO(TAccountChartQuery);
 
 end.
 
