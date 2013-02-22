@@ -1,8 +1,6 @@
 inherited AccountChartQueryForm: TAccountChartQueryForm
   Caption = 'Plano de contas'
   inherited SearchPageControl: TPageControl
-    ActivePage = ShortCodeTabSheet
-    TabIndex = 2
     inherited DefaultTab: TTabSheet
       Caption = 'Procurar por nome'
       ClientHeight = 50

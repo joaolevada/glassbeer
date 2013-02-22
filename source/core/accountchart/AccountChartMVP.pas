@@ -41,7 +41,7 @@ begin
     'BasicUserRecordData.Name(235,"Nome");' +
     'ChildOf.BasicUserRecordData.Name(205,"Membro de");' +
     'Balance(90,"Saldo");' +
-    'ShortCode(35,"Curto")';
+    'ShortCode(80,"Cód. reduz.")';
 end;
 
 class function TAccountChartQueryPresenter.InternalModelClass: TPressMVPObjectModelClass;
@@ -52,7 +52,9 @@ end;
 procedure TAccountChartQueryPresenter.InitPresenter;
 begin
   inherited InitPresenter;
+  CreateSubPresenter('Code', 'CodeEdit');
   CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('ShortCode', 'ShortCodeEdit');
 end;
 
 { TAccountChartEditPresenter }
@@ -63,8 +65,8 @@ begin
   CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
   CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
-  CreateSubPresenter('ChildOf', 'ChildOfComboBox', 'BasicUserRecordData.Name');
-  CreateSubPresenter('ShortCode', 'ShortCodeEdit');
+  //CreateSubPresenter('ChildOf', 'ChildOfComboBox', 'BasicUserRecordData.Name');
+  //CreateSubPresenter('ShortCode', 'ShortCodeEdit');
 end;
 
 initialization

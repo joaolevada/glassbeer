@@ -13,16 +13,12 @@ type
   { TAccountChartEditForm }
 
   TAccountChartEditForm = class(TCustomEditForm)
-    ChildOfComboBox: TComboBox;
-    ChildOfLabel: TLabel;
     CodeEdit: TEdit;
     CodeLabel: TLabel;
     NameEdit: TEdit;
     NameLabel: TLabel;
     RemarksLabel: TLabel;
     RemarksMemo: TMemo;
-    ShortCodeEdit: TEdit;
-    ShortCodeLabel: TLabel;
   end;
 
 implementation

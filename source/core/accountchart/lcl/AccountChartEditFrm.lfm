@@ -1,13 +1,13 @@
 inherited AccountChartEditForm: TAccountChartEditForm
   Left = 335
-  Height = 296
+  Height = 244
   Top = 190
   Width = 582
   Caption = 'Conta do plano de contas'
-  ClientHeight = 296
+  ClientHeight = 244
   ClientWidth = 582
   inherited BottomPanel: TPanel
-    Top = 242
+    Top = 190
     Width = 582
     ClientWidth = 582
     inherited SaveButton: TBitBtn
@@ -18,10 +18,10 @@ inherited AccountChartEditForm: TAccountChartEditForm
     end
   end
   inherited EditPageControl: TPageControl
-    Height = 242
+    Height = 190
     Width = 582
     inherited MainTab: TTabSheet
-      ClientHeight = 215
+      ClientHeight = 163
       ClientWidth = 574
       object CodeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
@@ -71,82 +71,32 @@ inherited AccountChartEditForm: TAccountChartEditForm
         TabOrder = 1
         Text = 'NameEdit'
       end
-      object ChildOfLabel: TLabel[4]
+      object RemarksLabel: TLabel[4]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = CodeEdit
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
         Top = 51
-        Width = 71
-        BorderSpacing.Left = 4
-        BorderSpacing.Top = 8
-        Caption = 'Membro de'
-        ParentColor = False
-      end
-      object ChildOfComboBox: TComboBox[5]
-        AnchorSideLeft.Control = ChildOfLabel
-        AnchorSideTop.Control = ChildOfLabel
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 22
-        Top = 68
-        Width = 356
-        BorderSpacing.Top = 2
-        ItemHeight = 14
-        TabOrder = 2
-        Text = 'ChildOfComboBox'
-      end
-      object ShortCodeLabel: TLabel[6]
-        AnchorSideLeft.Control = ChildOfComboBox
-        AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = ChildOfLabel
-        Left = 372
-        Height = 15
-        Top = 51
-        Width = 81
-        BorderSpacing.Left = 12
-        Caption = 'Código curto'
-        ParentColor = False
-      end
-      object ShortCodeEdit: TEdit[7]
-        AnchorSideLeft.Control = ShortCodeLabel
-        AnchorSideTop.Control = ShortCodeLabel
-        AnchorSideTop.Side = asrBottom
-        Left = 372
-        Height = 22
-        Top = 68
-        Width = 198
-        BorderSpacing.Top = 2
-        TabOrder = 3
-        Text = 'ShortCodeEdit'
-      end
-      object RemarksLabel: TLabel[8]
-        AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = ChildOfComboBox
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 15
-        Top = 98
         Width = 83
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
         Caption = 'Observações'
         ParentColor = False
       end
-      object RemarksMemo: TMemo[9]
+      object RemarksMemo: TMemo[5]
         AnchorSideLeft.Control = RemarksLabel
         AnchorSideTop.Control = RemarksLabel
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 90
-        Top = 115
+        Top = 68
         Width = 356
         BorderSpacing.Top = 2
         Lines.Strings = (
           'RemarksMemo'
         )
-        TabOrder = 4
+        TabOrder = 2
       end
     end
   end
