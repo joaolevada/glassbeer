@@ -1037,7 +1037,7 @@ alter table TState add constraint FK_TState_Country
 
 /* User generated SQL */
 
-alter sequence gen_glassbeer start with 50000;
+select setval('gen_glassbeer', 50000, false);
 
 create table glassconfig (
   id bigint not null,
@@ -1046,4 +1046,42 @@ create table glassconfig (
 alter table glassconfig add constraint pk_glassconfig
   primary key (id);
   
-insert into glassconfig (id, dbversion) values (1, 7);
+insert into glassconfig (id, dbversion) values (1, 8);
+
+/* modelclasses */
+
+INSERT INTO modelclasses (
+						id, objectclassname)
+		VALUES (1, 'TBasicUserRecordData');
+
+INSERT INTO modelclasses (
+						id, objectclassname)
+		VALUES (2, 'TAccountChart');
+
+/* account chart level 1: basicuserrecorddata: code, name and remarks */
+
+INSERT INTO tbasicuserrecorddata(
+            id, classid, updatecount, code, name, remarks)
+    VALUES (3, (select id from modelclasses where objectclassname = 'TBasicUserRecordData'), 1, '0', 'Contas de Saldo/Circulante', 'Conta cadastrada pelo sistema');
+
+INSERT INTO tbasicuserrecorddata(
+            id, classid, updatecount, code, name, remarks)
+    VALUES (4, (select id from modelclasses where objectclassname = 'TBasicUserRecordData'), 1, '1', 'Entradas/Receitas', 'Conta cadastrada pelo sistema');
+
+INSERT INTO tbasicuserrecorddata(
+            id, classid, updatecount, code, name, remarks)
+    VALUES (5, (select id from modelclasses where objectclassname = 'TBasicUserRecordData'), 1, '2', 'Saídas/Despesas', 'Conta cadastrada pelo sistema');
+
+/* account chart level 1: level and balance */
+
+INSERT INTO taccountchart(
+            id, classid, updatecount, basicuserrecorddata, level, balance)
+    VALUES (6, (select id from modelclasses where objectclassname = 'TAccountChart'), 1, 3, 1, '0.00');
+
+INSERT INTO taccountchart(
+            id, classid, updatecount, basicuserrecorddata, level, balance)
+    VALUES (7, (select id from modelclasses where objectclassname = 'TAccountChart'), 1, 4, 1, '0.00');
+
+INSERT INTO taccountchart(
+            id, classid, updatecount, basicuserrecorddata, level, balance)
+    VALUES (8, (select id from modelclasses where objectclassname = 'TAccountChart'), 1, 5, 1, '0.00');
