@@ -40,6 +40,7 @@ begin
   Result := 'BasicUserRecordData.Code(120,"Código");' +
     'BasicUserRecordData.Name(235,"Nome");' +
     'ChildOf.BasicUserRecordData.Name(205,"Membro de");' +
+    'Level(40,"Nível");' +
     'Balance(90,"Saldo");' +
     'ShortCode(80,"Cód. reduz.")';
 end;

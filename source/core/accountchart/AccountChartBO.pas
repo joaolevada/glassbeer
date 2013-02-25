@@ -74,8 +74,8 @@ begin
   Result := 'TAccountChart IsPersistent(' +
     'BasicUserRecordData: TBasicUserRecordDataPart;' +
     'ChildOf: TAccountChartReference;' +
-    'Level: Integer;' +
-    'Balance: Currency;' +
+    'Level: Integer DefaultValue=1;' +
+    'Balance: Currency DefaultValue=0;' +
     'ShortCode: Integer;' +
     ')';
 end;
