@@ -28,9 +28,12 @@ type
   { TCustomQueryPresenter }
 
   TCustomQueryPresenter = class(TPressMVPQueryPresenter)
+  private
+    FMainQueryPresenter: TPressMVPPresenter;
   protected
     procedure InitPresenter; override;
     class function InternalModelClass: TPressMVPObjectModelClass; override;
+    property MainQueryPresenter: TPressMVPPresenter read FMainQueryPresenter;
   end;
 
   { TCustomEditModel }
@@ -134,15 +137,13 @@ end;
 { TCustomQueryPresenter }
 
 procedure TCustomQueryPresenter.InitPresenter;
-var
-  VItemsPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
   BindCommand(TPressMVPExecuteQueryCommand, 'SearchButton');
-  VItemsPresenter := CreateQueryItemsPresenter('QueryStringGrid');
-  VItemsPresenter.BindCommand(TPressMVPAddItemsCommand, 'AddButton');
-  VItemsPresenter.BindCommand(TPressMVPEditItemCommand, 'EditButton');
-  VItemsPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveButton');
+  FMainQueryPresenter := CreateQueryItemsPresenter('QueryStringGrid');
+  FMainQueryPresenter.BindCommand(TPressMVPAddItemsCommand, 'AddButton');
+  FMainQueryPresenter.BindCommand(TPressMVPEditItemCommand, 'EditButton');
+  FMainQueryPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveButton');
 end;
 
 class function TCustomQueryPresenter.InternalModelClass: TPressMVPObjectModelClass;

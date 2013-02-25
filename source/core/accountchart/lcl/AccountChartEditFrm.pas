@@ -19,6 +19,8 @@ type
     NameLabel: TLabel;
     RemarksLabel: TLabel;
     RemarksMemo: TMemo;
+    ShortCodeEdit: TEdit;
+    ShortCodeLabel: TLabel;
   end;
 
 implementation

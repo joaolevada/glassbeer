@@ -21,6 +21,7 @@ type
     NameEdit1: TEdit;
     NameLabel: TLabel;
     NameLabel1: TLabel;
+    AddAccountChildButton: TBitBtn;
     SearchButton1: TBitBtn;
     CodeTabSheet: TTabSheet;
     ShortCodeBitBtn: TBitBtn;

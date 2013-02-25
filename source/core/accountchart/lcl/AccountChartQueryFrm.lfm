@@ -1,6 +1,23 @@
 inherited AccountChartQueryForm: TAccountChartQueryForm
   Caption = 'Plano de contas'
+  inherited BottomPanel: TPanel
+    object AddAccountChildButton: TBitBtn[3]
+      AnchorSideLeft.Control = RemoveButton
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = BottomPanel
+      Left = 365
+      Height = 42
+      Top = 5
+      Width = 116
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 4
+      Caption = 'Ad. &Subconta'
+      TabOrder = 3
+    end
+  end
   inherited SearchPageControl: TPageControl
+    ActivePage = nil
+    TabIndex = -1
     inherited DefaultTab: TTabSheet
       Caption = 'Procurar por nome'
       ClientHeight = 50

@@ -8,7 +8,10 @@ uses
   Classes,
   SysUtils,
   CustomMVP,
-  PressMVPModel;
+  PressMVPModel,
+  PressMVPCommand,
+  PressSubject,
+  PressMVP;
 
 type
 
@@ -28,10 +31,47 @@ type
     procedure InitPresenter; override;
   end;
 
+  { TAddAccountChildCommand }
+
+  TAddAccountChildCommand = class(TPressMVPStructureCommand)
+  protected
+    function InternalIsEnabled: Boolean; override;
+    procedure InternalExecute; override;
+  end;
+
 implementation
 
 uses
-  AccountChartBO;
+  AccountChartBO,
+  PressMVPPresenter,
+  Forms,
+  StdCtrls,
+  Graphics;
+
+{ TAddAccountChildCommand }
+
+function TAddAccountChildCommand.InternalIsEnabled: Boolean;
+var
+  VAccountChart: TAccountChart;
+begin
+  Result := Model.Selection.Count = 1;
+  if Result then
+  begin
+    VAccountChart := Model.Selection[0] as TAccountChart;
+    Result := VAccountChart.CanHaveChild;
+  end;
+end;
+
+procedure TAddAccountChildCommand.InternalExecute;
+var
+  VAccount: TAccountChart;
+  VChildAccount: TAccountChart;
+begin
+  VAccount := Model.Selection[0] as TAccountChart;
+  VChildAccount := TAccountChart.Create;
+  VChildAccount.SetParentAccount(VAccount);
+  TAccountChartEditPresenter.Run(VChildAccount)
+end;
 
 { TAccountChartQueryPresenter }
 
@@ -56,18 +96,33 @@ begin
   CreateSubPresenter('Code', 'CodeEdit');
   CreateSubPresenter('Name', 'NameEdit');
   CreateSubPresenter('ShortCode', 'ShortCodeEdit');
+  MainQueryPresenter.BindCommand(TAddAccountChildCommand, 'AddAccountChildButton');
 end;
 
 { TAccountChartEditPresenter }
 
 procedure TAccountChartEditPresenter.InitPresenter;
+var
+  VAccount: TAccountChart;
+  VShortCodePresenter: TPressMVPPresenter;
+  VShortCodeEdit: TEdit;
+  VLevel: Integer;
 begin
   inherited InitPresenter;
   CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
   CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
   CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
   //CreateSubPresenter('ChildOf', 'ChildOfComboBox', 'BasicUserRecordData.Name');
-  //CreateSubPresenter('ShortCode', 'ShortCodeEdit');
+  VShortCodePresenter := CreateSubPresenter('ShortCode', 'ShortCodeEdit');
+  VAccount := Model.Subject as TAccountChart;
+  VShortCodeEdit := VShortCodePresenter.View.Handle as TEdit;
+  VLevel := VAccount.Level;
+  { only level 3 accounts has shortcode }
+  VShortCodeEdit.ReadOnly := not (VAccount.Level = ACCOUNT_LEVELTHREE);
+  if VShortCodeEdit.ReadOnly then
+    VShortCodeEdit.Color := clBtnFace
+  else
+    VShortCodeEdit.Color := clDefault;
 end;
 
 initialization

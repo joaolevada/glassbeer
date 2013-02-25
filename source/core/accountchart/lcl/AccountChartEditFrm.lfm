@@ -1,13 +1,13 @@
 inherited AccountChartEditForm: TAccountChartEditForm
   Left = 335
-  Height = 244
+  Height = 293
   Top = 190
   Width = 582
   Caption = 'Conta do plano de contas'
-  ClientHeight = 244
+  ClientHeight = 293
   ClientWidth = 582
   inherited BottomPanel: TPanel
-    Top = 190
+    Top = 239
     Width = 582
     ClientWidth = 582
     inherited SaveButton: TBitBtn
@@ -18,14 +18,14 @@ inherited AccountChartEditForm: TAccountChartEditForm
     end
   end
   inherited EditPageControl: TPageControl
-    Height = 190
+    Height = 239
     Width = 582
     inherited MainTab: TTabSheet
-      ClientHeight = 163
+      ClientHeight = 212
       ClientWidth = 574
       object CodeLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = MainTab
+        AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
         Top = 4
@@ -73,11 +73,11 @@ inherited AccountChartEditForm: TAccountChartEditForm
       end
       object RemarksLabel: TLabel[4]
         AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = CodeEdit
+        AnchorSideTop.Control = ShortCodeEdit
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
-        Top = 51
+        Top = 98
         Width = 83
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
@@ -90,13 +90,41 @@ inherited AccountChartEditForm: TAccountChartEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 90
-        Top = 68
+        Top = 115
         Width = 356
         BorderSpacing.Top = 2
         Lines.Strings = (
           'RemarksMemo'
         )
+        TabOrder = 3
+      end
+      object ShortCodeLabel: TLabel[6]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = CodeEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 104
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Código reduzido'
+        ParentColor = False
+      end
+      object ShortCodeEdit: TEdit[7]
+        AnchorSideLeft.Control = ShortCodeLabel
+        AnchorSideTop.Control = ShortCodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Hint = 'Apenas para contas de nível 3'
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        ParentShowHint = False
+        ShowHint = True
         TabOrder = 2
+        Text = 'ShortCodeEdit'
       end
     end
   end
