@@ -17,7 +17,7 @@
 <XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">designModel</XPD:ATTR>
 <XPD:REF name="Namespace">F7tUpXgud0+qDALK+J+aagAA</XPD:REF>
-<XPD:ATTR name="#OwnedDiagrams" type="integer">16</XPD:ATTR>
+<XPD:ATTR name="#OwnedDiagrams" type="integer">17</XPD:ATTR>
 <XPD:OBJ name="OwnedDiagrams[0]" type="UMLClassDiagram" guid="V+7nLq1R/EOrtO2/M8PeFQAA">
 <XPD:ATTR name="Name" type="string">CustomBO</XPD:ATTR>
 <XPD:ATTR name="DefaultDiagram" type="boolean">True</XPD:ATTR>
@@ -9475,7 +9475,46 @@
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:ATTR name="#OwnedElements" type="integer">247</XPD:ATTR>
+<XPD:OBJ name="OwnedDiagrams[16]" type="UMLClassDiagram" guid="on/SxXXw60qkhOGug8UmJQAA">
+<XPD:ATTR name="Name" type="string">EntryBO</XPD:ATTR>
+<XPD:REF name="DiagramOwner">wn7Zh6KOLkWU36YmyAV/hwAA</XPD:REF>
+<XPD:OBJ name="DiagramView" type="UMLClassDiagramView" guid="fRvhXlauZk6AJqMo5Y5uKwAA">
+<XPD:REF name="Diagram">on/SxXXw60qkhOGug8UmJQAA</XPD:REF>
+<XPD:ATTR name="#OwnedViews" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedViews[0]" type="UMLClassView" guid="pLYhXoHeykG3vb+Fb2s8pgAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">96</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">64</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">268</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">69</XPD:ATTR>
+<XPD:REF name="Model">/rrN81eqBUq54STqRH3eXgAA</XPD:REF>
+<XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="L3iMoVSzm0SmXIO7vCCaBwAA">
+<XPD:OBJ name="NameLabel" type="LabelView" guid="Qw97z3G5f02DJphzq3JmjgAA">
+<XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">TEntry</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="LabelView" guid="yBKTdkF7mEuj++swOvsufgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="LabelView" guid="HhSqBnD02UuEWbVukovdwwAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="AttributeCompartment" type="UMLAttributeCompartmentView" guid="iJaigcwa/UStCtfsHlHRXQAA">
+<XPD:REF name="Model">/rrN81eqBUq54STqRH3eXgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OperationCompartment" type="UMLOperationCompartmentView" guid="yiGShhRlVUSeae4IUah5MQAA">
+<XPD:REF name="Model">/rrN81eqBUq54STqRH3eXgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="TemplateParameterCompartment" type="UMLTemplateParameterCompartmentView" guid="xAhCKyPV7EWaUw/3Nx0tbgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:REF name="Model">/rrN81eqBUq54STqRH3eXgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:ATTR name="#OwnedElements" type="integer">248</XPD:ATTR>
 <XPD:OBJ name="OwnedElements[0]" type="UMLClass" guid="llcPdxfpOkOy1rTHCXFQnQAA">
 <XPD:ATTR name="Name" type="string">TCustomObject</XPD:ATTR>
 <XPD:REF name="Namespace">wn7Zh6KOLkWU36YmyAV/hwAA</XPD:REF>
@@ -14727,6 +14766,26 @@
 <XPD:REF name="Views[1]">vKkQSXctDEOW4ry8dWRRHQAA</XPD:REF>
 <XPD:REF name="Views[2]">sEr+6tIA3EiuiEjTBo7/sQAA</XPD:REF>
 <XPD:REF name="Views[3]">ZmPrVHlTH0OXoJtmE5/VBgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[247]" type="UMLClass" guid="/rrN81eqBUq54STqRH3eXgAA">
+<XPD:ATTR name="Name" type="string">TEntry</XPD:ATTR>
+<XPD:REF name="Namespace">wn7Zh6KOLkWU36YmyAV/hwAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">pLYhXoHeykG3vb+Fb2s8pgAA</XPD:REF>
+<XPD:REF name="Views[1]">iJaigcwa/UStCtfsHlHRXQAA</XPD:REF>
+<XPD:REF name="Views[2]">yiGShhRlVUSeae4IUah5MQAA</XPD:REF>
+<XPD:REF name="Views[3]">xAhCKyPV7EWaUw/3Nx0tbgAA</XPD:REF>
+<XPD:ATTR name="#Attributes" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="qxVfzH3HSEqe2ldcTb4MdwAA">
+<XPD:ATTR name="Name" type="string">BasicUserRecordData</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">TBasicUserRecordData #Part</XPD:ATTR>
+<XPD:REF name="Owner">/rrN81eqBUq54STqRH3eXgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="YTxWIeUsPEeLv4L5oalC4QAA">
+<XPD:ATTR name="Name" type="string">Data</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">TDateTime</XPD:ATTR>
+<XPD:REF name="Owner">/rrN81eqBUq54STqRH3eXgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
