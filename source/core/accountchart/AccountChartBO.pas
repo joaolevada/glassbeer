@@ -61,7 +61,6 @@ type
     property ShortCode: Integer read GetShortCode
       write SetShortCode;
   end;
-  { TODO 1 -ojoaolevada -cbusiness rules : Warn user about duplicate ShortCode }
 
   { TAccountChartQuery }
 

@@ -159,7 +159,7 @@ begin
     VShortCodeEdit.Color := clBtnFace
   else
     VShortCodeEdit.Color := clDefault;
-  BindCommand(TAccountNewShortCodeCommand, 'NewShortCodeSpeedButton');
+  //BindCommand(TAccountNewShortCodeCommand, 'NewShortCodeSpeedButton');
 end;
 
 initialization

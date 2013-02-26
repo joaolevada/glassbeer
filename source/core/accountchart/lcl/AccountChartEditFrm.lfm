@@ -138,8 +138,26 @@ inherited AccountChartEditForm: TAccountChartEditForm
         Width = 23
         BorderSpacing.Left = 4
         NumGlyphs = 0
+        Visible = False
         ShowHint = True
         ParentShowHint = False
+      end
+      object ShortCodeWarningLabel: TLabel[9]
+        AnchorSideLeft.Control = ShortCodeLabel
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideBottom.Control = ShortCodeLabel
+        AnchorSideBottom.Side = asrBottom
+        Left = 112
+        Height = 13
+        Top = 53
+        Width = 151
+        Anchors = [akLeft, akBottom]
+        BorderSpacing.Left = 4
+        Caption = 'apenas para contas de nível 3'
+        Font.Height = -9
+        Font.Name = 'Verdana'
+        ParentColor = False
+        ParentFont = False
       end
     end
   end
