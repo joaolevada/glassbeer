@@ -34,11 +34,13 @@ type
     function GetLevel: Integer;
     function GetName: string;
     function GetRemarks: string;
+    function GetShortCode: Integer;
     procedure SetChildOf(AValue: TAccountChart);
     procedure SetCode(AValue: string);
     procedure SetLevel(AValue: Integer);
     procedure SetName(AValue: string);
     procedure SetRemarks(AValue: string);
+    procedure SetShortCode(AValue: Integer);
     property BasicUserRecordData: TBasicUserRecordData
       read GetBasicUserRecordData;
   protected
@@ -56,7 +58,10 @@ type
     property CanHaveChild: Boolean read GetCanHaveChild;
     property ChildOf: TAccountChart read GetChildOf
       write SetChildOf;
+    property ShortCode: Integer read GetShortCode
+      write SetShortCode;
   end;
+  { TODO 1 -ojoaolevada -cbusiness rules : Warn user about duplicate ShortCode }
 
   { TAccountChartQuery }
 
@@ -139,6 +144,11 @@ begin
   Result := BasicUserRecordData.Remarks;
 end;
 
+function TAccountChart.GetShortCode: Integer;
+begin
+  Result := _ShortCode.Value;
+end;
+
 procedure TAccountChart.SetChildOf(AValue: TAccountChart);
 begin
   _ChildOf.Value := AValue;
@@ -162,6 +172,11 @@ end;
 procedure TAccountChart.SetRemarks(AValue: string);
 begin
   BasicUserRecordData.Remarks := AValue;
+end;
+
+procedure TAccountChart.SetShortCode(AValue: Integer);
+begin
+  _ShortCode.Value := AValue;
 end;
 
 class function TAccountChart.InternalMetadataStr: string;

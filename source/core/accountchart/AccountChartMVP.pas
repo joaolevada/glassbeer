@@ -39,6 +39,14 @@ type
     procedure InternalExecute; override;
   end;
 
+  { TAccountNewShortCodeCommand }
+
+  TAccountNewShortCodeCommand = class(TPressMVPObjectCommand)
+  protected
+    procedure InternalExecute; override;
+    function InternalIsEnabled: Boolean; override;
+  end;
+
 implementation
 
 uses
@@ -47,6 +55,34 @@ uses
   Forms,
   StdCtrls,
   Graphics;
+
+{ TAccountNewShortCodeCommand }
+
+procedure TAccountNewShortCodeCommand.InternalExecute;
+var
+  VList: TPressProxyList;
+  VAccount, VThisAccount: TAccountChart;
+begin
+  VList := Model.Session.OQLQuery('select * from ' +
+    TAccountChart.ClassName +
+    ' where Level = ' + IntToStr(ACCOUNT_LEVELTHREE) +
+    ' order by ShortCode desc');
+  if VList.Count > 0 then
+  begin
+    VAccount := VList.Items[0].Instance as TAccountChart;
+    VThisAccount := Model.Subject as TAccountChart;
+    VThisAccount.ShortCode := Succ(VAccount.ShortCode);
+  end;
+  VList.Free;
+end;
+
+function TAccountNewShortCodeCommand.InternalIsEnabled: Boolean;
+var
+  VAccount: TAccountChart;
+begin
+  VAccount := Model.Subject as TAccountChart;
+  Result := VAccount.Level = ACCOUNT_LEVELTHREE;
+end;
 
 { TAddAccountChildCommand }
 
@@ -78,8 +114,8 @@ end;
 function TAccountChartQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
   Result := 'BasicUserRecordData.Code(120,"Código");' +
-    'BasicUserRecordData.Name(235,"Nome");' +
-    'ChildOf.BasicUserRecordData.Name(205,"Membro de");' +
+    'BasicUserRecordData.Name(235,"Nome do grupo/conta");' +
+    'ChildOf.BasicUserRecordData.Name(205,"Membro do grupo");' +
     'Level(40,"Nível");' +
     'Balance(90,"Saldo");' +
     'ShortCode(80,"Cód. reduz.")';
@@ -123,6 +159,7 @@ begin
     VShortCodeEdit.Color := clBtnFace
   else
     VShortCodeEdit.Color := clDefault;
+  BindCommand(TAccountNewShortCodeCommand, 'NewShortCodeSpeedButton');
 end;
 
 initialization

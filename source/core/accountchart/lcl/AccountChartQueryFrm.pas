@@ -46,6 +46,7 @@ begin
   inherited Create(AOwner);
   MainForm.Icons32ImageList.GetBitmap(IMG_ZOOM, CodeBitBtn.Glyph);
   MainForm.Icons32ImageList.GetBitmap(IMG_ZOOM, ShortCodeBitBtn.Glyph);
+  MainForm.Icons32ImageList.GetBitmap(IMG_ADD, AddAccountChildButton.Glyph);
 end;
 
 initialization

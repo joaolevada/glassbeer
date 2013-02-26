@@ -48,6 +48,7 @@ const
   IMG_FACTORY = 6;
   IMG_ZOOM = 7;
   IMG_CALCULATOR = 8;
+  IMG_EMOTICONGEAR = 9;
 
 implementation
 

@@ -126,6 +126,21 @@ inherited AccountChartEditForm: TAccountChartEditForm
         TabOrder = 2
         Text = 'ShortCodeEdit'
       end
+      object NewShortCodeSpeedButton: TSpeedButton[8]
+        AnchorSideLeft.Control = ShortCodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = ShortCodeEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 206
+        Height = 22
+        Hint = 'Sugerir um código reduzido'
+        Top = 68
+        Width = 23
+        BorderSpacing.Left = 4
+        NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
+      end
     end
   end
 end

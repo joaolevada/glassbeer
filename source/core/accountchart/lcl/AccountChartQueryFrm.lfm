@@ -8,10 +8,10 @@ inherited AccountChartQueryForm: TAccountChartQueryForm
       Left = 365
       Height = 42
       Top = 5
-      Width = 116
+      Width = 183
       BorderSpacing.Left = 4
       BorderSpacing.Top = 4
-      Caption = 'Ad. &Subconta'
+      Caption = 'Ad. &conta ao grupo'
       TabOrder = 3
     end
   end
