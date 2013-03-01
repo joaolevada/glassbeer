@@ -22,7 +22,6 @@ type
     RemarksMemo: TMemo;
     ShortCodeEdit: TEdit;
     ShortCodeLabel: TLabel;
-    ShortCodeWarningLabel: TLabel;
   public
     constructor Create(AOwner: TComponent); override;
   end;

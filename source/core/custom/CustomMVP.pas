@@ -21,8 +21,7 @@ type
   protected
     procedure InitPresenter; override;
     class function InternalModelClass: TPressMVPObjectModelClass; override;
-  private
-    procedure SaveEvent(AEvent: TPressEvent);
+    procedure SaveEvent(AEvent: TPressEvent); virtual;
   end;
 
   { TCustomQueryPresenter }

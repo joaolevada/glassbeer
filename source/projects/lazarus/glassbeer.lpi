@@ -139,10 +139,12 @@
         <Filename Value="..\..\core\custom\CustomMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="CustomMVP"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="128"/>
-        <CursorPos X="32" Y="143"/>
+        <TopLine Value="11"/>
+        <CursorPos X="17" Y="24"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="..\..\core\main\MainMVP.pas"/>
@@ -837,7 +839,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="24" Y="17"/>
-        <UsageCount Value="194"/>
+        <UsageCount Value="197"/>
       </Unit73>
       <Unit74>
         <Filename Value="..\..\core\log\LogBO.pas"/>
@@ -846,7 +848,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="5"/>
         <CursorPos X="25" Y="22"/>
-        <UsageCount Value="194"/>
+        <UsageCount Value="197"/>
       </Unit74>
       <Unit75>
         <Filename Value="..\..\core\log\LogMVP.pas"/>
@@ -855,7 +857,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="42" Y="16"/>
-        <UsageCount Value="194"/>
+        <UsageCount Value="197"/>
       </Unit75>
       <Unit76>
         <Filename Value="..\..\core\equipment\EquipmentProfileBO.pas"/>
@@ -864,7 +866,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="279"/>
         <CursorPos X="68" Y="283"/>
-        <UsageCount Value="186"/>
+        <UsageCount Value="189"/>
       </Unit76>
       <Unit77>
         <Filename Value="..\..\core\equipment\EquipmentProfileMVP.pas"/>
@@ -873,7 +875,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="106"/>
         <CursorPos X="21" Y="118"/>
-        <UsageCount Value="186"/>
+        <UsageCount Value="189"/>
       </Unit77>
       <Unit78>
         <Filename Value="..\..\core\equipment\lcl\EquipmentProfileEditFrm.pas"/>
@@ -885,7 +887,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="11"/>
         <CursorPos X="34" Y="32"/>
-        <UsageCount Value="182"/>
+        <UsageCount Value="185"/>
       </Unit78>
       <Unit79>
         <Filename Value="..\..\core\equipment\lcl\EquipmentProfileQueryFrm.pas"/>
@@ -897,7 +899,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="27" Y="29"/>
-        <UsageCount Value="176"/>
+        <UsageCount Value="179"/>
       </Unit79>
       <Unit80>
         <Filename Value="C:\lib\pressobjects\trunk\Source\Core\PressSubject.pas"/>
@@ -917,7 +919,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="43"/>
         <CursorPos X="10" Y="56"/>
-        <UsageCount Value="127"/>
+        <UsageCount Value="130"/>
       </Unit81>
       <Unit82>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Core\PressMVPCommand.pas"/>
@@ -933,11 +935,11 @@
         <UnitName Value="AccountChartBO"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="39"/>
-        <CursorPos X="22" Y="55"/>
-        <UsageCount Value="114"/>
+        <TopLine Value="25"/>
+        <CursorPos X="15" Y="40"/>
+        <UsageCount Value="117"/>
         <Bookmarks Count="1">
-          <Item0 X="11" Y="90" ID="1"/>
+          <Item0 X="11" Y="95" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
       </Unit83>
@@ -953,11 +955,12 @@
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AccountChartMVP"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="140"/>
-        <CursorPos X="18" Y="155"/>
-        <UsageCount Value="114"/>
+        <TopLine Value="1"/>
+        <CursorPos X="13" Y="15"/>
+        <UsageCount Value="117"/>
         <Loaded Value="True"/>
       </Unit85>
       <Unit86>
@@ -967,12 +970,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AccountChartEditFrm"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="19"/>
-        <CursorPos X="43" Y="41"/>
-        <UsageCount Value="113"/>
+        <TopLine Value="3"/>
+        <CursorPos X="15" Y="32"/>
+        <UsageCount Value="116"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit86>
@@ -986,7 +988,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="26"/>
         <CursorPos X="28" Y="53"/>
-        <UsageCount Value="113"/>
+        <UsageCount Value="116"/>
       </Unit87>
       <Unit88>
         <Filename Value="C:\lib\pressobjects\trunk\Source\Core\PressMVPPresenter.pas"/>
@@ -1019,8 +1021,8 @@
         <Filename Value="..\..\..\..\press-sdk\Source\Core\PressMVPPresenter.pas"/>
         <UnitName Value="PressMVPPresenter"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="106"/>
-        <CursorPos X="14" Y="121"/>
+        <TopLine Value="210"/>
+        <CursorPos X="3" Y="216"/>
         <UsageCount Value="12"/>
       </Unit91>
       <Unit92>
@@ -1096,123 +1098,127 @@
         <UsageCount Value="9"/>
       </Unit100>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="111" Column="19" TopLine="92"/>
+        <Caret Line="47" Column="51" TopLine="28"/>
       </Position1>
       <Position2>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="125" Column="39" TopLine="97"/>
+        <Caret Line="83" Column="25" TopLine="78"/>
       </Position2>
       <Position3>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="115" Column="1" TopLine="98"/>
+        <Caret Line="161" Column="62" TopLine="137"/>
       </Position3>
       <Position4>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="116" Column="1" TopLine="98"/>
+        <Caret Line="74" Column="42" TopLine="58"/>
       </Position4>
       <Position5>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="117" Column="1" TopLine="98"/>
+        <Caret Line="68" Column="32" TopLine="58"/>
       </Position5>
       <Position6>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="119" Column="1" TopLine="98"/>
+        <Caret Line="72" Column="15" TopLine="58"/>
       </Position6>
       <Position7>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="120" Column="1" TopLine="98"/>
+        <Caret Line="71" Column="33" TopLine="56"/>
       </Position7>
       <Position8>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="119" Column="28" TopLine="99"/>
+        <Caret Line="70" Column="53" TopLine="54"/>
       </Position8>
       <Position9>
-        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="126" Column="1" TopLine="102"/>
+        <Filename Value="..\..\core\custom\CustomBO.pas"/>
+        <Caret Line="132" Column="3" TopLine="125"/>
       </Position9>
       <Position10>
-        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="119" Column="13" TopLine="102"/>
+        <Filename Value="..\..\core\accountchart\AccountChartBO.pas"/>
+        <Caret Line="180" Column="30" TopLine="157"/>
       </Position10>
       <Position11>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="27" Column="3" TopLine="11"/>
+        <Caret Line="70" Column="25" TopLine="52"/>
       </Position11>
       <Position12>
-        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="43" Column="5" TopLine="21"/>
+        <Filename Value="..\..\core\accountchart\lcl\AccountChartEditFrm.pas"/>
+        <Caret Line="42" Column="51" TopLine="19"/>
       </Position12>
       <Position13>
-        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="46" Column="41" TopLine="21"/>
+        <Filename Value="..\..\core\accountchart\lcl\AccountChartEditFrm.pas"/>
+        <Caret Line="33" Column="15" TopLine="1"/>
       </Position13>
       <Position14>
-        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="73" Column="46" TopLine="55"/>
+        <Filename Value="..\..\core\accountchart\lcl\AccountChartEditFrm.pas"/>
+        <Caret Line="32" Column="15" TopLine="3"/>
       </Position14>
       <Position15>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="46" Column="15" TopLine="21"/>
+        <Caret Line="155" Column="28" TopLine="135"/>
       </Position15>
       <Position16>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="29" Column="15" TopLine="6"/>
+        <Caret Line="144" Column="5" TopLine="129"/>
       </Position16>
       <Position17>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="47" Column="51" TopLine="28"/>
+        <Caret Line="108" Column="27" TopLine="101"/>
       </Position17>
       <Position18>
-        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="83" Column="25" TopLine="78"/>
+        <Filename Value="..\..\core\custom\CustomMVP.pas"/>
+        <Caret Line="143" Column="32" TopLine="116"/>
       </Position18>
       <Position19>
-        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="161" Column="62" TopLine="137"/>
+        <Filename Value="..\..\core\custom\CustomMVP.pas"/>
+        <Caret Line="25" Column="9" TopLine="10"/>
       </Position19>
       <Position20>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="74" Column="42" TopLine="58"/>
+        <Caret Line="39" Column="12" TopLine="24"/>
       </Position20>
       <Position21>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="68" Column="32" TopLine="58"/>
+        <Caret Line="23" Column="56" TopLine="5"/>
       </Position21>
       <Position22>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="72" Column="15" TopLine="58"/>
+        <Caret Line="160" Column="44" TopLine="141"/>
       </Position22>
       <Position23>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="71" Column="33" TopLine="56"/>
+        <Caret Line="20" Column="44" TopLine="8"/>
       </Position23>
       <Position24>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="70" Column="53" TopLine="54"/>
+        <Caret Line="169" Column="20" TopLine="142"/>
       </Position24>
       <Position25>
-        <Filename Value="..\..\core\custom\CustomBO.pas"/>
-        <Caret Line="132" Column="3" TopLine="125"/>
+        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
+        <Caret Line="162" Column="25" TopLine="149"/>
       </Position25>
       <Position26>
         <Filename Value="..\..\core\accountchart\AccountChartBO.pas"/>
-        <Caret Line="180" Column="30" TopLine="157"/>
+        <Caret Line="67" Column="16" TopLine="40"/>
       </Position26>
       <Position27>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="47" Column="22" TopLine="66"/>
+        <Caret Line="169" Column="35" TopLine="149"/>
       </Position27>
       <Position28>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="70" Column="25" TopLine="52"/>
+        <Caret Line="23" Column="44" TopLine="1"/>
       </Position28>
       <Position29>
-        <Filename Value="..\..\core\accountchart\lcl\AccountChartEditFrm.pas"/>
-        <Caret Line="42" Column="51" TopLine="19"/>
+        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
+        <Caret Line="20" Column="45" TopLine="8"/>
       </Position29>
+      <Position30>
+        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
+        <Caret Line="23" Column="44" TopLine="8"/>
+      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

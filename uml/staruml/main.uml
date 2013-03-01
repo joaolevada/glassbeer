@@ -9363,7 +9363,7 @@
 <XPD:ATTR name="Left" type="integer">72</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">52</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">262</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">108</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">121</XPD:ATTR>
 <XPD:REF name="Model">f4WuGcvTWU2lJ4ZYr3uGJwAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="k676absxJkmdLu9h0mmDygAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="Edfg8pOg9EWL1aF49TETXwAA">
@@ -14711,7 +14711,7 @@
 <XPD:ATTR name="#Associations" type="integer">2</XPD:ATTR>
 <XPD:REF name="Associations[0]">gYn/g9wsIkeNUskaRC5oDQAA</XPD:REF>
 <XPD:REF name="Associations[1]">8m2eB7sIz0iXplDEwQJlvwAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">5</XPD:ATTR>
+<XPD:ATTR name="#Attributes" type="integer">6</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="ipI0+QhixUKCF4aCjGs1uwAA">
 <XPD:ATTR name="Name" type="string">BasicUserRecorData</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">TBasicUserRecordData #Part</XPD:ATTR>
@@ -14734,6 +14734,11 @@
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="dqH98EzUBEiz669DV4+ndwAA">
 <XPD:ATTR name="Name" type="string">ShortCode</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">Integer</XPD:ATTR>
+<XPD:REF name="Owner">f4WuGcvTWU2lJ4ZYr3uGJwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[5]" type="UMLAttribute" guid="iFmLYJMHiUmAuIzD1YKr+QAA">
+<XPD:ATTR name="Name" type="string">ChildCount</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Integer</XPD:ATTR>
 <XPD:REF name="Owner">f4WuGcvTWU2lJ4ZYr3uGJwAA</XPD:REF>
 </XPD:OBJ>

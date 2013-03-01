@@ -26,15 +26,18 @@ type
     _Level: TPressInteger;
     _Balance: TPressCurrency;
     _ShortCode: TPressInteger;
+    _ChildCount: TPressInteger;
   private
     function GetBasicUserRecordData: TBasicUserRecordData;
     function GetCanHaveChild: Boolean;
+    function GetChildCount: Integer;
     function GetChildOf: TAccountChart;
     function GetCode: string;
     function GetLevel: Integer;
     function GetName: string;
     function GetRemarks: string;
     function GetShortCode: Integer;
+    procedure SetChildCount(AValue: Integer);
     procedure SetChildOf(AValue: TAccountChart);
     procedure SetCode(AValue: string);
     procedure SetLevel(AValue: Integer);
@@ -60,6 +63,8 @@ type
       write SetChildOf;
     property ShortCode: Integer read GetShortCode
       write SetShortCode;
+    property ChildCount: Integer read GetChildCount
+      write SetChildCount;
   end;
 
   { TAccountChartQuery }
@@ -118,6 +123,11 @@ begin
   Result := Self.Level < ACCOUNT_LEVELTHREE;
 end;
 
+function TAccountChart.GetChildCount: Integer;
+begin
+  Result := _ChildCount.Value;
+end;
+
 function TAccountChart.GetChildOf: TAccountChart;
 begin
   Result := _ChildOf.Value as TAccountChart;
@@ -146,6 +156,11 @@ end;
 function TAccountChart.GetShortCode: Integer;
 begin
   Result := _ShortCode.Value;
+end;
+
+procedure TAccountChart.SetChildCount(AValue: Integer);
+begin
+  _ChildCount.Value := AValue;
 end;
 
 procedure TAccountChart.SetChildOf(AValue: TAccountChart);
@@ -186,6 +201,7 @@ begin
     'Level: Integer DefaultValue=1;' +
     'Balance: Currency DefaultValue=0;' +
     'ShortCode: Integer;' +
+    'ChildCount: Integer DefaultValue=0' +
     ')';
 end;
 
