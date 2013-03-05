@@ -12,7 +12,7 @@ uses
   PressMVPCommand,
   PressSubject,
   PressMVP,
-  PressEvent;
+  PressNotifier;
 
 type
 
@@ -167,7 +167,7 @@ begin
   { increment the number of childs }
   if Assigned(VSuperAccount) then
   begin
-    VSuperAccount.ChildCount += 1;
+    VSuperAccount.ChildCount := VSuperAccount.ChildCount + 1;
   end;
 end;
 

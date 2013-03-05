@@ -23,7 +23,8 @@ uses
   EquipmentMVP, EquipmentEditFrm, EquipmentQueryFrm, MashItemTemperatureEditFrm,
   MashItemGravityEditFrm, GeneralLogEditFrm, LogBO, LogMVP, EquipmentProfileBO,
   EquipmentProfileEditFrm, EquipmentProfileQueryFrm, WaterCalculatorEditFrm,
-  AccountChartMVP, AccountChartEditFrm, AccountChartQueryFrm;
+  AccountChartMVP, AccountChartEditFrm, AccountChartQueryFrm, ProductBO,
+  UnityBO;
 
 {$R *.res}
 
