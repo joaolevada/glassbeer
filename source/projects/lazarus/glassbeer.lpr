@@ -24,7 +24,7 @@ uses
   MashItemGravityEditFrm, GeneralLogEditFrm, LogBO, LogMVP, EquipmentProfileBO,
   EquipmentProfileEditFrm, EquipmentProfileQueryFrm, WaterCalculatorEditFrm,
   AccountChartMVP, AccountChartEditFrm, AccountChartQueryFrm, ProductBO,
-  UnityBO;
+  UnityBO, ProductMVP;
 
 {$R *.res}
 

@@ -36,6 +36,7 @@ type
     _Quantity: TPressFloat;
     _UnityValue: TPressCurrency;
     _TotalValue: TPressCurrency;
+    _ItemOf: TPressReference;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -52,6 +53,8 @@ type
     _CurrentStock: TPressFloat;
     _Budgets: TPressReferences;
     _Invoices: TPressReferences;
+    _Cost: TPressCurrency;
+    _Profit: TPressFloat;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -79,6 +82,7 @@ type
     _Quantity: TPressFloat;
     _UnityValue: TPressCurrency;
     _TotalValue: TPressCurrency;
+    _ItemOf: TPressReference;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -95,6 +99,7 @@ begin
     'Quantity: Float;' +
     'UnityValue: Currency;' +
     'TotalValue: Currency;' +
+    'ItemOf: Reference(TInvoice);' +
     ');';
 end;
 
@@ -124,6 +129,7 @@ begin
     'Quantity: Float;' +
     'UnityValue: Currency;' +
     'TotalValue: Currency;' +
+    'ItemOf: Reference(TBudget);' +
     ');';
 end;
 
@@ -157,6 +163,8 @@ begin
     'CurrentStock: Float;' +
     'Budgets: References(TBudget);' +
     'Invoices: References(TInvoice);' +
+    'Cost: Currency;' +
+    'Profit: Float;' +
     ');';
 end;
 
