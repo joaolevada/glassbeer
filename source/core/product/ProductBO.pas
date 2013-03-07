@@ -54,7 +54,19 @@ type
     _Budgets: TPressReferences;
     _Invoices: TPressReferences;
     _Cost: TPressCurrency;
-    _Profit: TPressFloat;
+    _ProfitRate: TPressFloat;
+    _CurrentStockCost: TPressCurrency;
+    _Price: TPressCurrency;
+    _CurrentStockPrice: TPressCurrency;
+  protected
+    class function InternalMetadataStr: string; override;
+  end;
+
+  { TProductQuery }
+
+  TProductQuery = class(TCustomQuery)
+    _Code: TPressAnsiString;
+    _Name: TPressAnsiString;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -88,6 +100,16 @@ type
   end;
 
 implementation
+
+{ TProductQuery }
+
+class function TProductQuery.InternalMetadataStr: string;
+begin
+  Result := 'TProductQuery (TProduct) (' +
+    'Code: PlainString(20) MatchType=mtStarting;' +
+    'Name: AnsiString(40) MatchType=mtContains;' +
+    ')';
+end;
 
 { TInvoiceItem }
 
@@ -164,12 +186,16 @@ begin
     'Budgets: References(TBudget);' +
     'Invoices: References(TInvoice);' +
     'Cost: Currency;' +
-    'Profit: Float;' +
+    'ProfitRate: Float;' +
+    'CurrentStockCost: Currency;' +
+    'Price: Currency;' +
+    'CurrentStockPrice: Currency;' +
     ');';
 end;
 
 initialization
   TProduct.RegisterClass;
+  TProductQuery.RegisterClass;
   TBudget.RegisterClass;
   TBudgetItem.RegisterClass;
   TInvoice.RegisterClass;
@@ -177,6 +203,7 @@ initialization
 
 finalization
   TProduct.UnregisterClass;
+  TProductQuery.UnregisterClass;
   TBudget.UnregisterClass;
   TBudgetItem.UnregisterClass;
   TInvoice.RegisterClass;

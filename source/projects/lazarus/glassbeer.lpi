@@ -81,7 +81,7 @@
         <Filename Value="..\..\core\custom\CustomBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="CustomBO"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="93"/>
         <CursorPos X="1" Y="109"/>
@@ -92,10 +92,10 @@
         <Filename Value="..\..\core\basicuserrecorddata\BasicUserRecordDataBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="BasicUserRecordDataBO"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="67"/>
-        <CursorPos X="40" Y="3"/>
+        <CursorPos X="25" Y="70"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -919,17 +919,17 @@
         <WindowIndex Value="0"/>
         <TopLine Value="43"/>
         <CursorPos X="10" Y="56"/>
-        <UsageCount Value="157"/>
+        <UsageCount Value="158"/>
       </Unit81>
       <Unit82>
         <Filename Value="..\..\core\accountchart\AccountChartBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AccountChartBO"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="40" Y="3"/>
-        <UsageCount Value="144"/>
+        <TopLine Value="105"/>
+        <CursorPos X="9" Y="111"/>
+        <UsageCount Value="145"/>
         <Bookmarks Count="1">
           <Item0 X="11" Y="95" ID="1"/>
         </Bookmarks>
@@ -947,11 +947,11 @@
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AccountChartMVP"/>
-        <EditorIndex Value="0"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="150"/>
-        <CursorPos X="31" Y="170"/>
-        <UsageCount Value="144"/>
+        <TopLine Value="116"/>
+        <CursorPos X="3" Y="118"/>
+        <UsageCount Value="145"/>
         <Loaded Value="True"/>
       </Unit84>
       <Unit85>
@@ -961,11 +961,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AccountChartEditFrm"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="3"/>
         <CursorPos X="15" Y="32"/>
-        <UsageCount Value="143"/>
+        <UsageCount Value="144"/>
         <Loaded Value="True"/>
       </Unit85>
       <Unit86>
@@ -978,7 +978,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="26"/>
         <CursorPos X="28" Y="53"/>
-        <UsageCount Value="143"/>
+        <UsageCount Value="144"/>
       </Unit86>
       <Unit87>
         <Filename Value="C:\lib\pressobjects\trunk\Source\Core\PressMVPPresenter.pas"/>
@@ -994,7 +994,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="470"/>
         <CursorPos X="3" Y="485"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit88>
       <Unit89>
         <Filename Value="..\..\core\accountchart\lcl\AccountChartChildEditForm.pas"/>
@@ -1091,12 +1091,11 @@
         <Filename Value="..\..\core\product\ProductBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ProductBO"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="44"/>
-        <CursorPos X="26" Y="57"/>
-        <UsageCount Value="47"/>
+        <TopLine Value="157"/>
+        <CursorPos X="14" Y="189"/>
+        <UsageCount Value="48"/>
         <Loaded Value="True"/>
       </Unit100>
       <Unit101>
@@ -1111,11 +1110,11 @@
         <Filename Value="..\..\core\unity\UnityBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnityBO"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="12"/>
         <CursorPos X="25" Y="21"/>
-        <UsageCount Value="47"/>
+        <UsageCount Value="48"/>
         <Loaded Value="True"/>
       </Unit102>
       <Unit103>
@@ -1130,131 +1129,136 @@
         <Filename Value="..\..\core\product\ProductMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ProductMVP"/>
-        <EditorIndex Value="7"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="24" Y="13"/>
-        <UsageCount Value="37"/>
+        <TopLine Value="19"/>
+        <CursorPos X="27" Y="49"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit104>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="23" Column="44" TopLine="8"/>
-      </Position1>
-      <Position2>
-        <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="16" Column="19" TopLine="1"/>
-      </Position2>
-      <Position3>
-        <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="29" Column="58" TopLine="1"/>
-      </Position3>
-      <Position4>
-        <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="19" Column="26" TopLine="16"/>
-      </Position4>
-      <Position5>
-        <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="20" Column="18" TopLine="16"/>
-      </Position5>
-      <Position6>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
         <Caret Line="21" Column="17" TopLine="16"/>
-      </Position6>
-      <Position7>
+      </Position1>
+      <Position2>
         <Filename Value="..\..\core\unity\UnityBO.pas"/>
         <Caret Line="17" Column="5" TopLine="1"/>
-      </Position7>
-      <Position8>
+      </Position2>
+      <Position3>
         <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
         <Caret Line="15" Column="13" TopLine="1"/>
+      </Position3>
+      <Position4>
+        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position4>
+      <Position5>
+        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
+        <Caret Line="14" Column="9" TopLine="1"/>
+      </Position5>
+      <Position6>
+        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
+        <Caret Line="15" Column="17" TopLine="1"/>
+      </Position6>
+      <Position7>
+        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
+        <Caret Line="170" Column="60" TopLine="150"/>
+      </Position7>
+      <Position8>
+        <Filename Value="..\..\core\product\ProductBO.pas"/>
+        <Caret Line="3" Column="40" TopLine="1"/>
       </Position8>
       <Position9>
-        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
+        <Filename Value="..\..\core\product\ProductBO.pas"/>
         <Caret Line="1" Column="1" TopLine="1"/>
       </Position9>
       <Position10>
-        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="14" Column="9" TopLine="1"/>
+        <Filename Value="..\..\core\unity\UnityBO.pas"/>
+        <Caret Line="21" Column="58" TopLine="1"/>
       </Position10>
       <Position11>
-        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="15" Column="17" TopLine="1"/>
+        <Filename Value="..\..\core\product\ProductBO.pas"/>
+        <Caret Line="43" Column="6" TopLine="13"/>
       </Position11>
       <Position12>
-        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
-        <Caret Line="170" Column="60" TopLine="150"/>
+        <Filename Value="..\..\core\product\ProductBO.pas"/>
+        <Caret Line="39" Column="58" TopLine="11"/>
       </Position12>
       <Position13>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="3" Column="40" TopLine="1"/>
+        <Caret Line="71" Column="25" TopLine="53"/>
       </Position13>
       <Position14>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="1" Column="1" TopLine="1"/>
+        <Caret Line="121" Column="10" TopLine="110"/>
       </Position14>
       <Position15>
-        <Filename Value="..\..\core\unity\UnityBO.pas"/>
-        <Caret Line="21" Column="58" TopLine="1"/>
+        <Filename Value="..\..\core\product\ProductBO.pas"/>
+        <Caret Line="99" Column="18" TopLine="90"/>
       </Position15>
       <Position16>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="43" Column="6" TopLine="13"/>
+        <Caret Line="114" Column="10" TopLine="106"/>
       </Position16>
       <Position17>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="39" Column="58" TopLine="11"/>
+        <Caret Line="83" Column="39" TopLine="67"/>
       </Position17>
       <Position18>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="71" Column="25" TopLine="53"/>
+        <Caret Line="168" Column="19" TopLine="144"/>
       </Position18>
       <Position19>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="121" Column="10" TopLine="110"/>
+        <Caret Line="112" Column="23" TopLine="94"/>
       </Position19>
       <Position20>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="99" Column="18" TopLine="90"/>
+        <Caret Line="111" Column="42" TopLine="95"/>
       </Position20>
       <Position21>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="114" Column="10" TopLine="106"/>
+        <Caret Line="112" Column="59" TopLine="96"/>
       </Position21>
       <Position22>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="83" Column="39" TopLine="67"/>
+        <Caret Line="128" Column="36" TopLine="120"/>
       </Position22>
       <Position23>
-        <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="168" Column="19" TopLine="144"/>
+        <Filename Value="..\..\core\accountchart\AccountChartBO.pas"/>
+        <Caret Line="40" Column="15" TopLine="25"/>
       </Position23>
       <Position24>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="112" Column="23" TopLine="94"/>
+        <Caret Line="100" Column="37" TopLine="92"/>
       </Position24>
       <Position25>
-        <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="111" Column="42" TopLine="95"/>
+        <Filename Value="..\..\core\product\ProductMVP.pas"/>
+        <Caret Line="18" Column="39" TopLine="1"/>
       </Position25>
       <Position26>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="112" Column="59" TopLine="96"/>
+        <Caret Line="68" Column="20" TopLine="52"/>
       </Position26>
       <Position27>
-        <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="128" Column="36" TopLine="120"/>
+        <Filename Value="..\..\core\product\ProductMVP.pas"/>
+        <Caret Line="24" Column="12" TopLine="2"/>
       </Position27>
       <Position28>
-        <Filename Value="..\..\core\accountchart\AccountChartBO.pas"/>
-        <Caret Line="40" Column="15" TopLine="25"/>
+        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
+        <Caret Line="170" Column="31" TopLine="148"/>
       </Position28>
       <Position29>
-        <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="100" Column="37" TopLine="92"/>
+        <Filename Value="..\..\core\accountchart\AccountChartMVP.pas"/>
+        <Caret Line="134" Column="3" TopLine="131"/>
       </Position29>
+      <Position30>
+        <Filename Value="..\..\core\product\ProductMVP.pas"/>
+        <Caret Line="26" Column="63" TopLine="9"/>
+      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
