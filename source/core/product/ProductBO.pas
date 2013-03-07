@@ -24,6 +24,8 @@ type
     _SumOfItems: TPressCurrency;
     _TotalBudget: TPressCurrency;
     _Items: TPressParts;
+    _Date: TPressDate;
+    _ExpireDate: TPressDate;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -82,6 +84,7 @@ type
     _SumOfItems: TPressCurrency;
     _TotalInvoice: TPressCurrency;
     _Items: TPressParts;
+    _Date: TPressDate;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -107,7 +110,7 @@ class function TProductQuery.InternalMetadataStr: string;
 begin
   Result := 'TProductQuery (TProduct) (' +
     'Code: PlainString(20) MatchType=mtStarting;' +
-    'Name: AnsiString(40) MatchType=mtContains;' +
+    'Name: AnsiString(40) MatchType=mtContains' +
     ')';
 end;
 
@@ -121,7 +124,7 @@ begin
     'Quantity: Float;' +
     'UnityValue: Currency;' +
     'TotalValue: Currency;' +
-    'ItemOf: Reference(TInvoice);' +
+    'ItemOf: Reference(TInvoice)' +
     ');';
 end;
 
@@ -138,6 +141,7 @@ begin
     'SumOfItems: Currency Calc(Items);' +
     'TotalInvoice: Currency Calc(SumOfItems, Shipping);' +
     'Items: Parts(TBudgetItem);' +
+    'Date: Date DefaultValue="now"' +
     ');';
 end;
 
@@ -151,7 +155,7 @@ begin
     'Quantity: Float;' +
     'UnityValue: Currency;' +
     'TotalValue: Currency;' +
-    'ItemOf: Reference(TBudget);' +
+    'ItemOf: Reference(TBudget)' +
     ');';
 end;
 
@@ -168,6 +172,8 @@ begin
     'SumOfItems: Currency Calc(Items);' +
     'TotalBudget: Currency Calc(SumOfItems, Shipping);' +
     'Items: Parts(TBudgetItem);' +
+    'Date: Date DefaultValue="now";' +
+    'ExpireDate: Date DefaultValue="now"' +
     ');';
 end;
 
@@ -189,7 +195,7 @@ begin
     'ProfitRate: Float;' +
     'CurrentStockCost: Currency;' +
     'Price: Currency;' +
-    'CurrentStockPrice: Currency;' +
+    'CurrentStockPrice: Currency' +
     ');';
 end;
 

@@ -29,7 +29,6 @@ type
   TAccountChartQueryPresenter = class(TCustomQueryPresenter)
   protected
     function InternalQueryItemsDisplayNames: string; override;
-    class function InternalModelClass: TPressMVPObjectModelClass; override;
     procedure InitPresenter; override;
   end;
 
@@ -121,11 +120,6 @@ begin
     'Level(40,"Nível");' +
     'Balance(90,"Saldo");' +
     'ShortCode(80,"Cód. reduz.")';
-end;
-
-class function TAccountChartQueryPresenter.InternalModelClass: TPressMVPObjectModelClass;
-begin
-  Result := TCustomQueryModel;
 end;
 
 procedure TAccountChartQueryPresenter.InitPresenter;

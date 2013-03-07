@@ -11,6 +11,13 @@ uses
 
 type
 
+  { TBugdetEditPresenter }
+
+  TBugdetEditPresenter = class(TCustomEditPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
   { TProductEditPresenter }
 
   TProductEditPresenter = class(TCustomEditPresenter)
@@ -30,6 +37,23 @@ implementation
 
 uses
   ProductBO;
+
+{ TBugdetEditPresenter }
+
+procedure TBugdetEditPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
+  CreateSubPresenter('Supplier', 'SupplierComboBox', 'Name');
+  CreateSubPresenter('Shipping', 'ShippingEdit');
+  CreateSubPresenter('SumOfItems', 'SumOfItemsEdit');
+  CreateSubPresenter('TotalBudget', 'TotalBudgetEdit');
+  CreateSubPresenter('Items', 'ItemsStringGrid');
+  CreateSubPresenter('Date', 'DateEdit');
+  CreateSubPresenter('ExpireDate', 'ExpireDateEdit');
+end;
 
 { TProductQueryPresenter }
 
@@ -57,7 +81,7 @@ begin
   CreateSubPresenter('Code', 'CodeEdit');
   CreateSubPresenter('Name', 'NameEdit');
   CreateSubPresenter('Remarks', 'RemarksMemo');
-  CreateSubPresenter('Unity', 'UnityComboBox');
+  CreateSubPresenter('Unity', 'UnityComboBox', 'Name');
   CreateSubPresenter('MinimumStock', 'MinimumStockEdit');
   CreateSubPresenter('MaximumStock', 'MaximumStockEdit');
   CreateSubPresenter('CurrentStock', 'CurrentStockEdit');
@@ -71,7 +95,8 @@ begin
 end;
 
 initialization
-  TProductEditPresenter.RegisterBO(TProductBO);
+  TProductEditPresenter.RegisterBO(TProduct);
+  TProductQueryPresenter.RegisterBO(TProductQuery);
 
 end.
 
