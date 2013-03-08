@@ -18,6 +18,41 @@ type
     procedure InitPresenter; override;
   end;
 
+  { TBudgetQueryPresenter }
+
+  TBudgetQueryPresenter = class(TCustomQueryPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
+  { TBudgetItemEditPresenter }
+
+  TBudgetItemEditPresenter = class(TCustomEditPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
+  { TInvoiceEditPresenter }
+
+  TInvoiceEditPresenter = class(TCustomEditPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
+  { TInvoiceQueryPresenter }
+
+  TInvoiceQueryPresenter = class(TCustomQueryPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
+  { TInvoiceItemEditPresenter }
+
+  TInvoiceItemEditPresenter = class(TCustomEditPresenter)
+  protected
+    procedure InitPresenter; override;
+  end;
+
   { TProductEditPresenter }
 
   TProductEditPresenter = class(TCustomEditPresenter)
@@ -37,6 +72,64 @@ implementation
 
 uses
   ProductBO;
+
+{ TInvoiceQueryPresenter }
+
+procedure TInvoiceQueryPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+end;
+
+{ TInvoiceItemEditPresenter }
+
+procedure TInvoiceItemEditPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('Product', 'ProductComboBox', 'Name');
+  CreateSubPresenter('Unity', 'UnityComboBox', 'Unity');
+  CreateSubPresenter('Quantity', 'QuantityEdit');
+  CreateSubPresenter('UnityValue', 'UnityValueEdit');
+  CreateSubPresenter('TotalValue', 'TotalValueEdit');
+end;
+
+{ TInvoiceEditPresenter }
+
+procedure TInvoiceEditPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
+  CreateSubPresenter('Supplier', 'SupplierComboBox', 'Name');
+  CreateSubPresenter('Shipping', 'ShippingEdit');
+  CreateSubPresenter('SumOfItems', 'SumOfItemsEdit');
+  CreateSubPresenter('TotalInvoice', 'TotalInvoiceEdit');
+  CreateSubPresenter('Items', 'ItemsStringGrid');
+  CreateSubPresenter('Date', 'DateEdit');
+end;
+
+{ TBudgetItemEditPresenter }
+
+procedure TBudgetItemEditPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('Product', 'ProductComboBox', 'Name');
+  CreateSubPresenter('Unity', 'UnityComboBox', 'Name');
+  CreateSubPresenter('Quantity', 'QuantityEdit');
+  CreateSubPresenter('UnityValue', 'UnityValueEdit');
+  CreateSubPresenter('TotalValue', 'TotalValueEdit');
+end;
+
+{ TBudgetQueryPresenter }
+
+procedure TBudgetQueryPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+end;
 
 { TBugdetEditPresenter }
 
@@ -97,6 +190,12 @@ end;
 initialization
   TProductEditPresenter.RegisterBO(TProduct);
   TProductQueryPresenter.RegisterBO(TProductQuery);
+  TBudgetEditPresenter.RegisterBO(TBudget);
+  TBudgetQueryPresenter.RegisterBO(TBudgetQuery);
+  TBudgetItemEditPresenter.RegisterBO(TBudgetItem);
+  TInvoiceEditPresenter.RegisterBO(TInvoice);
+  TInvoiceQueryPresenter.RegisterBO(TInvoiceQuery);
+  TInvoiceItemEditPresenter.RegisterBO(TInvoiceItem);
 
 end.
 

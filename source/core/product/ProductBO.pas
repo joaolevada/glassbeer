@@ -30,6 +30,15 @@ type
     class function InternalMetadataStr: string; override;
   end;
 
+  { TBudgetQuery }
+
+  TBudgetQuery = class(TCustomQuery)
+    _Code: TPressPlainString;
+    _Name: TPressAnsiString;
+  protected
+    class function InternalMetadataStr: string; override;
+  end;
+
   { TBudgetItem }
 
   TBudgetItem = class(TCustomObject)
@@ -89,6 +98,15 @@ type
     class function InternalMetadataStr: string; override;
   end;
 
+  { TInvoiceQuery }
+
+  TInvoiceQuery = class(TCustomQuery)
+    _Code: TPressPlainString;
+    _Name: TPressAnsiString;
+  protected
+    class function InternalMetadataStr: string; override;
+  end;
+
   { TInvoiceItem }
 
   TInvoiceItem = class(TCustomObject)
@@ -103,6 +121,26 @@ type
   end;
 
 implementation
+
+{ TBudgetQuery }
+
+class function TBudgetQuery.InternalMetadataStr: string;
+begin
+  Result := 'TBudgetQuery (TBudget) (' +
+    'Code: PlainString(20) MatchType=mtStarting;' +
+    'Name: AnsiString(40) MatchType=mtContains' +
+    ');'
+end;
+
+{ TInvoiceQuery }
+
+class function TInvoiceQuery.InternalMetadataStr: string;
+begin
+  Result := 'TInvoiceQuery (TInvoice) (' +
+    'Code: PlainString(20) MatchType=mtStarting;' +
+    'Name: AnsiString(40) MatchType=mtContains' +
+    ')';
+end;
 
 { TProductQuery }
 
@@ -203,16 +241,20 @@ initialization
   TProduct.RegisterClass;
   TProductQuery.RegisterClass;
   TBudget.RegisterClass;
+  TBudgetQuery.RegisterClass;
   TBudgetItem.RegisterClass;
   TInvoice.RegisterClass;
+  TInvoiceQuery.RegisterClass;
   TInvoiceItem.RegisterClass;
 
 finalization
   TProduct.UnregisterClass;
   TProductQuery.UnregisterClass;
   TBudget.UnregisterClass;
+  TBudgetQuery.UnregisterClass;
   TBudgetItem.UnregisterClass;
-  TInvoice.RegisterClass;
+  TInvoice.UnregisterClass;
+  TInvoiceQuery.UnregisterClass;
   TInvoiceItem.UnregisterClass;
 
 end.
