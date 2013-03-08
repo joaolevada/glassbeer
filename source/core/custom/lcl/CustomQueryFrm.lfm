@@ -6,7 +6,7 @@ object CustomQueryForm: TCustomQueryForm
   Caption = 'CustomQueryForm'
   ClientHeight = 600
   ClientWidth = 800
-  Position = poMainFormCenter
+  Position = poDesktopCenter
   LCLVersion = '1.0.1.3'
   object BottomPanel: TPanel
     Left = 0
@@ -70,8 +70,8 @@ object CustomQueryForm: TCustomQueryForm
     TabOrder = 1
     object DefaultTab: TTabSheet
       Caption = 'DefaultTab'
-      ClientHeight = 100
-      ClientWidth = 1584
+      ClientHeight = 50
+      ClientWidth = 792
       Font.Height = -13
       Font.Name = 'Verdana'
       ParentFont = False

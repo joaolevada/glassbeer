@@ -1,0 +1,75 @@
+inherited UnityEditForm: TUnityEditForm
+  Height = 176
+  Width = 372
+  Caption = 'Unidade'
+  ClientHeight = 176
+  ClientWidth = 372
+  inherited BottomPanel: TPanel
+    Top = 122
+    Width = 372
+    ClientWidth = 372
+    inherited SaveButton: TBitBtn
+      Left = 131
+    end
+    inherited CancelButton: TBitBtn
+      Left = 251
+    end
+  end
+  inherited EditPageControl: TPageControl
+    Height = 122
+    Width = 372
+    inherited MainTab: TTabSheet
+      ClientHeight = 95
+      ClientWidth = 364
+      object NameLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 71
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'NameLabel'
+        ParentColor = False
+      end
+      object AbreviationLabel: TLabel[1]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = NameEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 106
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'AbreviationLabel'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[2]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'NameEdit'
+      end
+      object AbbreviationEdit: TEdit[3]
+        AnchorSideLeft.Control = AbreviationLabel
+        AnchorSideTop.Control = AbreviationLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'AbbreviationEdit'
+      end
+    end
+  end
+end

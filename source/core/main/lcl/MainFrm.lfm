@@ -15,6 +15,9 @@ object MainForm: TMainForm
       object ContactMenuItem: TMenuItem
         Caption = 'Contatos...'
       end
+      object ProductMenuItem: TMenuItem
+        Caption = 'Produtos...'
+      end
       object RawMaterialMenuItem: TMenuItem
         Caption = 'Matérias-primas...'
       end

@@ -28,6 +28,7 @@ type
     EquipmentProfileMenuItem: TMenuItem;
     FinanceiroMenuItem: TMenuItem;
     AccountChartMenuItem: TMenuItem;
+    ProductMenuItem: TMenuItem;
     RecipeMenuItem: TMenuItem;
     MetadataMenuItem: TMenuItem;
     ToolsMenu: TMenuItem;

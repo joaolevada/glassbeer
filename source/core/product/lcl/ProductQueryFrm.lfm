@@ -1,0 +1,57 @@
+inherited ProductQueryForm: TProductQueryForm
+  inherited SearchPageControl: TPageControl
+    inherited DefaultTab: TTabSheet
+      Caption = 'Buscar produtos'
+      ClientHeight = 50
+      ClientWidth = 792
+      object CodeLabel: TLabel[1]
+        AnchorSideLeft.Control = DefaultTab
+        AnchorSideTop.Control = DefaultTab
+        Left = 0
+        Height = 17
+        Top = 4
+        Width = 70
+        BorderSpacing.Top = 4
+        Caption = 'Por código'
+        ParentColor = False
+      end
+      object CodeEdit: TEdit[2]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 0
+        Height = 24
+        Top = 23
+        Width = 100
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'CodeEdit'
+      end
+      object NameLabel: TLabel[3]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = DefaultTab
+        Left = 112
+        Height = 17
+        Top = 4
+        Width = 131
+        BorderSpacing.Left = 12
+        BorderSpacing.Top = 4
+        Caption = 'Por nome/descrição'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[4]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 112
+        Height = 24
+        Top = 23
+        Width = 140
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'NameEdit'
+      end
+    end
+  end
+end

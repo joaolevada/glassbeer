@@ -8,7 +8,7 @@ object CustomEditForm: TCustomEditForm
   Caption = 'CustomEditForm'
   ClientHeight = 600
   ClientWidth = 800
-  Position = poMainFormCenter
+  Position = poDesktopCenter
   LCLVersion = '1.0.1.3'
   object BottomPanel: TPanel
     Left = 0

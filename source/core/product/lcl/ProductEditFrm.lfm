@@ -1,0 +1,342 @@
+inherited ProductEditForm: TProductEditForm
+  Left = 296
+  Height = 384
+  Top = 163
+  Width = 636
+  Caption = 'Produto'
+  ClientHeight = 384
+  ClientWidth = 636
+  inherited BottomPanel: TPanel
+    Top = 330
+    Width = 636
+    ClientWidth = 636
+    inherited SaveButton: TBitBtn
+      Left = 395
+    end
+    inherited CancelButton: TBitBtn
+      Left = 515
+    end
+  end
+  inherited EditPageControl: TPageControl
+    Height = 330
+    Width = 636
+    inherited MainTab: TTabSheet
+      ClientHeight = 303
+      ClientWidth = 628
+      object CodeLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 45
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Código'
+        ParentColor = False
+      end
+      object CodeEdit: TEdit[1]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'CodeEdit'
+      end
+      object NameLabel: TLabel[2]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MainTab
+        Left = 214
+        Height = 15
+        Top = 4
+        Width = 101
+        BorderSpacing.Left = 12
+        BorderSpacing.Top = 4
+        Caption = 'Nome/descrição'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[3]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 21
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'NameEdit'
+      end
+      object RemarksLabel: TLabel[4]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = PriceEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 192
+        Width = 89
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'RemarksLabel'
+        ParentColor = False
+      end
+      object RemarksMemo: TMemo[5]
+        AnchorSideLeft.Control = RemarksLabel
+        AnchorSideTop.Control = RemarksLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 90
+        Top = 209
+        Width = 356
+        BorderSpacing.Top = 2
+        Lines.Strings = (
+          'RemarksMemo'
+        )
+        TabOrder = 7
+      end
+      object UnityLabel: TLabel[6]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = CodeEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 53
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Unidade'
+        ParentColor = False
+      end
+      object UnityComboBox: TComboBox[7]
+        AnchorSideLeft.Control = UnityLabel
+        AnchorSideTop.Control = UnityLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 2
+        Text = 'UnityComboBox'
+      end
+      object MinimumStockEdit: TEdit[8]
+        AnchorSideLeft.Control = MinimumStockLabel
+        AnchorSideTop.Control = MinimumStockLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 115
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'MinimumStockEdit'
+      end
+      object MinimumStockLabel: TLabel[9]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = UnityComboBox
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 98
+        Width = 101
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Estoque mínimo'
+        ParentColor = False
+      end
+      object MaximumStockLabel: TLabel[10]
+        AnchorSideLeft.Control = MinimumStockEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MinimumStockLabel
+        Left = 214
+        Height = 15
+        Top = 98
+        Width = 105
+        BorderSpacing.Left = 12
+        Caption = 'Estoque máximo'
+        ParentColor = False
+      end
+      object MaximumStockEdit: TEdit[11]
+        AnchorSideLeft.Control = MaximumStockLabel
+        AnchorSideTop.Control = MaximumStockLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 115
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 4
+        Text = 'MaximumStockEdit'
+      end
+      object CurrentStockLabel: TLabel[12]
+        AnchorSideLeft.Control = MaximumStockEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MaximumStockLabel
+        Left = 424
+        Height = 15
+        Top = 98
+        Width = 89
+        BorderSpacing.Left = 12
+        Caption = 'Estoque atual'
+        ParentColor = False
+      end
+      object CurrentStockEdit: TEdit[13]
+        AnchorSideLeft.Control = CurrentStockLabel
+        AnchorSideTop.Control = CurrentStockLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 424
+        Height = 22
+        Top = 115
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 5
+        Text = 'CurrentStockEdit'
+      end
+      object PriceLabel: TLabel[14]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MinimumStockEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 145
+        Width = 36
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Preço'
+        ParentColor = False
+      end
+      object PriceEdit: TEdit[15]
+        AnchorSideLeft.Control = PriceLabel
+        AnchorSideTop.Control = PriceLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 162
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 6
+        Text = 'PriceEdit'
+      end
+    end
+    object StockTabSheet: TTabSheet[1]
+      Caption = 'Mais informações de estoque'
+      ClientHeight = 303
+      ClientWidth = 628
+      object ProfitRateEdit: TEdit
+        AnchorSideLeft.Control = ProfitRateLabel
+        AnchorSideTop.Control = ProfitRateLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 424
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'ProfitRateEdit'
+      end
+      object ProfitRateLabel: TLabel
+        AnchorSideLeft.Control = CurrentStockPriceEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = StockTabSheet
+        Left = 424
+        Height = 15
+        Top = 4
+        Width = 31
+        BorderSpacing.Left = 12
+        BorderSpacing.Top = 4
+        Caption = 'Taxa'
+        ParentColor = False
+      end
+      object CurrentStockCostEdit: TEdit
+        AnchorSideLeft.Control = CurrentStockCostLabel
+        AnchorSideTop.Control = CurrentStockCostLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 0
+        Text = 'CurrentStockCostEdit'
+      end
+      object CurrentStockCostLabel: TLabel
+        AnchorSideLeft.Control = StockTabSheet
+        AnchorSideTop.Control = StockTabSheet
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 183
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Custo total do estoque atual'
+        ParentColor = False
+      end
+      object CurrentStockPriceLabel: TLabel
+        AnchorSideLeft.Control = CurrentStockCostEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = StockTabSheet
+        Left = 214
+        Height = 15
+        Top = 4
+        Width = 181
+        BorderSpacing.Left = 12
+        BorderSpacing.Top = 4
+        Caption = 'Preço total do estoque atual'
+        ParentColor = False
+      end
+      object CurrentStockPriceEdit: TEdit
+        AnchorSideLeft.Control = CurrentStockPriceLabel
+        AnchorSideTop.Control = CurrentStockPriceLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 1
+        Text = 'CurrentStockPriceEdit'
+      end
+      object LastPurchaseDateLabel: TLabel
+        AnchorSideLeft.Control = StockTabSheet
+        AnchorSideTop.Control = CurrentStockCostEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 143
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Data da última compra'
+        ParentColor = False
+      end
+      object LastPurchaseDateEdit: TEdit
+        AnchorSideLeft.Control = LastPurchaseDateLabel
+        AnchorSideTop.Control = LastPurchaseDateLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 3
+        Text = 'LastPurchaseDateEdit'
+      end
+    end
+  end
+end

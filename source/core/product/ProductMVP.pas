@@ -11,9 +11,9 @@ uses
 
 type
 
-  { TBugdetEditPresenter }
+  { TBudgetEditPresenter }
 
-  TBugdetEditPresenter = class(TCustomEditPresenter)
+  TBudgetEditPresenter = class(TCustomEditPresenter)
   protected
     procedure InitPresenter; override;
   end;
@@ -88,7 +88,7 @@ procedure TInvoiceItemEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('Product', 'ProductComboBox', 'Name');
-  CreateSubPresenter('Unity', 'UnityComboBox', 'Unity');
+  CreateSubPresenter('Unity', 'UnityComboBox', 'Name');
   CreateSubPresenter('Quantity', 'QuantityEdit');
   CreateSubPresenter('UnityValue', 'UnityValueEdit');
   CreateSubPresenter('TotalValue', 'TotalValueEdit');
@@ -131,9 +131,9 @@ begin
   CreateSubPresenter('Name', 'NameEdit');
 end;
 
-{ TBugdetEditPresenter }
+{ TBudgetEditPresenter }
 
-procedure TBugdetEditPresenter.InitPresenter;
+procedure TBudgetEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('Code', 'CodeEdit');
@@ -178,13 +178,14 @@ begin
   CreateSubPresenter('MinimumStock', 'MinimumStockEdit');
   CreateSubPresenter('MaximumStock', 'MaximumStockEdit');
   CreateSubPresenter('CurrentStock', 'CurrentStockEdit');
-  CreateSubPresenter('Budgets', 'BudgetsStringGrid');
-  CreateSubPresenter('Invoices', 'InvoicesStringGrid');
+  //CreateSubPresenter('Budgets', 'BudgetsStringGrid');
+  //CreateSubPresenter('Invoices', 'InvoicesStringGrid');
   CreateSubPresenter('Cost', 'CostEdit');
   CreateSubPresenter('ProfitRate', 'ProfitRateEdit');
   CreateSubPresenter('CurrentStockCost', 'CurrentStockCostEdit');
   CreateSubPresenter('Price', 'PriceEdit');
   CreateSubPresenter('CurrentStockPrice', 'CurrentStockPriceEdit');
+  CreateSubPresenter('LastPurchaseDate', 'LasPurchaseDateEdit');
 end;
 
 initialization

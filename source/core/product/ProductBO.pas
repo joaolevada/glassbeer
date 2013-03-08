@@ -69,6 +69,7 @@ type
     _CurrentStockCost: TPressCurrency;
     _Price: TPressCurrency;
     _CurrentStockPrice: TPressCurrency;
+    _LastPurchaseDate: TPressDate;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -222,18 +223,19 @@ begin
   Result := 'TProduct IsPersistent(' +
     'Code: PlainString(20);' +
     'Name: AnsiString(40) DisplayName="Name" IsMandatory=True;' +
-    'Remarks: Memo' +
+    'Remarks: Memo;' +
     'Unity: Reference(TUnity);' +
     'MinimumStock: Float;' +
     'MaximumStock: Float;' +
     'CurrentStock: Float;' +
-    'Budgets: References(TBudget);' +
-    'Invoices: References(TInvoice);' +
+    //'Budgets: References(TBudget);' +
+    //'Invoices: References(TInvoice);' +
     'Cost: Currency;' +
     'ProfitRate: Float;' +
     'CurrentStockCost: Currency;' +
     'Price: Currency;' +
-    'CurrentStockPrice: Currency' +
+    'CurrentStockPrice: Currency;' +
+    'LastPurchaseDate: Date' +
     ');';
 end;
 
