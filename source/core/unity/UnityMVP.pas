@@ -29,7 +29,7 @@ procedure TUnityEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('Name', 'NameEdit');
-  CreateSubPresenter('Abreviation', 'AbreviationEdit');
+  CreateSubPresenter('Abbreviation', 'AbbreviationEdit');
 end;
 
 initialization

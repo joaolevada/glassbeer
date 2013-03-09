@@ -1,0 +1,109 @@
+inherited BudgetQueryForm: TBudgetQueryForm
+  Caption = 'Orçamentos de compra'
+  inherited SearchPageControl: TPageControl
+    inherited DefaultTab: TTabSheet
+      Caption = 'Buscar orçamento'
+      ClientHeight = 50
+      ClientWidth = 792
+      object CodeLabel: TLabel[1]
+        AnchorSideLeft.Control = DefaultTab
+        AnchorSideTop.Control = DefaultTab
+        Left = 4
+        Height = 17
+        Top = 4
+        Width = 70
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Por código'
+        ParentColor = False
+      end
+      object CodeEdit: TEdit[2]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 24
+        Top = 23
+        Width = 130
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'CodeEdit'
+      end
+      object NameLabel: TLabel[3]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = DefaultTab
+        Left = 146
+        Height = 17
+        Top = 4
+        Width = 62
+        BorderSpacing.Left = 12
+        BorderSpacing.Top = 4
+        Caption = 'Por nome'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[4]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 146
+        Height = 24
+        Top = 23
+        Width = 150
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'NameEdit'
+      end
+      object DateLabel: TLabel[5]
+        AnchorSideLeft.Control = NameEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = DefaultTab
+        Left = 308
+        Height = 17
+        Top = 4
+        Width = 102
+        BorderSpacing.Left = 12
+        BorderSpacing.Top = 4
+        Caption = 'Por data, entre'
+        ParentColor = False
+      end
+      object MinDateEdit: TEdit[6]
+        AnchorSideLeft.Control = DateLabel
+        AnchorSideTop.Control = DateLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 308
+        Height = 24
+        Top = 23
+        Width = 80
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'MinDateEdit'
+      end
+      object MaxDateEdit: TEdit[7]
+        AnchorSideLeft.Control = MinDateEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MinDateEdit
+        Left = 404
+        Height = 24
+        Top = 23
+        Width = 80
+        BorderSpacing.Left = 16
+        TabOrder = 4
+        Text = 'MaxDateEdit'
+      end
+      object DateAndLabel: TLabel[8]
+        AnchorSideLeft.Control = MinDateEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MinDateEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 392
+        Height = 17
+        Top = 27
+        Width = 9
+        BorderSpacing.Left = 4
+        Caption = 'e'
+        ParentColor = False
+      end
+    end
+  end
+end

@@ -1,0 +1,154 @@
+inherited BudgetItemEditForm: TBudgetItemEditForm
+  Height = 176
+  Width = 636
+  Caption = 'Item do orçamento para compra'
+  ClientHeight = 176
+  ClientWidth = 636
+  inherited BottomPanel: TPanel
+    Top = 122
+    Width = 636
+    ClientWidth = 636
+    inherited SaveButton: TBitBtn
+      Left = 395
+    end
+    inherited CancelButton: TBitBtn
+      Left = 515
+    end
+  end
+  inherited EditPageControl: TPageControl
+    Height = 122
+    Width = 636
+    inherited MainTab: TTabSheet
+      ClientHeight = 95
+      ClientWidth = 628
+      object ProductLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 51
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Produto'
+        ParentColor = False
+      end
+      object ProductComboBox: TComboBox[1]
+        AnchorSideLeft.Control = ProductLabel
+        AnchorSideTop.Control = ProductLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 356
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 0
+        Text = 'ProductComboBox'
+      end
+      object UnityLabel: TLabel[2]
+        AnchorSideLeft.Control = ProductComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MainTab
+        Left = 372
+        Height = 15
+        Top = 4
+        Width = 53
+        BorderSpacing.Left = 12
+        BorderSpacing.Top = 4
+        Caption = 'Unidade'
+        ParentColor = False
+      end
+      object UnityComboBox: TComboBox[3]
+        AnchorSideLeft.Control = UnityLabel
+        AnchorSideTop.Control = UnityLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 372
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 1
+        Text = 'UnityComboBox'
+      end
+      object UnityValue: TLabel[4]
+        AnchorSideLeft.Control = QuantityEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = UnityComboBox
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 15
+        Top = 51
+        Width = 85
+        BorderSpacing.Left = 12
+        BorderSpacing.Top = 8
+        Caption = 'Valor unitário'
+        ParentColor = False
+      end
+      object UnityValueEdit: TEdit[5]
+        AnchorSideLeft.Control = UnityValue
+        AnchorSideTop.Control = UnityValue
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'UnityValueEdit'
+      end
+      object TotalValueLabel: TLabel[6]
+        AnchorSideLeft.Control = UnityValueEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = UnityValue
+        Left = 424
+        Height = 15
+        Top = 51
+        Width = 66
+        BorderSpacing.Left = 12
+        Caption = 'Valor total'
+        ParentColor = False
+      end
+      object TotalValueEdit: TEdit[7]
+        AnchorSideLeft.Control = TotalValueLabel
+        AnchorSideTop.Control = TotalValueLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 424
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 4
+        Text = 'TotalValueEdit'
+      end
+      object QuantityLabel: TLabel[8]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = ProductComboBox
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 75
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Quantidade'
+        ParentColor = False
+      end
+      object QuantityEdit: TEdit[9]
+        AnchorSideLeft.Control = QuantityLabel
+        AnchorSideTop.Control = QuantityLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'QuantityEdit'
+      end
+    end
+  end
+end

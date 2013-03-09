@@ -1,0 +1,484 @@
+inherited BudgetEditForm: TBudgetEditForm
+  Left = 393
+  Top = 138
+  Caption = 'Orçamento para compra'
+  inherited EditPageControl: TPageControl
+    ActivePage = ItemsTabSheet
+    TabIndex = 1
+    inherited MainTab: TTabSheet
+      ClientHeight = 519
+      ClientWidth = 792
+      object CodeLabel: TLabel[0]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = MainTab
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 45
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Código'
+        ParentColor = False
+      end
+      object CodeEdit: TEdit[1]
+        AnchorSideLeft.Control = CodeLabel
+        AnchorSideTop.Control = CodeLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 21
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 0
+        Text = 'CodeEdit'
+      end
+      object NameLabel: TLabel[2]
+        AnchorSideLeft.Control = CodeEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MainTab
+        Left = 214
+        Height = 15
+        Top = 4
+        Width = 101
+        BorderSpacing.Left = 12
+        BorderSpacing.Top = 4
+        Caption = 'Nome/descrição'
+        ParentColor = False
+      end
+      object NameEdit: TEdit[3]
+        AnchorSideLeft.Control = NameLabel
+        AnchorSideTop.Control = NameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 21
+        Width = 356
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'NameEdit'
+      end
+      object SupplierLabel: TLabel[4]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = CodeEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 51
+        Width = 72
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Fornecedor'
+        ParentColor = False
+      end
+      object SupplierComboBox: TComboBox[5]
+        AnchorSideLeft.Control = SupplierLabel
+        AnchorSideTop.Control = SupplierLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 68
+        Width = 356
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 2
+        Text = 'SupplierComboBox'
+      end
+      object SumOfItemsLabel: TLabel[6]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = SupplierComboBox
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 98
+        Width = 94
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Total dos itens'
+        ParentColor = False
+      end
+      object SumOfItemsEdit: TEdit[7]
+        AnchorSideLeft.Control = SumOfItemsLabel
+        AnchorSideTop.Control = SumOfItemsLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 115
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 4
+        Text = 'SumOfItemsEdit'
+      end
+      object ShippingLabel: TLabel[8]
+        AnchorSideLeft.Control = SumOfItemsEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = SumOfItemsLabel
+        Left = 214
+        Height = 15
+        Top = 98
+        Width = 87
+        BorderSpacing.Left = 12
+        Caption = 'Valor do frete'
+        ParentColor = False
+      end
+      object ShippingEdit: TEdit[9]
+        AnchorSideLeft.Control = ShippingLabel
+        AnchorSideTop.Control = ShippingLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 115
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 5
+        Text = 'ShippingEdit'
+      end
+      object TotalBudgetLabel: TLabel[10]
+        AnchorSideLeft.Control = ShippingEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = SumOfItemsLabel
+        Left = 424
+        Height = 15
+        Top = 98
+        Width = 123
+        BorderSpacing.Left = 12
+        Caption = 'Total do orçamento'
+        ParentColor = False
+      end
+      object TotalBudgetEdit: TEdit[11]
+        AnchorSideLeft.Control = TotalBudgetLabel
+        AnchorSideTop.Control = TotalBudgetLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 424
+        Height = 22
+        Top = 115
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 6
+        Text = 'TotalBudgetEdit'
+      end
+      object ItemCountLabel: TLabel[12]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = SumOfItemsEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 145
+        Width = 130
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Quantidade de itens'
+        ParentColor = False
+      end
+      object ItemCountEdit: TEdit[13]
+        AnchorSideLeft.Control = ItemCountLabel
+        AnchorSideTop.Control = ItemCountLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 162
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 7
+        Text = 'ItemCountEdit'
+      end
+      object ItemAmountLabel: TLabel[14]
+        AnchorSideLeft.Control = ItemCountEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = ItemCountLabel
+        Left = 214
+        Height = 15
+        Top = 145
+        Width = 109
+        BorderSpacing.Left = 12
+        Caption = 'Volume dos itens'
+        ParentColor = False
+      end
+      object ItemAmountEdit: TEdit[15]
+        AnchorSideLeft.Control = ItemAmountLabel
+        AnchorSideTop.Control = ItemAmountLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 162
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 8
+        Text = 'ItemAmountEdit'
+      end
+      object DateLabel: TLabel[16]
+        AnchorSideLeft.Control = SupplierComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = SupplierLabel
+        Left = 372
+        Height = 15
+        Top = 51
+        Width = 31
+        BorderSpacing.Left = 12
+        Caption = 'Data'
+        ParentColor = False
+      end
+      object DateEdit: TEdit[17]
+        AnchorSideLeft.Control = DateLabel
+        AnchorSideTop.Control = DateLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 372
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'DateEdit'
+      end
+      object ExpireDateLabel: TLabel[18]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = ItemAmountEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 192
+        Width = 136
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Orçamento válido até'
+        ParentColor = False
+      end
+      object ExpireDateEdit: TEdit[19]
+        AnchorSideLeft.Control = ExpireDateLabel
+        AnchorSideTop.Control = ExpireDateLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 209
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 9
+        Text = 'ExpireDateEdit'
+      end
+      object RemarksLabel: TLabel[20]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = ExpireDateEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 233
+        Width = 83
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 2
+        Caption = 'Observações'
+        ParentColor = False
+      end
+      object RemarksMemo: TMemo[21]
+        AnchorSideLeft.Control = RemarksLabel
+        AnchorSideTop.Control = RemarksLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 90
+        Top = 250
+        Width = 356
+        BorderSpacing.Top = 2
+        Lines.Strings = (
+          'RemarksMemo'
+        )
+        TabOrder = 10
+      end
+    end
+    object ItemsTabSheet: TTabSheet[1]
+      Caption = 'Itens do orçamento'
+      ClientHeight = 519
+      ClientWidth = 792
+      object ItemsLabel: TLabel
+        AnchorSideLeft.Control = ItemsTabSheet
+        AnchorSideTop.Control = ItemsTabSheet
+        Left = 4
+        Height = 15
+        Top = 4
+        Width = 115
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Produtos/insumos'
+        ParentColor = False
+      end
+      object ItemsStringGrid: TStringGrid
+        AnchorSideLeft.Control = ItemsLabel
+        AnchorSideTop.Control = ItemsLabel
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = ItemsTabSheet
+        AnchorSideRight.Side = asrBottom
+        Left = 4
+        Height = 352
+        Top = 21
+        Width = 784
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 4
+        TabOrder = 0
+        TitleFont.Height = -12
+        TitleFont.Name = 'Verdana'
+      end
+      object SupplierLabel1: TLabel
+        AnchorSideLeft.Control = ItemsTabSheet
+        AnchorSideTop.Control = ItemsStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 381
+        Width = 72
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Fornecedor'
+        ParentColor = False
+      end
+      object SupplierComboBox1: TComboBox
+        AnchorSideLeft.Control = SupplierLabel1
+        AnchorSideTop.Control = SupplierLabel1
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 398
+        Width = 356
+        BorderSpacing.Top = 2
+        ItemHeight = 14
+        TabOrder = 1
+        Text = 'SupplierComboBox1'
+      end
+      object SumOfItemsLabel1: TLabel
+        AnchorSideLeft.Control = ItemsTabSheet
+        AnchorSideTop.Control = SupplierComboBox1
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 428
+        Width = 94
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Total dos itens'
+        ParentColor = False
+      end
+      object SumOfItemsEdit1: TEdit
+        AnchorSideLeft.Control = SumOfItemsLabel1
+        AnchorSideTop.Control = SumOfItemsLabel1
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 445
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 2
+        Text = 'SumOfItemsEdit1'
+      end
+      object ShippingLabel1: TLabel
+        AnchorSideLeft.Control = SumOfItemsEdit1
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = SumOfItemsLabel1
+        Left = 214
+        Height = 15
+        Top = 428
+        Width = 87
+        BorderSpacing.Left = 12
+        Caption = 'Valor do frete'
+        ParentColor = False
+      end
+      object ShippingEdit1: TEdit
+        AnchorSideLeft.Control = ShippingLabel1
+        AnchorSideTop.Control = ShippingLabel1
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 445
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 3
+        Text = 'ShippingEdit1'
+      end
+      object TotalBudgetLabel1: TLabel
+        AnchorSideLeft.Control = ShippingEdit1
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = SumOfItemsLabel1
+        Left = 424
+        Height = 15
+        Top = 428
+        Width = 123
+        BorderSpacing.Left = 12
+        Caption = 'Total do orçamento'
+        ParentColor = False
+      end
+      object TotalBudgetEdit1: TEdit
+        AnchorSideLeft.Control = TotalBudgetLabel1
+        AnchorSideTop.Control = TotalBudgetLabel1
+        AnchorSideTop.Side = asrBottom
+        Left = 424
+        Height = 22
+        Top = 445
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 4
+        Text = 'TotalBudgetEdit1'
+      end
+      object ItemCountLabel1: TLabel
+        AnchorSideLeft.Control = ItemsTabSheet
+        AnchorSideTop.Control = SumOfItemsEdit1
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 475
+        Width = 130
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Quantidade de itens'
+        ParentColor = False
+      end
+      object ItemCountEdit1: TEdit
+        AnchorSideLeft.Control = ItemCountLabel1
+        AnchorSideTop.Control = ItemCountLabel1
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 492
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 5
+        Text = 'ItemCountEdit1'
+      end
+      object ItemAmountLabel1: TLabel
+        AnchorSideLeft.Control = ItemCountEdit1
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = ItemCountLabel1
+        Left = 214
+        Height = 15
+        Top = 475
+        Width = 109
+        BorderSpacing.Left = 12
+        Caption = 'Volume dos itens'
+        ParentColor = False
+      end
+      object ItemAmountEdit1: TEdit
+        AnchorSideLeft.Control = ItemAmountLabel1
+        AnchorSideTop.Control = ItemAmountLabel1
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 492
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 6
+        Text = 'ItemAmountEdit1'
+      end
+    end
+  end
+end

@@ -52,6 +52,12 @@ object MainForm: TMainForm
         Caption = 'Sair'
       end
     end
+    object MenuItem2: TMenuItem
+      Caption = 'Movimento'
+      object BudgetMenuItem: TMenuItem
+        Caption = 'Orçamentos para compra...'
+      end
+    end
     object FinanceiroMenuItem: TMenuItem
       Caption = 'Financeiro'
       object AccountChartMenuItem: TMenuItem

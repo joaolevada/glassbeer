@@ -15,6 +15,8 @@ type
   TProductEditForm = class(TCustomEditForm)
     CodeEdit: TEdit;
     CodeLabel: TLabel;
+    CostEdit: TEdit;
+    CostLabel: TLabel;
     CurrentStockCostEdit: TEdit;
     CurrentStockCostLabel: TLabel;
     CurrentStockEdit: TEdit;

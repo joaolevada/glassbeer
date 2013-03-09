@@ -27,10 +27,10 @@ inherited UnityEditForm: TUnityEditForm
         Left = 4
         Height = 15
         Top = 4
-        Width = 71
+        Width = 101
         BorderSpacing.Left = 4
         BorderSpacing.Top = 4
-        Caption = 'NameLabel'
+        Caption = 'Nome/descrição'
         ParentColor = False
       end
       object AbreviationLabel: TLabel[1]
@@ -40,10 +40,10 @@ inherited UnityEditForm: TUnityEditForm
         Left = 4
         Height = 15
         Top = 51
-        Width = 106
+        Width = 74
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
-        Caption = 'AbreviationLabel'
+        Caption = 'Abreviatura'
         ParentColor = False
       end
       object NameEdit: TEdit[2]

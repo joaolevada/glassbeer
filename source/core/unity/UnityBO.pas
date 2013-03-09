@@ -29,7 +29,7 @@ class function TUnity.InternalMetadataStr: string;
 begin
   Result := 'TUnity IsPersistent(' +
     'Name: AnsiString(40) DisplayName="Nome" IsMandatory=True;' +
-    'Abbreviation: PlainString DisplayName="Abreviatura" IsMandatory=True;' +
+    'Abbreviation: PlainString(10) DisplayName="Abreviatura" IsMandatory=True;' +
     ');';
 end;
 

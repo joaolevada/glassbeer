@@ -26,6 +26,8 @@ type
     _Items: TPressParts;
     _Date: TPressDate;
     _ExpireDate: TPressDate;
+    _ItemCount: TPressInteger;
+    _ItemAmount: TPressFloat;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -35,6 +37,8 @@ type
   TBudgetQuery = class(TCustomQuery)
     _Code: TPressPlainString;
     _Name: TPressAnsiString;
+    _MinDate: TPressDate;
+    _MaxDate: TPressDate;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -95,6 +99,8 @@ type
     _TotalInvoice: TPressCurrency;
     _Items: TPressParts;
     _Date: TPressDate;
+    _ItemCount: TPressInteger;
+    _ItemAmount: TPressFloat;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -129,7 +135,9 @@ class function TBudgetQuery.InternalMetadataStr: string;
 begin
   Result := 'TBudgetQuery (TBudget) (' +
     'Code: PlainString(20) MatchType=mtStarting;' +
-    'Name: AnsiString(40) MatchType=mtContains' +
+    'Name: AnsiString(40) MatchType=mtContains;' +
+    'MinDate: Date DataName=Date MatchType=mtGreaterThanOrEqual;' +
+    'MaxDate: Date DataName=Date MatchType=mtLesserThanOrEqual' +
     ');'
 end;
 
@@ -180,7 +188,9 @@ begin
     'SumOfItems: Currency Calc(Items);' +
     'TotalInvoice: Currency Calc(SumOfItems, Shipping);' +
     'Items: Parts(TBudgetItem);' +
-    'Date: Date DefaultValue="now"' +
+    'Date: Date DefaultValue="now";' +
+    'ItemCount: Integer Calc(Items);' +
+    'ItemAmont: Float Calc(Items)' +
     ');';
 end;
 
@@ -212,7 +222,9 @@ begin
     'TotalBudget: Currency Calc(SumOfItems, Shipping);' +
     'Items: Parts(TBudgetItem);' +
     'Date: Date DefaultValue="now";' +
-    'ExpireDate: Date DefaultValue="now"' +
+    'ExpireDate: Date DefaultValue="now";' +
+    'ItemCount: Integer Calc(Items);' +
+    'ItemAmount: Integer Calc(Items)' +
     ');';
 end;
 

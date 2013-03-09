@@ -66,6 +66,7 @@ begin
   BindPresenter(TEquipmentProfileQueryPresenter, 'EquipmentProfileMenuItem');
   BindPresenter(TAccountChartQueryPresenter, 'AccountChartMenuItem');
   BindPresenter(TProductQueryPresenter, 'ProductMenuItem');
+  BindPresenter(TBudgetQueryPresenter, 'BudgetMenuItem');
   { sample commands, to be implemented very soon... }
   //BindCommand(TProprietarioSetupCommand2, 'Proprietario1');
   PressUserData.Logon('', '');
