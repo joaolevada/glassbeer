@@ -30,6 +30,20 @@ type
     _ItemAmount: TPressFloat;
   protected
     class function InternalMetadataStr: string; override;
+    procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
+  private
+    function GetShipping: Currency;
+    function GetSumOfItems: Currency;
+    function GetTotalBudget: Currency;
+    procedure SetShipping(AValue: Currency);
+    procedure SetSumOfItems(AValue: Currency);
+    procedure SetTotalBudget(AValue: Currency);
+    function SumItemsValues: Currency;
+    function SumItemsQuantity: Double;
+  public
+    property Shipping: Currency read GetShipping write SetShipping;
+    property SumOfItems: Currency read GetSumOfItems write SetSumOfItems;
+    property TotalBudget: Currency read GetTotalBudget write SetTotalBudget;
   end;
 
   { TBudgetQuery }
@@ -52,8 +66,17 @@ type
     _UnityValue: TPressCurrency;
     _TotalValue: TPressCurrency;
     _ItemOf: TPressReference;
+    _Shipping: TPressFloat;
+  private
+    function GetQuantity: Double;
+    function GetTotalValue: Currency;
+    procedure SetQuantity(AValue: Double);
+    procedure SetTotalValue(AValue: Currency);
   protected
     class function InternalMetadataStr: string; override;
+  public
+    property Quantity: Double read GetQuantity write SetQuantity;
+    property TotalValue: Currency read GetTotalValue write SetTotalValue;
   end;
 
   { TProduct }
@@ -123,6 +146,7 @@ type
     _UnityValue: TPressCurrency;
     _TotalValue: TPressCurrency;
     _ItemOf: TPressReference;
+    _Shipping: TPressFloat;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -171,7 +195,8 @@ begin
     'Quantity: Float;' +
     'UnityValue: Currency;' +
     'TotalValue: Currency;' +
-    'ItemOf: Reference(TInvoice)' +
+    'ItemOf: Reference(TInvoice);' +
+    'Shipping: Float Calc(Quantity, ItemOf)' +
     ');';
 end;
 
@@ -196,6 +221,26 @@ end;
 
 { TBudgetItem }
 
+function TBudgetItem.GetQuantity: Double;
+begin
+  Result := _Quantity.Value;
+end;
+
+function TBudgetItem.GetTotalValue: Currency;
+begin
+  Result := _TotalValue.Value;
+end;
+
+procedure TBudgetItem.SetQuantity(AValue: Double);
+begin
+  _Quantity.Value := AValue;
+end;
+
+procedure TBudgetItem.SetTotalValue(AValue: Currency);
+begin
+  _TotalValue.Value := AValue;
+end;
+
 class function TBudgetItem.InternalMetadataStr: string;
 begin
   Result := 'TBudgetItem IsPersistent(' +
@@ -204,7 +249,8 @@ begin
     'Quantity: Float;' +
     'UnityValue: Currency;' +
     'TotalValue: Currency;' +
-    'ItemOf: Reference(TBudget)' +
+    'ItemOf: Reference(TBudget);' +
+    'Shipping: Float Calc(Quantity, ItemOf)' +
     ');';
 end;
 
@@ -226,6 +272,74 @@ begin
     'ItemCount: Integer Calc(Items);' +
     'ItemAmount: Integer Calc(Items)' +
     ');';
+end;
+
+procedure TBudget.InternalCalcAttribute(AAttribute: TPressAttribute);
+begin
+  if AAttribute = _SumOfItems then
+    SumOfItems := SumItemsValues
+  else if AAttribute = _TotalBudget then
+    TotalBudget := SumOfItems + Shipping;
+end;
+
+function TBudget.GetShipping: Currency;
+begin
+  Result := _Shipping.Value;
+end;
+
+function TBudget.GetSumOfItems: Currency;
+begin
+  Result := _SumOfItems.Value;
+end;
+
+function TBudget.GetTotalBudget: Currency;
+begin
+  Result := _TotalBudget.Value;
+end;
+
+procedure TBudget.SetShipping(AValue: Currency);
+begin
+  _Shipping.Value := AValue;
+end;
+
+procedure TBudget.SetSumOfItems(AValue: Currency);
+begin
+  _SumOfItems.Value := AValue;
+end;
+
+procedure TBudget.SetTotalBudget(AValue: Currency);
+begin
+  _TotalBudget.Value := AValue;
+end;
+
+function TBudget.SumItemsValues: Currency;
+var
+  i: Integer;
+  VPartial: Currency;
+  VBudgetItem: TBudgetItem;
+begin
+  VPartial := 0;
+  for i := 0 to Pred(_Items.Count) do
+  begin
+    VBudgetItem := _Items[i] as TBudgetItem;
+    VPartial += VBudgetItem.TotalValue;
+  end;
+  Result := VPartial;
+end;
+
+function TBudget.SumItemsQuantity: Double;
+var
+  i: Integer;
+  VPartial: Double;
+  VBudgetItem: TBudgetItem;
+begin
+  VPartial := 0;
+  for i := 0 to Pred(_Items.Count)do
+  begin
+    VBudgetItem := _Items[i] as TBudgetItem;
+    VPartial += VBudgetItem.Quantity;
+  end;
+  Result := VPartial;
 end;
 
 { TProduct }
