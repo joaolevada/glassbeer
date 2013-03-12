@@ -1,99 +1,49 @@
 inherited PersonContactLabelEditForm: TPersonContactLabelEditForm
-  Height = 224
-  Width = 588
+  Height = 129
+  Width = 372
   Caption = 'Cargo'
-  ClientHeight = 224
-  ClientWidth = 588
+  ClientHeight = 129
+  ClientWidth = 372
   inherited BottomPanel: TPanel
-    Top = 170
-    Width = 588
-    ClientWidth = 588
+    Top = 75
+    Width = 372
+    ClientWidth = 372
     inherited SaveButton: TBitBtn
-      Left = 347
+      Left = 131
     end
     inherited CancelButton: TBitBtn
-      Left = 467
+      Left = 251
     end
   end
   inherited EditPageControl: TPageControl
-    Height = 170
-    Width = 588
+    Height = 75
+    Width = 372
     inherited MainTab: TTabSheet
-      ClientHeight = 143
-      ClientWidth = 580
-      object CodeLabel: TLabel[0]
+      ClientHeight = 48
+      ClientWidth = 364
+      object NameLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
         Left = 4
         Height = 15
-        Top = 2
-        Width = 45
-        BorderSpacing.Left = 4
-        BorderSpacing.Top = 2
-        Caption = 'Código'
-        ParentColor = False
-      end
-      object CodeEdit: TEdit[1]
-        AnchorSideLeft.Control = CodeLabel
-        AnchorSideTop.Control = CodeLabel
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 22
-        Top = 19
-        Width = 198
-        BorderSpacing.Top = 2
-        TabOrder = 0
-        Text = 'CodeEdit'
-      end
-      object NameLabel: TLabel[2]
-        AnchorSideLeft.Control = CodeEdit
-        AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = CodeLabel
-        Left = 218
-        Height = 15
-        Top = 2
+        Top = 4
         Width = 37
-        BorderSpacing.Left = 16
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
         Caption = 'Nome'
         ParentColor = False
       end
-      object NameEdit: TEdit[3]
+      object NameEdit: TEdit[1]
         AnchorSideLeft.Control = NameLabel
         AnchorSideTop.Control = NameLabel
         AnchorSideTop.Side = asrBottom
-        Left = 218
+        Left = 4
         Height = 22
-        Top = 19
+        Top = 21
         Width = 356
         BorderSpacing.Top = 2
-        TabOrder = 1
+        TabOrder = 0
         Text = 'NameEdit'
-      end
-      object RemarksLabel: TLabel[4]
-        AnchorSideLeft.Control = CodeLabel
-        AnchorSideTop.Control = CodeEdit
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 15
-        Top = 49
-        Width = 83
-        BorderSpacing.Top = 8
-        Caption = 'Observações'
-        ParentColor = False
-      end
-      object RemarksMemo: TMemo[5]
-        AnchorSideLeft.Control = RemarksLabel
-        AnchorSideTop.Control = RemarksLabel
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 72
-        Top = 66
-        Width = 356
-        BorderSpacing.Top = 2
-        Lines.Strings = (
-          'RemarksMemo'
-        )
-        TabOrder = 2
       end
     end
   end

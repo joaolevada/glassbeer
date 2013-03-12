@@ -19,8 +19,8 @@ type
     DateLabel: TLabel;
     ExpireDateEdit: TEdit;
     ExpireDateLabel: TLabel;
-    ItemAmountEdit: TEdit;
-    ItemAmountEdit1: TEdit;
+    ItemQuantityEdit: TEdit;
+    ItemQuantityEdit1: TEdit;
     ItemAmountLabel: TLabel;
     ItemAmountLabel1: TLabel;
     ItemCountEdit: TEdit;

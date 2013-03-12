@@ -9,7 +9,6 @@ uses
   SysUtils,
   CustomBO,
   PressAttributes,
-  BasicUserRecordDataBO,
   MashBO,
   PressSubject;
 
@@ -18,7 +17,9 @@ type
   { TEquipmentProfile }
 
   TEquipmentProfile = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Code: TPressPlainString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
     _GrainAbsorption: TPressDouble;
     _EvaporationRate: TPressDouble;
     _KettleToFermenterLoss: TPressDouble;
@@ -279,8 +280,8 @@ end;
 class function TEquipmentProfileQuery.InternalMetadataStr: string;
 begin
   Result := 'TEquipmentProfileQuery(TEquipmentProfile) (' +
-    'Code: PlainString(20) MatchType=mtContains DataName="BasicUserRecordData.Code";' +
-    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    'Code: PlainString(20) MatchType=mtStarting";' +
+    'Name: AnsiString(40) MatchType=mtContains";' +
     ')';
 end;
 
@@ -319,7 +320,9 @@ end;
 class function TEquipmentProfile.InternalMetadataStr: string;
 begin
   Result := 'TEquipmentProfile IsPersistent (' +
-    'BasicUserRecordData: TBasicUserRecordDataPart;' +
+    'Code: PlainString(20);' +
+    'Name: AnsiString(40);' +
+    'Remarks: Memo;' +
     'GrainAbsorption: Double;' +
     'EvaporationRate: Double;' +
     'KettleToFermenterLoss: Double;' +

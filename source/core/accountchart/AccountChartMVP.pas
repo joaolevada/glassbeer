@@ -114,9 +114,9 @@ end;
 
 function TAccountChartQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
-  Result := 'BasicUserRecordData.Code(120,"Código");' +
-    'BasicUserRecordData.Name(235,"Nome do grupo/conta");' +
-    'ChildOf.BasicUserRecordData.Name(205,"Membro do grupo");' +
+  Result := 'Code(120,"Código");' +
+    'Name(235,"Nome do grupo/conta");' +
+    'ChildOf.Name(205,"Membro do grupo");' +
     'Level(40,"Nível");' +
     'Balance(90,"Saldo");' +
     'ShortCode(80,"Cód. reduz.")';
@@ -141,10 +141,10 @@ var
   //VLevel: Integer;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
-  //CreateSubPresenter('ChildOf', 'ChildOfComboBox', 'BasicUserRecordData.Name');
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
+  //CreateSubPresenter('ChildOf', 'ChildOfComboBox', 'Name');
   {VShortCodePresenter := }CreateSubPresenter('ShortCode', 'ShortCodeEdit');
   //VAccount := Model.Subject as TAccountChart;
   //VShortCodeEdit := VShortCodePresenter.View.Handle as TEdit;

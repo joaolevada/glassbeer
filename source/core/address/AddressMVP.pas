@@ -201,16 +201,16 @@ var
   VLabelPresenter, VNeighborhoodPresenter, VCityPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  VLabelPresenter := CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
+  VLabelPresenter := CreateSubPresenter('Label', 'LabelComboBox', 'Name');
   VLabelPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddLabelSpeedButton');
   VLabelPresenter.BindCommand(TPressMVPEditItemCommand, 'EditLabelSpeedButton');
   CreateSubPresenter('Street', 'StreetEdit');
   CreateSubPresenter('Number', 'NumberEdit');
   CreateSubPresenter('POBox', 'POBoxEdit');
-  VNeighborhoodPresenter := CreateSubPresenter('Neighborhood', 'NeighborhoodComboBox', 'BasicUserRecordData.Name');
+  VNeighborhoodPresenter := CreateSubPresenter('Neighborhood', 'NeighborhoodComboBox', 'Name');
   VNeighborhoodPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddNeighborhoodSpeedButton');
   VNeighborhoodPresenter.BindCommand(TPressMVPEditItemCommand, 'EditNeighborhoodSpeedButton');
-  VCityPresenter := CreateSubPresenter('City', 'CityComboBox', 'BasicUserRecordData.Name');
+  VCityPresenter := CreateSubPresenter('City', 'CityComboBox', 'Name');
   VCityPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddCitySpeedButton');
   VCityPresenter.BindCommand(TPressMVPEditItemCommand, 'EditCitySpeedButton');
   CreateSubPresenter('PostalCode', 'PostalCodeEdit');
@@ -221,9 +221,7 @@ end;
 procedure TAddressLabelEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Name', 'NameEdit');
 end;
 
 { TCityEditPresenter }
@@ -233,10 +231,10 @@ var
   VStatePresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
-  VStatePresenter := CreateSubPresenter('State', 'StateComboBox', 'BasicUserRecordData.Name');
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
+  VStatePresenter := CreateSubPresenter('State', 'StateComboBox', 'Name');
   VStatePresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddStateSpeedButton');
   VStatePresenter.BindCommand(TPressMVPEditItemCommand, 'EditStateSpeedButton');
 end;
@@ -248,7 +246,7 @@ var
   VLabelPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  VLabelPresenter := CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
+  VLabelPresenter := CreateSubPresenter('Label', 'LabelComboBox', 'Name');
   VLabelPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddLabelSpeedButton');
   VLabelPresenter.BindCommand(TPressMVPEditItemCommand, 'EditLabelSpeedButton');
   CreateSubPresenter('Address', 'AddressEdit');
@@ -259,9 +257,9 @@ end;
 procedure TCountryEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
 end;
 
 { TInternetAddressLabelEditPresenter }
@@ -269,9 +267,7 @@ end;
 procedure TInternetAddressLabelEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Name', 'NameEdit');
 end;
 
 { TNeighborhoodEditPresenter }
@@ -279,9 +275,9 @@ end;
 procedure TNeighborhoodEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
 end;
 
 { TPhoneEditPresenter }
@@ -291,7 +287,7 @@ var
   VLabelPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  VLabelPresenter := CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
+  VLabelPresenter := CreateSubPresenter('Label', 'LabelComboBox', 'Name');
   VLabelPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddLabelSpeedButton');
   VLabelPresenter.BindCommand(TPressMVPEditItemCommand, 'EditLabelSpeedButton');
   CreateSubPresenter('Number', 'NumberEdit');
@@ -302,9 +298,7 @@ end;
 procedure TPhoneLabelEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Name', 'NameEdit');
 end;
 
 { TStateEditPresenter }
@@ -314,11 +308,11 @@ var
   VCountryPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
   CreateSubPresenter('Abbreviation', 'AbbreviationEdit');
-  VCountryPresenter := CreateSubPresenter('Country', 'CountryComboBox', 'BasicUserRecordData.Name');
+  VCountryPresenter := CreateSubPresenter('Country', 'CountryComboBox', 'Name');
   VCountryPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddCountrySpeedButton');
   VCountryPresenter.BindCommand(TPressMVPEditItemCommand, 'EditCountrySpeedButton');
 end;

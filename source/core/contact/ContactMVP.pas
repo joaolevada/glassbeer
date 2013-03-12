@@ -92,10 +92,10 @@ var
   VLabelPresenter, VPersonPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  VLabelPresenter := CreateSubPresenter('Label', 'LabelComboBox', 'BasicUserRecordData.Name');
+  VLabelPresenter := CreateSubPresenter('Label', 'LabelComboBox', 'Name');
   VLabelPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddLabelSpeedButton');
   VLabelPresenter.BindCommand(TPressMVPEditItemCommand, 'EditLabelSpeedButton');
-  VPersonPresenter := CreateSubPresenter('Person', 'PersonComboBox', 'BasicUserRecordData.Name');
+  VPersonPresenter := CreateSubPresenter('Person', 'PersonComboBox', 'Name');
   VPersonPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddPersonSpeedButton');
   VPersonPresenter.BindCommand(TPressMVPEditItemCommand, 'EditPersonSpeedButton');
   CreateSubPresenter('ExtensionLine', 'ExtensionLineEdit');
@@ -106,9 +106,7 @@ end;
 procedure TPersonContactLabelEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Name', 'NameEdit');
 end;
 
 { TCompanyEditPresenter }
@@ -124,19 +122,19 @@ begin
   CreateSubPresenter('IE', 'IEEdit');
   CreateSubPresenter('CNPJ', 'CNPJEdit');
   VContactsPresenter := CreateSubPresenter('Contacts', 'ContactsStringGrid',
-    'Label.BasicUserRecordData.Name(150,"Cargo");' +
-    'Person.BasicUserRecordData.Name(350,"Nome");' +
+    'Label.Name(150,"Cargo");' +
+    'Person.Name(350,"Nome");' +
     'ExtensionLine(60,"Ramal")') as TPressMVPItemsPresenter;
   VContactsPresenter.BindCommand(TPressMVPAddItemsCommand, 'AddContactSpeedButton');
   VContactsPresenter.BindCommand(TPressMVPEditItemCommand, 'EditContactSpeedButton');
   VContactsPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveContactSpeedButton');
   VContactPresenter := CreateDetailPresenter(VContactsPresenter);
   VContactLabelPresenter := VContactPresenter.CreateSubPresenter('Label', 'ContactLabelComboBox',
-    'BasicUserRecordData.Name');
+    'Name');
   VContactLabelPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddContactLabelSpeedButton');
   VContactLabelPresenter.BindCommand(TPressMVPEditItemCommand, 'EditContactLabelSpeedButton');
   VContactPersonPresenter := VContactPresenter.CreateSubPresenter('Person', 'ContactPersonComboBox',
-    'BasicUserRecordData.Name');
+    'Name');
   VContactPersonPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddContactPersonSpeedButton');
   VContactPersonPresenter.BindCommand(TPressMVPEditItemCommand, 'EditContactPersonSpeedButton');
   VContactPresenter.CreateSubPresenter('ExtensionLine',
@@ -152,7 +150,7 @@ begin
   inherited InitPresenter;
   CreateSubPresenter('RG', 'RGEdit');
   CreateSubPresenter('CPF', 'CPFEdit');
-  VSpousePresenter := CreateSubPresenter('Spouse', 'SpouseComboBox', 'BasicUserRecordData.Name');
+  VSpousePresenter := CreateSubPresenter('Spouse', 'SpouseComboBox', 'Name');
   VSpousePresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddSpouseSpeedButton');
   VSpousePresenter.BindCommand(TPressMVPEditItemCommand, 'EditSpouseSpeedButton');
 end;
@@ -170,30 +168,30 @@ var
   VInternetAddressLabelPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
 
   VAddressesPresenter := CreateSubPresenter('Addresses', 'AddressesStringGrid',
-    'Label.BasicUserRecordData.Name(100,"Tipo");' +
+    'Label.Name(100,"Tipo");' +
     'Street(300,"Rua");'+
     'Number(80,"Número")'+
     'Neighborhood(100,"Bairro");' +
-    'City.BasicUserRecordData.Name(100,"Cidade");' +
+    'City.Name(100,"Cidade");' +
     'PostalCode(100,"C.E.P")') as TPressMVPItemsPresenter;
   VAddressesPresenter.BindCommand(TPressMVPAddItemsCommand, 'AddAddressSpeedButton');
   VAddressesPresenter.BindCommand(TPressMVPEditItemCommand, 'EditAddressSpeedButton');
   VAddressesPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveAddressSpeedButton');
 
   VPhonesPresenter := CreateSubPresenter('Phones', 'PhonesStringGrid',
-    'Label.BasicUserRecordData.Name(150,"Tipo");' +
+    'Label.Name(150,"Tipo");' +
     'Number(250,"Número")') as TPressMVPItemsPresenter;
   VPhonesPresenter.BindCommand(TPressMVPAddItemsCommand, 'AddPhoneSpeedButton');
   VPhonesPresenter.BindCommand(TPressMVPEditItemCommand, 'EditPhoneSpeedButton');
   VPhonesPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemovePhoneSpeedButton');
   VPhonePresenter := CreateDetailPresenter(VPhonesPresenter);
   VPhoneLabelPresenter := VPhonePresenter.CreateSubPresenter('Label', 'PhoneLabelComboBox',
-    'BasicUserRecordData.Name');
+    'Name');
   VPhoneLabelPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddPhoneLabelSpeedButton');
   VPhoneLabelPresenter.BindCommand(TPressMVPEditItemCommand, 'EditPhoneLabelSpeedButton');
 
@@ -201,14 +199,14 @@ begin
 
   VInternetAddresses := CreateSubPresenter('InternetAddresses',
     'InternetAddressesStringGrid',
-    'Label.BasicUserRecordData.Name(200,"Tipo");' +
+    'Label.Name(200,"Tipo");' +
     'Address(400,"Endereço")') as TPressMVPItemsPresenter;
   VInternetAddresses.BindCommand(TPressMVPAddItemsCommand, 'AddInternetAddressSpeedButton');
   VInternetAddresses.BindCommand(TPressMVPEditItemCommand, 'EditInternetAddressSpeedButton');
   VInternetAddresses.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveInternetAddressSpeedButton');
   VInternetAddressPresenter := CreateDetailPresenter(VInternetAddresses);
   VInternetAddressLabelPresenter := VInternetAddressPresenter.CreateSubPresenter('Label',
-    'InternetAddressLabelComboBox', 'BasicUserRecordData.Name');
+    'InternetAddressLabelComboBox', 'Name');
   VInternetAddressLabelPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddInternetAddressLabelSpeedButton');
   VInternetAddressLabelPresenter.BindCommand(TPressMVPEditItemCommand, 'EditInternetAddressLabelSpeedButton');
   VInternetAddressPresenter.CreateSubPresenter('Address',
@@ -243,8 +241,8 @@ end;
 
 function TContactQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
-  Result := 'BasicUserRecordData.Code(178,"Código");' +
-    'BasicUserRecordData.Name(350,"Nome");' +
+  Result := 'Code(178,"Código");' +
+    'Name(350,"Nome");' +
     'NickName(250,"Apelido")';
 end;
 

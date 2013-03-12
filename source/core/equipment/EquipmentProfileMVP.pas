@@ -90,8 +90,8 @@ begin
   BindCommand(TWaterCalculatorCancelCommand, 'CancelButton');
   CreateSubPresenter('GrainAmount', 'GrainAmountEdit');
   CreateSubPresenter('MashWaterRate', 'MashWaterRateEdit');
-  CreateSubPresenter('Profile', 'ProfileComboBox', 'BasicUserRecordData.Name');
-  CreateSubPresenter('MashItem.Recipe.BasicUserRecordData.Name', 'MashItemRecipeLabel');
+  CreateSubPresenter('Profile', 'ProfileComboBox', 'Name');
+  CreateSubPresenter('MashItem.Recipe.Name', 'MashItemRecipeLabel');
   CreateSubPresenter('StartWater', 'StartWaterEdit');
   CreateSubPresenter('SpargeWater', 'SpargeWaterEdit');
   CreateSubPresenter('TotalWater', 'TotalWaterEdit');
@@ -112,8 +112,8 @@ end;
 
 function TEquipmentProfileQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
-  Result := 'BasicUserRecordData.Code(198, "Código");' +
-    'BasicUserRecordData.Name(356, "Nome");' +
+  Result := 'Code(198, "Código");' +
+    'Name(356, "Nome");' +
     'GrainAbsorption(99, "Absor. água");' +
     'EvaporationRate(99, "Tx. evap. [minuto]");' +
     'KettleToFermenterLoss(99, "Perda ferv. p/ ferm.")';
@@ -124,9 +124,9 @@ end;
 procedure TEquipmentProfileEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
   CreateSubPresenter('GrainAbsorption', 'GrainAbsorptionEdit');
   CreateSubPresenter('EvaporationRate', 'EvaporationRateEdit');
   CreateSubPresenter('KettleToFermenterLoss', 'KettleToFermenterLossEdit');

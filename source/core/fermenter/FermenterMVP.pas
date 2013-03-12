@@ -59,9 +59,9 @@ uses
 procedure TFermenterEventEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
   CreateSubPresenter('Duration', 'DurationEdit');
   CreateSubPresenter('Temperature', 'TemperatureEdit');
 end;
@@ -74,7 +74,7 @@ var
 begin
   inherited InitPresenter;
   VFermenterEventPresenter :=  CreateSubPresenter('FermenterEvent', 'FermenterEventCombo',
-    'BasicUserRecordData.Name');
+    'Name');
   VFermenterEventPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddFermenterEventSpeedButton');
   VFermenterEventPresenter.BindCommand(TPressMVPEditItemCommand, 'EditFermenterEventSpeedButton');
   CreateSubPresenter('ExpirationDate', 'ExpirationDateEdit');
@@ -94,8 +94,8 @@ end;
 
 function TFermenterQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
-  Result := 'BasicUserRecordData.Code(198, "Código");' +
-    'BasicUserRecordData.Name(356, "Nome");' +
+  Result := 'Code(198, "Código");' +
+    'Name(356, "Nome");' +
     'UtilCapacity(99, "Capacidade útil");' +
     'Status(99, "Status")';
 end;
@@ -107,12 +107,12 @@ var
   VLocationPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
   CreateSubPresenter('FullCapacity', 'FullCapacityEdit');
   CreateSubPresenter('HeadSpace', 'HeadSpaceEdit');
-  VLocationPresenter := CreateSubPresenter('Location', 'LocationComboBox', 'BasicUserRecordData.Name');
+  VLocationPresenter := CreateSubPresenter('Location', 'LocationComboBox', 'Name');
   VLocationPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddLocationSpeedButton');
   VLocationPresenter.BindCommand(TPressMVPEditItemCommand, 'EditLocationSpeedButton');
   CreateSubPresenter('UtilCapacity', 'UtilCapacityEdit');
@@ -130,8 +130,8 @@ end;
 
 function TFermenterEventQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
-  Result := 'BasicUserRecordData.Code(198, "Código");' +
-    'BasicUserRecordData.Name(356, "Nome");' +
+  Result := 'Code(198, "Código");' +
+    'Name(356, "Nome");' +
     'Duration(109, "Duração[dias]");' +
     'Temperature(79, "Temp.[ºC]")';
 end;

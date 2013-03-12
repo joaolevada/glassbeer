@@ -8,15 +8,16 @@ uses
   Classes,
   SysUtils,
   CustomBO,
-  PressAttributes,
-  BasicUserRecordDataBO;
+  PressAttributes;
 
 type
 
   { TContact }
 
   TContact = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Code: TPressPlainString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
     _Addresses: TPressParts;
     _Phones: TPressParts;
     _InternetAddresses: TPressParts;
@@ -58,7 +59,7 @@ type
   { TPersonContactLabel }
 
   TPersonContactLabel = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Name: TPressAnsiString;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -79,7 +80,7 @@ implementation
 class function TPersonContactLabel.InternalMetadataStr: string;
 begin
   Result := 'TPersonContactLabel IsPersistent PersistentName="PerContLab" (' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Name: AnsiString(40);' +
     ')';
 end;
 
@@ -121,7 +122,9 @@ end;
 class function TContact.InternalMetadataStr: string;
 begin
   Result := 'TContact IsPersistent PersistentName="Cont" ( ' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Code: PlainString(20);' +
+    'Name: AnsiString(40);' +
+    'Remarks: Memo;' +
     'Addresses: Parts(TAddress) ShortName="Addr";' +
     'Phones: Parts(TPhone);' +
     'InternetAddresses: Parts(TInternetAddress) ShortName="IntAddr";' +
@@ -135,8 +138,8 @@ end;
 class function TContactQuery.InternalMetadataStr: string;
 begin
   Result := 'TContactQuery(TContact) (' +
-    'Code: PlainString(20) MatchType=mtContains DataName="BasicUserRecordData.Code";' +
-    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    'Code: PlainString(20) MatchType=mtContains;' +
+    'Name: AnsiString(40) MatchType=mtContains' +
     ')';
 end;
 

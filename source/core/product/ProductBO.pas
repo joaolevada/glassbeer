@@ -27,20 +27,29 @@ type
     _Date: TPressDate;
     _ExpireDate: TPressDate;
     _ItemCount: TPressInteger;
-    _ItemAmount: TPressFloat;
+    _ItemQuantity: TPressFloat;
   protected
     class function InternalMetadataStr: string; override;
     procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
   private
+    function CountItems: Integer;
+    function GetItemQuantity: Double;
+    function GetItemCount: Integer;
     function GetShipping: Currency;
     function GetSumOfItems: Currency;
     function GetTotalBudget: Currency;
+    procedure SetItemQuantity(AValue: Double);
+    procedure SetItemCount(AValue: Integer);
     procedure SetShipping(AValue: Currency);
     procedure SetSumOfItems(AValue: Currency);
     procedure SetTotalBudget(AValue: Currency);
     function SumItemsValues: Currency;
     function SumItemsQuantity: Double;
   public
+    property ItemQuantity: Double read GetItemQuantity
+      write SetItemQuantity;
+    property ItemCount: Integer read GetItemCount
+      write SetItemCount;
     property Shipping: Currency read GetShipping write SetShipping;
     property SumOfItems: Currency read GetSumOfItems write SetSumOfItems;
     property TotalBudget: Currency read GetTotalBudget write SetTotalBudget;
@@ -66,17 +75,24 @@ type
     _UnityValue: TPressCurrency;
     _TotalValue: TPressCurrency;
     _ItemOf: TPressReference;
-    _Shipping: TPressFloat;
+    _Shipping: TPressCurrency;
   private
     function GetQuantity: Double;
+    function GetShipping: Currency;
     function GetTotalValue: Currency;
+    function GetUnityValue: Currency;
     procedure SetQuantity(AValue: Double);
+    procedure SetShipping(AValue: Currency);
     procedure SetTotalValue(AValue: Currency);
+    procedure SetUnityValue(AValue: Currency);
   protected
     class function InternalMetadataStr: string; override;
+    procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
   public
     property Quantity: Double read GetQuantity write SetQuantity;
+    property Shipping: Currency read GetShipping write SetShipping;
     property TotalValue: Currency read GetTotalValue write SetTotalValue;
+    property UnityValue: Currency read GetUnityValue write SetUnityValue;
   end;
 
   { TProduct }
@@ -123,7 +139,7 @@ type
     _Items: TPressParts;
     _Date: TPressDate;
     _ItemCount: TPressInteger;
-    _ItemAmount: TPressFloat;
+    _ItemQuantity: TPressFloat;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -146,7 +162,7 @@ type
     _UnityValue: TPressCurrency;
     _TotalValue: TPressCurrency;
     _ItemOf: TPressReference;
-    _Shipping: TPressFloat;
+    _Shipping: TPressCurrency;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -196,7 +212,7 @@ begin
     'UnityValue: Currency;' +
     'TotalValue: Currency;' +
     'ItemOf: Reference(TInvoice);' +
-    'Shipping: Float Calc(Quantity, ItemOf)' +
+    'Shipping: Currency' +
     ');';
 end;
 
@@ -215,7 +231,7 @@ begin
     'Items: Parts(TBudgetItem);' +
     'Date: Date DefaultValue="now";' +
     'ItemCount: Integer Calc(Items);' +
-    'ItemAmont: Float Calc(Items)' +
+    'ItemQuantity: Float Calc(Items)' +
     ');';
 end;
 
@@ -226,9 +242,19 @@ begin
   Result := _Quantity.Value;
 end;
 
+function TBudgetItem.GetShipping: Currency;
+begin
+  Result := _Shipping.Value;
+end;
+
 function TBudgetItem.GetTotalValue: Currency;
 begin
   Result := _TotalValue.Value;
+end;
+
+function TBudgetItem.GetUnityValue: Currency;
+begin
+  Result := _UnityValue.Value;
 end;
 
 procedure TBudgetItem.SetQuantity(AValue: Double);
@@ -236,9 +262,19 @@ begin
   _Quantity.Value := AValue;
 end;
 
+procedure TBudgetItem.SetShipping(AValue: Currency);
+begin
+  _Shipping.Value := AValue;
+end;
+
 procedure TBudgetItem.SetTotalValue(AValue: Currency);
 begin
   _TotalValue.Value := AValue;
+end;
+
+procedure TBudgetItem.SetUnityValue(AValue: Currency);
+begin
+  _UnityValue.Value := AValue;
 end;
 
 class function TBudgetItem.InternalMetadataStr: string;
@@ -248,10 +284,16 @@ begin
     'Unity: Reference(TUnity);' +
     'Quantity: Float;' +
     'UnityValue: Currency;' +
-    'TotalValue: Currency;' +
+    'TotalValue: Currency Calc(Quantity, UnityValue);' +
     'ItemOf: Reference(TBudget);' +
-    'Shipping: Float Calc(Quantity, ItemOf)' +
+    'Shipping: Currency' +
     ');';
+end;
+
+procedure TBudgetItem.InternalCalcAttribute(AAttribute: TPressAttribute);
+begin
+  if AAttribute = _TotalValue then
+    TotalValue := UnityValue * Quantity;
 end;
 
 { TBudget }
@@ -270,16 +312,48 @@ begin
     'Date: Date DefaultValue="now";' +
     'ExpireDate: Date DefaultValue="now";' +
     'ItemCount: Integer Calc(Items);' +
-    'ItemAmount: Integer Calc(Items)' +
+    'ItemQuantity: Float Calc(Items)' +
     ');';
 end;
 
 procedure TBudget.InternalCalcAttribute(AAttribute: TPressAttribute);
+var
+  I: Integer;
+  VBudgetItem: TBudgetItem;
 begin
   if AAttribute = _SumOfItems then
     SumOfItems := SumItemsValues
   else if AAttribute = _TotalBudget then
+  begin
     TotalBudget := SumOfItems + Shipping;
+    for I := 0 to Pred(_Items.Count) do
+    begin
+      VBudgetItem := _Items[i] as TBudgetItem;
+      { this makes Press screw with budget primary key }
+      //VBudgetItem._ItemOf.Value := Self;
+      if ItemQuantity > 0 then
+        VBudgetItem.Shipping := Shipping / ItemQuantity * VBudgetItem.Quantity;
+    end;
+  end
+  else if AAttribute = _ItemCount then
+    ItemCount := CountItems
+  else if AAttribute = _ItemQuantity then
+    ItemQuantity := SumItemsQuantity;
+end;
+
+function TBudget.CountItems: Integer;
+begin
+  Result := _Items.Count;
+end;
+
+function TBudget.GetItemQuantity: Double;
+begin
+  Result := _ItemQuantity.Value;
+end;
+
+function TBudget.GetItemCount: Integer;
+begin
+  Result := _ItemCount.Value;
 end;
 
 function TBudget.GetShipping: Currency;
@@ -295,6 +369,16 @@ end;
 function TBudget.GetTotalBudget: Currency;
 begin
   Result := _TotalBudget.Value;
+end;
+
+procedure TBudget.SetItemQuantity(AValue: Double);
+begin
+  _ItemQuantity.Value:= AValue;
+end;
+
+procedure TBudget.SetItemCount(AValue: Integer);
+begin
+  _ItemCount.Value := AValue;
 end;
 
 procedure TBudget.SetShipping(AValue: Currency);
@@ -334,7 +418,7 @@ var
   VBudgetItem: TBudgetItem;
 begin
   VPartial := 0;
-  for i := 0 to Pred(_Items.Count)do
+  for i := 0 to Pred(_Items.Count) do
   begin
     VBudgetItem := _Items[i] as TBudgetItem;
     VPartial += VBudgetItem.Quantity;

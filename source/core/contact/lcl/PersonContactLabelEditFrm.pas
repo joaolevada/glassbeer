@@ -13,12 +13,8 @@ type
   { TPersonContactLabelEditForm }
 
   TPersonContactLabelEditForm = class(TCustomEditForm)
-    CodeEdit: TEdit;
-    CodeLabel: TLabel;
     NameEdit: TEdit;
     NameLabel: TLabel;
-    RemarksLabel: TLabel;
-    RemarksMemo: TMemo;
   end;
 
 

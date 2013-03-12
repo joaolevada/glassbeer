@@ -8,15 +8,16 @@ uses
   Classes,
   SysUtils,
   PressAttributes,
-  CustomBO,
-  BasicUserRecordDataBO;
+  CustomBO;
 
 type
 
   { TEquipment }
 
   TEquipment = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Code: TPressPlainString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
     _Cost: TPressCurrency;
     _PurchaseDate: TPressDate;
   protected
@@ -39,7 +40,7 @@ implementation
 class function TEquipmentQuery.InternalMetadataStr: string;
 begin
   Result := 'TEquipmentQuery(TEquipment) (' +
-    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    'Name: AnsiString(40) MatchType=mtContains;' +
     ')';
 end;
 
@@ -48,7 +49,9 @@ end;
 class function TEquipment.InternalMetadataStr: string;
 begin
   Result := 'TEquipment IsPersistent(' +
-    'BasicUserRecordData: TBasicUserRecordDataPart;' +
+    'Code: PlainString(20);' +
+    'Name: AnsiString(40);' +
+    'Remarks: Memo;' +
     'Cost: Currency;' +
     'PurchaseDate: Date;' +
     ')';

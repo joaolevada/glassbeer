@@ -6,7 +6,6 @@ interface
 
 uses
   CustomBO
-  ,BasicUserRecordDataBO
   ,PressAttributes
   ,PressSubject;
 
@@ -15,7 +14,9 @@ type
   { TLocation }
 
   TLocation = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordData;
+    _Code: TPressPlainsString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
   private
     function GetCode: string;
     function GetName: string;
@@ -39,28 +40,14 @@ type
     class function InternalMetadataStr: string; override;
   end;
 
-  { TLocationReference }
-
-  TLocationReference = class(TCustomReference)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
-  end;
-
 implementation
-
-{ TLocationReference }
-
-class function TLocationReference.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TLocation;
-end;
 
 { TLocationQuery }
 
 class function TLocationQuery.InternalMetadataStr: string;
 begin
   Result := 'TLocationQuery(TLocation) (' +
-    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    'Name: AnsiString(40) MatchType=mtContains";' +
     ')';
 end;
 
@@ -68,38 +55,40 @@ end;
 
 function TLocation.GetCode: string;
 begin
-  Result := _BasicUserRecordData.Code;
+  Result := _Code.Value;
 end;
 
 function TLocation.GetName: string;
 begin
-  Result := _BasicUserRecordData.Name;
+  Result := _Name.Value;
 end;
 
 function TLocation.GetRemarks: string;
 begin
-  Result := _BasicUserRecordData.Remarks;
+  Result := _Remarks.Value;
 end;
 
 procedure TLocation.SetCode(const AValue: string);
 begin
-  _BasicUserRecordData.Code := AValue;
+  _Code.Value := AValue;
 end;
 
 procedure TLocation.SetName(const AValue: string);
 begin
-  _BasicUserRecordData.Name := AValue;
+  _Name.Value := AValue;
 end;
 
 procedure TLocation.SetRemarks(const AValue: string);
 begin
-  _BasicUserRecordData.Remarks := AValue;
+  _Remarks.Value := AValue;
 end;
 
 class function TLocation.InternalMetadataStr: string;
 begin
   Result := 'TLocation IsPersistent (' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Code: PlainString(20);' +
+    'Name: AnsiString(40);' +
+    'Remarks: Memo;' +
     ')';
 end;
 
@@ -107,12 +96,10 @@ end;
 initialization
   TLocation.RegisterClass;
   TLocationQuery.RegisterClass;
-  TLocationReference.RegisterAttribute;
 
 finalization
   TLocation.UnregisterClass;
   TLocationQuery.UnregisterClass;
-  TLocationReference.UnregisterAttribute;
 
 end.
 

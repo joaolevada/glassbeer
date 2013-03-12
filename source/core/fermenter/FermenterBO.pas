@@ -10,26 +10,22 @@ uses
   ,PressAttributes
   ,PressSubject
   ,CustomBO
-  ,BasicUserRecordDataBO
   ,LocationBO;
 
 type
 
   TFermenterStatus = (fsAvailable, fsInUse);
 
-  {$M+}
-  TFermenterEventItemParts = class;
-  TFermenterEventReference = class;
-  {$M-}
-
   { TFermenter }
 
   TFermenter = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordData;
+    _Code: TPressPlainString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
     _FullCapacity: TPressDouble;
     _HeadSpace: TPressDouble;
     _UtilCapacity: TPressDouble;
-    _Location: TLocationReference;
+    _Location: TPressReference;
     _CurrentVolume: TPressDouble;
     _Status: TPressEnum;
   private
@@ -66,27 +62,14 @@ type
   { TFermenterQuery }
 
   TFermenterQuery = class(TCustomQuery)
+    _Code: TPressPlainString;
     _Name: TPressAnsiString;
   protected
     class function InternalMetadataStr: string; override;
   end;
 
-  { TFermenterReference }
-
-  TFermenterReference = class(TCustomReference)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
-  end;
-
-  { TFermenterEventItemParts }
-
-  TFermenterEventItemParts = class(TCustomParts)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
-  end;
-
   TFermenterEventItem = class(TCustomObject)
-    _FermenterEvent: TFermenterEventReference;
+    _FermenterEvent: TPressReference;
     _ExpirationDate: TPressDate;
     _Expired: TPressBoolean;
     _Volume: TPressDouble;
@@ -107,18 +90,13 @@ type
   end;
 
   TFermenterEvent = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Code: TPressPlainsString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
     _Duration: TPressInteger;
     _Temperature: TPressDouble;
   protected
     class function InternalMetadataStr: string; override;
-  end;
-
-  { TFermenterEventReference }
-
-  TFermenterEventReference = class(TCustomReference)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
   end;
 
   { TFermenterEventQuery }
@@ -136,7 +114,8 @@ implementation
 class function TFermenterQuery.InternalMetadataStr: string;
 begin
   Result := 'TFermenterQuery(TFermenter) (' +
-    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    'Code: PlainString(20) MatchType=mtStarting;' +
+    'Name: AnsiString(40) MatchType=mtContains;' +
     ')';
 end;
 
@@ -144,7 +123,7 @@ end;
 
 function TFermenter.GetCode: string;
 begin
-  Result := _BasicUserRecordData.Code;
+  Result := _Code.Value;
 end;
 
 function TFermenter.GetCurrentVolume: Double;
@@ -164,12 +143,12 @@ end;
 
 function TFermenter.GetName: string;
 begin
-  Result := _BasicUserRecordData.Name;
+  Result := _Name.Value;
 end;
 
 function TFermenter.GetRemarks: string;
 begin
-  Result := _BasicUserRecordData.Remarks;
+  Result := _Remarks.Value;
 end;
 
 function TFermenter.GetStatus: TFermenterStatus;
@@ -184,7 +163,7 @@ end;
 
 procedure TFermenter.SetCode(const AValue: string);
 begin
-  _BasicUserRecordData.Code := AValue;
+  _Code := AValue;
 end;
 
 procedure TFermenter.SetCurrentVolume(const AValue: Double);
@@ -204,12 +183,12 @@ end;
 
 procedure TFermenter.SetName(const AValue: string);
 begin
-  _BasicUserRecordData.Name := AValue;
+  _Name.Value := AValue;
 end;
 
 procedure TFermenter.SetRemarks(const AValue: string);
 begin
-  _BasicUserRecordData.Remarks := AValue;
+  _Remarks.Value := AValue;
 end;
 
 procedure TFermenter.SetStatus(const AValue: TFermenterStatus);
@@ -225,11 +204,13 @@ end;
 class function TFermenter.InternalMetadataStr: string;
 begin
   Result := 'TFermenter IsPersistent ( ' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Code: PlainString(20);' +
+    'Name: AnsiString(40);' +
+    'Remarks: Memo;' +
     'FullCapacity: Double DisplayName="Capacidade total";' +
     'HeadSpace: Double DisplayName="Head space (%)";' +
     'UtilCapacity: Double Calc(FullCapacity, HeadSpace) DisplayName="Capacidade útil";' +
-    'Location: TLocationReference DisplayName="Localização";' +
+    'Location: Reference(TLocation) DisplayName="Localização";' +
     'CurrentVolume: Double DisplayName="Volume atual";' +
     'Status: Enum(TFermenterStatus) DisplayName="Status";' +
     ')';
@@ -239,14 +220,6 @@ procedure TFermenter.InternalCalcAttribute(AAttribute: TPressAttribute);
 begin
   if AAttribute = _UtilCapacity then
     UtilCapacity := FullCapacity - (FullCapacity * HeadSpace / 100);
-end;
-
-
-{ TFermenterReference }
-
-class function TFermenterReference.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TFermenter;
 end;
 
 { TFermenterEventItemParts }
@@ -281,7 +254,7 @@ end;
 class function TFermenterEventItem.InternalMetadataStr: string;
 begin
   Result := 'TFermenterEventItem IsPersistent (' +
-    'FermenterEvent: TFermenterEventReference ShortName="BasicURD";' +
+    'FermenterEvent: Reference(TFermenterEvent);' +
     'ExpirationDate: Date DisplayName="Vencimento";' +
     'Expired: Boolean Calc(ExpirationDate);' +
     'Volume: Double DisplayName="Volume (litros)";' +
@@ -302,17 +275,12 @@ end;
 class function TFermenterEvent.InternalMetadataStr: string;
 begin
   Result := 'TFermenterEvent IsPersistent PersistentName="FmtrEvnt" (' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Code: PlainString(20);' +
+    'Name: AnsiString(40);' +
+    'Remarks: Memo;' +
     'Duration: Integer DisplayName="Duração";' +
     'Temperature: Double DisplayName="Temperatura";' +
     ')';
-end;
-
-{ TFermenterEventReference }
-
-class function TFermenterEventReference.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TFermenterEvent;
 end;
 
 { TFermenterEventQuery }
@@ -320,7 +288,7 @@ end;
 class function TFermenterEventQuery.InternalMetadataStr: string;
 begin
   Result := 'TFermenterEventQuery(TFermenterEvent) (' +
-    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    'Name: AnsiString(40) MatchType=mtContains;' +
     ')';
 end;
 
@@ -331,8 +299,6 @@ initialization
   TFermenterEventItemParts.RegisterAttribute;
   TFermenterEventQuery.RegisterClass;
   TFermenterQuery.RegisterClass;
-  TFermenterReference.RegisterAttribute;
-  TFermenterEventReference.RegisterAttribute;
   PressModel.RegisterEnumMetadata(TypeInfo(TFermenterStatus),
     'TFermenterStatus',
     ['Disponível', 'Em uso']);
@@ -344,8 +310,6 @@ finalization
   TFermenterEventItemParts.UnregisterAttribute;
   TFermenterEventQuery.UnregisterClass;
   TFermenterQuery.UnregisterClass;
-  TFermenterReference.UnregisterAttribute;
-  TFermenterEventReference.UnregisterAttribute;
 
 end.
 

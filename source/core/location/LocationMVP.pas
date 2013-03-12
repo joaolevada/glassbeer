@@ -38,8 +38,8 @@ end;
 
 function TLocationQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
-  Result := 'BasicUserRecordData.Code(198, "Código");' +
-    'BasicUserRecordData.Name(356, "Nome")';
+  Result := 'Code(198, "Código");' +
+    'Name(356, "Nome")';
 end;
 
 { TLocationEditPresenter }
@@ -47,9 +47,9 @@ end;
 procedure TLocationEditPresenter.InitPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('BasicUserRecordData.Code', 'CodeEdit');
-  CreateSubPresenter('BasicUserRecordData.Name', 'NameEdit');
-  CreateSubPresenter('BasicUserRecordData.Remarks', 'RemarksMemo');
+  CreateSubPresenter('Code', 'CodeEdit');
+  CreateSubPresenter('Name', 'NameEdit');
+  CreateSubPresenter('Remarks', 'RemarksMemo');
 end;
 
 initialization

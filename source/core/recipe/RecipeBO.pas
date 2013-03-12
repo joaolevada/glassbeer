@@ -24,7 +24,9 @@ type
   { TRecipe }
 
   TRecipe = class(TCustomObject)
-  	_BasicUserRecordData: TBasicUserRecordDataPart;
+  	_Code: TPressPlainsString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
   	_Family: TPressEnum;
   	_Ingredients: TRecipeIngredientItemParts;
   	_WaterAmount: TPressDouble;
@@ -64,7 +66,7 @@ type
   { TRecipeIngredientItem }
 
   TRecipeIngredientItem = class(TCustomObject)
-    _RawMaterial: TRawMaterialReference;
+    _Product: TPressReference;
     _Percentage: TPressDouble;
   private
     function GetPercentage: Double;
@@ -75,13 +77,6 @@ type
     property Percentage: Double read GetPercentage write SetPercentage;
   end;
 
-  { TRecipeIngredientItemParts }
-
-  TRecipeIngredientItemParts = class(TCustomParts)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
-  end;
-
   { TRecipeQuery }
 
   TRecipeQuery = class(TCustomQuery)
@@ -90,32 +85,14 @@ type
     class function InternalMetadataStr: string; override;
   end;
 
-  TBeerStyleReferences = class(TCustomReferences)
-  end;
-
-  { TRecipeReference }
-
-  TRecipeReference = class(TCustomReference)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
-  end;
-
-
 implementation
-
-{ TRecipeReference }
-
-class function TRecipeReference.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TRecipe;
-end;
 
 { TRecipeQuery }
 
 class function TRecipeQuery.InternalMetadataStr: string;
 begin
   Result := 'TRecipeQuery(TRecipe) (' +
-    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    'Name: AnsiString(40) MatchType=mtContains;' +
     ')';
 end;
 
@@ -205,7 +182,9 @@ end;
 class function TRecipe.InternalMetadataStr: string;
 begin
   Result := 'TRecipe IsPersistent PersistentName="Recipe" (' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Code: PlainString(20);' +
+    'Name: AnsiString(40);' +
+    'Remarks: Memo;' +
     'Family: Enum(TBeerFamily) DisplayName="Família";' +
     'Ingredients: TRecipeIngredientItemParts ShortName="Ingrds";' +
     'WaterAmount: Double DisplayName="Volume de água (litros)";' +
@@ -230,16 +209,9 @@ end;
 class function TRecipeIngredientItem.InternalMetadataStr: string;
 begin
   Result := 'TRecipeIngredientItem IsPersistent PersistentName="RecIngItem" (' +
-    'RawMaterial: Reference(TRawMaterial) DisplayName="Matéria prima";' +
+    'Product: Reference(TProduct) DisplayName="Produto/matéria prima";' +
     'Percentage: Double DisplayName="Porcentagem";' +
     ')';
-end;
-
-{ TRecipeIngredientItemParts }
-
-class function TRecipeIngredientItemParts.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TRecipeIngredientItem;
 end;
 
 initialization
@@ -251,17 +223,12 @@ initialization
     ]);
   TRecipe.RegisterClass;
   TRecipeIngredientItem.RegisterClass;
-  TRecipeIngredientItemParts.RegisterAttribute;
   TRecipeQuery.RegisterClass;
-  TRecipeReference.RegisterAttribute;
-
 
 finalization
   TRecipe.UnregisterClass;
   TRecipeIngredientItem.UnregisterClass;
-  TRecipeIngredientItemParts.UnregisterAttribute;
   TRecipeQuery.UnregisterClass;
-  TRecipeReference.UnregisterAttribute;
 
 end.
 

@@ -7,7 +7,8 @@ interface
 uses
   Classes,
   SysUtils,
-  CustomMVP;
+  CustomMVP,
+  PressMVPCommand;
 
 type
 
@@ -31,6 +32,13 @@ type
   TBudgetItemEditPresenter = class(TCustomEditPresenter)
   protected
     procedure InitPresenter; override;
+  end;
+
+  { TBudgetCalcShipItemRateCommand }
+
+  TBudgetCalcShipItemRateCommand = class(TPressMVPObjectCommand)
+  protected
+    procedure InternalExecute; override;
   end;
 
   { TInvoiceEditPresenter }
@@ -73,6 +81,24 @@ implementation
 
 uses
   ProductBO;
+
+{ TBudgetCalcShipItemRateCommand }
+
+procedure TBudgetCalcShipItemRateCommand.InternalExecute;
+var
+  VBudget: TBudget;
+  VBudgetItem: TBudgetItem;
+  I: Integer;
+begin
+  VBudget := Model.Subject as TBudget;
+  if Assigned(VBudget) then
+    for I := 0 to Pred(VBudget._Items.Count) do
+    begin
+      VBudgetItem := VBudget._Items[i] as TBudgetItem;
+      VBudgetItem.Shipping := VBudget.Shipping / VBudget.ItemQuantity *
+        VBudgetItem.Quantity;
+    end;
+end;
 
 { TInvoiceQueryPresenter }
 
@@ -140,7 +166,7 @@ function TBudgetQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
   Result := 'Code(100, "Código");' +
     'Name(200, "Nome");' +
-    'Supplier.NickName(200, "Fornecedor");' +
+    'Supplier.Name(200, "Fornecedor");' +
     'Date(80, "Data");' +
     'SumOfItems(80, "Itens");' +
     'Shipping(70, "Frete");' +
@@ -156,9 +182,9 @@ begin
   CreateSubPresenter('Name', 'NameEdit');
   CreateSubPresenter('Remarks', 'RemarksMemo');
   CreateSubPresenter('Supplier', 'SupplierComboBox',
-    'BasicUserRecordData.Name');
+    'Name');
   CreateSubPresenter('Supplier', 'SupplierComboBox1',
-    'BasicUserRecordData.Name');
+    'Name');
   CreateSubPresenter('Shipping', 'ShippingEdit');
   CreateSubPresenter('Shipping', 'ShippingEdit1');
   CreateSubPresenter('SumOfItems', 'SumOfItemsEdit');
@@ -170,13 +196,14 @@ begin
     'Unity.Abbreviation(50, "Unidade");' +
     'Quantity(50, "Qtde.");' +
     'UnityValue(50, "Vl. unit.");' +
-    'TotalValue(70, "Total")');
+    'TotalValue(70, "Total");' +
+    'Shipping(50, "Frete")');
   CreateSubPresenter('Date', 'DateEdit');
   CreateSubPresenter('ExpireDate', 'ExpireDateEdit');
   CreateSubPresenter('ItemCount', 'ItemCountEdit');
   CreateSubPresenter('ItemCount', 'ItemCountEdit1');
-  CreateSubPresenter('ItemAmount', 'ItemAmountEdit');
-  CreateSubPresenter('ItemAmount', 'ItemAmountEdit1');
+  CreateSubPresenter('ItemQuantity', 'ItemQuantityEdit');
+  CreateSubPresenter('ItemQuantity', 'ItemQuantityEdit1');
 end;
 
 { TProductQueryPresenter }

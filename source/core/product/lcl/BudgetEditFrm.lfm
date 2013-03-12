@@ -3,8 +3,6 @@ inherited BudgetEditForm: TBudgetEditForm
   Top = 138
   Caption = 'Orçamento para compra'
   inherited EditPageControl: TPageControl
-    ActivePage = ItemsTabSheet
-    TabIndex = 1
     inherited MainTab: TTabSheet
       ClientHeight = 519
       ClientWidth = 792
@@ -199,7 +197,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Caption = 'Volume dos itens'
         ParentColor = False
       end
-      object ItemAmountEdit: TEdit[15]
+      object ItemQuantityEdit: TEdit[15]
         AnchorSideLeft.Control = ItemAmountLabel
         AnchorSideTop.Control = ItemAmountLabel
         AnchorSideTop.Side = asrBottom
@@ -211,7 +209,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Color = clBtnFace
         ReadOnly = True
         TabOrder = 8
-        Text = 'ItemAmountEdit'
+        Text = 'ItemQuantityEdit'
       end
       object DateLabel: TLabel[16]
         AnchorSideLeft.Control = SupplierComboBox
@@ -239,7 +237,7 @@ inherited BudgetEditForm: TBudgetEditForm
       end
       object ExpireDateLabel: TLabel[18]
         AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = ItemAmountEdit
+        AnchorSideTop.Control = ItemQuantityEdit
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
@@ -465,7 +463,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Caption = 'Volume dos itens'
         ParentColor = False
       end
-      object ItemAmountEdit1: TEdit
+      object ItemQuantityEdit1: TEdit
         AnchorSideLeft.Control = ItemAmountLabel1
         AnchorSideTop.Control = ItemAmountLabel1
         AnchorSideTop.Side = asrBottom
@@ -477,7 +475,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Color = clBtnFace
         ReadOnly = True
         TabOrder = 6
-        Text = 'ItemAmountEdit1'
+        Text = 'ItemQuantityEdit1'
       end
     end
   end

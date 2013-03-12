@@ -26,7 +26,9 @@ type
   { TMash }
 
   TMash = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Code: TPressPlainsString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
     _MashItems: TMashItemParts;
     _AverageOriginalGravity: TPressDouble;
     _FinalGravity: TPressDouble;
@@ -51,24 +53,10 @@ type
     property MashItems: TMashItemParts read _MashItems write _MashItems;
   end;
 
-  { TMashItemParts }
-
-  TMashItemParts = class(TCustomParts)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
-  end;
-
-  { TMashReference }
-
-  TMashReference = class(TCustomReference)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
-  end;
-
   { TMashItem }
 
   TMashItem = class(TCustomObject)
-    _Recipe: TRecipeReference;
+    _Recipe: TReference;
     _Volume: TPressDouble;
     _OriginalGravity: TPressDouble;
     _MashIngredients: TMashIngredientItemParts;
@@ -111,7 +99,7 @@ type
   { TMashIngredientItem }
 
   TMashIngredientItem = class(TCustomObject)
-    _RawMaterial: TRawMaterialReference;
+    _Product: TReference;
     _Quantity: TPressDouble;
     _Unity: TPressEnum;
   private
@@ -122,20 +110,6 @@ type
     procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
   published
     property Unity: TUnity read GetUnity write SetUnity;
-  end;
-
-  { TMashIngredientItemParts }
-
-  TMashIngredientItemParts = class(TCustomParts)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
-  end;
-
-  { TMashFermenterItemReferences }
-
-  TMashFermenterItemReferences = class(TCustomReferences)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
   end;
 
   { TMashQuery }
@@ -149,7 +123,7 @@ type
   { TMashFermenterItem }
 
   TMashFermenterItem = class(TCustomObject)
-    _Fermenter: TFermenterReference;
+    _Fermenter: TPressReference;
     _Volume: TPressDouble;
     _FermenterEvents: TFermenterEventItemParts;
     _StartDate: TPressDate;
@@ -157,13 +131,6 @@ type
     _DaysSinceLastEvent: TPressInteger;
   protected
     class function InternalMetadataStr: string; override;
-  end;
-
-  { TMashFermenterItemParts }
-
-  TMashFermenterItemParts = class(TCustomParts)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
   end;
 
 
@@ -174,15 +141,8 @@ implementation
 class function TMashQuery.InternalMetadataStr: string;
 begin
   Result := 'TMashQuery(TMash) (' +
-    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    'Name: AnsiString(40) MatchType=mtContains;' +
     ')';
-end;
-
-{ TMashFermenterItemReferences }
-
-class function TMashFermenterItemReferences.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TMashFermenterItem;
 end;
 
 { TMashIngredientItemParts }
@@ -207,7 +167,7 @@ end;
 class function TMashIngredientItem.InternalMetadataStr: string;
 begin
   Result := 'TMashIngredientItem IsPersistent PersistentName="MshIgrdIt" (' +
-    'RawMaterial: TRawMaterialReference ShortName="RawMtrl";' +
+    'Product: Reference(TProduct);' +
     'Quantity: Double;' +
     'Unity: Enum(TUnity) Calc(RawMaterial) IsPersistent=False;' +
     ')';
@@ -226,13 +186,6 @@ begin
     else
       _Unity.Clear;
   end;
-end;
-
-{ TMashReference }
-
-class function TMashReference.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TMash;
 end;
 
 { TMashFermenterItemParts }
@@ -321,7 +274,7 @@ end;
 class function TMashItem.InternalMetadataStr: string;
 begin
   Result := 'TMashItem IsPersistent PersistentName="MshIt" (' +
-    'Recipe: TRecipeReference;' +
+    'Recipe: Reference(TRecipe);' +
     'Volume: Double;' +
     'OriginalGravity: Double;' +
     'MashIngredients: TMashIngredientItemParts ShortName="MshIngds";' +
@@ -377,7 +330,9 @@ end;
 class function TMash.InternalMetadataStr: string;
 begin
   Result := 'TMash IsPersistent (' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Code: PlainString(20);' +
+    'Name: AnsiString(40);' +
+    'Remarks: Memo;' +
     'MashItems: TMashItemParts;' +
     'AverageOriginalGravity: Double Calc(MashItems);' +
     'FinalGravity: Double;' +
@@ -417,7 +372,7 @@ end;
 class function TMashFermenterItem.InternalMetadataStr: string;
 begin
   Result := 'TMashFermenterItem IsPersistent PersistentName="MsFmtIt" (' +
-    'Fermenter: TFermenterReference ShortName="Fmt";' +
+    'Fermenter: Reference(TFermenter) ShortName="Fmt";' +
     'Volume: Double;' +
     'FermenterEvents: TFermenterEventItemParts ShortName="FmtEvts";' +
     'StartDate: Date;' +
@@ -430,24 +385,17 @@ end;
 initialization
   TMash.RegisterClass;
   TMashFermenterItem.RegisterClass;
-  TMashFermenterItemParts.RegisterAttribute;
   TMashIngredientItem.RegisterClass;
-  TMashIngredientItemParts.RegisterAttribute;
   TMashItem.RegisterClass;
-  TMashItemParts.RegisterAttribute;
   TMashQuery.RegisterClass;
-  TMashReference.RegisterAttribute;
 
 finalization
   TMash.UnregisterClass;
   TMashFermenterItem.UnregisterClass;
-  TMashFermenterItemParts.UnregisterAttribute;
   TMashIngredientItem.UnregisterClass;
-  TMashIngredientItemParts.UnregisterAttribute;
   TMashItem.UnregisterClass;
   TMashItemParts.UnregisterAttribute;
   TMashQuery.UnregisterClass;
-  TMashReference.UnregisterAttribute;
 
 end.
 

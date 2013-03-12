@@ -8,27 +8,23 @@ uses
   {Classes,
   SysUtils,}
   CustomBO,
-  BasicUserRecordDataBO,
   PressAttributes,
   PressSubject;
 
 type
 
-  {$M+}
-  TAccountChartReference = class;
-  {$M-}
-
   { TAccountChart }
 
   TAccountChart = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
-    _ChildOf: TAccountChartReference; //TAccountChart
+    _Code: TPressPlainsString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
+    _ChildOf: TPressReference; //TAccountChart
     _Level: TPressInteger;
     _Balance: TPressCurrency;
     _ShortCode: TPressInteger;
     _ChildCount: TPressInteger;
   private
-    function GetBasicUserRecordData: TBasicUserRecordData;
     function GetCanHaveChild: Boolean;
     function GetChildCount: Integer;
     function GetChildOf: TAccountChart;
@@ -44,8 +40,6 @@ type
     procedure SetName(AValue: string);
     procedure SetRemarks(AValue: string);
     procedure SetShortCode(AValue: Integer);
-    property BasicUserRecordData: TBasicUserRecordData
-      read GetBasicUserRecordData;
   protected
     class function InternalMetadataStr: string; override;
   public
@@ -77,13 +71,6 @@ type
     class function InternalMetadataStr: string; override;
   end;
 
-  { TAccountChartReference }
-
-  TAccountChartReference = class(TCustomReference)
-  public
-    class function ValidObjectClass: TPressObjectClass; override;
-  end;
-
 const
   ACCOUNT_LEVELONE = 1;
   ACCOUNT_LEVELTHWO = 2;
@@ -93,30 +80,18 @@ const
 
 implementation
 
-{ TAccountChartReference }
-
-class function TAccountChartReference.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TAccountChart;
-end;
-
 { TAccountChartQuery }
 
 class function TAccountChartQuery.InternalMetadataStr: string;
 begin
   Result := 'TAccountChartQuery(TAccountChart) (' +
-    'Code: PlainString(20) MatchType=mtStarting DataName="BasicUserRecordData.Code";' +
-    'Name: AnsiString(40) MatchType=mtContains DataName="BasicUserRecordData.Name";' +
+    'Code: PlainString(20) MatchType=mtStarting;' +
+    'Name: AnsiString(40) MatchType=mtContains;' +
     'ShortCode: Integer MatchType=mtEqual;' +
     ')';
 end;
 
 { TAccountChart }
-
-function TAccountChart.GetBasicUserRecordData: TBasicUserRecordData;
-begin
-  Result := _BasicUserRecordData.Value as TBasicUserRecordData;
-end;
 
 function TAccountChart.GetCanHaveChild: Boolean;
 begin
@@ -135,7 +110,7 @@ end;
 
 function TAccountChart.GetCode: string;
 begin
-  Result := BasicUserRecordData.Code;
+  Result := _Code.Value;
 end;
 
 function TAccountChart.GetLevel: Integer;
@@ -145,12 +120,12 @@ end;
 
 function TAccountChart.GetName: string;
 begin
-  Result := _BasicUserRecordData.Name;
+  Result := _Name.Value;
 end;
 
 function TAccountChart.GetRemarks: string;
 begin
-  Result := BasicUserRecordData.Remarks;
+  Result := _Remarks.Value;
 end;
 
 function TAccountChart.GetShortCode: Integer;
@@ -170,7 +145,7 @@ end;
 
 procedure TAccountChart.SetCode(AValue: string);
 begin
-  BasicUserRecordData.Code := AValue;
+  _Code.Value := AValue;
 end;
 
 procedure TAccountChart.SetLevel(AValue: Integer);
@@ -180,12 +155,12 @@ end;
 
 procedure TAccountChart.SetName(AValue: string);
 begin
-  BasicUserRecordData.Name := AValue;
+  _Name.Value := AValue;
 end;
 
 procedure TAccountChart.SetRemarks(AValue: string);
 begin
-  BasicUserRecordData.Remarks := AValue;
+  _Remarks.Value := AValue;
 end;
 
 procedure TAccountChart.SetShortCode(AValue: Integer);
@@ -196,8 +171,10 @@ end;
 class function TAccountChart.InternalMetadataStr: string;
 begin
   Result := 'TAccountChart IsPersistent(' +
-    'BasicUserRecordData: TBasicUserRecordDataPart;' +
-    'ChildOf: TAccountChartReference;' +
+    'Code: PlainString(20);' +
+    'Name: AnsiString(40);' +
+    'Remarks: Memo;' +
+    'ChildOf: Reference(TAccountChart);' +
     'Level: Integer DefaultValue=1;' +
     'Balance: Currency DefaultValue=0;' +
     'ShortCode: Integer;' +
@@ -215,12 +192,10 @@ end;
 initialization
   TAccountChart.RegisterClass;
   TAccountChartQuery.RegisterClass;
-  TAccountChartReference.RegisterAttribute;
 
 finalization
   TAccountChart.UnregisterClass;
   TAccountChartQuery.UnregisterClass;
-  TAccountChartReference.UnregisterAttribute;
 
 end.
 

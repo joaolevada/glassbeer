@@ -8,7 +8,6 @@ uses
   Classes,
   SysUtils,
   CustomBO,
-  BasicUserRecordDataBO,
   PressAttributes;
 
 type
@@ -40,7 +39,7 @@ type
   { TAddressLabel }
 
   TAddressLabel = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    Name: TPressAnsiString;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -48,7 +47,9 @@ type
   { TNeighborhood }
 
   TNeighborhood = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Code: TPressPlainString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -56,7 +57,9 @@ type
   { TCity }
 
   TCity = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Code: TPressPlainString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
     _State: TPressReference;
   protected
     class function InternalMetadataStr: string; override;
@@ -65,7 +68,9 @@ type
   { TState }
 
   TState = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Code: TPressPlainString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
     _Abbreviation: TPressPlainString;
     _Country: TPressReference;
   protected
@@ -75,7 +80,9 @@ type
   { TCountry }
 
   TCountry = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Code: TPressPlainString;
+    _Name: TPressAnsiString;
+    _Remarks: TPressMemo;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -92,7 +99,7 @@ type
   { TPhoneLabel }
 
   TPhoneLabel = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Name: TPressAnsiString;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -109,7 +116,7 @@ type
   { TInternetAddressLabel }
 
   TInternetAddressLabel = class(TCustomObject)
-    _BasicUserRecordData: TBasicUserRecordDataPart;
+    _Name: TPressAnsiString;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -137,7 +144,7 @@ end;
 class function TAddressLabel.InternalMetadataStr: string;
 begin
   Result := 'TAddressLabel IsPersistent(' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Name: AnsiString(20)' +
     ')';
 end;
 
@@ -146,7 +153,9 @@ end;
 class function TNeighborhood.InternalMetadataStr: string;
 begin
   Result := 'TNeighborhood IsPersistent (' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Code: PlainString(20);' +
+    'Name: AnsiString(40);' +
+    'Remarks: Memo' +
     ')';
 end;
 
@@ -155,7 +164,9 @@ end;
 class function TCity.InternalMetadataStr: string;
 begin
   Result := 'TCity IsPersistent(' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Code: PlainString(20);' +
+    'Name: AnsiString(40);' +
+    'Remarks: Memo;' +
     'State: Reference(TState);' +
     ')';
 end;
@@ -165,7 +176,9 @@ end;
 class function TCountry.InternalMetadataStr: string;
 begin
   Result := 'TCountry IsPersistent (' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Code: PlainString(20);' +
+    'Name: PlainString(40);' +
+    'Remarks: Memo;' +
     ')';
 end;
 
@@ -184,7 +197,7 @@ end;
 class function TPhoneLabel.InternalMetadataStr: string;
 begin
   Result := 'TPhoneLabel IsPersistent (' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Name: AnsiString(20);' +
     ')';
 end;
 
@@ -203,7 +216,7 @@ end;
 class function TInternetAddressLabel.InternalMetadataStr: string;
 begin
   Result := 'TInternetAddressLabel IsPersistent PersistentName="IntAddrLab" (' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Name: AnsiString(20)' +
     ')';
 end;
 
@@ -212,7 +225,9 @@ end;
 class function TState.InternalMetadataStr: string;
 begin
   Result := 'TState IsPersistent (' +
-    'BasicUserRecordData: TBasicUserRecordDataPart ShortName="BasicURD";' +
+    'Code: PlainsString(20);' +
+    'Name: AnsiString(40);' +
+    'Remarks: Memo;' +
     'Abbreviation: PlainString(2);' +
     'Country: Reference(TCountry);' +
     ')';
