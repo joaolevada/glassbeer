@@ -14,7 +14,7 @@ type
   { TLocation }
 
   TLocation = class(TCustomObject)
-    _Code: TPressPlainsString;
+    _Code: TPressPlainString;
     _Name: TPressAnsiString;
     _Remarks: TPressMemo;
   private
@@ -47,7 +47,7 @@ implementation
 class function TLocationQuery.InternalMetadataStr: string;
 begin
   Result := 'TLocationQuery(TLocation) (' +
-    'Name: AnsiString(40) MatchType=mtContains";' +
+    'Name: AnsiString(40) MatchType=mtContains;' +
     ')';
 end;
 

@@ -18,9 +18,6 @@ object MainForm: TMainForm
       object ProductMenuItem: TMenuItem
         Caption = 'Produtos...'
       end
-      object RawMaterialMenuItem: TMenuItem
-        Caption = 'Matérias-primas...'
-      end
       object RecipeMenuItem: TMenuItem
         Caption = 'Receitas...'
       end

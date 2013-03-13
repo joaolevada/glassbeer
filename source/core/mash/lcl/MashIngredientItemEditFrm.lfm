@@ -23,21 +23,21 @@ inherited MashIngredientItemEditForm: TMashIngredientItemEditForm
     inherited MainTab: TTabSheet
       ClientHeight = 95
       ClientWidth = 430
-      object RawMaterialLabel: TLabel[0]
+      object ProductLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
         Left = 4
         Height = 15
         Top = 2
-        Width = 87
+        Width = 143
         BorderSpacing.Left = 4
         BorderSpacing.Top = 2
-        Caption = 'Matéria prima'
+        Caption = 'Produto/matéria prima'
         ParentColor = False
       end
-      object RawMaterialCombo: TComboBox[1]
-        AnchorSideLeft.Control = RawMaterialLabel
-        AnchorSideTop.Control = RawMaterialLabel
+      object ProductComboBox: TComboBox[1]
+        AnchorSideLeft.Control = ProductLabel
+        AnchorSideTop.Control = ProductLabel
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 22
@@ -46,7 +46,7 @@ inherited MashIngredientItemEditForm: TMashIngredientItemEditForm
         BorderSpacing.Top = 2
         ItemHeight = 14
         TabOrder = 0
-        Text = 'RawMaterialCombo'
+        Text = 'ProductComboBox'
       end
       object QuantityEdit: TEdit[2]
         AnchorSideLeft.Control = QuantityLabel
@@ -74,7 +74,7 @@ inherited MashIngredientItemEditForm: TMashIngredientItemEditForm
       end
       object UnityLabel: TLabel[4]
         AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = RawMaterialCombo
+        AnchorSideTop.Control = ProductComboBox
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
@@ -99,10 +99,10 @@ inherited MashIngredientItemEditForm: TMashIngredientItemEditForm
         TabOrder = 1
         Text = 'UnityEdit'
       end
-      object AddRawMaterialSpeedButton: TSpeedButton[6]
-        AnchorSideLeft.Control = RawMaterialCombo
+      object AddProductSpeedButton: TSpeedButton[6]
+        AnchorSideLeft.Control = ProductComboBox
         AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = RawMaterialCombo
+        AnchorSideTop.Control = ProductComboBox
         AnchorSideTop.Side = asrCenter
         Left = 364
         Height = 22
@@ -115,10 +115,10 @@ inherited MashIngredientItemEditForm: TMashIngredientItemEditForm
         ShowHint = True
         ParentShowHint = False
       end
-      object EditRawMaterialSpeedButton: TSpeedButton[7]
-        AnchorSideLeft.Control = AddRawMaterialSpeedButton
+      object EditProductSpeedButton: TSpeedButton[7]
+        AnchorSideLeft.Control = AddProductSpeedButton
         AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = AddRawMaterialSpeedButton
+        AnchorSideTop.Control = AddProductSpeedButton
         AnchorSideTop.Side = asrCenter
         Left = 391
         Height = 22

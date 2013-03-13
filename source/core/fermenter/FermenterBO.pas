@@ -90,7 +90,7 @@ type
   end;
 
   TFermenterEvent = class(TCustomObject)
-    _Code: TPressPlainsString;
+    _Code: TPressPlainString;
     _Name: TPressAnsiString;
     _Remarks: TPressMemo;
     _Duration: TPressInteger;
@@ -163,7 +163,7 @@ end;
 
 procedure TFermenter.SetCode(const AValue: string);
 begin
-  _Code := AValue;
+  _Code.Value := AValue;
 end;
 
 procedure TFermenter.SetCurrentVolume(const AValue: Double);
@@ -220,13 +220,6 @@ procedure TFermenter.InternalCalcAttribute(AAttribute: TPressAttribute);
 begin
   if AAttribute = _UtilCapacity then
     UtilCapacity := FullCapacity - (FullCapacity * HeadSpace / 100);
-end;
-
-{ TFermenterEventItemParts }
-
-class function TFermenterEventItemParts.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TFermenterEventItem;
 end;
 
 { TFermenterEventItem }
@@ -296,7 +289,6 @@ initialization
   TFermenter.RegisterClass;
   TFermenterEvent.RegisterClass;
   TFermenterEventItem.RegisterClass;
-  TFermenterEventItemParts.RegisterAttribute;
   TFermenterEventQuery.RegisterClass;
   TFermenterQuery.RegisterClass;
   PressModel.RegisterEnumMetadata(TypeInfo(TFermenterStatus),
@@ -307,7 +299,6 @@ finalization
   TFermenter.UnregisterClass;
   TFermenterEvent.UnregisterClass;
   TFermenterEventItem.UnregisterClass;
-  TFermenterEventItemParts.UnregisterAttribute;
   TFermenterEventQuery.UnregisterClass;
   TFermenterQuery.UnregisterClass;
 

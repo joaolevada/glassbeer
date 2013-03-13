@@ -80,13 +80,13 @@ end;
 
 procedure TMashIngredientItemEditPresenter.InitPresenter;
 var
-  VRawMaterialPresenter: TPressMVPPresenter;
+  VProductPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  VRawMaterialPresenter := CreateSubPresenter('RawMaterial', 'RawMaterialCombo',
+  VProductPresenter := CreateSubPresenter('Product', 'ProductComboBox',
     'Name');
-  VRawMaterialPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddRawMaterialSpeedButton');
-  VRawMaterialPresenter.BindCommand(TPressMVPEditItemCommand, 'EditRawMaterialSpeedButton');
+  VProductPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddProductSpeedButton');
+  VProductPresenter.BindCommand(TPressMVPEditItemCommand, 'EditProductSpeedButton');
   CreateSubPresenter('Quantity', 'QuantityEdit');
   CreateSubPresenter('Unity', 'UnityEdit');
 end;

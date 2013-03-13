@@ -13,14 +13,14 @@ type
   { TMashIngredientItemEditForm }
 
   TMashIngredientItemEditForm = class(TCustomEditForm)
-    AddRawMaterialSpeedButton: TSpeedButton;
-    EditRawMaterialSpeedButton: TSpeedButton;
+    AddProductSpeedButton: TSpeedButton;
+    EditProductSpeedButton: TSpeedButton;
     UnityEdit: TEdit;
     UnityLabel: TLabel;
     QuantityLabel: TLabel;
     QuantityEdit: TEdit;
-    RawMaterialCombo: TComboBox;
-    RawMaterialLabel: TLabel;
+    ProductComboBox: TComboBox;
+    ProductLabel: TLabel;
   public
     constructor Create(AOwner: TComponent); override;
   end;
@@ -40,8 +40,8 @@ uses
 constructor TMashIngredientItemEditForm.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
-  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddRawMaterialSpeedButton.Glyph);
-  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditRawMaterialSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddProductSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditProductSpeedButton.Glyph);
 end;
 
 initialization

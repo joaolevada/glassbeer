@@ -15,10 +15,10 @@ type
   TRecipeIngredientItemEditForm = class(TCustomEditForm)
     PercentageEdit: TEdit;
     PercentageLabel: TLabel;
-    RawMaterialCombo: TComboBox;
-    RawMaterialLabel: TLabel;
-    AddRawMaterialSpeedButton: TSpeedButton;
-    EditRawMaterialSpeedButton: TSpeedButton;
+    ProductComboBox: TComboBox;
+    ProductLabel: TLabel;
+    AddProductSpeedButton: TSpeedButton;
+    EditProductSpeedButton: TSpeedButton;
   public
     constructor Create(AOwner: TComponent); override;
   end;
@@ -36,8 +36,8 @@ uses
 constructor TRecipeIngredientItemEditForm.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
-  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddRawMaterialSpeedButton.Glyph);
-  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditRawMaterialSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddProductSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditProductSpeedButton.Glyph);
 end;
 
 {$R *.lfm}

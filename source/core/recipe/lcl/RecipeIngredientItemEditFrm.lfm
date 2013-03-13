@@ -1,57 +1,57 @@
 inherited RecipeIngredientItemEditForm: TRecipeIngredientItemEditForm
   Height = 132
-  Width = 475
+  Width = 632
   Caption = 'Item da receita'
   ClientHeight = 132
-  ClientWidth = 475
+  ClientWidth = 632
   inherited BottomPanel: TPanel
     Top = 78
-    Width = 475
-    ClientWidth = 475
+    Width = 632
+    ClientWidth = 632
     inherited SaveButton: TBitBtn
-      Left = 234
+      Left = 391
     end
     inherited CancelButton: TBitBtn
-      Left = 354
+      Left = 511
     end
   end
   inherited EditPageControl: TPageControl
     Height = 78
-    Width = 475
+    Width = 632
     inherited MainTab: TTabSheet
       ClientHeight = 51
-      ClientWidth = 467
-      object RawMaterialLabel: TLabel[0]
+      ClientWidth = 624
+      object ProductLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
         Left = 4
         Height = 15
         Top = 2
-        Width = 87
+        Width = 143
         BorderSpacing.Left = 4
         BorderSpacing.Top = 2
-        Caption = 'Matéria prima'
+        Caption = 'Produto/matéria prima'
         ParentColor = False
       end
-      object RawMaterialCombo: TComboBox[1]
+      object ProductComboBox: TComboBox[1]
         AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = RawMaterialLabel
+        AnchorSideTop.Control = ProductLabel
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 22
         Top = 19
-        Width = 198
+        Width = 356
         BorderSpacing.Left = 4
         BorderSpacing.Top = 2
         ItemHeight = 14
         TabOrder = 0
-        Text = 'RawMaterialCombo'
+        Text = 'ProductComboBox'
       end
       object PercentageLabel: TLabel[2]
-        AnchorSideLeft.Control = EditRawMaterialSpeedButton
+        AnchorSideLeft.Control = EditProductSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = MainTab
-        Left = 264
+        Left = 422
         Height = 15
         Top = 2
         Width = 84
@@ -64,7 +64,7 @@ inherited RecipeIngredientItemEditForm: TRecipeIngredientItemEditForm
         AnchorSideLeft.Control = PercentageLabel
         AnchorSideTop.Control = PercentageLabel
         AnchorSideTop.Side = asrBottom
-        Left = 264
+        Left = 422
         Height = 22
         Top = 19
         Width = 198
@@ -72,12 +72,12 @@ inherited RecipeIngredientItemEditForm: TRecipeIngredientItemEditForm
         TabOrder = 1
         Text = 'PercentageEdit'
       end
-      object AddRawMaterialSpeedButton: TSpeedButton[4]
-        AnchorSideLeft.Control = RawMaterialCombo
+      object AddProductSpeedButton: TSpeedButton[4]
+        AnchorSideLeft.Control = ProductComboBox
         AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = RawMaterialCombo
+        AnchorSideTop.Control = ProductComboBox
         AnchorSideTop.Side = asrCenter
-        Left = 206
+        Left = 364
         Height = 22
         Hint = 'Adicionar matéria prima'
         Top = 19
@@ -88,12 +88,12 @@ inherited RecipeIngredientItemEditForm: TRecipeIngredientItemEditForm
         ShowHint = True
         ParentShowHint = False
       end
-      object EditRawMaterialSpeedButton: TSpeedButton[5]
-        AnchorSideLeft.Control = AddRawMaterialSpeedButton
+      object EditProductSpeedButton: TSpeedButton[5]
+        AnchorSideLeft.Control = AddProductSpeedButton
         AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = AddRawMaterialSpeedButton
+        AnchorSideTop.Control = AddProductSpeedButton
         AnchorSideTop.Side = asrCenter
-        Left = 233
+        Left = 391
         Height = 22
         Hint = 'Alterar matéria prima'
         Top = 19

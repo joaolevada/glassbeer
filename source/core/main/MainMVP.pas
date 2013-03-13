@@ -32,8 +32,7 @@ type
 implementation
 
 uses
-  RawMaterialMVP
-  ,Clipbrd
+  Clipbrd
   ,Forms
   ,PressOPF
   ,LCLType
@@ -55,7 +54,6 @@ begin
   inherited;
   BindCommand(TPressMVPCloseApplicationCommand, 'ExitMenuItem');
   BindCommand(TMainConnectorCommand, 'MetadataMenuItem');
-  BindPresenter(TRawMaterialQueryPresenter, 'RawMaterialMenuItem');
   BindPresenter(TRecipeQueryPresenter, 'RecipeMenuItem');
   BindPresenter(TFermenterQueryPresenter, 'FermenterMenuItem');
   BindPresenter(TLocationQueryPresenter, 'LocationMenuItem');

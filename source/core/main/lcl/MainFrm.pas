@@ -34,7 +34,6 @@ type
     RecipeMenuItem: TMenuItem;
     MetadataMenuItem: TMenuItem;
     ToolsMenu: TMenuItem;
-    RawMaterialMenuItem: TMenuItem;
   end; 
 
 var

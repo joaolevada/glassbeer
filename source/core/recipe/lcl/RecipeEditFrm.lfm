@@ -301,7 +301,7 @@ inherited RecipeEditForm: TRecipeEditForm
         ClientHeight = 47
         ClientWidth = 468
         TabOrder = 6
-        object IngredientRawMaterialLabel: TLabel
+        object IngredientProductLabel: TLabel
           AnchorSideLeft.Control = IngredientItemGroupBox
           AnchorSideTop.Control = IngredientItemGroupBox
           Left = 4
@@ -314,9 +314,9 @@ inherited RecipeEditForm: TRecipeEditForm
           ParentColor = False
         end
         object IngredientPercentageLabel: TLabel
-          AnchorSideLeft.Control = EditIngredientRawMaterialSpeedButton
+          AnchorSideLeft.Control = EditIngredientProductSpeedButton
           AnchorSideLeft.Side = asrBottom
-          AnchorSideTop.Control = IngredientRawMaterialLabel
+          AnchorSideTop.Control = IngredientProductLabel
           Left = 264
           Height = 15
           Top = 4
@@ -325,9 +325,9 @@ inherited RecipeEditForm: TRecipeEditForm
           Caption = 'Porcentagem'
           ParentColor = False
         end
-        object IngredientRawMaterialComboBox: TComboBox
-          AnchorSideLeft.Control = IngredientRawMaterialLabel
-          AnchorSideTop.Control = IngredientRawMaterialLabel
+        object IngredientProductComboBox: TComboBox
+          AnchorSideLeft.Control = IngredientProductLabel
+          AnchorSideTop.Control = IngredientProductLabel
           AnchorSideTop.Side = asrBottom
           Left = 4
           Height = 22
@@ -336,12 +336,12 @@ inherited RecipeEditForm: TRecipeEditForm
           BorderSpacing.Top = 2
           ItemHeight = 14
           TabOrder = 0
-          Text = 'IngredientRawMaterialComboBox'
+          Text = 'IngredientProductComboBox'
         end
-        object AddIngredientRawMaterialSpeedButton: TSpeedButton
-          AnchorSideLeft.Control = IngredientRawMaterialComboBox
+        object AddIngredientProductSpeedButton: TSpeedButton
+          AnchorSideLeft.Control = IngredientProductComboBox
           AnchorSideLeft.Side = asrBottom
-          AnchorSideTop.Control = IngredientRawMaterialComboBox
+          AnchorSideTop.Control = IngredientProductComboBox
           AnchorSideTop.Side = asrCenter
           Left = 206
           Height = 22
@@ -354,10 +354,10 @@ inherited RecipeEditForm: TRecipeEditForm
           ShowHint = True
           ParentShowHint = False
         end
-        object EditIngredientRawMaterialSpeedButton: TSpeedButton
-          AnchorSideLeft.Control = AddIngredientRawMaterialSpeedButton
+        object EditIngredientProductSpeedButton: TSpeedButton
+          AnchorSideLeft.Control = AddIngredientProductSpeedButton
           AnchorSideLeft.Side = asrBottom
-          AnchorSideTop.Control = AddIngredientRawMaterialSpeedButton
+          AnchorSideTop.Control = AddIngredientProductSpeedButton
           AnchorSideTop.Side = asrCenter
           Left = 233
           Height = 22

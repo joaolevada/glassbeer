@@ -225,7 +225,7 @@ end;
 class function TState.InternalMetadataStr: string;
 begin
   Result := 'TState IsPersistent (' +
-    'Code: PlainsString(20);' +
+    'Code: PlainString(20);' +
     'Name: AnsiString(40);' +
     'Remarks: Memo;' +
     'Abbreviation: PlainString(2);' +

@@ -13,22 +13,22 @@ type
   { TRecipeEditForm }
 
   TRecipeEditForm = class(TCustomEditForm)
-    AddIngredientRawMaterialSpeedButton: TSpeedButton;
+    AddIngredientProductSpeedButton: TSpeedButton;
     AddIngredientSpeedButton: TSpeedButton;
     CodeEdit: TEdit;
-    EditIngredientRawMaterialSpeedButton: TSpeedButton;
+    EditIngredientProductSpeedButton: TSpeedButton;
     EditIngredientSpeedButton: TSpeedButton;
     IngredientItemGroupBox: TGroupBox;
     FinalGravityEdit: TEdit;
     FinalGravityLabel: TLabel;
     IngredientPercentageEdit: TEdit;
-    IngredientRawMaterialComboBox: TComboBox;
+    IngredientProductComboBox: TComboBox;
     IngredientsLabel: TLabel;
     OriginalGravityEdit: TEdit;
     OriginalGravityLabel: TLabel;
     IngredientsStringGrid: TStringGrid;
     IngredientPercentageLabel: TLabel;
-    IngredientRawMaterialLabel: TLabel;
+    IngredientProductLabel: TLabel;
     RemoveIngredientSpeedButton: TSpeedButton;
     WaterAmountEdit: TEdit;
     CodeLabel: TLabel;
@@ -63,8 +63,8 @@ begin
   MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditIngredientSpeedButton.Glyph);
   MainForm.Icons16ImageList.GetBitmap(IMG_DELETE, RemoveIngredientSpeedButton.Glyph);
 
-  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddIngredientRawMaterialSpeedButton.Glyph);
-  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditIngredientRawMaterialSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddIngredientProductSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditIngredientProductSpeedButton.Glyph);
 end;
 
 initialization

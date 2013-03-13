@@ -10,25 +10,20 @@ uses
   ,PressAttributes
   ,PressSubject
   ,CustomBO
-  ,BasicUserRecordDataBO
-  ,RawMaterialBO;
+  ,ProductBO;
 
 type
-
-  {$M+}
-  TRecipeIngredientItemParts = class;
-  {$M-}
 
   TBeerFamily = (bfAle, bfLager, bfLambic);
 
   { TRecipe }
 
   TRecipe = class(TCustomObject)
-  	_Code: TPressPlainsString;
+  	_Code: TPressPlainString;
     _Name: TPressAnsiString;
     _Remarks: TPressMemo;
   	_Family: TPressEnum;
-  	_Ingredients: TRecipeIngredientItemParts;
+  	_Ingredients: TPressReference;
   	_WaterAmount: TPressDouble;
   	_OriginalGravity: TPressDouble;
   	_FinalGravity: TPressDouble;
@@ -106,7 +101,7 @@ end;
 
 function TRecipe.GetCode: string;
 begin
-  Result := TBasicUserRecordData(_BasicUserRecordData.Value).Code;
+  Result := _Code.Value;
 end;
 
 function TRecipe.GetFamily: TBeerFamily;
@@ -121,7 +116,7 @@ end;
 
 function TRecipe.GetName: string;
 begin
-  Result := TBasicUserRecordData(_BasicUserRecordData.Value).Name;
+  Result := _Name.Value;
 end;
 
 function TRecipe.GetOriginalGravity: Double;
@@ -131,7 +126,7 @@ end;
 
 function TRecipe.GetRemarks: string;
 begin
-  Result := TBasicUserRecordData(_BasicUserRecordData.Value).Remarks;
+  Result := _Remarks.Value;
 end;
 
 function TRecipe.GetWaterAmount: Double;
@@ -146,7 +141,7 @@ end;
 
 procedure TRecipe.SetCode(const AValue: string);
 begin
-  TBasicUserRecordData(_BasicUserRecordData.Value).Code := AValue;
+  _Code.Value := AValue;
 end;
 
 procedure TRecipe.SetFamily(const AValue: TBeerFamily);
@@ -161,7 +156,7 @@ end;
 
 procedure TRecipe.SetName(const AValue: string);
 begin
-  TBasicUserRecordData(_BasicUserRecordData.Value).Name := AValue;
+  _Name.Value := AValue;
 end;
 
 procedure TRecipe.SetOriginalGravity(const AValue: Double);
@@ -171,7 +166,7 @@ end;
 
 procedure TRecipe.SetRemarks(const AValue: string);
 begin
-  TBasicUserRecordData(_BasicUserRecordData.Value).Remarks := AValue;
+  _Remarks.Value := AValue;
 end;
 
 procedure TRecipe.SetWaterAmount(const AValue: Double);
@@ -186,7 +181,7 @@ begin
     'Name: AnsiString(40);' +
     'Remarks: Memo;' +
     'Family: Enum(TBeerFamily) DisplayName="Família";' +
-    'Ingredients: TRecipeIngredientItemParts ShortName="Ingrds";' +
+    'Ingredients: Parts(TRecipeIngredientItem) ShortName="Ingrds";' +
     'WaterAmount: Double DisplayName="Volume de água (litros)";' +
     'OriginalGravity: Double DisplayName="Densidade original" Min=0 Max=2;' +
     'FinalGravity: Double DisplayName="Densidade final" Min=0 Max=2;' +

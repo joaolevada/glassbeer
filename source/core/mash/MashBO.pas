@@ -9,31 +9,25 @@ uses
   SysUtils,
   PressAttributes,
   CustomBO,
-  BasicUserRecordDataBO,
   PressSubject,
   RecipeBO,
-  RawMaterialBO,
-  FermenterBO;
+  ProductBO,
+  FermenterBO,
+  UnityBO;
 
 type
-
-  {$M+}
-  TMashItemParts = class;
-  TMashFermenterItemParts = class;
-  TMashIngredientItemParts = class;
-  {$M-}
 
   { TMash }
 
   TMash = class(TCustomObject)
-    _Code: TPressPlainsString;
+    _Code: TPressPlainString;
     _Name: TPressAnsiString;
     _Remarks: TPressMemo;
-    _MashItems: TMashItemParts;
+    _MashItems: TPressParts;
     _AverageOriginalGravity: TPressDouble;
     _FinalGravity: TPressDouble;
     _Amount: TPressDouble;
-    _Fermenters: TMashFermenterItemParts;
+    _Fermenters: TPressParts;
   private
     function GetAmount: Double;
     function GetAverageFinalGravity: Double;
@@ -50,16 +44,15 @@ type
       write SetAverageFinalGravity;
     property AverageOriginalGravity: Double read GetAverageOriginalGravity
       write SetAverageOriginalGravity;
-    property MashItems: TMashItemParts read _MashItems write _MashItems;
   end;
 
   { TMashItem }
 
   TMashItem = class(TCustomObject)
-    _Recipe: TReference;
+    _Recipe: TPressReference;
     _Volume: TPressDouble;
     _OriginalGravity: TPressDouble;
-    _MashIngredients: TMashIngredientItemParts;
+    _MashIngredients: TPressParts;
     _TemperatureLog: TPressParts;
     _GravityLog: TPressParts;
     _StartWater: TPressDouble;
@@ -99,9 +92,9 @@ type
   { TMashIngredientItem }
 
   TMashIngredientItem = class(TCustomObject)
-    _Product: TReference;
+    _Product: TPressReference;
     _Quantity: TPressDouble;
-    _Unity: TPressEnum;
+    _Unity: TPressReference;
   private
     function GetUnity: TUnity;
     procedure SetUnity(AValue: TUnity);
@@ -125,7 +118,7 @@ type
   TMashFermenterItem = class(TCustomObject)
     _Fermenter: TPressReference;
     _Volume: TPressDouble;
-    _FermenterEvents: TFermenterEventItemParts;
+    _FermenterEvents: TPressParts;
     _StartDate: TPressDate;
     _DaysSinceStart: TPressInteger;
     _DaysSinceLastEvent: TPressInteger;
@@ -145,23 +138,16 @@ begin
     ')';
 end;
 
-{ TMashIngredientItemParts }
-
-class function TMashIngredientItemParts.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TMashIngredientItem;
-end;
-
 { TMashIngredientItem }
 
 function TMashIngredientItem.GetUnity: TUnity;
 begin
-  Result := TUnity(_Unity.Value);
+  Result := _Unity.Value as TUnity;
 end;
 
 procedure TMashIngredientItem.SetUnity(AValue: TUnity);
 begin
-  _Unity.Value := Integer(AValue);
+  _Unity.Value := AValue;
 end;
 
 class function TMashIngredientItem.InternalMetadataStr: string;
@@ -169,37 +155,23 @@ begin
   Result := 'TMashIngredientItem IsPersistent PersistentName="MshIgrdIt" (' +
     'Product: Reference(TProduct);' +
     'Quantity: Double;' +
-    'Unity: Enum(TUnity) Calc(RawMaterial) IsPersistent=False;' +
+    'Unity: Reference(TUnity) Calc(Product) IsPersistent=False;' +
     ')';
 end;
 
 procedure TMashIngredientItem.InternalCalcAttribute(AAttribute: TPressAttribute
   );
 var
-  VRawMaterial: TRawMaterial;
+  VProduct: TProduct;
 begin
   if AAttribute = _Unity then
   begin
-    VRawMaterial := _RawMaterial.Value as TRawMaterial;
-    if Assigned(VRawMaterial) and not VRawMaterial._Unity.IsEmpty then
-      _Unity.Value := VRawMaterial._Unity.Value
+    VProduct := _Product.Value as TProduct;
+    if Assigned(VProduct) and Assigned(VProduct._Unity.Value) then
+      _Unity.Value := VProduct._Unity.Value
     else
       _Unity.Clear;
   end;
-end;
-
-{ TMashFermenterItemParts }
-
-class function TMashFermenterItemParts.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TMashFermenterItem;
-end;
-
-{ TMashItemParts }
-
-class function TMashItemParts.ValidObjectClass: TPressObjectClass;
-begin
-  Result := TMashItem;
 end;
 
 { TMashItem }
@@ -277,7 +249,7 @@ begin
     'Recipe: Reference(TRecipe);' +
     'Volume: Double;' +
     'OriginalGravity: Double;' +
-    'MashIngredients: TMashIngredientItemParts ShortName="MshIngds";' +
+    'MashIngredients: Parts(TMashIngredientItem) ShortName="MshIngds";' +
     'TemperatureLog: Parts(TMashItemTemperature) ShortName="TempLog";' +
     'GravityLog: Parts(TMashItemGravity) ShortName="GravLog";' +
     'StartWater: Double;' +
@@ -333,11 +305,11 @@ begin
     'Code: PlainString(20);' +
     'Name: AnsiString(40);' +
     'Remarks: Memo;' +
-    'MashItems: TMashItemParts;' +
+    'MashItems: Parts(TMashItem);' +
     'AverageOriginalGravity: Double Calc(MashItems);' +
     'FinalGravity: Double;' +
     'Amount: Double Calc(MashItems);' +
-    'Fermenters: TMashFermenterItemParts ShortName="Fmts";' +
+    'Fermenters: Parts(TMashFermenterItem) ShortName="Fmts";' +
     ')';
 end;
 
@@ -357,10 +329,10 @@ begin
   else if AAttribute = _AverageOriginalGravity then
   begin
     VSum := 0;
-    for I := 0 to Pred(MashItems.Count) do
-      VSum += (MashItems[I] as TMashItem).OriginalGravity;
-    if MashItems.Count > 0 then
-      VAverage := VSum / MashItems.Count
+    for I := 0 to Pred(_MashItems.Count) do
+      VSum += (_MashItems[I] as TMashItem).OriginalGravity;
+    if _MashItems.Count > 0 then
+      VAverage := VSum / _MashItems.Count
     else
       VAverage := 0;
     AverageOriginalGravity := VAverage;
@@ -374,7 +346,7 @@ begin
   Result := 'TMashFermenterItem IsPersistent PersistentName="MsFmtIt" (' +
     'Fermenter: Reference(TFermenter) ShortName="Fmt";' +
     'Volume: Double;' +
-    'FermenterEvents: TFermenterEventItemParts ShortName="FmtEvts";' +
+    'FermenterEvents: Parts(TFermenterEvent) ShortName="FmtEvts";' +
     'StartDate: Date;' +
     'DaysSinceStart: Integer Calc(StartDate);' +
     'DaysSinceLastEvent: Integer Calc(FermenterEvents);' +
@@ -394,7 +366,6 @@ finalization
   TMashFermenterItem.UnregisterClass;
   TMashIngredientItem.UnregisterClass;
   TMashItem.UnregisterClass;
-  TMashItemParts.UnregisterAttribute;
   TMashQuery.UnregisterClass;
 
 end.

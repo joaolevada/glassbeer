@@ -279,9 +279,9 @@ end;
 
 class function TEquipmentProfileQuery.InternalMetadataStr: string;
 begin
-  Result := 'TEquipmentProfileQuery(TEquipmentProfile) (' +
-    'Code: PlainString(20) MatchType=mtStarting";' +
-    'Name: AnsiString(40) MatchType=mtContains";' +
+  Result := 'TEquipmentProfileQuery(TEquipmentProfile)(' +
+    'Code: PlainString(20) MatchType=mtStarting;' +
+    'Name: AnsiString(40) MatchType=mtContains;' +
     ')';
 end;
 

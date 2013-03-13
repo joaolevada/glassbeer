@@ -16,7 +16,7 @@ type
   { TAccountChart }
 
   TAccountChart = class(TCustomObject)
-    _Code: TPressPlainsString;
+    _Code: TPressPlainString;
     _Name: TPressAnsiString;
     _Remarks: TPressMemo;
     _ChildOf: TPressReference; //TAccountChart

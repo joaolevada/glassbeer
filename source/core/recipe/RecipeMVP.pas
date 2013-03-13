@@ -61,7 +61,7 @@ procedure TRecipeEditPresenter.InitPresenter;
 var
   VIngredientsPresenter: TPressMVPItemsPresenter;
   VIngredientPresenter: TPressMVPFormPresenter;
-  VIngredientRawMaterialPresenter: TPressMVPPresenter;
+  VIngredientProductPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('AgeFor', 'AgeForEdit');
@@ -77,10 +77,10 @@ begin
   VIngredientsPresenter.BindCommand(TPressMVPEditItemCommand, 'EditIngredientSpeedButton');
   VIngredientsPresenter.BindCommand(TPressMVPRemoveItemsCommand, 'RemoveIngredientSpeedButton');
   VIngredientPresenter := CreateDetailPresenter(VIngredientsPresenter);
-  VIngredientRawMaterialPresenter := VIngredientPresenter.CreateSubPresenter('Product', 'IngredientRawMaterialComboBox',
+  VIngredientProductPresenter := VIngredientPresenter.CreateSubPresenter('Product', 'IngredientProductComboBox',
     'Name');
-  VIngredientRawMaterialPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddIngredientRawMaterialSpeedButton');
-  VIngredientRawMaterialPresenter.BindCommand(TPressMVPEditItemCommand, 'EditIngredientRawMaterialSpeedButton');
+  VIngredientProductPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddIngredientProductSpeedButton');
+  VIngredientProductPresenter.BindCommand(TPressMVPEditItemCommand, 'EditIngredientProductSpeedButton');
   VIngredientPresenter.CreateSubPresenter('Percentage', 'IngredientPercentageEdit');
   CreateSubPresenter('WaterAmount', 'WaterAmountEdit');
   CreateSubPresenter('OriginalGravity', 'OriginalGravityEdit');
@@ -92,13 +92,13 @@ end;
 
 procedure TRecipeIngredientItemEditPresenter.InitPresenter;
 var
-  VRawMaterialPresenter: TPressMVPPresenter;
+  VProductPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  VRawMaterialPresenter := CreateSubPresenter('RawMaterial', 'RawMaterialCombo',
+  VProductPresenter := CreateSubPresenter('Product', 'ProductComboBox',
     'Name');
-  VRawMaterialPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddRawMaterialSpeedButton');
-  VRawMaterialPresenter.BindCommand(TPressMVPEditItemCommand, 'EditRawMaterialSpeedButton');
+  VProductPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddProductSpeedButton');
+  VProductPresenter.BindCommand(TPressMVPEditItemCommand, 'EditProductSpeedButton');
   CreateSubPresenter('Percentage', 'PercentageEdit');
 end;
 
