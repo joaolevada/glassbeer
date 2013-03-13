@@ -1,5 +1,8 @@
 inherited ProductQueryForm: TProductQueryForm
+  Caption = 'Produtos'
   inherited SearchPageControl: TPageControl
+    ActivePage = nil
+    TabIndex = -1
     inherited DefaultTab: TTabSheet
       Caption = 'Buscar produtos'
       ClientHeight = 50

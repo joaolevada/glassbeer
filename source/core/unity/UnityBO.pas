@@ -21,7 +21,24 @@ type
     class function InternalMetadataStr: string; override;
   end;
 
+  { TUnityQuery }
+
+  TUnityQuery = class(TCustomQuery)
+    _Name: TPressAnsiString;
+  protected
+    class function InternalMetadataStr: string; override;
+  end;
+
 implementation
+
+{ TUnityQuery }
+
+class function TUnityQuery.InternalMetadataStr: string;
+begin
+  Result := 'TUnityQuery (TUnity) (' +
+    'Name: AnsiString(40) MatchType=mtContains' +
+    ');'
+end;
 
 { TUnity }
 
@@ -35,9 +52,11 @@ end;
 
 initialization
   TUnity.RegisterClass;
+  TUnityQuery.RegisterClass;
 
 finalization
   TUnity.UnregisterClass;
+  TUnityQuery.UnregisterClass;
 
 end.
 

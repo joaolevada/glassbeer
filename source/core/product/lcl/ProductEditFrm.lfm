@@ -227,6 +227,31 @@ inherited ProductEditForm: TProductEditForm
         TabOrder = 6
         Text = 'PriceEdit'
       end
+      object AddUnitySpeedButton: TSpeedButton[16]
+        AnchorSideLeft.Control = UnityComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = UnityComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 206
+        Height = 22
+        Top = 68
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+      end
+      object EditUnitySpeedButton: TSpeedButton[17]
+        AnchorSideLeft.Control = AddUnitySpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = UnityComboBox
+        Left = 233
+        Height = 22
+        Top = 68
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+      end
     end
     object StockTabSheet: TTabSheet[1]
       Caption = 'Mais informações de estoque'

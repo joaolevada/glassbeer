@@ -13,6 +13,7 @@ type
   { TProductEditForm }
 
   TProductEditForm = class(TCustomEditForm)
+    AddUnitySpeedButton: TSpeedButton;
     CodeEdit: TEdit;
     CodeLabel: TLabel;
     CostEdit: TEdit;
@@ -23,6 +24,7 @@ type
     CurrentStockLabel: TLabel;
     CurrentStockPriceEdit: TEdit;
     CurrentStockPriceLabel: TLabel;
+    EditUnitySpeedButton: TSpeedButton;
     LastPurchaseDateEdit: TEdit;
     LastPurchaseDateLabel: TLabel;
     MaximumStockEdit: TEdit;
@@ -40,14 +42,25 @@ type
     StockTabSheet: TTabSheet;
     UnityComboBox: TComboBox;
     UnityLabel: TLabel;
-  private
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 implementation
 
 uses
   ProductMVP,
-  PressXCLBroker;
+  PressXCLBroker,
+  MainFrm;
+
+{ TProductEditForm }
+
+constructor TProductEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddUnitySpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditUnitySpeedButton.Glyph);
+end;
 
 initialization
   PressXCLForm(TProductEditPresenter, TProductEditForm);

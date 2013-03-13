@@ -1,26 +1,26 @@
 inherited BudgetItemEditForm: TBudgetItemEditForm
   Height = 176
-  Width = 636
+  Width = 690
   Caption = 'Item do orçamento para compra'
   ClientHeight = 176
-  ClientWidth = 636
+  ClientWidth = 690
   inherited BottomPanel: TPanel
     Top = 122
-    Width = 636
-    ClientWidth = 636
+    Width = 690
+    ClientWidth = 690
     inherited SaveButton: TBitBtn
-      Left = 395
+      Left = 449
     end
     inherited CancelButton: TBitBtn
-      Left = 515
+      Left = 569
     end
   end
   inherited EditPageControl: TPageControl
     Height = 122
-    Width = 636
+    Width = 690
     inherited MainTab: TTabSheet
       ClientHeight = 95
-      ClientWidth = 628
+      ClientWidth = 682
       object ProductLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
@@ -47,10 +47,10 @@ inherited BudgetItemEditForm: TBudgetItemEditForm
         Text = 'ProductComboBox'
       end
       object UnityLabel: TLabel[2]
-        AnchorSideLeft.Control = ProductComboBox
+        AnchorSideLeft.Control = EditProductSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = MainTab
-        Left = 372
+        Left = 426
         Height = 15
         Top = 4
         Width = 53
@@ -63,7 +63,7 @@ inherited BudgetItemEditForm: TBudgetItemEditForm
         AnchorSideLeft.Control = UnityLabel
         AnchorSideTop.Control = UnityLabel
         AnchorSideTop.Side = asrBottom
-        Left = 372
+        Left = 426
         Height = 22
         Top = 21
         Width = 198
@@ -148,6 +148,58 @@ inherited BudgetItemEditForm: TBudgetItemEditForm
         BorderSpacing.Top = 2
         TabOrder = 2
         Text = 'QuantityEdit'
+      end
+      object AddProductSpeedButton: TSpeedButton[10]
+        AnchorSideLeft.Control = ProductComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = ProductComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 364
+        Height = 22
+        Top = 21
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+      end
+      object EditProductSpeedButton: TSpeedButton[11]
+        AnchorSideLeft.Control = AddProductSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = ProductComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 391
+        Height = 22
+        Top = 21
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+      end
+      object AddUnitySpeedButton: TSpeedButton[12]
+        AnchorSideLeft.Control = UnityComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = UnityComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 628
+        Height = 22
+        Top = 21
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+      end
+      object EditUnitySpeedButton: TSpeedButton[13]
+        AnchorSideLeft.Control = AddUnitySpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = UnityComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 655
+        Height = 22
+        Top = 21
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
       end
     end
   end

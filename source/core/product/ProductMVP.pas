@@ -80,7 +80,9 @@ type
 implementation
 
 uses
-  ProductBO;
+  ProductBO,
+  PressMVPPresenter,
+  ContactMVP;
 
 { TBudgetCalcShipItemRateCommand }
 
@@ -142,10 +144,20 @@ end;
 { TBudgetItemEditPresenter }
 
 procedure TBudgetItemEditPresenter.InitPresenter;
+var
+  VProductSubPresenter: TPressMVPPresenter;
+  VUnitySubPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
-  CreateSubPresenter('Product', 'ProductComboBox', 'Name');
-  CreateSubPresenter('Unity', 'UnityComboBox', 'Name');
+  VProductSubPresenter := CreateSubPresenter('Product', 'ProductComboBox',
+    'Name');
+  VProductSubPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddProductSpeedButton');
+  VProductSubPresenter.BindCommand(TPressMVPEditItemCommand, 'EditProductSpeedButton');
+
+  VUnitySubPresenter := CreateSubPresenter('Unity', 'UnityComboBox', 'Name');
+  VUnitySubPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddUnitySpeedButton');
+  VUnitySubPresenter.BindCommand(TPressMVPEditItemCommand, 'EditUnitySpeedButton');
+
   CreateSubPresenter('Quantity', 'QuantityEdit');
   CreateSubPresenter('UnityValue', 'UnityValueEdit');
   CreateSubPresenter('TotalValue', 'TotalValueEdit');
@@ -176,15 +188,20 @@ end;
 { TBudgetEditPresenter }
 
 procedure TBudgetEditPresenter.InitPresenter;
+var
+  VSupplierSubPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('Code', 'CodeEdit');
   CreateSubPresenter('Name', 'NameEdit');
   CreateSubPresenter('Remarks', 'RemarksMemo');
-  CreateSubPresenter('Supplier', 'SupplierComboBox',
+  VSupplierSubPresenter := CreateSubPresenter('Supplier', 'SupplierComboBox',
     'Name');
-  CreateSubPresenter('Supplier', 'SupplierComboBox1',
-    'Name');
+  VSupplierSubPresenter.Model.InsertCommands(0, [TAddPersonCommand, TAddCompanyCommand]);
+  VSupplierSubPresenter.BindCommand(TAddPersonCommand, 'AddSupplierPersonSpeedButton');
+  VSupplierSubPresenter.BindCommand(TAddCompanyCommand, 'AddSupplierCompanySpeedButton');
+  VSupplierSubPresenter.BindCommand(TPressMVPEditItemCommand, 'EditSupplierSpeedButton');
+  CreateSubPresenter('Supplier.Name', 'SupplierNameLabel');
   CreateSubPresenter('Shipping', 'ShippingEdit');
   CreateSubPresenter('Shipping', 'ShippingEdit1');
   CreateSubPresenter('SumOfItems', 'SumOfItemsEdit');
@@ -228,12 +245,16 @@ end;
 { TProductEditPresenter }
 
 procedure TProductEditPresenter.InitPresenter;
+var
+  VUnityPresenter: TPressMVPPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('Code', 'CodeEdit');
   CreateSubPresenter('Name', 'NameEdit');
   CreateSubPresenter('Remarks', 'RemarksMemo');
-  CreateSubPresenter('Unity', 'UnityComboBox', 'Name');
+  VUnityPresenter := CreateSubPresenter('Unity', 'UnityComboBox', 'Name');
+  VUnityPresenter.BindCommand(TPressMVPIncludeObjectCommand, 'AddUnitySpeedButton');
+  VUnityPresenter.BindCommand(TPressMVPEditItemCommand, 'EditUnitySpeedButton');
   CreateSubPresenter('MinimumStock', 'MinimumStockEdit');
   CreateSubPresenter('MaximumStock', 'MaximumStockEdit');
   CreateSubPresenter('CurrentStock', 'CurrentStockEdit');
@@ -245,6 +266,7 @@ begin
   CreateSubPresenter('Price', 'PriceEdit');
   CreateSubPresenter('CurrentStockPrice', 'CurrentStockPriceEdit');
   CreateSubPresenter('LastPurchaseDate', 'LastPurchaseDateEdit');
+
 end;
 
 initialization

@@ -3,6 +3,8 @@ inherited BudgetEditForm: TBudgetEditForm
   Top = 138
   Caption = 'Orçamento para compra'
   inherited EditPageControl: TPageControl
+    ActivePage = ItemsTabSheet
+    TabIndex = 1
     inherited MainTab: TTabSheet
       ClientHeight = 519
       ClientWidth = 792
@@ -212,10 +214,10 @@ inherited BudgetEditForm: TBudgetEditForm
         Text = 'ItemQuantityEdit'
       end
       object DateLabel: TLabel[16]
-        AnchorSideLeft.Control = SupplierComboBox
+        AnchorSideLeft.Control = EditSupplierSpeedButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = SupplierLabel
-        Left = 372
+        Left = 453
         Height = 15
         Top = 51
         Width = 31
@@ -227,7 +229,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideLeft.Control = DateLabel
         AnchorSideTop.Control = DateLabel
         AnchorSideTop.Side = asrBottom
-        Left = 372
+        Left = 453
         Height = 22
         Top = 68
         Width = 198
@@ -287,6 +289,45 @@ inherited BudgetEditForm: TBudgetEditForm
         )
         TabOrder = 10
       end
+      object AddSupplierPersonSpeedButton: TSpeedButton[22]
+        AnchorSideLeft.Control = SupplierComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = SupplierComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 364
+        Height = 22
+        Top = 68
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+      end
+      object AddSupplierCompanySpeedButton: TSpeedButton[23]
+        AnchorSideLeft.Control = AddSupplierPersonSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddSupplierPersonSpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 391
+        Height = 22
+        Top = 68
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+      end
+      object EditSupplierSpeedButton: TSpeedButton[24]
+        AnchorSideLeft.Control = AddSupplierCompanySpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AddSupplierCompanySpeedButton
+        AnchorSideTop.Side = asrCenter
+        Left = 418
+        Height = 22
+        Top = 68
+        Width = 23
+        BorderSpacing.Left = 4
+        Flat = True
+        NumGlyphs = 0
+      end
     end
     object ItemsTabSheet: TTabSheet[1]
       Caption = 'Itens do orçamento'
@@ -294,13 +335,14 @@ inherited BudgetEditForm: TBudgetEditForm
       ClientWidth = 792
       object ItemsLabel: TLabel
         AnchorSideLeft.Control = ItemsTabSheet
-        AnchorSideTop.Control = ItemsTabSheet
+        AnchorSideTop.Control = SupplierNameLabel
+        AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
-        Top = 4
+        Top = 47
         Width = 115
         BorderSpacing.Left = 4
-        BorderSpacing.Top = 4
+        BorderSpacing.Top = 8
         Caption = 'Produtos/insumos'
         ParentColor = False
       end
@@ -311,8 +353,8 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideRight.Control = ItemsTabSheet
         AnchorSideRight.Side = asrBottom
         Left = 4
-        Height = 352
-        Top = 21
+        Height = 311
+        Top = 64
         Width = 784
         Anchors = [akTop, akLeft, akRight]
         BorderSpacing.Top = 2
@@ -323,66 +365,54 @@ inherited BudgetEditForm: TBudgetEditForm
       end
       object SupplierLabel1: TLabel
         AnchorSideLeft.Control = ItemsTabSheet
-        AnchorSideTop.Control = ItemsStringGrid
-        AnchorSideTop.Side = asrBottom
+        AnchorSideTop.Control = ItemsTabSheet
         Left = 4
         Height = 15
-        Top = 381
+        Top = 4
         Width = 72
         BorderSpacing.Left = 4
-        BorderSpacing.Top = 8
+        BorderSpacing.Top = 4
         Caption = 'Fornecedor'
         ParentColor = False
       end
-      object SupplierComboBox1: TComboBox
-        AnchorSideLeft.Control = SupplierLabel1
-        AnchorSideTop.Control = SupplierLabel1
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 22
-        Top = 398
-        Width = 356
-        BorderSpacing.Top = 2
-        ItemHeight = 14
-        TabOrder = 1
-        Text = 'SupplierComboBox1'
-      end
       object SumOfItemsLabel1: TLabel
-        AnchorSideLeft.Control = ItemsTabSheet
-        AnchorSideTop.Control = SupplierComboBox1
+        AnchorSideLeft.Control = SumOfItemsEdit1
+        AnchorSideTop.Control = ItemsStringGrid
         AnchorSideTop.Side = asrBottom
-        Left = 4
+        Left = 590
         Height = 15
-        Top = 428
+        Top = 383
         Width = 94
-        BorderSpacing.Left = 4
         BorderSpacing.Top = 8
         Caption = 'Total dos itens'
         ParentColor = False
       end
       object SumOfItemsEdit1: TEdit
-        AnchorSideLeft.Control = SumOfItemsLabel1
+        AnchorSideLeft.Control = ItemsStringGrid
         AnchorSideTop.Control = SumOfItemsLabel1
         AnchorSideTop.Side = asrBottom
-        Left = 4
+        AnchorSideRight.Control = ItemsStringGrid
+        AnchorSideRight.Side = asrBottom
+        Left = 590
         Height = 22
-        Top = 445
+        Top = 400
         Width = 198
+        Anchors = [akTop, akRight]
         BorderSpacing.Top = 2
         Color = clBtnFace
         ReadOnly = True
-        TabOrder = 2
+        TabOrder = 1
         Text = 'SumOfItemsEdit1'
       end
       object ShippingLabel1: TLabel
-        AnchorSideLeft.Control = SumOfItemsEdit1
-        AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = SumOfItemsLabel1
-        Left = 214
+        AnchorSideLeft.Control = ShippingEdit1
+        AnchorSideTop.Control = SumOfItemsEdit1
+        AnchorSideTop.Side = asrBottom
+        Left = 590
         Height = 15
-        Top = 428
+        Top = 430
         Width = 87
-        BorderSpacing.Left = 12
+        BorderSpacing.Top = 8
         Caption = 'Valor do frete'
         ParentColor = False
       end
@@ -390,23 +420,26 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideLeft.Control = ShippingLabel1
         AnchorSideTop.Control = ShippingLabel1
         AnchorSideTop.Side = asrBottom
-        Left = 214
+        AnchorSideRight.Control = ItemsStringGrid
+        AnchorSideRight.Side = asrBottom
+        Left = 590
         Height = 22
-        Top = 445
+        Top = 447
         Width = 198
+        Anchors = [akTop, akRight]
         BorderSpacing.Top = 2
-        TabOrder = 3
+        TabOrder = 4
         Text = 'ShippingEdit1'
       end
       object TotalBudgetLabel1: TLabel
         AnchorSideLeft.Control = ShippingEdit1
-        AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = SumOfItemsLabel1
-        Left = 424
+        AnchorSideTop.Control = ShippingEdit1
+        AnchorSideTop.Side = asrBottom
+        Left = 590
         Height = 15
-        Top = 428
+        Top = 477
         Width = 123
-        BorderSpacing.Left = 12
+        BorderSpacing.Top = 8
         Caption = 'Total do orçamento'
         ParentColor = False
       end
@@ -414,23 +447,30 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideLeft.Control = TotalBudgetLabel1
         AnchorSideTop.Control = TotalBudgetLabel1
         AnchorSideTop.Side = asrBottom
-        Left = 424
+        Left = 590
         Height = 22
-        Top = 445
+        Top = 494
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -12
+        Font.Name = 'Verdana'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
-        TabOrder = 4
+        TabOrder = 5
         Text = 'TotalBudgetEdit1'
       end
       object ItemCountLabel1: TLabel
         AnchorSideLeft.Control = ItemsTabSheet
-        AnchorSideTop.Control = SumOfItemsEdit1
+        AnchorSideTop.Control = AddProductSpeedButton
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
-        Top = 475
+        Top = 409
         Width = 130
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
@@ -443,12 +483,12 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 22
-        Top = 492
+        Top = 426
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
         ReadOnly = True
-        TabOrder = 5
+        TabOrder = 2
         Text = 'ItemCountEdit1'
       end
       object ItemAmountLabel1: TLabel
@@ -457,7 +497,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Control = ItemCountLabel1
         Left = 214
         Height = 15
-        Top = 475
+        Top = 409
         Width = 109
         BorderSpacing.Left = 12
         Caption = 'Volume dos itens'
@@ -469,13 +509,74 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 214
         Height = 22
-        Top = 492
+        Top = 426
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
         ReadOnly = True
-        TabOrder = 6
+        TabOrder = 3
         Text = 'ItemQuantityEdit1'
+      end
+      object SupplierNameLabel: TLabel
+        AnchorSideLeft.Control = SupplierLabel1
+        AnchorSideTop.Control = SupplierLabel1
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 18
+        Top = 21
+        Width = 356
+        AutoSize = False
+        BorderSpacing.Top = 2
+        Caption = 'SupplierNameLabel'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -12
+        Font.Name = 'Verdana'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+      end
+      object AddProductSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = ItemsStringGrid
+        AnchorSideTop.Control = ItemsStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 379
+        Width = 23
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+      end
+      object EditProductSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = AddProductSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = ItemsStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 31
+        Height = 22
+        Top = 379
+        Width = 23
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
+      end
+      object RemoveProductSpeedButton: TSpeedButton
+        AnchorSideLeft.Control = EditProductSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = ItemsStringGrid
+        AnchorSideTop.Side = asrBottom
+        Left = 58
+        Height = 22
+        Top = 379
+        Width = 23
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Flat = True
+        NumGlyphs = 0
       end
     end
   end

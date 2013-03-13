@@ -13,6 +13,10 @@ type
   { TBudgetItemEditForm }
 
   TBudgetItemEditForm = class(TCustomEditForm)
+    AddProductSpeedButton: TSpeedButton;
+    AddUnitySpeedButton: TSpeedButton;
+    EditProductSpeedButton: TSpeedButton;
+    EditUnitySpeedButton: TSpeedButton;
     ProductComboBox: TComboBox;
     ProductLabel: TLabel;
     QuantityEdit: TEdit;
@@ -23,13 +27,27 @@ type
     UnityLabel: TLabel;
     UnityValue: TLabel;
     UnityValueEdit: TEdit;
+  public
+    constructor Create(AOwner: TComponent); override;
   end;
 
 implementation
 
 uses
   PressXCLBroker,
-  ProductMVP;
+  ProductMVP,
+  MainFrm;
+
+{ TBudgetItemEditForm }
+
+constructor TBudgetItemEditForm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddProductSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditProductSpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_ADD, AddUnitySpeedButton.Glyph);
+  MainForm.Icons16ImageList.GetBitmap(IMG_PENCIL, EditUnitySpeedButton.Glyph);
+end;
 
 {$R *.lfm}
 
