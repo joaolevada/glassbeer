@@ -8,7 +8,8 @@ uses
   Classes,
   SysUtils,
   CustomMVP,
-  PressMVPCommand;
+  PressMVPCommand,
+  PressMVPPresenter;
 
 type
 
@@ -32,6 +33,14 @@ type
   TBudgetItemEditPresenter = class(TCustomEditPresenter)
   protected
     procedure InitPresenter; override;
+  end;
+
+  { TBudgetItemQueryPresenter }
+
+  TBudgetItemQueryPresenter = class(TPressMVPQueryPresenter)
+  protected
+    procedure InitPresenter; override;
+    function InternalQueryItemsDisplayNames: string; override;
   end;
 
   { TBudgetCalcShipItemRateCommand }
@@ -77,12 +86,57 @@ type
     function InternalQueryItemsDisplayNames: string; override;
   end;
 
+  { TBudgetItemQueryCommand }
+
+  TBudgetItemQueryCommand = class(TPressMVPObjectCommand)
+  protected
+    function InternalIsEnabled: Boolean; override;
+    procedure InternalExecute; override;
+  end;
+
 implementation
 
 uses
   ProductBO,
-  PressMVPPresenter,
   ContactMVP;
+
+{ TBudgetItemQueryCommand }
+
+function TBudgetItemQueryCommand.InternalIsEnabled: Boolean;
+var
+  VProduct: TProduct;
+begin
+  VProduct := Model.Subject as TProduct;
+  Result := True;
+end;
+
+procedure TBudgetItemQueryCommand.InternalExecute;
+var
+  VBudgetItemQuery: TBudgetItemQuery;
+begin
+  VBudgetItemQuery := TBudgetItemQuery.Create;
+  try
+    VBudgetItemQuery._Product.Value := Model.Subject;
+    Model.Session.UpdateQuery(VBudgetItemQuery);
+    TBudgetItemQueryPresenter.Run(VBudgetItemQuery);
+  finally
+    VBudgetItemQuery.Free;
+  end;
+end;
+
+{ TBudgetItemQueryPresenter }
+
+procedure TBudgetItemQueryPresenter.InitPresenter;
+begin
+  inherited InitPresenter;
+  CreateQueryItemsPresenter('BudgetsStringGrid');
+end;
+
+function TBudgetItemQueryPresenter.InternalQueryItemsDisplayNames: string;
+begin
+  { TODO 1 -ojoaolevada -cimplementation : Create query display names }
+  Result := '';
+end;
 
 { TBudgetCalcShipItemRateCommand }
 
@@ -197,10 +251,10 @@ begin
   CreateSubPresenter('Remarks', 'RemarksMemo');
   VSupplierSubPresenter := CreateSubPresenter('Supplier', 'SupplierComboBox',
     'Name');
-  VSupplierSubPresenter.Model.InsertCommands(0, [TAddPersonCommand, TAddCompanyCommand]);
-  VSupplierSubPresenter.BindCommand(TAddPersonCommand, 'AddSupplierPersonSpeedButton');
-  VSupplierSubPresenter.BindCommand(TAddCompanyCommand, 'AddSupplierCompanySpeedButton');
-  VSupplierSubPresenter.BindCommand(TPressMVPEditItemCommand, 'EditSupplierSpeedButton');
+  //VSupplierSubPresenter.Model.InsertCommands(0, [TAddPersonCommand, TAddCompanyCommand]);
+  //VSupplierSubPresenter.BindCommand(TAddPersonCommand, 'AddSupplierPersonSpeedButton');
+  //VSupplierSubPresenter.BindCommand(TAddCompanyCommand, 'AddSupplierCompanySpeedButton');
+  //VSupplierSubPresenter.BindCommand(TPressMVPEditItemCommand, 'EditSupplierSpeedButton');
   CreateSubPresenter('Supplier.Name', 'SupplierNameLabel');
   CreateSubPresenter('Shipping', 'ShippingEdit');
   CreateSubPresenter('Shipping', 'ShippingEdit1');
@@ -266,7 +320,7 @@ begin
   CreateSubPresenter('Price', 'PriceEdit');
   CreateSubPresenter('CurrentStockPrice', 'CurrentStockPriceEdit');
   CreateSubPresenter('LastPurchaseDate', 'LastPurchaseDateEdit');
-
+  BindCommand(TBudgetItemQueryCommand, 'Button1');
 end;
 
 initialization
@@ -275,6 +329,7 @@ initialization
   TBudgetEditPresenter.RegisterBO(TBudget);
   TBudgetQueryPresenter.RegisterBO(TBudgetQuery);
   TBudgetItemEditPresenter.RegisterBO(TBudgetItem);
+  TBudgetItemQueryPresenter.RegisterBO(TBudgetItemQuery);
   TInvoiceEditPresenter.RegisterBO(TInvoice);
   TInvoiceQueryPresenter.RegisterBO(TInvoiceQuery);
   TInvoiceItemEditPresenter.RegisterBO(TInvoiceItem);

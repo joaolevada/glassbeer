@@ -95,6 +95,15 @@ type
     property UnityValue: Currency read GetUnityValue write SetUnityValue;
   end;
 
+  { TBudgetItemQuery }
+
+  TBudgetItemQuery = class(TCustomQuery)
+    _Product: TPressReference;
+  protected
+    class function InternalMetadataStr: string; override;
+  end;
+
+
   { TProduct }
 
   TProduct = class(TCustomObject)
@@ -168,6 +177,15 @@ type
   end;
 
 implementation
+
+{ TBudgetItemQuery }
+
+class function TBudgetItemQuery.InternalMetadataStr: string;
+begin
+  Result := 'TBudgetItemQuery (TBudgetItem) (' +
+    'Product: Reference(TProduct) MatchType=mtEqual' +
+    ');';
+end;
 
 { TBudgetQuery }
 
@@ -455,6 +473,7 @@ initialization
   TBudget.RegisterClass;
   TBudgetQuery.RegisterClass;
   TBudgetItem.RegisterClass;
+  TBudgetItemQuery.RegisterClass;
   TInvoice.RegisterClass;
   TInvoiceQuery.RegisterClass;
   TInvoiceItem.RegisterClass;
@@ -465,6 +484,7 @@ finalization
   TBudget.UnregisterClass;
   TBudgetQuery.UnregisterClass;
   TBudgetItem.UnregisterClass;
+  TBudgetItemQuery.UnregisterClass;
   TInvoice.UnregisterClass;
   TInvoiceQuery.UnregisterClass;
   TInvoiceItem.UnregisterClass;

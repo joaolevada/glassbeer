@@ -59,9 +59,25 @@ type
     function InternalQueryItemsDisplayNames: string; override;
   end;
 
+  { TIncludeCompanyCommand }
+
+  TIncludeCompanyCommand = class(TPressMVPIncludeObjectCommand)
+  protected
+    function GetCaption: string; override;
+    function GetShortCut: TShortCut; override;
+  end;
+
+  { TIncludePersonCommand }
+
+  TIncludePersonCommand = class(TPressMVPIncludeObjectCommand)
+  protected
+    function GetCaption: string; override;
+    function GetShortCut: TShortCut; override;
+  end;
+
   { TAddPersonCommand }
 
-  TAddPersonCommand = class(TPressMVPCustomAddItemsCommand)
+  TAddPersonCommand = class(TPressMVPAddItemsCommand)
   protected
     function GetCaption: string; override;
     function GetShortCut: TShortCut; override;
@@ -84,6 +100,30 @@ uses
   Menus,
   LCLType,
   AddressMVP;
+
+{ TIncludePersonCommand }
+
+function TIncludePersonCommand.GetCaption: string;
+begin
+  Result := 'Cadastrar pessoa';
+end;
+
+function TIncludePersonCommand.GetShortCut: TShortCut;
+begin
+  Result := VK_F2;
+end;
+
+{ TIncludeCompanyCommand }
+
+function TIncludeCompanyCommand.GetCaption: string;
+begin
+  Result := 'Cadastrar empresa'
+end;
+
+function TIncludeCompanyCommand.GetShortCut: TShortCut;
+begin
+  Result := Menus.ShortCut(VK_F2, [ssCtrl]);
+end;
 
 { TPersonContactEditPresenter }
 

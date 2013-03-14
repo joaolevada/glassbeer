@@ -16,6 +16,14 @@ inherited ProductEditForm: TProductEditForm
     inherited CancelButton: TBitBtn
       Left = 515
     end
+    object Button1: TButton[2]
+      Left = 58
+      Height = 25
+      Top = 7
+      Width = 75
+      Caption = 'Button1'
+      TabOrder = 2
+    end
   end
   inherited EditPageControl: TPageControl
     Height = 330
