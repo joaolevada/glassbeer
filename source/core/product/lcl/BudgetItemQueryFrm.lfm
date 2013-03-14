@@ -1,0 +1,18 @@
+object BudgetItemQueryForm: TBudgetItemQueryForm
+  Left = 352
+  Height = 356
+  Top = 339
+  Width = 618
+  Caption = 'Orçamentos de compra do produto'
+  ClientHeight = 356
+  ClientWidth = 618
+  LCLVersion = '1.0.1.3'
+  object BudgetsStringGrid: TStringGrid
+    Left = 0
+    Height = 356
+    Top = 0
+    Width = 618
+    Align = alClient
+    TabOrder = 0
+  end
+end

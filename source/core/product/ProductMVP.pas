@@ -134,8 +134,11 @@ end;
 
 function TBudgetItemQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
-  { TODO 1 -ojoaolevada -cimplementation : Create query display names }
-  Result := '';
+  Result := 'Quantity(80, "Quantidade");' +
+    'Unity.Abbreviation(45, "Unidade");' +
+    'UnityValue(80, "Vl. unitário");' +
+    'Shipping(80, "Frete");' +
+    'TotalValue(100, "Valor total")';
 end;
 
 { TBudgetCalcShipItemRateCommand }
@@ -244,6 +247,7 @@ end;
 procedure TBudgetEditPresenter.InitPresenter;
 var
   VSupplierSubPresenter: TPressMVPPresenter;
+  VProductsPresenter: TPressMVPItemsPresenter;
 begin
   inherited InitPresenter;
   CreateSubPresenter('Code', 'CodeEdit');
@@ -251,10 +255,10 @@ begin
   CreateSubPresenter('Remarks', 'RemarksMemo');
   VSupplierSubPresenter := CreateSubPresenter('Supplier', 'SupplierComboBox',
     'Name');
-  //VSupplierSubPresenter.Model.InsertCommands(0, [TAddPersonCommand, TAddCompanyCommand]);
-  //VSupplierSubPresenter.BindCommand(TAddPersonCommand, 'AddSupplierPersonSpeedButton');
-  //VSupplierSubPresenter.BindCommand(TAddCompanyCommand, 'AddSupplierCompanySpeedButton');
-  //VSupplierSubPresenter.BindCommand(TPressMVPEditItemCommand, 'EditSupplierSpeedButton');
+  VSupplierSubPresenter.Model.InsertCommands(0, [TIncludePersonCommand, TIncludeCompanyCommand]);
+  VSupplierSubPresenter.BindCommand(TIncludePersonCommand, 'AddSupplierPersonSpeedButton');
+  VSupplierSubPresenter.BindCommand(TIncludeCompanyCommand, 'AddSupplierCompanySpeedButton');
+  VSupplierSubPresenter.BindCommand(TPressMVPEditItemCommand, 'EditSupplierSpeedButton');
   CreateSubPresenter('Supplier.Name', 'SupplierNameLabel');
   CreateSubPresenter('Shipping', 'ShippingEdit');
   CreateSubPresenter('Shipping', 'ShippingEdit1');
@@ -262,13 +266,19 @@ begin
   CreateSubPresenter('SumOfItems', 'SumOfItemsEdit1');
   CreateSubPresenter('TotalBudget', 'TotalBudgetEdit');
   CreateSubPresenter('TotalBudget', 'TotalBudgetEdit1');
-  CreateSubPresenter('Items', 'ItemsStringGrid',
+  VProductsPresenter := CreateSubPresenter('Items', 'ItemsStringGrid',
     'Product.Name(200, "Produto");' +
     'Unity.Abbreviation(50, "Unidade");' +
     'Quantity(50, "Qtde.");' +
     'UnityValue(50, "Vl. unit.");' +
     'TotalValue(70, "Total");' +
-    'Shipping(50, "Frete")');
+    'Shipping(50, "Frete")') as TPressMVPItemsPresenter;
+  VProductsPresenter.BindCommand(TPressMVPAddItemsCommand,
+    'AddProductSpeedButton');
+  VProductsPresenter.BindCommand(TPressMVPEditItemCommand,
+    'EditProductSpeedButton');
+  VProductsPresenter.BindCommand(TPressMVPRemoveItemsCommand,
+    'RemoveProductSpeedButton');
   CreateSubPresenter('Date', 'DateEdit');
   CreateSubPresenter('ExpireDate', 'ExpireDateEdit');
   CreateSubPresenter('ItemCount', 'ItemCountEdit');

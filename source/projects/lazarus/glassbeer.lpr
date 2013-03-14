@@ -25,7 +25,8 @@ uses
   EquipmentProfileEditFrm, EquipmentProfileQueryFrm, WaterCalculatorEditFrm,
   AccountChartMVP, AccountChartEditFrm, AccountChartQueryFrm, ProductBO,
   UnityBO, ProductMVP, ProductEditFrm, ProductQueryFrm, UnityEditFrm, UnityMVP,
-  BudgetQueryFrm, BudgetEditFrm, BudgetItemEditFrm, BudgetItemQueryFrm;
+  BudgetQueryFrm, BudgetEditFrm, BudgetItemEditFrm, 
+  BudgetItemQueryFrm;
 
 {$R *.res}
 

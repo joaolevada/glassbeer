@@ -65,6 +65,7 @@ type
   protected
     function GetCaption: string; override;
     function GetShortCut: TShortCut; override;
+    procedure InternalExecute; override;
   end;
 
   { TIncludePersonCommand }
@@ -73,6 +74,7 @@ type
   protected
     function GetCaption: string; override;
     function GetShortCut: TShortCut; override;
+    procedure InternalExecute; override;
   end;
 
   { TAddPersonCommand }
@@ -113,6 +115,15 @@ begin
   Result := VK_F2;
 end;
 
+procedure TIncludePersonCommand.InternalExecute;
+var
+  VPerson: TPerson;
+begin
+  VPerson := TPerson.Create();
+  TPressMVPModelCreateIncludeFormEvent.Create(Model, VPerson).Notify;
+  VPerson.Free;
+end;
+
 { TIncludeCompanyCommand }
 
 function TIncludeCompanyCommand.GetCaption: string;
@@ -123,6 +134,15 @@ end;
 function TIncludeCompanyCommand.GetShortCut: TShortCut;
 begin
   Result := Menus.ShortCut(VK_F2, [ssCtrl]);
+end;
+
+procedure TIncludeCompanyCommand.InternalExecute;
+var
+  VCompany: TCompany;
+begin
+  VCompany := TCompany.Create();
+  TPressMVPModelCreateIncludeFormEvent.Create(Model, VCompany).Notify();
+  VCompany.Free;
 end;
 
 { TPersonContactEditPresenter }
