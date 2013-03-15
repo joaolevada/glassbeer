@@ -17,6 +17,8 @@ type
     AbreviationLabel: TLabel;
     NameEdit: TEdit;
     NameLabel: TLabel;
+    WeightInKilogramsEdit: TEdit;
+    WeightInKilogramsLabel: TLabel;
   end;
 
 implementation

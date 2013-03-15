@@ -1,26 +1,26 @@
 inherited UnityEditForm: TUnityEditForm
   Height = 176
-  Width = 372
+  Width = 425
   Caption = 'Unidade'
   ClientHeight = 176
-  ClientWidth = 372
+  ClientWidth = 425
   inherited BottomPanel: TPanel
     Top = 122
-    Width = 372
-    ClientWidth = 372
+    Width = 425
+    ClientWidth = 425
     inherited SaveButton: TBitBtn
-      Left = 131
+      Left = 184
     end
     inherited CancelButton: TBitBtn
-      Left = 251
+      Left = 304
     end
   end
   inherited EditPageControl: TPageControl
     Height = 122
-    Width = 372
+    Width = 425
     inherited MainTab: TTabSheet
       ClientHeight = 95
-      ClientWidth = 364
+      ClientWidth = 417
       object NameLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
         AnchorSideTop.Control = MainTab
@@ -69,6 +69,30 @@ inherited UnityEditForm: TUnityEditForm
         BorderSpacing.Top = 2
         TabOrder = 1
         Text = 'AbbreviationEdit'
+      end
+      object WeightInKilogramsLabel: TLabel[4]
+        AnchorSideLeft.Control = AbbreviationEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = AbreviationLabel
+        Left = 214
+        Height = 15
+        Top = 51
+        Width = 136
+        BorderSpacing.Left = 12
+        Caption = 'Peso em quilogramas'
+        ParentColor = False
+      end
+      object WeightInKilogramsEdit: TEdit[5]
+        AnchorSideLeft.Control = WeightInKilogramsLabel
+        AnchorSideTop.Control = WeightInKilogramsLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 68
+        Width = 198
+        BorderSpacing.Top = 2
+        TabOrder = 2
+        Text = 'WeightInKilogramsEdit'
       end
     end
   end

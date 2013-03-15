@@ -56,12 +56,10 @@
         <Filename Value="glassbeer.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="glassbeer"/>
-        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="42" Y="28"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="..\..\core\include\glassbeer_defines.inc"/>
@@ -77,7 +75,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="45"/>
         <CursorPos X="33" Y="51"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit2>
       <Unit3>
         <Filename Value="..\..\core\custom\CustomBO.pas"/>
@@ -94,7 +92,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="67"/>
         <CursorPos X="25" Y="70"/>
-        <UsageCount Value="196"/>
+        <UsageCount Value="194"/>
       </Unit4>
       <Unit5>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Core\PressAttributes.pas"/>
@@ -102,7 +100,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="513"/>
         <CursorPos X="20" Y="529"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="1"/>
       </Unit5>
       <Unit6>
         <Filename Value="..\..\core\mash\MashBO.pas"/>
@@ -131,7 +129,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="6" Y="21"/>
-        <UsageCount Value="197"/>
+        <UsageCount Value="195"/>
       </Unit8>
       <Unit9>
         <Filename Value="..\..\core\custom\CustomMVP.pas"/>
@@ -166,7 +164,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="37"/>
         <CursorPos X="6" Y="57"/>
-        <UsageCount Value="197"/>
+        <UsageCount Value="195"/>
       </Unit12>
       <Unit13>
         <Filename Value="..\..\core\custom\lcl\CustomEditFrm.pas"/>
@@ -211,7 +209,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="17" Y="9"/>
-        <UsageCount Value="198"/>
+        <UsageCount Value="196"/>
       </Unit16>
       <Unit17>
         <Filename Value="..\..\core\rawmaterial\lcl\RawMaterialEditFrm.pas"/>
@@ -222,7 +220,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="14"/>
         <CursorPos X="32" Y="40"/>
-        <UsageCount Value="198"/>
+        <UsageCount Value="196"/>
       </Unit17>
       <Unit18>
         <Filename Value="D:\lib\pressobjects\trunk\Source\Core\PressMVPWidget.pas"/>
@@ -230,7 +228,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="20"/>
         <CursorPos X="17" Y="36"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit18>
       <Unit19>
         <Filename Value="..\..\..\..\..\sure\windows\trunk\source\core\configuracao\ProprietarioBO.pas"/>
@@ -238,7 +236,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="74"/>
         <CursorPos X="28" Y="90"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="3"/>
       </Unit19>
       <Unit20>
         <Filename Value="..\..\core\recipe\RecipeMVP.pas"/>
@@ -319,7 +317,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="18" Y="39"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit27>
       <Unit28>
@@ -636,8 +634,6 @@
         <Filename Value="..\..\core\contact\ContactMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ContactMVP"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="121"/>
         <CursorPos X="67" Y="136"/>
@@ -645,7 +641,6 @@
         <Bookmarks Count="1">
           <Item0 X="4" Y="216" ID="4"/>
         </Bookmarks>
-        <Loaded Value="True"/>
       </Unit56>
       <Unit57>
         <Filename Value="..\..\core\contact\lcl\ContactEditFrm.pas"/>
@@ -812,7 +807,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="287"/>
         <CursorPos X="20" Y="302"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="2"/>
       </Unit71>
       <Unit72>
         <Filename Value="..\..\core\log\lcl\GeneralLogEditFrm.pas"/>
@@ -949,7 +944,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="241"/>
         <CursorPos X="14" Y="256"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="0"/>
       </Unit84>
       <Unit85>
         <Filename Value="C:\lib\pressobjects\trunk\Source\Core\PressMVPModel.pas"/>
@@ -957,7 +952,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="470"/>
         <CursorPos X="3" Y="485"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="8"/>
       </Unit85>
       <Unit86>
         <Filename Value="..\..\core\accountchart\lcl\AccountChartChildEditForm.pas"/>
@@ -968,7 +963,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="11"/>
         <CursorPos X="70" Y="37"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="17"/>
       </Unit86>
       <Unit87>
         <Filename Value="..\..\..\..\press-sdk\Source\Core\PressMVPPresenter.pas"/>
@@ -976,7 +971,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="69"/>
         <CursorPos X="3" Y="84"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
       </Unit87>
       <Unit88>
         <Filename Value="..\..\..\..\press-sdk\Source\Core\PressSubject.pas"/>
@@ -984,17 +979,15 @@
         <WindowIndex Value="0"/>
         <TopLine Value="732"/>
         <CursorPos X="20" Y="746"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
       </Unit88>
       <Unit89>
         <Filename Value="..\..\..\..\press-sdk\Source\Core\PressMVPCommand.pas"/>
         <UnitName Value="PressMVPCommand"/>
-        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="498"/>
         <CursorPos X="3" Y="502"/>
-        <UsageCount Value="10"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="8"/>
       </Unit89>
       <Unit90>
         <Filename Value="..\..\..\..\press-sdk\Source\Core\PressMVPModel.pas"/>
@@ -1002,17 +995,15 @@
         <WindowIndex Value="0"/>
         <TopLine Value="531"/>
         <CursorPos X="29" Y="554"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="3"/>
       </Unit90>
       <Unit91>
         <Filename Value="..\..\..\..\press-sdk\Source\Core\PressMVP.pas"/>
         <UnitName Value="PressMVP"/>
-        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="106"/>
         <CursorPos X="15" Y="120"/>
-        <UsageCount Value="10"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="8"/>
       </Unit91>
       <Unit92>
         <Filename Value="..\..\..\..\press-sdk\Source\Core\PressSession.pas"/>
@@ -1020,7 +1011,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="94"/>
         <CursorPos X="3" Y="70"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="2"/>
       </Unit92>
       <Unit93>
         <Filename Value="..\..\..\..\press-sdk\Source\Core\PressClasses.pas"/>
@@ -1028,7 +1019,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="77"/>
         <CursorPos X="15" Y="92"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="3"/>
       </Unit93>
       <Unit94>
         <Filename Value="D:\lib\press-sdk\Source\Core\PressMVPCommand.pas"/>
@@ -1036,7 +1027,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="186"/>
         <CursorPos X="3" Y="202"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="6"/>
       </Unit94>
       <Unit95>
         <Filename Value="D:\lib\press-sdk\Source\Core\PressSession.pas"/>
@@ -1044,21 +1035,19 @@
         <WindowIndex Value="0"/>
         <TopLine Value="570"/>
         <CursorPos X="3" Y="575"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit95>
       <Unit96>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ProductBO"/>
-        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="61"/>
         <CursorPos X="15" Y="76"/>
-        <UsageCount Value="150"/>
+        <UsageCount Value="166"/>
         <Bookmarks Count="1">
           <Item0 X="3" Y="313" ID="1"/>
         </Bookmarks>
-        <Loaded Value="True"/>
       </Unit96>
       <Unit97>
         <Filename Value="..\..\..\..\press-sdk\Source\Core\PressAttributes.pas"/>
@@ -1066,16 +1055,19 @@
         <WindowIndex Value="0"/>
         <TopLine Value="431"/>
         <CursorPos X="15" Y="446"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="8"/>
       </Unit97>
       <Unit98>
         <Filename Value="..\..\core\unity\UnityBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnityBO"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="31"/>
-        <CursorPos X="31" Y="47"/>
-        <UsageCount Value="150"/>
+        <TopLine Value="10"/>
+        <CursorPos X="82" Y="51"/>
+        <UsageCount Value="166"/>
+        <Loaded Value="True"/>
       </Unit98>
       <Unit99>
         <Filename Value="..\..\core\budget\BudgetBO.pas"/>
@@ -1083,18 +1075,16 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="21" Y="7"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="7"/>
       </Unit99>
       <Unit100>
         <Filename Value="..\..\core\product\ProductMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ProductMVP"/>
-        <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="120"/>
         <CursorPos X="1" Y="141"/>
-        <UsageCount Value="140"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="156"/>
       </Unit100>
       <Unit101>
         <Filename Value="..\..\core\product\lcl\ProductEditFrm.pas"/>
@@ -1106,7 +1096,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="40"/>
         <CursorPos X="79" Y="63"/>
-        <UsageCount Value="103"/>
+        <UsageCount Value="119"/>
       </Unit101>
       <Unit102>
         <Filename Value="..\..\core\product\lcl\ProductQueryFrm.pas"/>
@@ -1118,7 +1108,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="5"/>
         <CursorPos X="6" Y="16"/>
-        <UsageCount Value="103"/>
+        <UsageCount Value="119"/>
       </Unit102>
       <Unit103>
         <Filename Value="..\..\core\unity\lcl\UnityEditFrm.pas"/>
@@ -1127,19 +1117,24 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnityEditFrm"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="22" Y="9"/>
-        <UsageCount Value="95"/>
+        <CursorPos X="23" Y="16"/>
+        <UsageCount Value="111"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit103>
       <Unit104>
         <Filename Value="..\..\core\unity\UnityMVP.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnityMVP"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="8"/>
-        <CursorPos X="45" Y="32"/>
-        <UsageCount Value="95"/>
+        <CursorPos X="14" Y="30"/>
+        <UsageCount Value="111"/>
+        <Loaded Value="True"/>
       </Unit104>
       <Unit105>
         <Filename Value="..\..\core\product\lcl\BudgetQueryFrm.pas"/>
@@ -1151,7 +1146,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="24" Y="21"/>
-        <UsageCount Value="94"/>
+        <UsageCount Value="110"/>
       </Unit105>
       <Unit106>
         <Filename Value="..\..\core\product\lcl\BudgetEditFrm.pas"/>
@@ -1163,7 +1158,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="60"/>
         <CursorPos X="6" Y="77"/>
-        <UsageCount Value="93"/>
+        <UsageCount Value="109"/>
       </Unit106>
       <Unit107>
         <Filename Value="D:\lib\press-sdk\Source\Core\PressSubject.pas"/>
@@ -1171,7 +1166,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="740"/>
         <CursorPos X="14" Y="783"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="7"/>
       </Unit107>
       <Unit108>
         <Filename Value="..\..\core\product\lcl\BudgetItemEditFrm.pas"/>
@@ -1183,7 +1178,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="24"/>
         <CursorPos X="62" Y="49"/>
-        <UsageCount Value="87"/>
+        <UsageCount Value="103"/>
       </Unit108>
       <Unit109>
         <Filename Value="D:\lib\press-sdk\Source\Core\PressMVPPresenter.pas"/>
@@ -1191,7 +1186,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="235"/>
         <CursorPos X="3" Y="255"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="7"/>
       </Unit109>
       <Unit110>
         <Filename Value="D:\lib\press-sdk\Source\Core\PressMVP.pas"/>
@@ -1199,7 +1194,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="102"/>
         <CursorPos X="15" Y="118"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="9"/>
       </Unit110>
       <Unit111>
         <Filename Value="..\..\core\product\lcl\BudgetItemQueryFrm.pas"/>
@@ -1211,106 +1206,18 @@
         <WindowIndex Value="0"/>
         <TopLine Value="13"/>
         <CursorPos X="65" Y="39"/>
-        <UsageCount Value="28"/>
+        <UsageCount Value="44"/>
       </Unit111>
       <Unit112>
         <Filename Value=""/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="7"/>
       </Unit112>
     </Units>
-    <JumpHistory Count="23" HistoryIndex="22">
+    <JumpHistory Count="1" HistoryIndex="0">
       <Position1>
-        <Filename Value="..\..\core\product\ProductMVP.pas"/>
-        <Caret Line="251" Column="22" TopLine="232"/>
+        <Filename Value="..\..\core\unity\lcl\UnityEditFrm.pas"/>
+        <Caret Line="9" Column="22" TopLine="1"/>
       </Position1>
-      <Position2>
-        <Filename Value="..\..\core\product\ProductMVP.pas"/>
-        <Caret Line="297" Column="17" TopLine="266"/>
-      </Position2>
-      <Position3>
-        <Filename Value="..\..\core\product\ProductMVP.pas"/>
-        <Caret Line="86" Column="7" TopLine="66"/>
-      </Position3>
-      <Position4>
-        <Filename Value="..\..\core\product\ProductMVP.pas"/>
-        <Caret Line="75" Column="3" TopLine="59"/>
-      </Position4>
-      <Position5>
-        <Filename Value="..\..\core\product\ProductMVP.pas"/>
-        <Caret Line="316" Column="51" TopLine="294"/>
-      </Position5>
-      <Position6>
-        <Filename Value="..\..\core\product\ProductMVP.pas"/>
-        <Caret Line="90" Column="3" TopLine="74"/>
-      </Position6>
-      <Position7>
-        <Filename Value="..\..\core\product\ProductMVP.pas"/>
-        <Caret Line="43" Column="63" TopLine="26"/>
-      </Position7>
-      <Position8>
-        <Filename Value="..\..\core\product\ProductMVP.pas"/>
-        <Caret Line="149" Column="28" TopLine="135"/>
-      </Position8>
-      <Position9>
-        <Filename Value="..\..\core\product\ProductMVP.pas"/>
-        <Caret Line="256" Column="41" TopLine="244"/>
-      </Position9>
-      <Position10>
-        <Filename Value="..\..\core\product\ProductMVP.pas"/>
-        <Caret Line="277" Column="12" TopLine="251"/>
-      </Position10>
-      <Position11>
-        <Filename Value="..\..\core\product\ProductBO.pas"/>
-        <Caret Line="475" Column="14" TopLine="460"/>
-      </Position11>
-      <Position12>
-        <Filename Value="..\..\core\product\ProductMVP.pas"/>
-        <Caret Line="138" Column="35" TopLine="122"/>
-      </Position12>
-      <Position13>
-        <Filename Value="..\..\core\product\ProductMVP.pas"/>
-        <Caret Line="239" Column="1" TopLine="220"/>
-      </Position13>
-      <Position14>
-        <Filename Value="glassbeer.lpr"/>
-        <Caret Line="23" Column="27" TopLine="10"/>
-      </Position14>
-      <Position15>
-        <Filename Value="..\..\core\contact\ContactMVP.pas"/>
-        <Caret Line="74" Column="40" TopLine="57"/>
-      </Position15>
-      <Position16>
-        <Filename Value="..\..\core\contact\ContactMVP.pas"/>
-        <Caret Line="65" Column="44" TopLine="50"/>
-      </Position16>
-      <Position17>
-        <Filename Value="..\..\..\..\press-sdk\Source\Core\PressMVPCommand.pas"/>
-        <Caret Line="101" Column="52" TopLine="86"/>
-      </Position17>
-      <Position18>
-        <Filename Value="..\..\core\contact\ContactMVP.pas"/>
-        <Caret Line="65" Column="49" TopLine="50"/>
-      </Position18>
-      <Position19>
-        <Filename Value="..\..\..\..\press-sdk\Source\Core\PressMVPCommand.pas"/>
-        <Caret Line="498" Column="45" TopLine="486"/>
-      </Position19>
-      <Position20>
-        <Filename Value="..\..\..\..\press-sdk\Source\Core\PressMVPCommand.pas"/>
-        <Caret Line="105" Column="22" TopLine="90"/>
-      </Position20>
-      <Position21>
-        <Filename Value="..\..\core\contact\ContactMVP.pas"/>
-        <Caret Line="69" Column="41" TopLine="50"/>
-      </Position21>
-      <Position22>
-        <Filename Value="..\..\core\contact\ContactMVP.pas"/>
-        <Caret Line="137" Column="17" TopLine="131"/>
-      </Position22>
-      <Position23>
-        <Filename Value="..\..\core\contact\ContactMVP.pas"/>
-        <Caret Line="136" Column="45" TopLine="121"/>
-      </Position23>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

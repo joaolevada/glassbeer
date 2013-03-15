@@ -17,6 +17,7 @@ type
   TUnity = class(TCustomObject)
     _Name: TPressAnsiString;
     _Abbreviation: TPressPlainString;
+    _WeightInKilograms: TPressDouble;
   protected
     class function InternalMetadataStr: string; override;
   end;
@@ -47,6 +48,7 @@ begin
   Result := 'TUnity IsPersistent(' +
     'Name: AnsiString(40) DisplayName="Nome" IsMandatory=True;' +
     'Abbreviation: PlainString(10) DisplayName="Abreviatura" IsMandatory=True;' +
+    'WeightInKiloGrams: Double DisplayName="Peso em quilogramas" IsMandatory=True' +
     ');';
 end;
 

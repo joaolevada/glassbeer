@@ -30,6 +30,7 @@ begin
   inherited InitPresenter;
   CreateSubPresenter('Name', 'NameEdit');
   CreateSubPresenter('Abbreviation', 'AbbreviationEdit');
+  CreateSubPresenter('WeightInKilograms', 'WeightInKilogramsEdit');
 end;
 
 initialization
