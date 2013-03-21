@@ -27,6 +27,8 @@ type
     UnityLabel: TLabel;
     UnityValue: TLabel;
     UnityValueEdit: TEdit;
+    WeightInKilogramsEdit: TEdit;
+    WeightInKilogramsLabel: TLabel;
   public
     constructor Create(AOwner: TComponent); override;
   end;

@@ -49,7 +49,7 @@ inherited BudgetQueryForm: TBudgetQueryForm
         Left = 146
         Height = 24
         Top = 23
-        Width = 150
+        Width = 180
         BorderSpacing.Top = 2
         TabOrder = 2
         Text = 'NameEdit'
@@ -58,7 +58,7 @@ inherited BudgetQueryForm: TBudgetQueryForm
         AnchorSideLeft.Control = NameEdit
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = DefaultTab
-        Left = 308
+        Left = 338
         Height = 17
         Top = 4
         Width = 102
@@ -71,10 +71,10 @@ inherited BudgetQueryForm: TBudgetQueryForm
         AnchorSideLeft.Control = DateLabel
         AnchorSideTop.Control = DateLabel
         AnchorSideTop.Side = asrBottom
-        Left = 308
+        Left = 338
         Height = 24
         Top = 23
-        Width = 80
+        Width = 130
         BorderSpacing.Top = 2
         TabOrder = 3
         Text = 'MinDateEdit'
@@ -83,10 +83,10 @@ inherited BudgetQueryForm: TBudgetQueryForm
         AnchorSideLeft.Control = MinDateEdit
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = MinDateEdit
-        Left = 404
+        Left = 484
         Height = 24
         Top = 23
-        Width = 80
+        Width = 130
         BorderSpacing.Left = 16
         TabOrder = 4
         Text = 'MaxDateEdit'
@@ -96,7 +96,7 @@ inherited BudgetQueryForm: TBudgetQueryForm
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = MinDateEdit
         AnchorSideTop.Side = asrCenter
-        Left = 392
+        Left = 472
         Height = 17
         Top = 27
         Width = 9

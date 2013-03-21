@@ -111,17 +111,8 @@ begin
 end;
 
 procedure TBudgetItemQueryCommand.InternalExecute;
-var
-  VBudgetItemQuery: TBudgetItemQuery;
 begin
-  VBudgetItemQuery := TBudgetItemQuery.Create;
-  try
-    VBudgetItemQuery._Product.Value := Model.Subject;
-    Model.Session.UpdateQuery(VBudgetItemQuery);
-    TBudgetItemQueryPresenter.Run(VBudgetItemQuery);
-  finally
-    VBudgetItemQuery.Free;
-  end;
+
 end;
 
 { TBudgetItemQueryPresenter }
@@ -218,6 +209,7 @@ begin
   CreateSubPresenter('Quantity', 'QuantityEdit');
   CreateSubPresenter('UnityValue', 'UnityValueEdit');
   CreateSubPresenter('TotalValue', 'TotalValueEdit');
+  CreateSubPresenter('WeightInKilograms', 'WeightInKilogramsEdit');
 end;
 
 { TBudgetQueryPresenter }
@@ -339,7 +331,6 @@ initialization
   TBudgetEditPresenter.RegisterBO(TBudget);
   TBudgetQueryPresenter.RegisterBO(TBudgetQuery);
   TBudgetItemEditPresenter.RegisterBO(TBudgetItem);
-  TBudgetItemQueryPresenter.RegisterBO(TBudgetItemQuery);
   TInvoiceEditPresenter.RegisterBO(TInvoice);
   TInvoiceQueryPresenter.RegisterBO(TInvoiceQuery);
   TInvoiceItemEditPresenter.RegisterBO(TInvoiceItem);

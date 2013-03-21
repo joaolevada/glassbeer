@@ -1,11 +1,11 @@
 inherited BudgetItemEditForm: TBudgetItemEditForm
-  Height = 176
+  Height = 223
   Width = 690
   Caption = 'Item do orçamento para compra'
-  ClientHeight = 176
+  ClientHeight = 223
   ClientWidth = 690
   inherited BottomPanel: TPanel
-    Top = 122
+    Top = 169
     Width = 690
     ClientWidth = 690
     inherited SaveButton: TBitBtn
@@ -16,10 +16,10 @@ inherited BudgetItemEditForm: TBudgetItemEditForm
     end
   end
   inherited EditPageControl: TPageControl
-    Height = 122
+    Height = 169
     Width = 690
     inherited MainTab: TTabSheet
-      ClientHeight = 95
+      ClientHeight = 142
       ClientWidth = 682
       object ProductLabel: TLabel[0]
         AnchorSideLeft.Control = MainTab
@@ -99,14 +99,16 @@ inherited BudgetItemEditForm: TBudgetItemEditForm
         Text = 'UnityValueEdit'
       end
       object TotalValueLabel: TLabel[6]
-        AnchorSideLeft.Control = UnityValueEdit
+        AnchorSideLeft.Control = WeightInKilogramsEdit
         AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = UnityValue
-        Left = 424
+        AnchorSideTop.Control = UnityValueEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 214
         Height = 15
-        Top = 51
+        Top = 98
         Width = 66
         BorderSpacing.Left = 12
+        BorderSpacing.Top = 8
         Caption = 'Valor total'
         ParentColor = False
       end
@@ -114,14 +116,14 @@ inherited BudgetItemEditForm: TBudgetItemEditForm
         AnchorSideLeft.Control = TotalValueLabel
         AnchorSideTop.Control = TotalValueLabel
         AnchorSideTop.Side = asrBottom
-        Left = 424
+        Left = 214
         Height = 22
-        Top = 68
+        Top = 115
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
         ReadOnly = True
-        TabOrder = 4
+        TabOrder = 5
         Text = 'TotalValueEdit'
       end
       object QuantityLabel: TLabel[8]
@@ -200,6 +202,33 @@ inherited BudgetItemEditForm: TBudgetItemEditForm
         BorderSpacing.Left = 4
         Flat = True
         NumGlyphs = 0
+      end
+      object WeightInKilogramsLabel: TLabel[14]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = QuantityEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 98
+        Width = 151
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Total do peso em quilos'
+        ParentColor = False
+      end
+      object WeightInKilogramsEdit: TEdit[15]
+        AnchorSideLeft.Control = WeightInKilogramsLabel
+        AnchorSideTop.Control = WeightInKilogramsLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 115
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 4
+        Text = 'WeightInKilogramsEdit'
       end
     end
   end

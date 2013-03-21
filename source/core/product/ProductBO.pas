@@ -9,7 +9,8 @@ uses
   SysUtils,
   CustomBO,
   PressAttributes,
-  PressSubject;
+  PressSubject,
+  UnityBO;
 
 type
 
@@ -27,7 +28,7 @@ type
     _Date: TPressDate;
     _ExpireDate: TPressDate;
     _ItemCount: TPressInteger;
-    _ItemQuantity: TPressFloat;
+    _ItemQuantity: TPressDouble;
   protected
     class function InternalMetadataStr: string; override;
     procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
@@ -71,20 +72,24 @@ type
   TBudgetItem = class(TCustomObject)
     _Product: TPressReference;
     _Unity: TPressReference;
-    _Quantity: TPressFloat;
+    _Quantity: TPressDouble;
     _UnityValue: TPressCurrency;
     _TotalValue: TPressCurrency;
-    _ItemOf: TPressReference;
     _Shipping: TPressCurrency;
+    _WeightInKilograms: TPressDouble;
   private
     function GetQuantity: Double;
     function GetShipping: Currency;
     function GetTotalValue: Currency;
+    function GetUnity: TUnity;
     function GetUnityValue: Currency;
+    function GetWeightInKilograms: Double;
     procedure SetQuantity(AValue: Double);
     procedure SetShipping(AValue: Currency);
     procedure SetTotalValue(AValue: Currency);
+    procedure SetUnity(AValue: TUnity);
     procedure SetUnityValue(AValue: Currency);
+    procedure SetWeightInKilograms(AValue: Double);
   protected
     class function InternalMetadataStr: string; override;
     procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
@@ -92,17 +97,11 @@ type
     property Quantity: Double read GetQuantity write SetQuantity;
     property Shipping: Currency read GetShipping write SetShipping;
     property TotalValue: Currency read GetTotalValue write SetTotalValue;
+    //property Unity: TUnity read GetUnity write SetUnity;
     property UnityValue: Currency read GetUnityValue write SetUnityValue;
+    property WeightInKilograms: Double read GetWeightInKilograms
+      write SetWeightInKilograms;
   end;
-
-  { TBudgetItemQuery }
-
-  TBudgetItemQuery = class(TCustomQuery)
-    _Product: TPressReference;
-  protected
-    class function InternalMetadataStr: string; override;
-  end;
-
 
   { TProduct }
 
@@ -167,25 +166,15 @@ type
   TInvoiceItem = class(TCustomObject)
     _Product: TPressReference;
     _Unity: TPressReference;
-    _Quantity: TPressFloat;
+    _Quantity: TPressDouble;
     _UnityValue: TPressCurrency;
     _TotalValue: TPressCurrency;
-    _ItemOf: TPressReference;
     _Shipping: TPressCurrency;
   protected
     class function InternalMetadataStr: string; override;
   end;
 
 implementation
-
-{ TBudgetItemQuery }
-
-class function TBudgetItemQuery.InternalMetadataStr: string;
-begin
-  Result := 'TBudgetItemQuery (TBudgetItem) (' +
-    'Product: Reference(TProduct) MatchType=mtEqual' +
-    ');';
-end;
 
 { TBudgetQuery }
 
@@ -226,10 +215,9 @@ begin
   Result := 'TInvoiceItem IsPersistent(' +
     'Product: Reference(TProduct);' +
     'Unity: Reference(TUnity);' +
-    'Quantity: Float;' +
+    'Quantity: Double;' +
     'UnityValue: Currency;' +
     'TotalValue: Currency;' +
-    'ItemOf: Reference(TInvoice);' +
     'Shipping: Currency' +
     ');';
 end;
@@ -249,7 +237,7 @@ begin
     'Items: Parts(TBudgetItem);' +
     'Date: Date DefaultValue="now";' +
     'ItemCount: Integer Calc(Items);' +
-    'ItemQuantity: Float Calc(Items)' +
+    'ItemQuantity: Double Calc(Items)' +
     ');';
 end;
 
@@ -270,9 +258,19 @@ begin
   Result := _TotalValue.Value;
 end;
 
+function TBudgetItem.GetUnity: TUnity;
+begin
+  Result := _Unity.Value as TUnity;
+end;
+
 function TBudgetItem.GetUnityValue: Currency;
 begin
   Result := _UnityValue.Value;
+end;
+
+function TBudgetItem.GetWeightInKilograms: Double;
+begin
+  Result := _WeightInKilograms.Value;
 end;
 
 procedure TBudgetItem.SetQuantity(AValue: Double);
@@ -290,9 +288,19 @@ begin
   _TotalValue.Value := AValue;
 end;
 
+procedure TBudgetItem.SetUnity(AValue: TUnity);
+begin
+  _Unity.Value := AValue;
+end;
+
 procedure TBudgetItem.SetUnityValue(AValue: Currency);
 begin
   _UnityValue.Value := AValue;
+end;
+
+procedure TBudgetItem.SetWeightInKilograms(AValue: Double);
+begin
+  _WeightInKilograms.Value := AValue;
 end;
 
 class function TBudgetItem.InternalMetadataStr: string;
@@ -300,18 +308,28 @@ begin
   Result := 'TBudgetItem IsPersistent(' +
     'Product: Reference(TProduct);' +
     'Unity: Reference(TUnity);' +
-    'Quantity: Float;' +
+    'Quantity: Double;' +
     'UnityValue: Currency;' +
     'TotalValue: Currency Calc(Quantity, UnityValue);' +
-    'ItemOf: Reference(TBudget);' +
-    'Shipping: Currency' +
+    { calculated by owner (TBudget) }
+    'Shipping: Currency;' +
+    { calculated by owner (TBudget) }
+    'WeightInKiloGrams: Double Calc(Unity, Quantity)' +
     ');';
 end;
 
 procedure TBudgetItem.InternalCalcAttribute(AAttribute: TPressAttribute);
 begin
   if AAttribute = _TotalValue then
-    TotalValue := UnityValue * Quantity;
+    TotalValue := UnityValue * Quantity
+  else if (AAttribute = _WeightInKilograms) then
+  begin
+    { TODO 1 -ojoaolevada -cPress SDK bug : For some reason, PressObjects is rasing an exception here
+it can't find the instace of TBudgetItem.Unity. So I've moved
+this calculation to the TBudget class. }
+    //if not _Unity.IsEmpty then
+    //  WeightInKilograms := Quantity * (_Unity.Value as TUnity).WeightInKilograms;
+  end;
 end;
 
 { TBudget }
@@ -330,7 +348,7 @@ begin
     'Date: Date DefaultValue="now";' +
     'ExpireDate: Date DefaultValue="now";' +
     'ItemCount: Integer Calc(Items);' +
-    'ItemQuantity: Float Calc(Items)' +
+    'ItemQuantity: Double Calc(Items)' +
     ');';
 end;
 
@@ -344,13 +362,12 @@ begin
   else if AAttribute = _TotalBudget then
   begin
     TotalBudget := SumOfItems + Shipping;
+    { ratio of shipping by item kilogram TBudgetItem.Shipping attribute }
     for I := 0 to Pred(_Items.Count) do
     begin
-      VBudgetItem := _Items[i] as TBudgetItem;
-      { this makes Press screw with budget primary key }
-      //VBudgetItem._ItemOf.Value := Self;
-      if ItemQuantity > 0 then
-        VBudgetItem.Shipping := Shipping / ItemQuantity * VBudgetItem.Quantity;
+      VBudgetItem := _Items[I] as TBudgetItem;
+      if VBudgetItem.WeightInKilograms > 0 then
+        VBudgetItem.Shipping := Shipping / VBudgetItem.WeightInKilograms;
     end;
   end
   else if AAttribute = _ItemCount then
@@ -434,12 +451,18 @@ var
   i: Integer;
   VPartial: Double;
   VBudgetItem: TBudgetItem;
+  VUnity: TUnity;
 begin
   VPartial := 0;
   for i := 0 to Pred(_Items.Count) do
   begin
     VBudgetItem := _Items[i] as TBudgetItem;
-    VPartial += VBudgetItem.Quantity;
+    if not VBudgetItem._Unity.IsEmpty then
+    begin
+      VUnity := VBudgetItem._Unity.Value as TUnity;
+      VBudgetItem.WeightInKilograms := VBudgetItem.Quantity * VUnity.WeightInKilograms;
+      VPartial += VBudgetItem.WeightInKilograms;
+    end;
   end;
   Result := VPartial;
 end;
@@ -473,7 +496,6 @@ initialization
   TBudget.RegisterClass;
   TBudgetQuery.RegisterClass;
   TBudgetItem.RegisterClass;
-  TBudgetItemQuery.RegisterClass;
   TInvoice.RegisterClass;
   TInvoiceQuery.RegisterClass;
   TInvoiceItem.RegisterClass;
@@ -484,7 +506,6 @@ finalization
   TBudget.UnregisterClass;
   TBudgetQuery.UnregisterClass;
   TBudgetItem.UnregisterClass;
-  TBudgetItemQuery.UnregisterClass;
   TInvoice.UnregisterClass;
   TInvoiceQuery.UnregisterClass;
   TInvoiceItem.UnregisterClass;

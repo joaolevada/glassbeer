@@ -18,8 +18,14 @@ type
     _Name: TPressAnsiString;
     _Abbreviation: TPressPlainString;
     _WeightInKilograms: TPressDouble;
+  private
+    function GetWeightInKilograms: Double;
+    procedure SetWeightInKilograms(AValue: Double);
   protected
     class function InternalMetadataStr: string; override;
+  public
+    property WeightInKilograms: Double read GetWeightInKilograms
+      write SetWeightInKilograms;
   end;
 
   { TUnityQuery }
@@ -42,6 +48,16 @@ begin
 end;
 
 { TUnity }
+
+function TUnity.GetWeightInKilograms: Double;
+begin
+  Result := _WeightInKilograms.Value;
+end;
+
+procedure TUnity.SetWeightInKilograms(AValue: Double);
+begin
+  _WeightInKilograms.Value := AValue;
+end;
 
 class function TUnity.InternalMetadataStr: string;
 begin
