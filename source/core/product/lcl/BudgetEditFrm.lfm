@@ -259,7 +259,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Top = 209
         Width = 198
         BorderSpacing.Top = 2
-        TabOrder = 9
+        TabOrder = 10
         Text = 'ExpireDateEdit'
       end
       object RemarksLabel: TLabel[20]
@@ -287,7 +287,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Lines.Strings = (
           'RemarksMemo'
         )
-        TabOrder = 10
+        TabOrder = 11
       end
       object AddSupplierPersonSpeedButton: TSpeedButton[22]
         AnchorSideLeft.Control = SupplierComboBox
@@ -327,6 +327,32 @@ inherited BudgetEditForm: TBudgetEditForm
         BorderSpacing.Left = 4
         Flat = True
         NumGlyphs = 0
+      end
+      object ShippingByKilogramLabel: TLabel[25]
+        AnchorSideLeft.Control = WeightInKilogramsEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = WeightInKilogramsLabel
+        Left = 424
+        Height = 15
+        Top = 145
+        Width = 180
+        BorderSpacing.Left = 12
+        Caption = 'Valor do frete pra cada quilo'
+        ParentColor = False
+      end
+      object ShippingByKilogramEdit: TEdit[26]
+        AnchorSideLeft.Control = ShippingByKilogramLabel
+        AnchorSideTop.Control = ShippingByKilogramLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 424
+        Height = 22
+        Top = 162
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 9
+        Text = 'ShippingByKilogramEdit'
       end
     end
     object ItemsTabSheet: TTabSheet[1]
@@ -401,7 +427,7 @@ inherited BudgetEditForm: TBudgetEditForm
         BorderSpacing.Top = 2
         Color = clBtnFace
         ReadOnly = True
-        TabOrder = 1
+        TabOrder = 4
         Text = 'SumOfItemsEdit1'
       end
       object ShippingLabel1: TLabel
@@ -428,7 +454,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Width = 198
         Anchors = [akTop, akRight]
         BorderSpacing.Top = 2
-        TabOrder = 4
+        TabOrder = 5
         Text = 'ShippingEdit1'
       end
       object TotalBudgetLabel1: TLabel
@@ -461,7 +487,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Font.Style = [fsBold]
         ParentFont = False
         ReadOnly = True
-        TabOrder = 5
+        TabOrder = 6
         Text = 'TotalBudgetEdit1'
       end
       object ItemCountLabel1: TLabel
@@ -488,18 +514,19 @@ inherited BudgetEditForm: TBudgetEditForm
         BorderSpacing.Top = 2
         Color = clBtnFace
         ReadOnly = True
-        TabOrder = 2
+        TabOrder = 1
         Text = 'ItemCountEdit1'
       end
       object WeightInKilogramsLabel1: TLabel
-        AnchorSideLeft.Control = ItemCountEdit1
-        AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = ItemCountLabel1
-        Left = 214
+        AnchorSideLeft.Control = ItemsTabSheet
+        AnchorSideTop.Control = ItemCountEdit1
+        AnchorSideTop.Side = asrBottom
+        Left = 4
         Height = 15
-        Top = 409
+        Top = 456
         Width = 96
-        BorderSpacing.Left = 12
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
         Caption = 'Total em quilos'
         ParentColor = False
       end
@@ -507,14 +534,14 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideLeft.Control = WeightInKilogramsLabel1
         AnchorSideTop.Control = WeightInKilogramsLabel1
         AnchorSideTop.Side = asrBottom
-        Left = 214
+        Left = 4
         Height = 22
-        Top = 426
+        Top = 473
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
         ReadOnly = True
-        TabOrder = 3
+        TabOrder = 2
         Text = 'WeightInKilogramsEdit1'
       end
       object SupplierNameLabel: TLabel
@@ -577,6 +604,32 @@ inherited BudgetEditForm: TBudgetEditForm
         BorderSpacing.Top = 4
         Flat = True
         NumGlyphs = 0
+      end
+      object ShippingByKilogramLabel1: TLabel
+        AnchorSideLeft.Control = WeightInKilogramsEdit1
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = WeightInKilogramsLabel1
+        Left = 214
+        Height = 15
+        Top = 456
+        Width = 180
+        BorderSpacing.Left = 12
+        Caption = 'Valor do frete pra cada quilo'
+        ParentColor = False
+      end
+      object ShippingByKilogramEdit1: TEdit
+        AnchorSideLeft.Control = ShippingByKilogramLabel1
+        AnchorSideTop.Control = ShippingByKilogramLabel1
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 473
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 3
+        Text = 'ShippingByKilogramEdit1'
       end
     end
   end

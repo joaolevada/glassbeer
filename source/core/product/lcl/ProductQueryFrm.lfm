@@ -1,5 +1,20 @@
 inherited ProductQueryForm: TProductQueryForm
   Caption = 'Produtos'
+  inherited BottomPanel: TPanel
+    object ShowBudgetsButton: TBitBtn[3]
+      AnchorSideLeft.Control = RemoveButton
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = BottomPanel
+      Left = 365
+      Height = 42
+      Top = 5
+      Width = 148
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 4
+      Caption = 'Mostrar &orçamentos'
+      TabOrder = 3
+    end
+  end
   inherited SearchPageControl: TPageControl
     ActivePage = nil
     TabIndex = -1

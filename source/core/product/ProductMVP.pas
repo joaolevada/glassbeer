@@ -86,33 +86,89 @@ type
     function InternalQueryItemsDisplayNames: string; override;
   end;
 
-  { TBudgetItemQueryCommand }
+  { TProductBudgetQueryPresenter }
 
-  TBudgetItemQueryCommand = class(TPressMVPObjectCommand)
+  TProductBudgetQueryPresenter = class(TCustomQueryPresenter)
+  protected
+    procedure InitPresenter; override;
+    function InternalQueryItemsDisplayNames: string; override;
+  end;
+
+  { TShowProductBudgetsCommand }
+
+  TShowProductBudgetsCommand = class(TPressMVPItemsCommand)
   protected
     function InternalIsEnabled: Boolean; override;
     procedure InternalExecute; override;
+    function GetCaption: string; override;
+    function GetShortCut: TShortCut; override;
   end;
 
 implementation
 
 uses
   ProductBO,
-  ContactMVP;
+  ContactMVP,
+  Menus,
+  LCLType;
 
-{ TBudgetItemQueryCommand }
+{ TProductBudgetQueryPresenter }
 
-function TBudgetItemQueryCommand.InternalIsEnabled: Boolean;
-var
-  VProduct: TProduct;
+procedure TProductBudgetQueryPresenter.InitPresenter;
 begin
-  VProduct := Model.Subject as TProduct;
-  Result := True;
+  inherited InitPresenter;
+  CreateSubPresenter('MinDate', 'MinDateEdit');
+  CreateSubPresenter('MaxDate', 'MaxDateEdit');
 end;
 
-procedure TBudgetItemQueryCommand.InternalExecute;
+function TProductBudgetQueryPresenter.InternalQueryItemsDisplayNames: string;
 begin
+  Result := 'Budget.Name(100, "Orçamento");' +
+    'Budget.Date(50, "Data");' +
+    'Budget.Supplier.Name(100, "Fornecedor");' +
+    'BudgetItem.Quantity(30, "Qtde");' +
+    'BudgetItem.Unity.Abbreviation(30, "Unidade");' +
+    'BudgetItem.WeightInKilograms(45, "P.tot.[kg]");' +
+    'BudgetItem.UnityValue(50, "V.unit");' +
+    'BudgetItem.KilogramValue(45, "V.kg");' +
+    'BudgetItem.TotalValue(65, "V.Total");' +
+    'BudgetItem.Shipping(50, "Frete");' +
+    'BudgetItem.ShippingByKilogram(45,"Fr.p/kg")' ;
+end;
 
+{ TShowProductBudgetsCommand }
+
+function TShowProductBudgetsCommand.InternalIsEnabled: Boolean;
+begin
+  Result := Model.Selection.Count = 1;
+end;
+
+procedure TShowProductBudgetsCommand.InternalExecute;
+var
+  VProduct: TProduct;
+  VProductBudgetQuery: TProductBudgetQuery;
+begin
+  VProduct := Model.Selection[0] as TProduct;
+  VProductBudgetQuery := TProductBudgetQuery.Create;
+  try
+    VProductBudgetQuery._Product.Value := VProduct;
+    VProductBudgetQuery._MinDate.Value := IncMonth(Date, -1);
+    VProductBudgetQuery._MaxDate.Value := Date;
+    { TODO 3 -ojoaolevada -cimplementation : TShowProductBudgetsCommand Execute the query }
+    TProductBudgetQueryPresenter.Run(VProductBudgetQuery);
+  finally
+    VProductBudgetQuery.Free;
+  end;
+end;
+
+function TShowProductBudgetsCommand.GetCaption: string;
+begin
+  Result := 'Mostrar orçamentos';
+end;
+
+function TShowProductBudgetsCommand.GetShortCut: TShortCut;
+begin
+  Result := Menus.ShortCut(VK_O, [ssCtrl]);
 end;
 
 { TBudgetItemQueryPresenter }
@@ -265,7 +321,9 @@ begin
     'UnityValue(50, "Vl. unit.");' +
     'TotalValue(70, "Total");' +
     'WeightInKilograms(55, "Peso[kg]");' +
-    'Shipping(80, "Frete[prop.]")') as TPressMVPItemsPresenter;
+    'KilogramValue(45, "Vl.kg");' +
+    'Shipping(80, "Frete[prop.]")' {+
+    'ShippingByKilogram(65, "Frete p/ kg.")'}) as TPressMVPItemsPresenter;
   VProductsPresenter.BindCommand(TPressMVPAddItemsCommand,
     'AddProductSpeedButton');
   VProductsPresenter.BindCommand(TPressMVPEditItemCommand,
@@ -278,6 +336,8 @@ begin
   CreateSubPresenter('ItemCount', 'ItemCountEdit1');
   CreateSubPresenter('WeightInKilograms', 'WeightInKilogramsEdit');
   CreateSubPresenter('WeightInKilograms', 'WeightInKilogramsEdit1');
+  CreateSubPresenter('ShippingByKilogram', 'ShippingByKilogramEdit');
+  CreateSubPresenter('ShippingByKilogram', 'ShippingByKilogramEdit1');
 end;
 
 { TProductQueryPresenter }
@@ -287,6 +347,8 @@ begin
   inherited InitPresenter;
   CreateSubPresenter('Code', 'CodeEdit');
   CreateSubPresenter('Name', 'NameEdit');
+  MainQueryPresenter.BindCommand(TShowProductBudgetsCommand, 'ShowBudgetsButton');
+  MainQueryPresenter.Model.InsertCommand(0, TShowProductBudgetsCommand);
 end;
 
 function TProductQueryPresenter.InternalQueryItemsDisplayNames: string;
@@ -315,20 +377,18 @@ begin
   CreateSubPresenter('MinimumStock', 'MinimumStockEdit');
   CreateSubPresenter('MaximumStock', 'MaximumStockEdit');
   CreateSubPresenter('CurrentStock', 'CurrentStockEdit');
-  //CreateSubPresenter('Budgets', 'BudgetsStringGrid');
-  //CreateSubPresenter('Invoices', 'InvoicesStringGrid');
   CreateSubPresenter('Cost', 'CostEdit');
   CreateSubPresenter('ProfitRate', 'ProfitRateEdit');
   CreateSubPresenter('CurrentStockCost', 'CurrentStockCostEdit');
   CreateSubPresenter('Price', 'PriceEdit');
   CreateSubPresenter('CurrentStockPrice', 'CurrentStockPriceEdit');
   CreateSubPresenter('LastPurchaseDate', 'LastPurchaseDateEdit');
-  BindCommand(TBudgetItemQueryCommand, 'Button1');
 end;
 
 initialization
   TProductEditPresenter.RegisterBO(TProduct);
   TProductQueryPresenter.RegisterBO(TProductQuery);
+  TProductBudgetQueryPresenter.RegisterBO(TProductBudgetQuery);
   TBudgetEditPresenter.RegisterBO(TBudget);
   TBudgetQueryPresenter.RegisterBO(TBudgetQuery);
   TBudgetItemEditPresenter.RegisterBO(TBudgetItem);

@@ -54,15 +54,15 @@ begin
   inherited;
   BindCommand(TPressMVPCloseApplicationCommand, 'ExitMenuItem');
   BindCommand(TMainConnectorCommand, 'MetadataMenuItem');
-  BindPresenter(TRecipeQueryPresenter, 'RecipeMenuItem');
-  BindPresenter(TFermenterQueryPresenter, 'FermenterMenuItem');
-  BindPresenter(TLocationQueryPresenter, 'LocationMenuItem');
-  BindPresenter(TFermenterEventQueryPresenter, 'FermenterEventMenuItem');
-  BindPresenter(TMashQueryPresenter, 'MashMenuItem');
+  //BindPresenter(TRecipeQueryPresenter, 'RecipeMenuItem');
+  //BindPresenter(TFermenterQueryPresenter, 'FermenterMenuItem');
+  //BindPresenter(TLocationQueryPresenter, 'LocationMenuItem');
+  //BindPresenter(TFermenterEventQueryPresenter, 'FermenterEventMenuItem');
+  //BindPresenter(TMashQueryPresenter, 'MashMenuItem');
   BindPresenter(TContactQueryPresenter, 'ContactMenuItem');
-  BindPresenter(TEquipmentQueryPresenter, 'EquipmentMenuItem');
-  BindPresenter(TEquipmentProfileQueryPresenter, 'EquipmentProfileMenuItem');
-  BindPresenter(TAccountChartQueryPresenter, 'AccountChartMenuItem');
+  //BindPresenter(TEquipmentQueryPresenter, 'EquipmentMenuItem');
+  //BindPresenter(TEquipmentProfileQueryPresenter, 'EquipmentProfileMenuItem');
+  //BindPresenter(TAccountChartQueryPresenter, 'AccountChartMenuItem');
   BindPresenter(TProductQueryPresenter, 'ProductMenuItem');
   BindPresenter(TBudgetQueryPresenter, 'BudgetMenuItem');
   { sample commands, to be implemented very soon... }

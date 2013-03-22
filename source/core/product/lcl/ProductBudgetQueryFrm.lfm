@@ -1,0 +1,62 @@
+inherited ProductBudgetQueryForm: TProductBudgetQueryForm
+  Caption = 'Orçamentos de compra do produto'
+  inherited BottomPanel: TPanel
+    Visible = False
+  end
+  inherited SearchPageControl: TPageControl
+    inherited DefaultTab: TTabSheet
+      Caption = 'Procurar orçamento'
+      ClientHeight = 50
+      ClientWidth = 792
+      object DateIntervalLabel: TLabel[1]
+        AnchorSideLeft.Control = DefaultTab
+        AnchorSideTop.Control = DefaultTab
+        Left = 4
+        Height = 17
+        Top = 4
+        Width = 145
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        Caption = 'Filtrar por data, entre'
+        ParentColor = False
+      end
+      object MinDateEdit: TEdit[2]
+        AnchorSideLeft.Control = DateIntervalLabel
+        AnchorSideTop.Control = DateIntervalLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 24
+        Top = 23
+        Width = 130
+        BorderSpacing.Top = 2
+        TabOrder = 1
+        Text = 'MinDateEdit'
+      end
+      object DateSeparatorLabel: TLabel[3]
+        AnchorSideLeft.Control = MinDateEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MinDateEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 138
+        Height = 17
+        Top = 27
+        Width = 9
+        BorderSpacing.Left = 4
+        Caption = 'e'
+        ParentColor = False
+      end
+      object MaxDateEdit: TEdit[4]
+        AnchorSideLeft.Control = DateSeparatorLabel
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = MinDateEdit
+        Left = 151
+        Height = 24
+        Top = 23
+        Width = 130
+        BorderSpacing.Left = 4
+        TabOrder = 2
+        Text = 'MaxDateEdit'
+      end
+    end
+  end
+end

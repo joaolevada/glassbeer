@@ -29,16 +29,19 @@ type
     _ExpireDate: TPressDate;
     _ItemCount: TPressInteger;
     _WeightInKilograms: TPressDouble;
+    _ShippingByKilogram: TPressCurrency;
   protected
     class function InternalMetadataStr: string; override;
     procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
   private
     function CountItems: Integer;
+    function GetShippingByKilogram: Currency;
     function GetWeightInKilograms: Double;
     function GetItemCount: Integer;
     function GetShipping: Currency;
     function GetSumOfItems: Currency;
     function GetTotalBudget: Currency;
+    procedure SetShippingByKilogram(AValue: Currency);
     procedure SetWeightInKilograms(AValue: Double);
     procedure SetItemCount(AValue: Integer);
     procedure SetShipping(AValue: Currency);
@@ -54,6 +57,8 @@ type
     property Shipping: Currency read GetShipping write SetShipping;
     property SumOfItems: Currency read GetSumOfItems write SetSumOfItems;
     property TotalBudget: Currency read GetTotalBudget write SetTotalBudget;
+    property ShippingByKilogram: Currency read GetShippingByKilogram
+      write SetShippingByKilogram;
   end;
 
   { TBudgetQuery }
@@ -77,15 +82,21 @@ type
     _TotalValue: TPressCurrency;
     _Shipping: TPressCurrency;
     _WeightInKilograms: TPressDouble;
+    _KilogramValue: TPressCurrency;
+    _ShippingByKilogram: TPressCurrency;
   private
+    function GetKilogramValue: Currency;
     function GetQuantity: Double;
     function GetShipping: Currency;
+    function GetShippingByKilogram: Currency;
     function GetTotalValue: Currency;
     function GetUnity: TUnity;
     function GetUnityValue: Currency;
     function GetWeightInKilograms: Double;
+    procedure SetKilogramValue(AValue: Currency);
     procedure SetQuantity(AValue: Double);
     procedure SetShipping(AValue: Currency);
+    procedure SetShippingByKilogram(AValue: Currency);
     procedure SetTotalValue(AValue: Currency);
     procedure SetUnity(AValue: TUnity);
     procedure SetUnityValue(AValue: Currency);
@@ -101,6 +112,10 @@ type
     property UnityValue: Currency read GetUnityValue write SetUnityValue;
     property WeightInKilograms: Double read GetWeightInKilograms
       write SetWeightInKilograms;
+    property KilogramValue: Currency read GetKilogramValue
+      write SetKilogramValue;
+    property ShippingByKilogram: Currency read GetShippingByKilogram
+      write SetShippingByKilogram;
   end;
 
   { TProduct }
@@ -122,6 +137,29 @@ type
     _CurrentStockPrice: TPressCurrency;
     _LastPurchaseDate: TPressDate;
   protected
+    class function InternalMetadataStr: string; override;
+  end;
+
+  { TProductBudget }
+
+  TProductBudget = class(TCustomObject)
+    _Product: TPressReference;
+    _Budget: TPressReference;
+    _BudgetItem: TPressReference;
+  protected
+    class function InternalMetadataStr: string; override;
+  end;
+
+  { TProductBudgetQuery }
+
+  TProductBudgetQuery = class(TCustomQuery)
+    _Product: TPressReference;
+    _MinDate: TPressDate;
+    _MaxDate: TPressDate;
+  protected
+    function GetFieldNamesClause: string; override;
+    function GetFromClause: string; override;
+    function GetOrderByClause: string; override;
     class function InternalMetadataStr: string; override;
   end;
 
@@ -175,6 +213,45 @@ type
   end;
 
 implementation
+
+class function TProductBudget.InternalMetadataStr: string;
+begin
+  Result := 'TProductBudget IsPersistent=False (' +
+    'Product: Reference(TProduct);' +
+    'Budget: Reference(TBudget);' +
+    'BudgetItem: Reference(TBudgetItem)' +
+    ');';
+end;
+
+{ TProductBudgetQuery }
+
+function TProductBudgetQuery.GetFieldNamesClause: string;
+begin
+  Result := 'bi.product as Product,' +
+    'b_i.tbudgetid as Budget,' +
+    'bi.id as BudgetItem';
+end;
+
+function TProductBudgetQuery.GetFromClause: string;
+begin
+  Result := 'tbudgetitem bi ' +
+    'inner join tbudget_items b_i on b_i.itemsid = bi.id ' +
+    'inner join tbudget b on b.id = b_i.tbudgetid ';
+end;
+
+function TProductBudgetQuery.GetOrderByClause: string;
+begin
+  Result := 'b.date asc';
+end;
+
+class function TProductBudgetQuery.InternalMetadataStr: string;
+begin
+  Result := 'TProductBudgetQuery (TProductBudget) Style=qsCustom (' +
+    'Product: Reference(TProduct) MatchType=mtEqual DataName="bi.product" IncludeIfEmpty;' +
+    'MinDate: Date MatchType=mtGreaterThanOrEqual DataName="b.date" IncludeIfEmpty;' +
+    'MaxDate: Date MatchType=mtLesserThanOrEqual DataName="b.date"' +
+    ');';
+end;
 
 { TBudgetQuery }
 
@@ -243,6 +320,11 @@ end;
 
 { TBudgetItem }
 
+function TBudgetItem.GetKilogramValue: Currency;
+begin
+  Result := _KilogramValue.Value;
+end;
+
 function TBudgetItem.GetQuantity: Double;
 begin
   Result := _Quantity.Value;
@@ -251,6 +333,11 @@ end;
 function TBudgetItem.GetShipping: Currency;
 begin
   Result := _Shipping.Value;
+end;
+
+function TBudgetItem.GetShippingByKilogram: Currency;
+begin
+  Result := _ShippingByKilogram.Value;
 end;
 
 function TBudgetItem.GetTotalValue: Currency;
@@ -273,6 +360,11 @@ begin
   Result := _WeightInKilograms.Value;
 end;
 
+procedure TBudgetItem.SetKilogramValue(AValue: Currency);
+begin
+  _KilogramValue.Value := AValue;
+end;
+
 procedure TBudgetItem.SetQuantity(AValue: Double);
 begin
   _Quantity.Value := AValue;
@@ -281,6 +373,11 @@ end;
 procedure TBudgetItem.SetShipping(AValue: Currency);
 begin
   _Shipping.Value := AValue;
+end;
+
+procedure TBudgetItem.SetShippingByKilogram(AValue: Currency);
+begin
+  _ShippingByKilogram.Value := AValue;
 end;
 
 procedure TBudgetItem.SetTotalValue(AValue: Currency);
@@ -314,7 +411,11 @@ begin
     { calculated by owner (TBudget) }
     'Shipping: Currency;' +
     { calculated by owner (TBudget) }
-    'WeightInKiloGrams: Double Calc(Unity, Quantity)' +
+    'WeightInKiloGrams: Double Calc(Unity, Quantity);' +
+    { calculated by owner (TBudget) }
+    'KilogramValue: Currency;' +
+    { calculated by owner (TBudget) }
+    'ShippingByKilogram: Currency' +
     ');';
 end;
 
@@ -348,7 +449,8 @@ begin
     'Date: Date DefaultValue="now";' +
     'ExpireDate: Date DefaultValue="now";' +
     'ItemCount: Integer Calc(Items);' +
-    'WeightInKilograms: Double Calc(Items)' +
+    'WeightInKilograms: Double Calc(Items);' +
+    'ShippingByKilogram: Currency Calc(Shipping, WeightInKilograms)' +
     ');';
 end;
 
@@ -362,23 +464,43 @@ begin
   else if AAttribute = _TotalBudget then
   begin
     TotalBudget := SumOfItems + Shipping;
-    { ratio of shipping by item -> TBudgetItem.Shipping attribute }
     for I := 0 to Pred(_Items.Count) do
     begin
       VBudgetItem := _Items[I] as TBudgetItem;
+
+      { ratio of shipping by item }
       if (WeightInKilograms > 0) and (VBudgetItem.WeightInKilograms > 0) then
         VBudgetItem.Shipping := (Shipping / WeightInKilograms) * VBudgetItem.WeightInKilograms;
+
+      if VBudgetItem.WeightInKilograms > 0 then
+      begin
+        { value of each item's kilogram }
+        VBudgetItem.KilogramValue := VBudgetItem.TotalValue / VBudgetItem.WeightInKilograms;
+        { value of each item's kilogram shipping }
+        VBudgetItem.ShippingByKilogram := VBudgetItem.Shipping / VBudgetItem.WeightInKilograms;
+      end;
+
     end;
   end
   else if AAttribute = _ItemCount then
     ItemCount := CountItems
   else if AAttribute = _WeightInKilograms then
-    WeightInKilograms := SumItemsWeight;
+    WeightInKilograms := SumItemsWeight
+  else if AAttribute = _ShippingByKilogram then
+  begin
+    if WeightInKilograms > 0 then
+      ShippingByKilogram := Shipping / WeightInKilograms;
+  end;
 end;
 
 function TBudget.CountItems: Integer;
 begin
   Result := _Items.Count;
+end;
+
+function TBudget.GetShippingByKilogram: Currency;
+begin
+  Result := _ShippingByKilogram.Value;
 end;
 
 function TBudget.GetWeightInKilograms: Double;
@@ -404,6 +526,11 @@ end;
 function TBudget.GetTotalBudget: Currency;
 begin
   Result := _TotalBudget.Value;
+end;
+
+procedure TBudget.SetShippingByKilogram(AValue: Currency);
+begin
+  _ShippingByKilogram.Value := AValue;
 end;
 
 procedure TBudget.SetWeightInKilograms(AValue: Double);
@@ -492,6 +619,8 @@ end;
 
 initialization
   TProduct.RegisterClass;
+  TProductBudget.RegisterClass;
+  TProductBudgetQuery.RegisterClass;
   TProductQuery.RegisterClass;
   TBudget.RegisterClass;
   TBudgetQuery.RegisterClass;
@@ -502,6 +631,8 @@ initialization
 
 finalization
   TProduct.UnregisterClass;
+  TProductBudget.UnregisterClass;
+  TProductBudgetQuery.UnregisterClass;
   TProductQuery.UnregisterClass;
   TBudget.UnregisterClass;
   TBudgetQuery.UnregisterClass;

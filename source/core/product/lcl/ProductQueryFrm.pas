@@ -17,6 +17,7 @@ type
     CodeLabel: TLabel;
     NameEdit: TEdit;
     NameLabel: TLabel;
+    ShowBudgetsButton: TBitBtn;
   end;
 
 implementation
