@@ -187,21 +187,21 @@ inherited BudgetEditForm: TBudgetEditForm
         TabOrder = 7
         Text = 'ItemCountEdit'
       end
-      object ItemAmountLabel: TLabel[14]
+      object WeightInKilogramsLabel: TLabel[14]
         AnchorSideLeft.Control = ItemCountEdit
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = ItemCountLabel
         Left = 214
         Height = 15
         Top = 145
-        Width = 109
+        Width = 96
         BorderSpacing.Left = 12
-        Caption = 'Volume dos itens'
+        Caption = 'Total em quilos'
         ParentColor = False
       end
-      object ItemQuantityEdit: TEdit[15]
-        AnchorSideLeft.Control = ItemAmountLabel
-        AnchorSideTop.Control = ItemAmountLabel
+      object WeightInKilogramsEdit: TEdit[15]
+        AnchorSideLeft.Control = WeightInKilogramsLabel
+        AnchorSideTop.Control = WeightInKilogramsLabel
         AnchorSideTop.Side = asrBottom
         Left = 214
         Height = 22
@@ -211,7 +211,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Color = clBtnFace
         ReadOnly = True
         TabOrder = 8
-        Text = 'ItemQuantityEdit'
+        Text = 'WeightInKilogramsEdit'
       end
       object DateLabel: TLabel[16]
         AnchorSideLeft.Control = EditSupplierSpeedButton
@@ -239,7 +239,7 @@ inherited BudgetEditForm: TBudgetEditForm
       end
       object ExpireDateLabel: TLabel[18]
         AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = ItemQuantityEdit
+        AnchorSideTop.Control = WeightInKilogramsEdit
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
@@ -491,21 +491,21 @@ inherited BudgetEditForm: TBudgetEditForm
         TabOrder = 2
         Text = 'ItemCountEdit1'
       end
-      object ItemAmountLabel1: TLabel
+      object WeightInKilogramsLabel1: TLabel
         AnchorSideLeft.Control = ItemCountEdit1
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = ItemCountLabel1
         Left = 214
         Height = 15
         Top = 409
-        Width = 109
+        Width = 96
         BorderSpacing.Left = 12
-        Caption = 'Volume dos itens'
+        Caption = 'Total em quilos'
         ParentColor = False
       end
-      object ItemQuantityEdit1: TEdit
-        AnchorSideLeft.Control = ItemAmountLabel1
-        AnchorSideTop.Control = ItemAmountLabel1
+      object WeightInKilogramsEdit1: TEdit
+        AnchorSideLeft.Control = WeightInKilogramsLabel1
+        AnchorSideTop.Control = WeightInKilogramsLabel1
         AnchorSideTop.Side = asrBottom
         Left = 214
         Height = 22
@@ -515,7 +515,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Color = clBtnFace
         ReadOnly = True
         TabOrder = 3
-        Text = 'ItemQuantityEdit1'
+        Text = 'WeightInKilogramsEdit1'
       end
       object SupplierNameLabel: TLabel
         AnchorSideLeft.Control = SupplierLabel1

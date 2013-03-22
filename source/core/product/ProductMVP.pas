@@ -145,7 +145,7 @@ begin
     for I := 0 to Pred(VBudget._Items.Count) do
     begin
       VBudgetItem := VBudget._Items[i] as TBudgetItem;
-      VBudgetItem.Shipping := VBudget.Shipping / VBudget.ItemQuantity *
+      VBudgetItem.Shipping := VBudget.Shipping / VBudget.WeightInKilograms *
         VBudgetItem.Quantity;
     end;
 end;
@@ -259,12 +259,13 @@ begin
   CreateSubPresenter('TotalBudget', 'TotalBudgetEdit');
   CreateSubPresenter('TotalBudget', 'TotalBudgetEdit1');
   VProductsPresenter := CreateSubPresenter('Items', 'ItemsStringGrid',
-    'Product.Name(200, "Produto");' +
+    'Product.Name(180, "Produto");' +
     'Unity.Abbreviation(50, "Unidade");' +
     'Quantity(50, "Qtde.");' +
     'UnityValue(50, "Vl. unit.");' +
     'TotalValue(70, "Total");' +
-    'Shipping(50, "Frete")') as TPressMVPItemsPresenter;
+    'WeightInKilograms(55, "Peso[kg]");' +
+    'Shipping(80, "Frete[prop.]")') as TPressMVPItemsPresenter;
   VProductsPresenter.BindCommand(TPressMVPAddItemsCommand,
     'AddProductSpeedButton');
   VProductsPresenter.BindCommand(TPressMVPEditItemCommand,
@@ -275,8 +276,8 @@ begin
   CreateSubPresenter('ExpireDate', 'ExpireDateEdit');
   CreateSubPresenter('ItemCount', 'ItemCountEdit');
   CreateSubPresenter('ItemCount', 'ItemCountEdit1');
-  CreateSubPresenter('ItemQuantity', 'ItemQuantityEdit');
-  CreateSubPresenter('ItemQuantity', 'ItemQuantityEdit1');
+  CreateSubPresenter('WeightInKilograms', 'WeightInKilogramsEdit');
+  CreateSubPresenter('WeightInKilograms', 'WeightInKilogramsEdit1');
 end;
 
 { TProductQueryPresenter }

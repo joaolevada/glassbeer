@@ -24,10 +24,10 @@ type
     EditSupplierSpeedButton: TSpeedButton;
     ExpireDateEdit: TEdit;
     ExpireDateLabel: TLabel;
-    ItemQuantityEdit: TEdit;
-    ItemQuantityEdit1: TEdit;
-    ItemAmountLabel: TLabel;
-    ItemAmountLabel1: TLabel;
+    WeightInKilogramsEdit: TEdit;
+    WeightInKilogramsEdit1: TEdit;
+    WeightInKilogramsLabel: TLabel;
+    WeightInKilogramsLabel1: TLabel;
     ItemCountEdit: TEdit;
     ItemCountEdit1: TEdit;
     ItemCountLabel: TLabel;

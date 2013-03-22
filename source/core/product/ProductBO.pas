@@ -28,27 +28,27 @@ type
     _Date: TPressDate;
     _ExpireDate: TPressDate;
     _ItemCount: TPressInteger;
-    _ItemQuantity: TPressDouble;
+    _WeightInKilograms: TPressDouble;
   protected
     class function InternalMetadataStr: string; override;
     procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
   private
     function CountItems: Integer;
-    function GetItemQuantity: Double;
+    function GetWeightInKilograms: Double;
     function GetItemCount: Integer;
     function GetShipping: Currency;
     function GetSumOfItems: Currency;
     function GetTotalBudget: Currency;
-    procedure SetItemQuantity(AValue: Double);
+    procedure SetWeightInKilograms(AValue: Double);
     procedure SetItemCount(AValue: Integer);
     procedure SetShipping(AValue: Currency);
     procedure SetSumOfItems(AValue: Currency);
     procedure SetTotalBudget(AValue: Currency);
     function SumItemsValues: Currency;
-    function SumItemsQuantity: Double;
+    function SumItemsWeight: Double;
   public
-    property ItemQuantity: Double read GetItemQuantity
-      write SetItemQuantity;
+    property WeightInKilograms: Double read GetWeightInKilograms
+      write SetWeightInKilograms;
     property ItemCount: Integer read GetItemCount
       write SetItemCount;
     property Shipping: Currency read GetShipping write SetShipping;
@@ -348,7 +348,7 @@ begin
     'Date: Date DefaultValue="now";' +
     'ExpireDate: Date DefaultValue="now";' +
     'ItemCount: Integer Calc(Items);' +
-    'ItemQuantity: Double Calc(Items)' +
+    'WeightInKilograms: Double Calc(Items)' +
     ');';
 end;
 
@@ -362,18 +362,18 @@ begin
   else if AAttribute = _TotalBudget then
   begin
     TotalBudget := SumOfItems + Shipping;
-    { ratio of shipping by item kilogram TBudgetItem.Shipping attribute }
+    { ratio of shipping by item -> TBudgetItem.Shipping attribute }
     for I := 0 to Pred(_Items.Count) do
     begin
       VBudgetItem := _Items[I] as TBudgetItem;
-      if VBudgetItem.WeightInKilograms > 0 then
-        VBudgetItem.Shipping := Shipping / VBudgetItem.WeightInKilograms;
+      if (WeightInKilograms > 0) and (VBudgetItem.WeightInKilograms > 0) then
+        VBudgetItem.Shipping := (Shipping / WeightInKilograms) * VBudgetItem.WeightInKilograms;
     end;
   end
   else if AAttribute = _ItemCount then
     ItemCount := CountItems
-  else if AAttribute = _ItemQuantity then
-    ItemQuantity := SumItemsQuantity;
+  else if AAttribute = _WeightInKilograms then
+    WeightInKilograms := SumItemsWeight;
 end;
 
 function TBudget.CountItems: Integer;
@@ -381,9 +381,9 @@ begin
   Result := _Items.Count;
 end;
 
-function TBudget.GetItemQuantity: Double;
+function TBudget.GetWeightInKilograms: Double;
 begin
-  Result := _ItemQuantity.Value;
+  Result := _WeightInKilograms.Value;
 end;
 
 function TBudget.GetItemCount: Integer;
@@ -406,9 +406,9 @@ begin
   Result := _TotalBudget.Value;
 end;
 
-procedure TBudget.SetItemQuantity(AValue: Double);
+procedure TBudget.SetWeightInKilograms(AValue: Double);
 begin
-  _ItemQuantity.Value:= AValue;
+  _WeightInKilograms.Value:= AValue;
 end;
 
 procedure TBudget.SetItemCount(AValue: Integer);
@@ -446,7 +446,7 @@ begin
   Result := VPartial;
 end;
 
-function TBudget.SumItemsQuantity: Double;
+function TBudget.SumItemsWeight: Double;
 var
   i: Integer;
   VPartial: Double;
