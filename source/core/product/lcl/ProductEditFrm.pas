@@ -14,7 +14,6 @@ type
 
   TProductEditForm = class(TCustomEditForm)
     AddUnitySpeedButton: TSpeedButton;
-    Button1: TButton;
     CodeEdit: TEdit;
     CodeLabel: TLabel;
     CostEdit: TEdit;

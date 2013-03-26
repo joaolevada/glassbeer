@@ -296,11 +296,14 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrCenter
         Left = 364
         Height = 22
+        Hint = 'Cadastrar contato (pessoa)'
         Top = 68
         Width = 23
         BorderSpacing.Left = 4
         Flat = True
         NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
       object AddSupplierCompanySpeedButton: TSpeedButton[23]
         AnchorSideLeft.Control = AddSupplierPersonSpeedButton
@@ -309,11 +312,14 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrCenter
         Left = 391
         Height = 22
+        Hint = 'Cadastrar contato (empresa)'
         Top = 68
         Width = 23
         BorderSpacing.Left = 4
         Flat = True
         NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
       object EditSupplierSpeedButton: TSpeedButton[24]
         AnchorSideLeft.Control = AddSupplierCompanySpeedButton
@@ -322,11 +328,14 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrCenter
         Left = 418
         Height = 22
+        Hint = 'Alterar contato'
         Top = 68
         Width = 23
         BorderSpacing.Left = 4
         Flat = True
         NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
       object ShippingByKilogramLabel: TLabel[25]
         AnchorSideLeft.Control = WeightInKilogramsEdit
@@ -571,11 +580,14 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 22
+        Hint = 'Adicionar produto ao orçamento'
         Top = 379
         Width = 23
         BorderSpacing.Top = 4
         Flat = True
         NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
       object EditProductSpeedButton: TSpeedButton
         AnchorSideLeft.Control = AddProductSpeedButton
@@ -584,12 +596,15 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 31
         Height = 22
+        Hint = 'Alterar produto selecionado'
         Top = 379
         Width = 23
         BorderSpacing.Left = 4
         BorderSpacing.Top = 4
         Flat = True
         NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
       object RemoveProductSpeedButton: TSpeedButton
         AnchorSideLeft.Control = EditProductSpeedButton
@@ -598,12 +613,15 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 58
         Height = 22
+        Hint = 'Remover produto(s) do orçamento'
         Top = 379
         Width = 23
         BorderSpacing.Left = 4
         BorderSpacing.Top = 4
         Flat = True
         NumGlyphs = 0
+        ShowHint = True
+        ParentShowHint = False
       end
       object ShippingByKilogramLabel1: TLabel
         AnchorSideLeft.Control = WeightInKilogramsEdit1
