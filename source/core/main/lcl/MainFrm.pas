@@ -51,6 +51,8 @@ const
   IMG_ZOOM = 7;
   IMG_CALCULATOR = 8;
   IMG_EMOTICONGEAR = 9;
+  IMG_LAYOUT_EDIT = 10;
+  IMG_DISK = 11;
 
 implementation
 
