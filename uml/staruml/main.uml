@@ -5987,7 +5987,7 @@
 <XPD:ATTR name="Left" type="integer">76</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">260</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">172</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">238</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">212</XPD:ATTR>
 <XPD:REF name="Model">zY1+0mWqh0KFWXqA74P20AAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="x+w3lTdtpUG3bGT7+z+eSgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="l3lY2RaCJEeO3ftWUkfXXwAA">
@@ -6422,7 +6422,7 @@
 <XPD:OBJ name="OwnedViews[9]" type="UMLAssociationView" guid="Pb122pjWyUK47o5qon+ErgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">552,498;247,404</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">552,495;247,394</XPD:ATTR>
 <XPD:REF name="Model">wbOnx00xIUmqMYIGzmxgOwAA</XPD:REF>
 <XPD:REF name="Head">Lo+fIFjexkSlypsJW7FMdQAA</XPD:REF>
 <XPD:REF name="Tail">Mls6XAyN/EmutwzmFHpo4QAA</XPD:REF>
@@ -6506,7 +6506,7 @@
 <XPD:OBJ name="OwnedViews[10]" type="UMLAssociationView" guid="5Tt0/eBU60G5B75OqqngPQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">528,355;247,373</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">528,353;247,362</XPD:ATTR>
 <XPD:REF name="Model">glLjD0d900Owbx0EbTpv4gAA</XPD:REF>
 <XPD:REF name="Head">Lo+fIFjexkSlypsJW7FMdQAA</XPD:REF>
 <XPD:REF name="Tail">oK7biRP9ck+3iUZROQ6CaQAA</XPD:REF>
@@ -10820,7 +10820,7 @@
 <XPD:REF name="Associations[3]">eTJIdK6JXk24O7gYP6EcWgAA</XPD:REF>
 <XPD:REF name="Associations[4]">Dzm2QO7L6k+XpUobY7o6IwAA</XPD:REF>
 <XPD:REF name="Associations[5]">JqpWtdo+kEypcd2rmCtVJwAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">15</XPD:ATTR>
+<XPD:ATTR name="#Attributes" type="integer">13</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="ovLpkpqZpE6df/R+oVt6cQAA">
 <XPD:ATTR name="Name" type="string">Code</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">PlainString</XPD:ATTR>
@@ -10856,42 +10856,32 @@
 <XPD:ATTR name="TypeExpression" type="string">Float</XPD:ATTR>
 <XPD:REF name="Owner">zY1+0mWqh0KFWXqA74P20AAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[7]" type="UMLAttribute" guid="wmBrsGdVGUu8E4mgWi0EFgAA">
-<XPD:ATTR name="Name" type="string">Budgets</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">#query</XPD:ATTR>
-<XPD:REF name="Owner">zY1+0mWqh0KFWXqA74P20AAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[8]" type="UMLAttribute" guid="NzOBp75y1EqVkfbwB7DDOgAA">
-<XPD:ATTR name="Name" type="string">Invoices</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">#query</XPD:ATTR>
-<XPD:REF name="Owner">zY1+0mWqh0KFWXqA74P20AAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[9]" type="UMLAttribute" guid="N3vAZ+/tq06cb0DXlfKj2QAA">
+<XPD:OBJ name="Attributes[7]" type="UMLAttribute" guid="N3vAZ+/tq06cb0DXlfKj2QAA">
 <XPD:ATTR name="Name" type="string">Cost</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Currency</XPD:ATTR>
 <XPD:REF name="Owner">zY1+0mWqh0KFWXqA74P20AAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[10]" type="UMLAttribute" guid="67wkoKy1IUqTZlEBYcdb+wAA">
+<XPD:OBJ name="Attributes[8]" type="UMLAttribute" guid="67wkoKy1IUqTZlEBYcdb+wAA">
 <XPD:ATTR name="Name" type="string">ProfitRate</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Float</XPD:ATTR>
 <XPD:REF name="Owner">zY1+0mWqh0KFWXqA74P20AAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[11]" type="UMLAttribute" guid="7mKXj8dN5UmBSwcnoJsIkQAA">
+<XPD:OBJ name="Attributes[9]" type="UMLAttribute" guid="7mKXj8dN5UmBSwcnoJsIkQAA">
 <XPD:ATTR name="Name" type="string">CurrentStockCost</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Currency</XPD:ATTR>
 <XPD:REF name="Owner">zY1+0mWqh0KFWXqA74P20AAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[12]" type="UMLAttribute" guid="h/7ff0Tz8UaEh26T9PBzaQAA">
+<XPD:OBJ name="Attributes[10]" type="UMLAttribute" guid="h/7ff0Tz8UaEh26T9PBzaQAA">
 <XPD:ATTR name="Name" type="string">Price</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Currency</XPD:ATTR>
 <XPD:REF name="Owner">zY1+0mWqh0KFWXqA74P20AAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[13]" type="UMLAttribute" guid="k/OChM1mjEOmy/4jmBgKXAAA">
+<XPD:OBJ name="Attributes[11]" type="UMLAttribute" guid="k/OChM1mjEOmy/4jmBgKXAAA">
 <XPD:ATTR name="Name" type="string">CurrentStockPrice</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Currency</XPD:ATTR>
 <XPD:REF name="Owner">zY1+0mWqh0KFWXqA74P20AAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[14]" type="UMLAttribute" guid="1ZPAqX/d8UupIz+TLc+IVQAA">
+<XPD:OBJ name="Attributes[12]" type="UMLAttribute" guid="1ZPAqX/d8UupIz+TLc+IVQAA">
 <XPD:ATTR name="Name" type="string">LastPurchaseDate</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Date</XPD:ATTR>
 <XPD:REF name="Owner">zY1+0mWqh0KFWXqA74P20AAA</XPD:REF>
