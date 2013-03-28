@@ -126,12 +126,12 @@ begin
   Result := 'Budget.Name(100, "Orçamento");' +
     'Budget.Date(50, "Data");' +
     'Budget.Supplier.Name(100, "Fornecedor");' +
-    'BudgetItem.Quantity(30, "Qtde");' +
     'BudgetItem.Unity.Abbreviation(30, "Unidade");' +
-    'BudgetItem.WeightInKilograms(45, "P.tot.[kg]");' +
+    'BudgetItem.Quantity(30, "Qtde");' +
     'BudgetItem.UnityValue(50, "V.unit");' +
-    'BudgetItem.KilogramValue(45, "V.kg");' +
     'BudgetItem.TotalValue(65, "V.Total");' +
+    'BudgetItem.WeightInKilograms(45, "P.tot.[kg]");' +
+    'BudgetItem.KilogramValue(45, "Vl.p/kg");' +
     'BudgetItem.Shipping(50, "Frete");' +
     'BudgetItem.ShippingByKilogram(45,"Fr.p/kg")' ;
 end;

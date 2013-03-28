@@ -2,7 +2,7 @@
 <CONFIG>
   <LazReport>
     <Version Value="25"/>
-    <Title Value="Orçamento para compra"/>
+    <Title Value="Orçamentos de compra por produto"/>
     <Subject Value=""/>
     <KeyWords Value=""/>
     <Comments Value=""/>
@@ -29,34 +29,14 @@
           <Right Value="36"/>
           <Bottom Value="36"/>
         </Margins>
-        <Orientation Value="poPortrait"/>
+        <Orientation Value="poLandscape"/>
         <UseMargins Value="True"/>
         <PrintToPrevPage Value="False"/>
         <ColCount Value="1"/>
         <ColGap Value="0"/>
         <LayoutOrder Value="loColumns"/>
-        <ObjectCount Value="34"/>
+        <ObjectCount Value="33"/>
         <Object1>
-          <Name Value="PageHeader1"/>
-          <ClassName Value="TfrBandView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtBand"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="0"/>
-            <Top Value="144"/>
-            <Width Value="752"/>
-            <Height Value="20"/>
-          </Size>
-          <Flags Value="48"/>
-          <Data>
-            <Script Value=""/>
-          </Data>
-          <BandType Value="btPageHeader"/>
-          <Condition Value=""/>
-          <DatasetStr Value=""/>
-        </Object1>
-        <Object2>
           <Name Value="ReportTitle1"/>
           <ClassName Value="TfrBandView"/>
           <Visible Value="1"/>
@@ -64,15 +44,35 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="0"/>
-            <Top Value="37"/>
-            <Width Value="752"/>
-            <Height Value="72"/>
+            <Top Value="56"/>
+            <Width Value="1064"/>
+            <Height Value="48"/>
           </Size>
           <Flags Value="48"/>
           <Data>
             <Script Value=""/>
           </Data>
           <BandType Value="btReportTitle"/>
+          <Condition Value=""/>
+          <DatasetStr Value=""/>
+        </Object1>
+        <Object2>
+          <Name Value="PageHeader1"/>
+          <ClassName Value="TfrBandView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtBand"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="0"/>
+            <Top Value="124"/>
+            <Width Value="1064"/>
+            <Height Value="16"/>
+          </Size>
+          <Flags Value="48"/>
+          <Data>
+            <Script Value=""/>
+          </Data>
+          <BandType Value="btPageHeader"/>
           <Condition Value=""/>
           <DatasetStr Value=""/>
         </Object2>
@@ -84,9 +84,9 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="0"/>
-            <Top Value="200"/>
-            <Width Value="752"/>
-            <Height Value="52"/>
+            <Top Value="164"/>
+            <Width Value="1064"/>
+            <Height Value="24"/>
           </Size>
           <Flags Value="48"/>
           <Data>
@@ -104,9 +104,9 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="0"/>
-            <Top Value="276"/>
-            <Width Value="752"/>
-            <Height Value="26"/>
+            <Top Value="192"/>
+            <Width Value="1064"/>
+            <Height Value="23"/>
           </Size>
           <Flags Value="48"/>
           <Data>
@@ -114,7 +114,7 @@
           </Data>
           <BandType Value="btMasterData"/>
           <Condition Value=""/>
-          <DatasetStr Value="TBudget_Items"/>
+          <DatasetStr Value="TProductBudget"/>
         </Object4>
         <Object5>
           <Name Value="MasterFooter1"/>
@@ -124,9 +124,9 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="0"/>
-            <Top Value="328"/>
-            <Width Value="752"/>
-            <Height Value="65"/>
+            <Top Value="236"/>
+            <Width Value="1064"/>
+            <Height Value="28"/>
           </Size>
           <Flags Value="48"/>
           <Data>
@@ -143,12 +143,12 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="36"/>
-            <Top Value="148"/>
-            <Width Value="316"/>
-            <Height Value="12"/>
+            <Left Value="40"/>
+            <Top Value="57"/>
+            <Width Value="984"/>
+            <Height Value="24"/>
           </Size>
-          <Flags Value="3"/>
+          <Flags Value="1"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -159,15 +159,15 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="Orçamento: [TBudget:Code] [TBudget:Name] Data: [TBudget:Date]&#xD;&#xA;"/>
+            <Memo Value="Orçamentos para compra de [TProductBudgetQuery:Product.Code] [TProductBudgetQuery:Product.Name]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
             <Name Value="Arial"/>
-            <Size Value="7"/>
+            <Size Value="14"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
-            <Style Value=""/>
+            <Style Value="fsBold"/>
           </Font>
           <Highlight>
             <FontStyle Value="2"/>
@@ -186,12 +186,12 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="576"/>
-            <Top Value="148"/>
-            <Width Value="136"/>
-            <Height Value="12"/>
+            <Left Value="40"/>
+            <Top Value="84"/>
+            <Width Value="496"/>
+            <Height Value="18"/>
           </Size>
-          <Flags Value="3"/>
+          <Flags Value="1"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -202,12 +202,12 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="Página [Page#] de [TotalPages]&#xD;&#xA;"/>
+            <Memo Value="Com data entre [TProductBudgetQuery:MinDate.FormatDateTime('dd/mm/yyyy')] e [TProductBudgetQuery:MaxDate.FormatDateTime('dd/mm/yyyy')]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
             <Name Value="Arial"/>
-            <Size Value="7"/>
+            <Size Value="10"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
             <Style Value=""/>
@@ -218,7 +218,7 @@
             <FillColor Value="clWhite"/>
             <HighlightStr Value=""/>
           </Highlight>
-          <Alignment Value="taRightJustify"/>
+          <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
         </Object7>
@@ -229,12 +229,12 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="36"/>
-            <Top Value="36"/>
-            <Width Value="296"/>
-            <Height Value="19"/>
+            <Left Value="39"/>
+            <Top Value="126"/>
+            <Width Value="540"/>
+            <Height Value="13"/>
           </Size>
-          <Flags Value="3"/>
+          <Flags Value="1"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -245,15 +245,15 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="Orçamento [TBudget:Code]&#xD;&#xA;"/>
+            <Memo Value="Orçamentos para compra de [TProductBudgetQuery:Product.Code] [TProductBudgetQuery:Product.Name] com data entre [TProductBudgetQuery:MinDate] e [TProductBudgetQuery:MaxDate]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
             <Name Value="Arial"/>
-            <Size Value="12"/>
+            <Size Value="7"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
-            <Style Value="fsBold"/>
+            <Style Value=""/>
           </Font>
           <Highlight>
             <FontStyle Value="2"/>
@@ -272,12 +272,12 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="36"/>
-            <Top Value="56"/>
-            <Width Value="296"/>
-            <Height Value="20"/>
+            <Left Value="872"/>
+            <Top Value="125"/>
+            <Width Value="152"/>
+            <Height Value="14"/>
           </Size>
-          <Flags Value="3"/>
+          <Flags Value="1"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -288,117 +288,12 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="[TBudget:Name]&#xD;&#xA;"/>
+            <Memo Value="Página [PAGE#] de [TOTALPAGES]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
             <Name Value="Arial"/>
-            <Size Value="10"/>
-            <Color Value="clBlack"/>
-            <Charset Value="0"/>
-            <Style Value="fsBold"/>
-          </Font>
-          <Highlight>
-            <FontStyle Value="2"/>
-            <FontColor Value="clBlack"/>
-            <FillColor Value="clWhite"/>
-            <HighlightStr Value=""/>
-          </Highlight>
-          <Alignment Value="taLeftJustify"/>
-          <Layout Value="tlTop"/>
-          <Angle Value="0"/>
-        </Object9>
-        <Object10>
-          <Name Value="Line1"/>
-          <ClassName Value="TfrLineView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtLine"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="37"/>
-            <Top Value="79"/>
-            <Width Value="676"/>
-            <Height Value="0"/>
-          </Size>
-          <Flags Value="0"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="2"/>
-          </Frames>
-        </Object10>
-        <Object11>
-          <Name Value="Memo5"/>
-          <ClassName Value="TfrMemoView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtMemo"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="36"/>
-            <Top Value="84"/>
-            <Width Value="504"/>
-            <Height Value="18"/>
-          </Size>
-          <Flags Value="3"/>
-          <FillColor Value="clNone"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
-          </Frames>
-          <Data>
-            <Format Value="556"/>
-            <FormatStr Value=""/>
-            <Memo Value="Fornecedor: [TBudget:Supplier.Name]&#xD;&#xA;"/>
-            <Script Value=""/>
-          </Data>
-          <Font>
-            <Name Value="Arial"/>
-            <Size Value="10"/>
-            <Color Value="clBlack"/>
-            <Charset Value="0"/>
-            <Style Value=""/>
-          </Font>
-          <Highlight>
-            <FontStyle Value="2"/>
-            <FontColor Value="clBlack"/>
-            <FillColor Value="clWhite"/>
-            <HighlightStr Value=""/>
-          </Highlight>
-          <Alignment Value="taLeftJustify"/>
-          <Layout Value="tlTop"/>
-          <Angle Value="0"/>
-        </Object11>
-        <Object12>
-          <Name Value="Memo6"/>
-          <ClassName Value="TfrMemoView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtMemo"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="588"/>
-            <Top Value="84"/>
-            <Width Value="128"/>
-            <Height Value="18"/>
-          </Size>
-          <Flags Value="3"/>
-          <FillColor Value="clNone"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
-          </Frames>
-          <Data>
-            <Format Value="556"/>
-            <FormatStr Value=""/>
-            <Memo Value="Data: [TBudget:Date.FormatDateTime('dd/mm/yyyy')]&#xD;&#xA;"/>
-            <Script Value=""/>
-          </Data>
-          <Font>
-            <Name Value="Arial"/>
-            <Size Value="10"/>
+            <Size Value="7"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
             <Style Value=""/>
@@ -412,18 +307,18 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object12>
-        <Object13>
-          <Name Value="Memo7"/>
+        </Object9>
+        <Object10>
+          <Name Value="Memo5"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
             <Left Value="40"/>
-            <Top Value="204"/>
-            <Width Value="672"/>
-            <Height Value="18"/>
+            <Top Value="168"/>
+            <Width Value="264"/>
+            <Height Value="15"/>
           </Size>
           <Flags Value="3"/>
           <FillColor Value="clNone"/>
@@ -431,17 +326,17 @@
             <FrameColor Value="clBlack"/>
             <FrameStyle Value="frsSolid"/>
             <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
+            <FrameBorders Value="frbBottom"/>
           </Frames>
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="Produto(s)&#xD;&#xA;"/>
+            <Memo Value="Orçamento&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
             <Name Value="Arial"/>
-            <Size Value="10"/>
+            <Size Value="8"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
             <Style Value="fsBold"/>
@@ -455,104 +350,104 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object13>
-        <Object14>
+        </Object10>
+        <Object11>
+          <Name Value="Memo6"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="309"/>
+            <Top Value="168"/>
+            <Width Value="60"/>
+            <Height Value="15"/>
+          </Size>
+          <Flags Value="3"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value="frbBottom"/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="Data&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="8"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value="fsBold"/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taLeftJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object11>
+        <Object12>
+          <Name Value="Memo7"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="376"/>
+            <Top Value="168"/>
+            <Width Value="200"/>
+            <Height Value="15"/>
+          </Size>
+          <Flags Value="3"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value="frbBottom"/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="Fornecedor&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="8"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value="fsBold"/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taLeftJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object12>
+        <Object13>
           <Name Value="Memo8"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="40"/>
-            <Top Value="228"/>
-            <Width Value="360"/>
-            <Height Value="18"/>
-          </Size>
-          <Flags Value="3"/>
-          <FillColor Value="clNone"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="1"/>
-            <FrameBorders Value="frbBottom"/>
-          </Frames>
-          <Data>
-            <Format Value="556"/>
-            <FormatStr Value=""/>
-            <Memo Value="Produto&#xD;&#xA;"/>
-            <Script Value=""/>
-          </Data>
-          <Font>
-            <Name Value="Arial"/>
-            <Size Value="10"/>
-            <Color Value="clBlack"/>
-            <Charset Value="0"/>
-            <Style Value=""/>
-          </Font>
-          <Highlight>
-            <FontStyle Value="2"/>
-            <FontColor Value="clBlack"/>
-            <FillColor Value="clWhite"/>
-            <HighlightStr Value=""/>
-          </Highlight>
-          <Alignment Value="taLeftJustify"/>
-          <Layout Value="tlTop"/>
-          <Angle Value="0"/>
-        </Object14>
-        <Object15>
-          <Name Value="Memo9"/>
-          <ClassName Value="TfrMemoView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtMemo"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="408"/>
-            <Top Value="228"/>
-            <Width Value="52"/>
-            <Height Value="18"/>
-          </Size>
-          <Flags Value="3"/>
-          <FillColor Value="clNone"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="1"/>
-            <FrameBorders Value="frbBottom"/>
-          </Frames>
-          <Data>
-            <Format Value="556"/>
-            <FormatStr Value=""/>
-            <Memo Value="Unid.&#xD;&#xA;"/>
-            <Script Value=""/>
-          </Data>
-          <Font>
-            <Name Value="Arial"/>
-            <Size Value="10"/>
-            <Color Value="clBlack"/>
-            <Charset Value="0"/>
-            <Style Value=""/>
-          </Font>
-          <Highlight>
-            <FontStyle Value="2"/>
-            <FontColor Value="clBlack"/>
-            <FillColor Value="clWhite"/>
-            <HighlightStr Value=""/>
-          </Highlight>
-          <Alignment Value="taLeftJustify"/>
-          <Layout Value="tlTop"/>
-          <Angle Value="0"/>
-        </Object15>
-        <Object16>
-          <Name Value="Memo10"/>
-          <ClassName Value="TfrMemoView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtMemo"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="552"/>
-            <Top Value="228"/>
-            <Width Value="52"/>
-            <Height Value="18"/>
+            <Left Value="637"/>
+            <Top Value="168"/>
+            <Width Value="48"/>
+            <Height Value="15"/>
           </Size>
           <Flags Value="3"/>
           <FillColor Value="clNone"/>
@@ -570,10 +465,139 @@
           </Data>
           <Font>
             <Name Value="Arial"/>
-            <Size Value="10"/>
+            <Size Value="8"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
-            <Style Value=""/>
+            <Style Value="fsBold"/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taLeftJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object13>
+        <Object14>
+          <Name Value="Memo9"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="580"/>
+            <Top Value="168"/>
+            <Width Value="52"/>
+            <Height Value="15"/>
+          </Size>
+          <Flags Value="3"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value="frbBottom"/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="Unidade&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="8"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value="fsBold"/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taLeftJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object14>
+        <Object15>
+          <Name Value="Memo10"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="815"/>
+            <Top Value="168"/>
+            <Width Value="60"/>
+            <Height Value="15"/>
+          </Size>
+          <Flags Value="3"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value="frbBottom"/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="P. tot. (kg)&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="8"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value="fsBold"/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taLeftJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object15>
+        <Object16>
+          <Name Value="Memo11"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="690"/>
+            <Top Value="168"/>
+            <Width Value="48"/>
+            <Height Value="15"/>
+          </Size>
+          <Flags Value="3"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value="frbBottom"/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="V. unit.&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="8"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value="fsBold"/>
           </Font>
           <Highlight>
             <FontStyle Value="2"/>
@@ -586,59 +610,16 @@
           <Angle Value="0"/>
         </Object16>
         <Object17>
-          <Name Value="Memo11"/>
-          <ClassName Value="TfrMemoView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtMemo"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="468"/>
-            <Top Value="228"/>
-            <Width Value="76"/>
-            <Height Value="18"/>
-          </Size>
-          <Flags Value="3"/>
-          <FillColor Value="clNone"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="1"/>
-            <FrameBorders Value="frbBottom"/>
-          </Frames>
-          <Data>
-            <Format Value="556"/>
-            <FormatStr Value=""/>
-            <Memo Value="Unitário&#xD;&#xA;"/>
-            <Script Value=""/>
-          </Data>
-          <Font>
-            <Name Value="Arial"/>
-            <Size Value="10"/>
-            <Color Value="clBlack"/>
-            <Charset Value="0"/>
-            <Style Value=""/>
-          </Font>
-          <Highlight>
-            <FontStyle Value="2"/>
-            <FontColor Value="clBlack"/>
-            <FillColor Value="clWhite"/>
-            <HighlightStr Value=""/>
-          </Highlight>
-          <Alignment Value="taRightJustify"/>
-          <Layout Value="tlTop"/>
-          <Angle Value="0"/>
-        </Object17>
-        <Object18>
           <Name Value="Memo12"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="612"/>
-            <Top Value="228"/>
-            <Width Value="96"/>
-            <Height Value="18"/>
+            <Left Value="745"/>
+            <Top Value="168"/>
+            <Width Value="64"/>
+            <Height Value="15"/>
           </Size>
           <Flags Value="3"/>
           <FillColor Value="clNone"/>
@@ -651,50 +632,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="Valor total&#xD;&#xA;"/>
-            <Script Value=""/>
-          </Data>
-          <Font>
-            <Name Value="Arial"/>
-            <Size Value="10"/>
-            <Color Value="clBlack"/>
-            <Charset Value="0"/>
-            <Style Value=""/>
-          </Font>
-          <Highlight>
-            <FontStyle Value="2"/>
-            <FontColor Value="clBlack"/>
-            <FillColor Value="clWhite"/>
-            <HighlightStr Value=""/>
-          </Highlight>
-          <Alignment Value="taRightJustify"/>
-          <Layout Value="tlTop"/>
-          <Angle Value="0"/>
-        </Object18>
-        <Object19>
-          <Name Value="Memo13"/>
-          <ClassName Value="TfrMemoView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtMemo"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="40"/>
-            <Top Value="279"/>
-            <Width Value="360"/>
-            <Height Value="18"/>
-          </Size>
-          <Flags Value="1"/>
-          <FillColor Value="clNone"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
-          </Frames>
-          <Data>
-            <Format Value="556"/>
-            <FormatStr Value=""/>
-            <Memo Value="[TBudget.Items:Product.Code] [TBudget.Items:Product.Name] &#xD;&#xA;"/>
+            <Memo Value="V. total&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -702,7 +640,93 @@
             <Size Value="8"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
-            <Style Value=""/>
+            <Style Value="fsBold"/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taLeftJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object17>
+        <Object18>
+          <Name Value="Memo13"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="933"/>
+            <Top Value="168"/>
+            <Width Value="44"/>
+            <Height Value="15"/>
+          </Size>
+          <Flags Value="3"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value="frbBottom"/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="Frete&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="8"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value="fsBold"/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taLeftJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object18>
+        <Object19>
+          <Name Value="Memo14"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="980"/>
+            <Top Value="168"/>
+            <Width Value="44"/>
+            <Height Value="15"/>
+          </Size>
+          <Flags Value="3"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value="frbBottom"/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="Ft.p/kg&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="8"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value="fsBold"/>
           </Font>
           <Highlight>
             <FontStyle Value="2"/>
@@ -715,16 +739,16 @@
           <Angle Value="0"/>
         </Object19>
         <Object20>
-          <Name Value="Memo14"/>
+          <Name Value="Memo15"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="408"/>
-            <Top Value="279"/>
-            <Width Value="52"/>
-            <Height Value="18"/>
+            <Left Value="40"/>
+            <Top Value="196"/>
+            <Width Value="264"/>
+            <Height Value="14"/>
           </Size>
           <Flags Value="1"/>
           <FillColor Value="clNone"/>
@@ -737,7 +761,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="[TBudget.Items:Unity.Abbreviation]&#xD;&#xA;"/>
+            <Memo Value="[TProductBudget:Budget.Code] [TProductBudget:Budget.Name] &#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -758,61 +782,18 @@
           <Angle Value="0"/>
         </Object20>
         <Object21>
-          <Name Value="Memo15"/>
-          <ClassName Value="TfrMemoView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtMemo"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="468"/>
-            <Top Value="279"/>
-            <Width Value="76"/>
-            <Height Value="18"/>
-          </Size>
-          <Flags Value="1"/>
-          <FillColor Value="clNone"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
-          </Frames>
-          <Data>
-            <Format Value="556"/>
-            <FormatStr Value=""/>
-            <Memo Value="[TBudget.Items:UnityValue.Format('%2n')]&#xD;&#xA;"/>
-            <Script Value=""/>
-          </Data>
-          <Font>
-            <Name Value="Arial"/>
-            <Size Value="8"/>
-            <Color Value="clBlack"/>
-            <Charset Value="0"/>
-            <Style Value=""/>
-          </Font>
-          <Highlight>
-            <FontStyle Value="2"/>
-            <FontColor Value="clBlack"/>
-            <FillColor Value="clWhite"/>
-            <HighlightStr Value=""/>
-          </Highlight>
-          <Alignment Value="taRightJustify"/>
-          <Layout Value="tlTop"/>
-          <Angle Value="0"/>
-        </Object21>
-        <Object22>
           <Name Value="Memo16"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="552"/>
-            <Top Value="279"/>
-            <Width Value="52"/>
-            <Height Value="18"/>
+            <Left Value="309"/>
+            <Top Value="196"/>
+            <Width Value="59"/>
+            <Height Value="14"/>
           </Size>
-          <Flags Value="1"/>
+          <Flags Value="3"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -823,7 +804,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="[TBudget.Items:Quantity.Format('%3n')]&#xD;&#xA;"/>
+            <Memo Value="[TProductBudget:Budget.Date]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -839,23 +820,23 @@
             <FillColor Value="clWhite"/>
             <HighlightStr Value=""/>
           </Highlight>
-          <Alignment Value="taRightJustify"/>
+          <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object22>
-        <Object23>
+        </Object21>
+        <Object22>
           <Name Value="Memo17"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="612"/>
-            <Top Value="279"/>
-            <Width Value="96"/>
-            <Height Value="18"/>
+            <Left Value="376"/>
+            <Top Value="196"/>
+            <Width Value="199"/>
+            <Height Value="14"/>
           </Size>
-          <Flags Value="1"/>
+          <Flags Value="3"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -866,7 +847,50 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="[TBudget.Items:TotalValue.Format('%2n')]&#xD;&#xA;"/>
+            <Memo Value="[TProductBudget:Budget.Supplier.Name]&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="8"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value=""/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taLeftJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object22>
+        <Object23>
+          <Name Value="Memo18"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="637"/>
+            <Top Value="196"/>
+            <Width Value="47"/>
+            <Height Value="14"/>
+          </Size>
+          <Flags Value="3"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value=""/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="[TProductBudget:BudgetItem.Quantity.Format('%3n')]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -887,37 +911,18 @@
           <Angle Value="0"/>
         </Object23>
         <Object24>
-          <Name Value="Line2"/>
-          <ClassName Value="TfrLineView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtLine"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="36"/>
-            <Top Value="332"/>
-            <Width Value="680"/>
-            <Height Value="0"/>
-          </Size>
-          <Flags Value="0"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="2"/>
-          </Frames>
-        </Object24>
-        <Object25>
-          <Name Value="Memo18"/>
+          <Name Value="Memo19"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="612"/>
-            <Top Value="336"/>
-            <Width Value="96"/>
+            <Left Value="580"/>
+            <Top Value="196"/>
+            <Width Value="55"/>
             <Height Value="14"/>
           </Size>
-          <Flags Value="1"/>
+          <Flags Value="3"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -928,7 +933,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="[TBudget:SumOfItems.Format('%2n')]&#xD;&#xA;"/>
+            <Memo Value="[TProductBudget:BudgetItem.Unity.Abbreviation]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -936,7 +941,50 @@
             <Size Value="8"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
-            <Style Value="fsBold"/>
+            <Style Value=""/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taLeftJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object24>
+        <Object25>
+          <Name Value="Memo20"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="815"/>
+            <Top Value="196"/>
+            <Width Value="60"/>
+            <Height Value="14"/>
+          </Size>
+          <Flags Value="3"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value=""/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="[TProductBudget:BudgetItem.WeightInKiloGrams.Format('%3n')]&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="8"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value=""/>
           </Font>
           <Highlight>
             <FontStyle Value="2"/>
@@ -949,18 +997,18 @@
           <Angle Value="0"/>
         </Object25>
         <Object26>
-          <Name Value="Memo19"/>
+          <Name Value="Memo21"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="44"/>
-            <Top Value="336"/>
-            <Width Value="172"/>
+            <Left Value="690"/>
+            <Top Value="196"/>
+            <Width Value="51"/>
             <Height Value="14"/>
           </Size>
-          <Flags Value="1"/>
+          <Flags Value="3"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -971,7 +1019,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="[TBudget:Items.Count] item(ns)&#xD;&#xA;"/>
+            <Memo Value="[TProductBudget:BudgetItem.UnityValue.Format('%2n')]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -979,7 +1027,7 @@
             <Size Value="8"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
-            <Style Value="fsBold"/>
+            <Style Value=""/>
           </Font>
           <Highlight>
             <FontStyle Value="2"/>
@@ -987,23 +1035,23 @@
             <FillColor Value="clWhite"/>
             <HighlightStr Value=""/>
           </Highlight>
-          <Alignment Value="taLeftJustify"/>
+          <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
         </Object26>
         <Object27>
-          <Name Value="Memo20"/>
+          <Name Value="Memo22"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="612"/>
-            <Top Value="352"/>
-            <Width Value="96"/>
+            <Left Value="745"/>
+            <Top Value="196"/>
+            <Width Value="63"/>
             <Height Value="14"/>
           </Size>
-          <Flags Value="1"/>
+          <Flags Value="3"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -1014,7 +1062,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="[TBudget:Shipping.Format('%2n')]&#xD;&#xA;"/>
+            <Memo Value="[TProductBudget:BudgetItem.TotalValue.Format('%2n')]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -1022,7 +1070,7 @@
             <Size Value="8"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
-            <Style Value="fsBold"/>
+            <Style Value=""/>
           </Font>
           <Highlight>
             <FontStyle Value="2"/>
@@ -1035,34 +1083,15 @@
           <Angle Value="0"/>
         </Object27>
         <Object28>
-          <Name Value="Line3"/>
-          <ClassName Value="TfrLineView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtLine"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="496"/>
-            <Top Value="370"/>
-            <Width Value="212"/>
-            <Height Value="0"/>
-          </Size>
-          <Flags Value="0"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="2"/>
-          </Frames>
-        </Object28>
-        <Object29>
-          <Name Value="Memo21"/>
+          <Name Value="Memo23"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="512"/>
-            <Top Value="336"/>
-            <Width Value="96"/>
+            <Left Value="931"/>
+            <Top Value="196"/>
+            <Width Value="44"/>
             <Height Value="14"/>
           </Size>
           <Flags Value="3"/>
@@ -1076,7 +1105,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="Total dos itens:&#xD;&#xA;"/>
+            <Memo Value="[TProductBudget:BudgetItem.Shipping.Format('%2n')]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -1084,7 +1113,50 @@
             <Size Value="8"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
-            <Style Value="fsBold"/>
+            <Style Value=""/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taRightJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object28>
+        <Object29>
+          <Name Value="Memo24"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="980"/>
+            <Top Value="196"/>
+            <Width Value="43"/>
+            <Height Value="14"/>
+          </Size>
+          <Flags Value="3"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value=""/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="[TProductBudget:BudgetItem.ShippingByKilogram.Format('%2n')]&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="8"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value=""/>
           </Font>
           <Highlight>
             <FontStyle Value="2"/>
@@ -1097,15 +1169,120 @@
           <Angle Value="0"/>
         </Object29>
         <Object30>
-          <Name Value="Memo22"/>
+          <Name Value="Memo25"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="512"/>
-            <Top Value="352"/>
-            <Width Value="96"/>
+            <Left Value="40"/>
+            <Top Value="244"/>
+            <Width Value="156"/>
+            <Height Value="15"/>
+          </Size>
+          <Flags Value="1"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value=""/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="[COUNT(MasterData1)] orçamentos encontrados&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="8"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value="fsBold"/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taLeftJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object30>
+        <Object31>
+          <Name Value="Line1"/>
+          <ClassName Value="TfrLineView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtLine"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="40"/>
+            <Top Value="240"/>
+            <Width Value="984"/>
+            <Height Value="0"/>
+          </Size>
+          <Flags Value="0"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="2"/>
+          </Frames>
+        </Object31>
+        <Object32>
+          <Name Value="Memo26"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="881"/>
+            <Top Value="168"/>
+            <Width Value="44"/>
+            <Height Value="15"/>
+          </Size>
+          <Flags Value="3"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value="frbBottom"/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="Vl.p/kg&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="8"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value="fsBold"/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taLeftJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object32>
+        <Object33>
+          <Name Value="Memo27"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="881"/>
+            <Top Value="196"/>
+            <Width Value="44"/>
             <Height Value="14"/>
           </Size>
           <Flags Value="3"/>
@@ -1119,7 +1296,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="Frete:&#xD;&#xA;"/>
+            <Memo Value="[TProductBudget:BudgetItem.KilogramValue.Format('%2n')]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -1127,7 +1304,7 @@
             <Size Value="8"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
-            <Style Value="fsBold"/>
+            <Style Value=""/>
           </Font>
           <Highlight>
             <FontStyle Value="2"/>
@@ -1136,648 +1313,875 @@
             <HighlightStr Value=""/>
           </Highlight>
           <Alignment Value="taRightJustify"/>
-          <Layout Value="tlTop"/>
-          <Angle Value="0"/>
-        </Object30>
-        <Object31>
-          <Name Value="Memo23"/>
-          <ClassName Value="TfrMemoView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtMemo"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="612"/>
-            <Top Value="373"/>
-            <Width Value="96"/>
-            <Height Value="14"/>
-          </Size>
-          <Flags Value="1"/>
-          <FillColor Value="clSilver"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
-          </Frames>
-          <Data>
-            <Format Value="556"/>
-            <FormatStr Value=""/>
-            <Memo Value="[TBudget:TotalBudget.Format('%2n')]&#xD;&#xA;"/>
-            <Script Value=""/>
-          </Data>
-          <Font>
-            <Name Value="Arial"/>
-            <Size Value="8"/>
-            <Color Value="clBlack"/>
-            <Charset Value="0"/>
-            <Style Value="fsBold"/>
-          </Font>
-          <Highlight>
-            <FontStyle Value="2"/>
-            <FontColor Value="clBlack"/>
-            <FillColor Value="clWhite"/>
-            <HighlightStr Value=""/>
-          </Highlight>
-          <Alignment Value="taRightJustify"/>
-          <Layout Value="tlTop"/>
-          <Angle Value="0"/>
-        </Object31>
-        <Object32>
-          <Name Value="Memo24"/>
-          <ClassName Value="TfrMemoView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtMemo"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="496"/>
-            <Top Value="373"/>
-            <Width Value="112"/>
-            <Height Value="14"/>
-          </Size>
-          <Flags Value="9"/>
-          <FillColor Value="clNone"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
-          </Frames>
-          <Data>
-            <Format Value="556"/>
-            <FormatStr Value=""/>
-            <Memo Value="Total do orçamento:&#xD;&#xA;&#xD;&#xA;"/>
-            <Script Value=""/>
-          </Data>
-          <Font>
-            <Name Value="Arial"/>
-            <Size Value="8"/>
-            <Color Value="clBlack"/>
-            <Charset Value="0"/>
-            <Style Value="fsBold"/>
-          </Font>
-          <Highlight>
-            <FontStyle Value="2"/>
-            <FontColor Value="clBlack"/>
-            <FillColor Value="clWhite"/>
-            <HighlightStr Value=""/>
-          </Highlight>
-          <Alignment Value="taRightJustify"/>
-          <Layout Value="tlTop"/>
-          <Angle Value="0"/>
-        </Object32>
-        <Object33>
-          <Name Value="Memo25"/>
-          <ClassName Value="TfrMemoView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtMemo"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="44"/>
-            <Top Value="352"/>
-            <Width Value="172"/>
-            <Height Value="14"/>
-          </Size>
-          <Flags Value="1"/>
-          <FillColor Value="clNone"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
-          </Frames>
-          <Data>
-            <Format Value="556"/>
-            <FormatStr Value=""/>
-            <Memo Value="Peso total (kg): [TBudget:WeightInKilograms.Format('%3n')]&#xD;&#xA;"/>
-            <Script Value=""/>
-          </Data>
-          <Font>
-            <Name Value="Arial"/>
-            <Size Value="8"/>
-            <Color Value="clBlack"/>
-            <Charset Value="0"/>
-            <Style Value="fsBold"/>
-          </Font>
-          <Highlight>
-            <FontStyle Value="2"/>
-            <FontColor Value="clBlack"/>
-            <FillColor Value="clWhite"/>
-            <HighlightStr Value=""/>
-          </Highlight>
-          <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
         </Object33>
-        <Object34>
-          <Name Value="Memo26"/>
-          <ClassName Value="TfrMemoView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtMemo"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="44"/>
-            <Top Value="368"/>
-            <Width Value="172"/>
-            <Height Value="14"/>
-          </Size>
-          <Flags Value="1"/>
-          <FillColor Value="clNone"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
-          </Frames>
-          <Data>
-            <Format Value="556"/>
-            <FormatStr Value=""/>
-            <Memo Value="Valor do frete por quilo: [TBudget:ShippingByKilogram.Format('%2n')]&#xD;&#xA;"/>
-            <Script Value=""/>
-          </Data>
-          <Font>
-            <Name Value="Arial"/>
-            <Size Value="8"/>
-            <Color Value="clBlack"/>
-            <Charset Value="0"/>
-            <Style Value="fsBold"/>
-          </Font>
-          <Highlight>
-            <FontStyle Value="2"/>
-            <FontColor Value="clBlack"/>
-            <FillColor Value="clWhite"/>
-            <HighlightStr Value=""/>
-          </Highlight>
-          <Alignment Value="taLeftJustify"/>
-          <Layout Value="tlTop"/>
-          <Angle Value="0"/>
-        </Object34>
       </Page1>
       <FVal>
-        <Count Value="66"/>
+        <Count Value="123"/>
         <Objects1>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Code"/>
+          <Item Value="TProductBudget.Budget.Items:KilogramValue"/>
         </Objects1>
         <Objects2>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Name"/>
+          <Item Value="TProductBudget.Budget.Items:Product.Code"/>
         </Objects2>
         <Objects3>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Remarks"/>
+          <Item Value="TProductBudget.Budget.Items:Product.Cost"/>
         </Objects3>
         <Objects4>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.Code"/>
+          <Item Value="TProductBudget.Budget.Items:Product.CurrentStock"/>
         </Objects4>
         <Objects5>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.Name"/>
+          <Item Value="TProductBudget.Budget.Items:Product.CurrentStockCost"/>
         </Objects5>
         <Objects6>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.Remarks"/>
+          <Item Value="TProductBudget.Budget.Items:Product.CurrentStockPrice"/>
         </Objects6>
         <Objects7>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.Addresses"/>
+          <Item Value="TProductBudget.Budget.Items:Product.LastPurchaseDate"/>
         </Objects7>
         <Objects8>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.Phones"/>
+          <Item Value="TProductBudget.Budget.Items:Product.MaximumStock"/>
         </Objects8>
         <Objects9>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.InternetAddresses"/>
+          <Item Value="TProductBudget.Budget.Items:Product.MinimumStock"/>
         </Objects9>
         <Objects10>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.NickName"/>
+          <Item Value="TProductBudget.Budget.Items:Product.Name"/>
         </Objects10>
         <Objects11>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Shipping"/>
+          <Item Value="TProductBudget.Budget.Items:Product.Price"/>
         </Objects11>
         <Objects12>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:SumOfItems"/>
+          <Item Value="TProductBudget.Budget.Items:Product.ProfitRate"/>
         </Objects12>
         <Objects13>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:TotalBudget"/>
+          <Item Value="TProductBudget.Budget.Items:Product.Remarks"/>
         </Objects13>
         <Objects14>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Items"/>
+          <Item Value="TProductBudget.Budget.Items:Product.Unity.Abbreviation"/>
         </Objects14>
         <Objects15>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Date"/>
+          <Item Value="TProductBudget.Budget.Items:Product.Unity.Name"/>
         </Objects15>
         <Objects16>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:ExpireDate"/>
+          <Item Value="TProductBudget.Budget.Items:Product.Unity.WeightInKiloGrams"/>
         </Objects16>
         <Objects17>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:ItemCount"/>
+          <Item Value="TProductBudget.Budget.Items:Quantity"/>
         </Objects17>
         <Objects18>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:WeightInKilograms"/>
+          <Item Value="TProductBudget.Budget.Items:Shipping"/>
         </Objects18>
         <Objects19>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:ShippingByKilogram"/>
+          <Item Value="TProductBudget.Budget.Items:ShippingByKilogram"/>
         </Objects19>
         <Objects20>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:Label.Name"/>
+          <Item Value="TProductBudget.Budget.Items:TotalValue"/>
         </Objects20>
         <Objects21>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:Street"/>
+          <Item Value="TProductBudget.Budget.Items:Unity.Abbreviation"/>
         </Objects21>
         <Objects22>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:Number"/>
+          <Item Value="TProductBudget.Budget.Items:Unity.Name"/>
         </Objects22>
         <Objects23>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:POBox"/>
+          <Item Value="TProductBudget.Budget.Items:Unity.WeightInKiloGrams"/>
         </Objects23>
         <Objects24>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:Neighborhood.Code"/>
+          <Item Value="TProductBudget.Budget.Items:UnityValue"/>
         </Objects24>
         <Objects25>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:Neighborhood.Name"/>
+          <Item Value="TProductBudget.Budget.Items:WeightInKiloGrams"/>
         </Objects25>
         <Objects26>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:Neighborhood.Remarks"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:City.Code"/>
         </Objects26>
         <Objects27>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.Code"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:City.Name"/>
         </Objects27>
         <Objects28>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.Name"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:City.Remarks"/>
         </Objects28>
         <Objects29>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.Remarks"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:City.State.Abbreviation"/>
         </Objects29>
         <Objects30>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Code"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:City.State.Code"/>
         </Objects30>
         <Objects31>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Name"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:City.State.Country.Code"/>
         </Objects31>
         <Objects32>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Remarks"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:City.State.Country.Name"/>
         </Objects32>
         <Objects33>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Abbreviation"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:City.State.Country.Remarks"/>
         </Objects33>
         <Objects34>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Country.Code"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:City.State.Name"/>
         </Objects34>
         <Objects35>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Country.Name"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:City.State.Remarks"/>
         </Objects35>
         <Objects36>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Country.Remarks"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:Label.Name"/>
         </Objects36>
         <Objects37>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:PostalCode"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:Neighborhood.Code"/>
         </Objects37>
         <Objects38>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Phones:Label.Name"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:Neighborhood.Name"/>
         </Objects38>
         <Objects39>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Phones:Number"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:Neighborhood.Remarks"/>
         </Objects39>
         <Objects40>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.InternetAddresses:Label.Name"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:Number"/>
         </Objects40>
         <Objects41>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.InternetAddresses:Address"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:POBox"/>
         </Objects41>
         <Objects42>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Code"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:PostalCode"/>
         </Objects42>
         <Objects43>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Name"/>
+          <Item Value="TProductBudget.Budget.Supplier.Addresses:Street"/>
         </Objects43>
         <Objects44>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Remarks"/>
+          <Item Value="TProductBudget.Budget.Supplier.InternetAddresses:Address"/>
         </Objects44>
         <Objects45>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Unity.Name"/>
+          <Item Value="TProductBudget.Budget.Supplier.InternetAddresses:Label.Name"/>
         </Objects45>
         <Objects46>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Unity.Abbreviation"/>
+          <Item Value="TProductBudget.Budget.Supplier.Phones:Label.Name"/>
         </Objects46>
         <Objects47>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Unity.WeightInKiloGrams"/>
+          <Item Value="TProductBudget.Budget.Supplier.Phones:Number"/>
         </Objects47>
         <Objects48>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.MinimumStock"/>
+          <Item Value="TProductBudget:Budget.Code"/>
         </Objects48>
         <Objects49>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.MaximumStock"/>
+          <Item Value="TProductBudget:Budget.Date"/>
         </Objects49>
         <Objects50>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.CurrentStock"/>
+          <Item Value="TProductBudget:Budget.ExpireDate"/>
         </Objects50>
         <Objects51>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Cost"/>
+          <Item Value="TProductBudget:Budget.ItemCount"/>
         </Objects51>
         <Objects52>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.ProfitRate"/>
+          <Item Value="TProductBudget:Budget.Items"/>
         </Objects52>
         <Objects53>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.CurrentStockCost"/>
+          <Item Value="TProductBudget:Budget.Name"/>
         </Objects53>
         <Objects54>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Price"/>
+          <Item Value="TProductBudget:Budget.Remarks"/>
         </Objects54>
         <Objects55>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.CurrentStockPrice"/>
+          <Item Value="TProductBudget:Budget.Shipping"/>
         </Objects55>
         <Objects56>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.LastPurchaseDate"/>
+          <Item Value="TProductBudget:Budget.ShippingByKilogram"/>
         </Objects56>
         <Objects57>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Unity.Name"/>
+          <Item Value="TProductBudget:Budget.SumOfItems"/>
         </Objects57>
         <Objects58>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Unity.Abbreviation"/>
+          <Item Value="TProductBudget:Budget.Supplier.Addresses"/>
         </Objects58>
         <Objects59>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Unity.WeightInKiloGrams"/>
+          <Item Value="TProductBudget:Budget.Supplier.Code"/>
         </Objects59>
         <Objects60>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Quantity"/>
+          <Item Value="TProductBudget:Budget.Supplier.InternetAddresses"/>
         </Objects60>
         <Objects61>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:UnityValue"/>
+          <Item Value="TProductBudget:Budget.Supplier.Name"/>
         </Objects61>
         <Objects62>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:TotalValue"/>
+          <Item Value="TProductBudget:Budget.Supplier.NickName"/>
         </Objects62>
         <Objects63>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Shipping"/>
+          <Item Value="TProductBudget:Budget.Supplier.Phones"/>
         </Objects63>
         <Objects64>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:WeightInKiloGrams"/>
+          <Item Value="TProductBudget:Budget.Supplier.Remarks"/>
         </Objects64>
         <Objects65>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:KilogramValue"/>
+          <Item Value="TProductBudget:Budget.TotalBudget"/>
         </Objects65>
         <Objects66>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:ShippingByKilogram"/>
+          <Item Value="TProductBudget:Budget.WeightInKilograms"/>
         </Objects66>
+        <Objects67>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.KilogramValue"/>
+        </Objects67>
+        <Objects68>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.Code"/>
+        </Objects68>
+        <Objects69>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.Cost"/>
+        </Objects69>
+        <Objects70>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.CurrentStock"/>
+        </Objects70>
+        <Objects71>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.CurrentStockCost"/>
+        </Objects71>
+        <Objects72>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.CurrentStockPrice"/>
+        </Objects72>
+        <Objects73>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.LastPurchaseDate"/>
+        </Objects73>
+        <Objects74>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.MaximumStock"/>
+        </Objects74>
+        <Objects75>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.MinimumStock"/>
+        </Objects75>
+        <Objects76>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.Name"/>
+        </Objects76>
+        <Objects77>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.Price"/>
+        </Objects77>
+        <Objects78>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.ProfitRate"/>
+        </Objects78>
+        <Objects79>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.Remarks"/>
+        </Objects79>
+        <Objects80>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.Unity.Abbreviation"/>
+        </Objects80>
+        <Objects81>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.Unity.Name"/>
+        </Objects81>
+        <Objects82>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Product.Unity.WeightInKiloGrams"/>
+        </Objects82>
+        <Objects83>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Quantity"/>
+        </Objects83>
+        <Objects84>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Shipping"/>
+        </Objects84>
+        <Objects85>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.ShippingByKilogram"/>
+        </Objects85>
+        <Objects86>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.TotalValue"/>
+        </Objects86>
+        <Objects87>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Unity.Abbreviation"/>
+        </Objects87>
+        <Objects88>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Unity.Name"/>
+        </Objects88>
+        <Objects89>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.Unity.WeightInKiloGrams"/>
+        </Objects89>
+        <Objects90>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.UnityValue"/>
+        </Objects90>
+        <Objects91>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:BudgetItem.WeightInKiloGrams"/>
+        </Objects91>
+        <Objects92>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.Code"/>
+        </Objects92>
+        <Objects93>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.Cost"/>
+        </Objects93>
+        <Objects94>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.CurrentStock"/>
+        </Objects94>
+        <Objects95>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.CurrentStockCost"/>
+        </Objects95>
+        <Objects96>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.CurrentStockPrice"/>
+        </Objects96>
+        <Objects97>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.LastPurchaseDate"/>
+        </Objects97>
+        <Objects98>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.MaximumStock"/>
+        </Objects98>
+        <Objects99>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.MinimumStock"/>
+        </Objects99>
+        <Objects100>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.Name"/>
+        </Objects100>
+        <Objects101>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.Price"/>
+        </Objects101>
+        <Objects102>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.ProfitRate"/>
+        </Objects102>
+        <Objects103>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.Remarks"/>
+        </Objects103>
+        <Objects104>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.Unity.Abbreviation"/>
+        </Objects104>
+        <Objects105>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.Unity.Name"/>
+        </Objects105>
+        <Objects106>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudget:Product.Unity.WeightInKiloGrams"/>
+        </Objects106>
+        <Objects107>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:MaxDate"/>
+        </Objects107>
+        <Objects108>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:MinDate"/>
+        </Objects108>
+        <Objects109>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.Code"/>
+        </Objects109>
+        <Objects110>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.Cost"/>
+        </Objects110>
+        <Objects111>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.CurrentStock"/>
+        </Objects111>
+        <Objects112>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.CurrentStockCost"/>
+        </Objects112>
+        <Objects113>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.CurrentStockPrice"/>
+        </Objects113>
+        <Objects114>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.LastPurchaseDate"/>
+        </Objects114>
+        <Objects115>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.MaximumStock"/>
+        </Objects115>
+        <Objects116>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.MinimumStock"/>
+        </Objects116>
+        <Objects117>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.Name"/>
+        </Objects117>
+        <Objects118>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.Price"/>
+        </Objects118>
+        <Objects119>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.ProfitRate"/>
+        </Objects119>
+        <Objects120>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.Remarks"/>
+        </Objects120>
+        <Objects121>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.Unity.Abbreviation"/>
+        </Objects121>
+        <Objects122>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.Unity.Name"/>
+        </Objects122>
+        <Objects123>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TProductBudgetQuery:Product.Unity.WeightInKiloGrams"/>
+        </Objects123>
       </FVal>
-      <ParentVars Value="TBudget&#xD;&#xA; TBudget:Code&#xD;&#xA; TBudget:Name&#xD;&#xA; TBudget:Remarks&#xD;&#xA; TBudget:Supplier.Code&#xD;&#xA; TBudget:Supplier.Name&#xD;&#xA; TBudget:Supplier.Remarks&#xD;&#xA; TBudget:Supplier.Addresses&#xD;&#xA; TBudget:Supplier.Phones&#xD;&#xA; TBudget:Supplier.InternetAddresses&#xD;&#xA; TBudget:Supplier.NickName&#xD;&#xA; TBudget:Shipping&#xD;&#xA; TBudget:SumOfItems&#xD;&#xA; TBudget:TotalBudget&#xD;&#xA; TBudget:Items&#xD;&#xA; TBudget:Date&#xD;&#xA; TBudget:ExpireDate&#xD;&#xA; TBudget:ItemCount&#xD;&#xA; TBudget:WeightInKilograms&#xD;&#xA; TBudget:ShippingByKilogram&#xD;&#xA;TBudget.Supplier.Addresses&#xD;&#xA; TBudget.Supplier.Addresses:Label.Name&#xD;&#xA; TBudget.Supplier.Addresses:Street&#xD;&#xA; TBudget.Supplier.Addresses:Number&#xD;&#xA; TBudget.Supplier.Addresses:POBox&#xD;&#xA; TBudget.Supplier.Addresses:Neighborhood.Code&#xD;&#xA; TBudget.Supplier.Addresses:Neighborhood.Name&#xD;&#xA; TBudget.Supplier.Addresses:Neighborhood.Remarks&#xD;&#xA; TBudget.Supplier.Addresses:City.Code&#xD;&#xA; TBudget.Supplier.Addresses:City.Name&#xD;&#xA; TBudget.Supplier.Addresses:City.Remarks&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Code&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Name&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Remarks&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Abbreviation&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Country.Code&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Country.Name&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Country.Remarks&#xD;&#xA; TBudget.Supplier.Addresses:PostalCode&#xD;&#xA;TBudget.Supplier.Phones&#xD;&#xA; TBudget.Supplier.Phones:Label.Name&#xD;&#xA; TBudget.Supplier.Phones:Number&#xD;&#xA;TBudget.Supplier.InternetAddresses&#xD;&#xA; TBudget.Supplier.InternetAddresses:Label.Name&#xD;&#xA; TBudget.Supplier.InternetAddresses:Address&#xD;&#xA;TBudget.Items&#xD;&#xA; TBudget.Items:Product.Code&#xD;&#xA; TBudget.Items:Product.Name&#xD;&#xA; TBudget.Items:Product.Remarks&#xD;&#xA; TBudget.Items:Product.Unity.Name&#xD;&#xA; TBudget.Items:Product.Unity.Abbreviation&#xD;&#xA; TBudget.Items:Product.Unity.WeightInKiloGrams&#xD;&#xA; TBudget.Items:Product.MinimumStock&#xD;&#xA; TBudget.Items:Product.MaximumStock&#xD;&#xA; TBudget.Items:Product.CurrentStock&#xD;&#xA; TBudget.Items:Product.Cost&#xD;&#xA; TBudget.Items:Product.ProfitRate&#xD;&#xA; TBudget.Items:Product.CurrentStockCost&#xD;&#xA; TBudget.Items:Product.Price&#xD;&#xA; TBudget.Items:Product.CurrentStockPrice&#xD;&#xA; TBudget.Items:Product.LastPurchaseDate&#xD;&#xA; TBudget.Items:Unity.Name&#xD;&#xA; TBudget.Items:Unity.Abbreviation&#xD;&#xA; TBudget.Items:Unity.WeightInKiloGrams&#xD;&#xA; TBudget.Items:Quantity&#xD;&#xA; TBudget.Items:UnityValue&#xD;&#xA; TBudget.Items:TotalValue&#xD;&#xA; TBudget.Items:Shipping&#xD;&#xA; TBudget.Items:WeightInKiloGrams&#xD;&#xA; TBudget.Items:KilogramValue&#xD;&#xA; TBudget.Items:ShippingByKilogram&#xD;&#xA;"/>
+      <ParentVars Value="TProductBudgetQuery&#xD;&#xA; TProductBudgetQuery:Product.Code&#xD;&#xA; TProductBudgetQuery:Product.Name&#xD;&#xA; TProductBudgetQuery:Product.Remarks&#xD;&#xA; TProductBudgetQuery:Product.Unity.Name&#xD;&#xA; TProductBudgetQuery:Product.Unity.Abbreviation&#xD;&#xA; TProductBudgetQuery:Product.Unity.WeightInKiloGrams&#xD;&#xA; TProductBudgetQuery:Product.MinimumStock&#xD;&#xA; TProductBudgetQuery:Product.MaximumStock&#xD;&#xA; TProductBudgetQuery:Product.CurrentStock&#xD;&#xA; TProductBudgetQuery:Product.Cost&#xD;&#xA; TProductBudgetQuery:Product.ProfitRate&#xD;&#xA; TProductBudgetQuery:Product.CurrentStockCost&#xD;&#xA; TProductBudgetQuery:Product.Price&#xD;&#xA; TProductBudgetQuery:Product.CurrentStockPrice&#xD;&#xA; TProductBudgetQuery:Product.LastPurchaseDate&#xD;&#xA; TProductBudgetQuery:MinDate&#xD;&#xA; TProductBudgetQuery:MaxDate&#xD;&#xA;TProductBudget&#xD;&#xA; TProductBudget:Product.Code&#xD;&#xA; TProductBudget:Product.Name&#xD;&#xA; TProductBudget:Product.Remarks&#xD;&#xA; TProductBudget:Product.Unity.Name&#xD;&#xA; TProductBudget:Product.Unity.Abbreviation&#xD;&#xA; TProductBudget:Product.Unity.WeightInKiloGrams&#xD;&#xA; TProductBudget:Product.MinimumStock&#xD;&#xA; TProductBudget:Product.MaximumStock&#xD;&#xA; TProductBudget:Product.CurrentStock&#xD;&#xA; TProductBudget:Product.Cost&#xD;&#xA; TProductBudget:Product.ProfitRate&#xD;&#xA; TProductBudget:Product.CurrentStockCost&#xD;&#xA; TProductBudget:Product.Price&#xD;&#xA; TProductBudget:Product.CurrentStockPrice&#xD;&#xA; TProductBudget:Product.LastPurchaseDate&#xD;&#xA; TProductBudget:Budget.Code&#xD;&#xA; TProductBudget:Budget.Name&#xD;&#xA; TProductBudget:Budget.Remarks&#xD;&#xA; TProductBudget:Budget.Supplier.Code&#xD;&#xA; TProductBudget:Budget.Supplier.Name&#xD;&#xA; TProductBudget:Budget.Supplier.Remarks&#xD;&#xA; TProductBudget:Budget.Supplier.Addresses&#xD;&#xA; TProductBudget:Budget.Supplier.Phones&#xD;&#xA; TProductBudget:Budget.Supplier.InternetAddresses&#xD;&#xA; TProductBudget:Budget.Supplier.NickName&#xD;&#xA; TProductBudget:Budget.Shipping&#xD;&#xA; TProductBudget:Budget.SumOfItems&#xD;&#xA; TProductBudget:Budget.TotalBudget&#xD;&#xA; TProductBudget:Budget.Items&#xD;&#xA; TProductBudget:Budget.Date&#xD;&#xA; TProductBudget:Budget.ExpireDate&#xD;&#xA; TProductBudget:Budget.ItemCount&#xD;&#xA; TProductBudget:Budget.WeightInKilograms&#xD;&#xA; TProductBudget:Budget.ShippingByKilogram&#xD;&#xA; TProductBudget:BudgetItem.Product.Code&#xD;&#xA; TProductBudget:BudgetItem.Product.Name&#xD;&#xA; TProductBudget:BudgetItem.Product.Remarks&#xD;&#xA; TProductBudget:BudgetItem.Product.Unity.Name&#xD;&#xA; TProductBudget:BudgetItem.Product.Unity.Abbreviation&#xD;&#xA; TProductBudget:BudgetItem.Product.Unity.WeightInKiloGrams&#xD;&#xA; TProductBudget:BudgetItem.Product.MinimumStock&#xD;&#xA; TProductBudget:BudgetItem.Product.MaximumStock&#xD;&#xA; TProductBudget:BudgetItem.Product.CurrentStock&#xD;&#xA; TProductBudget:BudgetItem.Product.Cost&#xD;&#xA; TProductBudget:BudgetItem.Product.ProfitRate&#xD;&#xA; TProductBudget:BudgetItem.Product.CurrentStockCost&#xD;&#xA; TProductBudget:BudgetItem.Product.Price&#xD;&#xA; TProductBudget:BudgetItem.Product.CurrentStockPrice&#xD;&#xA; TProductBudget:BudgetItem.Product.LastPurchaseDate&#xD;&#xA; TProductBudget:BudgetItem.Unity.Name&#xD;&#xA; TProductBudget:BudgetItem.Unity.Abbreviation&#xD;&#xA; TProductBudget:BudgetItem.Unity.WeightInKiloGrams&#xD;&#xA; TProductBudget:BudgetItem.Quantity&#xD;&#xA; TProductBudget:BudgetItem.UnityValue&#xD;&#xA; TProductBudget:BudgetItem.TotalValue&#xD;&#xA; TProductBudget:BudgetItem.Shipping&#xD;&#xA; TProductBudget:BudgetItem.WeightInKiloGrams&#xD;&#xA; TProductBudget:BudgetItem.KilogramValue&#xD;&#xA; TProductBudget:BudgetItem.ShippingByKilogram&#xD;&#xA;TProductBudget.Budget.Supplier.Addresses&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:Label.Name&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:Street&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:Number&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:POBox&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:Neighborhood.Code&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:Neighborhood.Name&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:Neighborhood.Remarks&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:City.Code&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:City.Name&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:City.Remarks&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:City.State.Code&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:City.State.Name&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:City.State.Remarks&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:City.State.Abbreviation&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:City.State.Country.Code&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:City.State.Country.Name&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:City.State.Country.Remarks&#xD;&#xA; TProductBudget.Budget.Supplier.Addresses:PostalCode&#xD;&#xA;TProductBudget.Budget.Supplier.Phones&#xD;&#xA; TProductBudget.Budget.Supplier.Phones:Label.Name&#xD;&#xA; TProductBudget.Budget.Supplier.Phones:Number&#xD;&#xA;TProductBudget.Budget.Supplier.InternetAddresses&#xD;&#xA; TProductBudget.Budget.Supplier.InternetAddresses:Label.Name&#xD;&#xA; TProductBudget.Budget.Supplier.InternetAddresses:Address&#xD;&#xA;TProductBudget.Budget.Items&#xD;&#xA; TProductBudget.Budget.Items:Product.Code&#xD;&#xA; TProductBudget.Budget.Items:Product.Name&#xD;&#xA; TProductBudget.Budget.Items:Product.Remarks&#xD;&#xA; TProductBudget.Budget.Items:Product.Unity.Name&#xD;&#xA; TProductBudget.Budget.Items:Product.Unity.Abbreviation&#xD;&#xA; TProductBudget.Budget.Items:Product.Unity.WeightInKiloGrams&#xD;&#xA; TProductBudget.Budget.Items:Product.MinimumStock&#xD;&#xA; TProductBudget.Budget.Items:Product.MaximumStock&#xD;&#xA; TProductBudget.Budget.Items:Product.CurrentStock&#xD;&#xA; TProductBudget.Budget.Items:Product.Cost&#xD;&#xA; TProductBudget.Budget.Items:Product.ProfitRate&#xD;&#xA; TProductBudget.Budget.Items:Product.CurrentStockCost&#xD;&#xA; TProductBudget.Budget.Items:Product.Price&#xD;&#xA; TProductBudget.Budget.Items:Product.CurrentStockPrice&#xD;&#xA; TProductBudget.Budget.Items:Product.LastPurchaseDate&#xD;&#xA; TProductBudget.Budget.Items:Unity.Name&#xD;&#xA; TProductBudget.Budget.Items:Unity.Abbreviation&#xD;&#xA; TProductBudget.Budget.Items:Unity.WeightInKiloGrams&#xD;&#xA; TProductBudget.Budget.Items:Quantity&#xD;&#xA; TProductBudget.Budget.Items:UnityValue&#xD;&#xA; TProductBudget.Budget.Items:TotalValue&#xD;&#xA; TProductBudget.Budget.Items:Shipping&#xD;&#xA; TProductBudget.Budget.Items:WeightInKiloGrams&#xD;&#xA; TProductBudget.Budget.Items:KilogramValue&#xD;&#xA; TProductBudget.Budget.Items:ShippingByKilogram&#xD;&#xA;"/>
     </Pages>
   </LazReport>
 </CONFIG>

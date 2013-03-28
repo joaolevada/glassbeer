@@ -84,6 +84,7 @@ type
     _WeightInKilograms: TPressDouble;
     _KilogramValue: TPressCurrency;
     _ShippingByKilogram: TPressCurrency;
+    { TODO 1 -ojoaolevada -cimplementation : Kilogram total value (TotalValue + Shipping) calculated }
   private
     function GetKilogramValue: Currency;
     function GetQuantity: Double;
