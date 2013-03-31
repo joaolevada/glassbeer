@@ -5,7 +5,8 @@ unit MainFrm;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus;
+  Classes, SysUtils, FileUtil, LR_E_HTM, LR_BarC, LR_E_TXT, Forms, Controls,
+  Graphics, Dialogs, Menus;
 
 type
 
@@ -17,6 +18,9 @@ type
     ExitMenuItem: TMenuItem;
     Icons16ImageList: TImageList;
     Icons32ImageList: TImageList;
+    MainfrBarCodeObject: TfrBarCodeObject;
+    MainfrHTMExport: TfrHTMExport;
+    MainfrTextExport: TfrTextExport;
     MenuItem1: TMenuItem;
     LocationMenuItem: TMenuItem;
     FermentacaoMenu: TMenuItem;

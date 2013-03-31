@@ -66,7 +66,7 @@
             <Left Value="0"/>
             <Top Value="112"/>
             <Width Value="1064"/>
-            <Height Value="24"/>
+            <Height Value="23"/>
           </Size>
           <Flags Value="48"/>
           <Data>
@@ -167,9 +167,9 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="36"/>
-            <Top Value="116"/>
+            <Top Value="114"/>
             <Width Value="112"/>
-            <Height Value="16"/>
+            <Height Value="17"/>
           </Size>
           <Flags Value="3"/>
           <FillColor Value="clNone"/>
@@ -177,7 +177,7 @@
             <FrameColor Value="clBlack"/>
             <FrameStyle Value="frsSolid"/>
             <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
+            <FrameBorders Value="frbBottom"/>
           </Frames>
           <Data>
             <Format Value="556"/>
@@ -210,9 +210,9 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="160"/>
-            <Top Value="116"/>
-            <Width Value="592"/>
-            <Height Value="16"/>
+            <Top Value="114"/>
+            <Width Value="580"/>
+            <Height Value="17"/>
           </Size>
           <Flags Value="3"/>
           <FillColor Value="clNone"/>
@@ -220,7 +220,7 @@
             <FrameColor Value="clBlack"/>
             <FrameStyle Value="frsSolid"/>
             <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
+            <FrameBorders Value="frbBottom"/>
           </Frames>
           <Data>
             <Format Value="556"/>
@@ -252,10 +252,10 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="760"/>
-            <Top Value="116"/>
-            <Width Value="52"/>
-            <Height Value="16"/>
+            <Left Value="752"/>
+            <Top Value="114"/>
+            <Width Value="60"/>
+            <Height Value="17"/>
           </Size>
           <Flags Value="3"/>
           <FillColor Value="clNone"/>
@@ -263,7 +263,7 @@
             <FrameColor Value="clBlack"/>
             <FrameStyle Value="frsSolid"/>
             <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
+            <FrameBorders Value="frbBottom"/>
           </Frames>
           <Data>
             <Format Value="556"/>
@@ -296,9 +296,9 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="824"/>
-            <Top Value="116"/>
+            <Top Value="114"/>
             <Width Value="84"/>
-            <Height Value="16"/>
+            <Height Value="17"/>
           </Size>
           <Flags Value="3"/>
           <FillColor Value="clNone"/>
@@ -306,7 +306,7 @@
             <FrameColor Value="clBlack"/>
             <FrameStyle Value="frsSolid"/>
             <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
+            <FrameBorders Value="frbBottom"/>
           </Frames>
           <Data>
             <Format Value="556"/>
@@ -339,9 +339,9 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="916"/>
-            <Top Value="116"/>
+            <Top Value="114"/>
             <Width Value="108"/>
-            <Height Value="18"/>
+            <Height Value="19"/>
           </Size>
           <Flags Value="3"/>
           <FillColor Value="clNone"/>
@@ -349,7 +349,7 @@
             <FrameColor Value="clBlack"/>
             <FrameStyle Value="frsSolid"/>
             <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
+            <FrameBorders Value="frbBottom"/>
           </Frames>
           <Data>
             <Format Value="556"/>
@@ -375,25 +375,6 @@
           <Angle Value="0"/>
         </Object10>
         <Object11>
-          <Name Value="Line1"/>
-          <ClassName Value="TfrLineView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtLine"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="36"/>
-            <Top Value="136"/>
-            <Width Value="992"/>
-            <Height Value="0"/>
-          </Size>
-          <Flags Value="0"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="2"/>
-          </Frames>
-        </Object11>
-        <Object12>
           <Name Value="Memo7"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -435,8 +416,8 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object12>
-        <Object13>
+        </Object11>
+        <Object12>
           <Name Value="Memo8"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -445,7 +426,7 @@
           <Size>
             <Left Value="160"/>
             <Top Value="168"/>
-            <Width Value="592"/>
+            <Width Value="580"/>
             <Height Value="18"/>
           </Size>
           <Flags Value="3"/>
@@ -478,17 +459,17 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object13>
-        <Object14>
+        </Object12>
+        <Object13>
           <Name Value="Memo9"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="760"/>
+            <Left Value="752"/>
             <Top Value="168"/>
-            <Width Value="52"/>
+            <Width Value="60"/>
             <Height Value="18"/>
           </Size>
           <Flags Value="3"/>
@@ -521,8 +502,8 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object14>
-        <Object15>
+        </Object13>
+        <Object14>
           <Name Value="Memo10"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -564,8 +545,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object15>
-        <Object16>
+        </Object14>
+        <Object15>
           <Name Value="Memo11"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -607,8 +588,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object16>
-        <Object17>
+        </Object15>
+        <Object16>
           <Name Value="Memo12"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -650,8 +631,8 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object17>
-        <Object18>
+        </Object16>
+        <Object17>
           <Name Value="Memo13"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -693,8 +674,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object18>
-        <Object19>
+        </Object17>
+        <Object18>
           <Name Value="Line2"/>
           <ClassName Value="TfrLineView"/>
           <Visible Value="1"/>
@@ -712,8 +693,8 @@
             <FrameStyle Value="frsSolid"/>
             <FrameWidth Value="2"/>
           </Frames>
-        </Object19>
-        <Object20>
+        </Object18>
+        <Object19>
           <Name Value="Memo14"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -755,17 +736,17 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object20>
-        <Object21>
+        </Object19>
+        <Object20>
           <Name Value="Memo15"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="688"/>
+            <Left Value="824"/>
             <Top Value="252"/>
-            <Width Value="220"/>
+            <Width Value="84"/>
             <Height Value="18"/>
           </Size>
           <Flags Value="3"/>
@@ -779,7 +760,50 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="Total do estoque atual [FORMATFLOAT(['#,###,##0.000'], [ SUM( [TProduct:CurrentStock], [MasterData1] ) ] )]&#xD;&#xA;"/>
+            <Memo Value="[FORMATFLOAT(['#,###,##0.000'], [ SUM( [TProduct:CurrentStock], [MasterData1] ) ] )]&#xD;&#xA;"/>
+            <Script Value=""/>
+          </Data>
+          <Font>
+            <Name Value="Arial"/>
+            <Size Value="10"/>
+            <Color Value="clBlack"/>
+            <Charset Value="0"/>
+            <Style Value="fsBold"/>
+          </Font>
+          <Highlight>
+            <FontStyle Value="2"/>
+            <FontColor Value="clBlack"/>
+            <FillColor Value="clWhite"/>
+            <HighlightStr Value=""/>
+          </Highlight>
+          <Alignment Value="taRightJustify"/>
+          <Layout Value="tlTop"/>
+          <Angle Value="0"/>
+        </Object20>
+        <Object21>
+          <Name Value="Memo16"/>
+          <ClassName Value="TfrMemoView"/>
+          <Visible Value="1"/>
+          <Typ Value="gtMemo"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="668"/>
+            <Top Value="252"/>
+            <Width Value="152"/>
+            <Height Value="18"/>
+          </Size>
+          <Flags Value="3"/>
+          <FillColor Value="clNone"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="1"/>
+            <FrameBorders Value=""/>
+          </Frames>
+          <Data>
+            <Format Value="556"/>
+            <FormatStr Value=""/>
+            <Memo Value="Total do estoque atual:&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -807,119 +831,119 @@
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProductQuery:Code"/>
+          <Item Value="TProduct:Code"/>
         </Objects1>
         <Objects2>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProductQuery:Name"/>
+          <Item Value="TProduct:Cost"/>
         </Objects2>
         <Objects3>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:Code"/>
+          <Item Value="TProduct:CurrentStock"/>
         </Objects3>
         <Objects4>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:Name"/>
+          <Item Value="TProduct:CurrentStockCost"/>
         </Objects4>
         <Objects5>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:Remarks"/>
+          <Item Value="TProduct:CurrentStockPrice"/>
         </Objects5>
         <Objects6>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:Unity.Name"/>
+          <Item Value="TProduct:LastPurchaseDate"/>
         </Objects6>
         <Objects7>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:Unity.Abbreviation"/>
+          <Item Value="TProduct:MaximumStock"/>
         </Objects7>
         <Objects8>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:Unity.WeightInKiloGrams"/>
+          <Item Value="TProduct:MinimumStock"/>
         </Objects8>
         <Objects9>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:MinimumStock"/>
+          <Item Value="TProduct:Name"/>
         </Objects9>
         <Objects10>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:MaximumStock"/>
+          <Item Value="TProduct:Price"/>
         </Objects10>
         <Objects11>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:CurrentStock"/>
+          <Item Value="TProduct:ProfitRate"/>
         </Objects11>
         <Objects12>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:Cost"/>
+          <Item Value="TProduct:Remarks"/>
         </Objects12>
         <Objects13>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:ProfitRate"/>
+          <Item Value="TProduct:Unity.Abbreviation"/>
         </Objects13>
         <Objects14>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:CurrentStockCost"/>
+          <Item Value="TProduct:Unity.Name"/>
         </Objects14>
         <Objects15>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:Price"/>
+          <Item Value="TProduct:Unity.WeightInKiloGrams"/>
         </Objects15>
         <Objects16>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:CurrentStockPrice"/>
+          <Item Value="TProductQuery:Code"/>
         </Objects16>
         <Objects17>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TProduct:LastPurchaseDate"/>
+          <Item Value="TProductQuery:Name"/>
         </Objects17>
       </FVal>
       <ParentVars Value="TProductQuery&#xD;&#xA; TProductQuery:Code&#xD;&#xA; TProductQuery:Name&#xD;&#xA;TProduct&#xD;&#xA; TProduct:Code&#xD;&#xA; TProduct:Name&#xD;&#xA; TProduct:Remarks&#xD;&#xA; TProduct:Unity.Name&#xD;&#xA; TProduct:Unity.Abbreviation&#xD;&#xA; TProduct:Unity.WeightInKiloGrams&#xD;&#xA; TProduct:MinimumStock&#xD;&#xA; TProduct:MaximumStock&#xD;&#xA; TProduct:CurrentStock&#xD;&#xA; TProduct:Cost&#xD;&#xA; TProduct:ProfitRate&#xD;&#xA; TProduct:CurrentStockCost&#xD;&#xA; TProduct:Price&#xD;&#xA; TProduct:CurrentStockPrice&#xD;&#xA; TProduct:LastPurchaseDate&#xD;&#xA;"/>

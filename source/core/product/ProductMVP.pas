@@ -126,14 +126,15 @@ begin
   Result := 'Budget.Name(100, "Orçamento");' +
     'Budget.Date(50, "Data");' +
     'Budget.Supplier.Name(100, "Fornecedor");' +
-    'BudgetItem.Unity.Abbreviation(30, "Unidade");' +
+    'BudgetItem.Unity.Abbreviation(46, "Unidade");' +
     'BudgetItem.Quantity(30, "Qtde");' +
     'BudgetItem.UnityValue(50, "V.unit");' +
     'BudgetItem.TotalValue(65, "V.Total");' +
     'BudgetItem.WeightInKilograms(45, "P.tot.[kg]");' +
-    'BudgetItem.KilogramValue(45, "Vl.p/kg");' +
+    'BudgetItem.KilogramValue(65, "Vlr.p/kg s/f");' +
     'BudgetItem.Shipping(50, "Frete");' +
-    'BudgetItem.ShippingByKilogram(45,"Fr.p/kg")' ;
+    'BudgetItem.ShippingByKilogram(45, "Fr.p/kg");' +
+    'BudgetItem.KilogramTotalValue(65, "Vlr.p/kg c/f")';
 end;
 
 { TShowProductBudgetsCommand }
@@ -321,9 +322,9 @@ begin
     'UnityValue(50, "Vl. unit.");' +
     'TotalValue(70, "Total");' +
     'WeightInKilograms(55, "Peso[kg]");' +
-    'KilogramValue(45, "Vl.kg");' +
-    'Shipping(80, "Frete[prop.]")' {+
-    'ShippingByKilogram(65, "Frete p/ kg.")'}) as TPressMVPItemsPresenter;
+    'KilogramValue(48, "Vlr.kg s/f");' +
+    'Shipping(80, "Frete[prop.]");' +
+    'KilogramTotalValue(48, "Vlr.kg c/f")') as TPressMVPItemsPresenter;
   VProductsPresenter.BindCommand(TPressMVPAddItemsCommand,
     'AddProductSpeedButton');
   VProductsPresenter.BindCommand(TPressMVPEditItemCommand,
@@ -338,6 +339,10 @@ begin
   CreateSubPresenter('WeightInKilograms', 'WeightInKilogramsEdit1');
   CreateSubPresenter('ShippingByKilogram', 'ShippingByKilogramEdit');
   CreateSubPresenter('ShippingByKilogram', 'ShippingByKilogramEdit1');
+  CreateSubPresenter('KilogramValue', 'KilogramValueEdit');
+  CreateSubPresenter('KilogramValue', 'KilogramValueEdit1');
+  CreateSubPresenter('KilogramTotalValue', 'KilogramTotalValueEdit');
+  CreateSubPresenter('KilogramTotalValue', 'KilogramTotalValueEdit1');
 end;
 
 { TProductQueryPresenter }

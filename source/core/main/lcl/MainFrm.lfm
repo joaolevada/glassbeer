@@ -2010,4 +2010,16 @@ object MainForm: TMainForm
       0033000000330000003300000000
     }
   end
+  object MainfrHTMExport: TfrHTMExport
+    left = 316
+    top = 11
+  end
+  object MainfrBarCodeObject: TfrBarCodeObject
+    left = 316
+    top = 64
+  end
+  object MainfrTextExport: TfrTextExport
+    left = 316
+    top = 116
+  end
 end

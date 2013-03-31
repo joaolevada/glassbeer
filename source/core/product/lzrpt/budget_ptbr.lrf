@@ -2,7 +2,7 @@
 <CONFIG>
   <LazReport>
     <Version Value="25"/>
-    <Title Value="Orçamento para compra"/>
+    <Title Value=""/>
     <Subject Value=""/>
     <KeyWords Value=""/>
     <Comments Value=""/>
@@ -14,7 +14,7 @@
     <Pages>
       <PrintToDefault Value="False"/>
       <DoublePass Value="True"/>
-      <SelectedPrinter Value="pdfFactory Pro"/>
+      <SelectedPrinter Value="HP DeskJet 840C/841C/842C/843C"/>
       <PageCount Value="1"/>
       <Page1>
         <Name Value="Page1"/>
@@ -35,7 +35,7 @@
         <ColCount Value="1"/>
         <ColGap Value="0"/>
         <LayoutOrder Value="loColumns"/>
-        <ObjectCount Value="34"/>
+        <ObjectCount Value="32"/>
         <Object1>
           <Name Value="PageHeader1"/>
           <ClassName Value="TfrBandView"/>
@@ -66,7 +66,7 @@
             <Left Value="0"/>
             <Top Value="37"/>
             <Width Value="752"/>
-            <Height Value="72"/>
+            <Height Value="68"/>
           </Size>
           <Flags Value="48"/>
           <Data>
@@ -126,7 +126,7 @@
             <Left Value="0"/>
             <Top Value="328"/>
             <Width Value="752"/>
-            <Height Value="65"/>
+            <Height Value="61"/>
           </Size>
           <Flags Value="48"/>
           <Data>
@@ -309,25 +309,6 @@
           <Angle Value="0"/>
         </Object9>
         <Object10>
-          <Name Value="Line1"/>
-          <ClassName Value="TfrLineView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtLine"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="37"/>
-            <Top Value="79"/>
-            <Width Value="676"/>
-            <Height Value="0"/>
-          </Size>
-          <Flags Value="0"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="2"/>
-          </Frames>
-        </Object10>
-        <Object11>
           <Name Value="Memo5"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -335,7 +316,7 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="36"/>
-            <Top Value="84"/>
+            <Top Value="81"/>
             <Width Value="504"/>
             <Height Value="18"/>
           </Size>
@@ -369,8 +350,8 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object11>
-        <Object12>
+        </Object10>
+        <Object11>
           <Name Value="Memo6"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -378,7 +359,7 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="588"/>
-            <Top Value="84"/>
+            <Top Value="81"/>
             <Width Value="128"/>
             <Height Value="18"/>
           </Size>
@@ -412,8 +393,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object12>
-        <Object13>
+        </Object11>
+        <Object12>
           <Name Value="Memo7"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -455,8 +436,8 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object13>
-        <Object14>
+        </Object12>
+        <Object13>
           <Name Value="Memo8"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -468,7 +449,7 @@
             <Width Value="360"/>
             <Height Value="18"/>
           </Size>
-          <Flags Value="3"/>
+          <Flags Value="1"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -498,8 +479,8 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object14>
-        <Object15>
+        </Object13>
+        <Object14>
           <Name Value="Memo9"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -511,7 +492,7 @@
             <Width Value="52"/>
             <Height Value="18"/>
           </Size>
-          <Flags Value="3"/>
+          <Flags Value="1"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -522,7 +503,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="Unid.&#xD;&#xA;"/>
+            <Memo Value="Unidade&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -541,8 +522,8 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object15>
-        <Object16>
+        </Object14>
+        <Object15>
           <Name Value="Memo10"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -554,7 +535,7 @@
             <Width Value="52"/>
             <Height Value="18"/>
           </Size>
-          <Flags Value="3"/>
+          <Flags Value="1"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -581,11 +562,11 @@
             <FillColor Value="clWhite"/>
             <HighlightStr Value=""/>
           </Highlight>
-          <Alignment Value="taLeftJustify"/>
+          <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object16>
-        <Object17>
+        </Object15>
+        <Object16>
           <Name Value="Memo11"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -597,7 +578,7 @@
             <Width Value="76"/>
             <Height Value="18"/>
           </Size>
-          <Flags Value="3"/>
+          <Flags Value="1"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -608,7 +589,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="Unitário&#xD;&#xA;"/>
+            <Memo Value="Valor unitário&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -627,8 +608,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object17>
-        <Object18>
+        </Object16>
+        <Object17>
           <Name Value="Memo12"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -640,7 +621,7 @@
             <Width Value="96"/>
             <Height Value="18"/>
           </Size>
-          <Flags Value="3"/>
+          <Flags Value="1"/>
           <FillColor Value="clNone"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -670,8 +651,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object18>
-        <Object19>
+        </Object17>
+        <Object18>
           <Name Value="Memo13"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -713,8 +694,8 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object19>
-        <Object20>
+        </Object18>
+        <Object19>
           <Name Value="Memo14"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -756,8 +737,8 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object20>
-        <Object21>
+        </Object19>
+        <Object20>
           <Name Value="Memo15"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -799,8 +780,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object21>
-        <Object22>
+        </Object20>
+        <Object21>
           <Name Value="Memo16"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -842,8 +823,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object22>
-        <Object23>
+        </Object21>
+        <Object22>
           <Name Value="Memo17"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -885,8 +866,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object23>
-        <Object24>
+        </Object22>
+        <Object23>
           <Name Value="Line2"/>
           <ClassName Value="TfrLineView"/>
           <Visible Value="1"/>
@@ -904,8 +885,8 @@
             <FrameStyle Value="frsSolid"/>
             <FrameWidth Value="2"/>
           </Frames>
-        </Object24>
-        <Object25>
+        </Object23>
+        <Object24>
           <Name Value="Memo18"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -947,8 +928,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object25>
-        <Object26>
+        </Object24>
+        <Object25>
           <Name Value="Memo19"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -957,7 +938,7 @@
           <Size>
             <Left Value="44"/>
             <Top Value="336"/>
-            <Width Value="172"/>
+            <Width Value="220"/>
             <Height Value="14"/>
           </Size>
           <Flags Value="1"/>
@@ -971,7 +952,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="[TBudget:Items.Count] item(ns)&#xD;&#xA;"/>
+            <Memo Value="[TBudget:Items.Count] item(ns); Peso total (kg): [TBudget:WeightInKilograms.Format('%3n')]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -990,8 +971,8 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object26>
-        <Object27>
+        </Object25>
+        <Object26>
           <Name Value="Memo20"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -1033,8 +1014,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object27>
-        <Object28>
+        </Object26>
+        <Object27>
           <Name Value="Line3"/>
           <ClassName Value="TfrLineView"/>
           <Visible Value="1"/>
@@ -1052,8 +1033,8 @@
             <FrameStyle Value="frsSolid"/>
             <FrameWidth Value="2"/>
           </Frames>
-        </Object28>
-        <Object29>
+        </Object27>
+        <Object28>
           <Name Value="Memo21"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -1095,8 +1076,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object29>
-        <Object30>
+        </Object28>
+        <Object29>
           <Name Value="Memo22"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -1138,8 +1119,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object30>
-        <Object31>
+        </Object29>
+        <Object30>
           <Name Value="Memo23"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -1181,8 +1162,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object31>
-        <Object32>
+        </Object30>
+        <Object31>
           <Name Value="Memo24"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -1224,51 +1205,8 @@
           <Alignment Value="taRightJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object32>
-        <Object33>
-          <Name Value="Memo25"/>
-          <ClassName Value="TfrMemoView"/>
-          <Visible Value="1"/>
-          <Typ Value="gtMemo"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="44"/>
-            <Top Value="352"/>
-            <Width Value="172"/>
-            <Height Value="14"/>
-          </Size>
-          <Flags Value="1"/>
-          <FillColor Value="clNone"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
-          </Frames>
-          <Data>
-            <Format Value="556"/>
-            <FormatStr Value=""/>
-            <Memo Value="Peso total (kg): [TBudget:WeightInKilograms.Format('%3n')]&#xD;&#xA;"/>
-            <Script Value=""/>
-          </Data>
-          <Font>
-            <Name Value="Arial"/>
-            <Size Value="8"/>
-            <Color Value="clBlack"/>
-            <Charset Value="0"/>
-            <Style Value="fsBold"/>
-          </Font>
-          <Highlight>
-            <FontStyle Value="2"/>
-            <FontColor Value="clBlack"/>
-            <FillColor Value="clWhite"/>
-            <HighlightStr Value=""/>
-          </Highlight>
-          <Alignment Value="taLeftJustify"/>
-          <Layout Value="tlTop"/>
-          <Angle Value="0"/>
-        </Object33>
-        <Object34>
+        </Object31>
+        <Object32>
           <Name Value="Memo26"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="1"/>
@@ -1276,9 +1214,9 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="44"/>
-            <Top Value="368"/>
-            <Width Value="172"/>
-            <Height Value="14"/>
+            <Top Value="352"/>
+            <Width Value="356"/>
+            <Height Value="30"/>
           </Size>
           <Flags Value="1"/>
           <FillColor Value="clNone"/>
@@ -1291,7 +1229,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="Valor do frete por quilo: [TBudget:ShippingByKilogram.Format('%2n')]&#xD;&#xA;"/>
+            <Memo Value="Valor do frete por quilo: [TBudget:ShippingByKilogram.Format('%2n')]&#xD;&#xA;Valor médio do kg (sem frete): [TBudget:KilogramValue.Format('%2n')]; Valor médio do kg (com frete): [TBudget:KilogramTotalValue.Format('%2n')]&#xD;&#xA;"/>
             <Script Value=""/>
           </Data>
           <Font>
@@ -1299,7 +1237,7 @@
             <Size Value="8"/>
             <Color Value="clBlack"/>
             <Charset Value="0"/>
-            <Style Value="fsBold"/>
+            <Style Value=""/>
           </Font>
           <Highlight>
             <FontStyle Value="2"/>
@@ -1310,191 +1248,191 @@
           <Alignment Value="taLeftJustify"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
-        </Object34>
+        </Object32>
       </Page1>
       <FVal>
-        <Count Value="66"/>
+        <Count Value="69"/>
         <Objects1>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Code"/>
+          <Item Value="TBudget.Items:KilogramTotalValue"/>
         </Objects1>
         <Objects2>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Name"/>
+          <Item Value="TBudget.Items:KilogramValue"/>
         </Objects2>
         <Objects3>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Remarks"/>
+          <Item Value="TBudget.Items:Product.Code"/>
         </Objects3>
         <Objects4>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.Code"/>
+          <Item Value="TBudget.Items:Product.Cost"/>
         </Objects4>
         <Objects5>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.Name"/>
+          <Item Value="TBudget.Items:Product.CurrentStock"/>
         </Objects5>
         <Objects6>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.Remarks"/>
+          <Item Value="TBudget.Items:Product.CurrentStockCost"/>
         </Objects6>
         <Objects7>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.Addresses"/>
+          <Item Value="TBudget.Items:Product.CurrentStockPrice"/>
         </Objects7>
         <Objects8>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.Phones"/>
+          <Item Value="TBudget.Items:Product.LastPurchaseDate"/>
         </Objects8>
         <Objects9>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.InternetAddresses"/>
+          <Item Value="TBudget.Items:Product.MaximumStock"/>
         </Objects9>
         <Objects10>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Supplier.NickName"/>
+          <Item Value="TBudget.Items:Product.MinimumStock"/>
         </Objects10>
         <Objects11>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Shipping"/>
+          <Item Value="TBudget.Items:Product.Name"/>
         </Objects11>
         <Objects12>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:SumOfItems"/>
+          <Item Value="TBudget.Items:Product.Price"/>
         </Objects12>
         <Objects13>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:TotalBudget"/>
+          <Item Value="TBudget.Items:Product.ProfitRate"/>
         </Objects13>
         <Objects14>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Items"/>
+          <Item Value="TBudget.Items:Product.Remarks"/>
         </Objects14>
         <Objects15>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:Date"/>
+          <Item Value="TBudget.Items:Product.Unity.Abbreviation"/>
         </Objects15>
         <Objects16>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:ExpireDate"/>
+          <Item Value="TBudget.Items:Product.Unity.Name"/>
         </Objects16>
         <Objects17>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:ItemCount"/>
+          <Item Value="TBudget.Items:Product.Unity.WeightInKiloGrams"/>
         </Objects17>
         <Objects18>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:WeightInKilograms"/>
+          <Item Value="TBudget.Items:Quantity"/>
         </Objects18>
         <Objects19>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget:ShippingByKilogram"/>
+          <Item Value="TBudget.Items:Shipping"/>
         </Objects19>
         <Objects20>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:Label.Name"/>
+          <Item Value="TBudget.Items:ShippingByKilogram"/>
         </Objects20>
         <Objects21>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:Street"/>
+          <Item Value="TBudget.Items:TotalValue"/>
         </Objects21>
         <Objects22>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:Number"/>
+          <Item Value="TBudget.Items:Unity.Abbreviation"/>
         </Objects22>
         <Objects23>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:POBox"/>
+          <Item Value="TBudget.Items:Unity.Name"/>
         </Objects23>
         <Objects24>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:Neighborhood.Code"/>
+          <Item Value="TBudget.Items:Unity.WeightInKiloGrams"/>
         </Objects24>
         <Objects25>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:Neighborhood.Name"/>
+          <Item Value="TBudget.Items:UnityValue"/>
         </Objects25>
         <Objects26>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:Neighborhood.Remarks"/>
+          <Item Value="TBudget.Items:WeightInKiloGrams"/>
         </Objects26>
         <Objects27>
           <Typ Value="0"/>
@@ -1522,262 +1460,283 @@
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Code"/>
+          <Item Value="TBudget.Supplier.Addresses:City.State.Abbreviation"/>
         </Objects30>
         <Objects31>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Name"/>
+          <Item Value="TBudget.Supplier.Addresses:City.State.Code"/>
         </Objects31>
         <Objects32>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Remarks"/>
+          <Item Value="TBudget.Supplier.Addresses:City.State.Country.Code"/>
         </Objects32>
         <Objects33>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Abbreviation"/>
+          <Item Value="TBudget.Supplier.Addresses:City.State.Country.Name"/>
         </Objects33>
         <Objects34>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Country.Code"/>
+          <Item Value="TBudget.Supplier.Addresses:City.State.Country.Remarks"/>
         </Objects34>
         <Objects35>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Country.Name"/>
+          <Item Value="TBudget.Supplier.Addresses:City.State.Name"/>
         </Objects35>
         <Objects36>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:City.State.Country.Remarks"/>
+          <Item Value="TBudget.Supplier.Addresses:City.State.Remarks"/>
         </Objects36>
         <Objects37>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Addresses:PostalCode"/>
+          <Item Value="TBudget.Supplier.Addresses:Label.Name"/>
         </Objects37>
         <Objects38>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Phones:Label.Name"/>
+          <Item Value="TBudget.Supplier.Addresses:Neighborhood.Code"/>
         </Objects38>
         <Objects39>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.Phones:Number"/>
+          <Item Value="TBudget.Supplier.Addresses:Neighborhood.Name"/>
         </Objects39>
         <Objects40>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.InternetAddresses:Label.Name"/>
+          <Item Value="TBudget.Supplier.Addresses:Neighborhood.Remarks"/>
         </Objects40>
         <Objects41>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Supplier.InternetAddresses:Address"/>
+          <Item Value="TBudget.Supplier.Addresses:Number"/>
         </Objects41>
         <Objects42>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Code"/>
+          <Item Value="TBudget.Supplier.Addresses:POBox"/>
         </Objects42>
         <Objects43>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Name"/>
+          <Item Value="TBudget.Supplier.Addresses:PostalCode"/>
         </Objects43>
         <Objects44>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Remarks"/>
+          <Item Value="TBudget.Supplier.Addresses:Street"/>
         </Objects44>
         <Objects45>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Unity.Name"/>
+          <Item Value="TBudget.Supplier.InternetAddresses:Address"/>
         </Objects45>
         <Objects46>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Unity.Abbreviation"/>
+          <Item Value="TBudget.Supplier.InternetAddresses:Label.Name"/>
         </Objects46>
         <Objects47>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Unity.WeightInKiloGrams"/>
+          <Item Value="TBudget.Supplier.Phones:Label.Name"/>
         </Objects47>
         <Objects48>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.MinimumStock"/>
+          <Item Value="TBudget.Supplier.Phones:Number"/>
         </Objects48>
         <Objects49>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.MaximumStock"/>
+          <Item Value="TBudget:Code"/>
         </Objects49>
         <Objects50>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.CurrentStock"/>
+          <Item Value="TBudget:Date"/>
         </Objects50>
         <Objects51>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Cost"/>
+          <Item Value="TBudget:ExpireDate"/>
         </Objects51>
         <Objects52>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.ProfitRate"/>
+          <Item Value="TBudget:ItemCount"/>
         </Objects52>
         <Objects53>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.CurrentStockCost"/>
+          <Item Value="TBudget:Items"/>
         </Objects53>
         <Objects54>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.Price"/>
+          <Item Value="TBudget:KilogramTotalValue"/>
         </Objects54>
         <Objects55>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.CurrentStockPrice"/>
+          <Item Value="TBudget:KilogramValue"/>
         </Objects55>
         <Objects56>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Product.LastPurchaseDate"/>
+          <Item Value="TBudget:Name"/>
         </Objects56>
         <Objects57>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Unity.Name"/>
+          <Item Value="TBudget:Remarks"/>
         </Objects57>
         <Objects58>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Unity.Abbreviation"/>
+          <Item Value="TBudget:Shipping"/>
         </Objects58>
         <Objects59>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Unity.WeightInKiloGrams"/>
+          <Item Value="TBudget:ShippingByKilogram"/>
         </Objects59>
         <Objects60>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Quantity"/>
+          <Item Value="TBudget:SumOfItems"/>
         </Objects60>
         <Objects61>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:UnityValue"/>
+          <Item Value="TBudget:Supplier.Addresses"/>
         </Objects61>
         <Objects62>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:TotalValue"/>
+          <Item Value="TBudget:Supplier.Code"/>
         </Objects62>
         <Objects63>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:Shipping"/>
+          <Item Value="TBudget:Supplier.InternetAddresses"/>
         </Objects63>
         <Objects64>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:WeightInKiloGrams"/>
+          <Item Value="TBudget:Supplier.Name"/>
         </Objects64>
         <Objects65>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:KilogramValue"/>
+          <Item Value="TBudget:Supplier.NickName"/>
         </Objects65>
         <Objects66>
           <Typ Value="0"/>
           <OtherKind Value="0"/>
           <Dataset Value=""/>
           <Field Value=""/>
-          <Item Value="TBudget.Items:ShippingByKilogram"/>
+          <Item Value="TBudget:Supplier.Phones"/>
         </Objects66>
+        <Objects67>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TBudget:Supplier.Remarks"/>
+        </Objects67>
+        <Objects68>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TBudget:TotalBudget"/>
+        </Objects68>
+        <Objects69>
+          <Typ Value="0"/>
+          <OtherKind Value="0"/>
+          <Dataset Value=""/>
+          <Field Value=""/>
+          <Item Value="TBudget:WeightInKilograms"/>
+        </Objects69>
       </FVal>
-      <ParentVars Value="TBudget&#xD;&#xA; TBudget:Code&#xD;&#xA; TBudget:Name&#xD;&#xA; TBudget:Remarks&#xD;&#xA; TBudget:Supplier.Code&#xD;&#xA; TBudget:Supplier.Name&#xD;&#xA; TBudget:Supplier.Remarks&#xD;&#xA; TBudget:Supplier.Addresses&#xD;&#xA; TBudget:Supplier.Phones&#xD;&#xA; TBudget:Supplier.InternetAddresses&#xD;&#xA; TBudget:Supplier.NickName&#xD;&#xA; TBudget:Shipping&#xD;&#xA; TBudget:SumOfItems&#xD;&#xA; TBudget:TotalBudget&#xD;&#xA; TBudget:Items&#xD;&#xA; TBudget:Date&#xD;&#xA; TBudget:ExpireDate&#xD;&#xA; TBudget:ItemCount&#xD;&#xA; TBudget:WeightInKilograms&#xD;&#xA; TBudget:ShippingByKilogram&#xD;&#xA;TBudget.Supplier.Addresses&#xD;&#xA; TBudget.Supplier.Addresses:Label.Name&#xD;&#xA; TBudget.Supplier.Addresses:Street&#xD;&#xA; TBudget.Supplier.Addresses:Number&#xD;&#xA; TBudget.Supplier.Addresses:POBox&#xD;&#xA; TBudget.Supplier.Addresses:Neighborhood.Code&#xD;&#xA; TBudget.Supplier.Addresses:Neighborhood.Name&#xD;&#xA; TBudget.Supplier.Addresses:Neighborhood.Remarks&#xD;&#xA; TBudget.Supplier.Addresses:City.Code&#xD;&#xA; TBudget.Supplier.Addresses:City.Name&#xD;&#xA; TBudget.Supplier.Addresses:City.Remarks&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Code&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Name&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Remarks&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Abbreviation&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Country.Code&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Country.Name&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Country.Remarks&#xD;&#xA; TBudget.Supplier.Addresses:PostalCode&#xD;&#xA;TBudget.Supplier.Phones&#xD;&#xA; TBudget.Supplier.Phones:Label.Name&#xD;&#xA; TBudget.Supplier.Phones:Number&#xD;&#xA;TBudget.Supplier.InternetAddresses&#xD;&#xA; TBudget.Supplier.InternetAddresses:Label.Name&#xD;&#xA; TBudget.Supplier.InternetAddresses:Address&#xD;&#xA;TBudget.Items&#xD;&#xA; TBudget.Items:Product.Code&#xD;&#xA; TBudget.Items:Product.Name&#xD;&#xA; TBudget.Items:Product.Remarks&#xD;&#xA; TBudget.Items:Product.Unity.Name&#xD;&#xA; TBudget.Items:Product.Unity.Abbreviation&#xD;&#xA; TBudget.Items:Product.Unity.WeightInKiloGrams&#xD;&#xA; TBudget.Items:Product.MinimumStock&#xD;&#xA; TBudget.Items:Product.MaximumStock&#xD;&#xA; TBudget.Items:Product.CurrentStock&#xD;&#xA; TBudget.Items:Product.Cost&#xD;&#xA; TBudget.Items:Product.ProfitRate&#xD;&#xA; TBudget.Items:Product.CurrentStockCost&#xD;&#xA; TBudget.Items:Product.Price&#xD;&#xA; TBudget.Items:Product.CurrentStockPrice&#xD;&#xA; TBudget.Items:Product.LastPurchaseDate&#xD;&#xA; TBudget.Items:Unity.Name&#xD;&#xA; TBudget.Items:Unity.Abbreviation&#xD;&#xA; TBudget.Items:Unity.WeightInKiloGrams&#xD;&#xA; TBudget.Items:Quantity&#xD;&#xA; TBudget.Items:UnityValue&#xD;&#xA; TBudget.Items:TotalValue&#xD;&#xA; TBudget.Items:Shipping&#xD;&#xA; TBudget.Items:WeightInKiloGrams&#xD;&#xA; TBudget.Items:KilogramValue&#xD;&#xA; TBudget.Items:ShippingByKilogram&#xD;&#xA;"/>
+      <ParentVars Value="TBudget&#xD;&#xA; TBudget:Code&#xD;&#xA; TBudget:Name&#xD;&#xA; TBudget:Remarks&#xD;&#xA; TBudget:Supplier.Code&#xD;&#xA; TBudget:Supplier.Name&#xD;&#xA; TBudget:Supplier.Remarks&#xD;&#xA; TBudget:Supplier.Addresses&#xD;&#xA; TBudget:Supplier.Phones&#xD;&#xA; TBudget:Supplier.InternetAddresses&#xD;&#xA; TBudget:Supplier.NickName&#xD;&#xA; TBudget:Shipping&#xD;&#xA; TBudget:SumOfItems&#xD;&#xA; TBudget:TotalBudget&#xD;&#xA; TBudget:Items&#xD;&#xA; TBudget:Date&#xD;&#xA; TBudget:ExpireDate&#xD;&#xA; TBudget:ItemCount&#xD;&#xA; TBudget:WeightInKilograms&#xD;&#xA; TBudget:ShippingByKilogram&#xD;&#xA; TBudget:KilogramValue&#xD;&#xA; TBudget:KilogramTotalValue&#xD;&#xA;TBudget.Supplier.Addresses&#xD;&#xA; TBudget.Supplier.Addresses:Label.Name&#xD;&#xA; TBudget.Supplier.Addresses:Street&#xD;&#xA; TBudget.Supplier.Addresses:Number&#xD;&#xA; TBudget.Supplier.Addresses:POBox&#xD;&#xA; TBudget.Supplier.Addresses:Neighborhood.Code&#xD;&#xA; TBudget.Supplier.Addresses:Neighborhood.Name&#xD;&#xA; TBudget.Supplier.Addresses:Neighborhood.Remarks&#xD;&#xA; TBudget.Supplier.Addresses:City.Code&#xD;&#xA; TBudget.Supplier.Addresses:City.Name&#xD;&#xA; TBudget.Supplier.Addresses:City.Remarks&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Code&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Name&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Remarks&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Abbreviation&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Country.Code&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Country.Name&#xD;&#xA; TBudget.Supplier.Addresses:City.State.Country.Remarks&#xD;&#xA; TBudget.Supplier.Addresses:PostalCode&#xD;&#xA;TBudget.Supplier.Phones&#xD;&#xA; TBudget.Supplier.Phones:Label.Name&#xD;&#xA; TBudget.Supplier.Phones:Number&#xD;&#xA;TBudget.Supplier.InternetAddresses&#xD;&#xA; TBudget.Supplier.InternetAddresses:Label.Name&#xD;&#xA; TBudget.Supplier.InternetAddresses:Address&#xD;&#xA;TBudget.Items&#xD;&#xA; TBudget.Items:Product.Code&#xD;&#xA; TBudget.Items:Product.Name&#xD;&#xA; TBudget.Items:Product.Remarks&#xD;&#xA; TBudget.Items:Product.Unity.Name&#xD;&#xA; TBudget.Items:Product.Unity.Abbreviation&#xD;&#xA; TBudget.Items:Product.Unity.WeightInKiloGrams&#xD;&#xA; TBudget.Items:Product.MinimumStock&#xD;&#xA; TBudget.Items:Product.MaximumStock&#xD;&#xA; TBudget.Items:Product.CurrentStock&#xD;&#xA; TBudget.Items:Product.Cost&#xD;&#xA; TBudget.Items:Product.ProfitRate&#xD;&#xA; TBudget.Items:Product.CurrentStockCost&#xD;&#xA; TBudget.Items:Product.Price&#xD;&#xA; TBudget.Items:Product.CurrentStockPrice&#xD;&#xA; TBudget.Items:Product.LastPurchaseDate&#xD;&#xA; TBudget.Items:Unity.Name&#xD;&#xA; TBudget.Items:Unity.Abbreviation&#xD;&#xA; TBudget.Items:Unity.WeightInKiloGrams&#xD;&#xA; TBudget.Items:Quantity&#xD;&#xA; TBudget.Items:UnityValue&#xD;&#xA; TBudget.Items:TotalValue&#xD;&#xA; TBudget.Items:Shipping&#xD;&#xA; TBudget.Items:WeightInKiloGrams&#xD;&#xA; TBudget.Items:KilogramValue&#xD;&#xA; TBudget.Items:ShippingByKilogram&#xD;&#xA; TBudget.Items:KilogramTotalValue&#xD;&#xA;"/>
     </Pages>
   </LazReport>
 </CONFIG>

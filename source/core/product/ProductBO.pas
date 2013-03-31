@@ -30,17 +30,23 @@ type
     _ItemCount: TPressInteger;
     _WeightInKilograms: TPressDouble;
     _ShippingByKilogram: TPressCurrency;
+    _KilogramValue: TPressCurrency;
+    _KilogramTotalValue: TPressCurrency;
   protected
     class function InternalMetadataStr: string; override;
     procedure InternalCalcAttribute(AAttribute: TPressAttribute); override;
   private
     function CountItems: Integer;
+    function GetKilogramTotalValue: Currency;
+    function GetKilogramValue: Currency;
     function GetShippingByKilogram: Currency;
     function GetWeightInKilograms: Double;
     function GetItemCount: Integer;
     function GetShipping: Currency;
     function GetSumOfItems: Currency;
     function GetTotalBudget: Currency;
+    procedure SetKilogramTotalValue(AValue: Currency);
+    procedure SetKilogramValue(AValue: Currency);
     procedure SetShippingByKilogram(AValue: Currency);
     procedure SetWeightInKilograms(AValue: Double);
     procedure SetItemCount(AValue: Integer);
@@ -59,6 +65,10 @@ type
     property TotalBudget: Currency read GetTotalBudget write SetTotalBudget;
     property ShippingByKilogram: Currency read GetShippingByKilogram
       write SetShippingByKilogram;
+    property KilogramValue: Currency read GetKilogramValue
+      write SetKilogramValue;
+    property KilogramTotalValue: Currency read GetKilogramTotalValue
+      write SetKilogramTotalValue;
   end;
 
   { TBudgetQuery }
@@ -84,8 +94,9 @@ type
     _WeightInKilograms: TPressDouble;
     _KilogramValue: TPressCurrency;
     _ShippingByKilogram: TPressCurrency;
-    { TODO 1 -ojoaolevada -cimplementation : Kilogram total value (TotalValue + Shipping) calculated }
+    _KilogramTotalValue: TPressCurrency;
   private
+    function GetKilogramTotalValue: Currency;
     function GetKilogramValue: Currency;
     function GetQuantity: Double;
     function GetShipping: Currency;
@@ -94,6 +105,7 @@ type
     function GetUnity: TUnity;
     function GetUnityValue: Currency;
     function GetWeightInKilograms: Double;
+    procedure SetKilogramTotalValue(AValue: Currency);
     procedure SetKilogramValue(AValue: Currency);
     procedure SetQuantity(AValue: Double);
     procedure SetShipping(AValue: Currency);
@@ -115,6 +127,8 @@ type
       write SetWeightInKilograms;
     property KilogramValue: Currency read GetKilogramValue
       write SetKilogramValue;
+    property KilogramTotalValue: Currency read GetKilogramTotalValue
+      write SetKilogramTotalValue;
     property ShippingByKilogram: Currency read GetShippingByKilogram
       write SetShippingByKilogram;
   end;
@@ -321,6 +335,11 @@ end;
 
 { TBudgetItem }
 
+function TBudgetItem.GetKilogramTotalValue: Currency;
+begin
+  Result := _KilogramTotalValue.Value;
+end;
+
 function TBudgetItem.GetKilogramValue: Currency;
 begin
   Result := _KilogramValue.Value;
@@ -359,6 +378,11 @@ end;
 function TBudgetItem.GetWeightInKilograms: Double;
 begin
   Result := _WeightInKilograms.Value;
+end;
+
+procedure TBudgetItem.SetKilogramTotalValue(AValue: Currency);
+begin
+  _KilogramTotalValue.Value := AValue;
 end;
 
 procedure TBudgetItem.SetKilogramValue(AValue: Currency);
@@ -416,7 +440,9 @@ begin
     { calculated by owner (TBudget) }
     'KilogramValue: Currency;' +
     { calculated by owner (TBudget) }
-    'ShippingByKilogram: Currency' +
+    'ShippingByKilogram: Currency;' +
+    { calculated by owner (TBudget) }
+    'KilogramTotalValue: Currency' +
     ');';
 end;
 
@@ -451,7 +477,9 @@ begin
     'ExpireDate: Date DefaultValue="now";' +
     'ItemCount: Integer Calc(Items);' +
     'WeightInKilograms: Double Calc(Items);' +
-    'ShippingByKilogram: Currency Calc(Shipping, WeightInKilograms)' +
+    'ShippingByKilogram: Currency Calc(Shipping, WeightInKilograms);' +
+    'KilogramValue: Currency Calc(SumOfItems, WeightInKilograms);' +
+    'KilogramTotalValue: Currency Calc(TotalBudget, WeightInKilograms)' +
     ');';
 end;
 
@@ -479,6 +507,8 @@ begin
         VBudgetItem.KilogramValue := VBudgetItem.TotalValue / VBudgetItem.WeightInKilograms;
         { value of each item's kilogram shipping }
         VBudgetItem.ShippingByKilogram := VBudgetItem.Shipping / VBudgetItem.WeightInKilograms;
+        { value of each item's kilograms + shipping }
+        VBudgetItem.KilogramTotalValue := VBudgetItem.KilogramValue + VBudgetItem.ShippingByKilogram;
       end;
 
     end;
@@ -491,12 +521,26 @@ begin
   begin
     if WeightInKilograms > 0 then
       ShippingByKilogram := Shipping / WeightInKilograms;
-  end;
+  end
+  else if AAttribute = _KilogramValue then
+    KilogramValue := SumOfItems / WeightInKilograms
+  else if AAttribute = _KilogramTotalValue then
+    KilogramTotalValue := TotalBudget {<-SumOfItems + Shipping} / WeightInKilograms;
 end;
 
 function TBudget.CountItems: Integer;
 begin
   Result := _Items.Count;
+end;
+
+function TBudget.GetKilogramTotalValue: Currency;
+begin
+  Result := _KilogramTotalValue.Value;
+end;
+
+function TBudget.GetKilogramValue: Currency;
+begin
+  Result := _KilogramValue.Value;
 end;
 
 function TBudget.GetShippingByKilogram: Currency;
@@ -527,6 +571,16 @@ end;
 function TBudget.GetTotalBudget: Currency;
 begin
   Result := _TotalBudget.Value;
+end;
+
+procedure TBudget.SetKilogramTotalValue(AValue: Currency);
+begin
+  _KilogramTotalValue.Value := AValue;
+end;
+
+procedure TBudget.SetKilogramValue(AValue: Currency);
+begin
+  _KilogramValue.Value := AValue;
 end;
 
 procedure TBudget.SetShippingByKilogram(AValue: Currency);

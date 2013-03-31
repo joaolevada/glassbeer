@@ -239,11 +239,11 @@ inherited BudgetEditForm: TBudgetEditForm
       end
       object ExpireDateLabel: TLabel[18]
         AnchorSideLeft.Control = MainTab
-        AnchorSideTop.Control = WeightInKilogramsEdit
+        AnchorSideTop.Control = KilogramValueEdit
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
-        Top = 192
+        Top = 239
         Width = 136
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
@@ -256,10 +256,10 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 22
-        Top = 209
+        Top = 256
         Width = 198
         BorderSpacing.Top = 2
-        TabOrder = 10
+        TabOrder = 12
         Text = 'ExpireDateEdit'
       end
       object RemarksLabel: TLabel[20]
@@ -268,7 +268,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
-        Top = 233
+        Top = 280
         Width = 83
         BorderSpacing.Left = 4
         BorderSpacing.Top = 2
@@ -281,13 +281,13 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 90
-        Top = 250
+        Top = 297
         Width = 356
         BorderSpacing.Top = 2
         Lines.Strings = (
           'RemarksMemo'
         )
-        TabOrder = 11
+        TabOrder = 13
       end
       object AddSupplierPersonSpeedButton: TSpeedButton[22]
         AnchorSideLeft.Control = SupplierComboBox
@@ -363,6 +363,59 @@ inherited BudgetEditForm: TBudgetEditForm
         TabOrder = 9
         Text = 'ShippingByKilogramEdit'
       end
+      object KilogramValueLabel: TLabel[27]
+        AnchorSideLeft.Control = MainTab
+        AnchorSideTop.Control = ItemCountEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 192
+        Width = 188
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Valor médio do kg (sem frete)'
+        ParentColor = False
+      end
+      object KilogramValueEdit: TEdit[28]
+        AnchorSideLeft.Control = KilogramValueLabel
+        AnchorSideTop.Control = KilogramValueLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 209
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 10
+        Text = 'KilogramValueEdit'
+      end
+      object KilogramTotalValueLabel: TLabel[29]
+        AnchorSideLeft.Control = KilogramValueEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = KilogramValueLabel
+        Left = 214
+        Height = 15
+        Top = 192
+        Width = 187
+        BorderSpacing.Left = 12
+        Caption = 'Valor médio do kg (com frete)'
+        ParentColor = False
+      end
+      object KilogramTotalValueEdit: TEdit[30]
+        AnchorSideLeft.Control = KilogramTotalValueLabel
+        AnchorSideTop.Control = KilogramTotalValueLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 209
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 11
+        Text = 'KilogramTotalValueEdit'
+      end
     end
     object ItemsTabSheet: TTabSheet[1]
       Caption = 'Itens do orçamento'
@@ -388,7 +441,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideRight.Control = ItemsTabSheet
         AnchorSideRight.Side = asrBottom
         Left = 4
-        Height = 311
+        Height = 283
         Top = 64
         Width = 784
         Anchors = [akTop, akLeft, akRight]
@@ -416,7 +469,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 590
         Height = 15
-        Top = 383
+        Top = 355
         Width = 94
         BorderSpacing.Top = 8
         Caption = 'Total dos itens'
@@ -430,7 +483,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideRight.Side = asrBottom
         Left = 590
         Height = 22
-        Top = 400
+        Top = 372
         Width = 198
         Anchors = [akTop, akRight]
         BorderSpacing.Top = 2
@@ -445,7 +498,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 590
         Height = 15
-        Top = 430
+        Top = 402
         Width = 87
         BorderSpacing.Top = 8
         Caption = 'Valor do frete'
@@ -459,7 +512,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideRight.Side = asrBottom
         Left = 590
         Height = 22
-        Top = 447
+        Top = 419
         Width = 198
         Anchors = [akTop, akRight]
         BorderSpacing.Top = 2
@@ -472,7 +525,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 590
         Height = 15
-        Top = 477
+        Top = 449
         Width = 123
         BorderSpacing.Top = 8
         Caption = 'Total do orçamento'
@@ -484,7 +537,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 590
         Height = 22
-        Top = 494
+        Top = 466
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
@@ -505,7 +558,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
-        Top = 409
+        Top = 381
         Width = 130
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
@@ -518,7 +571,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 22
-        Top = 426
+        Top = 398
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
@@ -532,7 +585,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 15
-        Top = 456
+        Top = 428
         Width = 96
         BorderSpacing.Left = 4
         BorderSpacing.Top = 8
@@ -545,7 +598,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 4
         Height = 22
-        Top = 473
+        Top = 445
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
@@ -581,7 +634,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Left = 4
         Height = 22
         Hint = 'Adicionar produto ao orçamento'
-        Top = 379
+        Top = 351
         Width = 23
         BorderSpacing.Top = 4
         Flat = True
@@ -597,7 +650,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Left = 31
         Height = 22
         Hint = 'Alterar produto selecionado'
-        Top = 379
+        Top = 351
         Width = 23
         BorderSpacing.Left = 4
         BorderSpacing.Top = 4
@@ -614,7 +667,7 @@ inherited BudgetEditForm: TBudgetEditForm
         Left = 58
         Height = 22
         Hint = 'Remover produto(s) do orçamento'
-        Top = 379
+        Top = 351
         Width = 23
         BorderSpacing.Left = 4
         BorderSpacing.Top = 4
@@ -629,7 +682,7 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Control = WeightInKilogramsLabel1
         Left = 214
         Height = 15
-        Top = 456
+        Top = 428
         Width = 180
         BorderSpacing.Left = 12
         Caption = 'Valor do frete pra cada quilo'
@@ -641,13 +694,66 @@ inherited BudgetEditForm: TBudgetEditForm
         AnchorSideTop.Side = asrBottom
         Left = 214
         Height = 22
-        Top = 473
+        Top = 445
         Width = 198
         BorderSpacing.Top = 2
         Color = clBtnFace
         ReadOnly = True
         TabOrder = 3
         Text = 'ShippingByKilogramEdit1'
+      end
+      object KilogramValueLabel1: TLabel
+        AnchorSideLeft.Control = ItemsTabSheet
+        AnchorSideTop.Control = WeightInKilogramsEdit1
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 15
+        Top = 475
+        Width = 188
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 8
+        Caption = 'Valor médio do kg (sem frete)'
+        ParentColor = False
+      end
+      object KilogramValueEdit1: TEdit
+        AnchorSideLeft.Control = KilogramValueLabel1
+        AnchorSideTop.Control = KilogramValueLabel1
+        AnchorSideTop.Side = asrBottom
+        Left = 4
+        Height = 22
+        Top = 492
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 7
+        Text = 'KilogramValueEdit1'
+      end
+      object KilogramTotalValueLabel1: TLabel
+        AnchorSideLeft.Control = KilogramValueEdit1
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = KilogramValueLabel1
+        Left = 214
+        Height = 15
+        Top = 475
+        Width = 187
+        BorderSpacing.Left = 12
+        Caption = 'Valor médio do kg (com frete)'
+        ParentColor = False
+      end
+      object KilogramTotalValueEdit1: TEdit
+        AnchorSideLeft.Control = KilogramTotalValueLabel1
+        AnchorSideTop.Control = KilogramTotalValueLabel1
+        AnchorSideTop.Side = asrBottom
+        Left = 214
+        Height = 22
+        Top = 492
+        Width = 198
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 8
+        Text = 'KilogramTotalValueEdit1'
       end
     end
   end
