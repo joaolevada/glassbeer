@@ -517,14 +517,11 @@ begin
     ItemCount := CountItems
   else if AAttribute = _WeightInKilograms then
     WeightInKilograms := SumItemsWeight
-  else if AAttribute = _ShippingByKilogram then
-  begin
-    if WeightInKilograms > 0 then
-      ShippingByKilogram := Shipping / WeightInKilograms;
-  end
-  else if AAttribute = _KilogramValue then
+  else if (AAttribute = _ShippingByKilogram) and (WeightInKilograms > 0) then
+    ShippingByKilogram := Shipping / WeightInKilograms
+  else if (AAttribute = _KilogramValue) and (WeightInKilograms > 0) then
     KilogramValue := SumOfItems / WeightInKilograms
-  else if AAttribute = _KilogramTotalValue then
+  else if (AAttribute = _KilogramTotalValue) and (WeightInKilograms > 0) then
     KilogramTotalValue := TotalBudget {<-SumOfItems + Shipping} / WeightInKilograms;
 end;
 

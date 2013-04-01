@@ -240,7 +240,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MainFrm"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="33"/>
@@ -1073,10 +1072,11 @@
         <Filename Value="..\..\core\product\ProductBO.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ProductBO"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="492"/>
-        <CursorPos X="21" Y="512"/>
+        <TopLine Value="501"/>
+        <CursorPos X="1" Y="525"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit93>
@@ -1280,7 +1280,7 @@
         <UsageCount Value="33"/>
       </Unit112>
     </Units>
-    <JumpHistory Count="25" HistoryIndex="24">
+    <JumpHistory Count="26" HistoryIndex="25">
       <Position1>
         <Filename Value="..\..\core\product\ProductBO.pas"/>
         <Caret Line="155" Column="37" TopLine="139"/>
@@ -1381,6 +1381,10 @@
         <Filename Value="..\..\core\main\lcl\MainFrm.pas"/>
         <Caret Line="59" Column="17" TopLine="33"/>
       </Position25>
+      <Position26>
+        <Filename Value="..\..\core\product\ProductBO.pas"/>
+        <Caret Line="512" Column="21" TopLine="492"/>
+      </Position26>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
