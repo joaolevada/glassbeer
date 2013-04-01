@@ -2,17 +2,17 @@ object ReportGroupEditForm: TReportGroupEditForm
   Left = 400
   Height = 523
   Top = 190
-  Width = 932
+  Width = 923
   Caption = 'Grupo de relatórios'
   ClientHeight = 523
-  ClientWidth = 932
+  ClientWidth = 923
   Position = poDesktopCenter
   LCLVersion = '1.0.1.3'
   object ReportsLabel: TLabel
     Left = 4
     Height = 16
     Top = 4
-    Width = 928
+    Width = 919
     Align = alTop
     BorderSpacing.Left = 4
     BorderSpacing.Top = 4
@@ -23,7 +23,7 @@ object ReportGroupEditForm: TReportGroupEditForm
     Left = 0
     Height = 447
     Top = 22
-    Width = 932
+    Width = 923
     Align = alClient
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 2
@@ -35,10 +35,10 @@ object ReportGroupEditForm: TReportGroupEditForm
     Left = 0
     Height = 54
     Top = 469
-    Width = 932
+    Width = 923
     Align = alBottom
     ClientHeight = 54
-    ClientWidth = 932
+    ClientWidth = 923
     Font.CharSet = ANSI_CHARSET
     Font.Height = -13
     Font.Name = 'Verdana'

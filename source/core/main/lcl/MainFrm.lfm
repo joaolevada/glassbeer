@@ -2022,4 +2022,8 @@ object MainForm: TMainForm
     left = 316
     top = 116
   end
+  object MainfrShapeObject: TfrShapeObject
+    left = 316
+    top = 171
+  end
 end

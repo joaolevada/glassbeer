@@ -38,7 +38,7 @@ uses
 constructor TReportGroupEditForm.Create(TheOwner: TComponent);
 begin
   inherited Create(TheOwner);
-  Self.Width := QUERYFORM_WIDTH;
+  Self.Width := 923;
   Self.Height := QUERYFORM_HEIGHT;
   MainForm.Icons32ImageList.GetBitmap(IMG_ADD, AddReportButton.Glyph);
   MainForm.Icons32ImageList.GetBitmap(IMG_PENCIL, EditReportButton.Glyph);

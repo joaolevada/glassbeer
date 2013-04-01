@@ -155,7 +155,7 @@ begin
     VProductBudgetQuery._Product.Value := VProduct;
     VProductBudgetQuery._MinDate.Value := IncMonth(Date, -1);
     VProductBudgetQuery._MaxDate.Value := Date;
-    { TODO 3 -ojoaolevada -cimplementation : TShowProductBudgetsCommand Execute the query }
+    Model.Session.UpdateQuery(VProductBudgetQuery);
     TProductBudgetQueryPresenter.Run(VProductBudgetQuery);
   finally
     VProductBudgetQuery.Free;
